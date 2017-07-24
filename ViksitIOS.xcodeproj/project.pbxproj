@@ -17,6 +17,24 @@
 		B9F6B0771F25E69C00B695C0 /* ViksitIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0761F25E69C00B695C0 /* ViksitIOSTests.swift */; };
 		B9F6B0821F25E69C00B695C0 /* ViksitIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */; };
 		B9F6B0901F25E6F400B695C0 /* SecondStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F6B08F1F25E6F400B695C0 /* SecondStoryboard.storyboard */; };
+		BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E981F26115400EF980F /* AllStudentRanks.swift */; };
+		BA690E9C1F26115500EF980F /* AssessmentReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E991F26115400EF980F /* AssessmentReports.swift */; };
+		BA690E9D1F26115500EF980F /* AssessmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E9A1F26115400EF980F /* AssessmentResponse.swift */; };
+		BA690EA21F26118100EF980F /* ComplexObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E9F1F26118100EF980F /* ComplexObject.swift */; };
+		BA690EA31F26118100EF980F /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EA01F26118100EF980F /* Courses.swift */; };
+		BA690EA41F26118100EF980F /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EA11F26118100EF980F /* DataCache.swift */; };
+		BA690EA91F26119000EF980F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EA51F26119000EF980F /* Events.swift */; };
+		BA690EAA1F26119000EF980F /* Leaderboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EA61F26119000EF980F /* Leaderboards.swift */; };
+		BA690EAB1F26119000EF980F /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EA71F26119000EF980F /* Lesson.swift */; };
+		BA690EAC1F26119000EF980F /* Lessons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EA81F26119000EF980F /* Lessons.swift */; };
+		BA690EB11F26119E00EF980F /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EAD1F26119E00EF980F /* Modules.swift */; };
+		BA690EB21F26119E00EF980F /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EAE1F26119E00EF980F /* Notifications.swift */; };
+		BA690EB31F26119E00EF980F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EAF1F26119E00EF980F /* Response.swift */; };
+		BA690EB41F26119E00EF980F /* SkillObjectives.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB01F26119E00EF980F /* SkillObjectives.swift */; };
+		BA690EB91F2611AF00EF980F /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB51F2611AF00EF980F /* Skills.swift */; };
+		BA690EBA1F2611AF00EF980F /* SkillsReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB61F2611AF00EF980F /* SkillsReport.swift */; };
+		BA690EBB1F2611AF00EF980F /* StudentProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB71F2611AF00EF980F /* StudentProfile.swift */; };
+		BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB81F2611AF00EF980F /* Tasks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +71,24 @@
 		B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViksitIOSUITests.swift; sourceTree = "<group>"; };
 		B9F6B0831F25E69C00B695C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9F6B08F1F25E6F400B695C0 /* SecondStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondStoryboard.storyboard; sourceTree = "<group>"; };
+		BA690E981F26115400EF980F /* AllStudentRanks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllStudentRanks.swift; sourceTree = "<group>"; };
+		BA690E991F26115400EF980F /* AssessmentReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentReports.swift; sourceTree = "<group>"; };
+		BA690E9A1F26115400EF980F /* AssessmentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentResponse.swift; sourceTree = "<group>"; };
+		BA690E9F1F26118100EF980F /* ComplexObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexObject.swift; sourceTree = "<group>"; };
+		BA690EA01F26118100EF980F /* Courses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
+		BA690EA11F26118100EF980F /* DataCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
+		BA690EA51F26119000EF980F /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		BA690EA61F26119000EF980F /* Leaderboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderboards.swift; sourceTree = "<group>"; };
+		BA690EA71F26119000EF980F /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		BA690EA81F26119000EF980F /* Lessons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lessons.swift; sourceTree = "<group>"; };
+		BA690EAD1F26119E00EF980F /* Modules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modules.swift; sourceTree = "<group>"; };
+		BA690EAE1F26119E00EF980F /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		BA690EAF1F26119E00EF980F /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		BA690EB01F26119E00EF980F /* SkillObjectives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillObjectives.swift; sourceTree = "<group>"; };
+		BA690EB51F2611AF00EF980F /* Skills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
+		BA690EB61F2611AF00EF980F /* SkillsReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsReport.swift; sourceTree = "<group>"; };
+		BA690EB71F2611AF00EF980F /* StudentProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfile.swift; sourceTree = "<group>"; };
+		BA690EB81F2611AF00EF980F /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +145,7 @@
 				B9F6B0911F25E71000B695C0 /* New Group */,
 				B9F6B0631F25E69C00B695C0 /* ModelController.swift */,
 				B9F6B0651F25E69C00B695C0 /* Main.storyboard */,
+				BA690E9E1F26115C00EF980F /* complex */,
 				B9F6B0681F25E69C00B695C0 /* Assets.xcassets */,
 				B9F6B06A1F25E69C00B695C0 /* LaunchScreen.storyboard */,
 				B9F6B06D1F25E69C00B695C0 /* Info.plist */,
@@ -140,6 +177,31 @@
 				B9F6B08F1F25E6F400B695C0 /* SecondStoryboard.storyboard */,
 			);
 			name = "New Group";
+			sourceTree = "<group>";
+		};
+		BA690E9E1F26115C00EF980F /* complex */ = {
+			isa = PBXGroup;
+			children = (
+				BA690E981F26115400EF980F /* AllStudentRanks.swift */,
+				BA690E991F26115400EF980F /* AssessmentReports.swift */,
+				BA690E9F1F26118100EF980F /* ComplexObject.swift */,
+				BA690EAD1F26119E00EF980F /* Modules.swift */,
+				BA690EAE1F26119E00EF980F /* Notifications.swift */,
+				BA690EB51F2611AF00EF980F /* Skills.swift */,
+				BA690EB61F2611AF00EF980F /* SkillsReport.swift */,
+				BA690EB71F2611AF00EF980F /* StudentProfile.swift */,
+				BA690EB81F2611AF00EF980F /* Tasks.swift */,
+				BA690EAF1F26119E00EF980F /* Response.swift */,
+				BA690EB01F26119E00EF980F /* SkillObjectives.swift */,
+				BA690EA01F26118100EF980F /* Courses.swift */,
+				BA690EA51F26119000EF980F /* Events.swift */,
+				BA690EA61F26119000EF980F /* Leaderboards.swift */,
+				BA690EA71F26119000EF980F /* Lesson.swift */,
+				BA690EA81F26119000EF980F /* Lessons.swift */,
+				BA690EA11F26118100EF980F /* DataCache.swift */,
+				BA690E9A1F26115400EF980F /* AssessmentResponse.swift */,
+			);
+			name = complex;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,9 +340,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F6B0601F25E69C00B695C0 /* RootViewController.swift in Sources */,
+				BA690EB11F26119E00EF980F /* Modules.swift in Sources */,
+				BA690EA91F26119000EF980F /* Events.swift in Sources */,
+				BA690EBA1F2611AF00EF980F /* SkillsReport.swift in Sources */,
+				BA690EB31F26119E00EF980F /* Response.swift in Sources */,
 				B9F6B0641F25E69C00B695C0 /* ModelController.swift in Sources */,
+				BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */,
 				B9F6B0621F25E69C00B695C0 /* DataViewController.swift in Sources */,
+				BA690EB91F2611AF00EF980F /* Skills.swift in Sources */,
+				BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */,
 				B9F6B05E1F25E69C00B695C0 /* AppDelegate.swift in Sources */,
+				BA690EA21F26118100EF980F /* ComplexObject.swift in Sources */,
+				BA690EB21F26119E00EF980F /* Notifications.swift in Sources */,
+				BA690EAB1F26119000EF980F /* Lesson.swift in Sources */,
+				BA690EB41F26119E00EF980F /* SkillObjectives.swift in Sources */,
+				BA690EA41F26118100EF980F /* DataCache.swift in Sources */,
+				BA690E9C1F26115500EF980F /* AssessmentReports.swift in Sources */,
+				BA690EAA1F26119000EF980F /* Leaderboards.swift in Sources */,
+				BA690EBB1F2611AF00EF980F /* StudentProfile.swift in Sources */,
+				BA690E9D1F26115500EF980F /* AssessmentResponse.swift in Sources */,
+				BA690EA31F26118100EF980F /* Courses.swift in Sources */,
+				BA690EAC1F26119000EF980F /* Lessons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +605,7 @@
 				B9F6B0881F25E69C00B695C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9F6B0891F25E69C00B695C0 /* Build configuration list for PBXNativeTarget "ViksitIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +614,7 @@
 				B9F6B08B1F25E69C00B695C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9F6B08C1F25E69C00B695C0 /* Build configuration list for PBXNativeTarget "ViksitIOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +623,7 @@
 				B9F6B08E1F25E69C00B695C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
