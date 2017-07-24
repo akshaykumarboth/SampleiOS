@@ -3,6 +3,7 @@
 import Foundation
 
 public class AllStudentRanks {
+    
 	public var id : Int?
 	public var name : String?
 	public var imageURL : String?
