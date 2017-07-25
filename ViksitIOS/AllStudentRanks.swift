@@ -43,9 +43,6 @@ public class AllStudentRanks {
             //print("skill id is ",self.id! )
         }
 		
-		
 	}
-
-
 
 }

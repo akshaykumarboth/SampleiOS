@@ -2,6 +2,7 @@
 import Foundation
 
 public class Response {
+    
 	public var questionId : Int?
 	public var options : Array<Int>?
 	public var duration : Int?

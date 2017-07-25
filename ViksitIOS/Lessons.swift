@@ -13,6 +13,7 @@ import Foundation
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 public class Lessons {
+    
 	public var id : Int?
 	public var type : String?
 	public var lesson : Lesson?

@@ -3,6 +3,7 @@
 import Foundation
 
 public class Lesson {
+    
 	public var id : Int?
 	public var playlistId : Int?
 	public var type : String?

@@ -2,18 +2,19 @@
 import Foundation
 
 public class Notifications {
+    
 	public var id : Int?
 	public var message : String?
 	public var status : String?
 	public var imageURL : String?
 	public var time : String?
 	public var itemType : String?
-	public var item : Item?
+	//public var item : Item?
 
     init (json: [String: Any]) {
         
         if json["id"] != nil {
-            self.id = json["id"] as! Int
+            self.id = json["id"] as? Int
             //print("skill id is ",self.id! )
         }
 	
@@ -43,7 +44,7 @@ public class Notifications {
         }
 		
 		if (json["item"] != nil) {
-            item = Item(dictionary: json["item"] as! NSDictionary)
+            //item = Item(dictionary: json["item"] as! NSDictionary)
         }
 	}    
 

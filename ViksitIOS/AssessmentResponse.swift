@@ -2,6 +2,7 @@
 import Foundation
 
 public class AssessmentResponse {
+    
 	public var id : Int?
 	public var response : Array<Response>?
 

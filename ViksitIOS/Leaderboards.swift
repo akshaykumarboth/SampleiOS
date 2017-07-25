@@ -2,6 +2,7 @@
 import Foundation
 
 public class Leaderboards {
+    
 	public var id : Int?
 	public var name : String?
 	public var description : String?

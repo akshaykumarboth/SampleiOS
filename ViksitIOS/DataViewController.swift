@@ -16,6 +16,10 @@ class DataViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/user/3658/complex", method: "GET", param: [:])
+        //print(response)
+        var complexObject = ComplexObject(JSONString: response)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

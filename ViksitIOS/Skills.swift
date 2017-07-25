@@ -1,6 +1,7 @@
 import Foundation
 
 public class Skills {
+    
     var id : Int?
 	public var name : String?
     var imageURL : String?
@@ -9,8 +10,6 @@ public class Skills {
 	public var percentage : Int?
 	public var accessedFirstTime : Bool?
     var skills : Array<Skills>?
-
-
 
     init (json: [String: Any]) {
 

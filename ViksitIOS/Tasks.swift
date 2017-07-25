@@ -2,6 +2,7 @@
 import Foundation
 
 public class Tasks {
+    
 	public var id : Int?
 	public var header : String?
 	public var title : String?

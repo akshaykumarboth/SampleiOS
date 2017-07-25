@@ -2,6 +2,7 @@
 import Foundation
 
 public class SkillsReport {
+    
 	public var id : Int?
 	public var name : String?
 	public var totalPoints : Int?

@@ -2,6 +2,7 @@
 import Foundation
 
 public class AssessmentReports {
+    
 	public var id : Int?
 	public var name : String?
 	public var userScore : Int?

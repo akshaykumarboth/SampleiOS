@@ -9,6 +9,7 @@
 import Foundation
 
 class ComplexObject {
+    
     var id : Int?
     var studentProfile : StudentProfile?
     var skills : Array<Skills>?

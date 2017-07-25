@@ -3,6 +3,7 @@
 import Foundation
 
 public class Events {
+    
 	public var id : Int?
 	public var name : String?
 	public var status : String?

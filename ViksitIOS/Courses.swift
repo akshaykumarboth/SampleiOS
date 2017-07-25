@@ -3,6 +3,7 @@
 import Foundation
 
 public class Courses {
+    
 	public var id : Int?
 	public var name : String?
 	public var description : String?
