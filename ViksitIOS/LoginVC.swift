@@ -34,11 +34,28 @@ class LoginVC: UIViewController {
                 "email" : email,
                 "password" : password
             ]
-            
-            var loginResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/auth/login", method: "POST", param: loginParams)
-            print(loginResponse)
+            do{
+                var loginResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/auth/login", method: "POST", param: loginParams)
+                var studentprofile = StudentProfile(jsonString: loginResponse)
+                if type(of: studentprofile.id) != nil {
+                    //to goto dashboard
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                    self.present(nextViewController, animated:true, completion:nil)
+                }
+                //TabBarController
+                //print(loginResponse)
+            }catch let error as NSError {
+                print(" Error \(error)")
+            }
+             /*if type(of: <#T##Type#>) == true {
+             
+            }*/
         }
         
+    }
+    
+    func loginSuccess(){
         
     }
 

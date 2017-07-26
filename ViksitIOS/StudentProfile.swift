@@ -24,7 +24,21 @@ public class StudentProfile {
 	public var userType : String?
 	public var userCategory : String?
     
+    init (jsonString: String) {
+        do{
+
+            let json = try JSONSerialization.jsonObject(with: jsonString.data(using: .utf8)!, options: .allowFragments) as! [String:Any]
+            initay (json: json)
+        }catch let error as NSError {
+            print(" Error \(error)")
+        }
+    }
+    
     init (json: [String: Any]) {
+        initay (json: json)
+    }
+
+    func initay (json: [String: Any]) {
         
         if json["id"] != nil {
             self.id = json["id"] as! Int
