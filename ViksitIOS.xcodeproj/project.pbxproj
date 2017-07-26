@@ -265,22 +265,46 @@
 			isa = PBXGroup;
 			children = (
 				BA63718A1F28828400D77EA9 /* Tab.storyboard */,
-				BA63718C1F2882A500D77EA9 /* view controllers */,
-				BA6371931F288B7E00D77EA9 /* RoleTableCell.swift */,
-				BA6371971F28C1A500D77EA9 /* NotificationTableCell.swift */,
+				BA63719B1F28E08800D77EA9 /* notifications */,
+				BA63719A1F28E07900D77EA9 /* tasks */,
+				BA6371991F28E04300D77EA9 /* roles */,
+				BA63718C1F2882A500D77EA9 /* calender */,
 			);
 			name = tabs;
 			sourceTree = "<group>";
 		};
-		BA63718C1F2882A500D77EA9 /* view controllers */ = {
+		BA63718C1F2882A500D77EA9 /* calender */ = {
+			isa = PBXGroup;
+			children = (
+				BA6371911F2886A500D77EA9 /* CalenderVC.swift */,
+			);
+			name = calender;
+			sourceTree = "<group>";
+		};
+		BA6371991F28E04300D77EA9 /* roles */ = {
 			isa = PBXGroup;
 			children = (
 				BA63718D1F2883FD00D77EA9 /* RolesVC.swift */,
+				BA6371931F288B7E00D77EA9 /* RoleTableCell.swift */,
+			);
+			name = roles;
+			sourceTree = "<group>";
+		};
+		BA63719A1F28E07900D77EA9 /* tasks */ = {
+			isa = PBXGroup;
+			children = (
 				BA63718F1F28868D00D77EA9 /* TasksVC.swift */,
-				BA6371911F2886A500D77EA9 /* CalenderVC.swift */,
+			);
+			name = tasks;
+			sourceTree = "<group>";
+		};
+		BA63719B1F28E08800D77EA9 /* notifications */ = {
+			isa = PBXGroup;
+			children = (
+				BA6371971F28C1A500D77EA9 /* NotificationTableCell.swift */,
 				BA6371951F28BB9B00D77EA9 /* NotificationsVC.swift */,
 			);
-			name = "view controllers";
+			name = notifications;
 			sourceTree = "<group>";
 		};
 		BA690E9E1F26115C00EF980F /* complex */ = {
