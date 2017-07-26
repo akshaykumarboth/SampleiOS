@@ -10,7 +10,6 @@ import UIKit
 
 class RoleTableCell: UITableViewCell {
     
-    
     @IBOutlet var roleImage: UIImageView!
     @IBOutlet var roleCategory: UILabel!
     @IBOutlet var roleName: UILabel!

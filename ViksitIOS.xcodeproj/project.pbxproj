@@ -36,6 +36,8 @@
 		BA6371901F28868D00D77EA9 /* TasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63718F1F28868D00D77EA9 /* TasksVC.swift */; };
 		BA6371921F2886A500D77EA9 /* CalenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371911F2886A500D77EA9 /* CalenderVC.swift */; };
 		BA6371941F288B7E00D77EA9 /* RoleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371931F288B7E00D77EA9 /* RoleTableCell.swift */; };
+		BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371951F28BB9B00D77EA9 /* NotificationsVC.swift */; };
+		BA6371981F28C1A500D77EA9 /* NotificationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371971F28C1A500D77EA9 /* NotificationTableCell.swift */; };
 		BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E981F26115400EF980F /* AllStudentRanks.swift */; };
 		BA690E9C1F26115500EF980F /* AssessmentReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E991F26115400EF980F /* AssessmentReports.swift */; };
 		BA690E9D1F26115500EF980F /* AssessmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E9A1F26115400EF980F /* AssessmentResponse.swift */; };
@@ -109,6 +111,8 @@
 		BA63718F1F28868D00D77EA9 /* TasksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksVC.swift; sourceTree = "<group>"; };
 		BA6371911F2886A500D77EA9 /* CalenderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderVC.swift; sourceTree = "<group>"; };
 		BA6371931F288B7E00D77EA9 /* RoleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleTableCell.swift; sourceTree = "<group>"; };
+		BA6371951F28BB9B00D77EA9 /* NotificationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		BA6371971F28C1A500D77EA9 /* NotificationTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableCell.swift; sourceTree = "<group>"; };
 		BA690E981F26115400EF980F /* AllStudentRanks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllStudentRanks.swift; sourceTree = "<group>"; };
 		BA690E991F26115400EF980F /* AssessmentReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentReports.swift; sourceTree = "<group>"; };
 		BA690E9A1F26115400EF980F /* AssessmentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentResponse.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 				BA63718A1F28828400D77EA9 /* Tab.storyboard */,
 				BA63718C1F2882A500D77EA9 /* view controllers */,
 				BA6371931F288B7E00D77EA9 /* RoleTableCell.swift */,
+				BA6371971F28C1A500D77EA9 /* NotificationTableCell.swift */,
 			);
 			name = tabs;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				BA63718D1F2883FD00D77EA9 /* RolesVC.swift */,
 				BA63718F1F28868D00D77EA9 /* TasksVC.swift */,
 				BA6371911F2886A500D77EA9 /* CalenderVC.swift */,
+				BA6371951F28BB9B00D77EA9 /* NotificationsVC.swift */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */,
 				BA63717B1F27284700D77EA9 /* TextFieldWithPadding.swift in Sources */,
 				B9F6B0621F25E69C00B695C0 /* DataViewController.swift in Sources */,
+				BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */,
 				BA690EB91F2611AF00EF980F /* Skills.swift in Sources */,
 				BA6371721F2640AA00D77EA9 /* LoginVC.swift in Sources */,
 				BA6371741F2640C500D77EA9 /* SignUpVC.swift in Sources */,
@@ -475,6 +482,7 @@
 				BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */,
 				BA6371881F28707900D77EA9 /* PasswordChangedVC.swift in Sources */,
 				BA690EA31F26118100EF980F /* Courses.swift in Sources */,
+				BA6371981F28C1A500D77EA9 /* NotificationTableCell.swift in Sources */,
 				BA6371901F28868D00D77EA9 /* TasksVC.swift in Sources */,
 				BA63718E1F2883FD00D77EA9 /* RolesVC.swift in Sources */,
 				BA690EAC1F26119000EF980F /* Lessons.swift in Sources */,
