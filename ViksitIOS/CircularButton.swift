@@ -7,8 +7,9 @@
 //
 
 import UIKit
-   
-@IBDesignable public class RoundedButton: UIButton {
+
+//keep the width and height equal to make the button in circular shape
+@IBDesignable public class CircularButton: UIButton {
         
     @IBInspectable var borderColor: UIColor = UIColor.white {
         didSet {

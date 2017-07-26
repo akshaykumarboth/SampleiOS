@@ -153,7 +153,7 @@
                                     <segue destination="viT-WV-zX6" kind="show" id="Ufu-kt-Pxe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFV-wz-uoT" customClass="RoundedButton" customModule="ViksitIOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFV-wz-uoT" customClass="CircularButton" customModule="ViksitIOS" customModuleProvider="target">
                                 <rect key="frame" x="145" y="354" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -622,7 +622,7 @@
                                     <action selector="onSignupPressed:" destination="auM-n9-ze1" eventType="touchUpInside" id="t8e-1b-VIL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcS-3c-Lru" customClass="RoundedButton" customModule="ViksitIOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcS-3c-Lru" customClass="CircularButton" customModule="ViksitIOS" customModuleProvider="target">
                                 <rect key="frame" x="145" y="348" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -842,10 +842,10 @@
             </objects>
             <point key="canvasLocation" x="1251" y="646"/>
         </scene>
-        <!--View Controller-->
+        <!--Password ChangedVC-->
         <scene sceneID="38O-ai-zVd">
             <objects>
-                <viewController id="rdi-90-Mpl" sceneMemberID="viewController">
+                <viewController id="rdi-90-Mpl" customClass="PasswordChangedVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Foi-9d-loA"/>
                         <viewControllerLayoutGuide type="bottom" id="dlX-pl-sgc"/>
@@ -1055,7 +1055,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="utM-Q2-yI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2940" y="645"/>
+            <point key="canvasLocation" x="2970" y="645"/>
         </scene>
     </scenes>
     <resources>
@@ -1065,8 +1065,8 @@
         <image name="talentify_logo" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YVs-fe-mPO"/>
         <segue reference="AjV-gD-DSA"/>
+        <segue reference="YVs-fe-mPO"/>
         <segue reference="pt4-Ok-1fs"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,13 +22,20 @@
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
 		BA6371721F2640AA00D77EA9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371711F2640AA00D77EA9 /* LoginVC.swift */; };
 		BA6371741F2640C500D77EA9 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371731F2640C500D77EA9 /* SignUpVC.swift */; };
-		BA6371771F264A9A00D77EA9 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371761F264A9A00D77EA9 /* RoundedButton.swift */; };
+		BA6371771F264A9A00D77EA9 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371761F264A9A00D77EA9 /* CircularButton.swift */; };
 		BA6371791F271BFA00D77EA9 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371781F271BFA00D77EA9 /* ForgotPasswordVC.swift */; };
 		BA63717B1F27284700D77EA9 /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63717A1F27284700D77EA9 /* TextFieldWithPadding.swift */; };
 		BA63717D1F27946B00D77EA9 /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63717C1F27946B00D77EA9 /* OtpVC.swift */; };
 		BA63717F1F27978600D77EA9 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63717E1F27978600D77EA9 /* ResetPasswordVC.swift */; };
 		BA6371811F279CC000D77EA9 /* VerifyPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371801F279CC000D77EA9 /* VerifyPhoneVC.swift */; };
 		BA6371831F27A25C00D77EA9 /* BatchCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371821F27A25C00D77EA9 /* BatchCodeVC.swift */; };
+		BA6371851F2868C400D77EA9 /* RoundedShadowedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371841F2868C400D77EA9 /* RoundedShadowedButton.swift */; };
+		BA6371881F28707900D77EA9 /* PasswordChangedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371871F28707900D77EA9 /* PasswordChangedVC.swift */; };
+		BA63718B1F28828400D77EA9 /* Tab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63718A1F28828400D77EA9 /* Tab.storyboard */; };
+		BA63718E1F2883FD00D77EA9 /* RolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63718D1F2883FD00D77EA9 /* RolesVC.swift */; };
+		BA6371901F28868D00D77EA9 /* TasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63718F1F28868D00D77EA9 /* TasksVC.swift */; };
+		BA6371921F2886A500D77EA9 /* CalenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371911F2886A500D77EA9 /* CalenderVC.swift */; };
+		BA6371941F288B7E00D77EA9 /* RoleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371931F288B7E00D77EA9 /* RoleTableCell.swift */; };
 		BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E981F26115400EF980F /* AllStudentRanks.swift */; };
 		BA690E9C1F26115500EF980F /* AssessmentReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E991F26115400EF980F /* AssessmentReports.swift */; };
 		BA690E9D1F26115500EF980F /* AssessmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E9A1F26115400EF980F /* AssessmentResponse.swift */; };
@@ -88,13 +95,20 @@
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
 		BA6371711F2640AA00D77EA9 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BA6371731F2640C500D77EA9 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
-		BA6371761F264A9A00D77EA9 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		BA6371761F264A9A00D77EA9 /* CircularButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
 		BA6371781F271BFA00D77EA9 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		BA63717A1F27284700D77EA9 /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
 		BA63717C1F27946B00D77EA9 /* OtpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
 		BA63717E1F27978600D77EA9 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		BA6371801F279CC000D77EA9 /* VerifyPhoneVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyPhoneVC.swift; sourceTree = "<group>"; };
 		BA6371821F27A25C00D77EA9 /* BatchCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchCodeVC.swift; sourceTree = "<group>"; };
+		BA6371841F2868C400D77EA9 /* RoundedShadowedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadowedButton.swift; sourceTree = "<group>"; };
+		BA6371871F28707900D77EA9 /* PasswordChangedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordChangedVC.swift; sourceTree = "<group>"; };
+		BA63718A1F28828400D77EA9 /* Tab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tab.storyboard; sourceTree = "<group>"; };
+		BA63718D1F2883FD00D77EA9 /* RolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RolesVC.swift; sourceTree = "<group>"; };
+		BA63718F1F28868D00D77EA9 /* TasksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksVC.swift; sourceTree = "<group>"; };
+		BA6371911F2886A500D77EA9 /* CalenderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderVC.swift; sourceTree = "<group>"; };
+		BA6371931F288B7E00D77EA9 /* RoleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleTableCell.swift; sourceTree = "<group>"; };
 		BA690E981F26115400EF980F /* AllStudentRanks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllStudentRanks.swift; sourceTree = "<group>"; };
 		BA690E991F26115400EF980F /* AssessmentReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentReports.swift; sourceTree = "<group>"; };
 		BA690E9A1F26115400EF980F /* AssessmentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentResponse.swift; sourceTree = "<group>"; };
@@ -170,6 +184,7 @@
 				BA63716C1F262A1700D77EA9 /* login */,
 				B9F6B0911F25E71000B695C0 /* New Group */,
 				BA690E9E1F26115C00EF980F /* complex */,
+				BA6371891F28826C00D77EA9 /* tabs */,
 				B9F6B0631F25E69C00B695C0 /* ModelController.swift */,
 				BA690EA11F26118100EF980F /* DataCache.swift */,
 				B9F6B0651F25E69C00B695C0 /* Main.storyboard */,
@@ -210,14 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				BA63716D1F262A4000D77EA9 /* Welcome.storyboard */,
-				BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */,
-				BA6371711F2640AA00D77EA9 /* LoginVC.swift */,
-				BA6371731F2640C500D77EA9 /* SignUpVC.swift */,
-				BA6371781F271BFA00D77EA9 /* ForgotPasswordVC.swift */,
-				BA63717C1F27946B00D77EA9 /* OtpVC.swift */,
-				BA63717E1F27978600D77EA9 /* ResetPasswordVC.swift */,
-				BA6371801F279CC000D77EA9 /* VerifyPhoneVC.swift */,
-				BA6371821F27A25C00D77EA9 /* BatchCodeVC.swift */,
+				BA6371861F28701B00D77EA9 /* view controllers */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -226,10 +234,47 @@
 			isa = PBXGroup;
 			children = (
 				BA63716A1F26236000D77EA9 /* Helper.swift */,
-				BA6371761F264A9A00D77EA9 /* RoundedButton.swift */,
+				BA6371761F264A9A00D77EA9 /* CircularButton.swift */,
 				BA63717A1F27284700D77EA9 /* TextFieldWithPadding.swift */,
+				BA6371841F2868C400D77EA9 /* RoundedShadowedButton.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		BA6371861F28701B00D77EA9 /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */,
+				BA6371711F2640AA00D77EA9 /* LoginVC.swift */,
+				BA6371731F2640C500D77EA9 /* SignUpVC.swift */,
+				BA6371781F271BFA00D77EA9 /* ForgotPasswordVC.swift */,
+				BA6371801F279CC000D77EA9 /* VerifyPhoneVC.swift */,
+				BA63717E1F27978600D77EA9 /* ResetPasswordVC.swift */,
+				BA63717C1F27946B00D77EA9 /* OtpVC.swift */,
+				BA6371821F27A25C00D77EA9 /* BatchCodeVC.swift */,
+				BA6371871F28707900D77EA9 /* PasswordChangedVC.swift */,
+			);
+			name = "view controllers";
+			sourceTree = "<group>";
+		};
+		BA6371891F28826C00D77EA9 /* tabs */ = {
+			isa = PBXGroup;
+			children = (
+				BA63718A1F28828400D77EA9 /* Tab.storyboard */,
+				BA63718C1F2882A500D77EA9 /* view controllers */,
+				BA6371931F288B7E00D77EA9 /* RoleTableCell.swift */,
+			);
+			name = tabs;
+			sourceTree = "<group>";
+		};
+		BA63718C1F2882A500D77EA9 /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA63718D1F2883FD00D77EA9 /* RolesVC.swift */,
+				BA63718F1F28868D00D77EA9 /* TasksVC.swift */,
+				BA6371911F2886A500D77EA9 /* CalenderVC.swift */,
+			);
+			name = "view controllers";
 			sourceTree = "<group>";
 		};
 		BA690E9E1F26115C00EF980F /* complex */ = {
@@ -368,6 +413,7 @@
 				BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */,
 				B9F6B0691F25E69C00B695C0 /* Assets.xcassets in Resources */,
 				B9F6B0671F25E69C00B695C0 /* Main.storyboard in Resources */,
+				BA63718B1F28828400D77EA9 /* Tab.storyboard in Resources */,
 				B9F6B0901F25E6F400B695C0 /* SecondStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6371851F2868C400D77EA9 /* RoundedShadowedButton.swift in Sources */,
 				B9F6B0601F25E69C00B695C0 /* RootViewController.swift in Sources */,
 				BA690EB11F26119E00EF980F /* Modules.swift in Sources */,
 				BA690EA91F26119000EF980F /* Events.swift in Sources */,
@@ -406,12 +453,14 @@
 				BA690EB91F2611AF00EF980F /* Skills.swift in Sources */,
 				BA6371721F2640AA00D77EA9 /* LoginVC.swift in Sources */,
 				BA6371741F2640C500D77EA9 /* SignUpVC.swift in Sources */,
+				BA6371921F2886A500D77EA9 /* CalenderVC.swift in Sources */,
 				BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */,
 				B9F6B05E1F25E69C00B695C0 /* AppDelegate.swift in Sources */,
-				BA6371771F264A9A00D77EA9 /* RoundedButton.swift in Sources */,
+				BA6371771F264A9A00D77EA9 /* CircularButton.swift in Sources */,
 				BA690EA21F26118100EF980F /* ComplexObject.swift in Sources */,
 				BA690EB21F26119E00EF980F /* Notifications.swift in Sources */,
 				BA690EAB1F26119000EF980F /* Lesson.swift in Sources */,
+				BA6371941F288B7E00D77EA9 /* RoleTableCell.swift in Sources */,
 				BA63717D1F27946B00D77EA9 /* OtpVC.swift in Sources */,
 				BA690EB41F26119E00EF980F /* SkillObjectives.swift in Sources */,
 				BA6371831F27A25C00D77EA9 /* BatchCodeVC.swift in Sources */,
@@ -424,7 +473,10 @@
 				BA690E9D1F26115500EF980F /* AssessmentResponse.swift in Sources */,
 				BA63716B1F26236000D77EA9 /* Helper.swift in Sources */,
 				BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */,
+				BA6371881F28707900D77EA9 /* PasswordChangedVC.swift in Sources */,
 				BA690EA31F26118100EF980F /* Courses.swift in Sources */,
+				BA6371901F28868D00D77EA9 /* TasksVC.swift in Sources */,
+				BA63718E1F2883FD00D77EA9 /* RolesVC.swift in Sources */,
 				BA690EAC1F26119000EF980F /* Lessons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
