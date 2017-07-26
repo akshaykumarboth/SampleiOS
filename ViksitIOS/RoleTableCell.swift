@@ -16,7 +16,6 @@ class RoleTableCell: UITableViewCell {
     
     @IBOutlet var bgCardView: UIView!
     @IBOutlet var roleProgress: UIProgressView!
-
     @IBOutlet var roleMessage: UILabel!
     
     override func awakeFromNib() {
