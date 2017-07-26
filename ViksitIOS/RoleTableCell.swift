@@ -10,10 +10,10 @@ import UIKit
 
 class RoleTableCell: UITableViewCell {
     
+    
     @IBOutlet var roleImage: UIImageView!
     @IBOutlet var roleCategory: UILabel!
     @IBOutlet var roleName: UILabel!
-    
     @IBOutlet var bgCardView: UIView!
     @IBOutlet var roleProgress: UIProgressView!
     @IBOutlet var roleMessage: UILabel!
@@ -32,4 +32,5 @@ class RoleTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
 }

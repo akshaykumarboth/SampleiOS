@@ -36,6 +36,7 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubview(toBack: whiteRoundedView)*/
         //
+        
         return cell
     }
     //
