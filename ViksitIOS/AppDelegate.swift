@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/user/3658/complex", method: "GET", param: [:])
+        var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/user/449/complex", method: "GET", param: [:])
         DataCache.sharedInstance.cache["complexObject"] = response
 
         
