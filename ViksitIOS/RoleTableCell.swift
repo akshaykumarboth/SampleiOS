@@ -22,7 +22,7 @@ class RoleTableCell: UITableViewCell {
         // Initialization code
         bgCardView.backgroundColor = UIColor.white
         bgCardView.layer.cornerRadius = 3.0
-        contentView.backgroundColor = UIColor.gray
+        //contentView.backgroundColor = UIColor("f5f6f9")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

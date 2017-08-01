@@ -12,10 +12,22 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
 
     var notifications: Array<Notifications> = []
     
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notifications.count
     }
+
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(notifications[indexPath.row].id!)
+    }
     
+    @IBAction func onBackPressed(_ sender: UIButton) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        self.present(nextViewController, animated:true, completion:nil)
+        
+    }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "notificationCell", for: indexPath) as! NotificationTableCell
@@ -29,22 +41,36 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             }
         }
 
-        cell.notificationMessage.text = notifications[indexPath.row].message
+        //cell.notificationMessage.text = notifications[indexPath.row].message
         cell.notificationDuration.text = notifications[indexPath.row].time
+        cell.notificationMessageView.isUserInteractionEnabled = false
+        cell.notificationMessageView.loadHTMLString(wrapInHtml(body: notifications[indexPath.row].message!), baseURL: nil)
         
         return cell
     }
     
     
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(notifications[indexPath.row].id)
+    
+    
+    func wrapInHtml(body: String) -> String {
+        var html = "<html>"
+        html += "<head>"
+        html += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+        html += "<style> body { font-size: 8px; padding: 0 !important; margin: 0 !important} </style>"
+        html += "</head>"
+        html += "<body>"
+        html += body
+        html += "</body>"
+        html += "</html>"
+        
+        return html
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
-            var complexObject = ComplexObject(JSONString: complexCache)
+            let complexObject = ComplexObject(JSONString: complexCache)
             notifications = complexObject.notifications!
         }
 

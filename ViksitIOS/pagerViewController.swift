@@ -8,9 +8,9 @@
 
 import UIKit
 
-class pagerViewController: UIPageViewController, UIPageViewControllerDataSource {
+class pagerViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    //var tasks: Array<Tasks> = []
+    var tasks: Array<Tasks> = []
     
     //var vcList: [UIViewController] = []
     /*var viewControllerList: [UIViewController] = [
@@ -72,6 +72,7 @@ class pagerViewController: UIPageViewController, UIPageViewControllerDataSource 
         //
         self.dataSource = self
         if let firstVC = viewControllerList.first {
+            
             self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
 

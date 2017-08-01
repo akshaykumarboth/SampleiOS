@@ -46,16 +46,29 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let month = getMonth(monthIndex: getSubstring(str: events[indexPath.row].startDate!, startOffest: 5, endOffset: -12))
         let date = getSubstring(str: events[indexPath.row].startDate!, startOffest: 8, endOffset: -9)
         let starthours = setTimeFormat(dateString: events[indexPath.row].startDate!)
-        cell.eventDurationLabel.text = starthours + getSubstring(str: events[indexPath.row].startDate!, startOffest: 14, endOffset: 0)
+        cell.eventDurationLabel.text = starthours + getSubstring(str: events[indexPath.row].startDate!, startOffest: 13, endOffset: -3)
         
         cell.eventMonthLabel.text = month
         cell.eventNameView.isUserInteractionEnabled = false
-        cell.eventNameView.loadHTMLString(events[indexPath.row].name as! String, baseURL: nil)
+        cell.eventNameView.loadHTMLString(wrapInHtml(body: events[indexPath.row].name as! String), baseURL: nil)
         cell.eventDateLabel.text = date
         cell.eventMonthLabel.text = month
         
-        
         return cell
+    }
+    
+    func wrapInHtml(body: String) -> String {
+        var html = "<html>"
+        html += "<head>"
+        html += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+        html += "<style> body { font-size: 13px; padding: 0 !important; margin: 0 !important} </style>"
+        html += "</head>"
+        html += "<body>"
+        html += body
+        html += "</body>"
+        html += "</html>"
+        
+        return html
     }
     
     func getMonth(monthIndex: String) -> String {
@@ -80,8 +93,11 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func setTimeFormat(dateString: String)-> String {
         let hours = getSubstring(str: dateString, startOffest: 10, endOffset: -6)
-        if Int(hours)! > 12 {
-            let hourNumber = Int(hours)! - 12
+        let trimmedhours = hours.trimmingCharacters(in: .whitespacesAndNewlines)
+        print("hours - > ",trimmedhours)
+        let hrs = Int(trimmedhours)
+        if hrs! > 12 {
+            let hourNumber = hrs! - 12
             return String(hourNumber)
         } else {
             return hours
