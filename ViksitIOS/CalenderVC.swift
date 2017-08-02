@@ -22,12 +22,16 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func onNotificationPressed(_ sender: UIButton) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Modules", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "NotificationsVC") as! NotificationsVC
+        self.present(nextViewController, animated:true, completion:nil)
     }
+   
     
-
+    
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
@@ -39,6 +43,8 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "calenderCell", for: indexPath) as! CalenderTableCell
         
         
@@ -46,7 +52,7 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let month = getMonth(monthIndex: getSubstring(str: events[indexPath.row].startDate!, startOffest: 5, endOffset: -12))
         let date = getSubstring(str: events[indexPath.row].startDate!, startOffest: 8, endOffset: -9)
         let starthours = setTimeFormat(dateString: events[indexPath.row].startDate!)
-        cell.eventDurationLabel.text = starthours + getSubstring(str: events[indexPath.row].startDate!, startOffest: 13, endOffset: -3)
+        cell.eventDurationLabel.text = starthours /*+ getSubstring(str: events[indexPath.row].startDate!, startOffest: 13, endOffset: -3)*/
         
         cell.eventMonthLabel.text = month
         cell.eventNameView.isUserInteractionEnabled = false
@@ -98,9 +104,11 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let hrs = Int(trimmedhours)
         if hrs! > 12 {
             let hourNumber = hrs! - 12
-            return String(hourNumber)
+            return String(hourNumber) + getSubstring(str: dateString, startOffest: 13, endOffset: -3) + " PM"
+        } else if hrs! == 00{
+            return "12" + getSubstring(str: dateString, startOffest: 13, endOffset: -3) + " AM"
         } else {
-            return hours
+            return hours + getSubstring(str: dateString, startOffest: 13, endOffset: -3) + " AM"
         }
         
     }

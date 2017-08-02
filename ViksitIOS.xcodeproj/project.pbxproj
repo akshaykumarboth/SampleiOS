@@ -16,7 +16,6 @@
 		B9F6B06C1F25E69C00B695C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F6B06A1F25E69C00B695C0 /* LaunchScreen.storyboard */; };
 		B9F6B0771F25E69C00B695C0 /* ViksitIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0761F25E69C00B695C0 /* ViksitIOSTests.swift */; };
 		B9F6B0821F25E69C00B695C0 /* ViksitIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */; };
-		B9F6B0901F25E6F400B695C0 /* SecondStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F6B08F1F25E6F400B695C0 /* SecondStoryboard.storyboard */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -58,7 +57,12 @@
 		BA690EBB1F2611AF00EF980F /* StudentProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB71F2611AF00EF980F /* StudentProfile.swift */; };
 		BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB81F2611AF00EF980F /* Tasks.swift */; };
 		BAA147BC1F2F190800D1FFFE /* CalenderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147BB1F2F190800D1FFFE /* CalenderTableCell.swift */; };
-		BAA147C21F30AF1000D1FFFE /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147C11F30AF1000D1FFFE /* PageViewController.swift */; };
+		BAA147C51F30BE5900D1FFFE /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA147C41F30BE5900D1FFFE /* Slide.xib */; };
+		BAA147C71F30BE8C00D1FFFE /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147C61F30BE8C00D1FFFE /* Slide.swift */; };
+		BAA147C91F30BF6F00D1FFFE /* AKSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147C81F30BF6F00D1FFFE /* AKSViewController.swift */; };
+		BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA147CB1F31D16000D1FFFE /* Modules.storyboard */; };
+		BAA147CE1F31D18200D1FFFE /* ModulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */; };
+		BAA147D01F31E87F00D1FFFE /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147CF1F31E87F00D1FFFE /* ModuleCell.swift */; };
 		BAA42BA81F2B44040022C553 /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BA71F2B44040022C553 /* testVC.swift */; };
 		BAA42BAC1F2B700F0022C553 /* pagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BAB1F2B700F0022C553 /* pagerViewController.swift */; };
 		BAA42BAE1F2B878A0022C553 /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BAD1F2B878A0022C553 /* RedVC.swift */; };
@@ -99,7 +103,6 @@
 		B9F6B07D1F25E69C00B695C0 /* ViksitIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViksitIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViksitIOSUITests.swift; sourceTree = "<group>"; };
 		B9F6B0831F25E69C00B695C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9F6B08F1F25E6F400B695C0 /* SecondStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondStoryboard.storyboard; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -141,7 +144,12 @@
 		BA690EB71F2611AF00EF980F /* StudentProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfile.swift; sourceTree = "<group>"; };
 		BA690EB81F2611AF00EF980F /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		BAA147BB1F2F190800D1FFFE /* CalenderTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderTableCell.swift; sourceTree = "<group>"; };
-		BAA147C11F30AF1000D1FFFE /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		BAA147C41F30BE5900D1FFFE /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		BAA147C61F30BE8C00D1FFFE /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		BAA147C81F30BF6F00D1FFFE /* AKSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKSViewController.swift; sourceTree = "<group>"; };
+		BAA147CB1F31D16000D1FFFE /* Modules.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Modules.storyboard; sourceTree = "<group>"; };
+		BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModulesVC.swift; sourceTree = "<group>"; };
+		BAA147CF1F31E87F00D1FFFE /* ModuleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
 		BAA42BA71F2B44040022C553 /* testVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
 		BAA42BAB1F2B700F0022C553 /* pagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pagerViewController.swift; sourceTree = "<group>"; };
 		BAA42BAD1F2B878A0022C553 /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedVC.swift; sourceTree = "<group>"; };
@@ -200,16 +208,15 @@
 				B9F6B05D1F25E69C00B695C0 /* AppDelegate.swift */,
 				B9F6B05F1F25E69C00B695C0 /* RootViewController.swift */,
 				B9F6B0611F25E69C00B695C0 /* DataViewController.swift */,
-				BA6371751F264A7C00D77EA9 /* Util */,
-				BA63716C1F262A1700D77EA9 /* login */,
-				B9F6B0911F25E71000B695C0 /* New Group */,
-				BA690E9E1F26115C00EF980F /* complex */,
-				BA6371891F28826C00D77EA9 /* tabs */,
 				B9F6B0631F25E69C00B695C0 /* ModelController.swift */,
-				BA690EA11F26118100EF980F /* DataCache.swift */,
+				BA63716C1F262A1700D77EA9 /* login */,
+				BA6371891F28826C00D77EA9 /* tabs */,
+				BAA147CA1F31D11B00D1FFFE /* modules */,
+				BA690E9E1F26115C00EF980F /* complex */,
+				BA6371751F264A7C00D77EA9 /* Util */,
 				B9F6B0651F25E69C00B695C0 /* Main.storyboard */,
-				B9F6B0681F25E69C00B695C0 /* Assets.xcassets */,
 				B9F6B06A1F25E69C00B695C0 /* LaunchScreen.storyboard */,
+				B9F6B0681F25E69C00B695C0 /* Assets.xcassets */,
 				B9F6B06D1F25E69C00B695C0 /* Info.plist */,
 			);
 			path = ViksitIOS;
@@ -233,14 +240,6 @@
 			path = ViksitIOSUITests;
 			sourceTree = "<group>";
 		};
-		B9F6B0911F25E71000B695C0 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-				B9F6B08F1F25E6F400B695C0 /* SecondStoryboard.storyboard */,
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
 		BA63716C1F262A1700D77EA9 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +256,7 @@
 				BA6371761F264A9A00D77EA9 /* CircularButton.swift */,
 				BA63717A1F27284700D77EA9 /* TextFieldWithPadding.swift */,
 				BA6371841F2868C400D77EA9 /* RoundedShadowedButton.swift */,
+				BA690EA11F26118100EF980F /* DataCache.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -281,16 +281,16 @@
 		BA6371891F28826C00D77EA9 /* tabs */ = {
 			isa = PBXGroup;
 			children = (
+				BAA147C31F30BE2D00D1FFFE /* Slides */,
 				BA63718A1F28828400D77EA9 /* Tab.storyboard */,
-				BAA147C11F30AF1000D1FFFE /* PageViewController.swift */,
-				BAA42BAD1F2B878A0022C553 /* RedVC.swift */,
+				BAA147C81F30BF6F00D1FFFE /* AKSViewController.swift */,
 				BA63719C1F293B6000D77EA9 /* TabBarController.swift */,
 				BAA42BAB1F2B700F0022C553 /* pagerViewController.swift */,
-				BA63719B1F28E08800D77EA9 /* notifications */,
 				BA63719A1F28E07900D77EA9 /* tasks */,
 				BA6371991F28E04300D77EA9 /* roles */,
 				BA63718C1F2882A500D77EA9 /* calender */,
 				BAA42BAF1F2B879A0022C553 /* BlueVC.swift */,
+				BAA42BAD1F2B878A0022C553 /* RedVC.swift */,
 				BAA42BB11F2B87C10022C553 /* GreenVC.swift */,
 			);
 			name = tabs;
@@ -353,6 +353,26 @@
 				BA690E9A1F26115400EF980F /* AssessmentResponse.swift */,
 			);
 			name = complex;
+			sourceTree = "<group>";
+		};
+		BAA147C31F30BE2D00D1FFFE /* Slides */ = {
+			isa = PBXGroup;
+			children = (
+				BAA147C41F30BE5900D1FFFE /* Slide.xib */,
+				BAA147C61F30BE8C00D1FFFE /* Slide.swift */,
+			);
+			name = Slides;
+			sourceTree = "<group>";
+		};
+		BAA147CA1F31D11B00D1FFFE /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				BAA147CB1F31D16000D1FFFE /* Modules.storyboard */,
+				BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */,
+				BAA147CF1F31E87F00D1FFFE /* ModuleCell.swift */,
+				BA63719B1F28E08800D77EA9 /* notifications */,
+			);
+			name = modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,10 +485,11 @@
 			files = (
 				B9F6B06C1F25E69C00B695C0 /* LaunchScreen.storyboard in Resources */,
 				BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */,
+				BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */,
 				B9F6B0691F25E69C00B695C0 /* Assets.xcassets in Resources */,
+				BAA147C51F30BE5900D1FFFE /* Slide.xib in Resources */,
 				B9F6B0671F25E69C00B695C0 /* Main.storyboard in Resources */,
 				BA63718B1F28828400D77EA9 /* Tab.storyboard in Resources */,
-				B9F6B0901F25E6F400B695C0 /* SecondStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,19 +515,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA6371851F2868C400D77EA9 /* RoundedShadowedButton.swift in Sources */,
-				BAA147C21F30AF1000D1FFFE /* PageViewController.swift in Sources */,
 				B9F6B0601F25E69C00B695C0 /* RootViewController.swift in Sources */,
 				BA690EB11F26119E00EF980F /* Modules.swift in Sources */,
 				BAA42BB21F2B87C10022C553 /* GreenVC.swift in Sources */,
 				BA690EA91F26119000EF980F /* Events.swift in Sources */,
+				BAA147D01F31E87F00D1FFFE /* ModuleCell.swift in Sources */,
 				BA690EBA1F2611AF00EF980F /* SkillsReport.swift in Sources */,
 				BA690EB31F26119E00EF980F /* Response.swift in Sources */,
 				BAA42BAC1F2B700F0022C553 /* pagerViewController.swift in Sources */,
 				BA63717F1F27978600D77EA9 /* ResetPasswordVC.swift in Sources */,
 				B9F6B0641F25E69C00B695C0 /* ModelController.swift in Sources */,
 				BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */,
+				BAA147C71F30BE8C00D1FFFE /* Slide.swift in Sources */,
 				BA63717B1F27284700D77EA9 /* TextFieldWithPadding.swift in Sources */,
 				B9F6B0621F25E69C00B695C0 /* DataViewController.swift in Sources */,
+				BAA147C91F30BF6F00D1FFFE /* AKSViewController.swift in Sources */,
 				BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */,
 				BA690EB91F2611AF00EF980F /* Skills.swift in Sources */,
 				BA6371721F2640AA00D77EA9 /* LoginVC.swift in Sources */,
@@ -514,6 +537,7 @@
 				BA6371921F2886A500D77EA9 /* CalenderVC.swift in Sources */,
 				BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */,
 				BAA42BA81F2B44040022C553 /* testVC.swift in Sources */,
+				BAA147CE1F31D18200D1FFFE /* ModulesVC.swift in Sources */,
 				B9F6B05E1F25E69C00B695C0 /* AppDelegate.swift in Sources */,
 				BA6371771F264A9A00D77EA9 /* CircularButton.swift in Sources */,
 				BA690EA21F26118100EF980F /* ComplexObject.swift in Sources */,

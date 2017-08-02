@@ -16,8 +16,22 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return roles.count
     }
     
+    
+    @IBAction func onNotificationPressed(_ sender: UIButton) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Modules", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "NotificationsVC") as! NotificationsVC
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    
+    
+    
+    
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         let cell = tableView.dequeueReusableCell(withIdentifier: "roleCell", for: indexPath) as! RoleTableCell
         
         //inserting omage from url async
@@ -43,7 +57,12 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(roles[indexPath.row].id)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Modules", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ModulesVC") as! ModulesVC
+        
+        nextViewController.modules = roles[indexPath.row].modules!
+        self.present(nextViewController, animated:true, completion:nil)
+        //print(roles[indexPath.row].id as Any)
     }
     
     override func viewDidLoad() {

@@ -1,10 +1,3 @@
-//
-//  NotificationsVC.swift
-//  ViksitIOS
-//
-//  Created by Akshay Kumar Both on 7/26/17.
-//  Copyright © 2017 Istar Feroz. All rights reserved.
-//
 
 import UIKit
 
@@ -25,11 +18,14 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        nextViewController.selectedIndex = 0
         self.present(nextViewController, animated:true, completion:nil)
         
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        tableView.showsVerticalScrollIndicator = false
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "notificationCell", for: indexPath) as! NotificationTableCell
         
         //loading image from url async
@@ -41,7 +37,6 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             }
         }
 
-        //cell.notificationMessage.text = notifications[indexPath.row].message
         cell.notificationDuration.text = notifications[indexPath.row].time
         cell.notificationMessageView.isUserInteractionEnabled = false
         cell.notificationMessageView.loadHTMLString(wrapInHtml(body: notifications[indexPath.row].message!), baseURL: nil)
@@ -57,6 +52,10 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         html += "<head>"
         html += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
         html += "<style> body { font-size: 8px; padding: 0 !important; margin: 0 !important} </style>"
+        /*html += "<script type=\"text/javascript\">"
+        html += "window.onload = function() {"
+        html +=  "window.location.href = \"ready://\" + document.body.offsetHeight; }"
+        html += "</script>"*/
         html += "</head>"
         html += "<body>"
         html += body
@@ -65,6 +64,7 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         return html
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,20 +77,5 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

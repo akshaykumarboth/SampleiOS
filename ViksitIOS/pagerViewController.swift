@@ -12,67 +12,29 @@ class pagerViewController: UIPageViewController, UIPageViewControllerDataSource,
     
     var tasks: Array<Tasks> = []
     
-    //var vcList: [UIViewController] = []
-    /*var viewControllerList: [UIViewController] = [
-     UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "redVC"), UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "blueVC")]*/
-    
-    var viewControllerList:[UIViewController] = {
-        let storyboard = UIStoryboard(name: "Tab", bundle: nil)
-        /*var tasks: Array<Tasks> = []
-        if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
-            tasks = ComplexObject(JSONString: complexCache).tasks!
-        }
-        
-        var vcList:[UIViewController] = []
-        
-        for task in tasks {
-            if task.itemType == "LESSON_INTERACTIVE" {
-                //var temp = storyboard as! RedVC
-                let vc1 = storyboard.instantiateViewController(withIdentifier: "redVC")
-                vcList.append(vc1)
-                
-            } else if task.itemType == "LESSON_PRESENTATION" {
-                //var temp = storyboard as! GreenVC
-                let vc1 = storyboard.instantiateViewController(withIdentifier: "blueVC")
-                vcList.append(vc1)
-            }
-        }*/
-        let vc1 = storyboard.instantiateViewController(withIdentifier: "redVC")
-        let vc2 = storyboard.instantiateViewController(withIdentifier: "blueVC")
-        let vc3 = storyboard.instantiateViewController(withIdentifier: "greenVC")
-        let vc4 = storyboard.instantiateViewController(withIdentifier: "redVC")
-        
-        return [vc1, vc2,vc3, vc4]
-        //return vcList
-    }()
-    
-    /*func VCInstance(name: String)-> UIViewController {
-        var sb = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: name)
-        if name == "redVC" {
-            var temp = sb as! RedVC
-        } else if name == "redVC" {
-            var temp = sb as! RedVC
-        }
-
-    }*/
+    var viewControllerList: [UIViewController] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //
+        if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
+            tasks = ComplexObject(JSONString: complexCache).tasks!
+        }
         
-        /*for task in tasks {
+        let storyboard = UIStoryboard(name: "Tab", bundle: nil)
+        for task in tasks {
             if task.itemType == "LESSON_PRESENTATION" {
-                let vc1 = storyboard?.instantiateViewController(withIdentifier: "redVC")
-                vcList.append(vc1!)
+                let vc1 = storyboard.instantiateViewController(withIdentifier: "redVC")
+                viewControllerList.append(vc1)
             } else if task.itemType == "LESSON_INTERACTIVE" {
-                let vc1 = storyboard?.instantiateViewController(withIdentifier: "greenVC")
-                vcList.append(vc1!)
+                let vc1 = storyboard.instantiateViewController(withIdentifier: "greenVC")
+                viewControllerList.append(vc1)
             }
-        }*/
-        //
+        }
+        
         self.dataSource = self
+        self.delegate = self
         if let firstVC = viewControllerList.first {
-            
             self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
 
@@ -100,7 +62,6 @@ class pagerViewController: UIPageViewController, UIPageViewControllerDataSource,
         
         return viewControllerList[nextIndex]
     }
-    
     
 
 }

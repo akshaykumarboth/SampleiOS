@@ -1,27 +1,25 @@
 //
-//  RoleTableCell.swift
+//  ModuleCell.swift
 //  ViksitIOS
 //
-//  Created by Akshay Kumar Both on 7/26/17.
+//  Created by Akshay Kumar Both on 8/2/17.
 //  Copyright © 2017 Istar Feroz. All rights reserved.
 //
 
 import UIKit
 
-class RoleTableCell: UITableViewCell {
+class ModuleCell: UITableViewCell {
     
-    @IBOutlet var roleImage: UIImageView!
-    @IBOutlet var roleCategory: UILabel!
-    @IBOutlet var roleName: UILabel!
+    @IBOutlet var moduleNameLabel: UILabel!
+    @IBOutlet var moduleImage: UIImageView!
     @IBOutlet var bgCardView: UIView!
-    @IBOutlet var roleProgress: UIProgressView!
-    @IBOutlet var roleMessage: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         bgCardView.backgroundColor = UIColor.white
         bgCardView.layer.cornerRadius = 3.0
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,5 +28,4 @@ class RoleTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    
 }

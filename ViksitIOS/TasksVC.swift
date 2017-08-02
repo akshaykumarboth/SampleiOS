@@ -10,6 +10,12 @@ import UIKit
 
 class TasksVC: UIViewController {
 
+    @IBAction func onNotificationPressed(_ sender: UIButton) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Modules", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "NotificationsVC") as! NotificationsVC
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +28,10 @@ class TasksVC: UIViewController {
     }
     //
 
-    
+    func goto(){
+        //to goto dashboard
+        
+    }
     /*
     // MARK: - Navigation
 
