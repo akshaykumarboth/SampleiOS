@@ -10,12 +10,50 @@ import UIKit
 
 class ModulesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var course: Courses?
     var modules: Array<Modules> = []
+    
+    
+    @IBOutlet var progressLabel: UILabel!
+    @IBOutlet var userPointsLabel: UILabel!
+    @IBOutlet var totalPointsLabel: UILabel!
+    @IBOutlet var rankLabel: UILabel!
+    @IBOutlet var roleTitle: UILabel!
+    
+    @IBAction func onInfoPressed(_ sender: UIButton) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Modules", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "RoleInfoVC") as! RoleInfoVC
+        nextViewController.course = course
+        self.present(nextViewController, animated:true, completion:nil)
+        
+    }
+    
+    
+    //
+    
+    func ordinal(i:Int)-> String{
+        var sufixes: [String] = ["th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th"]
+        switch (i % 100) {
+            case 11,12,13:
+                return String(i) + "th"
+            default:
+                return String(i) + sufixes[i % 10]
+    
+        }
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        modules = (course?.modules)!
         // Do any additional setup after loading the view.
+        
+        progressLabel.text = String(Int( (course?.progress)!)) + "%"
+        userPointsLabel.text = String(describing: (course?.userPoints)!) + " XP"
+        totalPointsLabel.text = "of " + String(describing: (course?.totalPoints)!) + " XP earned"
+        rankLabel.text = ordinal(i: (course?.rank)!)
+        roleTitle.text = course?.name
     }
 
     @IBAction func onBackPressed(_ sender: UIButton) {

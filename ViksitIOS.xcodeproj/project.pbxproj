@@ -63,6 +63,7 @@
 		BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA147CB1F31D16000D1FFFE /* Modules.storyboard */; };
 		BAA147CE1F31D18200D1FFFE /* ModulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */; };
 		BAA147D01F31E87F00D1FFFE /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147CF1F31E87F00D1FFFE /* ModuleCell.swift */; };
+		BAA147D21F3225D500D1FFFE /* RoleInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147D11F3225D500D1FFFE /* RoleInfoVC.swift */; };
 		BAA42BA81F2B44040022C553 /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BA71F2B44040022C553 /* testVC.swift */; };
 		BAA42BAC1F2B700F0022C553 /* pagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BAB1F2B700F0022C553 /* pagerViewController.swift */; };
 		BAA42BAE1F2B878A0022C553 /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BAD1F2B878A0022C553 /* RedVC.swift */; };
@@ -150,6 +151,7 @@
 		BAA147CB1F31D16000D1FFFE /* Modules.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Modules.storyboard; sourceTree = "<group>"; };
 		BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModulesVC.swift; sourceTree = "<group>"; };
 		BAA147CF1F31E87F00D1FFFE /* ModuleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
+		BAA147D11F3225D500D1FFFE /* RoleInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleInfoVC.swift; sourceTree = "<group>"; };
 		BAA42BA71F2B44040022C553 /* testVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
 		BAA42BAB1F2B700F0022C553 /* pagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pagerViewController.swift; sourceTree = "<group>"; };
 		BAA42BAD1F2B878A0022C553 /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedVC.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */,
 				BAA147CF1F31E87F00D1FFFE /* ModuleCell.swift */,
 				BA63719B1F28E08800D77EA9 /* notifications */,
+				BAA147D11F3225D500D1FFFE /* RoleInfoVC.swift */,
 			);
 			name = modules;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				BAA147BC1F2F190800D1FFFE /* CalenderTableCell.swift in Sources */,
 				BA690EAB1F26119000EF980F /* Lesson.swift in Sources */,
 				BA6371941F288B7E00D77EA9 /* RoleTableCell.swift in Sources */,
+				BAA147D21F3225D500D1FFFE /* RoleInfoVC.swift in Sources */,
 				BA63717D1F27946B00D77EA9 /* OtpVC.swift in Sources */,
 				BA690EB41F26119E00EF980F /* SkillObjectives.swift in Sources */,
 				BA6371831F27A25C00D77EA9 /* BatchCodeVC.swift in Sources */,

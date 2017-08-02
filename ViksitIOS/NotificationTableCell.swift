@@ -20,9 +20,7 @@ class NotificationTableCell: UITableViewCell, UIWebViewDelegate {
         /*let textSize: Int = 500
         notificationMessageView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.webkitTextSi‌​zeAdjust= '\(textSize)%%'")*/
         
-        var x = Int(notificationMessageView.stringByEvaluatingJavaScript(from: "document.body.offsetHeight")!)
-        print("height -> \(x)")
-        self.notiWebContainer.frame.size = CGSize(width: notiWebContainer.frame.width, height: CGFloat(x!))
+       
  
     }
     

@@ -60,7 +60,7 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Modules", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ModulesVC") as! ModulesVC
         
-        nextViewController.modules = roles[indexPath.row].modules!
+        nextViewController.course = roles[indexPath.row]
         self.present(nextViewController, animated:true, completion:nil)
         //print(roles[indexPath.row].id as Any)
     }
