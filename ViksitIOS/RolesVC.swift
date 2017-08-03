@@ -12,22 +12,25 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var roles: Array<Courses> = []
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return roles.count
+    @IBOutlet var profileBtn: UIButton!
+    
+    @IBAction func onProfilePressed(_ sender: UIButton) {
+        goto(storyBoardName: "Modules", storyBoardID: "NotificationsVC")
     }
     
-    
     @IBAction func onNotificationPressed(_ sender: UIButton) {
-        
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Modules", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "NotificationsVC") as! NotificationsVC
+        goto(storyBoardName: "Modules", storyBoardID: "NotificationsVC")
+    }
+    
+    func goto(storyBoardName: String, storyBoardID: String) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: storyBoardName, bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: storyBoardID)
         self.present(nextViewController, animated:true, completion:nil)
     }
     
-    
-    
-    
-    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return roles.count
+    }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.separatorStyle = .none
@@ -42,13 +45,7 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 cell.roleImage.image = UIImage(data: data!)
             }
         }
-        //
-        /*if let checkedUrl = URL(string: "http://shop.wwe.com/on/demandware.static/-/Sites/default/dw73135c17/images/slot/landing/superstar-landing/Superstar-Category_Superstar_562x408_paige.png") {
-         imageView.contentMode = .scaleAspectFit
-         downloadImage(url: checkedUrl)
-         }
-*/
-        //cell.roleImage.image = UIImage(named: animals[indexPath.row] + ".jpg" )
+        
         cell.roleCategory.text = roles[indexPath.row].category
         cell.roleMessage.text = roles[indexPath.row].message
         cell.roleName.text = roles[indexPath.row].name
@@ -68,10 +65,31 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var profileImgUrl: String = ""
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             roles = ComplexObject(JSONString: complexCache).courses!
+            profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
         }
-        // Do any additional setup after loading the view.
+    
+        //inserting image from url async
+        let url = URL(string: profileImgUrl)
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            DispatchQueue.main.async {
+                self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
+            }
+        }
+        profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
+        
+    }
+    
+    func makeButtonRound(button: UIButton, borderWidth: CGFloat, color: UIColor)-> UIButton{
+        button.layer.cornerRadius = button.frame.width/2
+        button.layer.masksToBounds = true
+        button.layer.borderWidth = borderWidth
+        button.layer.borderColor = color.cgColor
+        
+        return button
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,24 +98,6 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     
-    func goto(identifier: String, storyboardName: String){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-        self.present(nextViewController, animated:true, completion:nil)
-    }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    //
     func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in
