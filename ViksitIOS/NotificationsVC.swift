@@ -29,12 +29,16 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         let cell = tableView.dequeueReusableCell(withIdentifier: "notificationCell", for: indexPath) as! NotificationTableCell
         
         //loading image from url async
-        let url = URL(string: notifications[indexPath.row].imageURL!)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                cell.notificationImage.image = UIImage(data: data!)
+        do {
+            let url = URL(string: notifications[indexPath.row].imageURL!)
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    cell.notificationImage.image = UIImage(data: data!)
+                }
             }
+        } catch let error as NSError {
+            print(" Error \(error)")
         }
 
         cell.notificationDuration.text = notifications[indexPath.row].time

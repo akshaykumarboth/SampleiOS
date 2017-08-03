@@ -14,8 +14,10 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var profileBtn: UIButton!
     
+        
+    //todo
     @IBAction func onProfilePressed(_ sender: UIButton) {
-        goto(storyBoardName: "Modules", storyBoardID: "NotificationsVC")
+        goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
     }
     
     @IBAction func onNotificationPressed(_ sender: UIButton) {
@@ -37,20 +39,27 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.showsVerticalScrollIndicator = false
         let cell = tableView.dequeueReusableCell(withIdentifier: "roleCell", for: indexPath) as! RoleTableCell
         
-        //inserting omage from url async
-        let url = URL(string: roles[indexPath.row].imageURL!)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                cell.roleImage.image = UIImage(data: data!)
-            }
-        }
-        
+        //inserting image from url async for roleImage
+        loadImageAsync(url: roles[indexPath.row].imageURL!, imgView: cell.roleImage)
         cell.roleCategory.text = roles[indexPath.row].category
         cell.roleMessage.text = roles[indexPath.row].message
         cell.roleName.text = roles[indexPath.row].name
         
         return cell
+    }
+    
+    func loadImageAsync(url: String, imgView: UIImageView){
+        do {
+            let url = URL(string: url)
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    imgView.image = UIImage(data: data!)
+                }
+            }
+        }catch let error as NSError {
+            print(" Error \(error)")
+        }
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -66,12 +75,14 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
         
         var profileImgUrl: String = ""
+        var xp: Int = 0
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             roles = ComplexObject(JSONString: complexCache).courses!
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
+            xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
         }
     
-        //inserting image from url async
+        //inserting image from url async in profile button
         let url = URL(string: profileImgUrl)
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
@@ -79,17 +90,16 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
             }
         }
-        profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
+        makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
+        //userXpBtn.setTitle(String(xp) + " xp", for: .normal)
         
     }
     
-    func makeButtonRound(button: UIButton, borderWidth: CGFloat, color: UIColor)-> UIButton{
+    func makeButtonRound(button: UIButton, borderWidth: CGFloat, color: UIColor){
         button.layer.cornerRadius = button.frame.width/2
         button.layer.masksToBounds = true
         button.layer.borderWidth = borderWidth
         button.layer.borderColor = color.cgColor
-        
-        return button
     }
 
     override func didReceiveMemoryWarning() {

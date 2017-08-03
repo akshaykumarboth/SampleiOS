@@ -46,14 +46,20 @@
                                             <action selector="onProfilePressed:" destination="xdp-zX-lcl" eventType="touchUpInside" id="Lyk-JX-kHE"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFO-th-Tbs">
+                                        <rect key="frame" x="121" y="10" width="78" height="24"/>
+                                        <state key="normal" title="Button" image="back"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="rL8-5E-1Ac" secondAttribute="bottom" id="14m-Ga-Xxi"/>
                                     <constraint firstItem="XnR-4f-4d2" firstAttribute="top" secondItem="rJn-rU-Hk5" secondAttribute="top" constant="5" id="58U-AM-tVh"/>
+                                    <constraint firstItem="vFO-th-Tbs" firstAttribute="centerX" secondItem="rJn-rU-Hk5" secondAttribute="centerX" id="8Pm-JM-WH6"/>
                                     <constraint firstItem="XnR-4f-4d2" firstAttribute="leading" secondItem="rJn-rU-Hk5" secondAttribute="leading" constant="10" id="UfA-14-Ipz"/>
                                     <constraint firstItem="rL8-5E-1Ac" firstAttribute="top" secondItem="rJn-rU-Hk5" secondAttribute="top" id="Zgl-CA-U4H"/>
                                     <constraint firstAttribute="trailing" secondItem="rL8-5E-1Ac" secondAttribute="trailing" id="Zug-K9-8vb"/>
+                                    <constraint firstItem="vFO-th-Tbs" firstAttribute="centerY" secondItem="rJn-rU-Hk5" secondAttribute="centerY" id="arm-je-XzZ"/>
                                     <constraint firstAttribute="height" constant="45" id="qyN-JU-cCD"/>
                                     <constraint firstAttribute="bottom" secondItem="XnR-4f-4d2" secondAttribute="bottom" constant="5" id="uoU-ZZ-rDg"/>
                                 </constraints>
@@ -128,6 +134,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" image="tasks" selectedImage="tasks" id="3za-fm-ODr"/>
                     <connections>
+                        <outlet property="coinsBtn" destination="vFO-th-Tbs" id="XZV-Ot-nnW"/>
                         <outlet property="profileBtn" destination="XnR-4f-4d2" id="0Pa-X6-eAR"/>
                     </connections>
                 </viewController>
@@ -161,24 +168,27 @@
                                             <action selector="onNotificationPressed:" destination="eab-5P-szq" eventType="touchUpInside" id="nsu-UI-hEW"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nD-oY-gJv">
+                                        <rect key="frame" x="10" y="5" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="9nD-oY-gJv" secondAttribute="height" multiplier="1:1" id="zUa-w1-Oa0"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="onProfilePressed:" destination="eab-5P-szq" eventType="touchUpInside" id="bLX-t3-LE6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.2196078431372549" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="JxN-Qo-VSe" secondAttribute="trailing" id="3mP-PM-Zb8"/>
+                                    <constraint firstItem="9nD-oY-gJv" firstAttribute="top" secondItem="HyI-P1-H9n" secondAttribute="top" constant="5" id="40L-Pa-Pba"/>
                                     <constraint firstItem="JxN-Qo-VSe" firstAttribute="top" secondItem="HyI-P1-H9n" secondAttribute="top" id="5W4-6c-SZD"/>
                                     <constraint firstAttribute="height" constant="45" id="BcM-Ta-k8q"/>
                                     <constraint firstAttribute="bottom" secondItem="JxN-Qo-VSe" secondAttribute="bottom" id="O70-c7-0Bc"/>
+                                    <constraint firstItem="9nD-oY-gJv" firstAttribute="leading" secondItem="HyI-P1-H9n" secondAttribute="leading" constant="10" id="YI9-Ya-hXt"/>
+                                    <constraint firstAttribute="bottom" secondItem="9nD-oY-gJv" secondAttribute="bottom" constant="5" id="xcS-XD-Z9B"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nD-oY-gJv">
-                                <rect key="frame" x="10" y="25" width="35" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="9nD-oY-gJv" secondAttribute="height" multiplier="1:1" id="zUa-w1-Oa0"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="onProfilePressed:" destination="eab-5P-szq" eventType="touchUpInside" id="bLX-t3-LE6"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FTx-c8-CEv">
                                 <rect key="frame" x="0.0" y="65" width="320" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -324,13 +334,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9nD-oY-gJv" firstAttribute="top" secondItem="cmA-Gp-aBZ" secondAttribute="bottom" constant="5" id="0vG-ek-L7u"/>
-                            <constraint firstItem="9nD-oY-gJv" firstAttribute="leading" secondItem="sca-qn-v7z" secondAttribute="leading" constant="10" id="40g-Gp-LGa"/>
                             <constraint firstItem="FTx-c8-CEv" firstAttribute="top" secondItem="HyI-P1-H9n" secondAttribute="bottom" id="6fy-lb-E0e"/>
                             <constraint firstAttribute="trailing" secondItem="HyI-P1-H9n" secondAttribute="trailing" id="Amg-5c-6MQ"/>
-                            <constraint firstItem="FTx-c8-CEv" firstAttribute="top" secondItem="9nD-oY-gJv" secondAttribute="bottom" constant="5" id="BRd-m8-SI6"/>
                             <constraint firstAttribute="trailing" secondItem="FTx-c8-CEv" secondAttribute="trailing" id="Iey-VE-ArC"/>
-                            <constraint firstItem="9nD-oY-gJv" firstAttribute="width" secondItem="9nD-oY-gJv" secondAttribute="height" multiplier="1:1" id="Obr-Wz-9O3"/>
                             <constraint firstItem="9bL-OR-owO" firstAttribute="top" secondItem="FTx-c8-CEv" secondAttribute="bottom" id="Q9j-HT-LOE"/>
                             <constraint firstItem="HyI-P1-H9n" firstAttribute="top" secondItem="cmA-Gp-aBZ" secondAttribute="bottom" id="hR1-1c-Sw8"/>
                             <constraint firstItem="HyI-P1-H9n" firstAttribute="leading" secondItem="sca-qn-v7z" secondAttribute="leading" id="iah-KR-Rbb"/>
@@ -538,6 +544,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXC-NA-zGn">
                                 <rect key="frame" x="0.0" y="20" width="320" height="45"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz8-LK-IeR">
+                                        <rect key="frame" x="10" y="5" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Cz8-LK-IeR" secondAttribute="height" multiplier="1:1" id="i5c-zG-kFs"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="onProfilePressed:" destination="uO1-1r-X0X" eventType="touchUpInside" id="7Cy-Bg-6U8"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjt-dn-hN9">
                                         <rect key="frame" x="275" y="0.0" width="45" height="45"/>
                                         <constraints>
@@ -553,20 +568,14 @@
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="HbG-ne-6FO"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cz8-LK-IeR" secondAttribute="bottom" constant="5" id="QBX-Ts-ewL"/>
                                     <constraint firstAttribute="trailing" secondItem="sjt-dn-hN9" secondAttribute="trailing" id="V2T-K4-d4c"/>
+                                    <constraint firstItem="Cz8-LK-IeR" firstAttribute="top" secondItem="bXC-NA-zGn" secondAttribute="top" constant="5" id="YBs-Sf-7BQ"/>
+                                    <constraint firstItem="Cz8-LK-IeR" firstAttribute="leading" secondItem="bXC-NA-zGn" secondAttribute="leading" constant="10" id="ahG-MF-MZp"/>
                                     <constraint firstAttribute="bottom" secondItem="sjt-dn-hN9" secondAttribute="bottom" id="fkK-lB-F99"/>
                                     <constraint firstItem="sjt-dn-hN9" firstAttribute="top" secondItem="bXC-NA-zGn" secondAttribute="top" id="wOw-fy-X8K"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz8-LK-IeR">
-                                <rect key="frame" x="10" y="25" width="35" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Cz8-LK-IeR" secondAttribute="height" multiplier="1:1" id="i5c-zG-kFs"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="onProfilePressed:" destination="uO1-1r-X0X" eventType="touchUpInside" id="7Cy-Bg-6U8"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AgK-aF-B4f">
                                 <rect key="frame" x="0.0" y="65" width="320" height="40"/>
                                 <subviews>
@@ -733,12 +742,8 @@
                             <constraint firstItem="AgK-aF-B4f" firstAttribute="leading" secondItem="HZ2-s1-Z9W" secondAttribute="leading" id="JQW-mp-4fk"/>
                             <constraint firstAttribute="trailing" secondItem="bXC-NA-zGn" secondAttribute="trailing" id="WOJ-W2-eW8"/>
                             <constraint firstItem="bXC-NA-zGn" firstAttribute="top" secondItem="nsv-4r-AKN" secondAttribute="bottom" id="XMV-0v-xQn"/>
-                            <constraint firstItem="Cz8-LK-IeR" firstAttribute="top" secondItem="nsv-4r-AKN" secondAttribute="bottom" constant="5" id="aTn-TV-WHh"/>
-                            <constraint firstItem="AgK-aF-B4f" firstAttribute="top" secondItem="Cz8-LK-IeR" secondAttribute="bottom" constant="5" id="fbQ-8H-Gso"/>
-                            <constraint firstItem="Cz8-LK-IeR" firstAttribute="leading" secondItem="HZ2-s1-Z9W" secondAttribute="leading" constant="10" id="jUN-lZ-BWn"/>
                             <constraint firstItem="S7B-5D-qir" firstAttribute="top" secondItem="M05-Mi-Xpp" secondAttribute="bottom" id="oew-EE-G94"/>
                             <constraint firstAttribute="trailing" secondItem="AgK-aF-B4f" secondAttribute="trailing" id="qiF-YN-W1E"/>
-                            <constraint firstItem="Cz8-LK-IeR" firstAttribute="width" secondItem="Cz8-LK-IeR" secondAttribute="height" multiplier="1:1" id="rG3-FI-zVr"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calender" image="calender" selectedImage="calender" id="b4b-kI-Gax"/>
@@ -753,6 +758,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="24" height="24"/>
         <image name="calendar" width="48" height="48"/>
         <image name="calender" width="24" height="24"/>
         <image name="notification" width="24" height="24"/>

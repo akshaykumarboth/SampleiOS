@@ -15,7 +15,7 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var profileBtn: UIButton!
     
     @IBAction func onProfilePressed(_ sender: UIButton) {
-        goto(storyBoardName: "Modules", storyBoardID: "NotificationsVC")
+        goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
     }
     
     @IBAction func onNotificationPressed(_ sender: UIButton) {

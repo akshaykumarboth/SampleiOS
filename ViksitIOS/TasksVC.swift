@@ -10,8 +10,13 @@ import UIKit
 
 class TasksVC: UIViewController {
 
+    @IBOutlet var coinsBtn: UIButton!
+    
     
     @IBOutlet var profileBtn: UIButton!
+    
+   
+    
     
     @IBAction func onNotificationPressed(_ sender: UIButton) {
         goto(storyBoardName: "Modules", storyBoardID: "NotificationsVC")
@@ -19,7 +24,7 @@ class TasksVC: UIViewController {
     }
     
     @IBAction func onProfilePressed(_ sender: UIButton) {
-        goto(storyBoardName: "Modules", storyBoardID: "NotificationsVC")
+        goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
     }
     
     
@@ -34,8 +39,10 @@ class TasksVC: UIViewController {
         super.viewDidLoad()
         
         var profileImgUrl: String = ""
+        var xp: Int = 0
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
+            xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
         }
         
         //inserting image from url async
@@ -48,7 +55,11 @@ class TasksVC: UIViewController {
         }
         profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
         
-        
+        //set userpoints in toolbar
+        //userXpBtn.setTitle(String(xp) + " xp", for: .normal)
+        var spacing: CGFloat = 10 // the amount of spacing to appear between image and title
+        coinsBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spacing);
+        coinsBtn.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
 
         // Do any additional setup after loading the view.
     }
