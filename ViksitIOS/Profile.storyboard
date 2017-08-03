@@ -99,7 +99,33 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjD-0c-IAF">
                                         <rect key="frame" x="0.0" y="149" width="375" height="404"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nKO-ip-inx">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="404"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="accountCell" id="bev-gd-2Z3">
+                                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bev-gd-2Z3" id="3N2-iy-bhz">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="5lb-HW-KmK" id="UKO-ci-Yyq"/>
+                                                    <outlet property="delegate" destination="5lb-HW-KmK" id="dHJ-FX-YWB"/>
+                                                </connections>
+                                            </tableView>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="nKO-ip-inx" secondAttribute="bottom" id="Iku-h9-eSh"/>
+                                            <constraint firstAttribute="trailing" secondItem="nKO-ip-inx" secondAttribute="trailing" id="f0y-5N-ARG"/>
+                                            <constraint firstItem="nKO-ip-inx" firstAttribute="leading" secondItem="LjD-0c-IAF" secondAttribute="leading" id="q1P-yd-XaM"/>
+                                            <constraint firstItem="nKO-ip-inx" firstAttribute="top" secondItem="LjD-0c-IAF" secondAttribute="top" id="vRU-uI-6Vl"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
