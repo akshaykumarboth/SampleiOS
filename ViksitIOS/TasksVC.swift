@@ -9,14 +9,17 @@
 import UIKit
 
 class TasksVC: UIViewController {
+    
+    var tasks: Array<Tasks> = []
 
     @IBOutlet var coinsBtn: UIButton!
-    
-    
+    @IBOutlet var experiencePoints: UILabel!
     @IBOutlet var profileBtn: UIButton!
     
    
-    
+    @IBAction func onCoinsPressed(_ sender: UIButton) {
+        goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
+    }
     
     @IBAction func onNotificationPressed(_ sender: UIButton) {
         goto(storyBoardName: "Modules", storyBoardID: "NotificationsVC")
@@ -27,22 +30,18 @@ class TasksVC: UIViewController {
         goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
     }
     
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.tabBarController?.tabBar.tintColor = UIColor(red: 235/255, green: 56/255, blue: 79/255, alpha: 1.00)
-        self.tabBarController?.tabBar.backgroundColor = UIColor.white        //The rest of your code
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var profileImgUrl: String = ""
         var xp: Int = 0
+        var coins: Int = 0
+        
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
+            tasks = (ComplexObject(JSONString: complexCache).tasks)!
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
             xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
+            coins = (ComplexObject(JSONString: complexCache).studentProfile?.coins)!
         }
         
         //inserting image from url async
@@ -56,10 +55,12 @@ class TasksVC: UIViewController {
         profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
         
         //set userpoints in toolbar
-        //userXpBtn.setTitle(String(xp) + " xp", for: .normal)
-        var spacing: CGFloat = 10 // the amount of spacing to appear between image and title
-        coinsBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spacing);
-        coinsBtn.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
+        coinsBtn.setTitle(" " + String(coins), for: .normal)
+        experiencePoints.text = String(xp)
+        
+        //changing tint color of tab bar
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 235/255, green: 56/255, blue: 79/255, alpha: 1.00)
+        self.tabBarController?.tabBar.backgroundColor = UIColor.white        //The rest of your code
 
         // Do any additional setup after loading the view.
     }

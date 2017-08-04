@@ -12,12 +12,12 @@ class PerformanceVC: UIViewController {
     
    
     @IBAction func onBackPressed(_ sender: UIButton) {
-        goto(storyBoardName: "Tab", storyBoardID: "tasksVC")
+        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
     }
     
     
     @IBAction func onLogoutPressed(_ sender: UIButton) {
-        goto(storyBoardName: "Tab", storyBoardID: "tasksVC")
+        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
     }
     
 

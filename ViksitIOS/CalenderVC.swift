@@ -13,6 +13,15 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var events: Array<Events> = []
     
     @IBOutlet var profileBtn: UIButton!
+    @IBOutlet var coinsBtn: UIButton!
+    @IBOutlet var experiencePointsLabel: UILabel!
+    
+    
+    
+    @IBAction func onCoinsPressed(_ sender: UIButton) {
+        goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
+    }
+    
     
     @IBAction func onProfilePressed(_ sender: UIButton) {
         goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
@@ -27,9 +36,13 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
         
         var profileImgUrl: String = ""
+        var xp: Int = 0
+        var coins: Int = 0
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             events = ComplexObject(JSONString: complexCache).events!
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
+            xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
+            coins = (ComplexObject(JSONString: complexCache).studentProfile?.coins)!
         }
         
         //inserting image from url async
@@ -41,6 +54,9 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
         profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
+        
+        coinsBtn.setTitle(" " + String(coins), for: .normal)
+        experiencePointsLabel.text = String(xp)
         
     }
    

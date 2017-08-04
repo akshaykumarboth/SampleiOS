@@ -13,6 +13,13 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var roles: Array<Courses> = []
     
     @IBOutlet var profileBtn: UIButton!
+    @IBOutlet var coinsBtn: UIButton!
+    @IBOutlet var experiencePoints: UILabel!
+    
+    
+    @IBAction func onCoinsPressed(_ sender: Any) {
+        goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
+    }
     
         
     //todo
@@ -76,10 +83,13 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         var profileImgUrl: String = ""
         var xp: Int = 0
+        var coins: Int = 0
+        
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             roles = ComplexObject(JSONString: complexCache).courses!
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
             xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
+            coins = (ComplexObject(JSONString: complexCache).studentProfile?.coins)!
         }
     
         //inserting image from url async in profile button
@@ -92,6 +102,8 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
         //userXpBtn.setTitle(String(xp) + " xp", for: .normal)
+        coinsBtn.setTitle(" " + String(coins), for: .normal)
+        experiencePoints.text = String(xp)
         
     }
     
