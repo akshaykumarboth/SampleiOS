@@ -563,11 +563,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
-                            <color key="value" red="0.93880208333333337" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="xdp-zX-lcl" kind="relationship" relationship="viewControllers" id="oPN-Rl-WRs"/>
                         <segue destination="eab-5P-szq" kind="relationship" relationship="viewControllers" id="Uo9-53-edV"/>

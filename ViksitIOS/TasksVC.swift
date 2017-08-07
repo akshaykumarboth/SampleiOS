@@ -18,7 +18,7 @@ class TasksVC: UIViewController {
     
    
     @IBAction func onCoinsPressed(_ sender: UIButton) {
-        goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
+        goto(storyBoardName: "Profile", storyBoardID: "LeaderboardVC")
     }
     
     @IBAction func onNotificationPressed(_ sender: UIButton) {

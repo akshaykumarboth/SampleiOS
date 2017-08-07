@@ -249,9 +249,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ip7-vM-Vkm" firstAttribute="top" secondItem="Ivb-44-CEX" secondAttribute="bottom" id="1x0-hJ-sPh"/>
                             <constraint firstItem="ip7-vM-Vkm" firstAttribute="leading" secondItem="fh2-8f-Awc" secondAttribute="leading" id="ATn-bS-QcQ"/>
                             <constraint firstAttribute="trailing" secondItem="Bp0-BT-KOd" secondAttribute="trailing" id="CV4-1U-G0H"/>
+                            <constraint firstItem="ip7-vM-Vkm" firstAttribute="top" secondItem="Ivb-44-CEX" secondAttribute="bottom" id="QMX-Nf-eM9"/>
                             <constraint firstAttribute="bottom" secondItem="Bp0-BT-KOd" secondAttribute="bottom" id="etr-ma-66F"/>
                             <constraint firstAttribute="trailing" secondItem="ip7-vM-Vkm" secondAttribute="trailing" id="iFJ-UA-Taz"/>
                             <constraint firstItem="Bp0-BT-KOd" firstAttribute="leading" secondItem="fh2-8f-Awc" secondAttribute="leading" id="lxr-sA-4dq"/>

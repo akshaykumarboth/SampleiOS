@@ -20,7 +20,7 @@ public class Modules {
         }
         if json["name"] != nil {
             self.name = json["name"] as? String
-            print("Module name is \(self.name!)")
+            //print("Module name is \(self.name!)")
         }
         if json["description"] != nil {
             self.description = json["description"] as? String

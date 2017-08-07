@@ -16,6 +16,7 @@
 		B9F6B06C1F25E69C00B695C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F6B06A1F25E69C00B695C0 /* LaunchScreen.storyboard */; };
 		B9F6B0771F25E69C00B695C0 /* ViksitIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0761F25E69C00B695C0 /* ViksitIOSTests.swift */; };
 		B9F6B0821F25E69C00B695C0 /* ViksitIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */; };
+		BA43ED561F34B1AD000D2DB0 /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED551F34B1AD000D2DB0 /* DummyVC.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -69,6 +70,8 @@
 		BAA147DD1F33627000D1FFFE /* PerformanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147DC1F33627000D1FFFE /* PerformanceVC.swift */; };
 		BAA147DF1F33628D00D1FFFE /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147DE1F33628D00D1FFFE /* AccountVC.swift */; };
 		BAA147E11F33666500D1FFFE /* ProfileTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147E01F33666500D1FFFE /* ProfileTBC.swift */; };
+		BAA147EB1F34985000D1FFFE /* LeaderboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147EA1F34985000D1FFFE /* LeaderboardVC.swift */; };
+		BAA147ED1F3498FB00D1FFFE /* LeaderboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147EC1F3498FB00D1FFFE /* LeaderboardCell.swift */; };
 		BAA42BA81F2B44040022C553 /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BA71F2B44040022C553 /* testVC.swift */; };
 		BAA42BAC1F2B700F0022C553 /* pagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BAB1F2B700F0022C553 /* pagerViewController.swift */; };
 		BAA42BAE1F2B878A0022C553 /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BAD1F2B878A0022C553 /* RedVC.swift */; };
@@ -109,6 +112,7 @@
 		B9F6B07D1F25E69C00B695C0 /* ViksitIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViksitIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViksitIOSUITests.swift; sourceTree = "<group>"; };
 		B9F6B0831F25E69C00B695C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA43ED551F34B1AD000D2DB0 /* DummyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 		BAA147DC1F33627000D1FFFE /* PerformanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceVC.swift; sourceTree = "<group>"; };
 		BAA147DE1F33628D00D1FFFE /* AccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		BAA147E01F33666500D1FFFE /* ProfileTBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTBC.swift; sourceTree = "<group>"; };
+		BAA147EA1F34985000D1FFFE /* LeaderboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardVC.swift; sourceTree = "<group>"; };
+		BAA147EC1F3498FB00D1FFFE /* LeaderboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardCell.swift; sourceTree = "<group>"; };
 		BAA42BA71F2B44040022C553 /* testVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
 		BAA42BAB1F2B700F0022C553 /* pagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pagerViewController.swift; sourceTree = "<group>"; };
 		BAA42BAD1F2B878A0022C553 /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedVC.swift; sourceTree = "<group>"; };
@@ -397,6 +403,9 @@
 				BAA147DC1F33627000D1FFFE /* PerformanceVC.swift */,
 				BAA147DE1F33628D00D1FFFE /* AccountVC.swift */,
 				BAA147E01F33666500D1FFFE /* ProfileTBC.swift */,
+				BAA147EA1F34985000D1FFFE /* LeaderboardVC.swift */,
+				BAA147EC1F3498FB00D1FFFE /* LeaderboardCell.swift */,
+				BA43ED551F34B1AD000D2DB0 /* DummyVC.swift */,
 			);
 			name = profile;
 			sourceTree = "<group>";
@@ -576,6 +585,7 @@
 				BA690EAB1F26119000EF980F /* Lesson.swift in Sources */,
 				BA6371941F288B7E00D77EA9 /* RoleTableCell.swift in Sources */,
 				BAA147D21F3225D500D1FFFE /* RoleInfoVC.swift in Sources */,
+				BAA147ED1F3498FB00D1FFFE /* LeaderboardCell.swift in Sources */,
 				BA63717D1F27946B00D77EA9 /* OtpVC.swift in Sources */,
 				BA690EB41F26119E00EF980F /* SkillObjectives.swift in Sources */,
 				BA6371831F27A25C00D77EA9 /* BatchCodeVC.swift in Sources */,
@@ -588,6 +598,8 @@
 				BA6371791F271BFA00D77EA9 /* ForgotPasswordVC.swift in Sources */,
 				BAA42BAE1F2B878A0022C553 /* RedVC.swift in Sources */,
 				BA690E9D1F26115500EF980F /* AssessmentResponse.swift in Sources */,
+				BAA147EB1F34985000D1FFFE /* LeaderboardVC.swift in Sources */,
+				BA43ED561F34B1AD000D2DB0 /* DummyVC.swift in Sources */,
 				BA63716B1F26236000D77EA9 /* Helper.swift in Sources */,
 				BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */,
 				BA6371881F28707900D77EA9 /* PasswordChangedVC.swift in Sources */,
