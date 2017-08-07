@@ -17,6 +17,7 @@
 		B9F6B0771F25E69C00B695C0 /* ViksitIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0761F25E69C00B695C0 /* ViksitIOSTests.swift */; };
 		B9F6B0821F25E69C00B695C0 /* ViksitIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */; };
 		BA43ED561F34B1AD000D2DB0 /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED551F34B1AD000D2DB0 /* DummyVC.swift */; };
+		BA43ED581F386E3E000D2DB0 /* CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED571F386E3E000D2DB0 /* CircularImage.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -113,6 +114,7 @@
 		B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViksitIOSUITests.swift; sourceTree = "<group>"; };
 		B9F6B0831F25E69C00B695C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA43ED551F34B1AD000D2DB0 /* DummyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
+		BA43ED571F386E3E000D2DB0 /* CircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImage.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				BA6371841F2868C400D77EA9 /* RoundedShadowedButton.swift */,
 				BA690EA11F26118100EF980F /* DataCache.swift */,
 				BAA147D31F334B7700D1FFFE /* LeftAlignedIconButton.swift */,
+				BA43ED571F386E3E000D2DB0 /* CircularImage.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				BA690EB91F2611AF00EF980F /* Skills.swift in Sources */,
 				BA6371721F2640AA00D77EA9 /* LoginVC.swift in Sources */,
 				BA6371741F2640C500D77EA9 /* SignUpVC.swift in Sources */,
+				BA43ED581F386E3E000D2DB0 /* CircularImage.swift in Sources */,
 				BAA147D41F334B7700D1FFFE /* LeftAlignedIconButton.swift in Sources */,
 				BA6371921F2886A500D77EA9 /* CalenderVC.swift in Sources */,
 				BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */,

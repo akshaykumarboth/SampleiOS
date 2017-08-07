@@ -13,6 +13,18 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     //var animals = ["dogff", "cat", "fox"]
     var pickerList: [String] = []
     
+    @IBAction func onBackPressed(_ sender: UIButton) {
+        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     @IBOutlet var secondTopperImage: UIImageView!
     @IBOutlet var secondTopperRank: CircularButton!
@@ -72,21 +84,19 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         for item in leaderboards! {
             pickerList.append(item.name!)
-            if let ranks = item.allStudentRanks {
-                studentRankList = Array(ranks[3..<(ranks.count)])
-                topperList = Array(ranks[0..<3])
+            if item.name == "All Roles" {
+                if let ranks = item.allStudentRanks {
+                    studentRankList = Array(ranks[3..<(ranks.count)])
+                    topperList = Array(ranks[0..<3])
+                }
             }
         }
         rolesBtn.setTitle(pickerList[0], for: .normal)
         setToppers()
         
-        
-        
-        
-        
         pickView.translatesAutoresizingMaskIntoConstraints = false
         
-        
+  
 
         // Do any additional setup after loading the view.
     }
@@ -94,34 +104,40 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func setToppers() {
         //first topper
-        loadImageAsync(url: ((topperList?[0].imageURL))!, imgView: firstTopperImage)
+        loadImageAsync(url: ((topperList?[1].imageURL))!, imgView: firstTopperImage)
         makeImageRound(image: firstTopperImage)
         
-        if let firstrank: String = String(describing: topperList?[0].batchRank) {
-            firstTopperRank.setTitle(firstrank, for: .normal)
+        if let firstrank =  topperList?[1].batchRank {
+            firstTopperRank.setTitle("\(firstrank)", for: .normal)
         }
-
-        
-        
-        
-        
-        firstTopperName.text = topperList?[0].name
-        firstTopperXP.text = "\(topperList?[0].points)"
+        firstTopperName.text = topperList?[1].name
+        if let firstTopperPoints = topperList?[1].points {
+            firstTopperXP.text = "\(firstTopperPoints)" + " XP"
+        }
         
         //second topper
-        
-        loadImageAsync(url: (topperList?[1].imageURL)!, imgView: secondTopperImage)
+        loadImageAsync(url: (topperList?[0].imageURL)!, imgView: secondTopperImage)
         makeImageRound(image: secondTopperImage)
-        secondTopperRank.setTitle("\(topperList?[1].batchRank!)", for: .normal)
-        secondTopperName.text = topperList?[1].name
-        secondTopperXP.text = "\(topperList?[1].points!)"
+        if let secondrank =  topperList?[0].batchRank {
+            secondTopperRank.setTitle("\(secondrank)", for: .normal)
+        }
+        secondTopperName.text = topperList?[0].name
+        if let secondTopperPoints = topperList?[0].points {
+            secondTopperXP.text = "\(secondTopperPoints)" + " XP"
+        }
+        
         
         //third topper
         loadImageAsync(url: (topperList?[2].imageURL)!, imgView: thirdTopperImage)
         makeImageRound(image: thirdTopperImage)
-        thirdTopperRank.setTitle("\(String(describing: topperList?[2].batchRank!))", for: .normal)
+        if let thirdrank =  topperList?[2].batchRank {
+            thirdTopperRank.setTitle("\(thirdrank)", for: .normal)
+        }
         thirdTopperName.text = topperList?[2].name
-        thirdTopperXP.text = "\(String(describing: topperList?[2].points))"
+        if let thirdTopperpoints = topperList?[2].points {
+            thirdTopperXP.text = "\(thirdTopperpoints)" + " XP"
+        }
+        
     }
     
     func loadImageAsync(url: String, imgView: UIImageView){
@@ -189,6 +205,9 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "leaderBoardCell", for: indexPath) as! LeaderboardCell
         
         //cell.mText.text = animals[indexPath.row]
@@ -199,14 +218,16 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         cell.studentRank.text = ordinal(i: (studentRankList?[indexPath.row].batchRank)!)
         cell.studentXP.text = String(Int((studentRankList?[indexPath.row].points)!))
         
-        
-        
         return cell
     }
     
     func makeImageRound(image: UIImageView){
-        image.layer.cornerRadius = image.frame.size.width / 2
-        image.clipsToBounds = true
+        //image.layer.cornerRadius = image.frame.height / 2
+        //image.layer.masksToBounds = true
+        //image.clipsToBounds = true
+        image.layer.borderWidth=1.0;
+        image.layer.borderColor = UIColor(red: 235/255, green: 56/255, blue: 79/255, alpha: 1.00).cgColor
+
         
     }
     
