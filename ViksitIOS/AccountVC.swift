@@ -21,6 +21,13 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var objectsArray = [Objects]()
     
     
+    @IBOutlet var profileImage: CircularImage!
+    
+    @IBAction func uploadPhotoPressed(_ sender: CircularButton) {
+    }
+    
+    
+    
     
     @IBAction func onBackPressed(_ sender: UIButton) {
         goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
@@ -29,6 +36,25 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func onLogoutPressed(_ sender: UIButton) {
         goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
+    }
+    
+    
+    func loadImageAsync(url: String, imgView: UIImageView){
+        do {
+            
+            let url = URL(string: url)
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    if data != nil {
+                        imgView.image = UIImage(data: data!)
+                    }
+                }
+            }
+            
+        }catch let error as NSError {
+            print(" Error \(error)")
+        }
     }
     
     func goto(storyBoardName: String, storyBoardID: String) {
@@ -59,10 +85,14 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         ]
         // Do any additional setup after loading the view.
         
+        loadImageAsync(url: (studentProfile?.profileImage)!, imgView: profileImage)
+        
         
         
         
     }
+    
+    
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
