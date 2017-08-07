@@ -18,7 +18,7 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     @IBAction func onCoinsPressed(_ sender: Any) {
-        goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
+        goto(storyBoardName: "Profile", storyBoardID: "LeaderboardVC")
     }
     
         

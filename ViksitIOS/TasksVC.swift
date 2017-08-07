@@ -58,9 +58,9 @@ class TasksVC: UIViewController {
         coinsBtn.setTitle(" " + String(coins), for: .normal)
         experiencePoints.text = String(xp)
         
-        //changing tint color of tab bar
+       /* //changing tint color of tab bar
         self.tabBarController?.tabBar.tintColor = UIColor(red: 235/255, green: 56/255, blue: 79/255, alpha: 1.00)
-        self.tabBarController?.tabBar.backgroundColor = UIColor.white        //The rest of your code
+        self.tabBarController?.tabBar.backgroundColor = UIColor.white        //The rest of your code*/
 
         // Do any additional setup after loading the view.
     }

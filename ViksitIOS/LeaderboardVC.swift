@@ -19,13 +19,6 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     
-    
-    
-    
-    
-    
-    
-    
     @IBOutlet var secondTopperImage: UIImageView!
     @IBOutlet var secondTopperRank: CircularButton!
     @IBOutlet var secondTopperName: UILabel!
@@ -65,7 +58,7 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         let topConstraint = pickView.topAnchor.constraint(equalTo: rolesBtn.bottomAnchor)
         let rightConstraint = pickView.rightAnchor.constraint(equalTo: view.rightAnchor)
         let widthConstraint = pickView.widthAnchor.constraint(equalToConstant: view.frame.width/2)
-        let heightConstraint = pickView.heightAnchor.constraint(equalToConstant: CGFloat(30 * pickerList.count))
+        let heightConstraint = pickView.heightAnchor.constraint(equalToConstant: CGFloat(20 * pickerList.count))
         
         NSLayoutConstraint.activate([topConstraint, rightConstraint, widthConstraint, heightConstraint])
         view.layoutIfNeeded()
@@ -171,6 +164,21 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerList[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        var label: UILabel
+        if let view = view as? UILabel { label = view }
+        else { label = UILabel() }
+        
+        label.text = pickerList[row]
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        
+        return label
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

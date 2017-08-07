@@ -10,12 +10,17 @@ import UIKit
 
 class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var studentProfile: StudentProfile? = nil
+    
     struct Objects {
         var sectionName: String!
+        var hasmap: [String : String]
         var sectionObjects: [String]!
     }
     
     var objectsArray = [Objects]()
+    
+    
     
     @IBAction func onBackPressed(_ sender: UIButton) {
         goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
@@ -35,13 +40,49 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        objectsArray = [ Objects(sectionName: "section1", sectionObjects: ["akshay", "vinay", "karthik", "sumanth"]), Objects(sectionName: "section2", sectionObjects: ["akshay", "vinay", "karthik", "sumanth"]), Objects(sectionName: "section3", sectionObjects: ["akshay", "vinay", "karthik", "sumanth"]), Objects(sectionName: "section4", sectionObjects: ["akshay", "vinay", "karthik", "sumanth"]), Objects(sectionName: "section5", sectionObjects: ["akshay", "vinay", "karthik", "sumanth"]) ]
+        if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
+            studentProfile = ComplexObject(JSONString: complexCache).studentProfile!
+        }
+        var mNo: String = ""
+        if let y = studentProfile?.mobile {
+            mNo = "\(y)"
+        }
+        
+        objectsArray = [
+            Objects(sectionName: "Personal Details",
+                    hasmap: ["Name":(studentProfile?.firstName)!, "Date of Birth": (studentProfile?.dateOfBirth)!, "Email":(studentProfile?.email)!, "Mobile number": mNo, "Password": "sumanth1"],
+                    sectionObjects: ["Name", "Date of Birth", "Email", "Mobile number", "Password"]),
+            
+            Objects(sectionName: "Educational Qualifications",
+                    hasmap: ["Institution of Current Enrollment":"akshay1", "Graduate Degree":"vinay1", "Department":"karthik1",],
+                    sectionObjects: ["Institution of Current Enrollment", "Graduate Degree", "Department"])
+        ]
         // Do any additional setup after loading the view.
+        
+        
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let header = view as! UITableViewHeaderFooterView
+        
+        if let textlabel = header.textLabel {
+            textlabel.font = textlabel.font.withSize(12)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "accountCell") as! UITableViewCell!
-        cell?.textLabel?.text = objectsArray[indexPath.section].sectionObjects[indexPath.row]
+        //tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: "accountCell") as! AccountCell!
+
+        cell?.cellNameLabel.text = objectsArray[indexPath.section].sectionObjects[indexPath.row]
+        
+        let key = objectsArray[indexPath.section].sectionObjects[indexPath.row] as String
+        cell?.cellValueField.text = objectsArray[indexPath.section].hasmap[key]
         
         return cell!
     }

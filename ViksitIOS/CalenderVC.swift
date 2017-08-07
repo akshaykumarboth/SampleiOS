@@ -19,7 +19,7 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     @IBAction func onCoinsPressed(_ sender: UIButton) {
-        goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
+        goto(storyBoardName: "Profile", storyBoardID: "LeaderboardVC")
     }
     
     
