@@ -8,10 +8,12 @@
 
 import UIKit
 
-class TasksVC: UIViewController {
+class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var tasks: Array<Tasks> = []
 
+    @IBOutlet var cards: UICollectionView!
+    
     @IBOutlet var coinsBtn: UIButton!
     @IBOutlet var experiencePoints: UILabel!
     @IBOutlet var profileBtn: UIButton!
@@ -58,12 +60,7 @@ class TasksVC: UIViewController {
         coinsBtn.setTitle(" " + String(coins), for: .normal)
         experiencePoints.text = String(xp)
         
-       /* //changing tint color of tab bar
-        self.tabBarController?.tabBar.tintColor = UIColor(red: 235/255, green: 56/255, blue: 79/255, alpha: 1.00)
-        self.tabBarController?.tabBar.backgroundColor = UIColor.white        //The rest of your code*/
-
-        // Do any additional setup after loading the view.
-    }
+           }
     
     func makeButtonRound(button: UIButton, borderWidth: CGFloat, color: UIColor)-> UIButton{
         button.layer.cornerRadius = button.frame.width/2
@@ -79,6 +76,57 @@ class TasksVC: UIViewController {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: storyBoardID)
         self.present(nextViewController, animated:true, completion:nil)
     }
+    
+    
+    
+    //
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardsCell", for: indexPath) as! PresentationCell
+        
+        return cell
+        
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let pageWidth:Float = 310 + 25;
+        
+        let currentOffSet:Float = Float(scrollView.contentOffset.x)
+        
+        print(currentOffSet)
+        let targetOffSet:Float = Float(targetContentOffset.pointee.x)
+        
+        print(targetOffSet)
+        var newTargetOffset:Float = 0
+        
+        if(targetOffSet > currentOffSet){
+            newTargetOffset = ceilf(currentOffSet / pageWidth) * pageWidth
+        }else{
+            newTargetOffset = floorf(currentOffSet / pageWidth) * pageWidth
+        }
+        
+        if(newTargetOffset < 0){
+            newTargetOffset = 0;
+        }else if (newTargetOffset > Float(scrollView.contentSize.width)){
+            newTargetOffset = Float(scrollView.contentSize.width)
+        }
+        
+        targetContentOffset.pointee.x = CGFloat(currentOffSet)
+        scrollView.setContentOffset(CGPoint(x: CGFloat(newTargetOffset), y: 0), animated: true)
+        
+    }
+    
+    
+    override var prefersStatusBarHidden : Bool {
+        return true
+    }
+
     
 
 }

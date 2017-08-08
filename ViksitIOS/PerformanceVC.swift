@@ -71,7 +71,7 @@ class PerformanceVC: UIViewController {
         }
         
         if let rank = studentProfile?.batchRank {
-            userBatchRankLabel.text = "\(rank)"
+            userBatchRankLabel.text = "#" + "\(rank)"
         }
         
         if let name = studentProfile?.firstName {

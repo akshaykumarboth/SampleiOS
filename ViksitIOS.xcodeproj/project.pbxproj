@@ -19,6 +19,7 @@
 		BA43ED561F34B1AD000D2DB0 /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED551F34B1AD000D2DB0 /* DummyVC.swift */; };
 		BA43ED581F386E3E000D2DB0 /* CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED571F386E3E000D2DB0 /* CircularImage.swift */; };
 		BA43ED5A1F38843A000D2DB0 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED591F38843A000D2DB0 /* AccountCell.swift */; };
+		BA43ED5C1F39A2F9000D2DB0 /* PresentationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -60,9 +61,6 @@
 		BA690EBB1F2611AF00EF980F /* StudentProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB71F2611AF00EF980F /* StudentProfile.swift */; };
 		BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB81F2611AF00EF980F /* Tasks.swift */; };
 		BAA147BC1F2F190800D1FFFE /* CalenderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147BB1F2F190800D1FFFE /* CalenderTableCell.swift */; };
-		BAA147C51F30BE5900D1FFFE /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA147C41F30BE5900D1FFFE /* Slide.xib */; };
-		BAA147C71F30BE8C00D1FFFE /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147C61F30BE8C00D1FFFE /* Slide.swift */; };
-		BAA147C91F30BF6F00D1FFFE /* AKSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147C81F30BF6F00D1FFFE /* AKSViewController.swift */; };
 		BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA147CB1F31D16000D1FFFE /* Modules.storyboard */; };
 		BAA147CE1F31D18200D1FFFE /* ModulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */; };
 		BAA147D01F31E87F00D1FFFE /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147CF1F31E87F00D1FFFE /* ModuleCell.swift */; };
@@ -117,6 +115,7 @@
 		BA43ED551F34B1AD000D2DB0 /* DummyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
 		BA43ED571F386E3E000D2DB0 /* CircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImage.swift; sourceTree = "<group>"; };
 		BA43ED591F38843A000D2DB0 /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationCell.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -158,9 +157,6 @@
 		BA690EB71F2611AF00EF980F /* StudentProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfile.swift; sourceTree = "<group>"; };
 		BA690EB81F2611AF00EF980F /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		BAA147BB1F2F190800D1FFFE /* CalenderTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderTableCell.swift; sourceTree = "<group>"; };
-		BAA147C41F30BE5900D1FFFE /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
-		BAA147C61F30BE8C00D1FFFE /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
-		BAA147C81F30BF6F00D1FFFE /* AKSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKSViewController.swift; sourceTree = "<group>"; };
 		BAA147CB1F31D16000D1FFFE /* Modules.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Modules.storyboard; sourceTree = "<group>"; };
 		BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModulesVC.swift; sourceTree = "<group>"; };
 		BAA147CF1F31E87F00D1FFFE /* ModuleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
@@ -306,9 +302,7 @@
 		BA6371891F28826C00D77EA9 /* tabs */ = {
 			isa = PBXGroup;
 			children = (
-				BAA147C31F30BE2D00D1FFFE /* Slides */,
 				BA63718A1F28828400D77EA9 /* Tab.storyboard */,
-				BAA147C81F30BF6F00D1FFFE /* AKSViewController.swift */,
 				BA63719C1F293B6000D77EA9 /* TabBarController.swift */,
 				BAA42BAB1F2B700F0022C553 /* pagerViewController.swift */,
 				BA63719A1F28E07900D77EA9 /* tasks */,
@@ -343,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				BA63718F1F28868D00D77EA9 /* TasksVC.swift */,
+				BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */,
 			);
 			name = tasks;
 			sourceTree = "<group>";
@@ -378,15 +373,6 @@
 				BA690E9A1F26115400EF980F /* AssessmentResponse.swift */,
 			);
 			name = complex;
-			sourceTree = "<group>";
-		};
-		BAA147C31F30BE2D00D1FFFE /* Slides */ = {
-			isa = PBXGroup;
-			children = (
-				BAA147C41F30BE5900D1FFFE /* Slide.xib */,
-				BAA147C61F30BE8C00D1FFFE /* Slide.swift */,
-			);
-			name = Slides;
 			sourceTree = "<group>";
 		};
 		BAA147CA1F31D11B00D1FFFE /* modules */ = {
@@ -529,7 +515,6 @@
 				BAA147D91F33529000D1FFFE /* Profile.storyboard in Resources */,
 				BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */,
 				B9F6B0691F25E69C00B695C0 /* Assets.xcassets in Resources */,
-				BAA147C51F30BE5900D1FFFE /* Slide.xib in Resources */,
 				B9F6B0671F25E69C00B695C0 /* Main.storyboard in Resources */,
 				BA63718B1F28828400D77EA9 /* Tab.storyboard in Resources */,
 			);
@@ -569,10 +554,8 @@
 				BA63717F1F27978600D77EA9 /* ResetPasswordVC.swift in Sources */,
 				B9F6B0641F25E69C00B695C0 /* ModelController.swift in Sources */,
 				BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */,
-				BAA147C71F30BE8C00D1FFFE /* Slide.swift in Sources */,
 				BA63717B1F27284700D77EA9 /* TextFieldWithPadding.swift in Sources */,
 				B9F6B0621F25E69C00B695C0 /* DataViewController.swift in Sources */,
-				BAA147C91F30BF6F00D1FFFE /* AKSViewController.swift in Sources */,
 				BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */,
 				BA690EB91F2611AF00EF980F /* Skills.swift in Sources */,
 				BA6371721F2640AA00D77EA9 /* LoginVC.swift in Sources */,
@@ -583,6 +566,7 @@
 				BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */,
 				BAA42BA81F2B44040022C553 /* testVC.swift in Sources */,
 				BAA147DF1F33628D00D1FFFE /* AccountVC.swift in Sources */,
+				BA43ED5C1F39A2F9000D2DB0 /* PresentationCell.swift in Sources */,
 				BAA147CE1F31D18200D1FFFE /* ModulesVC.swift in Sources */,
 				B9F6B05E1F25E69C00B695C0 /* AppDelegate.swift in Sources */,
 				BA6371771F264A9A00D77EA9 /* CircularButton.swift in Sources */,

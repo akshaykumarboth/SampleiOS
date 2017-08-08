@@ -146,7 +146,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="375" height="51"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bev-gd-2Z3" id="3N2-iy-bhz">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1iX-0k-dJR">
@@ -276,7 +276,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.2196078431372549" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="2Vt-2T-cFN"/>
                                     <constraint firstAttribute="bottom" secondItem="NpF-Rs-Gf5" secondAttribute="bottom" id="QiO-Mw-TvI"/>
@@ -383,12 +383,22 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poj-s9-sMp">
+                                                <rect key="frame" x="0.0" y="22" width="375" height="1"/>
+                                                <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="W7p-Ya-V6r"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="poj-s9-sMp" firstAttribute="top" secondItem="Z0N-T4-fZc" secondAttribute="bottom" constant="5" id="27s-1b-DgR"/>
                                             <constraint firstAttribute="trailing" secondItem="Z0N-T4-fZc" secondAttribute="trailing" id="Yzk-bp-jUW"/>
                                             <constraint firstItem="Z0N-T4-fZc" firstAttribute="leading" secondItem="Dv5-60-0Vr" secondAttribute="leading" id="Zwz-iY-zQV"/>
+                                            <constraint firstAttribute="trailing" secondItem="poj-s9-sMp" secondAttribute="trailing" id="iZO-2f-laG"/>
                                             <constraint firstItem="Z0N-T4-fZc" firstAttribute="top" secondItem="Dv5-60-0Vr" secondAttribute="top" id="nlm-dA-OuA"/>
+                                            <constraint firstItem="poj-s9-sMp" firstAttribute="leading" secondItem="Dv5-60-0Vr" secondAttribute="leading" id="rbb-VV-XpK"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -452,10 +462,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwD-Bc-OQy">
-                                        <rect key="frame" x="164.5" y="0.0" width="205.5" height="45"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Button ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kwD-Bc-OQy">
+                                        <rect key="frame" x="189.5" y="0.0" width="181.5" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                        <state key="normal" title="Retail Banking" image="down">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -463,15 +473,15 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.2196078431372549" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="c1c-hs-tY8" secondAttribute="bottom" id="4mp-Rx-o53"/>
                                     <constraint firstAttribute="height" constant="45" id="6eg-eZ-Hat"/>
                                     <constraint firstItem="c1c-hs-tY8" firstAttribute="top" secondItem="8qj-0x-cQu" secondAttribute="top" id="7dl-Up-H5y"/>
                                     <constraint firstItem="Lr1-x6-5vi" firstAttribute="centerY" secondItem="8qj-0x-cQu" secondAttribute="centerY" id="H1F-T4-mgb"/>
-                                    <constraint firstAttribute="trailing" secondItem="kwD-Bc-OQy" secondAttribute="trailing" constant="5" id="Ojr-JP-706"/>
+                                    <constraint firstAttribute="trailing" secondItem="kwD-Bc-OQy" secondAttribute="trailing" constant="4" id="Ojr-JP-706"/>
                                     <constraint firstItem="c1c-hs-tY8" firstAttribute="leading" secondItem="8qj-0x-cQu" secondAttribute="leading" id="PRC-UZ-7dj"/>
-                                    <constraint firstItem="kwD-Bc-OQy" firstAttribute="leading" secondItem="Lr1-x6-5vi" secondAttribute="trailing" constant="25" id="SDR-JM-Snf"/>
+                                    <constraint firstItem="kwD-Bc-OQy" firstAttribute="leading" secondItem="Lr1-x6-5vi" secondAttribute="trailing" constant="50" id="SDR-JM-Snf"/>
                                     <constraint firstAttribute="bottom" secondItem="kwD-Bc-OQy" secondAttribute="bottom" id="ZEy-BV-3l4"/>
                                     <constraint firstItem="Lr1-x6-5vi" firstAttribute="leading" secondItem="c1c-hs-tY8" secondAttribute="trailing" constant="5" id="bbT-PD-nbS"/>
                                     <constraint firstItem="kwD-Bc-OQy" firstAttribute="top" secondItem="8qj-0x-cQu" secondAttribute="top" id="u3d-EU-QVX"/>
@@ -505,7 +515,7 @@
                                                                                     <constraint firstAttribute="width" constant="25" id="jj2-6w-Pah"/>
                                                                                     <constraint firstAttribute="width" secondItem="XjD-jk-ymM" secondAttribute="height" multiplier="1:1" id="otU-jS-rbD"/>
                                                                                 </constraints>
-                                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                 <state key="normal">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -557,13 +567,13 @@
                                                                                 <rect key="frame" x="0.0" y="0.5" width="100" height="100"/>
                                                                             </imageView>
                                                                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzm-fM-gPv" customClass="CircularButton" customModule="ViksitIOS" customModuleProvider="target">
-                                                                                <rect key="frame" x="71" y="71.5" width="29" height="29"/>
+                                                                                <rect key="frame" x="72" y="72.5" width="28" height="28"/>
                                                                                 <color key="backgroundColor" red="0.13725490196078433" green="0.71372549019607845" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="Uzm-fM-gPv" secondAttribute="height" multiplier="1:1" id="GdG-iQ-gIh"/>
-                                                                                    <constraint firstAttribute="width" constant="29" id="RRF-F4-mGz"/>
+                                                                                    <constraint firstAttribute="width" constant="28" id="RRF-F4-mGz"/>
                                                                                 </constraints>
-                                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                 <state key="normal">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -616,13 +626,13 @@
                                                                                 <rect key="frame" x="0.0" y="0.5" width="95" height="95"/>
                                                                             </imageView>
                                                                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw0-bo-Nit" customClass="CircularButton" customModule="ViksitIOS" customModuleProvider="target">
-                                                                                <rect key="frame" x="68" y="68.5" width="27" height="27"/>
+                                                                                <rect key="frame" x="69" y="69.5" width="26" height="26"/>
                                                                                 <color key="backgroundColor" red="0.13725490200000001" green="0.71372549019999998" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="sw0-bo-Nit" secondAttribute="height" multiplier="1:1" id="Q7M-U5-H6S"/>
-                                                                                    <constraint firstAttribute="width" constant="27" id="xci-DJ-teo"/>
+                                                                                    <constraint firstAttribute="width" constant="26" id="xci-DJ-teo"/>
                                                                                 </constraints>
-                                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                 <state key="normal">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -670,7 +680,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="2kO-9H-NPS" secondAttribute="trailing" id="QPy-ml-7Zf"/>
                                             <constraint firstItem="2kO-9H-NPS" firstAttribute="leading" secondItem="GMo-zf-Ane" secondAttribute="leading" id="emI-hS-Ily"/>
@@ -781,6 +791,7 @@
                                                 </connections>
                                             </tableView>
                                         </subviews>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="Uav-Cc-i00" firstAttribute="leading" secondItem="oUQ-WU-bAy" secondAttribute="leading" id="L1D-yS-4Hf"/>
                                             <constraint firstAttribute="bottom" secondItem="Uav-Cc-i00" secondAttribute="bottom" id="TFY-HC-tyx"/>
@@ -1023,6 +1034,7 @@
     <resources>
         <image name="back" width="24" height="24"/>
         <image name="camera" width="18" height="18"/>
+        <image name="down" width="24" height="24"/>
         <image name="edit" width="24" height="24"/>
         <image name="fb" width="433" height="439"/>
         <image name="notification" width="24" height="24"/>

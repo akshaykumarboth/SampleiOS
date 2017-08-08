@@ -68,6 +68,10 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         pickView.removeFromSuperview()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        rolesBtn.semanticContentAttribute = .forceRightToLeft
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,10 +90,9 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         }
         rolesBtn.setTitle(pickerList[0], for: .normal)
         setToppers()
-        
         pickView.translatesAutoresizingMaskIntoConstraints = false
+        //
         
-  
 
         // Do any additional setup after loading the view.
     }
