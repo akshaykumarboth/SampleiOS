@@ -51,6 +51,7 @@ class RolesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.roleCategory.text = roles[indexPath.row].category
         cell.roleMessage.text = roles[indexPath.row].message
         cell.roleName.text = roles[indexPath.row].name
+        cell.roleProgress.progress = Float(roles[indexPath.row].progress!/100)
         
         return cell
     }

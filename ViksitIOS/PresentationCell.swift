@@ -18,6 +18,8 @@ class PresentationCell: UICollectionViewCell {
     
     @IBOutlet var descriptionLabel: UILabel!
     
+    @IBOutlet var watchBtn: UIButton!
     
+    @IBOutlet var videoImg: UIImageView!
     
 }

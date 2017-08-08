@@ -23,6 +23,7 @@ public class Tasks {
 	public var classRoomName : String?
 	public var time : String?
 	public var event_address : String?
+    public var description : String?
     
     init (json: [String: Any]) {
         
@@ -123,6 +124,11 @@ public class Tasks {
         
         if json["event_address"] != nil {
             self.event_address = json["event_address"] as? String
+            //print("skill id is ",self.id! )
+        }
+        
+        if json["description"] != nil {
+            self.description = json["description"] as? String
             //print("skill id is ",self.id! )
         }
 		

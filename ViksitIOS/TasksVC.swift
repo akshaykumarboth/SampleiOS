@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     var tasks: Array<Tasks> = []
 
@@ -82,27 +82,77 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     //
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return tasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardsCell", for: indexPath) as! PresentationCell
+        if tasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+            
+            cell.headerLabel.text = tasks[indexPath.row].header
+            cell.titleLabel.text = tasks[indexPath.row].title
+            cell.descriptionLabel.text = tasks[indexPath.row].description
+            loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+            cell.videoImg.isHidden = true
+            
+            return cell
+        } else if tasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
+            
+            cell.headerLabel.text = tasks[indexPath.row].header
+            cell.titleLabel.text = tasks[indexPath.row].title
+            loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+            cell.descriptionLabel.text = tasks[indexPath.row].classRoomName
+            
+            //cell.numOfQuesLabel.text = tasks[indexPath.row].classRoomName
+            //cell.quesText.text = "Batch Name"
+            if let y = tasks[indexPath.row].classRoomId {
+                cell.pointsLabel.text = "#" + String(y)
+            }
+            cell.xpText.text = "classRoom Id"
+            cell.durationLabel.text = getSubstring(str: tasks[indexPath.row].time!, startOffest: 0, endOffset: -3)
+            cell.timeText.text = "Time"
+            
+            cell.startBtn.setTitle("START CLASS", for: .normal)
+            
+            return cell
+        } else if tasks[indexPath.row].itemType == "LESSON_VIDEO"{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+            
+            cell.headerLabel.text = tasks[indexPath.row].header
+            cell.titleLabel.text = tasks[indexPath.row].title
+            cell.descriptionLabel.text = tasks[indexPath.row].description
+            loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+            
+            cell.videoImg.isHidden = false
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+            
+            return cell
+        }
         
-        return cell
+        
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        
+        
+        return CGSize(width: (cards.frame.width * 0.75), height: cards.frame.height * 0.75); //use height whatever you wants.
+    }
+    
+    
+   
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        let pageWidth:Float = 310 + 25;
-        
+        let pageWidth:Float = Float(cards!.frame.size.width * 0.9)
         let currentOffSet:Float = Float(scrollView.contentOffset.x)
         
-        print(currentOffSet)
         let targetOffSet:Float = Float(targetContentOffset.pointee.x)
         
-        print(targetOffSet)
         var newTargetOffset:Float = 0
         
         if(targetOffSet > currentOffSet){
@@ -121,10 +171,34 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         scrollView.setContentOffset(CGPoint(x: CGFloat(newTargetOffset), y: 0), animated: true)
         
     }
-    
+ 
     
     override var prefersStatusBarHidden : Bool {
         return true
+    }
+
+    func loadImageAsync(url: String, imgView: UIImageView){
+        do {
+            let url = URL(string: url)
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    imgView.image = UIImage(data: data!)
+                }
+            }
+        }catch let error as NSError {
+            print(" Error \(error)")
+        }
+    }
+    
+    
+    
+    func getSubstring (str: String, startOffest: Int, endOffset: Int)-> String {
+        let start = str.index(str.startIndex, offsetBy: startOffest)
+        let end = str.index(str.endIndex, offsetBy: endOffset)
+        let range = start..<end
+        
+        return str[range]
     }
 
     

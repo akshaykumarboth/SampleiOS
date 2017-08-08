@@ -20,6 +20,7 @@
 		BA43ED581F386E3E000D2DB0 /* CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED571F386E3E000D2DB0 /* CircularImage.swift */; };
 		BA43ED5A1F38843A000D2DB0 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED591F38843A000D2DB0 /* AccountCell.swift */; };
 		BA43ED5C1F39A2F9000D2DB0 /* PresentationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */; };
+		BA43ED5E1F39E8E9000D2DB0 /* AssessmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED5D1F39E8E9000D2DB0 /* AssessmentCell.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -73,10 +74,6 @@
 		BAA147EB1F34985000D1FFFE /* LeaderboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147EA1F34985000D1FFFE /* LeaderboardVC.swift */; };
 		BAA147ED1F3498FB00D1FFFE /* LeaderboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147EC1F3498FB00D1FFFE /* LeaderboardCell.swift */; };
 		BAA42BA81F2B44040022C553 /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BA71F2B44040022C553 /* testVC.swift */; };
-		BAA42BAC1F2B700F0022C553 /* pagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BAB1F2B700F0022C553 /* pagerViewController.swift */; };
-		BAA42BAE1F2B878A0022C553 /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BAD1F2B878A0022C553 /* RedVC.swift */; };
-		BAA42BB01F2B879A0022C553 /* BlueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BAF1F2B879A0022C553 /* BlueVC.swift */; };
-		BAA42BB21F2B87C10022C553 /* GreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BB11F2B87C10022C553 /* GreenVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +113,7 @@
 		BA43ED571F386E3E000D2DB0 /* CircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImage.swift; sourceTree = "<group>"; };
 		BA43ED591F38843A000D2DB0 /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationCell.swift; sourceTree = "<group>"; };
+		BA43ED5D1F39E8E9000D2DB0 /* AssessmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentCell.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -169,10 +167,6 @@
 		BAA147EA1F34985000D1FFFE /* LeaderboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardVC.swift; sourceTree = "<group>"; };
 		BAA147EC1F3498FB00D1FFFE /* LeaderboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardCell.swift; sourceTree = "<group>"; };
 		BAA42BA71F2B44040022C553 /* testVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
-		BAA42BAB1F2B700F0022C553 /* pagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pagerViewController.swift; sourceTree = "<group>"; };
-		BAA42BAD1F2B878A0022C553 /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedVC.swift; sourceTree = "<group>"; };
-		BAA42BAF1F2B879A0022C553 /* BlueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueVC.swift; sourceTree = "<group>"; };
-		BAA42BB11F2B87C10022C553 /* GreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,13 +298,9 @@
 			children = (
 				BA63718A1F28828400D77EA9 /* Tab.storyboard */,
 				BA63719C1F293B6000D77EA9 /* TabBarController.swift */,
-				BAA42BAB1F2B700F0022C553 /* pagerViewController.swift */,
 				BA63719A1F28E07900D77EA9 /* tasks */,
 				BA6371991F28E04300D77EA9 /* roles */,
 				BA63718C1F2882A500D77EA9 /* calender */,
-				BAA42BAF1F2B879A0022C553 /* BlueVC.swift */,
-				BAA42BAD1F2B878A0022C553 /* RedVC.swift */,
-				BAA42BB11F2B87C10022C553 /* GreenVC.swift */,
 			);
 			name = tabs;
 			sourceTree = "<group>";
@@ -338,6 +328,7 @@
 			children = (
 				BA63718F1F28868D00D77EA9 /* TasksVC.swift */,
 				BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */,
+				BA43ED5D1F39E8E9000D2DB0 /* AssessmentCell.swift */,
 			);
 			name = tasks;
 			sourceTree = "<group>";
@@ -542,14 +533,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA6371851F2868C400D77EA9 /* RoundedShadowedButton.swift in Sources */,
+				BA43ED5E1F39E8E9000D2DB0 /* AssessmentCell.swift in Sources */,
 				B9F6B0601F25E69C00B695C0 /* RootViewController.swift in Sources */,
 				BA690EB11F26119E00EF980F /* Modules.swift in Sources */,
-				BAA42BB21F2B87C10022C553 /* GreenVC.swift in Sources */,
 				BA690EA91F26119000EF980F /* Events.swift in Sources */,
 				BAA147D01F31E87F00D1FFFE /* ModuleCell.swift in Sources */,
 				BA690EBA1F2611AF00EF980F /* SkillsReport.swift in Sources */,
 				BA690EB31F26119E00EF980F /* Response.swift in Sources */,
-				BAA42BAC1F2B700F0022C553 /* pagerViewController.swift in Sources */,
 				BAA147E11F33666500D1FFFE /* ProfileTBC.swift in Sources */,
 				BA63717F1F27978600D77EA9 /* ResetPasswordVC.swift in Sources */,
 				B9F6B0641F25E69C00B695C0 /* ModelController.swift in Sources */,
@@ -582,12 +572,10 @@
 				BA6371831F27A25C00D77EA9 /* BatchCodeVC.swift in Sources */,
 				BA690EA41F26118100EF980F /* DataCache.swift in Sources */,
 				BA6371811F279CC000D77EA9 /* VerifyPhoneVC.swift in Sources */,
-				BAA42BB01F2B879A0022C553 /* BlueVC.swift in Sources */,
 				BA690E9C1F26115500EF980F /* AssessmentReports.swift in Sources */,
 				BA690EAA1F26119000EF980F /* Leaderboards.swift in Sources */,
 				BA690EBB1F2611AF00EF980F /* StudentProfile.swift in Sources */,
 				BA6371791F271BFA00D77EA9 /* ForgotPasswordVC.swift in Sources */,
-				BAA42BAE1F2B878A0022C553 /* RedVC.swift in Sources */,
 				BA690E9D1F26115500EF980F /* AssessmentResponse.swift in Sources */,
 				BA43ED5A1F38843A000D2DB0 /* AccountCell.swift in Sources */,
 				BAA147EB1F34985000D1FFFE /* LeaderboardVC.swift in Sources */,

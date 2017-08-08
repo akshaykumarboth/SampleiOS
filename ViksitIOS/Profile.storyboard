@@ -167,7 +167,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uky-tr-vgH">
-                                                                    <rect key="frame" x="327" y="14" width="30" height="24"/>
+                                                                    <rect key="frame" x="327" y="8" width="30" height="34.5"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="30" id="SrZ-Pv-Lrp"/>
@@ -179,11 +179,12 @@
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="uky-tr-vgH" secondAttribute="bottom" id="Kkt-YI-qXL"/>
                                                                 <constraint firstItem="1iX-0k-dJR" firstAttribute="leading" secondItem="3N2-iy-bhz" secondAttribute="leadingMargin" constant="10" id="cRc-GA-HWW"/>
+                                                                <constraint firstItem="uky-tr-vgH" firstAttribute="top" secondItem="3N2-iy-bhz" secondAttribute="topMargin" id="hgQ-AD-5oU"/>
                                                                 <constraint firstItem="uky-tr-vgH" firstAttribute="leading" secondItem="1iX-0k-dJR" secondAttribute="trailing" constant="10" id="nvu-cU-cmT"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="uky-tr-vgH" secondAttribute="trailing" constant="10" id="ri4-hR-y3I"/>
                                                                 <constraint firstItem="1iX-0k-dJR" firstAttribute="centerY" secondItem="3N2-iy-bhz" secondAttribute="centerY" id="teX-d2-KGa"/>
-                                                                <constraint firstItem="uky-tr-vgH" firstAttribute="centerY" secondItem="1iX-0k-dJR" secondAttribute="centerY" id="wmS-yp-crl"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
