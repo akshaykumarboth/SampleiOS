@@ -16,7 +16,6 @@
 		B9F6B06C1F25E69C00B695C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F6B06A1F25E69C00B695C0 /* LaunchScreen.storyboard */; };
 		B9F6B0771F25E69C00B695C0 /* ViksitIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0761F25E69C00B695C0 /* ViksitIOSTests.swift */; };
 		B9F6B0821F25E69C00B695C0 /* ViksitIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */; };
-		BA43ED561F34B1AD000D2DB0 /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED551F34B1AD000D2DB0 /* DummyVC.swift */; };
 		BA43ED581F386E3E000D2DB0 /* CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED571F386E3E000D2DB0 /* CircularImage.swift */; };
 		BA43ED5A1F38843A000D2DB0 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED591F38843A000D2DB0 /* AccountCell.swift */; };
 		BA43ED5C1F39A2F9000D2DB0 /* PresentationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */; };
@@ -109,7 +108,6 @@
 		B9F6B07D1F25E69C00B695C0 /* ViksitIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViksitIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViksitIOSUITests.swift; sourceTree = "<group>"; };
 		B9F6B0831F25E69C00B695C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA43ED551F34B1AD000D2DB0 /* DummyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
 		BA43ED571F386E3E000D2DB0 /* CircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImage.swift; sourceTree = "<group>"; };
 		BA43ED591F38843A000D2DB0 /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationCell.swift; sourceTree = "<group>"; };
@@ -253,6 +251,15 @@
 			path = ViksitIOSUITests;
 			sourceTree = "<group>";
 		};
+		BA43ED5F1F3B1002000D2DB0 /* leaderboards */ = {
+			isa = PBXGroup;
+			children = (
+				BAA147EA1F34985000D1FFFE /* LeaderboardVC.swift */,
+				BAA147EC1F3498FB00D1FFFE /* LeaderboardCell.swift */,
+			);
+			name = leaderboards;
+			sourceTree = "<group>";
+		};
 		BA63716C1F262A1700D77EA9 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,8 +379,8 @@
 				BAA147CB1F31D16000D1FFFE /* Modules.storyboard */,
 				BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */,
 				BAA147CF1F31E87F00D1FFFE /* ModuleCell.swift */,
-				BA63719B1F28E08800D77EA9 /* notifications */,
 				BAA147D11F3225D500D1FFFE /* RoleInfoVC.swift */,
+				BA63719B1F28E08800D77EA9 /* notifications */,
 			);
 			name = modules;
 			sourceTree = "<group>";
@@ -386,9 +393,7 @@
 				BAA147DE1F33628D00D1FFFE /* AccountVC.swift */,
 				BA43ED591F38843A000D2DB0 /* AccountCell.swift */,
 				BAA147E01F33666500D1FFFE /* ProfileTBC.swift */,
-				BAA147EA1F34985000D1FFFE /* LeaderboardVC.swift */,
-				BAA147EC1F3498FB00D1FFFE /* LeaderboardCell.swift */,
-				BA43ED551F34B1AD000D2DB0 /* DummyVC.swift */,
+				BA43ED5F1F3B1002000D2DB0 /* leaderboards */,
 			);
 			name = profile;
 			sourceTree = "<group>";
@@ -579,7 +584,6 @@
 				BA690E9D1F26115500EF980F /* AssessmentResponse.swift in Sources */,
 				BA43ED5A1F38843A000D2DB0 /* AccountCell.swift in Sources */,
 				BAA147EB1F34985000D1FFFE /* LeaderboardVC.swift in Sources */,
-				BA43ED561F34B1AD000D2DB0 /* DummyVC.swift in Sources */,
 				BA63716B1F26236000D77EA9 /* Helper.swift in Sources */,
 				BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */,
 				BA6371881F28707900D77EA9 /* PasswordChangedVC.swift in Sources */,

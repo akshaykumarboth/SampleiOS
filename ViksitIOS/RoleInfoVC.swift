@@ -36,16 +36,31 @@ class RoleInfoVC: UIViewController {
         roleDescriptionLabel.text = course?.description
         
         //loading image from url async
-        let url = URL(string: (course?.imageURL)!)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                self.roleImage.image = UIImage(data: data!)
+        loadImageAsync(url: (course?.imageURL)!, imgView: self.roleImage)
+        
+        
+    }
+
+    
+    func loadImageAsync(url: String, imgView: UIImageView){
+        do {
+            
+            let url = URL(string: url)
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    if data != nil {
+                        imgView.image = UIImage(data: data!)
+                    } else {
+                        imgView.image = UIImage(named: "coins")
+                        
+                    }
+                }
             }
+            
+        }catch let error as NSError {
+            print(" Error \(error)")
         }
-        //
-        
-        
     }
 
 

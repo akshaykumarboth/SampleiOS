@@ -51,7 +51,12 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
             DispatchQueue.main.async {
-                self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
+                if data != nil {
+                    self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
+                } else {
+                    self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
+                }
+                
             }
         }
         profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
@@ -105,8 +110,11 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
             cell.descriptionLabel.text = tasks[indexPath.row].classRoomName
             
-            //cell.numOfQuesLabel.text = tasks[indexPath.row].classRoomName
-            //cell.quesText.text = "Batch Name"
+            if let hrs = tasks[indexPath.row].durationHours {
+                
+                cell.numOfQuesLabel.text = String(hrs) + " hrs"
+            }
+            cell.quesText.text = "Duration"
             if let y = tasks[indexPath.row].classRoomId {
                 cell.pointsLabel.text = "#" + String(y)
             }
@@ -183,8 +191,13 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
                 DispatchQueue.main.async {
-                    imgView.image = UIImage(data: data!)
-                }
+                    if data != nil {
+                        imgView.image = UIImage(data: data!)
+
+                    } else {
+                        imgView.image = UIImage(named: "info")
+                    }
+                                    }
             }
         }catch let error as NSError {
             print(" Error \(error)")

@@ -48,6 +48,9 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 DispatchQueue.main.async {
                     if data != nil {
                         imgView.image = UIImage(data: data!)
+                    } else {
+                        imgView.image = UIImage(named: "coins")
+                        
                     }
                 }
             }

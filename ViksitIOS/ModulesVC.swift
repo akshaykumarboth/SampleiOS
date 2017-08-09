@@ -74,13 +74,7 @@ class ModulesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "moduleCell", for: indexPath) as! ModuleCell
         
         //inserting omage from url async
-        let url = URL(string: modules[indexPath.row].imageURL!)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-               cell.moduleImage.image = UIImage(data: data!)
-            }
-        }
+        loadImageAsync(url: modules[indexPath.row].imageURL!, imgView: cell.moduleImage)    
         cell.moduleNameLabel.text = modules[indexPath.row].name
         
         return cell
@@ -88,6 +82,27 @@ class ModulesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(modules[indexPath.row].id as Any)
+    }
+    
+    func loadImageAsync(url: String, imgView: UIImageView){
+        do {
+            
+            let url = URL(string: url)
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    if data != nil {
+                        imgView.image = UIImage(data: data!)
+                    } else {
+                        imgView.image = UIImage(named: "coins")
+                        
+                    }
+                }
+            }
+            
+        }catch let error as NSError {
+            print(" Error \(error)")
+        }
     }
 
 
