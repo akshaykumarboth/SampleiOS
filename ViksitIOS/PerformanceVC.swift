@@ -8,10 +8,12 @@
 
 import UIKit
 
-class PerformanceVC: UIViewController {
+class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var studentProfile: StudentProfile?
+    var skills: [Skills]?
     
+    @IBOutlet var skillCollections: UICollectionView!
     
     @IBOutlet var profileImage: CircularImage!
     @IBOutlet var userXPLabel: UILabel!
@@ -66,6 +68,7 @@ class PerformanceVC: UIViewController {
 
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             studentProfile = ComplexObject(JSONString: complexCache).studentProfile!
+            skills = ComplexObject(JSONString: complexCache).skills!
         }
         
         loadImageAsync(url: (studentProfile?.profileImage)!, imgView: profileImage)
@@ -84,7 +87,43 @@ class PerformanceVC: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return skills!.count
+    }
 
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "superSkillCell", for: indexPath) as! SuperSkillCell
+            
+        cell.superSkillName.text = skills?[indexPath.row].name
+        //loading image async
+        loadImageAsync(url: (skills?[indexPath.row].imageURL)!, imgView: cell.superSkillImage)
+
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        
+        
+        return CGSize(width: skillCollections.frame.height * 0.9, height: skillCollections.frame.height) //use height whatever you wants.
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print(skills?[indexPath.row].name)
+        
+        // Perform any action you want after a cell is tapped
+        // Access the selected cell's index with the indexPath.row value
+        
+    }
+    
+    override var prefersStatusBarHidden : Bool {
+        return true
+    }
    
 
 }
