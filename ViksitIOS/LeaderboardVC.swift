@@ -223,8 +223,6 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "leaderBoardCell", for: indexPath) as! LeaderboardCell
         
-        //cell.mText.text = animals[indexPath.row]
-        //loa
         loadImageAsync(url: (studentRankList?[indexPath.row].imageURL)!, imgView: cell.studentImage)
         makeImageRound(image: cell.studentImage)
         cell.studentName.text = studentRankList?[indexPath.row].name
@@ -240,8 +238,6 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         //image.clipsToBounds = true
         image.layer.borderWidth=1.0;
         image.layer.borderColor = UIColor(red: 235/255, green: 56/255, blue: 79/255, alpha: 1.00).cgColor
-
-        
     }
     
     func ordinal(i:Int)-> String{

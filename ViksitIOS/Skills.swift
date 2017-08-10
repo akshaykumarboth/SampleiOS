@@ -47,10 +47,20 @@ public class Skills {
             //print("skill accessedFirstTime is ",self.accessedFirstTime! )
         }
         
-        if json["skills"] != nil {
+        /*if json["skills"] != nil {
+            var list2: Array<Skills> = []
             self.skills = json["skills"] as? Array<Skills>
             //print("skill skills is ",self.skills! )
+        }*/
+        
+        if json["skills"] != nil {
+            var list2: Array<Skills> = []
+            for item in json["skills"] as! NSArray {
+                list2.append(Skills(json: item as! [String:Any]))
+            }
+            self.skills = list2
         }
+
         
 	}
 	
