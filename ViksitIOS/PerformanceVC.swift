@@ -14,6 +14,7 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     var skills: [Skills] = []
     var childSkills: [Skills] = []
     var selectedRowIndex: IndexPath = IndexPath(row: -1, section: 0)
+    var isExpanded: Bool = false
     
     
     @IBOutlet var subSkillTableView: UITableView!
@@ -126,6 +127,9 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
                 childSkills = skill.skills!
                 for child in childSkills {
                     print("childname->  \(child.name)")
+                    for gSkill in child.skills! {
+                        print("------- \(gSkill.name)")
+                    }
                 }
                 
             }
@@ -137,9 +141,15 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var openViewHeight: Int = 55
         
-        if indexPath.row == selectedRowIndex.row {
+        if (indexPath.row == selectedRowIndex.row && isExpanded == false){
+            isExpanded = true
             return CGFloat(openViewHeight + 45 * (childSkills[indexPath.row].skills?.count)!)
+            
+        } else if (indexPath.row == selectedRowIndex.row && isExpanded == true){
+            isExpanded = false
+            return CGFloat(openViewHeight)
         } else {
+            isExpanded = false
             return CGFloat(openViewHeight)
         }
         
@@ -151,16 +161,15 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(childSkills[indexPath.row].name)
         selectedRowIndex = indexPath
         tableView.beginUpdates()
         tableView.endUpdates()
+        
+        
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        selectedRowIndex = indexPath
-        tableView.beginUpdates()
-        tableView.endUpdates()
-    }
+    
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.separatorStyle = .none
@@ -174,6 +183,8 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         
         var grandSkillView: GrandChildSkillItem
+        
+        
         for grandChild in (childSkills[indexPath.row].skills)! {
             grandSkillView = GrandChildSkillItem(frame: CGRect(x: 0, y: 0, width: 300, height: 30))
             grandSkillView.grandChildSkillNameLabel.text = grandChild.name
