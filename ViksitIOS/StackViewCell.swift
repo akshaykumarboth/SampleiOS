@@ -27,6 +27,14 @@ class StackViewCell: UITableViewCell {
     
     @IBOutlet var grandChildStackView: UIStackView!
     
+    @IBOutlet var touchView: UIButton!
+    
+    @IBAction func onTouchedCell(_ sender: UIButton) {
+        print("ekjnhbferhe")
+    }
+    
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

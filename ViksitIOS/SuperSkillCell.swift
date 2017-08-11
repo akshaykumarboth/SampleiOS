@@ -12,7 +12,6 @@ class SuperSkillCell: UICollectionViewCell {
     
     @IBOutlet var superSkillImage: CircularImage!
     
-    
     @IBOutlet var superSkillName: UILabel!
     
     override func awakeFromNib() {

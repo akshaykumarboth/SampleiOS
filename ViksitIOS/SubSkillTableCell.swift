@@ -10,21 +10,18 @@ import UIKit
 
 class SubSkillTableCell: UITableViewCell {
     
-    @IBOutlet var expandableImg: UIImageView!
     @IBOutlet var subSkillName: UILabel!
     @IBOutlet var subSkillProgress: UIProgressView!
-    @IBOutlet var subSkillDetail: UILabel!
+    @IBOutlet var expandImg: UIImageView!
+    @IBOutlet var grandSkillStack: UIStackView!
     
-
+    var isExpanded: Bool = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        expandImg.tintColor = UIColor.blue
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+   
 }
