@@ -134,7 +134,13 @@
                                                                         <color key="value" red="0.79367404513888884" green="0.97132703993055558" blue="0.94376627604166663" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="progressBarTrackColor">
-                                                                        <color key="value" red="0.79367404513888884" green="0.54047309027777779" blue="0.94376627604166663" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <color key="value" red="0.92156862745098034" green="0.2196078431372549" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="hintViewBackgroundColor">
+                                                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="hintTextColor">
+                                                                        <color key="value" red="0.92156862745098034" green="0.2196078431372549" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
