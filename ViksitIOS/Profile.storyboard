@@ -119,7 +119,32 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-Bg-C13">
                                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="149"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVx-p4-4s2" customClass="CircleProgressBar">
+                                                                <rect key="frame" x="35" y="16" width="117.5" height="117.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="kVx-p4-4s2" secondAttribute="height" multiplier="1:1" id="1UR-0O-Ugk"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressBarWidth">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressBarProgressColor">
+                                                                        <color key="value" red="0.79367404513888884" green="0.97132703993055558" blue="0.94376627604166663" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressBarTrackColor">
+                                                                        <color key="value" red="0.79367404513888884" green="0.54047309027777779" blue="0.94376627604166663" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="kVx-p4-4s2" firstAttribute="centerY" secondItem="dfS-Bg-C13" secondAttribute="centerY" id="822-2N-1x3"/>
+                                                            <constraint firstAttribute="trailing" secondItem="kVx-p4-4s2" secondAttribute="trailing" constant="35" id="B7A-V2-aBA"/>
+                                                            <constraint firstItem="kVx-p4-4s2" firstAttribute="leading" secondItem="dfS-Bg-C13" secondAttribute="leading" constant="35" id="YHa-Bj-MBl"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
