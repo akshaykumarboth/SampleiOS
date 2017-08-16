@@ -15,12 +15,13 @@ class SubSkillTableCell: UITableViewCell {
     @IBOutlet var expandImg: UIImageView!
     @IBOutlet var grandSkillStack: UIStackView!
     
+    @IBOutlet var subSkillDetail: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        expandImg.tintColor = UIColor.blue
+        expandImg.tintColor = UIColor(colorLiteralRed: 235/255, green: 56/255, blue: 79/255, alpha: 1.0)
         selectionStyle = .none
     }
 

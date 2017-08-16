@@ -13,6 +13,7 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     var studentProfile: StudentProfile?
     var skills: [Skills] = []
     var childSkills: [Skills] = []
+    var grandChildSkills: [Skills] = []
     var selectedRowIndex: IndexPath = IndexPath(row: -1, section: 0)
     var isExpanded: Bool = false
     
@@ -125,25 +126,18 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         for skill in skills{
             if skill.name == (skills[indexPath.row].name)! {
                 childSkills = skill.skills!
-                for child in childSkills {
-                    print("childname->  \(child.name)")
-                    for gSkill in child.skills! {
-                        print("------- \(gSkill.name)")
-                    }
-                }
-                
             }
         }
+        
         self.subSkillTableView.reloadData()
-       
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var openViewHeight: Int = 55
+        let openViewHeight: Int = 70
         
         if (indexPath.row == selectedRowIndex.row && isExpanded == false){
             isExpanded = true
-            return CGFloat(openViewHeight + 45 * (childSkills[indexPath.row].skills?.count)!)
+            return CGFloat(openViewHeight + 38 * (childSkills[indexPath.row].skills?.count)!)
             
         } else if (indexPath.row == selectedRowIndex.row && isExpanded == true){
             isExpanded = false
@@ -164,11 +158,28 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         print(childSkills[indexPath.row].name)
         selectedRowIndex = indexPath
         tableView.beginUpdates()
+        
+        
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "SubSkillTableCell", for: indexPath) as! SubSkillTableCell
+        let cell = tableView.cellForRow(at: indexPath) as! SubSkillTableCell
+        
+        for subview in cell.grandSkillStack.subviews {
+            subview.removeFromSuperview()
+        }
+        
+        var grandSkillView: GrandChildSkillItem
+        grandChildSkills = (childSkills[indexPath.row].skills)!
+        for grandchildskill in grandChildSkills {
+            grandSkillView = GrandChildSkillItem(frame: CGRect(x: 0, y: 0, width: 300, height: 30))
+            grandSkillView.grandChildSkillNameLabel.text = grandchildskill.name
+            grandSkillView.grandChildSkillProgress.progress = Float(grandchildskill.percentage!)
+            
+            cell.grandSkillStack.addArrangedSubview(grandSkillView)
+        }
+        
         tableView.endUpdates()
         
-        
     }
-    
     
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -176,28 +187,19 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         tableView.showsVerticalScrollIndicator = false
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubSkillTableCell", for: indexPath) as! SubSkillTableCell
-        
-        
         cell.subSkillName.text = childSkills[indexPath.row].name
         cell.subSkillProgress.progress = Float(childSkills[indexPath.row].percentage!)
         
-        
-        var grandSkillView: GrandChildSkillItem
-        
-        
-        for grandChild in (childSkills[indexPath.row].skills)! {
-            grandSkillView = GrandChildSkillItem(frame: CGRect(x: 0, y: 0, width: 300, height: 30))
-            grandSkillView.grandChildSkillNameLabel.text = grandChild.name
-            grandSkillView.grandChildSkillProgress.progress = Float(grandChild.percentage!)
-            
-            
-            cell.grandSkillStack.addArrangedSubview(grandSkillView)
+        if let uPoints = childSkills[indexPath.row].userPoints  {
+            if let tPoints = childSkills[indexPath.row].totalPoints {
+                if let count = childSkills[indexPath.row].skills?.count {
+                    cell.subSkillDetail.text = "\(uPoints)" + "/" + "\(tPoints)" + "XP \u{2022} " + "\(count)" + " subskills"
+                }
+                
+            }
         }
+        
         return cell
     }
-
-    
-    
-   
 
 }

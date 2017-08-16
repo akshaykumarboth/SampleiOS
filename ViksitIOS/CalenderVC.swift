@@ -96,7 +96,6 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "calenderCell", for: indexPath) as! CalenderTableCell
         
-        
         // get start date // "2017-07-31 13:43:00"
         let month = getMonth(monthIndex: getSubstring(str: events[indexPath.row].startDate!, startOffest: 5, endOffset: -12))
         let date = getSubstring(str: events[indexPath.row].startDate!, startOffest: 8, endOffset: -9)

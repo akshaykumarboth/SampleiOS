@@ -31,9 +31,6 @@
 		BA43ED801F3C4813000D2DB0 /* Expandable2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED7F1F3C4813000D2DB0 /* Expandable2VC.swift */; };
 		BA43ED841F3C7F8A000D2DB0 /* GrandChildSkillItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA43ED831F3C7F8A000D2DB0 /* GrandChildSkillItem.xib */; };
 		BA43ED861F3C8020000D2DB0 /* GrandChildSkillItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED851F3C8020000D2DB0 /* GrandChildSkillItem.swift */; };
-		BA43ED8B1F3DC8D9000D2DB0 /* Test2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED8A1F3DC8D9000D2DB0 /* Test2VC.swift */; };
-		BA43ED8D1F3DC9EE000D2DB0 /* TestCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED8C1F3DC9EE000D2DB0 /* TestCVCell.swift */; };
-		BA43ED8F1F3DCDD2000D2DB0 /* TestTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED8E1F3DCDD2000D2DB0 /* TestTVCell.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -137,9 +134,6 @@
 		BA43ED7F1F3C4813000D2DB0 /* Expandable2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expandable2VC.swift; sourceTree = "<group>"; };
 		BA43ED831F3C7F8A000D2DB0 /* GrandChildSkillItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GrandChildSkillItem.xib; sourceTree = "<group>"; };
 		BA43ED851F3C8020000D2DB0 /* GrandChildSkillItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandChildSkillItem.swift; sourceTree = "<group>"; };
-		BA43ED8A1F3DC8D9000D2DB0 /* Test2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test2VC.swift; sourceTree = "<group>"; };
-		BA43ED8C1F3DC9EE000D2DB0 /* TestCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCVCell.swift; sourceTree = "<group>"; };
-		BA43ED8E1F3DCDD2000D2DB0 /* TestTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTVCell.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -320,16 +314,6 @@
 			name = tests;
 			sourceTree = "<group>";
 		};
-		BA43ED871F3DC86E000D2DB0 /* test2 */ = {
-			isa = PBXGroup;
-			children = (
-				BA43ED8A1F3DC8D9000D2DB0 /* Test2VC.swift */,
-				BA43ED8C1F3DC9EE000D2DB0 /* TestCVCell.swift */,
-				BA43ED8E1F3DCDD2000D2DB0 /* TestTVCell.swift */,
-			);
-			name = test2;
-			sourceTree = "<group>";
-		};
 		BA63716C1F262A1700D77EA9 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,7 +442,6 @@
 		BAA147D51F33525700D1FFFE /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				BA43ED871F3DC86E000D2DB0 /* test2 */,
 				BA43ED741F3C3C4E000D2DB0 /* tests */,
 				BAA147D81F33529000D1FFFE /* Profile.storyboard */,
 				BAA147DE1F33628D00D1FFFE /* AccountVC.swift */,
@@ -641,13 +624,11 @@
 				BAA42BA81F2B44040022C553 /* testVC.swift in Sources */,
 				BAA147DF1F33628D00D1FFFE /* AccountVC.swift in Sources */,
 				BA43ED6A1F3B2BAB000D2DB0 /* ExpandableVC.swift in Sources */,
-				BA43ED8D1F3DC9EE000D2DB0 /* TestCVCell.swift in Sources */,
 				BA43ED5C1F39A2F9000D2DB0 /* PresentationCell.swift in Sources */,
 				BAA147CE1F31D18200D1FFFE /* ModulesVC.swift in Sources */,
 				B9F6B05E1F25E69C00B695C0 /* AppDelegate.swift in Sources */,
 				BA6371771F264A9A00D77EA9 /* CircularButton.swift in Sources */,
 				BA43ED861F3C8020000D2DB0 /* GrandChildSkillItem.swift in Sources */,
-				BA43ED8F1F3DCDD2000D2DB0 /* TestTVCell.swift in Sources */,
 				BA690EA21F26118100EF980F /* ComplexObject.swift in Sources */,
 				BA690EB21F26119E00EF980F /* Notifications.swift in Sources */,
 				BAA147BC1F2F190800D1FFFE /* CalenderTableCell.swift in Sources */,
@@ -662,7 +643,6 @@
 				BA6371811F279CC000D77EA9 /* VerifyPhoneVC.swift in Sources */,
 				BA43ED801F3C4813000D2DB0 /* Expandable2VC.swift in Sources */,
 				BA43ED6F1F3B4C88000D2DB0 /* HoriPickerVC.swift in Sources */,
-				BA43ED8B1F3DC8D9000D2DB0 /* Test2VC.swift in Sources */,
 				BA690E9C1F26115500EF980F /* AssessmentReports.swift in Sources */,
 				BA690EAA1F26119000EF980F /* Leaderboards.swift in Sources */,
 				BA690EBB1F2611AF00EF980F /* StudentProfile.swift in Sources */,

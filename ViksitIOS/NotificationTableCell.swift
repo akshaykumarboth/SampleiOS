@@ -15,19 +15,18 @@ class NotificationTableCell: UITableViewCell, UIWebViewDelegate {
         self.notificationImage.layer.cornerRadius = self.notificationImage.frame.size.width / 2
         self.notificationImage.clipsToBounds = true
         
+        self.notificationMessageView.scalesPageToFit = true
+        self.notificationMessageView.frame=self.notiWebContainer.bounds;
+
         
         //setting fontsize for webview
-        /*let textSize: Int = 500
-        notificationMessageView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.webkitTextSi‌​zeAdjust= '\(textSize)%%'")*/
+        /*let textSize: Int = 20
+        self.notificationMessageView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '\(textSize)%%'")*/
         
-       
+        
  
     }
     
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
 
 }

@@ -446,15 +446,15 @@
                                                     <outlet property="delegate" destination="c8f-fj-Pbz" id="Ccg-V7-Mpz"/>
                                                 </connections>
                                             </collectionView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fjB-Bf-eBS">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fjB-Bf-eBS">
                                                 <rect key="frame" x="0.0" y="123" width="375" height="281"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubSkillTableCell" rowHeight="139" id="MGG-Fd-vnz" customClass="SubSkillTableCell" customModule="ViksitIOS" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="375" height="139"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubSkillTableCell" id="MGG-Fd-vnz" customClass="SubSkillTableCell" customModule="ViksitIOS" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="375" height="118"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MGG-Fd-vnz" id="mCI-gw-phh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="117.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4x-NM-yw8">
@@ -493,18 +493,27 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0b5-uq-IJZ">
-                                                                    <rect key="frame" x="48" y="44" width="317" height="62"/>
+                                                                    <rect key="frame" x="48" y="59.5" width="317" height="45"/>
                                                                 </stackView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6s-Mz-dzY">
+                                                                    <rect key="frame" x="48" y="41" width="317" height="13.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                    <color key="textColor" red="0.59607843137254901" green="0.59999999999999998" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="0b5-uq-IJZ" firstAttribute="width" secondItem="Hc4-ud-6iN" secondAttribute="width" id="Ad7-pN-eh1"/>
                                                                 <constraint firstAttribute="trailing" secondItem="n4x-NM-yw8" secondAttribute="trailing" constant="10" id="B88-Ne-VV8"/>
+                                                                <constraint firstAttribute="trailing" secondItem="d6s-Mz-dzY" secondAttribute="trailing" constant="10" id="FtB-wx-ZXI"/>
+                                                                <constraint firstItem="d6s-Mz-dzY" firstAttribute="top" secondItem="Hc4-ud-6iN" secondAttribute="bottom" constant="2" id="KDI-pn-G8V"/>
                                                                 <constraint firstAttribute="trailing" secondItem="0b5-uq-IJZ" secondAttribute="trailing" constant="10" id="RhC-AM-ThU"/>
-                                                                <constraint firstItem="0b5-uq-IJZ" firstAttribute="top" secondItem="Hc4-ud-6iN" secondAttribute="bottom" constant="5" id="Xo0-ag-mYY"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Hc4-ud-6iN" secondAttribute="trailing" constant="10" id="YKE-k8-Na9"/>
                                                                 <constraint firstItem="Hc4-ud-6iN" firstAttribute="leading" secondItem="tE8-Xs-ard" secondAttribute="trailing" constant="10" id="aXc-fM-RGX"/>
                                                                 <constraint firstItem="n4x-NM-yw8" firstAttribute="top" secondItem="mCI-gw-phh" secondAttribute="topMargin" constant="5" id="lBj-9i-GrZ"/>
                                                                 <constraint firstItem="n4x-NM-yw8" firstAttribute="leading" secondItem="tE8-Xs-ard" secondAttribute="trailing" constant="10" id="mac-2X-WXR"/>
+                                                                <constraint firstItem="n4x-NM-yw8" firstAttribute="width" secondItem="d6s-Mz-dzY" secondAttribute="width" id="r2e-xv-Qh5"/>
+                                                                <constraint firstItem="0b5-uq-IJZ" firstAttribute="top" secondItem="d6s-Mz-dzY" secondAttribute="bottom" constant="5" id="sZS-Q3-JIQ"/>
                                                                 <constraint firstItem="tE8-Xs-ard" firstAttribute="leading" secondItem="mCI-gw-phh" secondAttribute="leadingMargin" constant="10" id="tIr-ee-hh4"/>
                                                                 <constraint firstItem="tE8-Xs-ard" firstAttribute="top" secondItem="mCI-gw-phh" secondAttribute="topMargin" constant="5" id="xgi-nu-PUO"/>
                                                                 <constraint firstItem="Hc4-ud-6iN" firstAttribute="top" secondItem="n4x-NM-yw8" secondAttribute="bottom" constant="5" id="yKz-fu-f8n"/>
@@ -513,6 +522,7 @@
                                                         <connections>
                                                             <outlet property="expandImg" destination="tE8-Xs-ard" id="hek-jH-p3O"/>
                                                             <outlet property="grandSkillStack" destination="0b5-uq-IJZ" id="8F1-LL-CfF"/>
+                                                            <outlet property="subSkillDetail" destination="d6s-Mz-dzY" id="q0U-0m-zvr"/>
                                                             <outlet property="subSkillName" destination="n4x-NM-yw8" id="4py-D0-Ne8"/>
                                                             <outlet property="subSkillProgress" destination="nRE-9n-CUb" id="A0b-fw-ImN"/>
                                                         </connections>

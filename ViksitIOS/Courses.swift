@@ -16,7 +16,7 @@ public class Courses {
 	public var progress : Double?
 	public var message : String?
 	public var modules : Array<Modules>?
-    var skillObjectives : Array<SkillObjectives>?
+    var skillObjectives : Array<Skills>?
 
     init (json: [String: Any])  {
         
@@ -84,9 +84,9 @@ public class Courses {
         }
         
 		if (json["skillObjectives"] != nil) {
-            var list2: Array<SkillObjectives> = []
+            var list2: Array<Skills> = []
             for item in json["skillObjectives"] as! NSArray {
-                list2.append(SkillObjectives(json: item as! [String:Any]))
+                list2.append(Skills(json: item as! [String:Any]))
             }
             self.skillObjectives = list2
         }

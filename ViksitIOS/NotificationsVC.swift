@@ -55,7 +55,7 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         var html = "<html>"
         html += "<head>"
         html += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
-        html += "<style> body { font-size: 8px; padding: 0 !important; margin: 0 !important} </style>"
+        html += "<style> body { font-size: 13px; padding: 0 !important; margin: 0 !important} </style>"
         /*html += "<script type=\"text/javascript\">"
         html += "window.onload = function() {"
         html +=  "window.location.href = \"ready://\" + document.body.offsetHeight; }"
