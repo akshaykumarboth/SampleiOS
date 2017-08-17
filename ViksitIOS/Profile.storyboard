@@ -90,7 +90,6 @@
                                                                         <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="WGN-ey-9Ms" secondAttribute="height" multiplier="1:1" id="amm-88-3N3"/>
-                                                                            <constraint firstAttribute="width" constant="30" id="viz-Wh-63j"/>
                                                                         </constraints>
                                                                         <state key="normal" image="camera"/>
                                                                         <connections>
@@ -106,6 +105,7 @@
                                                                     <constraint firstAttribute="width" secondItem="pyf-VP-vq8" secondAttribute="height" multiplier="1:1" id="U7F-Nd-zgo"/>
                                                                     <constraint firstAttribute="trailing" secondItem="jk3-HZ-KWp" secondAttribute="trailing" id="d0d-j0-5QF"/>
                                                                     <constraint firstItem="jk3-HZ-KWp" firstAttribute="leading" secondItem="pyf-VP-vq8" secondAttribute="leading" id="lk1-Og-kMc"/>
+                                                                    <constraint firstAttribute="width" secondItem="WGN-ey-9Ms" secondAttribute="height" multiplier="39:10" id="nSF-4i-wVO"/>
                                                                     <constraint firstAttribute="bottom" secondItem="jk3-HZ-KWp" secondAttribute="bottom" id="yXk-RI-fKE"/>
                                                                 </constraints>
                                                             </view>
@@ -333,11 +333,10 @@
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6oQ-6q-6H7" customClass="CircularImage" customModule="ViksitIOS" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="117" height="117"/>
                                                     </imageView>
-                                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EY-6E-5NP" customClass="CircularButton" customModule="ViksitIOS" customModuleProvider="target">
+                                                    <button contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EY-6E-5NP" customClass="CircularButton" customModule="ViksitIOS" customModuleProvider="target">
                                                         <rect key="frame" x="87" y="87" width="30" height="30"/>
                                                         <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="30" id="g0g-JB-2Dd"/>
                                                             <constraint firstAttribute="width" secondItem="5EY-6E-5NP" secondAttribute="height" multiplier="1:1" id="vcF-Yg-3p2"/>
                                                         </constraints>
                                                         <state key="normal" image="camera"/>
@@ -355,6 +354,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="5EY-6E-5NP" secondAttribute="trailing" id="Urv-Gt-yjp"/>
                                                     <constraint firstItem="6oQ-6q-6H7" firstAttribute="leading" secondItem="sRS-sJ-tY2" secondAttribute="leading" id="dTX-rm-3cB"/>
                                                     <constraint firstItem="6oQ-6q-6H7" firstAttribute="top" secondItem="sRS-sJ-tY2" secondAttribute="top" id="qwV-mR-Ifb"/>
+                                                    <constraint firstAttribute="width" secondItem="5EY-6E-5NP" secondAttribute="height" multiplier="39:10" id="vr8-OZ-OT2"/>
                                                     <constraint firstAttribute="bottom" secondItem="6oQ-6q-6H7" secondAttribute="bottom" id="wEp-j3-okm"/>
                                                 </constraints>
                                             </view>
@@ -695,7 +695,6 @@
                                                                                 <rect key="frame" x="65" y="65.5" width="25" height="25"/>
                                                                                 <color key="backgroundColor" red="0.13725490200000001" green="0.71372549019999998" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="width" constant="25" id="jj2-6w-Pah"/>
                                                                                     <constraint firstAttribute="width" secondItem="XjD-jk-ymM" secondAttribute="height" multiplier="1:1" id="otU-jS-rbD"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -708,6 +707,7 @@
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <constraints>
                                                                             <constraint firstItem="FEh-AZ-9h9" firstAttribute="leading" secondItem="I7Y-YU-v5z" secondAttribute="leading" id="1Up-ox-ify"/>
+                                                                            <constraint firstAttribute="width" secondItem="XjD-jk-ymM" secondAttribute="height" multiplier="18:5" id="1aW-pT-hrK"/>
                                                                             <constraint firstAttribute="bottom" secondItem="XjD-jk-ymM" secondAttribute="bottom" id="4Vs-dr-nw9"/>
                                                                             <constraint firstAttribute="width" secondItem="I7Y-YU-v5z" secondAttribute="height" multiplier="1:1" id="5UC-Q8-FUZ"/>
                                                                             <constraint firstItem="FEh-AZ-9h9" firstAttribute="top" secondItem="I7Y-YU-v5z" secondAttribute="top" id="D2i-Jk-UTe"/>
@@ -754,7 +754,6 @@
                                                                                 <color key="backgroundColor" red="0.13725490196078433" green="0.71372549019607845" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="Uzm-fM-gPv" secondAttribute="height" multiplier="1:1" id="GdG-iQ-gIh"/>
-                                                                                    <constraint firstAttribute="width" constant="28" id="RRF-F4-mGz"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -771,6 +770,7 @@
                                                                             <constraint firstAttribute="trailing" secondItem="xsN-Yx-2hR" secondAttribute="trailing" id="MIY-Ik-4ED"/>
                                                                             <constraint firstAttribute="trailing" secondItem="Uzm-fM-gPv" secondAttribute="trailing" id="NOd-76-QLE"/>
                                                                             <constraint firstItem="xsN-Yx-2hR" firstAttribute="top" secondItem="b8u-ca-A26" secondAttribute="top" id="Oxd-RM-gQA"/>
+                                                                            <constraint firstAttribute="width" secondItem="Uzm-fM-gPv" secondAttribute="height" multiplier="25:7" id="Tr2-nN-roB"/>
                                                                             <constraint firstAttribute="bottom" secondItem="xsN-Yx-2hR" secondAttribute="bottom" id="s6h-w0-I2e"/>
                                                                         </constraints>
                                                                     </view>
@@ -813,7 +813,6 @@
                                                                                 <color key="backgroundColor" red="0.13725490200000001" green="0.71372549019999998" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="sw0-bo-Nit" secondAttribute="height" multiplier="1:1" id="Q7M-U5-H6S"/>
-                                                                                    <constraint firstAttribute="width" constant="26" id="xci-DJ-teo"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -831,6 +830,7 @@
                                                                             <constraint firstAttribute="trailing" secondItem="qPh-jS-VDF" secondAttribute="trailing" id="gQA-HO-nPN"/>
                                                                             <constraint firstAttribute="bottom" secondItem="sw0-bo-Nit" secondAttribute="bottom" id="mBm-8U-suy"/>
                                                                             <constraint firstAttribute="bottom" secondItem="qPh-jS-VDF" secondAttribute="bottom" id="mRJ-nS-Isj"/>
+                                                                            <constraint firstAttribute="width" secondItem="sw0-bo-Nit" secondAttribute="height" multiplier="95:26" id="vLU-Zt-VgU"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKq-Te-ets">

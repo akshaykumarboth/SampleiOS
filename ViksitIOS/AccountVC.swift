@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var studentProfile: StudentProfile? = nil
     
@@ -20,13 +20,53 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var objectsArray = [Objects]()
     
-    
     @IBOutlet var profileImage: CircularImage!
     
     @IBAction func uploadPhotoPressed(_ sender: CircularButton) {
+        let actionSheet = UIAlertController(title: "Change Photo", message: nil, preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+            action in
+            self.showCamera()
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Album", style: .default, handler: {
+            action in
+            self.showAlbum()
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
+    func showCamera(){
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.delegate = self
+        cameraPicker.sourceType = .camera
+        
+        present(cameraPicker, animated: true, completion: nil)
+    }
     
+    func showAlbum(){
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.delegate = self
+        cameraPicker.sourceType = .photoLibrary
+        
+        present(cameraPicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        dismiss(animated: true, completion: nil)
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage  {
+            profileImage.image = image
+        }
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     @IBAction func onBackPressed(_ sender: UIButton) {
