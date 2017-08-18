@@ -128,7 +128,7 @@
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="progressBarWidth">
-                                                                        <real key="value" value="10"/>
+                                                                        <real key="value" value="5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="progressBarProgressColor">
                                                                         <color key="value" red="0.79367404513888884" green="0.97132703993055558" blue="0.94376627604166663" alpha="1" colorSpace="calibratedRGB"/>

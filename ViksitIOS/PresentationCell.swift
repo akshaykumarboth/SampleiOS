@@ -22,4 +22,5 @@ class PresentationCell: UICollectionViewCell {
     
     @IBOutlet var videoImg: UIImageView!
     
+        
 }

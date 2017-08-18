@@ -21,8 +21,4 @@ class ProfileTBC: UITabBarController {
         // Do any additional setup after loading the view.
     }
 
-    override func prefersStatusBarHidden() -> Bool {
-        return false
-    }
-
 }

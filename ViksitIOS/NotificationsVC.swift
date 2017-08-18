@@ -34,7 +34,12 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
                 DispatchQueue.main.async {
-                    cell.notificationImage.image = UIImage(data: data!)
+                    if data != nil {
+                        cell.notificationImage.image = UIImage(data: data!)
+                    } else {
+                        cell.notificationImage.image = UIImage(named: "coins")
+                    }
+                    
                 }
             }
         } catch let error as NSError {

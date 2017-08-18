@@ -8,11 +8,12 @@
 
 import UIKit
 
-class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+class TasksVC: UIViewController{
     
     var tasks: Array<Tasks> = []
 
     @IBOutlet var cards: UICollectionView!
+    let cellScaling: CGFloat = 0.75
     
     @IBOutlet var coinsBtn: UIButton!
     @IBOutlet var experiencePoints: UILabel!
@@ -34,6 +35,20 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let screenSize = UIScreen.main.bounds.size
+        let cellWidth = floor(screenSize.width * cellScaling)
+        let cellHeight = floor(screenSize.height * cellScaling)
+        
+        let insetX = (view.bounds.width - cellWidth)/2.0
+        let insetY = (view.bounds.height - cellHeight)/2.0
+        
+        let layout = cards.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        cards.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
+        
+        self.cards.delegate = self
+        self.cards.dataSource = self
         
         var profileImgUrl: String = ""
         var xp: Int = 0
@@ -82,9 +97,55 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         self.present(nextViewController, animated:true, completion:nil)
     }
     
+    /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let screenSize = UIScreen.main.bounds.size
+        
+        return CGSize(width: (screenSize.width * 0.75), height: screenSize.height * 0.75); //use height whatever you wants.
+    }*/
     
     
-    //
+    override var prefersStatusBarHidden : Bool {
+        return false
+    }
+
+    func loadImageAsync(url: String, imgView: UIImageView){
+        do {
+            let url = URL(string: url)
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    if data != nil {
+                        imgView.image = UIImage(data: data!)
+
+                    } else {
+                        imgView.image = UIImage(named: "info")
+                    }
+                                    }
+            }
+        }catch let error as NSError {
+            print(" Error \(error)")
+        }
+    }
+    
+    
+    func getSubstring (str: String, startOffest: Int, endOffset: Int)-> String {
+        let start = str.index(str.startIndex, offsetBy: startOffest)
+        let end = str.index(str.endIndex, offsetBy: endOffset)
+        let range = start..<end
+        
+        return str[range]
+    }
+
+    
+}
+
+extension TasksVC: UICollectionViewDataSource {
+    
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tasks.count
@@ -100,6 +161,7 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             cell.descriptionLabel.text = tasks[indexPath.row].description
             loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
             cell.videoImg.isHidden = true
+            
             
             return cell
         } else if tasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" {
@@ -124,6 +186,7 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             
             cell.startBtn.setTitle("START CLASS", for: .normal)
             
+            
             return cell
         } else if tasks[indexPath.row].itemType == "LESSON_VIDEO"{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
@@ -134,6 +197,7 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
             
             cell.videoImg.isHidden = false
+            
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
@@ -142,78 +206,25 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         }
         
         
-        
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
-        
-        
-        return CGSize(width: (cards.frame.width * 0.75), height: cards.frame.height * 0.75); //use height whatever you wants.
-    }
-    
-    
-   
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
-        let pageWidth:Float = Float(cards!.frame.size.width * 0.9)
-        let currentOffSet:Float = Float(scrollView.contentOffset.x)
-        
-        let targetOffSet:Float = Float(targetContentOffset.pointee.x)
-        
-        var newTargetOffset:Float = 0
-        
-        if(targetOffSet > currentOffSet){
-            newTargetOffset = ceilf(currentOffSet / pageWidth) * pageWidth
-        }else{
-            newTargetOffset = floorf(currentOffSet / pageWidth) * pageWidth
-        }
-        
-        if(newTargetOffset < 0){
-            newTargetOffset = 0;
-        }else if (newTargetOffset > Float(scrollView.contentSize.width)){
-            newTargetOffset = Float(scrollView.contentSize.width)
-        }
-        
-        targetContentOffset.pointee.x = CGFloat(currentOffSet)
-        scrollView.setContentOffset(CGPoint(x: CGFloat(newTargetOffset), y: 0), animated: true)
-        
-    }
- 
-    
-    override var prefersStatusBarHidden : Bool {
-        return true
-    }
-
-    func loadImageAsync(url: String, imgView: UIImageView){
-        do {
-            let url = URL(string: url)
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                DispatchQueue.main.async {
-                    if data != nil {
-                        imgView.image = UIImage(data: data!)
-
-                    } else {
-                        imgView.image = UIImage(named: "info")
-                    }
-                                    }
-            }
-        }catch let error as NSError {
-            print(" Error \(error)")
-        }
-    }
-    
-    
-    
-    func getSubstring (str: String, startOffest: Int, endOffset: Int)-> String {
-        let start = str.index(str.startIndex, offsetBy: startOffest)
-        let end = str.index(str.endIndex, offsetBy: endOffset)
-        let range = start..<end
-        
-        return str[range]
-    }
-
-    
 
 }
+extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let layout = cards.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        
+        var offset = targetContentOffset.pointee
+        let index = (offset.x + scrollView.contentInset.left)/cellWidthIncludingSpacing
+        
+        let roundedIndex = round(index)
+        
+        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+        targetContentOffset.pointee = offset
+    }
+    
+    
+}
+
+

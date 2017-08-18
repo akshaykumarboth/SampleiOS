@@ -27,6 +27,8 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     @IBOutlet var userBatchRankLabel: UILabel!
     @IBOutlet var userNameLabel: UILabel!
     
+    
+    
     @IBAction func uploadPhotoPressed(_ sender: CircularButton) {
         let actionSheet = UIAlertController(title: "Change Photo", message: nil, preferredStyle: .actionSheet)
         
@@ -159,7 +161,7 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     override var prefersStatusBarHidden : Bool {
-        return true
+        return false
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -176,7 +178,7 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let openViewHeight: Int = 70
+        let openViewHeight: Int = 58
         
         if (indexPath.row == selectedRowIndex.row && isExpanded == false){
             isExpanded = true

@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DataCache.sharedInstance.cache["complexObject"] = response
         }
 
-        
         return true
     }
 
