@@ -82,6 +82,14 @@ class ModulesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(modules[indexPath.row].id as Any)
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Modules", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LessonVC") as! LessonVC
+        
+        nextViewController.lessons = modules[indexPath.row].lessons!
+        nextViewController.course = course
+        nextViewController.toolbarTitleText = modules[indexPath.row].name!
+        self.present(nextViewController, animated:true, completion:nil)
     }
     
     func loadImageAsync(url: String, imgView: UIImageView){

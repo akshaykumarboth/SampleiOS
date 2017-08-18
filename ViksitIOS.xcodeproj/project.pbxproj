@@ -30,6 +30,8 @@
 		BA43ED801F3C4813000D2DB0 /* Expandable2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED7F1F3C4813000D2DB0 /* Expandable2VC.swift */; };
 		BA43ED841F3C7F8A000D2DB0 /* GrandChildSkillItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA43ED831F3C7F8A000D2DB0 /* GrandChildSkillItem.xib */; };
 		BA43ED861F3C8020000D2DB0 /* GrandChildSkillItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED851F3C8020000D2DB0 /* GrandChildSkillItem.swift */; };
+		BA43EDD91F472AAC000D2DB0 /* LessonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDD81F472AAC000D2DB0 /* LessonVC.swift */; };
+		BA43EDDB1F472B54000D2DB0 /* LessonCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDDA1F472B54000D2DB0 /* LessonCVCell.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -138,6 +140,8 @@
 		BA43ED7F1F3C4813000D2DB0 /* Expandable2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expandable2VC.swift; sourceTree = "<group>"; };
 		BA43ED831F3C7F8A000D2DB0 /* GrandChildSkillItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GrandChildSkillItem.xib; sourceTree = "<group>"; };
 		BA43ED851F3C8020000D2DB0 /* GrandChildSkillItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandChildSkillItem.swift; sourceTree = "<group>"; };
+		BA43EDD81F472AAC000D2DB0 /* LessonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonVC.swift; sourceTree = "<group>"; };
+		BA43EDDA1F472B54000D2DB0 /* LessonCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonCVCell.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -328,6 +332,15 @@
 			name = tests;
 			sourceTree = "<group>";
 		};
+		BA43EDD71F472A90000D2DB0 /* lesson */ = {
+			isa = PBXGroup;
+			children = (
+				BA43EDD81F472AAC000D2DB0 /* LessonVC.swift */,
+				BA43EDDA1F472B54000D2DB0 /* LessonCVCell.swift */,
+			);
+			name = lesson;
+			sourceTree = "<group>";
+		};
 		BA63716C1F262A1700D77EA9 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +461,7 @@
 				BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */,
 				BAA147CF1F31E87F00D1FFFE /* ModuleCell.swift */,
 				BAA147D11F3225D500D1FFFE /* RoleInfoVC.swift */,
+				BA43EDD71F472A90000D2DB0 /* lesson */,
 				BA63719B1F28E08800D77EA9 /* notifications */,
 			);
 			name = modules;
@@ -813,6 +827,7 @@
 				BAA147BC1F2F190800D1FFFE /* CalenderTableCell.swift in Sources */,
 				BA690EAB1F26119000EF980F /* Lesson.swift in Sources */,
 				BA6371941F288B7E00D77EA9 /* RoleTableCell.swift in Sources */,
+				BA43EDDB1F472B54000D2DB0 /* LessonCVCell.swift in Sources */,
 				BAA147D21F3225D500D1FFFE /* RoleInfoVC.swift in Sources */,
 				BAA147ED1F3498FB00D1FFFE /* LeaderboardCell.swift in Sources */,
 				BA63717D1F27946B00D77EA9 /* OtpVC.swift in Sources */,
@@ -832,6 +847,7 @@
 				BA63716B1F26236000D77EA9 /* Helper.swift in Sources */,
 				BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */,
 				BA6371881F28707900D77EA9 /* PasswordChangedVC.swift in Sources */,
+				BA43EDD91F472AAC000D2DB0 /* LessonVC.swift in Sources */,
 				BA43ED711F3B64C8000D2DB0 /* SubSkillTableCell.swift in Sources */,
 				BA690EA31F26118100EF980F /* Courses.swift in Sources */,
 				BA6371981F28C1A500D77EA9 /* NotificationTableCell.swift in Sources */,

@@ -1,10 +1,3 @@
-//
-//  TasksVC.swift
-//  ViksitIOS
-//
-//  Created by Akshay Kumar Both on 7/26/17.
-//  Copyright © 2017 Istar Feroz. All rights reserved.
-//
 
 import UIKit
 
@@ -222,6 +215,8 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
         
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
+        
+        
     }
     
     
