@@ -32,7 +32,7 @@ class LessonVC: UIViewController {
 
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * 0.8)
-        let cellHeight = floor(screenSize.height * 0.5)
+        let cellHeight = floor(screenSize.height * 0.45)
         
         let insetX = (view.bounds.width - cellWidth)/2.0
         let insetY = (view.bounds.height - cellHeight)/2.0

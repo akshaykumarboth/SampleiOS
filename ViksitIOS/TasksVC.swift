@@ -181,7 +181,36 @@ extension TasksVC: UICollectionViewDataSource {
             
             
             return cell
-        } else if tasks[indexPath.row].itemType == "LESSON_VIDEO"{
+        } else if tasks[indexPath.row].itemType == "ASSESSMENT" {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
+            
+            cell.headerLabel.text = tasks[indexPath.row].header
+            cell.titleLabel.text = tasks[indexPath.row].title
+            if tasks[indexPath.row].imageURL != nil {
+                loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+            }
+            cell.descriptionLabel.text = tasks[indexPath.row].description
+            
+            if let ques = tasks[indexPath.row].numberOfQuestions {
+                
+                cell.numOfQuesLabel.text = String(ques)
+            }
+            cell.quesText.text = "Questions"
+            if let y = tasks[indexPath.row].itemPoints {
+                cell.pointsLabel.text = String(y)
+            }
+            cell.xpText.text = "Experience"
+            if let dur = tasks[indexPath.row].duration {
+                cell.durationLabel.text = String(dur)
+            }
+            
+            cell.timeText.text = "Duration"
+            
+            cell.startBtn.setTitle("START ASSESSMENT", for: .normal)
+            
+            return cell
+            
+        }else if tasks[indexPath.row].itemType == "LESSON_VIDEO"{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
             
             cell.headerLabel.text = tasks[indexPath.row].header

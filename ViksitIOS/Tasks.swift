@@ -24,6 +24,10 @@ public class Tasks {
 	public var time : String?
 	public var event_address : String?
     public var description : String?
+    public var numberOfQuestions : Int?
+    public var itemPoints: Int?
+    public var retryable: Bool?
+    
     
     init (json: [String: Any]) {
         
@@ -130,6 +134,18 @@ public class Tasks {
         if json["description"] != nil {
             self.description = json["description"] as? String
             //print("skill id is ",self.id! )
+        }
+        
+        if json["numberOfQuestions"] != nil {
+            self.numberOfQuestions = json["numberOfQuestions"] as? Int
+        }
+        
+        if json["itemPoints"] != nil {
+            self.itemPoints = json["itemPoints"] as? Int
+        }
+        
+        if json["retryable"] != nil {
+            self.retryable = json["retryable"] as? Bool
         }
 		
 	}
