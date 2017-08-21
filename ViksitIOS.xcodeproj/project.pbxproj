@@ -32,6 +32,30 @@
 		BA43ED861F3C8020000D2DB0 /* GrandChildSkillItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED851F3C8020000D2DB0 /* GrandChildSkillItem.swift */; };
 		BA43EDD91F472AAC000D2DB0 /* LessonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDD81F472AAC000D2DB0 /* LessonVC.swift */; };
 		BA43EDDB1F472B54000D2DB0 /* LessonCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDDA1F472B54000D2DB0 /* LessonCVCell.swift */; };
+		BA43EDDE1F4B1420000D2DB0 /* Lesson.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA43EDDD1F4B1420000D2DB0 /* Lesson.storyboard */; };
+		BA43EDE01F4B1497000D2DB0 /* XmlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDDF1F4B1497000D2DB0 /* XmlVC.swift */; };
+		BA43EDE21F4B16B4000D2DB0 /* LessonsPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */; };
+		BA43EDE41F4B17CB000D2DB0 /* NO_CONTENT.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDE31F4B17CB000D2DB0 /* NO_CONTENT.swift */; };
+		BA43EDE61F4B17E8000D2DB0 /* ONLY_2BOX.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDE51F4B17E8000D2DB0 /* ONLY_2BOX.swift */; };
+		BA43EDE81F4B17FE000D2DB0 /* ONLY_2TITLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDE71F4B17FE000D2DB0 /* ONLY_2TITLE.swift */; };
+		BA43EDEB1F4B26D6000D2DB0 /* ONLY_2TITLE_IMAGE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDEA1F4B26D6000D2DB0 /* ONLY_2TITLE_IMAGE.swift */; };
+		BA43EDED1F4B26F4000D2DB0 /* ONLY_LIST_NUMBERED.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDEC1F4B26F4000D2DB0 /* ONLY_LIST_NUMBERED.swift */; };
+		BA43EDEF1F4B2709000D2DB0 /* ONLY_PARAGRAPH.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDEE1F4B2709000D2DB0 /* ONLY_PARAGRAPH.swift */; };
+		BA43EDF11F4B2725000D2DB0 /* ONLY_PARAGRAPH_IMAGE_LIST.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDF01F4B2725000D2DB0 /* ONLY_PARAGRAPH_IMAGE_LIST.swift */; };
+		BA43EDF31F4B273A000D2DB0 /* ONLY_PARAGRAPH_TITLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDF21F4B273A000D2DB0 /* ONLY_PARAGRAPH_TITLE.swift */; };
+		BA43EDF51F4B274B000D2DB0 /* ONLY_PARAGRAPH_TITLE_LIST.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDF41F4B274B000D2DB0 /* ONLY_PARAGRAPH_TITLE_LIST.swift */; };
+		BA43EDF71F4B2761000D2DB0 /* ONLY_TITLE_LIST_NUMBERED.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDF61F4B2761000D2DB0 /* ONLY_TITLE_LIST_NUMBERED.swift */; };
+		BA43EDF91F4B2772000D2DB0 /* ONLY_TITLE_PARAGRAPH.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDF81F4B2772000D2DB0 /* ONLY_TITLE_PARAGRAPH.swift */; };
+		BA43EDFB1F4B2786000D2DB0 /* ONLY_TITLE_PARAGRAPH_cells_fragemented.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDFA1F4B2786000D2DB0 /* ONLY_TITLE_PARAGRAPH_cells_fragemented.swift */; };
+		BA43EDFD1F4B2796000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDFC1F4B2796000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE.swift */; };
+		BA43EDFF1F4B27AA000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE_LIST.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDFE1F4B27AA000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE_LIST.swift */; };
+		BA43EE011F4B27B9000D2DB0 /* ONLY_VIDEO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE001F4B27B9000D2DB0 /* ONLY_VIDEO.swift */; };
+		BA43EE031F4B27CA000D2DB0 /* ONLYLIST.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE021F4B27CA000D2DB0 /* ONLYLIST.swift */; };
+		BA43EE051F4B27DC000D2DB0 /* ONLYPARAGRAPHIMAGE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE041F4B27DC000D2DB0 /* ONLYPARAGRAPHIMAGE.swift */; };
+		BA43EE071F4B2829000D2DB0 /* ONLYTITLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE061F4B2829000D2DB0 /* ONLYTITLE.swift */; };
+		BA43EE091F4B283D000D2DB0 /* ONLYTITLEIMAGE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE081F4B283D000D2DB0 /* ONLYTITLEIMAGE.swift */; };
+		BA43EE0B1F4B284C000D2DB0 /* ONLYTITLELIST.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE0A1F4B284C000D2DB0 /* ONLYTITLELIST.swift */; };
+		BA43EE0D1F4B285E000D2DB0 /* ONLYTITLETREE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE0C1F4B285E000D2DB0 /* ONLYTITLETREE.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -142,6 +166,30 @@
 		BA43ED851F3C8020000D2DB0 /* GrandChildSkillItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandChildSkillItem.swift; sourceTree = "<group>"; };
 		BA43EDD81F472AAC000D2DB0 /* LessonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonVC.swift; sourceTree = "<group>"; };
 		BA43EDDA1F472B54000D2DB0 /* LessonCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonCVCell.swift; sourceTree = "<group>"; };
+		BA43EDDD1F4B1420000D2DB0 /* Lesson.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lesson.storyboard; sourceTree = "<group>"; };
+		BA43EDDF1F4B1497000D2DB0 /* XmlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlVC.swift; sourceTree = "<group>"; };
+		BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsPageVC.swift; sourceTree = "<group>"; };
+		BA43EDE31F4B17CB000D2DB0 /* NO_CONTENT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NO_CONTENT.swift; sourceTree = "<group>"; };
+		BA43EDE51F4B17E8000D2DB0 /* ONLY_2BOX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_2BOX.swift; sourceTree = "<group>"; };
+		BA43EDE71F4B17FE000D2DB0 /* ONLY_2TITLE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_2TITLE.swift; sourceTree = "<group>"; };
+		BA43EDEA1F4B26D6000D2DB0 /* ONLY_2TITLE_IMAGE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_2TITLE_IMAGE.swift; sourceTree = "<group>"; };
+		BA43EDEC1F4B26F4000D2DB0 /* ONLY_LIST_NUMBERED.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_LIST_NUMBERED.swift; sourceTree = "<group>"; };
+		BA43EDEE1F4B2709000D2DB0 /* ONLY_PARAGRAPH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_PARAGRAPH.swift; sourceTree = "<group>"; };
+		BA43EDF01F4B2725000D2DB0 /* ONLY_PARAGRAPH_IMAGE_LIST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_PARAGRAPH_IMAGE_LIST.swift; sourceTree = "<group>"; };
+		BA43EDF21F4B273A000D2DB0 /* ONLY_PARAGRAPH_TITLE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_PARAGRAPH_TITLE.swift; sourceTree = "<group>"; };
+		BA43EDF41F4B274B000D2DB0 /* ONLY_PARAGRAPH_TITLE_LIST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_PARAGRAPH_TITLE_LIST.swift; sourceTree = "<group>"; };
+		BA43EDF61F4B2761000D2DB0 /* ONLY_TITLE_LIST_NUMBERED.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_TITLE_LIST_NUMBERED.swift; sourceTree = "<group>"; };
+		BA43EDF81F4B2772000D2DB0 /* ONLY_TITLE_PARAGRAPH.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_TITLE_PARAGRAPH.swift; sourceTree = "<group>"; };
+		BA43EDFA1F4B2786000D2DB0 /* ONLY_TITLE_PARAGRAPH_cells_fragemented.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_TITLE_PARAGRAPH_cells_fragemented.swift; sourceTree = "<group>"; };
+		BA43EDFC1F4B2796000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_TITLE_PARAGRAPH_IMAGE.swift; sourceTree = "<group>"; };
+		BA43EDFE1F4B27AA000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE_LIST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_TITLE_PARAGRAPH_IMAGE_LIST.swift; sourceTree = "<group>"; };
+		BA43EE001F4B27B9000D2DB0 /* ONLY_VIDEO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_VIDEO.swift; sourceTree = "<group>"; };
+		BA43EE021F4B27CA000D2DB0 /* ONLYLIST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLYLIST.swift; sourceTree = "<group>"; };
+		BA43EE041F4B27DC000D2DB0 /* ONLYPARAGRAPHIMAGE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLYPARAGRAPHIMAGE.swift; sourceTree = "<group>"; };
+		BA43EE061F4B2829000D2DB0 /* ONLYTITLE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLYTITLE.swift; sourceTree = "<group>"; };
+		BA43EE081F4B283D000D2DB0 /* ONLYTITLEIMAGE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLYTITLEIMAGE.swift; sourceTree = "<group>"; };
+		BA43EE0A1F4B284C000D2DB0 /* ONLYTITLELIST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLYTITLELIST.swift; sourceTree = "<group>"; };
+		BA43EE0C1F4B285E000D2DB0 /* ONLYTITLETREE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLYTITLETREE.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -269,6 +317,7 @@
 				B9F6B05F1F25E69C00B695C0 /* RootViewController.swift */,
 				B9F6B0611F25E69C00B695C0 /* DataViewController.swift */,
 				B9F6B0631F25E69C00B695C0 /* ModelController.swift */,
+				BA43EDDC1F4B13F7000D2DB0 /* lessons */,
 				BA63716C1F262A1700D77EA9 /* login */,
 				BA6371891F28826C00D77EA9 /* tabs */,
 				BAA147CA1F31D11B00D1FFFE /* modules */,
@@ -339,6 +388,45 @@
 				BA43EDDA1F472B54000D2DB0 /* LessonCVCell.swift */,
 			);
 			name = lesson;
+			sourceTree = "<group>";
+		};
+		BA43EDDC1F4B13F7000D2DB0 /* lessons */ = {
+			isa = PBXGroup;
+			children = (
+				BA43EDDD1F4B1420000D2DB0 /* Lesson.storyboard */,
+				BA43EDDF1F4B1497000D2DB0 /* XmlVC.swift */,
+				BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */,
+				BA43EDE91F4B2694000D2DB0 /* templates */,
+			);
+			name = lessons;
+			sourceTree = "<group>";
+		};
+		BA43EDE91F4B2694000D2DB0 /* templates */ = {
+			isa = PBXGroup;
+			children = (
+				BA43EDE31F4B17CB000D2DB0 /* NO_CONTENT.swift */,
+				BA43EDE51F4B17E8000D2DB0 /* ONLY_2BOX.swift */,
+				BA43EDE71F4B17FE000D2DB0 /* ONLY_2TITLE.swift */,
+				BA43EDEA1F4B26D6000D2DB0 /* ONLY_2TITLE_IMAGE.swift */,
+				BA43EDEC1F4B26F4000D2DB0 /* ONLY_LIST_NUMBERED.swift */,
+				BA43EDEE1F4B2709000D2DB0 /* ONLY_PARAGRAPH.swift */,
+				BA43EDF01F4B2725000D2DB0 /* ONLY_PARAGRAPH_IMAGE_LIST.swift */,
+				BA43EDF21F4B273A000D2DB0 /* ONLY_PARAGRAPH_TITLE.swift */,
+				BA43EDF41F4B274B000D2DB0 /* ONLY_PARAGRAPH_TITLE_LIST.swift */,
+				BA43EDF61F4B2761000D2DB0 /* ONLY_TITLE_LIST_NUMBERED.swift */,
+				BA43EDF81F4B2772000D2DB0 /* ONLY_TITLE_PARAGRAPH.swift */,
+				BA43EDFA1F4B2786000D2DB0 /* ONLY_TITLE_PARAGRAPH_cells_fragemented.swift */,
+				BA43EDFC1F4B2796000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE.swift */,
+				BA43EDFE1F4B27AA000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE_LIST.swift */,
+				BA43EE001F4B27B9000D2DB0 /* ONLY_VIDEO.swift */,
+				BA43EE021F4B27CA000D2DB0 /* ONLYLIST.swift */,
+				BA43EE041F4B27DC000D2DB0 /* ONLYPARAGRAPHIMAGE.swift */,
+				BA43EE061F4B2829000D2DB0 /* ONLYTITLE.swift */,
+				BA43EE081F4B283D000D2DB0 /* ONLYTITLEIMAGE.swift */,
+				BA43EE0A1F4B284C000D2DB0 /* ONLYTITLELIST.swift */,
+				BA43EE0C1F4B285E000D2DB0 /* ONLYTITLETREE.swift */,
+			);
+			name = templates;
 			sourceTree = "<group>";
 		};
 		BA63716C1F262A1700D77EA9 /* login */ = {
@@ -613,6 +701,7 @@
 				BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */,
 				BAA147D91F33529000D1FFFE /* Profile.storyboard in Resources */,
 				BA43ED7C1F3C47AE000D2DB0 /* StackViewCell.xib in Resources */,
+				BA43EDDE1F4B1420000D2DB0 /* Lesson.storyboard in Resources */,
 				BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */,
 				B9F6B0691F25E69C00B695C0 /* Assets.xcassets in Resources */,
 				B9F6B0671F25E69C00B695C0 /* Main.storyboard in Resources */,
@@ -795,39 +884,57 @@
 				BA6371851F2868C400D77EA9 /* RoundedShadowedButton.swift in Sources */,
 				BA43ED5E1F39E8E9000D2DB0 /* AssessmentCell.swift in Sources */,
 				B9F6B0601F25E69C00B695C0 /* RootViewController.swift in Sources */,
+				BA43EDEB1F4B26D6000D2DB0 /* ONLY_2TITLE_IMAGE.swift in Sources */,
 				BA690EB11F26119E00EF980F /* Modules.swift in Sources */,
 				BA690EA91F26119000EF980F /* Events.swift in Sources */,
 				BAA147D01F31E87F00D1FFFE /* ModuleCell.swift in Sources */,
 				BA690EBA1F2611AF00EF980F /* SkillsReport.swift in Sources */,
 				BA690EB31F26119E00EF980F /* Response.swift in Sources */,
 				BAA147E11F33666500D1FFFE /* ProfileTBC.swift in Sources */,
+				BA43EDFD1F4B2796000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE.swift in Sources */,
 				BA63717F1F27978600D77EA9 /* ResetPasswordVC.swift in Sources */,
+				BA43EDFF1F4B27AA000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE_LIST.swift in Sources */,
 				B9F6B0641F25E69C00B695C0 /* ModelController.swift in Sources */,
 				BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */,
+				BA43EDF31F4B273A000D2DB0 /* ONLY_PARAGRAPH_TITLE.swift in Sources */,
+				BA43EDE01F4B1497000D2DB0 /* XmlVC.swift in Sources */,
 				BA63717B1F27284700D77EA9 /* TextFieldWithPadding.swift in Sources */,
+				BA43EE0D1F4B285E000D2DB0 /* ONLYTITLETREE.swift in Sources */,
 				B9F6B0621F25E69C00B695C0 /* DataViewController.swift in Sources */,
 				BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */,
+				BA43EDE21F4B16B4000D2DB0 /* LessonsPageVC.swift in Sources */,
+				BA43EDE61F4B17E8000D2DB0 /* ONLY_2BOX.swift in Sources */,
 				BA43ED6D1F3B42B7000D2DB0 /* SuperSkillCell.swift in Sources */,
 				BA690EB91F2611AF00EF980F /* Skills.swift in Sources */,
+				BA43EDE81F4B17FE000D2DB0 /* ONLY_2TITLE.swift in Sources */,
+				BA43EE071F4B2829000D2DB0 /* ONLYTITLE.swift in Sources */,
 				BA6371721F2640AA00D77EA9 /* LoginVC.swift in Sources */,
 				BA6371741F2640C500D77EA9 /* SignUpVC.swift in Sources */,
+				BA43EE011F4B27B9000D2DB0 /* ONLY_VIDEO.swift in Sources */,
 				BA43ED581F386E3E000D2DB0 /* CircularImage.swift in Sources */,
+				BA43EDED1F4B26F4000D2DB0 /* ONLY_LIST_NUMBERED.swift in Sources */,
 				BAA147D41F334B7700D1FFFE /* LeftAlignedIconButton.swift in Sources */,
 				BA6371921F2886A500D77EA9 /* CalenderVC.swift in Sources */,
 				BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */,
 				BAA42BA81F2B44040022C553 /* testVC.swift in Sources */,
+				BA43EDF91F4B2772000D2DB0 /* ONLY_TITLE_PARAGRAPH.swift in Sources */,
+				BA43EE031F4B27CA000D2DB0 /* ONLYLIST.swift in Sources */,
 				BAA147DF1F33628D00D1FFFE /* AccountVC.swift in Sources */,
 				BA43ED5C1F39A2F9000D2DB0 /* PresentationCell.swift in Sources */,
+				BA43EDF51F4B274B000D2DB0 /* ONLY_PARAGRAPH_TITLE_LIST.swift in Sources */,
 				BAA147CE1F31D18200D1FFFE /* ModulesVC.swift in Sources */,
 				B9F6B05E1F25E69C00B695C0 /* AppDelegate.swift in Sources */,
 				BA6371771F264A9A00D77EA9 /* CircularButton.swift in Sources */,
+				BA43EE051F4B27DC000D2DB0 /* ONLYPARAGRAPHIMAGE.swift in Sources */,
 				BA43ED861F3C8020000D2DB0 /* GrandChildSkillItem.swift in Sources */,
 				BA690EA21F26118100EF980F /* ComplexObject.swift in Sources */,
 				BA690EB21F26119E00EF980F /* Notifications.swift in Sources */,
 				BAA147BC1F2F190800D1FFFE /* CalenderTableCell.swift in Sources */,
 				BA690EAB1F26119000EF980F /* Lesson.swift in Sources */,
 				BA6371941F288B7E00D77EA9 /* RoleTableCell.swift in Sources */,
+				BA43EDEF1F4B2709000D2DB0 /* ONLY_PARAGRAPH.swift in Sources */,
 				BA43EDDB1F472B54000D2DB0 /* LessonCVCell.swift in Sources */,
+				BA43EDF71F4B2761000D2DB0 /* ONLY_TITLE_LIST_NUMBERED.swift in Sources */,
 				BAA147D21F3225D500D1FFFE /* RoleInfoVC.swift in Sources */,
 				BAA147ED1F3498FB00D1FFFE /* LeaderboardCell.swift in Sources */,
 				BA63717D1F27946B00D77EA9 /* OtpVC.swift in Sources */,
@@ -847,13 +954,18 @@
 				BA63716B1F26236000D77EA9 /* Helper.swift in Sources */,
 				BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */,
 				BA6371881F28707900D77EA9 /* PasswordChangedVC.swift in Sources */,
+				BA43EE091F4B283D000D2DB0 /* ONLYTITLEIMAGE.swift in Sources */,
 				BA43EDD91F472AAC000D2DB0 /* LessonVC.swift in Sources */,
+				BA43EDE41F4B17CB000D2DB0 /* NO_CONTENT.swift in Sources */,
+				BA43EDF11F4B2725000D2DB0 /* ONLY_PARAGRAPH_IMAGE_LIST.swift in Sources */,
 				BA43ED711F3B64C8000D2DB0 /* SubSkillTableCell.swift in Sources */,
+				BA43EE0B1F4B284C000D2DB0 /* ONLYTITLELIST.swift in Sources */,
 				BA690EA31F26118100EF980F /* Courses.swift in Sources */,
 				BA6371981F28C1A500D77EA9 /* NotificationTableCell.swift in Sources */,
 				BAA147DD1F33627000D1FFFE /* PerformanceVC.swift in Sources */,
 				BA6371901F28868D00D77EA9 /* TasksVC.swift in Sources */,
 				BA63719D1F293B6000D77EA9 /* TabBarController.swift in Sources */,
+				BA43EDFB1F4B2786000D2DB0 /* ONLY_TITLE_PARAGRAPH_cells_fragemented.swift in Sources */,
 				BA63718E1F2883FD00D77EA9 /* RolesVC.swift in Sources */,
 				BA690EAC1F26119000EF980F /* Lessons.swift in Sources */,
 				BA43ED7B1F3C47AE000D2DB0 /* StackViewCell.swift in Sources */,
