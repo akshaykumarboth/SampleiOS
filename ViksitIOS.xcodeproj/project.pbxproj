@@ -56,6 +56,11 @@
 		BA43EE091F4B283D000D2DB0 /* ONLYTITLEIMAGE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE081F4B283D000D2DB0 /* ONLYTITLEIMAGE.swift */; };
 		BA43EE0B1F4B284C000D2DB0 /* ONLYTITLELIST.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE0A1F4B284C000D2DB0 /* ONLYTITLELIST.swift */; };
 		BA43EE0D1F4B285E000D2DB0 /* ONLYTITLETREE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE0C1F4B285E000D2DB0 /* ONLYTITLETREE.swift */; };
+		BA43EE0F1F4C1BEC000D2DB0 /* CMSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE0E1F4C1BEC000D2DB0 /* CMSlide.swift */; };
+		BA43EE121F4C2239000D2DB0 /* CMSText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE111F4C2239000D2DB0 /* CMSText.swift */; };
+		BA43EE141F4C2467000D2DB0 /* CMSList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE131F4C2467000D2DB0 /* CMSList.swift */; };
+		BA43EE161F4C282A000D2DB0 /* CMSTextItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE151F4C282A000D2DB0 /* CMSTextItem.swift */; };
+		BA43EE181F4C3A1E000D2DB0 /* CMSMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE171F4C3A1E000D2DB0 /* CMSMedia.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -190,6 +195,11 @@
 		BA43EE081F4B283D000D2DB0 /* ONLYTITLEIMAGE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLYTITLEIMAGE.swift; sourceTree = "<group>"; };
 		BA43EE0A1F4B284C000D2DB0 /* ONLYTITLELIST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLYTITLELIST.swift; sourceTree = "<group>"; };
 		BA43EE0C1F4B285E000D2DB0 /* ONLYTITLETREE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLYTITLETREE.swift; sourceTree = "<group>"; };
+		BA43EE0E1F4C1BEC000D2DB0 /* CMSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSlide.swift; sourceTree = "<group>"; };
+		BA43EE111F4C2239000D2DB0 /* CMSText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSText.swift; sourceTree = "<group>"; };
+		BA43EE131F4C2467000D2DB0 /* CMSList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSList.swift; sourceTree = "<group>"; };
+		BA43EE151F4C282A000D2DB0 /* CMSTextItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSTextItem.swift; sourceTree = "<group>"; };
+		BA43EE171F4C3A1E000D2DB0 /* CMSMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSMedia.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -397,6 +407,7 @@
 				BA43EDDF1F4B1497000D2DB0 /* XmlVC.swift */,
 				BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */,
 				BA43EDE91F4B2694000D2DB0 /* templates */,
+				BA43EE101F4C221A000D2DB0 /* slides */,
 			);
 			name = lessons;
 			sourceTree = "<group>";
@@ -427,6 +438,18 @@
 				BA43EE0C1F4B285E000D2DB0 /* ONLYTITLETREE.swift */,
 			);
 			name = templates;
+			sourceTree = "<group>";
+		};
+		BA43EE101F4C221A000D2DB0 /* slides */ = {
+			isa = PBXGroup;
+			children = (
+				BA43EE0E1F4C1BEC000D2DB0 /* CMSlide.swift */,
+				BA43EE111F4C2239000D2DB0 /* CMSText.swift */,
+				BA43EE131F4C2467000D2DB0 /* CMSList.swift */,
+				BA43EE151F4C282A000D2DB0 /* CMSTextItem.swift */,
+				BA43EE171F4C3A1E000D2DB0 /* CMSMedia.swift */,
+			);
+			name = slides;
 			sourceTree = "<group>";
 		};
 		BA63716C1F262A1700D77EA9 /* login */ = {
@@ -786,10 +809,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ViksitIOS/Pods-ViksitIOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CircleProgressBar/CircleProgressBar.framework",
+				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -903,11 +928,13 @@
 				B9F6B0621F25E69C00B695C0 /* DataViewController.swift in Sources */,
 				BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */,
 				BA43EDE21F4B16B4000D2DB0 /* LessonsPageVC.swift in Sources */,
+				BA43EE181F4C3A1E000D2DB0 /* CMSMedia.swift in Sources */,
 				BA43EDE61F4B17E8000D2DB0 /* ONLY_2BOX.swift in Sources */,
 				BA43ED6D1F3B42B7000D2DB0 /* SuperSkillCell.swift in Sources */,
 				BA690EB91F2611AF00EF980F /* Skills.swift in Sources */,
 				BA43EDE81F4B17FE000D2DB0 /* ONLY_2TITLE.swift in Sources */,
 				BA43EE071F4B2829000D2DB0 /* ONLYTITLE.swift in Sources */,
+				BA43EE161F4C282A000D2DB0 /* CMSTextItem.swift in Sources */,
 				BA6371721F2640AA00D77EA9 /* LoginVC.swift in Sources */,
 				BA6371741F2640C500D77EA9 /* SignUpVC.swift in Sources */,
 				BA43EE011F4B27B9000D2DB0 /* ONLY_VIDEO.swift in Sources */,
@@ -915,6 +942,7 @@
 				BA43EDED1F4B26F4000D2DB0 /* ONLY_LIST_NUMBERED.swift in Sources */,
 				BAA147D41F334B7700D1FFFE /* LeftAlignedIconButton.swift in Sources */,
 				BA6371921F2886A500D77EA9 /* CalenderVC.swift in Sources */,
+				BA43EE0F1F4C1BEC000D2DB0 /* CMSlide.swift in Sources */,
 				BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */,
 				BAA42BA81F2B44040022C553 /* testVC.swift in Sources */,
 				BA43EDF91F4B2772000D2DB0 /* ONLY_TITLE_PARAGRAPH.swift in Sources */,
@@ -930,6 +958,7 @@
 				BA690EA21F26118100EF980F /* ComplexObject.swift in Sources */,
 				BA690EB21F26119E00EF980F /* Notifications.swift in Sources */,
 				BAA147BC1F2F190800D1FFFE /* CalenderTableCell.swift in Sources */,
+				BA43EE121F4C2239000D2DB0 /* CMSText.swift in Sources */,
 				BA690EAB1F26119000EF980F /* Lesson.swift in Sources */,
 				BA6371941F288B7E00D77EA9 /* RoleTableCell.swift in Sources */,
 				BA43EDEF1F4B2709000D2DB0 /* ONLY_PARAGRAPH.swift in Sources */,
@@ -942,6 +971,7 @@
 				BA6371831F27A25C00D77EA9 /* BatchCodeVC.swift in Sources */,
 				BA690EA41F26118100EF980F /* DataCache.swift in Sources */,
 				BA6371811F279CC000D77EA9 /* VerifyPhoneVC.swift in Sources */,
+				BA43EE141F4C2467000D2DB0 /* CMSList.swift in Sources */,
 				BA43ED801F3C4813000D2DB0 /* Expandable2VC.swift in Sources */,
 				BA43ED6F1F3B4C88000D2DB0 /* HoriPickerVC.swift in Sources */,
 				BA690E9C1F26115500EF980F /* AssessmentReports.swift in Sources */,

@@ -10,10 +10,7 @@ import UIKit
 
 class NO_CONTENT: UIViewController {
     
-    
-    
     @IBOutlet var bgImage: UIImageView!
-    
     
 
     override func viewDidLoad() {

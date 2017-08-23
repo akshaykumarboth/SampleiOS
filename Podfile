@@ -7,6 +7,7 @@ target 'ViksitIOS' do
 
   # Pods for ViksitIOS
 	pod 'CircleProgressBar', '~> 0.32’
+    pod 'SWXMLHash', '~> 4.0.0'
 
   target 'ViksitIOSTests' do
     inherit! :search_paths
