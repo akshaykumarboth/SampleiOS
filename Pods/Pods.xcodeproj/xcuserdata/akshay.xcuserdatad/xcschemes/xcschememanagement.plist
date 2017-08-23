@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>CircleProgressBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ViksitIOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ViksitIOSTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ViksitIOSUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SWXMLHash.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>55D2367F894EA1407F512204B9A613C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A28E93F2CB2EA1644DDAA4DADC7B05C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B545B48FA0CEE58E0B8D9309EE4CFF7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD31FACBD346595AE2FA18E20077C009</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E3B2AFB5846E38D466478598C81412D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
