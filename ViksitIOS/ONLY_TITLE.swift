@@ -9,11 +9,15 @@
 import UIKit
 
 class ONLY_TITLE: UIViewController {
+    
+    var slide: CMSlide = CMSlide()
+    @IBOutlet var titel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("templateName:   \(slide.templateName)")
         // Do any additional setup after loading the view.
+        titel.text = slide.title.text
     }
 
     override func didReceiveMemoryWarning() {

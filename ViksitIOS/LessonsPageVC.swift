@@ -80,8 +80,9 @@ class LessonsPageVC: UIPageViewController {
         for slide in slideList {
             print("slide type is \(slide.templateName)")
             if slide.templateName == "ONLY_TITLE" {
-                ii += 1
-                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE")
+                
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE") as! ONLY_TITLE
+                vc1.slide = slideList[ii]
                 vCList.append(vc1)
             } /*else if slide.slide_type == "NO_CONTENT"{
                 let vc1 = sb.instantiateViewController(withIdentifier: "NO_CONTENT")
@@ -99,7 +100,7 @@ class LessonsPageVC: UIPageViewController {
                 let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_2TITLE")
                 vCList.append(vc1)
             }*/
-        
+        ii += 1
         }
  
         print("ii: \(ii)")
@@ -111,32 +112,6 @@ class LessonsPageVC: UIPageViewController {
         }
     }
     
-    
-    
-    
-    
-    
-    /*func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let vcIndex = vCList.index(of: viewController) else { return nil }
-        let previousIndex = vcIndex - 1
-        
-        guard previousIndex >= 0 else { return nil }
-        guard vCList.count > previousIndex else { return nil }
-        
-        return vCList[previousIndex]
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let vcIndex = vCList.index(of: viewController) else { return nil }
-        let nextIndex = vcIndex + 1
-        
-        guard vCList.count != nextIndex else { return nil }
-        guard vCList.count > nextIndex else { return nil }
-        
-        return vCList[nextIndex]
-    }
-    */
-
    
 }
 

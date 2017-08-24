@@ -67,21 +67,12 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.039577907990000001" green="0.97132703990000002" blue="0.94376627599999996" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j82-rq-Cgf">
-                                <rect key="frame" x="46" y="314.5" width="283" height="38.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="j82-rq-Cgf" firstAttribute="leading" secondItem="kuO-HR-EFc" secondAttribute="leadingMargin" constant="30" id="EIV-oC-sqf"/>
                             <constraint firstAttribute="trailing" secondItem="avn-XR-I4r" secondAttribute="trailing" id="IqS-Jb-pst"/>
                             <constraint firstItem="juV-Cp-gcF" firstAttribute="top" secondItem="avn-XR-I4r" secondAttribute="bottom" id="R0H-Qp-SKl"/>
                             <constraint firstItem="avn-XR-I4r" firstAttribute="leading" secondItem="kuO-HR-EFc" secondAttribute="leading" id="TWK-mw-5xf"/>
                             <constraint firstItem="avn-XR-I4r" firstAttribute="top" secondItem="IBc-bH-Dwy" secondAttribute="bottom" id="Wi9-by-BPn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="j82-rq-Cgf" secondAttribute="trailing" constant="30" id="pCg-5g-8KA"/>
-                            <constraint firstItem="j82-rq-Cgf" firstAttribute="centerY" secondItem="kuO-HR-EFc" secondAttribute="centerY" id="rXQ-qk-FZo"/>
                         </constraints>
                     </view>
                     <connections>
@@ -109,13 +100,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kei-aV-H2E">
-                                <rect key="frame" x="20" y="50" width="335" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="20" y="50" width="335" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdr-TF-M1r">
-                                <rect key="frame" x="20" y="104" width="335" height="17"/>
+                                <rect key="frame" x="20" y="107.5" width="335" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -272,8 +263,24 @@
                     <view key="view" contentMode="scaleToFill" id="0Wb-LR-bJc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-rM-AsH">
+                                <rect key="frame" x="36" y="50" width="303" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.79367404509999995" green="0.54047309030000001" blue="0.94376627599999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zpZ-rM-AsH" firstAttribute="top" secondItem="vPw-IQ-3fV" secondAttribute="bottom" constant="30" id="5T8-R7-hUh"/>
+                            <constraint firstItem="zpZ-rM-AsH" firstAttribute="leading" secondItem="0Wb-LR-bJc" secondAttribute="leadingMargin" constant="20" id="GU7-5y-YDi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zpZ-rM-AsH" secondAttribute="trailing" constant="20" id="mTR-xI-MjE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titel" destination="zpZ-rM-AsH" id="WzI-fe-7wS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNK-La-I78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

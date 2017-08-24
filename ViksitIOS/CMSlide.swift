@@ -28,9 +28,29 @@ class CMSlide {
     var id: Int = -1
     var order_id: Int = -1
     var fragmentCount: Int = -1
-    var slide_type: String = ""
     var slideAudio: String = ""
     
+    init(){
+        self.image_BG = ""
+        self.transition = ""
+        self.title = CMSText()
+        self.title2 = CMSText()
+        self.paragraph = CMSText()
+        self.list = CMSList()
+        self.image = CMSMedia()
+        self.video = CMSMedia()
+        self.background = ""
+        self.backgroundTransition = ""
+        self.position = ""
+        self.templateName = ""
+        self.teacherNotes = ""
+        self.studentNotes = ""
+        self.slideDuration = 0
+        self.id = -1
+        self.order_id = -1
+        self.fragmentCount = -1
+        self.slideAudio = ""
+    }
     
     
     init(xml : XMLIndexer) {
