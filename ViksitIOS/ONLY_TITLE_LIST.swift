@@ -1,5 +1,5 @@
 //
-//  ONLYTITLE.swift
+//  ONLYTITLELIST.swift
 //  ViksitIOS
 //
 //  Created by Akshay Kumar Both on 8/21/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ONLYTITLE: UIViewController {
+class ONLY_TITLE_LIST: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

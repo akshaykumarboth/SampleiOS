@@ -1,14 +1,14 @@
 //
-//  ONLYTITLELIST.swift
+//  GreenVC.swift
 //  ViksitIOS
 //
-//  Created by Akshay Kumar Both on 8/21/17.
+//  Created by Akshay Kumar Both on 8/24/17.
 //  Copyright © 2017 Istar Feroz. All rights reserved.
 //
 
 import UIKit
 
-class ONLYTITLELIST: UIViewController {
+class GreenVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

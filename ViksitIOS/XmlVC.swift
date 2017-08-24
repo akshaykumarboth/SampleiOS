@@ -42,6 +42,7 @@ class XmlVC: UIViewController {
             }
         } catch let error as IndexingError {
             // error is an IndexingError instance that you can deal with
+            print("error is -> \(error)")
         }
         
         

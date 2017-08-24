@@ -62,7 +62,7 @@ class CMSlide {
             
             if xml["id"] != nil {
                 self.id = Int((xml["id"].element?.text)!)!
-                //print("id is ",self.id )
+                print("slide id is ",self.id )
             }
             if xml["img"] != nil {
                 self.image = CMSMedia(xml: xml["img"])
@@ -95,6 +95,7 @@ class CMSlide {
                 self.title = CMSText(xml: xml["h1"])
                 //print("title is ",self.title )
             }
+            
             if xml["h2"] != nil {
                 self.title2 = CMSText(xml: xml["h2"])
                 //print("title2 is ",self.title2 )
@@ -106,6 +107,7 @@ class CMSlide {
                 //print("studentNotes is ",self.studentNotes )
             }
             
+            //teacher notes
             if xml["teacher_notes"] != nil {
                 self.teacherNotes = (xml["teacher_notes"].element?.text)!
                 //print("teacherNotes is ",self.teacherNotes )
