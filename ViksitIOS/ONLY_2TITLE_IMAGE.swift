@@ -9,7 +9,8 @@
 import UIKit
 
 class ONLY_2TITLE_IMAGE: UIViewController {
-
+    
+    var slide: CMSlide = CMSlide()
     override func viewDidLoad() {
         super.viewDidLoad()
 

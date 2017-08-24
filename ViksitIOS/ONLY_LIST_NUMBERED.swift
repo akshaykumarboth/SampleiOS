@@ -9,6 +9,8 @@
 import UIKit
 
 class ONLY_LIST_NUMBERED: UIViewController {
+    
+    var slide: CMSlide = CMSlide()
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,6 +9,8 @@
 import UIKit
 
 class ONLY_2TITLE: UIViewController {
+    
+    var slide: CMSlide = CMSlide()
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,7 +16,7 @@
                 <pageViewController restorationIdentifier="LessonsPageVC" storyboardIdentifier="LessonsPageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="DCf-eI-dMl" customClass="LessonsPageVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6Y-mK-e1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="-311"/>
+            <point key="canvasLocation" x="156" y="-291"/>
         </scene>
         <!--Lesson TestVC-->
         <scene sceneID="dkp-Py-myS">
@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wOt-yl-Wm1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829.60000000000002" y="-518.59070464767615"/>
+            <point key="canvasLocation" x="854" y="-291"/>
         </scene>
         <!--ONLY_2TITLE_IMAGE-->
         <scene sceneID="ETu-gr-mU3">
@@ -155,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41f-51-lr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="-143"/>
+            <point key="canvasLocation" x="1569" y="-291"/>
         </scene>
         <!--XmlVC-->
         <scene sceneID="L7w-s0-6o7">
@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YoI-9w-Sfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2974" y="-455"/>
+            <point key="canvasLocation" x="2393" y="-291"/>
         </scene>
         <!--Pager View Controller-->
         <scene sceneID="OaW-CE-BQq">
@@ -250,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51m-CY-6Sp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2660" y="357"/>
+            <point key="canvasLocation" x="2394" y="404"/>
         </scene>
         <!--ONLY_TITLE-->
         <scene sceneID="uwK-Cp-S7w">
@@ -264,6 +264,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s21-bt-XKJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-rM-AsH">
                                 <rect key="frame" x="36" y="50" width="303" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -271,20 +275,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.79367404509999995" green="0.54047309030000001" blue="0.94376627599999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zpZ-rM-AsH" firstAttribute="top" secondItem="vPw-IQ-3fV" secondAttribute="bottom" constant="30" id="5T8-R7-hUh"/>
                             <constraint firstItem="zpZ-rM-AsH" firstAttribute="leading" secondItem="0Wb-LR-bJc" secondAttribute="leadingMargin" constant="20" id="GU7-5y-YDi"/>
+                            <constraint firstAttribute="trailing" secondItem="s21-bt-XKJ" secondAttribute="trailing" id="Ox3-I1-gnx"/>
+                            <constraint firstItem="s21-bt-XKJ" firstAttribute="top" secondItem="vPw-IQ-3fV" secondAttribute="bottom" id="gkr-E1-7oA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zpZ-rM-AsH" secondAttribute="trailing" constant="20" id="mTR-xI-MjE"/>
+                            <constraint firstItem="s21-bt-XKJ" firstAttribute="leading" secondItem="0Wb-LR-bJc" secondAttribute="leading" id="qXX-xq-0nJ"/>
+                            <constraint firstItem="Nsr-lL-dfC" firstAttribute="top" secondItem="s21-bt-XKJ" secondAttribute="bottom" id="xNl-xf-uTE"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bgImage" destination="s21-bt-XKJ" id="Qba-Mq-oAK"/>
                         <outlet property="titel" destination="zpZ-rM-AsH" id="WzI-fe-7wS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNK-La-I78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865" y="266"/>
+            <point key="canvasLocation" x="853.60000000000002" y="404.34782608695656"/>
         </scene>
         <!--ONLY_TITLE_LIST-->
         <scene sceneID="pDN-Pu-a7H">
@@ -297,12 +306,35 @@
                     <view key="view" contentMode="scaleToFill" id="Pel-SR-L7c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5b-fa-5e9">
+                                <rect key="frame" x="20" y="50" width="335" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Osf-qB-KJ2">
+                                <rect key="frame" x="20" y="99" width="335" height="27"/>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="a5b-fa-5e9" firstAttribute="top" secondItem="y1M-ah-AVi" secondAttribute="bottom" constant="30" id="0JS-On-txF"/>
+                            <constraint firstItem="Osf-qB-KJ2" firstAttribute="leading" secondItem="Pel-SR-L7c" secondAttribute="leading" constant="20" id="H8P-3x-5kP"/>
+                            <constraint firstAttribute="trailing" secondItem="a5b-fa-5e9" secondAttribute="trailing" constant="20" id="M0j-SX-8AI"/>
+                            <constraint firstAttribute="trailing" secondItem="Osf-qB-KJ2" secondAttribute="trailing" constant="20" id="OYw-uW-Zdm"/>
+                            <constraint firstItem="Osf-qB-KJ2" firstAttribute="top" secondItem="a5b-fa-5e9" secondAttribute="bottom" constant="20" id="caL-LQ-UI5"/>
+                            <constraint firstItem="a5b-fa-5e9" firstAttribute="leading" secondItem="Pel-SR-L7c" secondAttribute="leading" constant="20" id="fXH-J3-pEl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="listStack" destination="Osf-qB-KJ2" id="S8E-1k-bNu"/>
+                        <outlet property="titleLabel" destination="a5b-fa-5e9" id="sGj-L0-uhA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvI-6W-XtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="588"/>
+            <point key="canvasLocation" x="1568.8" y="404.34782608695656"/>
         </scene>
     </scenes>
 </document>

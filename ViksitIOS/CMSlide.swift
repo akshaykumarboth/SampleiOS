@@ -82,7 +82,7 @@ class CMSlide {
             
             if xml["id"] != nil {
                 self.id = Int((xml["id"].element?.text)!)!
-                print("slide id is ",self.id )
+                //print("slide id is ",self.id )
             }
             if xml["img"] != nil {
                 self.image = CMSMedia(xml: xml["img"])

@@ -52,10 +52,10 @@ class CMSList {
                     for i in 0..<x {
                        //print("list item",xml.children[i].element?.name)
                         if xml.children[i].element?.name == "li" {
-                            list2.append(CMSTextItem(xml: xml.children[i] ))
+                            list2.append(CMSTextItem(xml: xml.children[i]))
                         }
-                        
                     }
+                    self.items = list2
                 }
                 
                 

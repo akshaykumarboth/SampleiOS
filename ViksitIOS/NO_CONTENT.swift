@@ -11,10 +11,13 @@ import UIKit
 class NO_CONTENT: UIViewController {
     
     @IBOutlet var bgImage: UIImageView!
-    var slide: CMSlide?
+    
+    var slide: CMSlide = CMSlide()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
 
         // Do any additional setup after loading the view.

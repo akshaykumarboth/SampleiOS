@@ -10,6 +10,7 @@ import UIKit
 
 class ONLY_2BOX: UIViewController {
 
+    var slide: CMSlide = CMSlide()
     override func viewDidLoad() {
         super.viewDidLoad()
 

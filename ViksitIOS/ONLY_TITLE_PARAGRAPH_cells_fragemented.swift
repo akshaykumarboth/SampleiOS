@@ -9,6 +9,8 @@
 import UIKit
 
 class ONLY_TITLE_PARAGRAPH_cells_fragemented: UIViewController {
+    
+    var slide: CMSlide = CMSlide()
 
     override func viewDidLoad() {
         super.viewDidLoad()

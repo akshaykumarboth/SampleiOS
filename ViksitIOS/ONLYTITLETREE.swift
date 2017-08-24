@@ -10,6 +10,8 @@ import UIKit
 
 class ONLYTITLETREE: UIViewController {
 
+    var slide: CMSlide = CMSlide()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

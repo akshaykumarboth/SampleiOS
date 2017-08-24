@@ -10,6 +10,8 @@ import UIKit
 
 class ONLY_VIDEO: UIViewController {
 
+    
+    var slide: CMSlide = CMSlide()
     override func viewDidLoad() {
         super.viewDidLoad()
 

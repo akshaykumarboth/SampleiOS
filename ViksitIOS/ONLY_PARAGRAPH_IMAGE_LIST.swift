@@ -9,7 +9,8 @@
 import UIKit
 
 class ONLY_PARAGRAPH_IMAGE_LIST: UIViewController {
-
+    
+    var slide: CMSlide = CMSlide()
     override func viewDidLoad() {
         super.viewDidLoad()
 

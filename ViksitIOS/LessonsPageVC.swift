@@ -13,18 +13,6 @@ class LessonsPageVC: UIPageViewController {
     var slideList: [CMSlide] = []
     var vCList : [UIViewController] = []
     var tasks: [Tasks] = []
-    /*
-    lazy var vCList : [UIViewController] = {
-        let sb = UIStoryboard(name: "Lesson", bundle: nil)
-        
-        let vc1 = sb.instantiateViewController(withIdentifier: "NO_CONTENT")
-        let vc2 = sb.instantiateViewController(withIdentifier: "ONLY_2BOX")
-        let vc3 = sb.instantiateViewController(withIdentifier: "ONLY_2TITLE")
-        let vc4 = sb.instantiateViewController(withIdentifier: "NO_CONTENT")
-        
-        return [vc1, vc2, vc3, vc4]
-    }()
-    */
     
 
     override func viewDidLoad() {
@@ -39,7 +27,7 @@ class LessonsPageVC: UIPageViewController {
         }
         
         //
-                // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.
         
     }
     
@@ -55,12 +43,12 @@ class LessonsPageVC: UIPageViewController {
             
             if xml["lesson"] != nil {
                 var list2: Array<CMSlide> = []
-                print("children are \(xml["lesson"].children.count)")
+                //print("children are \(xml["lesson"].children.count)")
                 for i in 0..<xml["lesson"].children.count {
                     if xml["lesson"].children[i].element?.name == "slide" {
                         list2.append(CMSlide(xml: xml["lesson"].children[i] ))
                     }
-                    print("\n")
+                    //print("\n")
                 }
                 self.slideList = list2
             }
@@ -75,20 +63,20 @@ class LessonsPageVC: UIPageViewController {
         // do something
         
         let sb = UIStoryboard(name: "Lesson", bundle: nil)
-        print("list count is \(slideList.count)")
+        //print("list count is \(slideList.count)")
         var ii: Int = 0
         for slide in slideList {
-            print("slide type is \(slide.templateName)")
+            //print("slide type is \(slide.templateName)")
             if slide.templateName == "ONLY_TITLE" {
-                
                 let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE") as! ONLY_TITLE
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_TITLE_LIST"{
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_LIST") as! ONLY_TITLE_LIST
                 vc1.slide = slideList[ii]
                 vCList.append(vc1)
             } /*else if slide.slide_type == "NO_CONTENT"{
                 let vc1 = sb.instantiateViewController(withIdentifier: "NO_CONTENT")
-                vCList.append(vc1)
-            }else if slide.slide_type == "ONLY_TITLE_LIST"{
-                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_LIST")
                 vCList.append(vc1)
             }else if slide.slide_type == "ONLY_2TITLE"{
                 let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_2TITLE")
@@ -103,7 +91,7 @@ class LessonsPageVC: UIPageViewController {
         ii += 1
         }
  
-        print("ii: \(ii)")
+        //print("ii: \(ii)")
         self.dataSource = self
         self.delegate = self
         

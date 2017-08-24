@@ -9,6 +9,8 @@
 import UIKit
 
 class ONLY_PARAGRAPH_TITLE_LIST: UIViewController {
+    
+    var slide: CMSlide = CMSlide()
 
     override func viewDidLoad() {
         super.viewDidLoad()
