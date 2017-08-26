@@ -66,7 +66,7 @@ class LessonsPageVC: UIPageViewController {
         //print("list count is \(slideList.count)")
         var ii: Int = 0
         for slide in slideList {
-            //print("slide type is \(slide.templateName)")
+            print("slide template name is \(slide.templateName)")
             if slide.templateName == "ONLY_TITLE" {
                 let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE") as! ONLY_TITLE
                 vc1.slide = slideList[ii]

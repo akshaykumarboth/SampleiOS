@@ -29,8 +29,9 @@ class ONLY_TITLE_PARAGRAPH_IMAGE_LIST: UIViewController {
         for item in slide.list.items {
             print(item.text)
             
-            
-            ThemeUtil.setParaListTextLabel(text: item.text, paraStack: paraStack)
+            //setParaListTextLabelCustom
+            //ThemeUtil.setParaListTextLabel(text: item.text, paraStack: paraStack)
+            ThemeUtil.setParaListTextLabelCustom(text: item.text, paraStack: paraStack)
         }
 
         // Do any additional setup after loading the view.

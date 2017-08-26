@@ -27,17 +27,9 @@ class ONLY_TITLE_LIST: UIViewController {
         if slide.list.items.count > 0 {
             for item in slide.list.items {
                 print(item.text)
-                /*
-                let textLabel: UILabel = UILabel()
-                textLabel.text = item.text.trimmingCharacters(in: .whitespacesAndNewlines)
-                textLabel.font.withSize(20)
-                textLabel.numberOfLines = 3
-                textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
                 
-                listStack.addArrangedSubview(textLabel)
-                */
-                
-                ThemeUtil.setListItemTextLabel(text: item.text, listStack: listStack)
+                //ThemeUtil.setListItemTextLabel(text: item.text, listStack: listStack)
+                ThemeUtil.setListItemTextLabelCustom(text: item.text, listStack: listStack)
             }
         }
         ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)

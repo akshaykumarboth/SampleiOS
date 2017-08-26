@@ -68,6 +68,8 @@
 		BA43EE261F4EDAE1000D2DB0 /* ImageAsyncLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE251F4EDAE1000D2DB0 /* ImageAsyncLoader.swift */; };
 		BA43EE291F5165B3000D2DB0 /* ThemeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE281F5165B3000D2DB0 /* ThemeUtil.swift */; };
 		BA43EE2B1F516F62000D2DB0 /* swift+gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE2A1F516F62000D2DB0 /* swift+gif.swift */; };
+		BA43EE2E1F51919A000D2DB0 /* SymbolTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE2D1F51919A000D2DB0 /* SymbolTextLabel.swift */; };
+		BA43EE301F5191B7000D2DB0 /* SymbolTextLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA43EE2F1F5191B7000D2DB0 /* SymbolTextLabel.xib */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -214,6 +216,8 @@
 		BA43EE251F4EDAE1000D2DB0 /* ImageAsyncLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAsyncLoader.swift; sourceTree = "<group>"; };
 		BA43EE281F5165B3000D2DB0 /* ThemeUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeUtil.swift; sourceTree = "<group>"; };
 		BA43EE2A1F516F62000D2DB0 /* swift+gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "swift+gif.swift"; sourceTree = "<group>"; };
+		BA43EE2D1F51919A000D2DB0 /* SymbolTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolTextLabel.swift; sourceTree = "<group>"; };
+		BA43EE2F1F5191B7000D2DB0 /* SymbolTextLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymbolTextLabel.xib; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -417,6 +421,7 @@
 		BA43EDDC1F4B13F7000D2DB0 /* lessons */ = {
 			isa = PBXGroup;
 			children = (
+				BA43EE2C1F51915E000D2DB0 /* helpers */,
 				BA43EDDD1F4B1420000D2DB0 /* Lesson.storyboard */,
 				BA43EDDF1F4B1497000D2DB0 /* XmlVC.swift */,
 				BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */,
@@ -477,6 +482,15 @@
 				BA43ED591F38843A000D2DB0 /* AccountCell.swift */,
 			);
 			name = accounts;
+			sourceTree = "<group>";
+		};
+		BA43EE2C1F51915E000D2DB0 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BA43EE2D1F51919A000D2DB0 /* SymbolTextLabel.swift */,
+				BA43EE2F1F5191B7000D2DB0 /* SymbolTextLabel.xib */,
+			);
+			name = helpers;
 			sourceTree = "<group>";
 		};
 		BA63716C1F262A1700D77EA9 /* login */ = {
@@ -749,6 +763,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA43EE301F5191B7000D2DB0 /* SymbolTextLabel.xib in Resources */,
 				B9F6B06C1F25E69C00B695C0 /* LaunchScreen.storyboard in Resources */,
 				BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */,
 				BAA147D91F33529000D1FFFE /* Profile.storyboard in Resources */,
@@ -997,6 +1012,7 @@
 				BA43EE221F4EB189000D2DB0 /* RedVC.swift in Sources */,
 				BA43EDDB1F472B54000D2DB0 /* LessonCVCell.swift in Sources */,
 				BA43EDF71F4B2761000D2DB0 /* ONLY_TITLE_LIST_NUMBERED.swift in Sources */,
+				BA43EE2E1F51919A000D2DB0 /* SymbolTextLabel.swift in Sources */,
 				BAA147D21F3225D500D1FFFE /* RoleInfoVC.swift in Sources */,
 				BAA147ED1F3498FB00D1FFFE /* LeaderboardCell.swift in Sources */,
 				BA63717D1F27946B00D77EA9 /* OtpVC.swift in Sources */,
