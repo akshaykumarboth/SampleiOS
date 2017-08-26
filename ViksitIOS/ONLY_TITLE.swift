@@ -13,14 +13,16 @@ class ONLY_TITLE: UIViewController {
     var slide: CMSlide = CMSlide()
     @IBOutlet var titel: UILabel!
 
-    @IBOutlet var bgImage: UIImageView!
+    @IBOutlet var gifImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print("templateName:   \(slide.templateName)")
         // Do any additional setup after loading the view.
+        
         titel.text = slide.title.text
-        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: bgImage)
+        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         
     }
 

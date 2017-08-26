@@ -1,5 +1,5 @@
 //
-//  ONLY_VIDEO.swift
+//  ONLYPARAGRAPHIMAGE.swift
 //  ViksitIOS
 //
 //  Created by Akshay Kumar Both on 8/21/17.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ONLY_VIDEO: UIViewController {
-
+class ONLY_PARAGRAPH_IMAGE: UIViewController {
     
     var slide: CMSlide = CMSlide()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

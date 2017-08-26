@@ -1,5 +1,5 @@
 //
-//  ONLYLIST.swift
+//  ONLYTITLETREE.swift
 //  ViksitIOS
 //
 //  Created by Akshay Kumar Both on 8/21/17.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ONLYLIST: UIViewController {
-    
-    var slide: CMSlide = CMSlide()
+class ONLY_TITLE_TREE: UIViewController {
 
+    var slide: CMSlide = CMSlide()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

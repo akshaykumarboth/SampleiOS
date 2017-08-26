@@ -10,14 +10,14 @@ import UIKit
 
 class NO_CONTENT: UIViewController {
     
-    @IBOutlet var bgImage: UIImageView!
+    @IBOutlet var gifImageView: UIImageView!
     
     var slide: CMSlide = CMSlide()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         
 
         // Do any additional setup after loading the view.

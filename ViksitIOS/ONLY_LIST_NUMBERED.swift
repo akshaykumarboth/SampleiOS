@@ -10,28 +10,29 @@ import UIKit
 
 class ONLY_LIST_NUMBERED: UIViewController {
     
+    
+    @IBOutlet var listStack: UIStackView!
+    @IBOutlet var gifImageView: UIImageView!
+    
     var slide: CMSlide = CMSlide()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if slide.list.items.count > 0 {
+            var count = 1
+            for item in slide.list.items {
+                print(item.text)
+                ThemeUtil.setNumberListItemTextLabel(number: "\(count)", text: item.text, listStack: listStack)
+                count += 1
+                
+            }
+        }
+        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)        // Do any additional setup after loading the view.
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

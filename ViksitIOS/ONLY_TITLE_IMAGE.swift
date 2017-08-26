@@ -1,5 +1,5 @@
 //
-//  ONLYTITLETREE.swift
+//  ONLYTITLEIMAGE.swift
 //  ViksitIOS
 //
 //  Created by Akshay Kumar Both on 8/21/17.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ONLYTITLETREE: UIViewController {
-
-    var slide: CMSlide = CMSlide()
+class ONLY_TITLE_IMAGE: UIViewController {
     
+    var slide: CMSlide = CMSlide()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

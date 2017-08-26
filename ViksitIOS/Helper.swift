@@ -48,6 +48,8 @@ class Helper{
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         return success
     
-    }
+    };
+    
+    
     
 }

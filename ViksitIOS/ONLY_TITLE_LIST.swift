@@ -14,33 +14,33 @@ class ONLY_TITLE_LIST: UIViewController {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var listStack: UIStackView!
+    @IBOutlet var gifImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         print("id ",slide.id)
-        print("list is \(slide.list.items.count)")
-        
-        //let trimmedString = myString.trimmingCharacters(in: .whitespacesAndNewlines)
         
         titleLabel.text = slide.title.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        //var textLabel: UILabel = UILabel()
+        
         if slide.list.items.count > 0 {
             for item in slide.list.items {
                 print(item.text)
-                //text.append(item.text.trimmingCharacters(in: .whitespacesAndNewlines) + "\n")
-                //var textLabel = UILabel(CGRect(x: 0, y: 0, width: 300, height: 30))
-                var textLabel: UILabel = UILabel()
+                /*
+                let textLabel: UILabel = UILabel()
                 textLabel.text = item.text.trimmingCharacters(in: .whitespacesAndNewlines)
                 textLabel.font.withSize(20)
                 textLabel.numberOfLines = 3
                 textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
                 
                 listStack.addArrangedSubview(textLabel)
+                */
+                
+                ThemeUtil.setListItemTextLabel(text: item.text, listStack: listStack)
             }
         }
-        //listLabel.text = text
+        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
     }
 
     

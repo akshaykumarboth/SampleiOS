@@ -75,19 +75,27 @@ class LessonsPageVC: UIPageViewController {
                 let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_LIST") as! ONLY_TITLE_LIST
                 vc1.slide = slideList[ii]
                 vCList.append(vc1)
-            } /*else if slide.slide_type == "NO_CONTENT"{
-                let vc1 = sb.instantiateViewController(withIdentifier: "NO_CONTENT")
+            } else if slide.templateName == "ONLY_LIST_NUMBERED"{
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_LIST_NUMBERED") as! ONLY_LIST_NUMBERED
+                vc1.slide = slideList[ii]
                 vCList.append(vc1)
-            }else if slide.slide_type == "ONLY_2TITLE"{
-                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_2TITLE")
+            } else if slide.templateName == "NO_CONTENT"{
+                let vc1 = sb.instantiateViewController(withIdentifier: "NO_CONTENT") as! NO_CONTENT
+                vc1.slide = slideList[ii]
                 vCList.append(vc1)
-            }else if slide.slide_type == "ONLY_TITLE_PARAGRAPH_IMAGE_LIST"{
-                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_PARAGRAPH_IMAGE_LIST")
+            }else if slide.templateName == "ONLY_2TITLE"{
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_2TITLE") as! ONLY_2TITLE
+                vc1.slide = slideList[ii]
                 vCList.append(vc1)
-            }else if slide.slide_type == "ONLY_2TITLE"{
-                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_2TITLE")
+            }else if slide.templateName == "ONLY_TITLE_PARAGRAPH_IMAGE_LIST"{
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_PARAGRAPH_IMAGE_LIST") as! ONLY_TITLE_PARAGRAPH_IMAGE_LIST
+                vc1.slide = slideList[ii]
                 vCList.append(vc1)
-            }*/
+            }else if slide.templateName == "ONLY_PARAGRAPH"{
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_PARAGRAPH") as! ONLY_PARAGRAPH
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            }
         ii += 1
         }
  
