@@ -15,11 +15,10 @@ class SymbolTextLabel: UIView {
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var symbolSpacingConstraint: NSLayoutConstraint!
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
-        
+    
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,11 +27,31 @@ class SymbolTextLabel: UIView {
     }
     
     func setup(){
+        
         view = loadViewFromNib()
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         addSubview(view)
+    }
+    
+    func setFontSize(textSize: CGFloat){
+        //symbolLabel.font =  UIFont().withSize(textSize)
+        //textLabel.font =  UIFont().withSize(textSize)
+        symbolLabel.font.withSize(textSize)
+        textLabel.font.withSize(textSize)
+    }
+    
+    func setText(text: String, symbolCode: String){
+        textLabel.text = text
+        symbolLabel.text = symbolCode
+        textLabel.numberOfLines = 15
+        textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+    }
+    
+    //set space between symbol and the text
+    func setSpacing(spacing: CGFloat){
+        symbolSpacingConstraint.constant = spacing
     }
     
     func loadViewFromNib() -> UIView {

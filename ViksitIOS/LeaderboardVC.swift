@@ -10,7 +10,6 @@ import UIKit
 
 class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    //var animals = ["dogff", "cat", "fox"]
     var pickerList: [String] = []
     
     @IBAction func onBackPressed(_ sender: UIButton) {

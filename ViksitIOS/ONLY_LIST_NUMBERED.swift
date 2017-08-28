@@ -24,7 +24,7 @@ class ONLY_LIST_NUMBERED: UIViewController {
             var count = 1
             for item in slide.list.items {
                 print(item.text)
-                ThemeUtil.setNumberListItemTextLabel(number: "\(count)", text: item.text, listStack: listStack)
+                ThemeUtil.setNumberListItemTextLabelCustom(number: "\(count)", text: item.text, listStack: listStack)
                 count += 1
                 
             }

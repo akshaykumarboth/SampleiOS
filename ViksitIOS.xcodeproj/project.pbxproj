@@ -70,6 +70,10 @@
 		BA43EE2B1F516F62000D2DB0 /* swift+gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE2A1F516F62000D2DB0 /* swift+gif.swift */; };
 		BA43EE2E1F51919A000D2DB0 /* SymbolTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE2D1F51919A000D2DB0 /* SymbolTextLabel.swift */; };
 		BA43EE301F5191B7000D2DB0 /* SymbolTextLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA43EE2F1F5191B7000D2DB0 /* SymbolTextLabel.xib */; };
+		BA43EE321F51C7C2000D2DB0 /* WebDynamicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE311F51C7C2000D2DB0 /* WebDynamicVC.swift */; };
+		BA43EE341F51D072000D2DB0 /* DynamicTextWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA43EE331F51D072000D2DB0 /* DynamicTextWebView.xib */; };
+		BA43EE361F51D0E1000D2DB0 /* DynamicTextWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE351F51D0E1000D2DB0 /* DynamicTextWebView.swift */; };
+		BA43EE3A1F5317B1000D2DB0 /* TeKVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE391F5317B1000D2DB0 /* TeKVc.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -218,6 +222,10 @@
 		BA43EE2A1F516F62000D2DB0 /* swift+gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "swift+gif.swift"; sourceTree = "<group>"; };
 		BA43EE2D1F51919A000D2DB0 /* SymbolTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolTextLabel.swift; sourceTree = "<group>"; };
 		BA43EE2F1F5191B7000D2DB0 /* SymbolTextLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymbolTextLabel.xib; sourceTree = "<group>"; };
+		BA43EE311F51C7C2000D2DB0 /* WebDynamicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDynamicVC.swift; sourceTree = "<group>"; };
+		BA43EE331F51D072000D2DB0 /* DynamicTextWebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DynamicTextWebView.xib; sourceTree = "<group>"; };
+		BA43EE351F51D0E1000D2DB0 /* DynamicTextWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTextWebView.swift; sourceTree = "<group>"; };
+		BA43EE391F5317B1000D2DB0 /* TeKVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeKVc.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -489,6 +497,10 @@
 			children = (
 				BA43EE2D1F51919A000D2DB0 /* SymbolTextLabel.swift */,
 				BA43EE2F1F5191B7000D2DB0 /* SymbolTextLabel.xib */,
+				BA43EE311F51C7C2000D2DB0 /* WebDynamicVC.swift */,
+				BA43EE331F51D072000D2DB0 /* DynamicTextWebView.xib */,
+				BA43EE351F51D0E1000D2DB0 /* DynamicTextWebView.swift */,
+				BA43EE391F5317B1000D2DB0 /* TeKVc.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -763,6 +775,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA43EE341F51D072000D2DB0 /* DynamicTextWebView.xib in Resources */,
 				BA43EE301F5191B7000D2DB0 /* SymbolTextLabel.xib in Resources */,
 				B9F6B06C1F25E69C00B695C0 /* LaunchScreen.storyboard in Resources */,
 				BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */,
@@ -971,6 +984,7 @@
 				BA63717B1F27284700D77EA9 /* TextFieldWithPadding.swift in Sources */,
 				BA43EE0D1F4B285E000D2DB0 /* ONLY_TITLE_TREE.swift in Sources */,
 				BA43EE201F4EB149000D2DB0 /* GreenVC.swift in Sources */,
+				BA43EE361F51D0E1000D2DB0 /* DynamicTextWebView.swift in Sources */,
 				B9F6B0621F25E69C00B695C0 /* DataViewController.swift in Sources */,
 				BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */,
 				BA43EDE21F4B16B4000D2DB0 /* LessonsPageVC.swift in Sources */,
@@ -992,6 +1006,7 @@
 				BA43EE0F1F4C1BEC000D2DB0 /* CMSlide.swift in Sources */,
 				BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */,
 				BAA42BA81F2B44040022C553 /* testVC.swift in Sources */,
+				BA43EE3A1F5317B1000D2DB0 /* TeKVc.swift in Sources */,
 				BA43EDF91F4B2772000D2DB0 /* ONLY_TITLE_PARAGRAPH.swift in Sources */,
 				BA43EE031F4B27CA000D2DB0 /* ONLY_LIST.swift in Sources */,
 				BAA147DF1F33628D00D1FFFE /* AccountVC.swift in Sources */,
@@ -1021,6 +1036,7 @@
 				BA690EA41F26118100EF980F /* DataCache.swift in Sources */,
 				BA43EE241F4EB67E000D2DB0 /* LessonTestVC.swift in Sources */,
 				BA6371811F279CC000D77EA9 /* VerifyPhoneVC.swift in Sources */,
+				BA43EE321F51C7C2000D2DB0 /* WebDynamicVC.swift in Sources */,
 				BA43EE141F4C2467000D2DB0 /* CMSList.swift in Sources */,
 				BA43ED801F3C4813000D2DB0 /* Expandable2VC.swift in Sources */,
 				BA43ED6F1F3B4C88000D2DB0 /* HoriPickerVC.swift in Sources */,

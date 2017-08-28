@@ -10,10 +10,22 @@ import UIKit
 
 class ONLY_TITLE_PARAGRAPH_cells_fragemented: UIViewController {
     
+    @IBOutlet var gifImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var webView: UIWebView!
+    
     var slide: CMSlide = CMSlide()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.text = slide.title.text
+        
+        webView.scrollView.isScrollEnabled = false
+        webView.scrollView.bounces = false
+        webView.loadHTMLString(ThemeUtil.wrapInHtml(body: slide.paragraph.text, fontsize: "16"), baseURL: nil)
+        
+        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
 
         // Do any additional setup after loading the view.
     }

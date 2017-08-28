@@ -12,7 +12,6 @@ class ONLY_TITLE: UIViewController {
     
     var slide: CMSlide = CMSlide()
     @IBOutlet var titel: UILabel!
-
     @IBOutlet var gifImageView: UIImageView!
     
     override func viewDidLoad() {

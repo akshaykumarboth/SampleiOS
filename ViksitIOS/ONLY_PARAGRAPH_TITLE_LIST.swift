@@ -10,11 +10,25 @@ import UIKit
 
 class ONLY_PARAGRAPH_TITLE_LIST: UIViewController {
     
+    @IBOutlet var gifImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var paraStack: UIStackView!
     var slide: CMSlide = CMSlide()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if slide.list.items.count > 0 {
+            for item in slide.list.items {
+                if item.text != "" {
+                    print(item.text)
+                    ThemeUtil.setParaListTextLabelCustom(text: item.text, paraStack: paraStack)
+                }
+            }
+        }
+        
+        titleLabel.text = slide.title.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         // Do any additional setup after loading the view.
     }
 

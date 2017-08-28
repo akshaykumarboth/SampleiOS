@@ -11,7 +11,6 @@ import UIKit
 class NO_CONTENT: UIViewController {
     
     @IBOutlet var gifImageView: UIImageView!
-    
     var slide: CMSlide = CMSlide()
     
     override func viewDidLoad() {

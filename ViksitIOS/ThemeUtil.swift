@@ -71,13 +71,10 @@ class ThemeUtil {
         if text != nil && text != "" {
             //let textLabel: UILabel = UILabel()
             
-            var symbolTextLabel = SymbolTextLabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-            symbolTextLabel.textLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            symbolTextLabel.symbolLabel.text = bulletSymbol
-                        symbolTextLabel.textLabel.font.withSize(18)
-            symbolTextLabel.textLabel.numberOfLines = 3
-            symbolTextLabel.textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-            symbolTextLabel.translatesAutoresizingMaskIntoConstraints = false
+            let symbolTextLabel = SymbolTextLabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+            symbolTextLabel.setText(text: text.trimmingCharacters(in: .whitespacesAndNewlines), symbolCode: bulletSymbol)
+            symbolTextLabel.setFontSize(textSize: 18)
+            
             
             paraStack.addArrangedSubview(symbolTextLabel)
         }
@@ -166,6 +163,7 @@ class ThemeUtil {
 
     static func wrapInHtml(body: String, fontsize: String) -> String {
         var htmlFontSize = "8"
+        
         if fontsize != "" {
             htmlFontSize = fontsize
         }
@@ -173,7 +171,7 @@ class ThemeUtil {
         var html = "<html>"
         html += "<head>"
         html += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
-        html += "<style> body { font-size: \(htmlFontSize)px; padding: 0 !important; margin: 0 !important} </style>"
+        html += "<style> body { font-size: \(htmlFontSize)px; padding: 0 !important; margin: 0 !important } </style>"
         /*html += "<script type=\"text/javascript\">"
          html += "window.onload = function() {"
          html +=  "window.location.href = \"ready://\" + document.body.offsetHeight; }"
@@ -186,6 +184,6 @@ class ThemeUtil {
         
         return html
     }
-
+    
     
 }

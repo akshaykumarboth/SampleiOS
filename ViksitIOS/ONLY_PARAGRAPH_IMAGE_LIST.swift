@@ -22,10 +22,10 @@ class ONLY_PARAGRAPH_IMAGE_LIST: UIViewController {
         // Do any additional setup after loading the view.
         if slide.list.items.count > 0 {
             for item in slide.list.items {
-                print(item.text)
-                ThemeUtil.setParaListTextLabelCustom(text: item.text, paraStack: paraStack)
-                
-                
+                if item.text != "" {
+                    print(item.text)
+                    ThemeUtil.setParaListTextLabelCustom(text: item.text, paraStack: paraStack)
+                }
             }
         }
         ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
