@@ -11,9 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SymbolTextLabel" customModule="ViksitIOS" customModuleProvider="target">
             <connections>
-                <outlet property="symbolLabel" destination="JK2-AB-4hE" id="wk6-Rq-Gq0"/>
-                <outlet property="symbolSpacingConstraint" destination="ODc-mt-Leu" id="Qgx-Ea-CFA"/>
-                <outlet property="textLabel" destination="yFv-Al-wcG" id="lWU-WQ-vXM"/>
+                <outlet property="symbolLabel" destination="LX7-r4-EYX" id="4Jh-wh-dFd"/>
+                <outlet property="symbolSpacingConstraint" destination="kmA-7z-jJB" id="5ru-aK-Adu"/>
+                <outlet property="textLabel" destination="L6X-FV-qi1" id="piV-tR-Mf8"/>
                 <outlet property="view" destination="rIy-0G-aRZ" id="SS0-9a-jGz"/>
             </connections>
         </placeholder>
@@ -22,26 +22,27 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JK2-AB-4hE">
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX7-r4-EYX">
+                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFv-Al-wcG">
-                    <rect key="frame" x="1" y="0.0" width="374" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6X-FV-qi1">
+                    <rect key="frame" x="47" y="0.0" width="328" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="yFv-Al-wcG" secondAttribute="bottom" priority="250" id="Byl-8T-DIR"/>
-                <constraint firstItem="yFv-Al-wcG" firstAttribute="top" secondItem="rIy-0G-aRZ" secondAttribute="top" id="LRa-NX-P8p"/>
-                <constraint firstItem="yFv-Al-wcG" firstAttribute="leading" secondItem="JK2-AB-4hE" secondAttribute="trailing" constant="1" id="ODc-mt-Leu"/>
-                <constraint firstAttribute="trailing" secondItem="yFv-Al-wcG" secondAttribute="trailing" id="VC0-4Q-oMb"/>
-                <constraint firstItem="JK2-AB-4hE" firstAttribute="top" secondItem="rIy-0G-aRZ" secondAttribute="top" id="iXG-Kq-Dvm"/>
-                <constraint firstItem="JK2-AB-4hE" firstAttribute="leading" secondItem="rIy-0G-aRZ" secondAttribute="leading" id="tWz-XO-gAx"/>
+                <constraint firstItem="LX7-r4-EYX" firstAttribute="top" secondItem="rIy-0G-aRZ" secondAttribute="top" id="5bs-8Y-QPX"/>
+                <constraint firstItem="LX7-r4-EYX" firstAttribute="top" secondItem="rIy-0G-aRZ" secondAttribute="top" id="gTk-SG-l15"/>
+                <constraint firstItem="LX7-r4-EYX" firstAttribute="leading" secondItem="rIy-0G-aRZ" secondAttribute="leading" id="hDa-6h-nLO"/>
+                <constraint firstItem="L6X-FV-qi1" firstAttribute="leading" secondItem="LX7-r4-EYX" secondAttribute="trailing" constant="5" id="kmA-7z-jJB"/>
+                <constraint firstAttribute="bottom" secondItem="L6X-FV-qi1" secondAttribute="bottom" id="pR5-Mz-9g6"/>
+                <constraint firstItem="L6X-FV-qi1" firstAttribute="top" secondItem="rIy-0G-aRZ" secondAttribute="top" id="qZO-Zt-a2y"/>
+                <constraint firstAttribute="trailing" secondItem="L6X-FV-qi1" secondAttribute="trailing" id="ryq-IR-8jR"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
