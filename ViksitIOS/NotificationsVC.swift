@@ -4,7 +4,6 @@ import UIKit
 class NotificationsVC: UIViewController {
 
     var notifications: Array<Notifications> = []
-    
     @IBOutlet var tableView: UITableView!
     
     @IBAction func onBackPressed(_ sender: UIButton) {
@@ -14,30 +13,6 @@ class NotificationsVC: UIViewController {
         nextViewController.selectedIndex = 0
         self.present(nextViewController, animated:true, completion:nil)
         
-    }
-    
-    func setHTMLString(testString: String,fontsize: String ) -> NSAttributedString{
-        let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
-        var attrStr = try! NSAttributedString(
-            data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
-            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
-            documentAttributes: nil)
-        //textview.attributedText = attrStr
-        return attrStr
-    }
-    
-    func wrapInHtml(body: String) -> String {
-        var html = "<html>"
-        html += "<head>"
-        html += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
-        html += "<style> body { font-size: 8px; padding: 0 !important; margin: 0 !important} </style>"
-        html += "</head>"
-        html += "<body>"
-        html += body
-        html += "</body>"
-        html += "</html>"
-        
-        return html
     }
     
     
@@ -69,7 +44,6 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         tableView.showsVerticalScrollIndicator = false
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "notificationCell", for: indexPath) as! NotificationTableCell
         
         //loading image from url async
@@ -91,9 +65,7 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         cell.notificationDuration.text = notifications[indexPath.row].time
-        //cell.notificationMessageView.isUserInteractionEnabled = false
-        //cell.notificationMessageView.loadHTMLString(wrapInHtml(body: notifications[indexPath.row].message!), baseURL: nil)
-        cell.notificationMessage.attributedText = setHTMLString(testString: notifications[indexPath.row].message!, fontsize: "15")
+        cell.notificationMessage.attributedText = Helper.setHTMLString(testString: notifications[indexPath.row].message!, fontsize: "15")
         
         return cell
     }

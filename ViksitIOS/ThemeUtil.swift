@@ -69,12 +69,11 @@ class ThemeUtil {
     
     static func setParaListTextLabelCustom(text: String, paraStack: UIStackView) {
         if text != nil && text != "" {
-            //let textLabel: UILabel = UILabel()
+            //let symbolTextLabel: UILabel = UILabel()
             
             let symbolTextLabel = SymbolTextLabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
             symbolTextLabel.setText(text: text.trimmingCharacters(in: .whitespacesAndNewlines), symbolCode: bulletSymbol)
-            symbolTextLabel.setFontSize(textSize: 18)
-            
+            symbolTextLabel.setFontSize(textSize: 8)
             
             paraStack.addArrangedSubview(symbolTextLabel)
         }

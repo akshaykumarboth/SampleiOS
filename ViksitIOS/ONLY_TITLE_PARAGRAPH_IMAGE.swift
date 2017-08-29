@@ -12,7 +12,7 @@ class ONLY_TITLE_PARAGRAPH_IMAGE: UIViewController {
     
     @IBOutlet var gifImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var paraWebView: DynamicTextWebView!
+    @IBOutlet var para: UILabel!
     @IBOutlet var imageView: UIImageView!
     var slide: CMSlide = CMSlide()
 
@@ -20,12 +20,10 @@ class ONLY_TITLE_PARAGRAPH_IMAGE: UIViewController {
         super.viewDidLoad()
         
         titleLabel.text = slide.title.text
-        paraWebView.setText(text: slide.paragraph.text, font: 18)
+        para.attributedText = Helper.setHTMLString(testString: slide.paragraph.text, fontsize: "18")
         ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
 
         // Do any additional setup after loading the view.
     }
-
-    
 
 }

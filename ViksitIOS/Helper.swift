@@ -35,20 +35,30 @@ class Helper{
             print("herp \(postString)")
             request.httpBody = postString.data(using: .utf8)
         }
-    URLSession.shared.dataTask(with:request, completionHandler: {(data, response, error) in
-    guard let data = data, error == nil else { return }
-    do {
-       success = String(data: data, encoding: String.Encoding.utf8)!
-        semaphore.signal()
-    } catch let error as NSError {
-        print(" error \(error)")
-    }
-    }).resume()
+        URLSession.shared.dataTask(with:request, completionHandler: {(data, response, error) in
+            guard let data = data, error == nil else { return }
+            do {
+                success = String(data: data, encoding: String.Encoding.utf8)!
+                semaphore.signal()
+            } catch let error as NSError {
+                print(" error \(error)")
+            }
+        }).resume()
         
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         return success
     
-    };
+    }
+    
+    static func setHTMLString(testString: String,fontsize: String ) -> NSAttributedString{
+        let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
+        let attrStr = try! NSAttributedString(
+            data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
+            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            documentAttributes: nil)
+        //textview.attributedText = attrStr
+        return attrStr
+    }
     
     
     
