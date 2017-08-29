@@ -1,63 +1,64 @@
-//
-//  DVC.swift
-//  ViksitIOS
-//
-//  Created by Akshay Kumar Both on 8/28/17.
-//  Copyright © 2017 Istar Feroz. All rights reserved.
-//
-
 import UIKit
+import WebKit
 
-var MyObservationContext = 0
 
 class DVC: UIViewController {
     
-    @IBOutlet weak var webview: UIWebView!
-    @IBOutlet weak var webviewHeightConstraint: NSLayoutConstraint!
-    var observing = false
+    @IBOutlet var webView: UIWebView!
+    @IBOutlet var heightConstraint: NSLayoutConstraint!
+    @IBOutlet var textview: UILabel!
+    
+    var testString: String = "  1<b>MS Excel Workshop</b><b>MS Excel Workshop</b>2 <b>MS Excel Workshop</b>3 <b>MS Excel Workshop</b> 2 <b>MS Excel Workshop</b>3 <b>MS Excel Workshop</b> <b>MS Excel Workshop</b>4 <b>MS Excel Workshop</b>5 <b>MS Excel Workshop</b>6"
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        webview.scrollView.isScrollEnabled = false
-        webview.delegate = self
-        webview.loadRequest(NSURLRequest(url: URL(string: "https://www.google.de/intl/de/policies/terms/regional.html")!) as URLRequest)
+        webView.scrollView.bounces = false
+        webView.delegate = self
+        webView.loadHTMLString(ThemeUtil.wrapInHtml(body: testString,fontsize: "17"), baseURL: nil)
+        /*
+        var attributedString = NSMutableAttributedString(string:"\(testString)")
+        let attrs = [NSFontAttributeName : UIFont.systemFont(ofSize: 19.0)]
+        var gString = NSMutableAttributedString(string:"g", attributes:attrs)
+        attributedString.append(gString)
+         
+ */
+        let str = ThemeUtil.wrapInHtml(body: testString, fontsize: "27")
+        var attrStr = try! NSAttributedString(
+            data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
+            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            documentAttributes: nil)
+        textview.attributedText = attrStr
+        //textview.attributedText = attributedString
+
+        print(view.frame.height)
+        
     }
-    
-    deinit {
-        stopObservingHeight()
-    }
-    
-    func startObservingHeight() {
-        let options = NSKeyValueObservingOptions([.new])
-        webview.scrollView.addObserver(self, forKeyPath: "contentSize", options: options, context: &MyObservationContext)
-        observing = true;
-    }
-    
-    func stopObservingHeight() {
-        webview.scrollView.removeObserver(self, forKeyPath: "contentSize", context: &MyObservationContext)
-        observing = false
-    }
-    
-    func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutableRawPointer) {
-        guard let keyPath = keyPath else {
-            super.observeValueForKeyPath(nil, ofObject: object, change: change, context: context)
-            return
-        }
-        switch (keyPath, context) {
-        case("contentSize", &MyObservationContext):
-            webviewHeightConstraint.constant = webview.scrollView.contentSize.height
-        default:
-            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-        }
-    }
+        
 }
 
 extension DVC: UIWebViewDelegate {
-    func webViewDidFinishLoad(webView: UIWebView) {
-        //print(webView.request?.URL)
-        webviewHeightConstraint.constant = webview.scrollView.contentSize.height
-        if (!observing) {
-            startObservingHeight()
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        /*
+        webView.evaluateJavaScript("document.height") { (result, error) in
+            if error == nil {
+                print(result)
+            }
         }
+        
+        webView.evaluateJavaScript("document.width") { (result, error) in
+            if error == nil {
+                print(result)
+            }
+        }
+ */
+        
+        webView.scrollView.isScrollEnabled=false;
+        print(webView.scrollView.contentSize.height)
+        heightConstraint.constant = webView.scrollView.contentSize.height
+        
     }
+    
 }
+

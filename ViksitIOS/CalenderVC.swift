@@ -16,6 +16,7 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var coinsBtn: UIButton!
     @IBOutlet var experiencePointsLabel: UILabel!
     
+    @IBOutlet var tableView: UITableView!
     
     
     @IBAction func onCoinsPressed(_ sender: UIButton) {
@@ -63,6 +64,10 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         coinsBtn.setTitle(" " + String(coins), for: .normal)
         experiencePointsLabel.text = String(xp)
         
+        //
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
+        
     }
    
     func makeButtonRound(button: UIButton, borderWidth: CGFloat, color: UIColor)-> UIButton{
@@ -103,12 +108,23 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.eventDurationLabel.text = starthours /*+ getSubstring(str: events[indexPath.row].startDate!, startOffest: 13, endOffset: -3)*/
         
         cell.eventMonthLabel.text = month
-        cell.eventNameView.isUserInteractionEnabled = false
-        cell.eventNameView.loadHTMLString(wrapInHtml(body: events[indexPath.row].name as! String), baseURL: nil)
+        //cell.eventNameView.isUserInteractionEnabled = false
+        //cell.eventNameView.loadHTMLString(wrapInHtml(body: events[indexPath.row].name as! String), baseURL: nil)
+        cell.eventName.attributedText = setHTMLString(testString: events[indexPath.row].name!,fontsize: "14" )
         cell.eventDateLabel.text = date
         cell.eventMonthLabel.text = month
         
         return cell
+    }
+    
+    func setHTMLString(testString: String,fontsize: String ) -> NSAttributedString{
+        let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
+        var attrStr = try! NSAttributedString(
+            data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
+            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            documentAttributes: nil)
+        //textview.attributedText = attrStr
+        return attrStr
     }
     
     func wrapInHtml(body: String) -> String {

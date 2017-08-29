@@ -15,7 +15,7 @@ class CalenderTableCell: UITableViewCell {
     @IBOutlet var evenDot: CircularButton!
     @IBOutlet var eventDurationLabel: UILabel!
     
-    @IBOutlet var eventNameView: UIWebView!
+    @IBOutlet var eventName: UILabel!
     @IBOutlet var eventBottomLine: UIView!
     @IBOutlet var eventCardView: UIView!
     
@@ -25,8 +25,8 @@ class CalenderTableCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         eventCardView.layer.cornerRadius = 3.0
-        eventNameView.scrollView.isScrollEnabled = false
-        eventNameView.scrollView.bounces = false
+        //eventNameView.scrollView.isScrollEnabled = false
+        //eventNameView.scrollView.bounces = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -47,12 +47,22 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
 
         cell.notificationDuration.text = notifications[indexPath.row].time
-        cell.notificationMessageView.isUserInteractionEnabled = false
-        cell.notificationMessageView.loadHTMLString(wrapInHtml(body: notifications[indexPath.row].message!), baseURL: nil)
+        //cell.notificationMessageView.isUserInteractionEnabled = false
+        //cell.notificationMessageView.loadHTMLString(wrapInHtml(body: notifications[indexPath.row].message!), baseURL: nil)
+        cell.notificationMessage.attributedText = setHTMLString(testString: notifications[indexPath.row].message!, fontsize: "15")
         
         return cell
     }
     
+    func setHTMLString(testString: String,fontsize: String ) -> NSAttributedString{
+        let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
+        var attrStr = try! NSAttributedString(
+            data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
+            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            documentAttributes: nil)
+        //textview.attributedText = attrStr
+        return attrStr
+    }
     
     func wrapInHtml(body: String) -> String {
         var html = "<html>"
