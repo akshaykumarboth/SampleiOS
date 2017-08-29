@@ -944,16 +944,16 @@
                                                     <rect key="frame" x="78" y="10" width="229" height="88.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hnF-fe-Bnu">
-                                                            <rect key="frame" x="8" y="10" width="213" height="66.5"/>
+                                                            <rect key="frame" x="8" y="10" width="213" height="67.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Huu-ef-8wf">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="213" height="49.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="213" height="50.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AvX-KV-DZ8">
-                                                                    <rect key="frame" x="0.0" y="54.5" width="213" height="12"/>
+                                                                    <rect key="frame" x="0.0" y="55.5" width="213" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -961,10 +961,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wf5-kk-fMU">
-                                                            <rect key="frame" x="0.0" y="86.5" width="229" height="2"/>
-                                                            <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="0.0" y="87.5" width="229" height="1"/>
+                                                            <color key="backgroundColor" red="0.80784313725490198" green="0.80784313725490198" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="2" id="OtL-So-HTl"/>
+                                                                <constraint firstAttribute="height" constant="1" id="OtL-So-HTl"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>

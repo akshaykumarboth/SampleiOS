@@ -1,18 +1,11 @@
 
 import UIKit
 
-class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class NotificationsVC: UIViewController {
 
     var notifications: Array<Notifications> = []
     
-    
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notifications.count
-    }
-
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(notifications[indexPath.row].id!)
-    }
+    @IBOutlet var tableView: UITableView!
     
     @IBAction func onBackPressed(_ sender: UIButton) {
         
@@ -21,6 +14,57 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         nextViewController.selectedIndex = 0
         self.present(nextViewController, animated:true, completion:nil)
         
+    }
+    
+    func setHTMLString(testString: String,fontsize: String ) -> NSAttributedString{
+        let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
+        var attrStr = try! NSAttributedString(
+            data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
+            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            documentAttributes: nil)
+        //textview.attributedText = attrStr
+        return attrStr
+    }
+    
+    func wrapInHtml(body: String) -> String {
+        var html = "<html>"
+        html += "<head>"
+        html += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+        html += "<style> body { font-size: 8px; padding: 0 !important; margin: 0 !important} </style>"
+        html += "</head>"
+        html += "<body>"
+        html += body
+        html += "</body>"
+        html += "</html>"
+        
+        return html
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
+            let complexObject = ComplexObject(JSONString: complexCache)
+            notifications = complexObject.notifications!
+        }
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
+
+        // Do any additional setup after loading the view.
+    }
+
+    
+}
+
+extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notifications.count
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(notifications[indexPath.row].id!)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
@@ -45,7 +89,7 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         } catch let error as NSError {
             print(" Error \(error)")
         }
-
+        
         cell.notificationDuration.text = notifications[indexPath.row].time
         //cell.notificationMessageView.isUserInteractionEnabled = false
         //cell.notificationMessageView.loadHTMLString(wrapInHtml(body: notifications[indexPath.row].message!), baseURL: nil)
@@ -53,46 +97,6 @@ class NotificationsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         return cell
     }
-    
-    func setHTMLString(testString: String,fontsize: String ) -> NSAttributedString{
-        let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
-        var attrStr = try! NSAttributedString(
-            data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
-            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
-            documentAttributes: nil)
-        //textview.attributedText = attrStr
-        return attrStr
-    }
-    
-    func wrapInHtml(body: String) -> String {
-        var html = "<html>"
-        html += "<head>"
-        html += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
-        html += "<style> body { font-size: 8px; padding: 0 !important; margin: 0 !important} </style>"
-        /*html += "<script type=\"text/javascript\">"
-        html += "window.onload = function() {"
-        html +=  "window.location.href = \"ready://\" + document.body.offsetHeight; }"
-        html += "</script>"*/
-        html += "</head>"
-        html += "<body>"
-        html += body
-        html += "</body>"
-        html += "</html>"
-        
-        return html
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
-            let complexObject = ComplexObject(JSONString: complexCache)
-            notifications = complexObject.notifications!
-        }
 
-        // Do any additional setup after loading the view.
-    }
 
-    
 }

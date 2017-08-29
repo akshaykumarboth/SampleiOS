@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CalenderVC: UIViewController {
     
     var events: Array<Events> = []
     
@@ -60,11 +60,10 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
         profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
-        
         coinsBtn.setTitle(" " + String(coins), for: .normal)
         experiencePointsLabel.text = String(xp)
         
-        //
+        //adjust table cell according to its content
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
         
@@ -86,36 +85,6 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
-    }
-    
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(events[indexPath.row].id!)
-    }
-    
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.separatorStyle = .none
-        tableView.showsVerticalScrollIndicator = false
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "calenderCell", for: indexPath) as! CalenderTableCell
-        
-        // get start date // "2017-07-31 13:43:00"
-        let month = getMonth(monthIndex: getSubstring(str: events[indexPath.row].startDate!, startOffest: 5, endOffset: -12))
-        let date = getSubstring(str: events[indexPath.row].startDate!, startOffest: 8, endOffset: -9)
-        let starthours = setTimeFormat(dateString: events[indexPath.row].startDate!)
-        cell.eventDurationLabel.text = starthours /*+ getSubstring(str: events[indexPath.row].startDate!, startOffest: 13, endOffset: -3)*/
-        
-        cell.eventMonthLabel.text = month
-        //cell.eventNameView.isUserInteractionEnabled = false
-        //cell.eventNameView.loadHTMLString(wrapInHtml(body: events[indexPath.row].name as! String), baseURL: nil)
-        cell.eventName.attributedText = setHTMLString(testString: events[indexPath.row].name!,fontsize: "14" )
-        cell.eventDateLabel.text = date
-        cell.eventMonthLabel.text = month
-        
-        return cell
-    }
     
     func setHTMLString(testString: String,fontsize: String ) -> NSAttributedString{
         let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
@@ -127,19 +96,6 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return attrStr
     }
     
-    func wrapInHtml(body: String) -> String {
-        var html = "<html>"
-        html += "<head>"
-        html += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
-        html += "<style> body { font-size: 13px; padding: 0 !important; margin: 0 !important} </style>"
-        html += "</head>"
-        html += "<body>"
-        html += body
-        html += "</body>"
-        html += "</html>"
-        
-        return html
-    }
     
     func getMonth(monthIndex: String) -> String {
          //months: [Int: String] = [:]
@@ -173,3 +129,39 @@ class CalenderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+extension CalenderVC: UITableViewDataSource, UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return events.count
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(events[indexPath.row].id!)
+    }
+    
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "calenderCell", for: indexPath) as! CalenderTableCell
+        
+        // get start date // "2017-07-31 13:43:00"
+        let month = getMonth(monthIndex: getSubstring(str: events[indexPath.row].startDate!, startOffest: 5, endOffset: -12))
+        let date = getSubstring(str: events[indexPath.row].startDate!, startOffest: 8, endOffset: -9)
+        let starthours = setTimeFormat(dateString: events[indexPath.row].startDate!)
+        cell.eventDurationLabel.text = starthours /*+ getSubstring(str: events[indexPath.row].startDate!, startOffest: 13, endOffset: -3)*/
+        
+        cell.eventMonthLabel.text = month
+        //cell.eventNameView.isUserInteractionEnabled = false
+        //cell.eventNameView.loadHTMLString(wrapInHtml(body: events[indexPath.row].name as! String), baseURL: nil)
+        cell.eventName.attributedText = setHTMLString(testString: events[indexPath.row].name!,fontsize: "14" )
+        cell.eventDateLabel.text = date
+        cell.eventMonthLabel.text = month
+        
+        return cell
+    }
+
+}
+
