@@ -74,6 +74,8 @@
 		BA43EE341F51D072000D2DB0 /* DynamicTextWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA43EE331F51D072000D2DB0 /* DynamicTextWebView.xib */; };
 		BA43EE361F51D0E1000D2DB0 /* DynamicTextWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE351F51D0E1000D2DB0 /* DynamicTextWebView.swift */; };
 		BA43EE3A1F5317B1000D2DB0 /* TeKVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE391F5317B1000D2DB0 /* TeKVc.swift */; };
+		BA43EE401F54259D000D2DB0 /* CustomUIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE3F1F54259D000D2DB0 /* CustomUIWebView.swift */; };
+		BA43EE421F5428DB000D2DB0 /* DVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE411F5428DB000D2DB0 /* DVC.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -226,6 +228,8 @@
 		BA43EE331F51D072000D2DB0 /* DynamicTextWebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DynamicTextWebView.xib; sourceTree = "<group>"; };
 		BA43EE351F51D0E1000D2DB0 /* DynamicTextWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTextWebView.swift; sourceTree = "<group>"; };
 		BA43EE391F5317B1000D2DB0 /* TeKVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeKVc.swift; sourceTree = "<group>"; };
+		BA43EE3F1F54259D000D2DB0 /* CustomUIWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIWebView.swift; sourceTree = "<group>"; };
+		BA43EE411F5428DB000D2DB0 /* DVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVC.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -501,6 +505,8 @@
 				BA43EE331F51D072000D2DB0 /* DynamicTextWebView.xib */,
 				BA43EE351F51D0E1000D2DB0 /* DynamicTextWebView.swift */,
 				BA43EE391F5317B1000D2DB0 /* TeKVc.swift */,
+				BA43EE3F1F54259D000D2DB0 /* CustomUIWebView.swift */,
+				BA43EE411F5428DB000D2DB0 /* DVC.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -1052,6 +1058,7 @@
 				BA6371881F28707900D77EA9 /* PasswordChangedVC.swift in Sources */,
 				BA43EE091F4B283D000D2DB0 /* ONLY_TITLE_IMAGE.swift in Sources */,
 				BA43EDD91F472AAC000D2DB0 /* LessonVC.swift in Sources */,
+				BA43EE401F54259D000D2DB0 /* CustomUIWebView.swift in Sources */,
 				BA43EDE41F4B17CB000D2DB0 /* NO_CONTENT.swift in Sources */,
 				BA43EDF11F4B2725000D2DB0 /* ONLY_PARAGRAPH_IMAGE_LIST.swift in Sources */,
 				BA43ED711F3B64C8000D2DB0 /* SubSkillTableCell.swift in Sources */,
@@ -1061,6 +1068,7 @@
 				BA6371981F28C1A500D77EA9 /* NotificationTableCell.swift in Sources */,
 				BA43EE291F5165B3000D2DB0 /* ThemeUtil.swift in Sources */,
 				BAA147DD1F33627000D1FFFE /* PerformanceVC.swift in Sources */,
+				BA43EE421F5428DB000D2DB0 /* DVC.swift in Sources */,
 				BA6371901F28868D00D77EA9 /* TasksVC.swift in Sources */,
 				BA63719D1F293B6000D77EA9 /* TabBarController.swift in Sources */,
 				BA43EDFB1F4B2786000D2DB0 /* ONLY_TITLE_PARAGRAPH_cells_fragemented.swift in Sources */,

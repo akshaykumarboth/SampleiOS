@@ -21,7 +21,7 @@ class TeKVc: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webview.loadHTMLString(ThemeUtil.wrapInHtml(body: testString,fontsize: "27"), baseURL: nil)
+        webview.loadHTMLString(ThemeUtil.wrapInHtml(body: testString,fontsize: "17"), baseURL: nil)
         webview.scrollView.isScrollEnabled = false
         webview.scrollView.bounces = false
         webview.delegate = self
