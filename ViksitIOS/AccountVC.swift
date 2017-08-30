@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AccountVC: UIViewController {
     
     var studentProfile: StudentProfile? = nil
     
@@ -19,7 +19,6 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     }
     
     var objectsArray = [Objects]()
-    
     @IBOutlet var profileImage: CircularImage!
     
     @IBAction func uploadPhotoPressed(_ sender: CircularButton) {
@@ -39,36 +38,6 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    func showCamera(){
-        let cameraPicker = UIImagePickerController()
-        cameraPicker.delegate = self
-        cameraPicker.sourceType = .camera
-        
-        present(cameraPicker, animated: true, completion: nil)
-    }
-    
-    func showAlbum(){
-        let cameraPicker = UIImagePickerController()
-        cameraPicker.delegate = self
-        cameraPicker.sourceType = .photoLibrary
-        
-        present(cameraPicker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        dismiss(animated: true, completion: nil)
-        
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage  {
-            profileImage.image = image
-        }
-        
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
     @IBAction func onBackPressed(_ sender: UIButton) {
         goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
     }
@@ -76,28 +45,6 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     @IBAction func onLogoutPressed(_ sender: UIButton) {
         goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
-    }
-    
-    
-    func loadImageAsync(url: String, imgView: UIImageView){
-        do {
-            
-            let url = URL(string: url)
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                DispatchQueue.main.async {
-                    if data != nil {
-                        imgView.image = UIImage(data: data!)
-                    } else {
-                        imgView.image = UIImage(named: "coins")
-                        
-                    }
-                }
-            }
-            
-        }catch let error as NSError {
-            print(" Error \(error)")
-        }
     }
     
     func goto(storyBoardName: String, storyBoardID: String) {
@@ -128,14 +75,48 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         ]
         // Do any additional setup after loading the view.
         
-        loadImageAsync(url: (studentProfile?.profileImage)!, imgView: profileImage)
-        
-        
-        
+        ImageAsyncLoader.loadImageAsync(url: (studentProfile?.profileImage)!, imgView: profileImage)
         
     }
     
     
+
+}
+
+extension AccountVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func showCamera(){
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.delegate = self
+        cameraPicker.sourceType = .camera
+        
+        present(cameraPicker, animated: true, completion: nil)
+    }
+    
+    func showAlbum(){
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.delegate = self
+        cameraPicker.sourceType = .photoLibrary
+        
+        present(cameraPicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        dismiss(animated: true, completion: nil)
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage  {
+            profileImage.image = image
+        }
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+extension AccountVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
@@ -151,7 +132,7 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         tableView.showsVerticalScrollIndicator = false
         
         var cell = tableView.dequeueReusableCell(withIdentifier: "accountCell") as! AccountCell!
-
+        
         cell?.cellNameLabel.text = objectsArray[indexPath.section].sectionObjects[indexPath.row]
         
         let key = objectsArray[indexPath.section].sectionObjects[indexPath.row] as String
@@ -159,7 +140,7 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         
         return cell!
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objectsArray[section].sectionObjects.count
     }
@@ -167,9 +148,8 @@ class AccountVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     func numberOfSections(in tableView: UITableView) -> Int {
         return objectsArray.count
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return objectsArray[section].sectionName
     }
-
 }

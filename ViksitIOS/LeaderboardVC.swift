@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class LeaderboardVC: UIViewController {
     
     var pickerList: [String] = []
     
@@ -16,7 +16,6 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
         
     }
-    
     
     @IBOutlet var secondTopperImage: UIImageView!
     @IBOutlet var secondTopperRank: CircularButton!
@@ -51,22 +50,6 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         }
     }
     
-    func showRoles() {
-        view.addSubview(pickView)
-        
-        let topConstraint = pickView.topAnchor.constraint(equalTo: rolesBtn.bottomAnchor)
-        let rightConstraint = pickView.rightAnchor.constraint(equalTo: view.rightAnchor)
-        let widthConstraint = pickView.widthAnchor.constraint(equalToConstant: view.frame.width/2)
-        let heightConstraint = pickView.heightAnchor.constraint(equalToConstant: CGFloat(20 * pickerList.count))
-        
-        NSLayoutConstraint.activate([topConstraint, rightConstraint, widthConstraint, heightConstraint])
-        view.layoutIfNeeded()
-    }
-    
-    func hideRoles(){
-        pickView.removeFromSuperview()
-    }
-
     override func viewDidAppear(_ animated: Bool) {
         rolesBtn.semanticContentAttribute = .forceRightToLeft
     }
@@ -161,6 +144,48 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.present(nextViewController, animated:true, completion:nil)
     }
     
+    func makeImageRound(image: UIImageView){
+        //image.layer.cornerRadius = image.frame.height / 2
+        //image.layer.masksToBounds = true
+        //image.clipsToBounds = true
+        image.layer.borderWidth=1.0;
+        image.layer.borderColor = UIColor(red: 235/255, green: 56/255, blue: 79/255, alpha: 1.00).cgColor
+    }
+    
+    func ordinal(i:Int)-> String{
+        var sufixes: [String] = ["th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th"]
+        switch (i % 100) {
+        case 11,12,13:
+            return String(i) + "th"
+        default:
+            return String(i) + sufixes[i % 10]
+            
+        }
+    }
+
+}
+
+extension LeaderboardVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func showRoles() {
+        view.addSubview(pickView)
+        
+        let topConstraint = pickView.topAnchor.constraint(equalTo: rolesBtn.bottomAnchor)
+        let rightConstraint = pickView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        let widthConstraint = pickView.widthAnchor.constraint(equalToConstant: view.frame.width/2)
+        let heightConstraint = pickView.heightAnchor.constraint(equalToConstant: CGFloat(20 * pickerList.count))
+        
+        NSLayoutConstraint.activate([topConstraint, rightConstraint, widthConstraint, heightConstraint])
+        view.layoutIfNeeded()
+    }
+    
+    func hideRoles(){
+        pickView.removeFromSuperview()
+    }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerList.count
@@ -203,19 +228,16 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         setToppers()
         print("data reloaded")
     }
+
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
+}
 
-   
-
+extension LeaderboardVC: UITableViewDataSource, UITableViewDelegate {
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return studentRankList!.count
     }
     
-    
-   
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
@@ -231,23 +253,5 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         return cell
     }
     
-    func makeImageRound(image: UIImageView){
-        //image.layer.cornerRadius = image.frame.height / 2
-        //image.layer.masksToBounds = true
-        //image.clipsToBounds = true
-        image.layer.borderWidth=1.0;
-        image.layer.borderColor = UIColor(red: 235/255, green: 56/255, blue: 79/255, alpha: 1.00).cgColor
-    }
-    
-    func ordinal(i:Int)-> String{
-        var sufixes: [String] = ["th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th"]
-        switch (i % 100) {
-        case 11,12,13:
-            return String(i) + "th"
-        default:
-            return String(i) + sufixes[i % 10]
-            
-        }
-    }
 
 }

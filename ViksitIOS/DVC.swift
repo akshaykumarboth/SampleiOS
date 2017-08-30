@@ -44,17 +44,14 @@ class DVC: UIViewController {
 extension DVC: UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        
         print(webView.scrollView.contentSize.height)
-        webView.scrollView.isScrollEnabled=false;
-        
         resizeToContent(webView: webView)
     }
     
     func resizeToContent(webView: UIWebView){
+        webView.scrollView.isScrollEnabled = false
         let height = webView.stringByEvaluatingJavaScript(from: "(document.height !== undefined) ? document.height : document.body.offsetHeight;")
         var dynamicFrame: CGRect = webView.frame
-        
         dynamicFrame.size.height = CGFloat(Float(height!)!) * 1.1
         webView.frame = dynamicFrame
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoleInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RoleInfoVC: UIViewController {
 
     var course: Courses?
     var skills: [Skills] = []
@@ -42,35 +42,50 @@ class RoleInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         skills = (course?.skillObjectives)!
         
         //loading image from url async
-        loadImageAsync(url: (course?.imageURL)!, imgView: self.roleImage)
+        ImageAsyncLoader.loadImageAsync(url: (course?.imageURL)!, imgView: self.roleImage)
         
         
     }
 
+}
+
+extension RoleInfoVC: UITableViewDelegate, UITableViewDataSource {
     
-    func loadImageAsync(url: String, imgView: UIImageView){
-        do {
-            
-            let url = URL(string: url)
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                DispatchQueue.main.async {
-                    if data != nil {
-                        imgView.image = UIImage(data: data!)
-                    } else {
-                        imgView.image = UIImage(named: "coins")
-                        
-                    }
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SubSkillTableCell", for: indexPath) as! SubSkillTableCell
+        cell.subSkillName.text = skills[indexPath.row].name
+        cell.subSkillProgress.progress = Float(skills[indexPath.row].percentage!)
+        if let uPoints = skills[indexPath.row].userPoints  {
+            if let tPoints = skills[indexPath.row].totalPoints {
+                if let count = skills[indexPath.row].skills?.count {
+                    cell.subSkillDetail.text = "\(uPoints)" + "/" + "\(tPoints)" + "XP \u{2022} " + "\(count)" + " subskills"
                 }
+                
             }
-            
-        }catch let error as NSError {
-            print(" Error \(error)")
         }
+        
+        //cell.subSkillDetail.text = "250/500 XP \u{2022} 5 subskills"
+        for subview in cell.grandSkillStack.subviews {
+            subview.removeFromSuperview()
+        }
+        
+        
+        var grandSkillView: GrandChildSkillItem
+        childSkills = (skills[indexPath.row].skills)!
+        for grandchildskill in childSkills {
+            grandSkillView = GrandChildSkillItem(frame: CGRect(x: 0, y: 0, width: 300, height: 30))
+            grandSkillView.grandChildSkillNameLabel.text = grandchildskill.name
+            grandSkillView.grandChildSkillProgress.progress = Float(grandchildskill.percentage!)
+            
+            cell.grandSkillStack.addArrangedSubview(grandSkillView)
+        }
+        
+        return cell
     }
-    
-    
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let openViewHeight: Int = 58
         
@@ -102,44 +117,4 @@ class RoleInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.separatorStyle = .none
-        tableView.showsVerticalScrollIndicator = false
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SubSkillTableCell", for: indexPath) as! SubSkillTableCell
-        cell.subSkillName.text = skills[indexPath.row].name
-        cell.subSkillProgress.progress = Float(skills[indexPath.row].percentage!)
-        if let uPoints = skills[indexPath.row].userPoints  {
-            if let tPoints = skills[indexPath.row].totalPoints {
-                if let count = skills[indexPath.row].skills?.count {
-                    cell.subSkillDetail.text = "\(uPoints)" + "/" + "\(tPoints)" + "XP \u{2022} " + "\(count)" + " subskills"
-                }
-                
-            }
-        }
-        
-        
-        
-        //cell.subSkillDetail.text = "250/500 XP \u{2022} 5 subskills"
-        for subview in cell.grandSkillStack.subviews {
-            subview.removeFromSuperview()
-        }
-
-        
-        var grandSkillView: GrandChildSkillItem
-        childSkills = (skills[indexPath.row].skills)!
-        for grandchildskill in childSkills {
-            grandSkillView = GrandChildSkillItem(frame: CGRect(x: 0, y: 0, width: 300, height: 30))
-            grandSkillView.grandChildSkillNameLabel.text = grandchildskill.name
-            grandSkillView.grandChildSkillProgress.progress = Float(grandchildskill.percentage!)
-            
-            cell.grandSkillStack.addArrangedSubview(grandSkillView)
-        }
-        
-        return cell
-    }
-
-
-
 }

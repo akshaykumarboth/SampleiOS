@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PerformanceVC: UIViewController {
     
     var studentProfile: StudentProfile?
     var skills: [Skills] = []
@@ -19,15 +19,12 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     
     @IBOutlet var subSkillTableView: UITableView!
-    
     @IBOutlet var skillCollections: UICollectionView!
     
     @IBOutlet var profileImage: CircularImage!
     @IBOutlet var userXPLabel: UILabel!
     @IBOutlet var userBatchRankLabel: UILabel!
     @IBOutlet var userNameLabel: UILabel!
-    
-    
     
     @IBAction func uploadPhotoPressed(_ sender: CircularButton) {
         let actionSheet = UIAlertController(title: "Change Photo", message: nil, preferredStyle: .actionSheet)
@@ -46,6 +43,53 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         self.present(actionSheet, animated: true, completion: nil)
     }
     
+    @IBAction func onBackPressed(_ sender: UIButton) {
+        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
+    }
+    
+    @IBAction func onLogoutPressed(_ sender: UIButton) {
+        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
+    }
+    
+    func goto(storyBoardName: String, storyBoardID: String) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: storyBoardName, bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: storyBoardID)
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
+            studentProfile = ComplexObject(JSONString: complexCache).studentProfile!
+            skills = ComplexObject(JSONString: complexCache).skills!
+        }
+        
+        ImageAsyncLoader.loadImageAsync(url: (studentProfile?.profileImage)!, imgView: profileImage)
+        if let xp = studentProfile?.experiencePoints {
+            userXPLabel.text = "\(xp)"
+        }
+        
+        if let rank = studentProfile?.batchRank {
+            userBatchRankLabel.text = "#" + "\(rank)"
+        }
+        
+        if let name = studentProfile?.firstName {
+            userNameLabel.text = name
+        }
+        childSkills = (skills.first?.skills)!
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override var prefersStatusBarHidden : Bool {
+        return false
+    }
+    
+    
+}
+
+extension PerformanceVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func showCamera(){
         let cameraPicker = UIImagePickerController()
         cameraPicker.delegate = self
@@ -76,92 +120,30 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func onBackPressed(_ sender: UIButton) {
-        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
-    }
-    
-    @IBAction func onLogoutPressed(_ sender: UIButton) {
-        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
-    }
-    
-    func goto(storyBoardName: String, storyBoardID: String) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: storyBoardName, bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: storyBoardID)
-        self.present(nextViewController, animated:true, completion:nil)
-    }
-    
-    func loadImageAsync(url: String, imgView: UIImageView){
-        do {
-            
-            let url = URL(string: url)
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                DispatchQueue.main.async {
-                    if data != nil {
-                        imgView.image = UIImage(data: data!)
-                    } else {
-                        imgView.image = UIImage(named: "coins")
-                        
-                    }
-                }
-            }
-            
-        }catch let error as NSError {
-            print(" Error \(error)")
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
-            studentProfile = ComplexObject(JSONString: complexCache).studentProfile!
-            skills = ComplexObject(JSONString: complexCache).skills!
-        }
-        
-        loadImageAsync(url: (studentProfile?.profileImage)!, imgView: profileImage)
-        if let xp = studentProfile?.experiencePoints {
-            userXPLabel.text = "\(xp)"
-        }
-        
-        if let rank = studentProfile?.batchRank {
-            userBatchRankLabel.text = "#" + "\(rank)"
-        }
-        
-        if let name = studentProfile?.firstName {
-            userNameLabel.text = name
-        }
-        childSkills = (skills.first?.skills)!
-        
-        
-        
-        // Do any additional setup after loading the view.
-    }
-    
+}
+
+extension PerformanceVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return skills.count
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "superSkillCell", for: indexPath) as! SuperSkillCell
-            
+        
         cell.superSkillName.text = skills[indexPath.row].name
         //loading image async
-        loadImageAsync(url: (skills[indexPath.row].imageURL)!, imgView: cell.superSkillImage)
-
+        ImageAsyncLoader.loadImageAsync(url: (skills[indexPath.row].imageURL)!, imgView: cell.superSkillImage)
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         return CGSize(width: skillCollections.frame.height * 0.9, height: skillCollections.frame.height) //use height whatever you wants.
-    }
-    
-    override var prefersStatusBarHidden : Bool {
-        return false
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -176,7 +158,10 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         self.subSkillTableView.reloadData()
     }
-    
+
+}
+
+extension PerformanceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let openViewHeight: Int = 58
         
@@ -226,7 +211,7 @@ class PerformanceVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         
     }
     
-
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false

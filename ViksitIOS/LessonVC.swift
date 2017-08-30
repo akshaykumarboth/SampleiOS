@@ -94,7 +94,6 @@ extension LessonVC: UICollectionViewDelegate, UIScrollViewDelegate {
 
         targetContentOffset.pointee = offset
         
-        
     }
     
     

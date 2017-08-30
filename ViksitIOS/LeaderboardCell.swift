@@ -15,10 +15,6 @@ class LeaderboardCell: UITableViewCell {
     @IBOutlet var studentRank: UILabel!
     @IBOutlet var studentXP: UILabel!
     
-    
-    
-    
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()

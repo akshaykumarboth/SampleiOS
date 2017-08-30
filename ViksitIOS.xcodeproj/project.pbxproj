@@ -75,6 +75,7 @@
 		BA43EE361F51D0E1000D2DB0 /* DynamicTextWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE351F51D0E1000D2DB0 /* DynamicTextWebView.swift */; };
 		BA43EE401F54259D000D2DB0 /* CustomUIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE3F1F54259D000D2DB0 /* CustomUIWebView.swift */; };
 		BA43EE421F5428DB000D2DB0 /* DVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE411F5428DB000D2DB0 /* DVC.swift */; };
+		BA43EE4A1F56C64E000D2DB0 /* DummyData.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA43EE491F56C64E000D2DB0 /* DummyData.txt */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -228,6 +229,7 @@
 		BA43EE351F51D0E1000D2DB0 /* DynamicTextWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTextWebView.swift; sourceTree = "<group>"; };
 		BA43EE3F1F54259D000D2DB0 /* CustomUIWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIWebView.swift; sourceTree = "<group>"; };
 		BA43EE411F5428DB000D2DB0 /* DVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVC.swift; sourceTree = "<group>"; };
+		BA43EE491F56C64E000D2DB0 /* DummyData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DummyData.txt; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				B9F6B06A1F25E69C00B695C0 /* LaunchScreen.storyboard */,
 				B9F6B0681F25E69C00B695C0 /* Assets.xcassets */,
 				B9F6B06D1F25E69C00B695C0 /* Info.plist */,
+				BA43EE491F56C64E000D2DB0 /* DummyData.txt */,
 			);
 			path = ViksitIOS;
 			sourceTree = "<group>";
@@ -788,6 +791,7 @@
 				BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */,
 				B9F6B0691F25E69C00B695C0 /* Assets.xcassets in Resources */,
 				B9F6B0671F25E69C00B695C0 /* Main.storyboard in Resources */,
+				BA43EE4A1F56C64E000D2DB0 /* DummyData.txt in Resources */,
 				BA63718B1F28828400D77EA9 /* Tab.storyboard in Resources */,
 				BA43ED841F3C7F8A000D2DB0 /* GrandChildSkillItem.xib in Resources */,
 			);

@@ -29,6 +29,8 @@ class TasksVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * cellScaling)
         let cellHeight = floor(screenSize.height * cellScaling)
@@ -54,6 +56,7 @@ class TasksVC: UIViewController{
             coins = (ComplexObject(JSONString: complexCache).studentProfile?.coins)!
         }
         
+        
         //inserting image from url async
         let url = URL(string: profileImgUrl)
         DispatchQueue.global().async {
@@ -67,13 +70,14 @@ class TasksVC: UIViewController{
                 
             }
         }
+ 
         profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
         
         //set userpoints in toolbar
         coinsBtn.setTitle(" " + String(coins), for: .normal)
         experiencePoints.text = String(xp)
         
-           }
+    }
     
     func makeButtonRound(button: UIButton, borderWidth: CGFloat, color: UIColor)-> UIButton{
         button.layer.cornerRadius = button.frame.width/2
@@ -245,9 +249,7 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
         
-        
     }
-    
     
 }
 
