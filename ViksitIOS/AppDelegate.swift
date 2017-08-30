@@ -17,24 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
+        //for temporary testing
+        /*
         let file = "DummyData.txt" //this is the file. we will read from it
-        if let path = Bundle.main.path(forResource: "DummyData", ofType: "txt") {
-            do {
-                let data = try String(contentsOfFile: path, encoding: .utf8)
-                let myStrings = data.components(separatedBy: .newlines)
-                var x : String = ""
-                for string in myStrings {
-                    x.append(string)
-                }
-                print(x)
-                DataCache.sharedInstance.cache["complexObject"] = x
-            } catch {
-                print(error)
-            }
-        }
+        */
+        DataCache.sharedInstance.cache["complexObject"] = Helper.readFromFile(fileName: "DummyData", extnsion: "txt")
 
-        
+        //for solid testing
         /*
         if DataCache.sharedInstance.cache["complexObject"] == nil {
             var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/user/449/complex", method: "GET", param: [:])

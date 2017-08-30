@@ -61,5 +61,29 @@ class Helper{
     }
     
     
+    static func readFromFile(fileName: String, extnsion: String) -> String{
+        var result: String = ""
+        //let file = "DummyData.txt" //this is the file. we will read from it
+        if let path = Bundle.main.path(forResource: fileName, ofType: extnsion) {
+            do {
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                let myStrings = data.components(separatedBy: .newlines)
+                var x : String = ""
+                for string in myStrings {
+                    x.append(string)
+                }
+                print(x)
+                result = x
+                
+            } catch {
+                print(error)
+                result = ""
+            }
+        }
+        
+        return result
+    }
+    
+    
     
 }
