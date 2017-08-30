@@ -1,6 +1,7 @@
 
 import Foundation
 import UIKit
+import Photos
 
 class Helper{
     
@@ -84,6 +85,85 @@ class Helper{
         return result
     }
     
+    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            completion(data, response, error)
+            }.resume()
+    }
     
+    func downloadImage(url: URL) {
+        print("Download Started")
+        getDataFromUrl(url: url) { (data, response, error)  in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() { () -> Void in
+                //self.imageView.image = UIImage(data: data)
+            }
+            
+            do {
+                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                let fileName = "feroz"
+                let fileURL = documentsURL.appendingPathComponent("\(fileName).png")
+                print("fileURL \(fileURL.absoluteString)")
+                if let pngImageData = UIImagePNGRepresentation( UIImage(data: data)!) {
+                    try pngImageData.write(to: fileURL, options: .atomic)
+                }
+            } catch let myError {
+                print("caught: \(myError)")
+            }
+        }
+    }
+
+    //to download video in the gallery
+    func downloadVideoLinkAndCreateAsset(_ videoLink: String) {
+        
+        // use guard to make sure you have a valid url
+        guard let videoURL = URL(string: videoLink) else { return }
+        
+        let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        // check if the file already exist at the destination folder if you don't want to download it twice
+        if !FileManager.default.fileExists(atPath: documentsDirectoryURL.appendingPathComponent(videoURL.lastPathComponent).path) {
+            
+            // set up your download task
+            URLSession.shared.downloadTask(with: videoURL) { (location, response, error) -> Void in
+                
+                // use guard to unwrap your optional url
+                guard let location = location else { return }
+                
+                // create a deatination url with the server response suggested file name
+                let destinationURL = documentsDirectoryURL.appendingPathComponent(response?.suggestedFilename ?? videoURL.lastPathComponent)
+                
+                do {
+                    
+                    try FileManager.default.moveItem(at: location, to: destinationURL)
+                    
+                    PHPhotoLibrary.requestAuthorization({ (authorizationStatus: PHAuthorizationStatus) -> Void in
+                        
+                        // check if user authorized access photos for your app
+                        if authorizationStatus == .authorized {
+                            PHPhotoLibrary.shared().performChanges({
+                                PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: destinationURL)}) { completed, error in
+                                    if completed {
+                                        print("Video asset created")
+                                    } else {
+                                        print(error)
+                                    }
+                            }
+                        }
+                    })
+                    
+                } catch let error as NSError { print(error.localizedDescription)}
+                
+                }.resume()
+            
+        } else {
+            print("File already exists at destination url")
+        }
+        
+    }
+
     
 }
