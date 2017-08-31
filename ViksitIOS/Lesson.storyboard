@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BNz-ST-FcZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Xe-Lf-gcv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -544,12 +545,45 @@
                     <view key="view" contentMode="scaleToFill" id="lZo-bN-wUk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5DW-sR-vSb">
+                                <rect key="frame" x="0.0" y="258.5" width="375" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXY-oE-c2C">
+                                        <rect key="frame" x="157.5" y="45" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="0DY-TH-MQ2"/>
+                                            <constraint firstAttribute="width" secondItem="uXY-oE-c2C" secondAttribute="height" multiplier="1:1" id="aPw-Sy-HpS"/>
+                                        </constraints>
+                                        <state key="normal" image="play"/>
+                                        <connections>
+                                            <action selector="startVideoPressed:" destination="4Xe-Lf-gcv" eventType="touchUpInside" id="cpo-Vo-bB5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="uXY-oE-c2C" firstAttribute="centerX" secondItem="5DW-sR-vSb" secondAttribute="centerX" id="Gmu-2a-wGL"/>
+                                    <constraint firstAttribute="height" constant="150" id="J4F-6h-7J4"/>
+                                    <constraint firstItem="uXY-oE-c2C" firstAttribute="centerY" secondItem="5DW-sR-vSb" secondAttribute="centerY" id="SSz-9y-rmH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5DW-sR-vSb" firstAttribute="leading" secondItem="lZo-bN-wUk" secondAttribute="leading" id="Wxv-z9-Q1Q"/>
+                            <constraint firstItem="5DW-sR-vSb" firstAttribute="centerY" secondItem="lZo-bN-wUk" secondAttribute="centerY" id="Yo0-Ik-EDk"/>
+                            <constraint firstAttribute="trailing" secondItem="5DW-sR-vSb" secondAttribute="trailing" id="cIf-r8-lTM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="5DW-sR-vSb" id="iZt-KI-jaY"/>
+                        <outlet property="startVideoBtn" destination="uXY-oE-c2C" id="Za0-oz-XDU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bph-61-5gr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7071" y="-280"/>
+            <point key="canvasLocation" x="7161" y="-277"/>
         </scene>
         <!--Pager View Controller-->
         <scene sceneID="OaW-CE-BQq">
@@ -1194,4 +1228,7 @@
             <point key="canvasLocation" x="1568.8" y="404.34782608695656"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play" width="36" height="36"/>
+    </resources>
 </document>

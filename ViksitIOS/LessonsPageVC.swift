@@ -17,10 +17,6 @@ class LessonsPageVC: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //xmlParsing()
-        //setPages()
-        //
-        
         
         self.xmlParsing { () -> () in
             self.setPages()
@@ -65,34 +61,90 @@ class LessonsPageVC: UIPageViewController {
         let sb = UIStoryboard(name: "Lesson", bundle: nil)
         //print("list count is \(slideList.count)")
         var ii: Int = 0
-        for slide in slideList {
+        for slide in slideList { //NO_CONTENT
             print("slide template name is \(slide.templateName)")
-            if slide.templateName == "ONLY_TITLE" {
-                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE") as! ONLY_TITLE
-                vc1.slide = slideList[ii]
-                vCList.append(vc1)
-            } else if slide.templateName == "ONLY_TITLE_LIST"{
-                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_LIST") as! ONLY_TITLE_LIST
-                vc1.slide = slideList[ii]
-                vCList.append(vc1)
-            } else if slide.templateName == "ONLY_LIST_NUMBERED"{
-                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_LIST_NUMBERED") as! ONLY_LIST_NUMBERED
-                vc1.slide = slideList[ii]
-                vCList.append(vc1)
-            } else if slide.templateName == "NO_CONTENT"{
+            if slide.templateName == "NO_CONTENT" {
                 let vc1 = sb.instantiateViewController(withIdentifier: "NO_CONTENT") as! NO_CONTENT
                 vc1.slide = slideList[ii]
                 vCList.append(vc1)
-            }else if slide.templateName == "ONLY_2TITLE"{
+            } else if slide.templateName == "ONLY_2BOX" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_2BOX") as! ONLY_2BOX
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_2TITLE" {
                 let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_2TITLE") as! ONLY_2TITLE
                 vc1.slide = slideList[ii]
                 vCList.append(vc1)
-            }else if slide.templateName == "ONLY_TITLE_PARAGRAPH_IMAGE_LIST"{
+            } else if slide.templateName == "ONLY_2TITLE_IMAGE" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_2TITLE_IMAGE") as! ONLY_2TITLE_IMAGE
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_LIST" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_LIST") as! ONLY_LIST
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_LIST_NUMBERED" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_LIST_NUMBERED") as! ONLY_LIST_NUMBERED
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_PARAGRAPH" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_PARAGRAPH") as! ONLY_PARAGRAPH
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_PARAGRAPH_IMAGE_LIST" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_PARAGRAPH_IMAGE_LIST") as! ONLY_PARAGRAPH_IMAGE_LIST
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_PARAGRAPH_TITLE" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_PARAGRAPH_TITLE") as! ONLY_PARAGRAPH_TITLE
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_PARAGRAPH_TITLE_LIST" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_PARAGRAPH_TITLE_LIST") as! ONLY_PARAGRAPH_TITLE_LIST
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_PARAGRAPH_IMAGE" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_PARAGRAPH_IMAGE") as! ONLY_PARAGRAPH_IMAGE
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_TITLE" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE") as! ONLY_TITLE
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_TITLE_LIST_NUMBERED" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_LIST_NUMBERED") as! ONLY_TITLE_LIST_NUMBERED
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_TITLE_PARAGRAPH" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_PARAGRAPH") as! ONLY_TITLE_PARAGRAPH
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_TITLE_PARAGRAPH_cells_fragemented" {
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_PARAGRAPH_cells_fragemented") as! ONLY_TITLE_PARAGRAPH_cells_fragemented
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_TITLE_PARAGRAPH_IMAGE"{
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_PARAGRAPH_IMAGE") as! ONLY_TITLE_PARAGRAPH_IMAGE
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            } else if slide.templateName == "ONLY_TITLE_PARAGRAPH_IMAGE_LIST"{
                 let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_PARAGRAPH_IMAGE_LIST") as! ONLY_TITLE_PARAGRAPH_IMAGE_LIST
                 vc1.slide = slideList[ii]
                 vCList.append(vc1)
-            }else if slide.templateName == "ONLY_PARAGRAPH"{
-                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_PARAGRAPH") as! ONLY_PARAGRAPH
+            } else if slide.templateName == "ONLY_TITLE_IMAGE"{
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_IMAGE") as! ONLY_TITLE_IMAGE
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            }else if slide.templateName == "ONLY_TITLE_LIST"{
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_LIST") as! ONLY_TITLE_LIST
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            }else if slide.templateName == "ONLY_TITLE_TREE"{
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_TREE") as! ONLY_TITLE_TREE
+                vc1.slide = slideList[ii]
+                vCList.append(vc1)
+            }else if slide.templateName == "ONLY_VIDEO"{
+                let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_VIDEO") as! ONLY_VIDEO
                 vc1.slide = slideList[ii]
                 vCList.append(vc1)
             }

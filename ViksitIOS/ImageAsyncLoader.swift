@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Photos
 
 
 class ImageAsyncLoader{
@@ -34,6 +35,32 @@ class ImageAsyncLoader{
             print(" Error \(error)")
         }
     }
+    
+    static func saveVideoAsync(urlToYourVideo: String) {
+        //let videoImageUrl = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4"
+        
+        DispatchQueue.global(qos: .background).async {
+            if let url = URL(string: urlToYourVideo),
+                let urlData = NSData(contentsOf: url)
+            {
+                let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0];
+                let filePath="\(documentsPath)/tempFile.mp4";
+                DispatchQueue.main.async {
+                    urlData.write(toFile: filePath, atomically: true)
+                    PHPhotoLibrary.shared().performChanges({
+                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: filePath))
+                    }) { completed, error in
+                        if completed {
+                            print("Video is saved!")
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+    }
+
     
 
 }
