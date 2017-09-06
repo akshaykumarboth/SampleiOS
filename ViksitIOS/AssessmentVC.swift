@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoVC: UIViewController {
+class AssessmentVC: UIViewController {
     
         
     var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
@@ -25,7 +25,7 @@ class VideoVC: UIViewController {
     
     
 }
-extension VideoVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
@@ -62,7 +62,7 @@ extension VideoVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
 }
 
 
-extension VideoVC: UIWebViewDelegate {
+extension AssessmentVC: UIWebViewDelegate {
     
     public func webViewDidStartLoad(_ webView: UIWebView) {
         debugPrint("Start Loading")

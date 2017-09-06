@@ -79,7 +79,7 @@
 		BA43EE511F584A33000D2DB0 /* assessment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA43EE501F584A33000D2DB0 /* assessment.storyboard */; };
 		BA43EE6F1F60218B000D2DB0 /* OptionsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE6C1F60218B000D2DB0 /* OptionsTableCell.swift */; };
 		BA43EE701F60218B000D2DB0 /* QuesOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE6D1F60218B000D2DB0 /* QuesOptionCell.swift */; };
-		BA43EE711F60218B000D2DB0 /* VideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE6E1F60218B000D2DB0 /* VideoVC.swift */; };
+		BA43EE711F60218B000D2DB0 /* AssessmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE6E1F60218B000D2DB0 /* AssessmentVC.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -237,7 +237,7 @@
 		BA43EE501F584A33000D2DB0 /* assessment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = assessment.storyboard; sourceTree = "<group>"; };
 		BA43EE6C1F60218B000D2DB0 /* OptionsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableCell.swift; sourceTree = "<group>"; };
 		BA43EE6D1F60218B000D2DB0 /* QuesOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuesOptionCell.swift; sourceTree = "<group>"; };
-		BA43EE6E1F60218B000D2DB0 /* VideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoVC.swift; sourceTree = "<group>"; };
+		BA43EE6E1F60218B000D2DB0 /* AssessmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentVC.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -526,7 +526,7 @@
 				BA43EE501F584A33000D2DB0 /* assessment.storyboard */,
 				BA43EE6C1F60218B000D2DB0 /* OptionsTableCell.swift */,
 				BA43EE6D1F60218B000D2DB0 /* QuesOptionCell.swift */,
-				BA43EE6E1F60218B000D2DB0 /* VideoVC.swift */,
+				BA43EE6E1F60218B000D2DB0 /* AssessmentVC.swift */,
 			);
 			name = assessments;
 			sourceTree = "<group>";
@@ -1075,7 +1075,7 @@
 				BA6371791F271BFA00D77EA9 /* ForgotPasswordVC.swift in Sources */,
 				BA690E9D1F26115500EF980F /* AssessmentResponse.swift in Sources */,
 				BA43ED5A1F38843A000D2DB0 /* AccountCell.swift in Sources */,
-				BA43EE711F60218B000D2DB0 /* VideoVC.swift in Sources */,
+				BA43EE711F60218B000D2DB0 /* AssessmentVC.swift in Sources */,
 				BAA147EB1F34985000D1FFFE /* LeaderboardVC.swift in Sources */,
 				BA63716B1F26236000D77EA9 /* Helper.swift in Sources */,
 				BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */,
