@@ -21,21 +21,7 @@ class DVC: UIViewController {
 
         print(view.frame.height)
         webview.delegate = self
-        //webview.scrollView.isScrollEnabled=true
         webview.loadHTMLString(testString, baseURL: nil)
-        
-        
-        var wkView = WKWebView(frame: CGRect(x: 0, y: 300, width: self.view.frame.width-20, height: 200))
-        wkView.loadHTMLString(testString, baseURL: nil)
-        wkView.scrollView.isScrollEnabled = true
-        //wkView.contentScaleFactor = 100
-        wkView.sizeToFit()
-        //self.view.addSubview(wkView)
-        wkView.evaluateJavaScript("document.getElementById('someElement').innerText") { (result, error) in
-            if error != nil {
-                print(result)
-            }
-        }
         
     }
         
