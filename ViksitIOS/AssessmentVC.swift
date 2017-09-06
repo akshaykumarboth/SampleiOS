@@ -1,33 +1,35 @@
 //
-//  VideoVC.swift
+//  AssessmentVC.swift
+//  ViksitIOS
 //
-//
-//  Created by Akshay Kumar Both on 8/30/17.
-//  Copyright © 2017 Akshay Kumar Both. All rights reserved.
+//  Created by Akshay Kumar Both on 9/6/17.
+//  Copyright © 2017 Istar Feroz. All rights reserved.
 //
 
 import UIKit
 
+
+
 class AssessmentVC: UIViewController {
     
-        
-    var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
+    
+    var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
     
     @IBOutlet var collectionView: UICollectionView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
     }
     
-   
+    
     
     
 }
 extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 5
     }
     
     
@@ -39,10 +41,10 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         //cell.superSkillName.text = skills[indexPath.row].name
         //loading image async
         //ImageAsyncLoader.loadImageAsync(url: (skills[indexPath.row].imageURL)!, imgView: cell.superSkillImage)
-        cell.quesWebView.delegate = self
+        //cell.quesWebView.delegate = self
         cell.quesWebView.loadHTMLString(testString, baseURL: nil)
         
-                //view.translatesAutoresizingMaskIntoConstraints = true
+        //view.translatesAutoresizingMaskIntoConstraints = true
         
         return cell
     }
@@ -56,11 +58,11 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         
         //print((skills[indexPath.row].name)!)
         
-                
+        
     }
     
 }
-
+/*
 
 extension AssessmentVC: UIWebViewDelegate {
     
@@ -72,12 +74,11 @@ extension AssessmentVC: UIWebViewDelegate {
         print(webView.scrollView.contentSize.height)
         resizeToContent(webView: webView)
         
-        
     }
     
     func resizeToContent(webView: UIWebView){
         webView.scrollView.isScrollEnabled = false
-        //let height = webView.stringByEvaluatingJavaScript(from: "(document.height !== undefined) ? document.height : document.body.offsetHeight;")
+        let height = webView.stringByEvaluatingJavaScript(from: "(document.height !== undefined) ? document.height : document.body.offsetHeight;")
         var dynamicFrame: CGRect = webView.frame
         dynamicFrame.size.height = webView.scrollView.contentSize.height
         //dynamicFrame.size.height = CGFloat(Float(height!)!) * 1.1
@@ -85,5 +86,7 @@ extension AssessmentVC: UIWebViewDelegate {
         //cView.frame.size.height = dynamicFrame.size.height
     }
     
+    
+    
 }
-
+*/

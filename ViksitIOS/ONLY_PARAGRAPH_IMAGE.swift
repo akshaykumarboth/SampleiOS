@@ -13,6 +13,7 @@ class ONLY_PARAGRAPH_IMAGE: UIViewController {
     @IBOutlet var gifImageView: UIImageView!
     @IBOutlet var para: UILabel!
     @IBOutlet var imageView: UIImageView!
+    
     var slide: CMSlide = CMSlide()
 
     override func viewDidLoad() {
