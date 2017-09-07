@@ -71,9 +71,7 @@ extension QuesOptionCell: UIWebViewDelegate {
         //self.cellSize = dynamicFrame.height + 40
         
         print(webView.frame.height)
-        //optionTableView.beginUpdates()
-        //optionTableView.endUpdates()
-        //
+        
     }
     
 }
