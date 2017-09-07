@@ -42,7 +42,7 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         //loading image async
         //ImageAsyncLoader.loadImageAsync(url: (skills[indexPath.row].imageURL)!, imgView: cell.superSkillImage)
         //cell.quesWebView.delegate = self
-        cell.quesWebView.loadHTMLString(testString, baseURL: nil)
+        //cell.quesWebView.loadHTMLString(testString, baseURL: nil)
         
         //view.translatesAutoresizingMaskIntoConstraints = true
         

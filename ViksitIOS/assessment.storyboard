@@ -125,61 +125,52 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="369" height="501"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1C-Xb-x8x">
-                                                            <rect key="frame" x="10" y="10" width="349" height="128"/>
-                                                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3YJ-q5-56H">
+                                                            <rect key="frame" x="0.0" y="0.5" width="369" height="500"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stp-0a-Jwz">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="369" height="194.5"/>
+                                                                    <subviews>
+                                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwc-nw-b7J">
+                                                                            <rect key="frame" x="8" y="8" width="353" height="150"/>
+                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcioque civiuda. ris nisi ut aliquip ex ea commodo consequapa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioq</string>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                        </textView>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4MF-mJ-2au">
+                                                                            <rect key="frame" x="8" y="166" width="353" height="20.5"/>
+                                                                        </stackView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="4MF-mJ-2au" secondAttribute="bottom" constant="8" id="03V-o9-PYj"/>
+                                                                        <constraint firstItem="4MF-mJ-2au" firstAttribute="leading" secondItem="stp-0a-Jwz" secondAttribute="leading" constant="8" id="399-2r-Iwk"/>
+                                                                        <constraint firstItem="Nwc-nw-b7J" firstAttribute="top" secondItem="stp-0a-Jwz" secondAttribute="top" constant="8" id="JAO-BR-ker"/>
+                                                                        <constraint firstItem="4MF-mJ-2au" firstAttribute="top" secondItem="Nwc-nw-b7J" secondAttribute="bottom" constant="8" id="N9U-SJ-2lN"/>
+                                                                        <constraint firstItem="Nwc-nw-b7J" firstAttribute="leading" secondItem="stp-0a-Jwz" secondAttribute="leading" constant="8" id="XJT-GN-gli"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="4MF-mJ-2au" secondAttribute="trailing" constant="8" id="Z2g-Hs-fmF"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="Nwc-nw-b7J" secondAttribute="trailing" constant="8" id="ocz-CX-c6m"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="128" id="PZC-Ly-o1z"/>
+                                                                <constraint firstItem="stp-0a-Jwz" firstAttribute="top" secondItem="3YJ-q5-56H" secondAttribute="top" id="9rS-44-2qI"/>
+                                                                <constraint firstItem="stp-0a-Jwz" firstAttribute="width" secondItem="3YJ-q5-56H" secondAttribute="width" id="KlC-IS-e4m"/>
+                                                                <constraint firstAttribute="bottom" secondItem="stp-0a-Jwz" secondAttribute="bottom" id="dnq-34-wX3"/>
+                                                                <constraint firstItem="stp-0a-Jwz" firstAttribute="leading" secondItem="3YJ-q5-56H" secondAttribute="leading" id="dsj-Ua-ccb"/>
+                                                                <constraint firstAttribute="trailing" secondItem="stp-0a-Jwz" secondAttribute="trailing" id="hBf-67-Lgx"/>
                                                             </constraints>
-                                                        </webView>
-                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w7j-6c-iI7">
-                                                            <rect key="frame" x="10" y="148" width="349" height="353"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <color key="sectionIndexBackgroundColor" red="0.039577907990000001" green="0.97132703990000002" blue="0.94376627599999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <prototypes>
-                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OptionsTableCell" id="voB-Is-oC1" customClass="OptionsTableCell" customModule="ViksitIOS" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="28" width="349" height="100"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="voB-Is-oC1" id="v0c-qu-vRW">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="349" height="99.5"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                        <subviews>
-                                                                            <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cer-xJ-QPd">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="349" height="94.5"/>
-                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                            </webView>
-                                                                        </subviews>
-                                                                        <constraints>
-                                                                            <constraint firstItem="cer-xJ-QPd" firstAttribute="leading" secondItem="v0c-qu-vRW" secondAttribute="leading" id="5Ix-pM-2xo"/>
-                                                                            <constraint firstItem="cer-xJ-QPd" firstAttribute="top" secondItem="v0c-qu-vRW" secondAttribute="top" id="6lw-l5-elc"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="cer-xJ-QPd" secondAttribute="bottom" constant="5" id="NJO-Ab-5HR"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="cer-xJ-QPd" secondAttribute="trailing" id="ONY-3R-9jA"/>
-                                                                        </constraints>
-                                                                    </tableViewCellContentView>
-                                                                    <connections>
-                                                                        <outlet property="cView" destination="v0c-qu-vRW" id="x37-nd-BZp"/>
-                                                                        <outlet property="optionWebView" destination="cer-xJ-QPd" id="oyU-Ev-a35"/>
-                                                                    </connections>
-                                                                </tableViewCell>
-                                                            </prototypes>
-                                                        </tableView>
+                                                        </scrollView>
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="L1C-Xb-x8x" firstAttribute="leading" secondItem="gFl-Qz-O5a" secondAttribute="leading" constant="10" id="6aG-iM-eBo"/>
-                                                    <constraint firstItem="L1C-Xb-x8x" firstAttribute="top" secondItem="gFl-Qz-O5a" secondAttribute="top" constant="10" id="aos-DE-ljh"/>
-                                                    <constraint firstItem="w7j-6c-iI7" firstAttribute="leading" secondItem="gFl-Qz-O5a" secondAttribute="leading" constant="10" id="e9F-VR-hCl"/>
-                                                    <constraint firstAttribute="trailing" secondItem="L1C-Xb-x8x" secondAttribute="trailing" constant="10" id="oJR-7p-uZx"/>
-                                                    <constraint firstAttribute="trailing" secondItem="w7j-6c-iI7" secondAttribute="trailing" constant="10" id="ofe-5D-tQR"/>
-                                                    <constraint firstItem="w7j-6c-iI7" firstAttribute="top" secondItem="L1C-Xb-x8x" secondAttribute="bottom" constant="10" id="wHD-0h-oHw"/>
-                                                    <constraint firstAttribute="bottom" secondItem="w7j-6c-iI7" secondAttribute="bottom" id="xpB-CN-NIY"/>
+                                                    <constraint firstItem="3YJ-q5-56H" firstAttribute="top" secondItem="gFl-Qz-O5a" secondAttribute="top" id="71S-cv-zGJ"/>
+                                                    <constraint firstItem="3YJ-q5-56H" firstAttribute="leading" secondItem="gFl-Qz-O5a" secondAttribute="leading" id="9VI-Mh-U9A"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3YJ-q5-56H" secondAttribute="trailing" id="ILb-aa-2eo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3YJ-q5-56H" secondAttribute="bottom" id="IXa-qr-2RX"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outlet property="optionTableView" destination="w7j-6c-iI7" id="CT3-GS-wSf"/>
-                                                    <outlet property="quesHeightConstraint" destination="PZC-Ly-o1z" id="hnr-2Z-Z8v"/>
-                                                    <outlet property="quesWebView" destination="L1C-Xb-x8x" id="VWG-h0-Pxr"/>
-                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                         <connections>

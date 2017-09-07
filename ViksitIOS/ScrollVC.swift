@@ -20,12 +20,15 @@ class ScrollVC: UIViewController {
 
         quesView.attributedText = setHTMLString(testString: testString, fontsize: "1")
         
-        var para: UITextView
+        var para: OptionView
         
         for i in 0..<4 {
-            para = UITextView()
-            para.isScrollEnabled = false
-            para.attributedText = setHTMLString(testString: testString, fontsize: "1")
+            //let symbolTextLabel = SymbolTextLabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+            //paraStack.addArrangedSubview(symbolTextLabel)
+            //
+            para = OptionView()
+            para.optionText.isScrollEnabled = false
+            para.optionText.attributedText = setHTMLString(testString: testString, fontsize: "1")
             //para.attributedText = testString
             stack.addArrangedSubview(para)
         }
