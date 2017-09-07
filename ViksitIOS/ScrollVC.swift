@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScrollVC: UIViewController {
+class ScrollVC: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet var option1: OptionView!
     @IBOutlet var option2: OptionView!
@@ -19,32 +19,39 @@ class ScrollVC: UIViewController {
     
     var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
 
-    var tapGesture = UITapGestureRecognizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         option1.optionText.attributedText = setHTMLString(testString: testString)
         option2.removeFromSuperview()
-        option3.removeFromSuperview()
+        option3.optionText.attributedText = setHTMLString(testString: testString)
         option4.removeFromSuperview()
+        option5.removeFromSuperview()
+        option6.removeFromSuperview()
         
-        tapGesture = UITapGestureRecognizer(target: self, action: #selector(ScrollVC.myviewTapped(_:)))
-        tapGesture.numberOfTapsRequired = 1
-        tapGesture.numberOfTouchesRequired = 1
-        option1.addGestureRecognizer(tapGesture)
-        option1.isUserInteractionEnabled = true
+        //let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ScrollVC.handleTap(gestureRecognizer:)))
+        //gestureRecognizer.delegate = self
         
+        option1.addGestureRecognizer(setTapGestureRecognizer())
+        option1.tag = 1
+        option3.addGestureRecognizer(setTapGestureRecognizer())
+        option3.tag = 3
         // Do any additional setup after loading the view.
     }
     
-    func myviewTapped(_ sender: UITapGestureRecognizer) {
+    func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        print("\(gestureRecognizer.view?.tag)")
+    }
+    
+    
+    func setTapGestureRecognizer() -> UITapGestureRecognizer {
         
-        if self.option1.backgroundColor == UIColor.yellow {
-            self.option1.backgroundColor = UIColor.green
-        }else{
-            self.option1.backgroundColor = UIColor.yellow
-        }
+        var gestureRecognizer = UITapGestureRecognizer()
+        
+        gestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(handleTap(gestureRecognizer:)))
+       
+        return gestureRecognizer
     }
     
     func setHTMLString(testString: String) -> NSAttributedString {

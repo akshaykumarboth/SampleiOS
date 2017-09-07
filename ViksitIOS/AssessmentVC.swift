@@ -26,6 +26,7 @@ class AssessmentVC: UIViewController {
     }
     
     
+    
     func setHTMLString(testString: String) -> NSAttributedString {
         //let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
         // if the string is not wrapped in html tags then wrap it and uncomment above line
@@ -59,6 +60,8 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         
         for i in 0..<5 {
             option = OptionView()
+            option.tag = i
+            option.addGestureRecognizer(setTapGestureRecognizer())
             option.optionText.isScrollEnabled = false
             option.optionText.attributedText = setHTMLString(testString: "what is the depth of mariana trench ? akdhay")
             option.optionContainer.backgroundColor = UIColor.brown
@@ -99,4 +102,25 @@ extension AssessmentVC: UIScrollViewDelegate {
         
     }
     
+}
+
+extension AssessmentVC: UIGestureRecognizerDelegate {
+    
+    func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        print("\(gestureRecognizer.view?.tag)")
+        
+        if let option: OptionView = gestureRecognizer.view as! OptionView {
+            option.optionContainer.backgroundColor = UIColor.red
+        }
+    }
+    
+    func setTapGestureRecognizer() -> UITapGestureRecognizer {
+        
+        var gestureRecognizer = UITapGestureRecognizer()
+        gestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(handleTap(gestureRecognizer:)))
+        
+        return gestureRecognizer
+    }
+    
+
 }
