@@ -82,6 +82,7 @@
 		BA43EE791F60424F000D2DB0 /* ScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE781F60424F000D2DB0 /* ScrollVC.swift */; };
 		BA43EE7B1F61209F000D2DB0 /* OptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA43EE7A1F61209F000D2DB0 /* OptionView.xib */; };
 		BA43EE7D1F612116000D2DB0 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE7C1F612116000D2DB0 /* OptionView.swift */; };
+		BA43EE7F1F6129E2000D2DB0 /* ScrollViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE7E1F6129E2000D2DB0 /* ScrollViewExt.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -242,6 +243,7 @@
 		BA43EE781F60424F000D2DB0 /* ScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollVC.swift; sourceTree = "<group>"; };
 		BA43EE7A1F61209F000D2DB0 /* OptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionView.xib; sourceTree = "<group>"; };
 		BA43EE7C1F612116000D2DB0 /* OptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
+		BA43EE7E1F6129E2000D2DB0 /* ScrollViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewExt.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -559,6 +561,7 @@
 				BA43EE251F4EDAE1000D2DB0 /* ImageAsyncLoader.swift */,
 				BA43EE281F5165B3000D2DB0 /* ThemeUtil.swift */,
 				BA43EE2A1F516F62000D2DB0 /* swift+gif.swift */,
+				BA43EE7E1F6129E2000D2DB0 /* ScrollViewExt.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -1075,6 +1078,7 @@
 				BA6371811F279CC000D77EA9 /* VerifyPhoneVC.swift in Sources */,
 				BA43EE321F51C7C2000D2DB0 /* WebDynamicVC.swift in Sources */,
 				BA43EE141F4C2467000D2DB0 /* CMSList.swift in Sources */,
+				BA43EE7F1F6129E2000D2DB0 /* ScrollViewExt.swift in Sources */,
 				BA43ED801F3C4813000D2DB0 /* Expandable2VC.swift in Sources */,
 				BA43ED6F1F3B4C88000D2DB0 /* HoriPickerVC.swift in Sources */,
 				BA690E9C1F26115500EF980F /* AssessmentReports.swift in Sources */,

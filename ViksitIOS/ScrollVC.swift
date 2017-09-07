@@ -18,7 +18,7 @@ class ScrollVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        quesView.attributedText = setHTMLString(testString: testString, fontsize: "1")
+        //quesView.attributedText = setHTMLString(testString: testString, fontsize: "1")
         
         var para: OptionView
         
@@ -28,7 +28,7 @@ class ScrollVC: UIViewController {
             //
             para = OptionView()
             para.optionText.isScrollEnabled = false
-            para.optionText.attributedText = setHTMLString(testString: testString, fontsize: "1")
+            //para.optionText.attributedText = setHTMLString(testString: testString, fontsize: "1")
             //para.attributedText = testString
             stack.addArrangedSubview(para)
         }
@@ -42,16 +42,7 @@ class ScrollVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setHTMLString(testString: String,fontsize: String ) -> NSAttributedString {
-        //let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
-        let str = testString
-        let attrStr = try! NSAttributedString(
-            data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
-            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
-            documentAttributes: nil)
-        //textview.attributedText = attrStr
-        return attrStr
-    }
+    
 
 
     /*

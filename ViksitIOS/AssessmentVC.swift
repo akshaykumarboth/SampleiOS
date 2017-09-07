@@ -23,7 +23,17 @@ class AssessmentVC: UIViewController {
         
     }
     
-    
+    func setHTMLString(testString: String) -> NSAttributedString {
+        //let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
+        // if the string is not wrapped in html tags then wrap it and uncomment above line
+        let str = testString
+        let attrStr = try! NSAttributedString(
+            data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
+            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            documentAttributes: nil)
+        //textview.attributedText = attrStr
+        return attrStr
+    }
     
     
 }
@@ -35,16 +45,19 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuesOptionCell", for: indexPath) as! QuesOptionCell
+        cell.scrollView.scrollToTop()
+        cell.quesView.attributedText = setHTMLString(testString: testString)
         
-        //cell.superSkillName.text = skills[indexPath.row].name
-        //loading image async
-        //ImageAsyncLoader.loadImageAsync(url: (skills[indexPath.row].imageURL)!, imgView: cell.superSkillImage)
-        //cell.quesWebView.delegate = self
-        //cell.quesWebView.loadHTMLString(testString, baseURL: nil)
+        var option: OptionView
         
-        //view.translatesAutoresizingMaskIntoConstraints = true
+        for i in 0..<4 {
+            option = OptionView()
+            option.optionText.isScrollEnabled = false
+            option.optionText.attributedText = setHTMLString(testString: testString)
+            option.optionContainer.backgroundColor = UIColor.brown
+            cell.optionStack.addArrangedSubview(option)
+        }
         
         return cell
     }
@@ -62,31 +75,3 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
 }
-/*
-
-extension AssessmentVC: UIWebViewDelegate {
-    
-    public func webViewDidStartLoad(_ webView: UIWebView) {
-        debugPrint("Start Loading")
-    }
-    
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        print(webView.scrollView.contentSize.height)
-        resizeToContent(webView: webView)
-        
-    }
-    
-    func resizeToContent(webView: UIWebView){
-        webView.scrollView.isScrollEnabled = false
-        let height = webView.stringByEvaluatingJavaScript(from: "(document.height !== undefined) ? document.height : document.body.offsetHeight;")
-        var dynamicFrame: CGRect = webView.frame
-        dynamicFrame.size.height = webView.scrollView.contentSize.height
-        //dynamicFrame.size.height = CGFloat(Float(height!)!) * 1.1
-        webView.frame = dynamicFrame
-        //cView.frame.size.height = dynamicFrame.size.height
-    }
-    
-    
-    
-}
-*/
