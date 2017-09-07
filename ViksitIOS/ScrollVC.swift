@@ -10,49 +10,54 @@ import UIKit
 
 class ScrollVC: UIViewController {
 
-    @IBOutlet var stack: UIStackView!
-    @IBOutlet var quesView: UITextView!
+    @IBOutlet var option1: OptionView!
+    @IBOutlet var option2: OptionView!
+    @IBOutlet var option3: OptionView!
+    @IBOutlet var option4: OptionView!
+    @IBOutlet var option5: OptionView!
+    @IBOutlet var option6: OptionView!
     
-    var testString: String = "<!DOCTYPE html><html><head><style> body { font-size: 10px;} table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
+    var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
 
+    var tapGesture = UITapGestureRecognizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //quesView.attributedText = setHTMLString(testString: testString, fontsize: "1")
+        option1.optionText.attributedText = setHTMLString(testString: testString)
+        option2.removeFromSuperview()
+        option3.removeFromSuperview()
+        option4.removeFromSuperview()
         
-        var para: OptionView
-        
-        for i in 0..<4 {
-            //let symbolTextLabel = SymbolTextLabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-            //paraStack.addArrangedSubview(symbolTextLabel)
-            //
-            para = OptionView()
-            para.optionText.isScrollEnabled = false
-            //para.optionText.attributedText = setHTMLString(testString: testString, fontsize: "1")
-            //para.attributedText = testString
-            stack.addArrangedSubview(para)
-        }
-        
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(ScrollVC.myviewTapped(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTouchesRequired = 1
+        option1.addGestureRecognizer(tapGesture)
+        option1.isUserInteractionEnabled = true
         
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func myviewTapped(_ sender: UITapGestureRecognizer) {
+        
+        if self.option1.backgroundColor == UIColor.yellow {
+            self.option1.backgroundColor = UIColor.green
+        }else{
+            self.option1.backgroundColor = UIColor.yellow
+        }
     }
     
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setHTMLString(testString: String) -> NSAttributedString {
+        //let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
+        // if the string is not wrapped in html tags then wrap it and uncomment above line
+        let str = testString
+        let attrStr = try! NSAttributedString(
+            data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
+            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+            documentAttributes: nil)
+        //textview.attributedText = attrStr
+        return attrStr
     }
-    */
+    
 
 }
