@@ -4,6 +4,7 @@ import UIKit
 class TasksVC: UIViewController{
     
     var tasks: Array<Tasks> = []
+    var visibleCellIndex: IndexPath!
 
     @IBOutlet var cards: UICollectionView!
     let cellScaling: CGFloat = 0.75
@@ -11,7 +12,6 @@ class TasksVC: UIViewController{
     @IBOutlet var coinsBtn: UIButton!
     @IBOutlet var experiencePoints: UILabel!
     @IBOutlet var profileBtn: UIButton!
-    
    
     @IBAction func onCoinsPressed(_ sender: UIButton) {
         goto(storyBoardName: "Profile", storyBoardID: "LeaderboardVC")
@@ -28,8 +28,6 @@ class TasksVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * cellScaling)
@@ -56,7 +54,6 @@ class TasksVC: UIViewController{
             coins = (ComplexObject(JSONString: complexCache).studentProfile?.coins)!
         }
         
-        
         //inserting image from url async
         let url = URL(string: profileImgUrl)
         DispatchQueue.global().async {
@@ -67,7 +64,7 @@ class TasksVC: UIViewController{
                 } else {
                     self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
                 }
-                
+            
             }
         }
  
@@ -250,6 +247,24 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
         targetContentOffset.pointee = offset
         
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        var visibleRect = CGRect()
+        
+        visibleRect.origin = cards.contentOffset
+        visibleRect.size = cards.bounds.size
+        
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        let visibleIndexPath: IndexPath = cards.indexPathForItem(at: visiblePoint)!
+        
+        print(visibleIndexPath.row)
+        self.visibleCellIndex = visibleIndexPath
+        //self.visibleCellIndex = collectionView.indexPathsForVisibleItems.first!
+        //print(self.visibleCellIndex.row)
+        
+    }
+
     
 }
 

@@ -16,16 +16,13 @@ class AssessmentVC: UIViewController {
     var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
     
     @IBOutlet var collectionView: UICollectionView!
+    var visibleCellIndex: IndexPath!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        //
-
     }
-    
-    
     
     func setHTMLString(testString: String) -> NSAttributedString {
         //let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
@@ -76,13 +73,22 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return CGSize(width: collectionView.frame.width * 1, height: collectionView.frame.height) //use height whatever you wants.
     }
     
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        //print((skills[indexPath.row].name)!)
-        
-        
+    
+    /*
+ 
+    // Called before the cell is displayed
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+     
+        //print("starting display of cell: \(indexPath.row)")
     }
     
+    // Called when the cell is displayed
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        print(collectionView.indexPathsForVisibleItems.first)
+        //print("ending display of cell: \(indexPath.row)")
+    }
+ 
+ */
 }
 
 
@@ -102,6 +108,23 @@ extension AssessmentVC: UIScrollViewDelegate {
         
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        var visibleRect = CGRect()
+        
+        visibleRect.origin = collectionView.contentOffset
+        visibleRect.size = collectionView.bounds.size
+        
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        let visibleIndexPath: IndexPath = collectionView.indexPathForItem(at: visiblePoint)!
+        
+        print(visibleIndexPath.row)
+        self.visibleCellIndex = visibleIndexPath
+        //self.visibleCellIndex = collectionView.indexPathsForVisibleItems.first!
+        //print(self.visibleCellIndex.row)
+        
+    }
+    
 }
 
 extension AssessmentVC: UIGestureRecognizerDelegate {
@@ -110,7 +133,12 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
         print("\(gestureRecognizer.view?.tag)")
         
         if let option: OptionView = gestureRecognizer.view as! OptionView {
-            option.optionContainer.backgroundColor = UIColor.red
+            if option.optionContainer.backgroundColor == UIColor.red {
+                option.optionContainer.backgroundColor = UIColor.brown
+            } else {
+                option.optionContainer.backgroundColor = UIColor.red
+            }
+            
         }
     }
     

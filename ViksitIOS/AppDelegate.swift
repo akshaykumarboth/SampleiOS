@@ -31,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         */
 
+        
+        //http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972 // for assessment response
+        
         return true
     }
 
