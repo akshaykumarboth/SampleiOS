@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SymbolTextLabel" customModule="ViksitIOS" customModuleProvider="target">
             <connections>
                 <outlet property="symbolLabel" destination="LX7-r4-EYX" id="4Jh-wh-dFd"/>
-                <outlet property="symbolSpacingConstraint" destination="kmA-7z-jJB" id="5ru-aK-Adu"/>
+                <outlet property="symbolSpacingConstraint" destination="Kbw-bQ-BPp" id="f8z-vu-R3l"/>
                 <outlet property="textLabel" destination="L6X-FV-qi1" id="piV-tR-Mf8"/>
                 <outlet property="view" destination="rIy-0G-aRZ" id="SS0-9a-jGz"/>
             </connections>
@@ -22,27 +22,27 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX7-r4-EYX">
-                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6X-FV-qi1">
+                    <rect key="frame" x="11" y="0.0" width="364" height="41"/>
+                    <string key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label LabelLabel Label Label Label Label Label Label Label Label LabelLabel Label Label Label Label Label Label Label Label LabelLabel Label Label Label Label Label Label Label Label LabelLabel Label Label Label Label Label Label Label Label LabelLabel Label Label Label Label Label Label Label Label LabelLabel Label Label Label Label Label Label Label Label Label</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6X-FV-qi1">
-                    <rect key="frame" x="47" y="0.0" width="328" height="41"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX7-r4-EYX">
+                    <rect key="frame" x="0.0" y="0.0" width="8" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <constraints>
-                <constraint firstItem="LX7-r4-EYX" firstAttribute="top" secondItem="rIy-0G-aRZ" secondAttribute="top" id="5bs-8Y-QPX"/>
-                <constraint firstItem="LX7-r4-EYX" firstAttribute="top" secondItem="rIy-0G-aRZ" secondAttribute="top" id="gTk-SG-l15"/>
-                <constraint firstItem="LX7-r4-EYX" firstAttribute="leading" secondItem="rIy-0G-aRZ" secondAttribute="leading" id="hDa-6h-nLO"/>
-                <constraint firstItem="L6X-FV-qi1" firstAttribute="leading" secondItem="LX7-r4-EYX" secondAttribute="trailing" constant="5" id="kmA-7z-jJB"/>
-                <constraint firstAttribute="bottom" secondItem="L6X-FV-qi1" secondAttribute="bottom" id="pR5-Mz-9g6"/>
-                <constraint firstItem="L6X-FV-qi1" firstAttribute="top" secondItem="rIy-0G-aRZ" secondAttribute="top" id="qZO-Zt-a2y"/>
-                <constraint firstAttribute="trailing" secondItem="L6X-FV-qi1" secondAttribute="trailing" id="ryq-IR-8jR"/>
+                <constraint firstItem="L6X-FV-qi1" firstAttribute="leading" secondItem="LX7-r4-EYX" secondAttribute="trailing" constant="3" id="Kbw-bQ-BPp"/>
+                <constraint firstAttribute="trailing" secondItem="L6X-FV-qi1" secondAttribute="trailing" id="QYl-VJ-yqD"/>
+                <constraint firstItem="L6X-FV-qi1" firstAttribute="top" secondItem="rIy-0G-aRZ" secondAttribute="top" id="bEv-Aj-gs5"/>
+                <constraint firstItem="LX7-r4-EYX" firstAttribute="top" secondItem="rIy-0G-aRZ" secondAttribute="top" id="g3r-ov-sjq"/>
+                <constraint firstItem="LX7-r4-EYX" firstAttribute="leading" secondItem="rIy-0G-aRZ" secondAttribute="leading" id="jZa-iV-N8k"/>
+                <constraint firstAttribute="bottom" secondItem="L6X-FV-qi1" secondAttribute="bottom" id="wy7-JW-JaK"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

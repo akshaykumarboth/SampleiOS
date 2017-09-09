@@ -19,10 +19,10 @@ class ThemeUtil {
             let symbolTextLabel = SymbolTextLabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
             symbolTextLabel.symbolLabel.text = ""
             symbolTextLabel.textLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            symbolTextLabel.textLabel.font.withSize(20)
-            symbolTextLabel.textLabel.numberOfLines = 3
-            symbolTextLabel.textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            symbolTextLabel.setFontSize(textSize: 20)
+            //symbolTextLabel.textLabel.font.withSize(20)
+            //symbolTextLabel.textLabel.numberOfLines = 3
+            //symbolTextLabel.textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             
             listStack.addArrangedSubview(symbolTextLabel)
         }
@@ -113,9 +113,7 @@ class ThemeUtil {
             
             symbolTextLabel.symbolLabel.text = number
             symbolTextLabel.textLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            symbolTextLabel.textLabel.font.withSize(18)
-            symbolTextLabel.textLabel.numberOfLines = 3
-            symbolTextLabel.textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            symbolTextLabel.setFontSize(textSize: 18)
             symbolTextLabel.translatesAutoresizingMaskIntoConstraints = false
             
             listStack.addArrangedSubview(symbolTextLabel)

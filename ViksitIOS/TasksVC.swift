@@ -130,12 +130,10 @@ class TasksVC: UIViewController{
         
         return str[range]
     }
-
     
 }
 
 extension TasksVC: UICollectionViewDataSource {
-    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -155,6 +153,7 @@ extension TasksVC: UICollectionViewDataSource {
             cell.descriptionLabel.text = tasks[indexPath.row].description
             loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
             cell.videoImg.isHidden = true
+            cell.watchBtn.tag = indexPath.row
             
             
             return cell
@@ -167,19 +166,18 @@ extension TasksVC: UICollectionViewDataSource {
             cell.descriptionLabel.text = tasks[indexPath.row].classRoomName
             
             if let hrs = tasks[indexPath.row].durationHours {
-                
                 cell.numOfQuesLabel.text = String(hrs) + " hrs"
             }
-            cell.quesText.text = "Duration"
+            
             if let y = tasks[indexPath.row].classRoomId {
                 cell.pointsLabel.text = "#" + String(y)
             }
+            cell.quesText.text = "Duration"
             cell.xpText.text = "classRoom Id"
             cell.durationLabel.text = getSubstring(str: tasks[indexPath.row].time!, startOffest: 0, endOffset: -3)
             cell.timeText.text = "Time"
-            
             cell.startBtn.setTitle("START CLASS", for: .normal)
-            
+            cell.startBtn.tag = indexPath.row
             
             return cell
         } else if tasks[indexPath.row].itemType == "ASSESSMENT" {
@@ -187,27 +185,27 @@ extension TasksVC: UICollectionViewDataSource {
             
             cell.headerLabel.text = tasks[indexPath.row].header
             cell.titleLabel.text = tasks[indexPath.row].title
+            cell.descriptionLabel.text = tasks[indexPath.row].description
             if tasks[indexPath.row].imageURL != nil {
                 loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
             }
-            cell.descriptionLabel.text = tasks[indexPath.row].description
             
             if let ques = tasks[indexPath.row].numberOfQuestions {
-                
                 cell.numOfQuesLabel.text = String(ques)
             }
-            cell.quesText.text = "Questions"
+            
             if let y = tasks[indexPath.row].itemPoints {
                 cell.pointsLabel.text = String(y)
             }
-            cell.xpText.text = "Experience"
+            
             if let dur = tasks[indexPath.row].duration {
                 cell.durationLabel.text = String(dur)
             }
-            
+            cell.xpText.text = "Experience"
+            cell.quesText.text = "Questions"
             cell.timeText.text = "Duration"
-            
             cell.startBtn.setTitle("START ASSESSMENT", for: .normal)
+            cell.startBtn.tag = indexPath.row
             
             return cell
             
@@ -220,14 +218,14 @@ extension TasksVC: UICollectionViewDataSource {
             loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
             
             cell.videoImg.isHidden = false
+            cell.watchBtn.tag = indexPath.row
             
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
-            
+            cell.watchBtn.tag = indexPath.row
             return cell
         }
-        
         
     }
 
@@ -235,6 +233,7 @@ extension TasksVC: UICollectionViewDataSource {
 extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
         let layout = cards.collectionViewLayout as! UICollectionViewFlowLayout
         let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
         
@@ -242,7 +241,6 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
         let index = (offset.x + scrollView.contentInset.left)/cellWidthIncludingSpacing
         
         let roundedIndex = round(index)
-        
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
         
@@ -251,7 +249,6 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         var visibleRect = CGRect()
-        
         visibleRect.origin = cards.contentOffset
         visibleRect.size = cards.bounds.size
         
@@ -262,9 +259,7 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
         self.visibleCellIndex = visibleIndexPath
         //self.visibleCellIndex = collectionView.indexPathsForVisibleItems.first!
         //print(self.visibleCellIndex.row)
-        
     }
-
     
 }
 

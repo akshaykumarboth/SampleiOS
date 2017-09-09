@@ -39,19 +39,22 @@ class SymbolTextLabel: UIView {
         //symbolLabel.font =  UIFont().withSize(textSize)
         //textLabel.font =  UIFont().withSize(textSize)
         symbolLabel.font.withSize(textSize)
-        textLabel.font.withSize(textSize)
+        textLabel.font?.withSize(textSize)
+        //textLabel.font = UIFont(name: (textLabel.font?.fontName)!, size: textSize)
     }
     
     func setText(text: String, symbolCode: String){
         textLabel.text = text
         symbolLabel.text = symbolCode
-        textLabel.numberOfLines = 15
-        textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        //symbolSpacingConstraint.constant = symbolLabel.frame.width + 5
+        //textLabel.numberOfLines = 15
+        ///textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
     }
     
     //set space between symbol and the text
     func setSpacing(spacing: CGFloat){
         symbolSpacingConstraint.constant = spacing
+        view.layoutIfNeeded()
     }
     
     func loadViewFromNib() -> UIView {

@@ -24,6 +24,10 @@ class OptionView: UIView {
         setup()
     }
     
+    func setBorderColor(color: UIColor) {
+        optionContainer.backgroundColor = color
+    }
+    
     func setup(){
         
         optionContainer = loadViewFromNib()

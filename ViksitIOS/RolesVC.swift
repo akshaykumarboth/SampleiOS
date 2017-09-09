@@ -113,6 +113,7 @@ class RolesVC: UIViewController {
 }
 
 extension RolesVC: UITableViewDataSource, UITableViewDelegate {
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return roles.count
     }
