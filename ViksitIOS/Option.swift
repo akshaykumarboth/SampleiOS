@@ -12,7 +12,15 @@ public class Option {
     public var id: Int!
     public var text: String!
     
-    init(){
+    init(json: [String: Any]){
+        if json["id"] != nil {
+            self.id = (json["id"] as! Int)
+            //print("skill id is ",self.id! )
+        }
         
+        if json["text"] != nil {
+            self.text = (json["text"] as! String)
+            //print("skill id is ",self.id! )
+        }
     }
 }

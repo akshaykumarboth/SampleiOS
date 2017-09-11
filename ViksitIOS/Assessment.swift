@@ -27,17 +27,40 @@ public class Assessment {
             if json != nil {
                 
                 if json["id"] != nil {
-                    self.id = json["id"] as! Int
+                    self.id = (json["id"] as! Int)
                 }
                 
-                if json["tasks"] != nil {
-                    var list2: Array<Tasks> = []
-                    for item in json["tasks"] as! NSArray {
-                        list2.append(Tasks(json: item as! [String:Any]))
+                if json["type"] != nil {
+                    self.type = (json["type"] as! String)
+                }
+                
+                if json["name"] != nil {
+                    self.name = (json["name"] as! String)
+                }
+                
+                if json["category"] != nil {
+                    self.category = (json["category"] as! String)
+                }
+                
+                if json["description"] != nil {
+                    self.description = (json["description"] as! String)
+                }
+                
+                if json["durationInMinutes"] != nil {
+                    self.durationInMinutes = (json["durationInMinutes"] as! Int)
+                }
+                
+                if json["points"] != nil {
+                    self.points = (json["points"] as! Int)
+                }
+                
+                if json["questions"] != nil {
+                    var list2: Array<Question> = []
+                    for item in json["questions"] as! NSArray {
+                        list2.append(Question(json: item as! [String:Any]))
                     }
-                    //self.tasks = list2
+                    self.questions = list2
                 }
-                
                 
             }
             
