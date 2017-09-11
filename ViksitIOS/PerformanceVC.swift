@@ -108,11 +108,10 @@ extension PerformanceVC: UIImagePickerControllerDelegate, UINavigationController
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         dismiss(animated: true, completion: nil)
-        
+    
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage  {
             profileImage.image = image
         }
-        
         
     }
     

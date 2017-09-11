@@ -21,17 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*
         let file = "DummyData.txt" //this is the file. we will read from it
         */
+        
         DataCache.sharedInstance.cache["complexObject"] = Helper.readFromFile(fileName: "DummyData", extnsion: "txt")
 
-        //for solid testing
         /*
+        //for solid testing
         if DataCache.sharedInstance.cache["complexObject"] == nil {
-            var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/user/449/complex", method: "GET", param: [:])
+            var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/user/4972/complex", method: "GET", param: [:])
             DataCache.sharedInstance.cache["complexObject"] = response
         }
-        */
 
-        
+ */
         //http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972 // for assessment response
         
         return true
