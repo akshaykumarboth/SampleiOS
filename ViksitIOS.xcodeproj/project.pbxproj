@@ -111,6 +111,7 @@
 		BA65FFC51F6674E800A18974 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65FFC41F6674E800A18974 /* Question.swift */; };
 		BA65FFC71F66762200A18974 /* Assessment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65FFC61F66762200A18974 /* Assessment.swift */; };
 		BA65FFCB1F669CD900A18974 /* assessment.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA65FFCA1F669CD900A18974 /* assessment.txt */; };
+		BA65FFCD1F66DE4F00A18974 /* TimeUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65FFCC1F66DE4E00A18974 /* TimeUpVC.swift */; };
 		BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E981F26115400EF980F /* AllStudentRanks.swift */; };
 		BA690E9C1F26115500EF980F /* AssessmentReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E991F26115400EF980F /* AssessmentReports.swift */; };
 		BA690E9D1F26115500EF980F /* AssessmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690E9A1F26115400EF980F /* AssessmentResponse.swift */; };
@@ -278,6 +279,7 @@
 		BA65FFC41F6674E800A18974 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		BA65FFC61F66762200A18974 /* Assessment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assessment.swift; sourceTree = "<group>"; };
 		BA65FFCA1F669CD900A18974 /* assessment.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = assessment.txt; sourceTree = "<group>"; };
+		BA65FFCC1F66DE4E00A18974 /* TimeUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUpVC.swift; sourceTree = "<group>"; };
 		BA690E981F26115400EF980F /* AllStudentRanks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllStudentRanks.swift; sourceTree = "<group>"; };
 		BA690E991F26115400EF980F /* AssessmentReports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentReports.swift; sourceTree = "<group>"; };
 		BA690E9A1F26115400EF980F /* AssessmentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentResponse.swift; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 			children = (
 				BA65FFC11F66744900A18974 /* ponso */,
 				BA43EE501F584A33000D2DB0 /* assessment.storyboard */,
+				BA65FFCC1F66DE4E00A18974 /* TimeUpVC.swift */,
 				BA43EE721F602909000D2DB0 /* AssessmentVC.swift */,
 				BA43EE741F602A08000D2DB0 /* QuesOptionCell.swift */,
 				BA43EE781F60424F000D2DB0 /* ScrollVC.swift */,
@@ -1054,6 +1057,7 @@
 				BA43EDFF1F4B27AA000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE_LIST.swift in Sources */,
 				B9F6B0641F25E69C00B695C0 /* ModelController.swift in Sources */,
 				BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */,
+				BA65FFCD1F66DE4F00A18974 /* TimeUpVC.swift in Sources */,
 				BA43EDF31F4B273A000D2DB0 /* ONLY_PARAGRAPH_TITLE.swift in Sources */,
 				BA43EDE01F4B1497000D2DB0 /* XmlVC.swift in Sources */,
 				BA63717B1F27284700D77EA9 /* TextFieldWithPadding.swift in Sources */,

@@ -77,8 +77,17 @@ class AssessmentVC: UIViewController {
         if timeLeft == 0 {
             timer.invalidate()
             timerLabel.text = "Time is up"
+            goto(storyBoardName: "assessment", storyBoardID: "TimeUpVC")
         }
     }
+    
+    
+    func goto(storyBoardName: String, storyBoardID: String) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: storyBoardName, bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: storyBoardID)
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
     
     func writeToFile() {
         let fileName = "Test"
@@ -100,15 +109,13 @@ class AssessmentVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         //timer
-        timeLeft = assessment.durationInMinutes! * 60
+        //timeLeft = assessment.durationInMinutes! * 60
+        timeLeft = 5
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timerRunning), userInfo: nil, repeats: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         
         //loadAssessmentAsync()
         var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972", method: "GET", param: [:])
