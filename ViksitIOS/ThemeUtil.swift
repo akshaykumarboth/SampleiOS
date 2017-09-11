@@ -174,9 +174,9 @@ class ThemeUtil {
          html +=  "window.location.href = \"ready://\" + document.body.offsetHeight; }"
          html += "</script>"*/
         html += "</head>"
-        html += "<body>"
+        html += "<body><span>"
         html += body.trimmingCharacters(in: .whitespacesAndNewlines)
-        html += "</body>"
+        html += "</span></body>"
         html += "</html>"
         
         return html

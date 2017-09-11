@@ -73,7 +73,7 @@ class AssessmentVC: UIViewController {
     
     func timerRunning() {
         timeLeft -= 1
-        timerLabel.text = "\(timeLeft)"
+        timerLabel.text = "\(timeLeft/60):\(timeLeft%60)"
         if timeLeft == 0 {
             timer.invalidate()
             timerLabel.text = "Time is up"
@@ -93,9 +93,7 @@ class AssessmentVC: UIViewController {
         let fileName = "Test"
         let documentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let fileURL = documentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
-        
         print("File Path is: \(fileURL.path)")
-        
         
         let writeString = "Write this text in the file in swift"
         do {
@@ -109,8 +107,8 @@ class AssessmentVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         //timer
-        //timeLeft = assessment.durationInMinutes! * 60
-        timeLeft = 5
+        timeLeft = assessment.durationInMinutes! * 60
+        //timeLeft = 5
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timerRunning), userInfo: nil, repeats: true)
     }
     
@@ -170,7 +168,7 @@ class AssessmentVC: UIViewController {
     func setHTMLString(testString: String) -> NSAttributedString {
         //let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
         // if the string is not wrapped in html tags then wrap it and uncomment above line
-        let str = testString
+        let str = "<span>\(testString)</span>"
         let attrStr = try! NSAttributedString(
             data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
             options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
@@ -191,7 +189,8 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         cell.optionStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
         cell.quesNumber.text = "QUESTION \(indexPath.row + 1) OF \(questions.count)"
         cell.scrollView.scrollToTop()
-        cell.quesView.attributedText = setHTMLString(testString: ThemeUtil.wrapInHtml(body: questions[indexPath.row].text!, fontsize: "15"))
+        //cell.quesView.attributedText = setHTMLString(testString: questions[indexPath.row].text!)
+        cell.quesView.setHTMLFromString(htmlText: questions[indexPath.row].text!)
         
         var option: OptionView
         if let count = questions[indexPath.row].options?.count {
@@ -206,7 +205,9 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 //option.optionText.font = UIFont().withSize(15)
                 option.addGestureRecognizer(setTapGestureRecognizer())
                 option.optionText.isScrollEnabled = false
-                option.optionText.attributedText = setHTMLString(testString: ThemeUtil.wrapInHtml(body: (questions[indexPath.row].options?[i].text!)!, fontsize: "14"))
+                //option.optionText.attributedText = setHTMLString(testString: (questions[indexPath.row].options?[i].text!)!)
+                //option.optionText.text = questions[indexPath.row].options?[i].text
+                option.optionText.setHTMLFromString(htmlText: (questions[indexPath.row].options?[i].text)!)
                 
                 cell.optionStack.addArrangedSubview(option)
             }
@@ -322,7 +323,9 @@ extension AssessmentVC: UITableViewDataSource, UITableViewDelegate {
         tableView.showsVerticalScrollIndicator = false
         let cell = tableView.dequeueReusableCell(withIdentifier: "HiddenTableCell", for: indexPath) as! HiddenTableCell
         
-        cell.questionText.setAttributedText(text: ThemeUtil.wrapInHtml(body: questions[indexPath.row].text!, fontsize: "15") , symbolCode: String(indexPath.row + 1))
+        cell.questionText.setAttributedText(text: questions[indexPath.row].text!, symbolCode: String(indexPath.row + 1))
+        cell.questionText.textLabel.setHTMLFromString(htmlText: questions[indexPath.row].text!)
+        cell.questionText.symbolLabel.setHTMLFromString(htmlText: String(indexPath.row + 1))
         //cell.questionText.setFontSize(textSize: 100)
         cell.questionText.setSpacing(spacing: 5)
         return cell
