@@ -329,6 +329,7 @@
                         <outlet property="collectionView" destination="M8H-zV-b9F" id="hZ7-cl-2QZ"/>
                         <outlet property="quesTableList" destination="h2I-xF-gmu" id="xaw-Cd-Hip"/>
                         <outlet property="tableViewContainer" destination="wbK-s1-6uL" id="GoA-c5-oiI"/>
+                        <outlet property="timerLabel" destination="eNm-hh-l1X" id="9qY-f8-BlD"/>
                         <outlet property="viewAllBtn" destination="djg-bt-jLr" id="vZN-ub-1Bc"/>
                     </connections>
                 </viewController>

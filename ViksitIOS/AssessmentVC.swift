@@ -11,12 +11,16 @@ import UIKit
 
 
 class AssessmentVC: UIViewController {
+    
     var assessment: Assessment!
     var questions: [Question] = []
+    var timeLeft = 0
+    var timer: Timer! = Timer()
+    //var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
     
-    var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
+    var visibleCellIndex: IndexPath!
     
-    var visibleCellIndex: IndexPath!    
+    @IBOutlet var timerLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var quesTableList: UITableView!
     @IBOutlet var centerYconstraint: NSLayoutConstraint!
@@ -67,6 +71,15 @@ class AssessmentVC: UIViewController {
         })
     }
     
+    func timerRunning() {
+        timeLeft -= 1
+        timerLabel.text = "\(timeLeft)"
+        if timeLeft == 0 {
+            timer.invalidate()
+            timerLabel.text = "Time is up"
+        }
+    }
+    
     func writeToFile() {
         let fileName = "Test"
         let documentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
@@ -85,8 +98,16 @@ class AssessmentVC: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        //timer
+        timeLeft = 5
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timerRunning), userInfo: nil, repeats: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         
         //loadAssessmentAsync()
@@ -99,7 +120,6 @@ class AssessmentVC: UIViewController {
         quesTableList.rowHeight = UITableViewAutomaticDimension
         quesTableList.estimatedRowHeight = 140
         setViewAllImageToRight(viewAllBtn: viewAllBtn)
-        
         
     }
     
@@ -148,7 +168,6 @@ class AssessmentVC: UIViewController {
             data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
             options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
             documentAttributes: nil)
-        //textview.attributedText = attrStr
         return attrStr
     }
     
@@ -159,20 +178,13 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return questions.count
     }
     
-    func st() {
-        
-    }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuesOptionCell", for: indexPath) as! QuesOptionCell
         cell.optionStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
         cell.quesNumber.text = "QUESTION \(indexPath.row + 1) OF \(questions.count)"
         cell.scrollView.scrollToTop()
-        ThemeUtil.wrapInHtml(body: questions[indexPath.row].text!, fontsize: "15")
         cell.quesView.attributedText = setHTMLString(testString: ThemeUtil.wrapInHtml(body: questions[indexPath.row].text!, fontsize: "15"))
-        //cell.quesView.attributedText = setHTMLString(testString: "<p>This is kahay</p>")
-        
         
         var option: OptionView
         if let count = questions[indexPath.row].options?.count {
@@ -184,7 +196,7 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 } else {
                     option.setBorderColor(color: UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1.00))
                 }
-                
+                //option.optionText.font = UIFont().withSize(15)
                 option.addGestureRecognizer(setTapGestureRecognizer())
                 option.optionText.isScrollEnabled = false
                 option.optionText.attributedText = setHTMLString(testString: ThemeUtil.wrapInHtml(body: (questions[indexPath.row].options?[i].text!)!, fontsize: "14"))
