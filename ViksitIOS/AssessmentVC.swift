@@ -26,14 +26,23 @@ class AssessmentVC: UIViewController {
     @IBAction func showPrev(_ sender: UIButton) {
         if visibleCellIndex.row != 0 {
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row - 1 , section: 0), at: .left, animated: false)
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+            visibleCellIndex.row = visibleCellIndex.row - 1
         }
         
     }
     
     @IBAction func showNext(_ sender: UIButton) {
         print(" lll  \(visibleCellIndex.row)")
-        if visibleCellIndex.row != 4 { // 4 has to be changed
+        if visibleCellIndex.row != (questions.count-1) { // 4 has to be changed
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row + 1 , section: 0), at: .right, animated: false)
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.layoutIfNeeded()
+            })
+            
+            visibleCellIndex.row = visibleCellIndex.row + 1
             
         }
         
@@ -82,7 +91,7 @@ class AssessmentVC: UIViewController {
         self.assessment = Assessment(JSONString: response)
         setData()
         
-        //visibleCellIndex.row = 0
+        visibleCellIndex = IndexPath(row: 0, section: 0)
         quesTableList.tag = -1000 // so, scrollview delegate methods adoesnt affect the table view scroll
         quesTableList.rowHeight = UITableViewAutomaticDimension
         quesTableList.estimatedRowHeight = 140
@@ -154,15 +163,15 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         cell.optionStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
         
         cell.scrollView.scrollToTop()
-        cell.quesView.attributedText = setHTMLString(testString: "what is the depth of mariana trench ? akdhay")
+        cell.quesView.attributedText = setHTMLString(testString: questions[indexPath.row].text!)
         
         var option: OptionView
-        for i in 0..<5 {
+        for i in 0..<4 {
             option = OptionView()
             option.tag = i
             option.addGestureRecognizer(setTapGestureRecognizer())
             option.optionText.isScrollEnabled = false
-            option.optionText.attributedText = setHTMLString(testString: "what is the depth of mariana trench ? akdhay")
+            option.optionText.attributedText = setHTMLString(testString: (questions[indexPath.row].options?[i].text!)!)
             option.optionContainer.backgroundColor = UIColor.brown
             cell.optionStack.addArrangedSubview(option)
         }
@@ -219,19 +228,6 @@ extension AssessmentVC: UIScrollViewDelegate {
             return
         }
         getVisibleCellIndexPath()
-        /*
-        var visibleRect = CGRect()
-        visibleRect.origin = collectionView.contentOffset
-        visibleRect.size = collectionView.bounds.size
-        
-        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-        let visibleIndexPath: IndexPath = collectionView.indexPathForItem(at: visiblePoint)!
-        
-        print(visibleIndexPath.row)
-        self.visibleCellIndex = visibleIndexPath
- */
-        //self.visibleCellIndex = collectionView.indexPathsForVisibleItems.first!
-        //print(self.visibleCellIndex.row)
         
     }
     
@@ -255,11 +251,28 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
         print("\(gestureRecognizer.view?.tag)")
         
         if let option: OptionView = gestureRecognizer.view as! OptionView {
+            if !((questions[visibleCellIndex.row].options?[option.tag].isSelected)!) {
+                option.optionContainer.backgroundColor = UIColor.red
+                self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = true
+                print("question \(visibleCellIndex.row) -> option \(option.tag) is selected")
+            } else {
+                option.optionContainer.backgroundColor = UIColor.brown
+                self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = false
+                print("question \(visibleCellIndex.row) -> option \(option.tag) is unselected")
+            }
+            
+            
+            //
+            /*
             if option.optionContainer.backgroundColor == UIColor.red {
                 option.optionContainer.backgroundColor = UIColor.brown
+                self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = true
+                
+                print("question \(visibleCellIndex.row) -> option \(option.tag) is selected")
             } else {
                 option.optionContainer.backgroundColor = UIColor.red
             }
+ */
             
         }
     }
@@ -276,9 +289,6 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
 
 extension AssessmentVC: UITableViewDataSource {
     
-    
-    
-    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
     }
@@ -288,8 +298,8 @@ extension AssessmentVC: UITableViewDataSource {
         tableView.showsVerticalScrollIndicator = false
         let cell = tableView.dequeueReusableCell(withIdentifier: "HiddenTableCell", for: indexPath) as! HiddenTableCell
         
-        cell.questionText.setText(text: "What is the deepest point of the world ?", symbolCode: String(indexPath.row + 1))
-        cell.questionText.setFontSize(textSize: 100)
+        cell.questionText.setAttributedText(text: ThemeUtil.wrapInHtml(body: questions[indexPath.row].text!, fontsize: "15") , symbolCode: String(indexPath.row + 1))
+        //cell.questionText.setFontSize(textSize: 100)
         cell.questionText.setSpacing(spacing: 5)
         return cell
     }

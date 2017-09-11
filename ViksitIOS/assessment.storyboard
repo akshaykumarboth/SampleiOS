@@ -207,21 +207,21 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbK-s1-6uL" userLabel="Table View Container">
-                                <rect key="frame" x="0.0" y="1000" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h2I-xF-gmu">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h2I-xF-gmu">
                                         <rect key="frame" x="0.0" y="180" width="375" height="487"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HiddenTableCell" id="yZq-DR-ggs" customClass="HiddenTableCell" customModule="ViksitIOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="85"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HiddenTableCell" rowHeight="59" id="yZq-DR-ggs" customClass="HiddenTableCell" customModule="ViksitIOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="59"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yZq-DR-ggs" id="1fh-rh-Bsr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0XH-YS-jbo" customClass="SymbolTextLabel" customModule="ViksitIOS" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="10" width="320" height="69.5"/>
+                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0XH-YS-jbo" customClass="SymbolTextLabel" customModule="ViksitIOS" customModuleProvider="target">
+                                                            <rect key="frame" x="10" y="10" width="320" height="40"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="2jH-sy-nnr">
@@ -296,7 +296,7 @@
                             <constraint firstItem="RDd-fp-tYs" firstAttribute="leading" secondItem="dk3-Le-PYx" secondAttribute="leading" id="44M-Nw-QBe"/>
                             <constraint firstItem="wbK-s1-6uL" firstAttribute="height" secondItem="dk3-Le-PYx" secondAttribute="height" id="6sM-SF-spE"/>
                             <constraint firstAttribute="trailing" secondItem="AwP-5B-Neu" secondAttribute="trailing" id="7M8-Y4-KKG"/>
-                            <constraint firstItem="wbK-s1-6uL" firstAttribute="centerY" secondItem="dk3-Le-PYx" secondAttribute="centerY" constant="1000" id="Hz5-Sr-2Af"/>
+                            <constraint firstItem="wbK-s1-6uL" firstAttribute="centerY" secondItem="dk3-Le-PYx" secondAttribute="centerY" id="Hz5-Sr-2Af"/>
                             <constraint firstItem="AwP-5B-Neu" firstAttribute="leading" secondItem="dk3-Le-PYx" secondAttribute="leading" id="L5i-S7-GIU"/>
                             <constraint firstAttribute="trailing" secondItem="TKX-4v-nHH" secondAttribute="trailing" id="OoC-Wz-7wk"/>
                             <constraint firstAttribute="trailing" secondItem="RDd-fp-tYs" secondAttribute="trailing" id="Xb0-RO-pw4"/>
