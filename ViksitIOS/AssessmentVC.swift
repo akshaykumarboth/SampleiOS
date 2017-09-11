@@ -100,8 +100,8 @@ class AssessmentVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         //timer
-        timeLeft = 5
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timerRunning), userInfo: nil, repeats: false)
+        timeLeft = assessment.durationInMinutes! * 60
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timerRunning), userInfo: nil, repeats: true)
     }
     
     override func viewDidLoad() {
