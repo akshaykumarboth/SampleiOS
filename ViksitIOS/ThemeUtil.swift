@@ -175,7 +175,7 @@ class ThemeUtil {
          html += "</script>"*/
         html += "</head>"
         html += "<body>"
-        html += body
+        html += body.trimmingCharacters(in: .whitespacesAndNewlines)
         html += "</body>"
         html += "</html>"
         

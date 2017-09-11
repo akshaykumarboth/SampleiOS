@@ -26,10 +26,13 @@ class AssessmentVC: UIViewController {
     @IBAction func showPrev(_ sender: UIButton) {
         if visibleCellIndex.row != 0 {
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row - 1 , section: 0), at: .left, animated: false)
+            self.visibleCellIndex.row = self.visibleCellIndex.row - 1
+            /*
             UIView.animate(withDuration: 0.3, animations: {
+                self.visibleCellIndex.row = self.visibleCellIndex.row - 1
                 self.view.layoutIfNeeded()
             })
-            visibleCellIndex.row = visibleCellIndex.row - 1
+ */
         }
         
     }
@@ -38,12 +41,12 @@ class AssessmentVC: UIViewController {
         print(" lll  \(visibleCellIndex.row)")
         if visibleCellIndex.row != (questions.count-1) { // 4 has to be changed
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row + 1 , section: 0), at: .right, animated: false)
+            visibleCellIndex.row = visibleCellIndex.row + 1
+            /*
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
             })
-            
-            visibleCellIndex.row = visibleCellIndex.row + 1
-            
+ */
         }
         
     }
@@ -51,7 +54,7 @@ class AssessmentVC: UIViewController {
     @IBAction func closeTable(_ sender: UIButton) {
         centerYconstraint.constant = 1000
         
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.view.layoutIfNeeded()
         })
     }
@@ -59,7 +62,7 @@ class AssessmentVC: UIViewController {
     @IBAction func showTable(_ sender: UIButton) {
         centerYconstraint.constant = 0
         
-        UIView.animate(withDuration: 0.7, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
         })
     }
@@ -137,7 +140,6 @@ class AssessmentVC: UIViewController {
                                                       -titleWidth + viewAllBtn.imageEdgeInsets.right - gapWidth )
     }
     
-    
     func setHTMLString(testString: String) -> NSAttributedString {
         //let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
         // if the string is not wrapped in html tags then wrap it and uncomment above line
@@ -163,18 +165,29 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         cell.optionStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
         
         cell.scrollView.scrollToTop()
-        cell.quesView.attributedText = setHTMLString(testString: questions[indexPath.row].text!)
+        ThemeUtil.wrapInHtml(body: questions[indexPath.row].text!, fontsize: "15")
+        cell.quesView.attributedText = setHTMLString(testString: ThemeUtil.wrapInHtml(body: questions[indexPath.row].text!, fontsize: "15"))
+        //cell.quesView.attributedText = setHTMLString(testString: "<p>This is kahay</p>")
         
         var option: OptionView
-        for i in 0..<4 {
-            option = OptionView()
-            option.tag = i
-            option.addGestureRecognizer(setTapGestureRecognizer())
-            option.optionText.isScrollEnabled = false
-            option.optionText.attributedText = setHTMLString(testString: (questions[indexPath.row].options?[i].text!)!)
-            option.optionContainer.backgroundColor = UIColor.brown
-            cell.optionStack.addArrangedSubview(option)
+        if let count = questions[indexPath.row].options?.count {
+            for i in 0..<count {
+                option = OptionView()
+                option.tag = i
+                if (questions[indexPath.row].options?[i].isSelected)! {
+                    option.setBorderColor(color: UIColor.red)
+                } else {
+                    option.setBorderColor(color: UIColor.brown)
+                }
+                
+                option.addGestureRecognizer(setTapGestureRecognizer())
+                option.optionText.isScrollEnabled = false
+                option.optionText.attributedText = setHTMLString(testString: ThemeUtil.wrapInHtml(body: (questions[indexPath.row].options?[i].text!)!, fontsize: "14")) 
+                
+                cell.optionStack.addArrangedSubview(option)
+            }
         }
+        
         
         return cell
     }

@@ -81,27 +81,27 @@
                                 <rect key="frame" x="0.0" y="612" width="375" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQi-Bh-NhN">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="55"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="95.5" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="PREV"/>
                                         <connections>
                                             <action selector="showPrev:" destination="AjG-d8-o0b" eventType="touchUpInside" id="KHm-uy-Ssq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ciw-zk-F75">
-                                        <rect key="frame" x="95" y="0.0" width="180.5" height="55"/>
+                                        <rect key="frame" x="95.5" y="0.0" width="181" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="eMv-CU-YDK"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="VIEW ALL"/>
                                         <connections>
                                             <action selector="showTable:" destination="AjG-d8-o0b" eventType="touchUpInside" id="kcT-bv-XNH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7n-xU-ade">
-                                        <rect key="frame" x="275.5" y="0.0" width="99.5" height="55"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <rect key="frame" x="276.5" y="0.0" width="98.5" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="NEXT"/>
                                         <connections>
                                             <action selector="showNext:" destination="AjG-d8-o0b" eventType="touchUpInside" id="foF-iI-L1C"/>
@@ -136,32 +136,31 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YJ-q5-56H">
-                                                            <rect key="frame" x="0.0" y="38" width="378" height="483"/>
+                                                            <rect key="frame" x="0.0" y="38" width="378" height="497"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stp-0a-Jwz">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="194.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="102"/>
                                                                     <subviews>
                                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwc-nw-b7J">
-                                                                            <rect key="frame" x="8" y="8" width="362" height="169"/>
+                                                                            <rect key="frame" x="8" y="8" width="362" height="35.5"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcioque civiuda. ris nisi ut aliquip ex ea commodo consequapa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioq</string>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
                                                                         </textView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4MF-mJ-2au">
-                                                                            <rect key="frame" x="8" y="166" width="362" height="20.5"/>
+                                                                            <rect key="frame" x="8" y="51" width="362" height="46"/>
                                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </stackView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="4MF-mJ-2au" secondAttribute="bottom" constant="8" id="03V-o9-PYj"/>
                                                                         <constraint firstItem="4MF-mJ-2au" firstAttribute="leading" secondItem="stp-0a-Jwz" secondAttribute="leading" constant="8" id="399-2r-Iwk"/>
                                                                         <constraint firstItem="Nwc-nw-b7J" firstAttribute="top" secondItem="stp-0a-Jwz" secondAttribute="top" constant="8" id="JAO-BR-ker"/>
-                                                                        <constraint firstItem="4MF-mJ-2au" firstAttribute="top" secondItem="Nwc-nw-b7J" secondAttribute="bottom" constant="10" id="N9U-SJ-2lN"/>
                                                                         <constraint firstItem="Nwc-nw-b7J" firstAttribute="leading" secondItem="stp-0a-Jwz" secondAttribute="leading" constant="8" id="XJT-GN-gli"/>
                                                                         <constraint firstAttribute="trailing" secondItem="4MF-mJ-2au" secondAttribute="trailing" constant="8" id="Z2g-Hs-fmF"/>
+                                                                        <constraint firstItem="4MF-mJ-2au" firstAttribute="top" secondItem="Nwc-nw-b7J" secondAttribute="bottom" constant="8" id="fB0-Hm-TaE"/>
                                                                         <constraint firstAttribute="trailing" secondItem="Nwc-nw-b7J" secondAttribute="trailing" constant="8" id="ocz-CX-c6m"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="4MF-mJ-2au" secondAttribute="bottom" constant="5" id="sMQ-yO-ffA"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -207,7 +206,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbK-s1-6uL" userLabel="Table View Container">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="1000" width="375" height="667"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h2I-xF-gmu">
                                         <rect key="frame" x="0.0" y="180" width="375" height="487"/>
@@ -296,7 +295,7 @@
                             <constraint firstItem="RDd-fp-tYs" firstAttribute="leading" secondItem="dk3-Le-PYx" secondAttribute="leading" id="44M-Nw-QBe"/>
                             <constraint firstItem="wbK-s1-6uL" firstAttribute="height" secondItem="dk3-Le-PYx" secondAttribute="height" id="6sM-SF-spE"/>
                             <constraint firstAttribute="trailing" secondItem="AwP-5B-Neu" secondAttribute="trailing" id="7M8-Y4-KKG"/>
-                            <constraint firstItem="wbK-s1-6uL" firstAttribute="centerY" secondItem="dk3-Le-PYx" secondAttribute="centerY" id="Hz5-Sr-2Af"/>
+                            <constraint firstItem="wbK-s1-6uL" firstAttribute="centerY" secondItem="dk3-Le-PYx" secondAttribute="centerY" constant="1000" id="Hz5-Sr-2Af"/>
                             <constraint firstItem="AwP-5B-Neu" firstAttribute="leading" secondItem="dk3-Le-PYx" secondAttribute="leading" id="L5i-S7-GIU"/>
                             <constraint firstAttribute="trailing" secondItem="TKX-4v-nHH" secondAttribute="trailing" id="OoC-Wz-7wk"/>
                             <constraint firstAttribute="trailing" secondItem="RDd-fp-tYs" secondAttribute="trailing" id="Xb0-RO-pw4"/>
