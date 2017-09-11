@@ -68,6 +68,7 @@ class Helper{
         if let path = Bundle.main.path(forResource: fileName, ofType: extnsion) {
             do {
                 let data = try String(contentsOfFile: path, encoding: .utf8)
+                /*
                 let myStrings = data.components(separatedBy: .newlines)
                 var x : String = ""
                 for string in myStrings {
@@ -75,13 +76,15 @@ class Helper{
                 }
                 print(x)
                 result = x
+ */
+                result = data
                 
             } catch {
                 print(error)
                 result = ""
             }
         }
-        
+        print(result)
         return result
     }
     

@@ -11,6 +11,8 @@ import UIKit
 
 
 class AssessmentVC: UIViewController {
+    var assessment: Assessment!
+    var questions: [Question] = []
     
     var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
     
@@ -33,7 +35,6 @@ class AssessmentVC: UIViewController {
         if visibleCellIndex.row != 4 { // 4 has to be changed
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row + 1 , section: 0), at: .right, animated: false)
             
-            
         }
         
     }
@@ -54,20 +55,58 @@ class AssessmentVC: UIViewController {
         })
     }
     
-    func s() {
-        //collectionView.scrollToItem(at:IndexPath(item: indexNumber, section: 0), at: .right, animated: false)
-        //collectionView.scrollToItem(at: <#T##IndexPath#>, at: <#T##UICollectionViewScrollPosition#>, animated: <#T##Bool#>)
+    func writeToFile() {
+        let fileName = "Test"
+        let documentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let fileURL = documentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
         
-        let index = IndexPath(row: visibleCellIndex.row + 1, section: 0)
+        print("File Path is: \(fileURL.path)")
+        
+        
+        let writeString = "Write this text in the file in swift"
+        do {
+            try writeString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+        } catch let error as NSError {
+            print("Failed to write URL")
+            print(error)
+        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //var response: String = Helper.makeHttpCall (url : "http://192.168.56.1/api/v1/articles", method: "GET", param: [:])
-        quesTableList.tag = -1000
+        
+        
+        //loadAssessmentAsync()
+        var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972", method: "GET", param: [:])
+        self.assessment = Assessment(JSONString: response)
+        setData()
+        
+        //visibleCellIndex.row = 0
+        quesTableList.tag = -1000 // so, scrollview delegate methods adoesnt affect the table view scroll
         quesTableList.rowHeight = UITableViewAutomaticDimension
         quesTableList.estimatedRowHeight = 140
         setViewAllImageToRight(viewAllBtn: viewAllBtn)
+        
+        
+    }
+    
+    func loadAssessmentAsync() {
+        DispatchQueue.global(qos: .background).async {
+            //print("This is run on the background queue")
+            var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972", method: "GET", param: [:])
+            //var ass = Assessment(JSONString: response)
+            DispatchQueue.main.async {
+                //print("This is run on the main queue, after the previous code in outer block")
+                self.assessment = Assessment(JSONString: response)
+                print(self.assessment.id)
+                self.setData()
+            }
+        }
+    }
+    
+    func setData() {
+        questions = assessment.questions
         
     }
     
@@ -106,7 +145,7 @@ class AssessmentVC: UIViewController {
 extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return questions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -241,7 +280,7 @@ extension AssessmentVC: UITableViewDataSource {
     
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return questions.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

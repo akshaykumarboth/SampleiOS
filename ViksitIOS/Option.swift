@@ -9,8 +9,9 @@
 import Foundation
 
 public class Option {
-    public var id: Int!
-    public var text: String!
+    public var id: Int?
+    public var text: String?
+    public var isSelected: Bool = false
     
     init(json: [String: Any]){
         if json["id"] != nil {

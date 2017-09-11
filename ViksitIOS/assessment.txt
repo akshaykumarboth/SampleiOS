@@ -1,0 +1,171 @@
+{
+id: 10434,
+type: "STATIC",
+name: "MS Excel_assessment_Pivot table",
+category: "null",
+description: "Not Available",
+durationInMinutes: 20,
+points: 5,
+questions: [
+{
+id: 3607,
+orderId: 1,
+text: "<p><strong>What is a Pivot Table?</strong></p>",
+type: "1",
+difficultyLevel: 1,
+durationInSec: 60,
+explanation: "<p>Not Available</p>",
+comprehensivePassageText: "",
+points: 1,
+options: [
+{
+id: 18225,
+text: "<p>A table containing data that is organized horizontally.</p>"
+},
+{
+id: 18226,
+text: "<p>A table used to calculate financial pivot values.</p>"
+},
+{
+id: 18227,
+text: "<p>A tool used to summarize data.</p>"
+},
+{
+id: 18228,
+text: "<p>A table containing only black, grey and white formatting.</p>"
+}
+],
+answers: [
+18227
+]
+},
+{
+id: 3608,
+orderId: 2,
+text: "<p><strong>Which of the following is not a box in the Pivot&nbsp Table fields list?</strong></p>",
+type: "1",
+difficultyLevel: 1,
+durationInSec: 60,
+explanation: "<p>Not Available</p>",
+comprehensivePassageText: "",
+points: 1,
+options: [
+{
+id: 18229,
+text: "<p>Column Labels</p>"
+},
+{
+id: 18230,
+text: "<p>Report Filter</p>"
+},
+{
+id: 18231,
+text: "<p>Values&nbsp </p>"
+},
+{
+id: 18232,
+text: "<p>Formulas&nbsp </p>"
+}
+],
+answers: [
+18232
+]
+},
+{
+id: 3609,
+orderId: 3,
+text: "<p><strong>What is the first step for creating a Pivot Table?</strong></p>",
+type: "1",
+difficultyLevel: 1,
+durationInSec: 60,
+explanation: "<p>Not Available</p>",
+comprehensivePassageText: "",
+points: 1,
+options: [
+{
+id: 18233,
+text: "<p>Clicking on the Insert Tab and inserting a Pivot Table.&nbsp </p>"
+},
+{
+id: 18234,
+text: "<p>Create or select data that needs to be analyzed.&nbsp </p>"
+},
+{
+id: 18235,
+text: "<p>Deciding on which fields (column and row labels) to use to analyze the data.&nbsp </p>"
+},
+{
+id: 18236,
+text: "<p>None of the above options are correct.&nbsp </p>"
+}
+],
+answers: [
+18234
+]
+},
+{
+id: 3610,
+orderId: 4,
+text: "<p><strong>The Sum function is applied to values in a Pivot Table by default.&nbsp How can you&nbsp change this so that values are automatically counted and not summed?</strong></p>",
+type: "1",
+difficultyLevel: 1,
+durationInSec: 60,
+explanation: "<p>Not Available</p>",
+comprehensivePassageText: "",
+points: 1,
+options: [
+{
+id: 18237,
+text: "<p>Insert the COUNT formula (=Count()) into the PivotTable.&nbsp </p>"
+},
+{
+id: 18238,
+text: "<p>Change the format of the values in the Pivot Table to General Numbers.&nbsp </p>"
+},
+{
+id: 18239,
+text: "<p>In the Calculations group, change the Summarize Values By to&nbsp Count.&nbsp </p>"
+},
+{
+id: 18240,
+text: "<p>All of the options listed above are correct.&nbsp </p>"
+}
+],
+answers: [
+18239
+]
+},
+{
+id: 3611,
+orderId: 5,
+text: "<p><strong>Where is a Pivot Table inserted?</strong></p>",
+type: "1",
+difficultyLevel: 1,
+durationInSec: 60,
+explanation: "<p>Not Available</p>",
+comprehensivePassageText: "",
+points: 1,
+options: [
+{
+id: 18241,
+text: "<p>Below the last row of data in your worksheet.&nbsp </p>"
+},
+{
+id: 18242,
+text: "<p>Next to the last column of data in your worksheet.&nbsp </p>"
+},
+{
+id: 18243,
+text: "<p>It depends on whether you select to insert the Pivot Table in the current worksheet or a new worksheet and where your cursor is.&nbsp </p>"
+},
+{
+id: 18244,
+text: "<p>Above the first row of data in your worksheet.&nbsp </p>"
+}
+],
+answers: [
+18243
+]
+}
+]
+}

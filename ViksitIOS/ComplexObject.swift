@@ -27,7 +27,7 @@ class ComplexObject {
                 if json != nil {
                     
                     if json["id"] != nil {
-                        self.id = json["id"] as! Int
+                        self.id = (json["id"] as! Int)
                     }
                     
                     if json["studentProfile"] != nil {

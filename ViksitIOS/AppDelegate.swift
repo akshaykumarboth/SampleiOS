@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         */
         
         DataCache.sharedInstance.cache["complexObject"] = Helper.readFromFile(fileName: "DummyData", extnsion: "txt")
-
+        DataCache.sharedInstance.cache["assessment"] = Helper.readFromFile(fileName: "assessment", extnsion: "txt")
+        
         /*
         //for solid testing
         if DataCache.sharedInstance.cache["complexObject"] == nil {

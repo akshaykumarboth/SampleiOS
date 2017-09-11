@@ -16,7 +16,7 @@ public class Assessment {
     public var description: String?
     public var durationInMinutes: Int?
     public var points: Int?
-    public var questions: [Question]!
+    public var questions: [Question] = []
     
     
     
