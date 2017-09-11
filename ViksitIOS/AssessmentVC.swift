@@ -159,15 +159,20 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return questions.count
     }
     
+    func st() {
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuesOptionCell", for: indexPath) as! QuesOptionCell
         cell.optionStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
-        
+        cell.quesNumber.text = "QUESTION \(indexPath.row + 1) OF \(questions.count)"
         cell.scrollView.scrollToTop()
         ThemeUtil.wrapInHtml(body: questions[indexPath.row].text!, fontsize: "15")
         cell.quesView.attributedText = setHTMLString(testString: ThemeUtil.wrapInHtml(body: questions[indexPath.row].text!, fontsize: "15"))
         //cell.quesView.attributedText = setHTMLString(testString: "<p>This is kahay</p>")
+        
         
         var option: OptionView
         if let count = questions[indexPath.row].options?.count {
@@ -175,14 +180,14 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 option = OptionView()
                 option.tag = i
                 if (questions[indexPath.row].options?[i].isSelected)! {
-                    option.setBorderColor(color: UIColor.red)
+                    option.setBorderColor(color: UIColor(red: 35/255, green: 182/255, blue: 249/255, alpha: 1.00))
                 } else {
-                    option.setBorderColor(color: UIColor.brown)
+                    option.setBorderColor(color: UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1.00))
                 }
                 
                 option.addGestureRecognizer(setTapGestureRecognizer())
                 option.optionText.isScrollEnabled = false
-                option.optionText.attributedText = setHTMLString(testString: ThemeUtil.wrapInHtml(body: (questions[indexPath.row].options?[i].text!)!, fontsize: "14")) 
+                option.optionText.attributedText = setHTMLString(testString: ThemeUtil.wrapInHtml(body: (questions[indexPath.row].options?[i].text!)!, fontsize: "14"))
                 
                 cell.optionStack.addArrangedSubview(option)
             }
@@ -265,27 +270,14 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
         
         if let option: OptionView = gestureRecognizer.view as! OptionView {
             if !((questions[visibleCellIndex.row].options?[option.tag].isSelected)!) {
-                option.optionContainer.backgroundColor = UIColor.red
+                option.optionContainer.backgroundColor = UIColor(red: 35/255, green: 182/255, blue: 249/255, alpha: 1.00)
                 self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = true
                 print("question \(visibleCellIndex.row) -> option \(option.tag) is selected")
             } else {
-                option.optionContainer.backgroundColor = UIColor.brown
+                option.optionContainer.backgroundColor = UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1.00)
                 self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = false
                 print("question \(visibleCellIndex.row) -> option \(option.tag) is unselected")
             }
-            
-            
-            //
-            /*
-            if option.optionContainer.backgroundColor == UIColor.red {
-                option.optionContainer.backgroundColor = UIColor.brown
-                self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = true
-                
-                print("question \(visibleCellIndex.row) -> option \(option.tag) is selected")
-            } else {
-                option.optionContainer.backgroundColor = UIColor.red
-            }
- */
             
         }
     }
@@ -300,7 +292,7 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
 
 }
 
-extension AssessmentVC: UITableViewDataSource {
+extension AssessmentVC: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
@@ -318,7 +310,13 @@ extension AssessmentVC: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print(roles[indexPath.row].id as Any)
+        print(indexPath.row)
+        collectionView.scrollToItem(at:IndexPath(item: indexPath.row , section: 0), at: .left, animated: false)
+        centerYconstraint.constant = 1000
+        
+        UIView.animate(withDuration: 0.1, animations: {
+            self.view.layoutIfNeeded()
+        })
         
     }
     

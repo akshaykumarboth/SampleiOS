@@ -20,6 +20,7 @@ public class Question {
     public var points: Int?
     public var options: [Option]?
     public var answers: [Int]?
+    public var isAnswered: Bool = false
     
     init(json: [String: Any]) {
         if json["id"] != nil {
