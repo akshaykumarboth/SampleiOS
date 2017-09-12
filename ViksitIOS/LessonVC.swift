@@ -71,10 +71,24 @@ extension LessonVC: UICollectionViewDataSource {
         cell.lessonTitle.text = lessons[indexPath.row].lesson?.title
         cell.lessonDescription.text = lessons[indexPath.row].lesson?.description
         cell.completionImg.isHidden = true
+        cell.beginSkillBtn.tag = indexPath.row
+        cell.beginSkillBtn.addTarget(self, action: #selector(beginLessonTapped), for: UIControlEvents.touchUpInside)
         
         return cell
     }
+    
+    @IBAction func beginLessonTapped(_ sender: UIButton) -> Void {
+        print(lessons[sender.tag].id)
         
+        let lesson = lessons[sender.tag]
+        
+        if lesson.type == "LESSON_PRESENTATION" {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Lesson", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LessonsPageVC") as! LessonsPageVC
+            nextViewController.lessonID = lesson.id
+            self.present(nextViewController, animated:true, completion:nil)
+        }
+    }
     
     
 }

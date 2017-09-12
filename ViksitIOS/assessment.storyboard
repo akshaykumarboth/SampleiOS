@@ -14,7 +14,7 @@
         <!--AssessmentVC-->
         <scene sceneID="v8r-AR-qhX">
             <objects>
-                <viewController id="AjG-d8-o0b" customClass="AssessmentVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AssessmentVC" id="AjG-d8-o0b" customClass="AssessmentVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Vh-JO-sDW"/>
                         <viewControllerLayoutGuide type="bottom" id="Tcr-DB-PlL"/>
@@ -241,15 +241,15 @@
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="2jH-sy-nnr">
-                                                            <rect key="frame" x="340" y="10" width="25" height="25"/>
+                                                            <rect key="frame" x="345" y="5" width="20" height="20"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="25" id="27I-Qn-Kxc"/>
+                                                                <constraint firstAttribute="height" constant="20" id="27I-Qn-Kxc"/>
                                                                 <constraint firstAttribute="width" secondItem="2jH-sy-nnr" secondAttribute="height" multiplier="1:1" id="tDG-gD-jsj"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="2jH-sy-nnr" firstAttribute="top" secondItem="1fh-rh-Bsr" secondAttribute="top" constant="10" id="PMB-3g-2Zq"/>
+                                                        <constraint firstItem="2jH-sy-nnr" firstAttribute="top" secondItem="1fh-rh-Bsr" secondAttribute="top" constant="5" id="PMB-3g-2Zq"/>
                                                         <constraint firstItem="0XH-YS-jbo" firstAttribute="leading" secondItem="1fh-rh-Bsr" secondAttribute="leading" constant="10" id="UUV-XM-PaB"/>
                                                         <constraint firstAttribute="bottom" secondItem="0XH-YS-jbo" secondAttribute="bottom" constant="5" id="UtG-uN-GIe"/>
                                                         <constraint firstItem="2jH-sy-nnr" firstAttribute="leading" secondItem="0XH-YS-jbo" secondAttribute="trailing" constant="10" id="VYL-5Y-507"/>

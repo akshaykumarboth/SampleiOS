@@ -13,6 +13,9 @@ class LessonsPageVC: UIPageViewController {
     var slideList: [CMSlide] = []
     var vCList : [UIViewController] = []
     var tasks: [Tasks] = []
+    var lessonID: Int!
+    var lessonResponse: String = ""
+    
     
 
     override func viewDidLoad() {
@@ -30,12 +33,18 @@ class LessonsPageVC: UIPageViewController {
     func xmlParsing(handleComplete:(()->())){
         // do something
         do {
-            //let lessonResponse: String = Helper.makeHttpCall (url : "http://cdn.talentify.in:9999/lessonXMLs/163/163/163.xml", method: "GET", param: [:])
-            //let xml = try! SWXMLHash.parse(lessonResponse)
+            //lessonResponse = Helper.makeHttpCall (url : "http://cdn.talentify.in:9999/lessonXMLs/163/163/163.xml", method: "GET", param: [:])
+            print(lessonID)
+            if let lessonid = lessonID {
+                lessonResponse = Helper.makeHttpCall (url : "http://cdn.talentify.in:9999/lessonXMLs/\(lessonid)/\(lessonid)/\(lessonid).xml", method: "GET", param: [:])
+            }
+            
+            print(lessonResponse)
+            let xml = try! SWXMLHash.parse(lessonResponse)
             
             //from cache memory
-            let xmlCahe = DataCache.sharedInstance.cache["lesson"]
-            let xml = try! SWXMLHash.parse(xmlCahe!)
+            //let xmlCahe = DataCache.sharedInstance.cache["lesson"]
+            //let xml = try! SWXMLHash.parse(xmlCahe!)
             
             if xml["lesson"] != nil {
                 var list2: Array<CMSlide> = []

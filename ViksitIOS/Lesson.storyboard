@@ -66,9 +66,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="avn-XR-I4r">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" red="0.039577907990000001" green="0.97132703990000002" blue="0.94376627599999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="avn-XR-I4r" secondAttribute="trailing" id="IqS-Jb-pst"/>
                             <constraint firstItem="juV-Cp-gcF" firstAttribute="top" secondItem="avn-XR-I4r" secondAttribute="bottom" id="R0H-Qp-SKl"/>
@@ -167,7 +168,7 @@
                                 <rect key="frame" x="0.0" y="153" width="375" height="514"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93218315969999999" green="0.97132703990000002" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="GUe-Ku-9pm" secondAttribute="trailing" id="9Zt-2x-Zso"/>
                             <constraint firstItem="jRo-bG-BNk" firstAttribute="top" secondItem="w9w-FB-ZhD" secondAttribute="bottom" id="Df9-9d-HYW"/>
@@ -663,7 +664,7 @@
                                 <rect key="frame" x="20" y="243" width="335" height="53"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mwE-Rh-IyF" firstAttribute="top" secondItem="4WB-Gu-cHu" secondAttribute="bottom" constant="30" id="2ug-h9-LnH"/>
                             <constraint firstAttribute="trailing" secondItem="u49-64-RUM" secondAttribute="trailing" constant="20" id="F1S-3U-oWX"/>
@@ -913,28 +914,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C19-jN-Woq" customClass="DynamicTextWebView" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="20" y="91" width="335" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kab-fc-B9M">
+                                <rect key="frame" x="20" y="99" width="335" height="264.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WMt-5n-3OF" firstAttribute="top" secondItem="62L-gM-2Fq" secondAttribute="bottom" constant="30" id="4dy-dN-3gu"/>
-                            <constraint firstAttribute="trailing" secondItem="C19-jN-Woq" secondAttribute="trailing" constant="20" id="6So-is-6uS"/>
                             <constraint firstItem="gRr-BQ-ceX" firstAttribute="leading" secondItem="77s-fD-i3P" secondAttribute="leading" id="BTx-Q2-nRV"/>
                             <constraint firstItem="D4D-eh-lvX" firstAttribute="top" secondItem="gRr-BQ-ceX" secondAttribute="bottom" id="CHn-zz-ZXD"/>
-                            <constraint firstItem="C19-jN-Woq" firstAttribute="top" secondItem="WMt-5n-3OF" secondAttribute="bottom" constant="20" id="JSw-U6-aJ1"/>
-                            <constraint firstItem="C19-jN-Woq" firstAttribute="leading" secondItem="77s-fD-i3P" secondAttribute="leading" constant="20" id="O2k-Dz-uD1"/>
+                            <constraint firstItem="Kab-fc-B9M" firstAttribute="top" secondItem="WMt-5n-3OF" secondAttribute="bottom" constant="20" id="J9f-dK-rS4"/>
                             <constraint firstItem="WMt-5n-3OF" firstAttribute="leading" secondItem="77s-fD-i3P" secondAttribute="leading" constant="20" id="PIP-jd-L0I"/>
+                            <constraint firstAttribute="trailing" secondItem="Kab-fc-B9M" secondAttribute="trailing" constant="20" id="f04-SJ-bLh"/>
                             <constraint firstAttribute="trailing" secondItem="WMt-5n-3OF" secondAttribute="trailing" constant="20" id="gIu-M0-YM6"/>
+                            <constraint firstItem="Kab-fc-B9M" firstAttribute="leading" secondItem="77s-fD-i3P" secondAttribute="leading" constant="20" id="ji0-aC-2zb"/>
                             <constraint firstItem="gRr-BQ-ceX" firstAttribute="top" secondItem="62L-gM-2Fq" secondAttribute="bottom" id="nwG-Y6-BaU"/>
                             <constraint firstAttribute="trailing" secondItem="gRr-BQ-ceX" secondAttribute="trailing" id="xRd-sh-wOB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="gifImageView" destination="gRr-BQ-ceX" id="A0e-sN-Ap6"/>
-                        <outlet property="paraWebView" destination="C19-jN-Woq" id="F04-An-4GH"/>
+                        <outlet property="paragraphText" destination="Kab-fc-B9M" id="jkV-Na-fb6"/>
                         <outlet property="titleLabel" destination="WMt-5n-3OF" id="yEV-iq-yDx"/>
                     </connections>
                 </viewController>
@@ -1158,7 +1162,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zpZ-rM-AsH" firstAttribute="top" secondItem="vPw-IQ-3fV" secondAttribute="bottom" constant="30" id="5T8-R7-hUh"/>
                             <constraint firstItem="zpZ-rM-AsH" firstAttribute="leading" secondItem="0Wb-LR-bJc" secondAttribute="leadingMargin" constant="20" id="GU7-5y-YDi"/>
@@ -1203,7 +1207,7 @@
                                 <rect key="frame" x="20" y="99" width="335" height="27"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="15M-2Z-g39" firstAttribute="leading" secondItem="Pel-SR-L7c" secondAttribute="leading" id="2i0-V8-uV0"/>
                             <constraint firstAttribute="trailing" secondItem="15M-2Z-g39" secondAttribute="trailing" id="9vw-VG-7HY"/>

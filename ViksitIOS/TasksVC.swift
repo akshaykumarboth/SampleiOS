@@ -5,9 +5,11 @@ class TasksVC: UIViewController{
     
     var tasks: Array<Tasks> = []
     var visibleCellIndex: IndexPath!
+    var userID: Int = -1
 
     @IBOutlet var cards: UICollectionView!
-    let cellScaling: CGFloat = 0.75
+    let cellWidthScaling: CGFloat = 0.8
+    let cellHeightScaling: CGFloat = 0.67
     
     @IBOutlet var coinsBtn: UIButton!
     @IBOutlet var experiencePoints: UILabel!
@@ -26,12 +28,10 @@ class TasksVC: UIViewController{
         goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    func setCollectionCellSize(){
         let screenSize = UIScreen.main.bounds.size
-        let cellWidth = floor(screenSize.width * cellScaling)
-        let cellHeight = floor(screenSize.height * cellScaling)
+        let cellWidth = floor(screenSize.width * cellWidthScaling)
+        let cellHeight = floor(screenSize.height * cellHeightScaling)
         
         let insetX = (view.bounds.width - cellWidth)/2.0
         let insetY = (view.bounds.height - cellHeight)/2.0
@@ -42,13 +42,19 @@ class TasksVC: UIViewController{
         
         self.cards.delegate = self
         self.cards.dataSource = self
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        setCollectionCellSize()
         var profileImgUrl: String = ""
         var xp: Int = 0
         var coins: Int = 0
         
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             tasks = (ComplexObject(JSONString: complexCache).tasks)!
+            userID = (ComplexObject(JSONString: complexCache).studentProfile?.id!)!
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
             xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
             coins = (ComplexObject(JSONString: complexCache).studentProfile?.coins)!
@@ -64,10 +70,8 @@ class TasksVC: UIViewController{
                 } else {
                     self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
                 }
-            
             }
         }
- 
         profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
         
         //set userpoints in toolbar
@@ -143,6 +147,33 @@ extension TasksVC: UICollectionViewDataSource {
         return tasks.count
     }
     
+    
+    @IBAction func startBtnTapped(_ sender: UIButton) -> Void {
+        print(tasks[sender.tag].title)
+        let task = tasks[sender.tag]
+        /*
+        var storyBoardName: String = ""
+        var storyBoardID: String = ""*/
+        
+        if task.itemType == "LESSON_PRESENTATION" {//LessonsPageVC
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Lesson", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LessonsPageVC") as! LessonsPageVC
+            nextViewController.lessonID = tasks[sender.tag].itemId
+            self.present(nextViewController, animated:true, completion:nil)
+        } else if (task.itemType == "CLASSROOM_SESSION_STUDENT" || task.itemType == "CLASSROOM_SESSION") {
+            
+        } else if (task.itemType == "ASSESSMENT" || task.itemType == "LESSON_ASSESSMENT") {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "assessment", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AssessmentVC") as! AssessmentVC
+            nextViewController.taskID = tasks[sender.tag].id!
+            nextViewController.userID = userID
+            self.present(nextViewController, animated:true, completion:nil)
+            
+        } else if task.itemType == "LESSON_VIDEO" { //
+            
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if tasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
@@ -154,10 +185,10 @@ extension TasksVC: UICollectionViewDataSource {
             loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
             cell.videoImg.isHidden = true
             cell.watchBtn.tag = indexPath.row
-            
+            cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
             
             return cell
-        } else if tasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" {
+        } else if (tasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" || tasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
             
             cell.headerLabel.text = tasks[indexPath.row].header
@@ -178,9 +209,10 @@ extension TasksVC: UICollectionViewDataSource {
             cell.timeText.text = "Time"
             cell.startBtn.setTitle("START CLASS", for: .normal)
             cell.startBtn.tag = indexPath.row
+            cell.startBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
             
             return cell
-        } else if tasks[indexPath.row].itemType == "ASSESSMENT" {
+        } else if (tasks[indexPath.row].itemType == "ASSESSMENT" || tasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {//
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
             
             cell.headerLabel.text = tasks[indexPath.row].header
@@ -206,6 +238,7 @@ extension TasksVC: UICollectionViewDataSource {
             cell.timeText.text = "Duration"
             cell.startBtn.setTitle("START ASSESSMENT", for: .normal)
             cell.startBtn.tag = indexPath.row
+            cell.startBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
             
             return cell
             
@@ -219,11 +252,16 @@ extension TasksVC: UICollectionViewDataSource {
             
             cell.videoImg.isHidden = false
             cell.watchBtn.tag = indexPath.row
+            cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
             
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+            cell.headerLabel.text = tasks[indexPath.row].header
+            cell.titleLabel.text = tasks[indexPath.row].title
             cell.watchBtn.tag = indexPath.row
+            cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
+            
             return cell
         }
         

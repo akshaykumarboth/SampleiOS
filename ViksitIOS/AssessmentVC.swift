@@ -16,6 +16,8 @@ class AssessmentVC: UIViewController {
     var questions: [Question] = []
     var timeLeft = 0
     var timer: Timer! = Timer()
+    var taskID: Int?
+    var userID: Int?
     //var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
     
     var visibleCellIndex: IndexPath!
@@ -81,13 +83,11 @@ class AssessmentVC: UIViewController {
         }
     }
     
-    
     func goto(storyBoardName: String, storyBoardID: String) {
         let storyBoard : UIStoryboard = UIStoryboard(name: storyBoardName, bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: storyBoardID)
         self.present(nextViewController, animated:true, completion:nil)
     }
-    
     
     func writeToFile() {
         let fileName = "Test"
@@ -110,15 +110,33 @@ class AssessmentVC: UIViewController {
         timeLeft = assessment.durationInMinutes! * 60
         //timeLeft = 5
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timerRunning), userInfo: nil, repeats: true)
+        
+        print("userid \(userID!) -- tasskid \(taskID!)")
+        //quesTableList.separatorStyle = .none
+    }
+    func getAssessment(taskID: Int, userID: Int){
+        //var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972", method: "GET", param: [:])
+        
+        let response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=\(taskID)&userId=\(userID)", method: "GET", param: [:])
+        self.assessment = Assessment(JSONString: response) //AssessmentVC
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //loadAssessmentAsync()
-        var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972", method: "GET", param: [:])
-        self.assessment = Assessment(JSONString: response)
+        if let taskid = taskID {
+            if let userid = userID {
+                print("userid \(userid) -- tasskid \(taskid)")
+                let response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
+                self.assessment = Assessment(JSONString: response)
+            }
+        }
         setData()
+ 
+        /*
+        if let assessmentCache = DataCache.sharedInstance.cache["assessment"] {
+            self.assessment = Assessment(JSONString: assessmentCache)
+            //
+        }*/
         
         visibleCellIndex = IndexPath(row: 0, section: 0)
         quesTableList.tag = -1000 // so, scrollview delegate methods adoesnt affect the table view scroll
@@ -326,7 +344,7 @@ extension AssessmentVC: UITableViewDataSource, UITableViewDelegate {
         cell.questionText.setAttributedText(text: questions[indexPath.row].text!, symbolCode: String(indexPath.row + 1))
         cell.questionText.textLabel.setHTMLFromString(htmlText: questions[indexPath.row].text!)
         cell.questionText.symbolLabel.setHTMLFromString(htmlText: String(indexPath.row + 1))
-        //cell.questionText.setFontSize(textSize: 100)
+        cell.questionText.setFontSize(textSize: 18)
         cell.questionText.setSpacing(spacing: 5)
         return cell
     }
