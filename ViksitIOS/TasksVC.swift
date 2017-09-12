@@ -8,7 +8,7 @@ class TasksVC: UIViewController{
     var userID: Int = -1
 
     @IBOutlet var cards: UICollectionView!
-    let cellWidthScaling: CGFloat = 0.8
+    let cellWidthScaling: CGFloat = 0.85
     let cellHeightScaling: CGFloat = 0.67
     
     @IBOutlet var coinsBtn: UIButton!

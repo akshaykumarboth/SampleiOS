@@ -327,6 +327,8 @@
                     <connections>
                         <outlet property="centerYconstraint" destination="Hz5-Sr-2Af" id="C8B-x5-yeM"/>
                         <outlet property="collectionView" destination="M8H-zV-b9F" id="hZ7-cl-2QZ"/>
+                        <outlet property="nextBtn" destination="L7n-xU-ade" id="Gek-h2-ela"/>
+                        <outlet property="prevBtn" destination="GQi-Bh-NhN" id="ohY-iP-lfJ"/>
                         <outlet property="quesTableList" destination="h2I-xF-gmu" id="xaw-Cd-Hip"/>
                         <outlet property="tableViewContainer" destination="wbK-s1-6uL" id="GoA-c5-oiI"/>
                         <outlet property="timerLabel" destination="eNm-hh-l1X" id="9qY-f8-BlD"/>

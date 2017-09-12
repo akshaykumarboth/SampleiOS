@@ -28,6 +28,8 @@ class AssessmentVC: UIViewController {
     @IBOutlet var centerYconstraint: NSLayoutConstraint!
     @IBOutlet var tableViewContainer: UIView!
     @IBOutlet var viewAllBtn: UIButton!
+    @IBOutlet var nextBtn: UIButton!
+    @IBOutlet var prevBtn: UIButton!
     
     @IBAction func showPrev(_ sender: UIButton) {
         if visibleCellIndex.row != 0 {
@@ -39,6 +41,20 @@ class AssessmentVC: UIViewController {
                 self.view.layoutIfNeeded()
             })
  */
+            
+            if visibleCellIndex.row == 0 {
+                print("first")
+                prevBtn.setTitle("", for: .normal)
+            } else {
+                prevBtn.setTitle("PREV", for: .normal)
+            }
+            
+            if visibleCellIndex.row == questions.count-1 {
+                print("last")
+                nextBtn.setTitle("FINISH", for: .normal)
+            } else {
+                nextBtn.setTitle("NEXT", for: .normal)
+            }
         }
         
     }
@@ -53,6 +69,20 @@ class AssessmentVC: UIViewController {
                 self.view.layoutIfNeeded()
             })
  */
+            
+            if visibleCellIndex.row == 0 {
+                print("first")
+                prevBtn.setTitle("", for: .normal)
+            } else {
+                prevBtn.setTitle("PREV", for: .normal)
+            }
+            
+            if visibleCellIndex.row == questions.count-1 {
+                print("last")
+                nextBtn.setTitle("FINISH", for: .normal)
+            } else {
+                nextBtn.setTitle("NEXT", for: .normal)
+            }
         }
         
     }
@@ -112,6 +142,7 @@ class AssessmentVC: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timerRunning), userInfo: nil, repeats: true)
         
         print("userid \(userID!) -- tasskid \(taskID!)")
+        prevBtn.setTitle("", for: .normal)
         //quesTableList.separatorStyle = .none
     }
     func getAssessment(taskID: Int, userID: Int){
@@ -232,6 +263,8 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         }
         
         
+        
+        
         return cell
     }
     
@@ -240,20 +273,36 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return CGSize(width: collectionView.frame.width * 1, height: collectionView.frame.height) //use height whatever you wants.
     }
     
-    /*
+    
     // Called before the cell is displayed
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
      
+        /*
         //print("starting display of cell: \(indexPath.row)")
+        if indexPath.row == 0 {
+            print("first")
+            prevBtn.setTitle("", for: .normal)
+        } else {
+            prevBtn.setTitle("PREV", for: .normal)
+        }
+        
+        if indexPath.row == questions.count-1 {
+            print("last")
+            nextBtn.setTitle("FINISH", for: .normal)
+        } else {
+            nextBtn.setTitle("NEXT", for: .normal)
+        }
+        */
     }
     
     // Called when the cell is displayed
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        print(collectionView.indexPathsForVisibleItems.first)
+        //print(collectionView.indexPathsForVisibleItems.first)
         //print("ending display of cell: \(indexPath.row)")
+        
     }
  
- */
+ 
 }
 
 
@@ -276,6 +325,9 @@ extension AssessmentVC: UIScrollViewDelegate {
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
         
+        //
+        
+        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -284,6 +336,19 @@ extension AssessmentVC: UIScrollViewDelegate {
             return
         }
         getVisibleCellIndexPath()
+        if visibleCellIndex.row == 0 {
+            print("first")
+            prevBtn.setTitle("", for: .normal)
+        } else {
+            prevBtn.setTitle("PREV", for: .normal)
+        }
+        
+        if visibleCellIndex.row == questions.count-1 {
+            print("last")
+            nextBtn.setTitle("FINISH", for: .normal)
+        } else {
+            nextBtn.setTitle("NEXT", for: .normal)
+        }
         
     }
     
