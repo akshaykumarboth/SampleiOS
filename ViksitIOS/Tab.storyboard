@@ -91,7 +91,7 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HbU-7j-znt">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
                                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m7J-vl-9JC">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="m7J-vl-9JC">
                                             <size key="itemSize" width="250" height="387"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -268,7 +268,7 @@
                                                 </connections>
                                             </collectionViewCell>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="assessmentCell" id="QoH-zb-VSA" customClass="AssessmentCell" customModule="ViksitIOS" customModuleProvider="target">
-                                                <rect key="frame" x="260" y="33.5" width="250" height="387"/>
+                                                <rect key="frame" x="252" y="33.5" width="250" height="387"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="387"/>
@@ -292,7 +292,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3L-bS-nu9">
                                                                     <rect key="frame" x="0.0" y="63" width="234" height="139"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NQ6-hn-AoJ" customClass="CircularImage" customModule="ViksitIOS" customModuleProvider="target">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="assessment" translatesAutoresizingMaskIntoConstraints="NO" id="NQ6-hn-AoJ" customClass="CircularImage" customModule="ViksitIOS" customModuleProvider="target">
                                                                             <rect key="frame" x="62.5" y="15" width="109" height="109"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="NQ6-hn-AoJ" secondAttribute="height" multiplier="1:1" id="Xzh-eJ-9rQ"/>
@@ -948,7 +948,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Huu-ef-8wf">
                                                                     <rect key="frame" x="0.0" y="0.0" width="213" height="50.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1043,6 +1043,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="assessment" width="400" height="400"/>
         <image name="calendar" width="48" height="48"/>
         <image name="calender" width="24" height="24"/>
         <image name="coins" width="24" height="24"/>

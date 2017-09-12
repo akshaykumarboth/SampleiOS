@@ -18,11 +18,9 @@ class CalenderVC: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    
     @IBAction func onCoinsPressed(_ sender: UIButton) {
         goto(storyBoardName: "Profile", storyBoardID: "LeaderboardVC")
     }
-    
     
     @IBAction func onProfilePressed(_ sender: UIButton) {
         goto(storyBoardName: "Profile", storyBoardID: "ProfileTBC")
@@ -85,7 +83,7 @@ class CalenderVC: UIViewController {
     }
     
     
-    
+    /*
     func setHTMLString(testString: String,fontsize: String ) -> NSAttributedString{
         let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
         var attrStr = try! NSAttributedString(
@@ -95,7 +93,7 @@ class CalenderVC: UIViewController {
         //textview.attributedText = attrStr
         return attrStr
     }
-    
+    */
     
     func getMonth(monthIndex: String) -> String {
          //months: [Int: String] = [:]
@@ -154,9 +152,8 @@ extension CalenderVC: UITableViewDataSource, UITableViewDelegate {
         cell.eventDurationLabel.text = starthours /*+ getSubstring(str: events[indexPath.row].startDate!, startOffest: 13, endOffset: -3)*/
         
         cell.eventMonthLabel.text = month
-        //cell.eventNameView.isUserInteractionEnabled = false
-        //cell.eventNameView.loadHTMLString(wrapInHtml(body: events[indexPath.row].name as! String), baseURL: nil)
-        cell.eventName.attributedText = setHTMLString(testString: events[indexPath.row].name!,fontsize: "14" )
+        //cell.eventName.attributedText = setHTMLString(testString: events[indexPath.row].name!,fontsize: "14" )
+        cell.eventName.setHTMLFromString(htmlText: events[indexPath.row].name!)
         cell.eventDateLabel.text = date
         cell.eventMonthLabel.text = month
         

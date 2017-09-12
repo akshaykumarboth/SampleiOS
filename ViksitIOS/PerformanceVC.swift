@@ -162,7 +162,7 @@ extension PerformanceVC: UICollectionViewDelegate, UICollectionViewDataSource, U
 
 extension PerformanceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let openViewHeight: Int = 38
+        let openViewHeight: Int = 58
         
         if (indexPath.row == selectedRowIndex.row && isExpanded == false){
             isExpanded = true
