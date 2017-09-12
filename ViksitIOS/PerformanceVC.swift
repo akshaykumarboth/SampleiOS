@@ -119,7 +119,6 @@ extension PerformanceVC: UIImagePickerControllerDelegate, UINavigationController
         dismiss(animated: true, completion: nil)
     }
     
-
 }
 
 extension PerformanceVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

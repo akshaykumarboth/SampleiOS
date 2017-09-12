@@ -31,6 +31,10 @@ class AssessmentVC: UIViewController {
     @IBOutlet var nextBtn: UIButton!
     @IBOutlet var prevBtn: UIButton!
     
+    @IBAction func closePressed(_ sender: UIButton) {
+        createAlert()
+    }
+    
     @IBAction func showPrev(_ sender: UIButton) {
         if visibleCellIndex.row != 0 {
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row - 1 , section: 0), at: .left, animated: false)
@@ -69,6 +73,12 @@ class AssessmentVC: UIViewController {
                 self.view.layoutIfNeeded()
             })
  */
+            //
+            if visibleCellIndex.row == questions.count {
+                createAlert()
+            }
+            
+            //
             
             if visibleCellIndex.row == 0 {
                 print("first")
@@ -193,6 +203,29 @@ class AssessmentVC: UIViewController {
     
     func setData() {
         questions = assessment.questions
+        
+    }
+    
+    func createAlert(){
+        let actionSheet = UIAlertController(title: "Do you wish to end the Assessment ?", message: nil, preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+            action in
+            self.submitAssessment()
+        }))
+        
+        /*
+        actionSheet.addAction(UIAlertAction(title: "No", style: .default, handler: {
+            action in
+            //self.showAlbum()
+        }))*/
+        
+        actionSheet.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+
+    }
+    
+    func submitAssessment() {
         
     }
     
