@@ -17,7 +17,7 @@ class ThemeUtil {
             //let symbolTextView = SymbolTextView(text: text.trimmingCharacters(in: .whitespacesAndNewlines),listSymbol:  "")
             
             let symbolTextLabel = SymbolTextLabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-            symbolTextLabel.symbolLabel.text = ""
+            symbolTextLabel.symbolLabel.text = "\u{2022}"
             symbolTextLabel.textLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
             symbolTextLabel.setFontSize(textSize: 20)
             //symbolTextLabel.textLabel.font.withSize(20)

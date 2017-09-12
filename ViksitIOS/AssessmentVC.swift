@@ -226,7 +226,7 @@ class AssessmentVC: UIViewController {
     }
     
     func submitAssessment() {
-        goto(storyBoardName: "Tab", storyBoardID: "TasksVC")
+        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
     }
     
     
