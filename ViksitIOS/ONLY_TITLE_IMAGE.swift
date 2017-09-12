@@ -21,7 +21,10 @@ class ONLY_TITLE_IMAGE: UIViewController {
         print("slide id is ",slide.id)
         
         titleLabel.text = slide.title.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        if !(slide.image.url.contains("ToDo.png")) {
+            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        }
+        
     }
 
     

@@ -28,7 +28,10 @@ class ONLY_PARAGRAPH_IMAGE_LIST: UIViewController {
                 }
             }
         }
-        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        if !(slide.image.url.contains("ToDo.png")) {
+            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        }
+        
     }
 
     

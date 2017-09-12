@@ -22,7 +22,11 @@ class ONLY_TITLE_PARAGRAPH: UIViewController {
         //paragraphText.setht(text: slide.paragraph.text, font: 18)
         paragraphText.setHTMLFromString(htmlText: slide.paragraph.text)
         titleLabel.text = slide.title.text
-        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        
+        if !(slide.image.url.contains("ToDo.png")) {
+            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        }
+        
 
         // Do any additional setup after loading the view.
     }

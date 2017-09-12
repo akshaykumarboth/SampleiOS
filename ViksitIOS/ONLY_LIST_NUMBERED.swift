@@ -29,7 +29,10 @@ class ONLY_LIST_NUMBERED: UIViewController {
                 
             }
         }
-        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)        // Do any additional setup after loading the view.
+        if !(slide.image.url.contains("ToDo.png")) {
+            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        }
+                // Do any additional setup after loading the view.
         
     }
 

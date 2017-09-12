@@ -32,7 +32,7 @@ class ONLY_TITLE_LIST: UIViewController {
                 ThemeUtil.setListItemTextLabelCustom(text: item.text, listStack: listStack)
             }
         }
-        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        //ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
     }
 
     

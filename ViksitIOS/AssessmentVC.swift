@@ -226,8 +226,10 @@ class AssessmentVC: UIViewController {
     }
     
     func submitAssessment() {
-        
+        goto(storyBoardName: "Tab", storyBoardID: "TasksVC")
     }
+    
+    
     
     func setViewAllImageToRight(viewAllBtn: UIButton) {
         

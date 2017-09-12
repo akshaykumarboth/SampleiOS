@@ -24,8 +24,10 @@ class ONLY_2TITLE: UIViewController {
         
         title1Label.text = slide.title.text.trimmingCharacters(in: .whitespacesAndNewlines)
         title2Label.text = slide.title2.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !(slide.image.url.contains("ToDo.png")) {
+            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        }
         
-        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         // Do any additional setup after loading the view.
     }
 

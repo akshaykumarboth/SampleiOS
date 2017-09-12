@@ -28,7 +28,10 @@ class ONLY_PARAGRAPH_TITLE_LIST: UIViewController {
         }
         
         titleLabel.text = slide.title.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        if !(slide.image.url.contains("ToDo.png")) {
+            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        }
+        
         // Do any additional setup after loading the view.
     }
 

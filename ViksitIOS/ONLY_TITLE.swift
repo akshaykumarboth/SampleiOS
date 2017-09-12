@@ -21,7 +21,10 @@ class ONLY_TITLE: UIViewController {
         // Do any additional setup after loading the view.
         
         titel.text = slide.title.text
-        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        if !(slide.image.url.contains("ToDo.png")) {
+            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        }
+        
         
     }
 

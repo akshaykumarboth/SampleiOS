@@ -24,8 +24,10 @@ class ONLY_TITLE_PARAGRAPH_cells_fragemented: UIViewController {
         webView.scrollView.isScrollEnabled = false
         webView.scrollView.bounces = false
         webView.loadHTMLString(ThemeUtil.wrapInHtml(body: slide.paragraph.text, fontsize: "16"), baseURL: nil)
+        if !(slide.image.url.contains("ToDo.png")) {
+            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        }
         
-        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
 
         // Do any additional setup after loading the view.
     }

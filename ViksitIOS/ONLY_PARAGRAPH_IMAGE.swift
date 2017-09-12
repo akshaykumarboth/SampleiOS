@@ -21,7 +21,11 @@ class ONLY_PARAGRAPH_IMAGE: UIViewController {
 
         //paraWebView.setText(text: slide.paragraph.text, font: 18)
         para.attributedText = Helper.setHTMLString(testString: slide.paragraph.text, fontsize: "18")
-        ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        
+        if !(slide.image.url.contains("ToDo.png")) {
+            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        }
+        
         // Do any additional setup after loading the view.
     }
 
