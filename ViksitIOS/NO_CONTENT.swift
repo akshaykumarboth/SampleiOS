@@ -16,10 +16,13 @@ class NO_CONTENT: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         
-
-        // Do any additional setup after loading the view.
     }
 
     

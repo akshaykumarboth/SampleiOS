@@ -13,7 +13,6 @@ import Photos
 
 class ONLY_VIDEO: UIViewController {
     
-    
     @IBOutlet var containerView: UIView!
     @IBOutlet var startVideoBtn: UIButton!
     var slide: CMSlide = CMSlide()
@@ -26,10 +25,12 @@ class ONLY_VIDEO: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         getVideoFromDocuments(videoURL: "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4")
         //getVideoFromDocuments(videoURL: slide.video.url)
-        
     }
 
     // play video

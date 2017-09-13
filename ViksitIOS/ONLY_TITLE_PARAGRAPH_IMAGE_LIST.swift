@@ -20,13 +20,16 @@ class ONLY_TITLE_PARAGRAPH_IMAGE_LIST: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        paraStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
         titleLabel.text = slide.title.text
         for item in slide.list.items {
             print(item.text)
             ThemeUtil.setParaListTextLabelCustom(text: item.text, paraStack: paraStack)
         }
-
-        // Do any additional setup after loading the view.
     }
 
     

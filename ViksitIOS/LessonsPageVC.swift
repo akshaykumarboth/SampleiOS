@@ -16,7 +16,7 @@ class LessonsPageVC: UIPageViewController {
     var lessonID: Int!
     var lessonResponse: String = ""
     
-    
+    var pageIsAnimating = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -177,6 +177,10 @@ class LessonsPageVC: UIPageViewController {
 extension LessonsPageVC: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        
+        if self.pageIsAnimating {
+            return nil
+        }
         guard let vcIndex = vCList.index(of: viewController) else { return nil }
         let previousIndex = vcIndex - 1
         
@@ -187,6 +191,10 @@ extension LessonsPageVC: UIPageViewControllerDataSource, UIPageViewControllerDel
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        
+        if self.pageIsAnimating {
+            return nil
+        }
         guard let vcIndex = vCList.index(of: viewController) else { return nil }
         let nextIndex = vcIndex + 1
 
@@ -194,6 +202,16 @@ extension LessonsPageVC: UIPageViewControllerDataSource, UIPageViewControllerDel
         guard vCList.count > nextIndex else { return nil }
         
         return vCList[nextIndex]
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+        self.pageIsAnimating = true
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if finished || completed {
+            self.pageIsAnimating = false
+        }
     }
     
 }

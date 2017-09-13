@@ -19,14 +19,16 @@ class ONLY_TITLE_PARAGRAPH_IMAGE: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         titleLabel.text = slide.title.text
         para.attributedText = Helper.setHTMLString(testString: slide.paragraph.text, fontsize: "18")
         if !(slide.image.url.contains("ToDo.png")) {
             ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         }
-        
 
-        // Do any additional setup after loading the view.
     }
 
 }

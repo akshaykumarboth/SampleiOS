@@ -17,6 +17,10 @@ class ONLY_TITLE_TREE: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //set everything here not in viewDidLoad
+    }
 
     
 

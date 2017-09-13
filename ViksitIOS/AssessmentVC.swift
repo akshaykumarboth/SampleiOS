@@ -228,9 +228,7 @@ class AssessmentVC: UIViewController {
     func submitAssessment() {
         goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
     }
-    
-    
-    
+
     func setViewAllImageToRight(viewAllBtn: UIButton) {
         
         let titleWidth: CGFloat = viewAllBtn.titleLabel!.frame.size.width

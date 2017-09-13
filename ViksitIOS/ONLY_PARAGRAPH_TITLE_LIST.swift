@@ -18,6 +18,13 @@ class ONLY_PARAGRAPH_TITLE_LIST: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        paraStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
         if slide.list.items.count > 0 {
             for item in slide.list.items {
                 if item.text != "" {
@@ -31,8 +38,6 @@ class ONLY_PARAGRAPH_TITLE_LIST: UIViewController {
         if !(slide.image.url.contains("ToDo.png")) {
             ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         }
-        
-        // Do any additional setup after loading the view.
     }
 
     

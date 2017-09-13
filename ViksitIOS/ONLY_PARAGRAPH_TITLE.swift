@@ -21,15 +21,16 @@ class ONLY_PARAGRAPH_TITLE: UIViewController {
 
         //paraWebView.setText(text: slide.paragraph.text, font: 18)
         
+        // Do any additional setup after loading the view.
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
         para.attributedText = Helper.setHTMLString(testString: slide.paragraph.text, fontsize: "18")
         titleLabel.text = slide.title.text
         if !(slide.image.url.contains("ToDo.png")) {
             ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         }
-        
-        // Do any additional setup after loading the view.
     }
-
     
 
 }

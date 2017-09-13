@@ -20,6 +20,12 @@ class ONLY_LIST_NUMBERED: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        listStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
         if slide.list.items.count > 0 {
             var count = 1
             for item in slide.list.items {
@@ -32,10 +38,7 @@ class ONLY_LIST_NUMBERED: UIViewController {
         if !(slide.image.url.contains("ToDo.png")) {
             ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         }
-                // Do any additional setup after loading the view.
-        
     }
-
     
 
 }

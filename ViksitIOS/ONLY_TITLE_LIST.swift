@@ -22,6 +22,10 @@ class ONLY_TITLE_LIST: UIViewController {
         // Do any additional setup after loading the view.
         print("id ",slide.id)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        listStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
         titleLabel.text = slide.title.text.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if slide.list.items.count > 0 {

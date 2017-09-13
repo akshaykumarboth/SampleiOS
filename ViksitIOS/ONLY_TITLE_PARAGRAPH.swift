@@ -19,6 +19,11 @@ class ONLY_TITLE_PARAGRAPH: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         //paragraphText.setht(text: slide.paragraph.text, font: 18)
         paragraphText.setHTMLFromString(htmlText: slide.paragraph.text)
         titleLabel.text = slide.title.text
@@ -26,9 +31,7 @@ class ONLY_TITLE_PARAGRAPH: UIViewController {
         if !(slide.image.url.contains("ToDo.png")) {
             ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         }
-        
 
-        // Do any additional setup after loading the view.
     }
 
     

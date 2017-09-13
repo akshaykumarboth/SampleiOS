@@ -19,6 +19,10 @@ class ONLY_TITLE_PARAGRAPH_cells_fragemented: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         titleLabel.text = slide.title.text
         
         webView.scrollView.isScrollEnabled = false
@@ -27,9 +31,6 @@ class ONLY_TITLE_PARAGRAPH_cells_fragemented: UIViewController {
         if !(slide.image.url.contains("ToDo.png")) {
             ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         }
-        
-
-        // Do any additional setup after loading the view.
     }
 
     

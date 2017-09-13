@@ -59,7 +59,6 @@ class ModulesVC: UIViewController {
         self.present(nextViewController, animated:true, completion:nil)
     }
 
-
 }
 
 extension ModulesVC: UITableViewDataSource, UITableViewDelegate  {

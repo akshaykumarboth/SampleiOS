@@ -20,12 +20,13 @@ class ONLY_TITLE: UIViewController {
         print("templateName:   \(slide.templateName)")
         // Do any additional setup after loading the view.
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         titel.text = slide.title.text
         if !(slide.image.url.contains("ToDo.png")) {
             ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         }
-        
-        
     }
 
 }
