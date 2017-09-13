@@ -35,6 +35,15 @@ class SymbolTextLabel: UIView {
         addSubview(view)
     }
     
+    func loadViewFromNib() -> UIView {
+        
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: "SymbolTextLabel", bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        
+        return view
+    }
+    
     func setFontSize(textSize: CGFloat){
         //symbolLabel.font =  UIFont().withSize(textSize)
         //textLabel.font =  UIFont().withSize(textSize)
@@ -79,14 +88,7 @@ class SymbolTextLabel: UIView {
         view.layoutIfNeeded()
     }
     
-    func loadViewFromNib() -> UIView {
-        
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "SymbolTextLabel", bundle: bundle)
-        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
-        
-        return view
-    }
+    
     
 }
 

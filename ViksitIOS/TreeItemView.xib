@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TreeItemView" customModule="ViksitIOS" customModuleProvider="target">
+            <connections>
+                <outlet property="itemChildStack" destination="Ad2-eT-dJU" id="msX-ZG-cpT"/>
+                <outlet property="itemTextLabel" destination="Tiv-9w-Irv" id="f7D-TM-CWe"/>
+                <outlet property="view" destination="iN0-l3-epB" id="6GO-oN-sVc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="41"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ad2-eT-dJU">
+                    <rect key="frame" x="20" y="21" width="430" height="20"/>
+                </stackView>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tiv-9w-Irv" customClass="SymbolTextLabel" customModule="ViksitIOS" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="450" height="21"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Tiv-9w-Irv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="16R-g6-xXN"/>
+                <constraint firstItem="Ad2-eT-dJU" firstAttribute="top" secondItem="Tiv-9w-Irv" secondAttribute="bottom" id="CgE-Nk-nr0"/>
+                <constraint firstAttribute="trailing" secondItem="Tiv-9w-Irv" secondAttribute="trailing" id="K71-ZB-sOe"/>
+                <constraint firstAttribute="bottom" secondItem="Ad2-eT-dJU" secondAttribute="bottom" id="Xiw-h6-v6W"/>
+                <constraint firstItem="Ad2-eT-dJU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ZBj-DU-jFt"/>
+                <constraint firstItem="Tiv-9w-Irv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cV4-Gg-XjB"/>
+                <constraint firstAttribute="trailing" secondItem="Ad2-eT-dJU" secondAttribute="trailing" id="lQ1-mk-c6Q"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="70" y="-235.5"/>
+        </view>
+    </objects>
+</document>

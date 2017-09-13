@@ -26,21 +26,23 @@ class CMSList {
         do {
             if let xml: XMLIndexer = xml {
                 //for attributes
-                for (key, value) in (xml.element?.allAttributes)! {
-                    //print("list ",key, "  ", value.text)
-                    
-                    
-                    if key == "merged_audio" {
-                        self.mergedAudioURL = value.text
-                        //print("list mergedAudioURL is ",self.mergedAudioURL )
+                if (xml.element?.allAttributes.count)! > 0 {
+                    for (key, value) in (xml.element?.allAttributes)! {
+                        //print("list ",key, "  ", value.text)
+                        
+                        if key == "merged_audio" {
+                            self.mergedAudioURL = value.text
+                            //print("list mergedAudioURL is ",self.mergedAudioURL )
+                        }
+                        
+                        if key == "list_type" {
+                            self.list_type = value.text
+                            //print("list list_type is ",self.list_type )
+                        }
+                        
                     }
-                    
-                    if key == "list_type" {
-                        self.list_type = value.text
-                        //print("list list_type is ",self.list_type )
-                    }
-                    
                 }
+                
                 
                 if let mergedAudioDuration = xml["mergedAudioDuration"].element?.text {
                     self.mergedAudioDuration = Int(mergedAudioDuration)!

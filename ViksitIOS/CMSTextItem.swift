@@ -15,6 +15,7 @@ class CMSTextItem {
     var description: String = ""
     var fragmentAudioUrl: String = ""
     var fragmentDuration: Int = 0
+    var childList: CMSList = CMSList()
     
     init(text: String, id: Int, description: String, fragmentAudioUrl: String, fragmentDuration: Int) {
         self.text = text
@@ -53,6 +54,11 @@ class CMSTextItem {
                 if let fragment_duration = xml["fragment_duration"].element?.text {
                     self.fragmentDuration = Int(fragment_duration)!
                     //print("CMSTextItem fragmentDuration is ",self.fragmentDuration )
+                }
+                
+                if xml["ul"] != nil {
+                    self.childList = CMSList(xml: xml["ul"])
+                    //print("id is ",self.id )
                 }
 
             }

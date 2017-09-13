@@ -841,10 +841,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1L-nF-2eN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="K1B-Xa-7iJ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
             </objects>
             <point key="canvasLocation" x="4437.6000000000004" y="422.33883058470769"/>
         </scene>
@@ -881,7 +877,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gifImageView" destination="K1B-Xa-7iJ" id="1Rh-DE-o6z"/>
                         <outlet property="listStack" destination="MMD-91-NqY" id="405-Lw-bYN"/>
                         <outlet property="titleLabel" destination="hh0-xg-aXP" id="Tva-Kk-q6e"/>
                     </connections>
@@ -1003,12 +998,35 @@
                     <view key="view" contentMode="scaleToFill" id="eG5-EE-pdu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWO-57-YdR">
+                                <rect key="frame" x="20" y="50" width="335" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0mK-2p-4KP">
+                                <rect key="frame" x="20" y="102" width="335" height="20.5"/>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0mK-2p-4KP" firstAttribute="top" secondItem="EWO-57-YdR" secondAttribute="bottom" constant="20" id="F9r-VC-gMd"/>
+                            <constraint firstItem="EWO-57-YdR" firstAttribute="leading" secondItem="eG5-EE-pdu" secondAttribute="leading" constant="20" id="JgY-gI-r8X"/>
+                            <constraint firstItem="0mK-2p-4KP" firstAttribute="leading" secondItem="eG5-EE-pdu" secondAttribute="leading" constant="20" id="NwX-9y-Fwd"/>
+                            <constraint firstAttribute="trailing" secondItem="0mK-2p-4KP" secondAttribute="trailing" constant="20" id="SeF-bn-3fj"/>
+                            <constraint firstItem="EWO-57-YdR" firstAttribute="top" secondItem="Chn-CD-bA7" secondAttribute="bottom" constant="30" id="Wbm-Je-vrf"/>
+                            <constraint firstAttribute="trailing" secondItem="EWO-57-YdR" secondAttribute="trailing" constant="20" id="cWd-9i-arv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="EWO-57-YdR" id="5Y5-qh-NPj"/>
+                        <outlet property="treeStack" destination="0mK-2p-4KP" id="vly-GR-7Ew"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nu0-tv-kaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7070" y="422"/>
+            <point key="canvasLocation" x="7069.6000000000004" y="421.43928035982015"/>
         </scene>
         <!--Web DynamicVC-->
         <scene sceneID="l1T-CA-G1H">

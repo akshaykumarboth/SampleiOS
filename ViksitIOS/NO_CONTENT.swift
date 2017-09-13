@@ -21,6 +21,7 @@ class NO_CONTENT: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        print(slide.image.url)
         ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
         
     }

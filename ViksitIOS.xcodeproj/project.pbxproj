@@ -18,6 +18,8 @@
 		B9F6B06C1F25E69C00B695C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F6B06A1F25E69C00B695C0 /* LaunchScreen.storyboard */; };
 		B9F6B0771F25E69C00B695C0 /* ViksitIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0761F25E69C00B695C0 /* ViksitIOSTests.swift */; };
 		B9F6B0821F25E69C00B695C0 /* ViksitIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */; };
+		BA2DD6821F6921C4008C5BF8 /* TreeItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2DD6811F6921C4008C5BF8 /* TreeItemView.xib */; };
+		BA2DD6841F6921E2008C5BF8 /* TreeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2DD6831F6921E2008C5BF8 /* TreeItemView.swift */; };
 		BA43ED581F386E3E000D2DB0 /* CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED571F386E3E000D2DB0 /* CircularImage.swift */; };
 		BA43ED5A1F38843A000D2DB0 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED591F38843A000D2DB0 /* AccountCell.swift */; };
 		BA43ED5C1F39A2F9000D2DB0 /* PresentationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */; };
@@ -186,6 +188,8 @@
 		B9F6B07D1F25E69C00B695C0 /* ViksitIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViksitIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F6B0811F25E69C00B695C0 /* ViksitIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViksitIOSUITests.swift; sourceTree = "<group>"; };
 		B9F6B0831F25E69C00B695C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA2DD6811F6921C4008C5BF8 /* TreeItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TreeItemView.xib; sourceTree = "<group>"; };
+		BA2DD6831F6921E2008C5BF8 /* TreeItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeItemView.swift; sourceTree = "<group>"; };
 		BA43ED571F386E3E000D2DB0 /* CircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImage.swift; sourceTree = "<group>"; };
 		BA43ED591F38843A000D2DB0 /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationCell.swift; sourceTree = "<group>"; };
@@ -463,12 +467,12 @@
 		BA43EDDC1F4B13F7000D2DB0 /* lessons */ = {
 			isa = PBXGroup;
 			children = (
-				BA43EE2C1F51915E000D2DB0 /* helpers */,
 				BA43EDDD1F4B1420000D2DB0 /* Lesson.storyboard */,
 				BA43EDDF1F4B1497000D2DB0 /* XmlVC.swift */,
 				BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */,
 				BA43EDE91F4B2694000D2DB0 /* templates */,
 				BA43EE101F4C221A000D2DB0 /* slides */,
+				BA43EE2C1F51915E000D2DB0 /* helpers */,
 				BA43EE1D1F4EB0C2000D2DB0 /* PagerViewController.swift */,
 				BA43EE1F1F4EB149000D2DB0 /* GreenVC.swift */,
 				BA43EE211F4EB189000D2DB0 /* RedVC.swift */,
@@ -536,6 +540,8 @@
 				BA43EE351F51D0E1000D2DB0 /* DynamicTextWebView.swift */,
 				BA43EE3F1F54259D000D2DB0 /* CustomUIWebView.swift */,
 				BA43EE411F5428DB000D2DB0 /* DVC.swift */,
+				BA2DD6811F6921C4008C5BF8 /* TreeItemView.xib */,
+				BA2DD6831F6921E2008C5BF8 /* TreeItemView.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -856,6 +862,7 @@
 				BA43ED7C1F3C47AE000D2DB0 /* StackViewCell.xib in Resources */,
 				BA43EE511F584A33000D2DB0 /* assessment.storyboard in Resources */,
 				BA43EDDE1F4B1420000D2DB0 /* Lesson.storyboard in Resources */,
+				BA2DD6821F6921C4008C5BF8 /* TreeItemView.xib in Resources */,
 				BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */,
 				B9F6B0691F25E69C00B695C0 /* Assets.xcassets in Resources */,
 				B9F6B0671F25E69C00B695C0 /* Main.storyboard in Resources */,
@@ -1113,6 +1120,7 @@
 				BA4914F41F62B17D000F5280 /* HiddenTableCell.swift in Sources */,
 				BA63717D1F27946B00D77EA9 /* OtpVC.swift in Sources */,
 				BA690EB41F26119E00EF980F /* SkillObjectives.swift in Sources */,
+				BA2DD6841F6921E2008C5BF8 /* TreeItemView.swift in Sources */,
 				BA6371831F27A25C00D77EA9 /* BatchCodeVC.swift in Sources */,
 				BA690EA41F26118100EF980F /* DataCache.swift in Sources */,
 				BA43EE731F602909000D2DB0 /* AssessmentVC.swift in Sources */,

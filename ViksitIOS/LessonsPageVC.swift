@@ -152,7 +152,7 @@ class LessonsPageVC: UIPageViewController {
                 
                 let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_TITLE_TREE") as! ONLY_TITLE_TREE
                 vc1.slide = slideList[ii]
-                //vCList.append(vc1)
+                vCList.append(vc1)
  
             }else if slide.templateName == "ONLY_VIDEO"{
                 let vc1 = sb.instantiateViewController(withIdentifier: "ONLY_VIDEO") as! ONLY_VIDEO
