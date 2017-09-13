@@ -16,9 +16,9 @@ class AssessmentVC: UIViewController {
     var questions: [Question] = []
     var timeLeft = 0
     var timer: Timer! = Timer()
+    var timer1: Timer! = Timer()
     var taskID: Int?
     var userID: Int?
-    //var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
     
     var visibleCellIndex: IndexPath!
     var totalQuesAnswered: Int = 0
@@ -32,6 +32,7 @@ class AssessmentVC: UIViewController {
     @IBOutlet var nextBtn: UIButton!
     @IBOutlet var prevBtn: UIButton!
     
+    @IBOutlet var hiddenCoverView: UIView!
     @IBAction func closePressed(_ sender: UIButton) {
         createAlert()
     }
@@ -55,17 +56,25 @@ class AssessmentVC: UIViewController {
             
             if visibleCellIndex.row == questions.count-1 {
                 print("last")
-                nextBtn.setTitle("", for: .normal)
+                nextBtn.setTitle("FINISH", for: .normal)
             } else {
                 nextBtn.setTitle("NEXT", for: .normal)
             }
+            
+            if visibleCellIndex.row == questions.count {
+                hiddenCoverView.isHidden = false
+                nextBtn.setTitle("", for: .normal)
+            } else {
+                hiddenCoverView.isHidden = true
+            }
+            
         }
         
     }
     
     @IBAction func showNext(_ sender: UIButton) {
         print(" lll  \(visibleCellIndex.row)")
-        if visibleCellIndex.row != (questions.count-1) { // 4 has to be changed
+        if visibleCellIndex.row != (questions.count) { // 4 has to be changed
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row + 1 , section: 0), at: .right, animated: false)
             visibleCellIndex.row = visibleCellIndex.row + 1
             /*
@@ -73,12 +82,10 @@ class AssessmentVC: UIViewController {
                 self.view.layoutIfNeeded()
             })
  */
-            //
+            /*
             if visibleCellIndex.row == questions.count {
                 createAlert()
-            }
-            
-            //
+            }*/
             
             if visibleCellIndex.row == 0 {
                 print("first")
@@ -89,10 +96,17 @@ class AssessmentVC: UIViewController {
             
             if visibleCellIndex.row == questions.count-1 {
                 print("last")
-                nextBtn.setTitle("", for: .normal)
+                nextBtn.setTitle("FINISH", for: .normal)
                 //goto(storyBoardName: "assessment", storyBoardID: "TimeUpVC")
             } else {
                 nextBtn.setTitle("NEXT", for: .normal)
+            }
+            
+            if visibleCellIndex.row == questions.count {
+                hiddenCoverView.isHidden = false
+                nextBtn.setTitle("", for: .normal)
+            } else {
+                hiddenCoverView.isHidden = true
             }
         }
         
@@ -155,7 +169,6 @@ class AssessmentVC: UIViewController {
         
         print("userid \(userID!) -- tasskid \(taskID!)")
         prevBtn.setTitle("", for: .normal)
-        //quesTableList.separatorStyle = .none
     }
     func getAssessment(taskID: Int, userID: Int){
         //var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972", method: "GET", param: [:])
@@ -264,10 +277,30 @@ class AssessmentVC: UIViewController {
 extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return questions.count
+        return (questions.count + 1)
+    }
+    
+    @objc func timer1Running() {
+        timeLeft -= 1
+        var label = timer1.userInfo as! UILabel
+        label.text = "\(timeLeft/60):\(timeLeft%60)"
+        if timeLeft == 0 {
+            timer1.invalidate()
+            label.text = "Time is up"
+            goto(storyBoardName: "assessment", storyBoardID: "TimeUpVC")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.row == questions.count {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubmitCVCell", for: indexPath) as! SubmitCVCell
+            
+            timer1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timer1Running), userInfo: cell.timerLabel, repeats: true)
+            //cell.unansweredLabel
+            cell.submitAssessment.addTarget(self, action: #selector(submitAssessment), for: UIControlEvents.touchUpInside)
+            return cell
+        }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuesOptionCell", for: indexPath) as! QuesOptionCell
         cell.optionStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
@@ -289,8 +322,6 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 //option.optionText.font = UIFont().withSize(15)
                 option.addGestureRecognizer(setTapGestureRecognizer())
                 option.optionText.isScrollEnabled = false
-                //option.optionText.attributedText = setHTMLString(testString: (questions[indexPath.row].options?[i].text!)!)
-                //option.optionText.text = questions[indexPath.row].options?[i].text
                 option.optionText.setHTMLFromString(htmlText: (questions[indexPath.row].options?[i].text)!)
                 
                 cell.optionStack.addArrangedSubview(option)
@@ -413,8 +444,7 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
                 
             }
         }
-        
-        
+
         
     }
     
@@ -456,7 +486,7 @@ extension AssessmentVC: UITableViewDataSource, UITableViewDelegate {
         }
         
         if indexPath.row == questions.count-1 {
-            nextBtn.setTitle("", for: .normal)
+            nextBtn.setTitle("FINISH", for: .normal)
         } else {
             nextBtn.setTitle("NEXT", for: .normal)
         }

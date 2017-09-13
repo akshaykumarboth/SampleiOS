@@ -81,7 +81,6 @@
 		BA43EE511F584A33000D2DB0 /* assessment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA43EE501F584A33000D2DB0 /* assessment.storyboard */; };
 		BA43EE731F602909000D2DB0 /* AssessmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE721F602909000D2DB0 /* AssessmentVC.swift */; };
 		BA43EE751F602A08000D2DB0 /* QuesOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE741F602A08000D2DB0 /* QuesOptionCell.swift */; };
-		BA43EE791F60424F000D2DB0 /* ScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE781F60424F000D2DB0 /* ScrollVC.swift */; };
 		BA43EE7B1F61209F000D2DB0 /* OptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA43EE7A1F61209F000D2DB0 /* OptionView.xib */; };
 		BA43EE7D1F612116000D2DB0 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE7C1F612116000D2DB0 /* OptionView.swift */; };
 		BA43EE7F1F6129E2000D2DB0 /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE7E1F6129E2000D2DB0 /* Ext.swift */; };
@@ -145,6 +144,9 @@
 		BAA147EB1F34985000D1FFFE /* LeaderboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147EA1F34985000D1FFFE /* LeaderboardVC.swift */; };
 		BAA147ED1F3498FB00D1FFFE /* LeaderboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147EC1F3498FB00D1FFFE /* LeaderboardCell.swift */; };
 		BAA42BA81F2B44040022C553 /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BA71F2B44040022C553 /* testVC.swift */; };
+		BAE124CB1F6965B300F8576D /* TodaysTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CA1F6965B300F8576D /* TodaysTaskCell.swift */; };
+		BAE124CD1F6966CB00F8576D /* TodaysTaskItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CC1F6966CB00F8576D /* TodaysTaskItemCell.swift */; };
+		BAE124CF1F696EDD00F8576D /* SubmitCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */; };
 		FE7732A221A80E2DDF41C7B7 /* Pods_ViksitIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -251,7 +253,6 @@
 		BA43EE501F584A33000D2DB0 /* assessment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = assessment.storyboard; sourceTree = "<group>"; };
 		BA43EE721F602909000D2DB0 /* AssessmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentVC.swift; sourceTree = "<group>"; };
 		BA43EE741F602A08000D2DB0 /* QuesOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuesOptionCell.swift; sourceTree = "<group>"; };
-		BA43EE781F60424F000D2DB0 /* ScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollVC.swift; sourceTree = "<group>"; };
 		BA43EE7A1F61209F000D2DB0 /* OptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionView.xib; sourceTree = "<group>"; };
 		BA43EE7C1F612116000D2DB0 /* OptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
 		BA43EE7E1F6129E2000D2DB0 /* Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
@@ -315,6 +316,9 @@
 		BAA147EA1F34985000D1FFFE /* LeaderboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardVC.swift; sourceTree = "<group>"; };
 		BAA147EC1F3498FB00D1FFFE /* LeaderboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardCell.swift; sourceTree = "<group>"; };
 		BAA42BA71F2B44040022C553 /* testVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
+		BAE124CA1F6965B300F8576D /* TodaysTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysTaskCell.swift; sourceTree = "<group>"; };
+		BAE124CC1F6966CB00F8576D /* TodaysTaskItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysTaskItemCell.swift; sourceTree = "<group>"; };
+		BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCVCell.swift; sourceTree = "<group>"; };
 		D204BF41765CCA9C29915A81 /* Pods-ViksitIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViksitIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViksitIOSUITests/Pods-ViksitIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViksitIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -551,10 +555,10 @@
 			children = (
 				BA65FFC11F66744900A18974 /* ponso */,
 				BA43EE501F584A33000D2DB0 /* assessment.storyboard */,
+				BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */,
 				BA65FFCC1F66DE4E00A18974 /* TimeUpVC.swift */,
 				BA43EE721F602909000D2DB0 /* AssessmentVC.swift */,
 				BA43EE741F602A08000D2DB0 /* QuesOptionCell.swift */,
-				BA43EE781F60424F000D2DB0 /* ScrollVC.swift */,
 				BA4914F11F629963000F5280 /* HIddenTableVC.swift */,
 				BA4914F31F62B17D000F5280 /* HiddenTableCell.swift */,
 				BA4914F01F6298BD000F5280 /* helper */,
@@ -651,6 +655,8 @@
 				BA63718F1F28868D00D77EA9 /* TasksVC.swift */,
 				BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */,
 				BA43ED5D1F39E8E9000D2DB0 /* AssessmentCell.swift */,
+				BAE124CA1F6965B300F8576D /* TodaysTaskCell.swift */,
+				BAE124CC1F6966CB00F8576D /* TodaysTaskItemCell.swift */,
 			);
 			name = tasks;
 			sourceTree = "<group>";
@@ -658,8 +664,8 @@
 		BA63719B1F28E08800D77EA9 /* notifications */ = {
 			isa = PBXGroup;
 			children = (
-				BA6371971F28C1A500D77EA9 /* NotificationTableCell.swift */,
 				BA6371951F28BB9B00D77EA9 /* NotificationsVC.swift */,
+				BA6371971F28C1A500D77EA9 /* NotificationTableCell.swift */,
 			);
 			name = notifications;
 			sourceTree = "<group>";
@@ -1052,7 +1058,6 @@
 				BA43EDEB1F4B26D6000D2DB0 /* ONLY_2TITLE_IMAGE.swift in Sources */,
 				BA43EE1E1F4EB0C2000D2DB0 /* PagerViewController.swift in Sources */,
 				BA690EB11F26119E00EF980F /* Modules.swift in Sources */,
-				BA43EE791F60424F000D2DB0 /* ScrollVC.swift in Sources */,
 				BA690EA91F26119000EF980F /* Events.swift in Sources */,
 				BA43EE751F602A08000D2DB0 /* QuesOptionCell.swift in Sources */,
 				BAA147D01F31E87F00D1FFFE /* ModuleCell.swift in Sources */,
@@ -1091,6 +1096,7 @@
 				BAA147D41F334B7700D1FFFE /* LeftAlignedIconButton.swift in Sources */,
 				BA6371921F2886A500D77EA9 /* CalenderVC.swift in Sources */,
 				BA43EE0F1F4C1BEC000D2DB0 /* CMSlide.swift in Sources */,
+				BAE124CF1F696EDD00F8576D /* SubmitCVCell.swift in Sources */,
 				BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */,
 				BAA42BA81F2B44040022C553 /* testVC.swift in Sources */,
 				BA43EDF91F4B2772000D2DB0 /* ONLY_TITLE_PARAGRAPH.swift in Sources */,
@@ -1100,6 +1106,7 @@
 				BA43EDF51F4B274B000D2DB0 /* ONLY_PARAGRAPH_TITLE_LIST.swift in Sources */,
 				BA65FFC51F6674E800A18974 /* Question.swift in Sources */,
 				BAA147CE1F31D18200D1FFFE /* ModulesVC.swift in Sources */,
+				BAE124CD1F6966CB00F8576D /* TodaysTaskItemCell.swift in Sources */,
 				B9F6B05E1F25E69C00B695C0 /* AppDelegate.swift in Sources */,
 				BA6371771F264A9A00D77EA9 /* CircularButton.swift in Sources */,
 				BA43EE051F4B27DC000D2DB0 /* ONLY_PARAGRAPH_IMAGE.swift in Sources */,
@@ -1120,6 +1127,7 @@
 				BA4914F41F62B17D000F5280 /* HiddenTableCell.swift in Sources */,
 				BA63717D1F27946B00D77EA9 /* OtpVC.swift in Sources */,
 				BA690EB41F26119E00EF980F /* SkillObjectives.swift in Sources */,
+				BAE124CB1F6965B300F8576D /* TodaysTaskCell.swift in Sources */,
 				BA2DD6841F6921E2008C5BF8 /* TreeItemView.swift in Sources */,
 				BA6371831F27A25C00D77EA9 /* BatchCodeVC.swift in Sources */,
 				BA690EA41F26118100EF980F /* DataCache.swift in Sources */,

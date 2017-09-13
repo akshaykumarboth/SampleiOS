@@ -43,6 +43,7 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         let cell = tableView.dequeueReusableCell(withIdentifier: "notificationCell", for: indexPath) as! NotificationTableCell
         
