@@ -12,9 +12,8 @@ class ONLY_TITLE_TREE: UIViewController {
     var slide: CMSlide = CMSlide()
     
     @IBOutlet var titleLabel: UILabel!
-    
     @IBOutlet var treeStack: UIStackView!
-    
+    @IBOutlet var gifImageView: UIImageView!
     
     
     override func viewDidLoad() {
@@ -34,9 +33,13 @@ class ONLY_TITLE_TREE: UIViewController {
                 
                 let treeItem = TreeItemView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
                 treeItem.itemTextLabel.textLabel.text = item.text
+                treeItem.itemTextLabel.setText(text: item.text, symbolCode: "\u{2022}")
                 if item.childList.items.count > 0 {
                     for child in item.childList.items {
-                        treeItem.addChildItem(text: child.text)
+                        if child.text != "" {
+                            treeItem.addChildItem(text: child.text)
+                        }
+                        
                     }
                 }
                 

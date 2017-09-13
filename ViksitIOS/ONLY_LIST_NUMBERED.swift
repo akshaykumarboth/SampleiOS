@@ -35,8 +35,12 @@ class ONLY_LIST_NUMBERED: UIViewController {
                 
             }
         }
-        if !(slide.image.url.contains("ToDo.png")) {
-            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        if (slide.image_BG != "null" || slide.image_BG != "none"){
+            ImageAsyncLoader.loadImageAsync(url: slide.image_BG, imgView: gifImageView)
+        } else {
+            if !(slide.image.url.contains("ToDo.png")) {
+                ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+            }
         }
     }
     

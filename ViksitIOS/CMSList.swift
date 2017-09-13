@@ -22,11 +22,12 @@ class CMSList {
         self.items = []
     }
     
-    init(xml: XMLIndexer) {
+    init?(xml: XMLIndexer) {
         do {
             if let xml: XMLIndexer = xml {
                 //for attributes
-                if (xml.element?.allAttributes.count)! > 0 {
+                //guard (xml.element?.allAttributes.)! > 0 else { return nil }
+                if xml.element?.allAttributes != nil {
                     for (key, value) in (xml.element?.allAttributes)! {
                         //print("list ",key, "  ", value.text)
                         
@@ -42,6 +43,8 @@ class CMSList {
                         
                     }
                 }
+                
+
                 
                 
                 if let mergedAudioDuration = xml["mergedAudioDuration"].element?.text {

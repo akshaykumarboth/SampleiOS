@@ -199,7 +199,7 @@ extension LessonsPageVC: UIPageViewControllerDataSource, UIPageViewControllerDel
         let nextIndex = vcIndex + 1
 
         guard vCList.count != nextIndex else { return nil }
-        guard vCList.count > nextIndex else { return nil }
+        
         
         return vCList[nextIndex]
     }

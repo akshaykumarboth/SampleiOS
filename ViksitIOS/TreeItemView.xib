@@ -21,18 +21,18 @@
             <rect key="frame" x="0.0" y="0.0" width="450" height="41"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ad2-eT-dJU">
-                    <rect key="frame" x="20" y="21" width="430" height="20"/>
-                </stackView>
                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tiv-9w-Irv" customClass="SymbolTextLabel" customModule="ViksitIOS" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="450" height="21"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ad2-eT-dJU">
+                    <rect key="frame" x="20" y="21" width="430" height="20"/>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Tiv-9w-Irv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="16R-g6-xXN"/>
-                <constraint firstItem="Ad2-eT-dJU" firstAttribute="top" secondItem="Tiv-9w-Irv" secondAttribute="bottom" id="CgE-Nk-nr0"/>
+                <constraint firstItem="Ad2-eT-dJU" firstAttribute="top" secondItem="Tiv-9w-Irv" secondAttribute="bottom" constant="5" id="CgE-Nk-nr0"/>
                 <constraint firstAttribute="trailing" secondItem="Tiv-9w-Irv" secondAttribute="trailing" id="K71-ZB-sOe"/>
                 <constraint firstAttribute="bottom" secondItem="Ad2-eT-dJU" secondAttribute="bottom" id="Xiw-h6-v6W"/>
                 <constraint firstItem="Ad2-eT-dJU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ZBj-DU-jFt"/>

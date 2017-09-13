@@ -57,7 +57,7 @@ class CMSTextItem {
                 }
                 
                 if xml["ul"] != nil {
-                    self.childList = CMSList(xml: xml["ul"])
+                    self.childList = CMSList(xml: xml["ul"])!
                     //print("id is ",self.id )
                 }
 

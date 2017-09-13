@@ -18,8 +18,6 @@ class ONLY_PARAGRAPH_TITLE_LIST: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
         // Do any additional setup after loading the view.
     }
     
@@ -35,8 +33,12 @@ class ONLY_PARAGRAPH_TITLE_LIST: UIViewController {
         }
         
         titleLabel.text = slide.title.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        if !(slide.image.url.contains("ToDo.png")) {
-            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        if (slide.image_BG != "null" || slide.image_BG != "none"){
+            ImageAsyncLoader.loadImageAsync(url: slide.image_BG, imgView: gifImageView)
+        } else {
+            if !(slide.image.url.contains("ToDo.png")) {
+                ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+            }
         }
     }
 

@@ -11,7 +11,7 @@ import UIKit
 class SymbolTextLabel: UIView {
     
     @IBOutlet var view: UIView!
-    @IBOutlet var symbolLabel: UILabel!
+    @IBOutlet var symbolLabel: UILabel! 
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var symbolSpacingConstraint: NSLayoutConstraint!
     

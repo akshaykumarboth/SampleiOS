@@ -94,7 +94,7 @@ class CMSlide {
             }
             
             if xml["ul"] != nil {
-                self.list = CMSList(xml: xml["ul"])
+                self.list = CMSList(xml: xml["ul"])!
                 //print("id is ",self.id )
             }
             

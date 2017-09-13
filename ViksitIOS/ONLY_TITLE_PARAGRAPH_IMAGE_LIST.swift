@@ -13,7 +13,6 @@ class ONLY_TITLE_PARAGRAPH_IMAGE_LIST: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var paraStack: UIStackView!
     @IBOutlet var gifImageView: UIImageView!
-    @IBOutlet var imageView: UIImageView!
     
     var slide: CMSlide = CMSlide()
 
@@ -29,6 +28,14 @@ class ONLY_TITLE_PARAGRAPH_IMAGE_LIST: UIViewController {
         for item in slide.list.items {
             print(item.text)
             ThemeUtil.setParaListTextLabelCustom(text: item.text, paraStack: paraStack)
+        }
+        
+        if (slide.image_BG != "null" || slide.image_BG != "none"){
+            ImageAsyncLoader.loadImageAsync(url: slide.image_BG, imgView: gifImageView)
+        } else {
+            if !(slide.image.url.contains("ToDo.png")) {
+                ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+            }
         }
     }
 

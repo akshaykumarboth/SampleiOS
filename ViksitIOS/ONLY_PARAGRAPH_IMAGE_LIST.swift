@@ -13,7 +13,6 @@ class ONLY_PARAGRAPH_IMAGE_LIST: UIViewController {
     @IBOutlet var paraStack: UIStackView!
     
     @IBOutlet var gifImageView: UIImageView!
-    @IBOutlet var imageView: UIImageView!
     
     var slide: CMSlide = CMSlide()
     override func viewDidLoad() {
@@ -33,8 +32,12 @@ class ONLY_PARAGRAPH_IMAGE_LIST: UIViewController {
                 }
             }
         }
-        if !(slide.image.url.contains("ToDo.png")) {
-            ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+        if (slide.image_BG != "null" || slide.image_BG != "none"){
+            ImageAsyncLoader.loadImageAsync(url: slide.image_BG, imgView: gifImageView)
+        } else {
+            if !(slide.image.url.contains("ToDo.png")) {
+                ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
+            }
         }
     }
 
