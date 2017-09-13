@@ -21,7 +21,8 @@ class AssessmentVC: UIViewController {
     //var testString: String = "<!DOCTYPE html><html><head><style> table, th, td {border: 1px solid black;border-collapse: collapse;padding: 0 !important; margin: 0 !important;}</style></head><body><table style=\"width:100%\"><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr></table></body></html>"
     
     var visibleCellIndex: IndexPath!
-    
+    var totalQuesAnswered: Int = 0
+    @IBOutlet var quesAnsweredLabel: UILabel!
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var quesTableList: UITableView!
@@ -45,7 +46,6 @@ class AssessmentVC: UIViewController {
                 self.view.layoutIfNeeded()
             })
  */
-            
             if visibleCellIndex.row == 0 {
                 print("first")
                 prevBtn.setTitle("", for: .normal)
@@ -55,7 +55,7 @@ class AssessmentVC: UIViewController {
             
             if visibleCellIndex.row == questions.count-1 {
                 print("last")
-                nextBtn.setTitle("FINISH", for: .normal)
+                nextBtn.setTitle("", for: .normal)
             } else {
                 nextBtn.setTitle("NEXT", for: .normal)
             }
@@ -89,7 +89,8 @@ class AssessmentVC: UIViewController {
             
             if visibleCellIndex.row == questions.count-1 {
                 print("last")
-                nextBtn.setTitle("FINISH", for: .normal)
+                nextBtn.setTitle("", for: .normal)
+                //goto(storyBoardName: "assessment", storyBoardID: "TimeUpVC")
             } else {
                 nextBtn.setTitle("NEXT", for: .normal)
             }
@@ -146,6 +147,7 @@ class AssessmentVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        quesAnsweredLabel.text = "\(totalQuesAnswered) OF \(questions.count) ANSWERED"
         //timer
         timeLeft = assessment.durationInMinutes! * 60
         //timeLeft = 5
@@ -207,7 +209,7 @@ class AssessmentVC: UIViewController {
     }
     
     func createAlert(){
-        let actionSheet = UIAlertController(title: "Do you wish to end the Assessment ?", message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Do you wish to submit the Assessment ?", message: nil, preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
             action in
@@ -295,9 +297,6 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             }
         }
         
-        
-        
-        
         return cell
     }
     
@@ -310,22 +309,10 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     // Called before the cell is displayed
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
      
-        /*
-        //print("starting display of cell: \(indexPath.row)")
-        if indexPath.row == 0 {
-            print("first")
-            prevBtn.setTitle("", for: .normal)
-        } else {
-            prevBtn.setTitle("PREV", for: .normal)
-        }
         
-        if indexPath.row == questions.count-1 {
-            print("last")
-            nextBtn.setTitle("FINISH", for: .normal)
-        } else {
-            nextBtn.setTitle("NEXT", for: .normal)
-        }
-        */
+        //print("starting display of cell: \(indexPath.row)")
+        
+        
     }
     
     // Called when the cell is displayed
@@ -333,11 +320,11 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         //print(collectionView.indexPathsForVisibleItems.first)
         //print("ending display of cell: \(indexPath.row)")
         
+        
     }
  
- 
-}
 
+}
 
 extension AssessmentVC: UIScrollViewDelegate {
     
@@ -360,9 +347,8 @@ extension AssessmentVC: UIScrollViewDelegate {
         
         //
         
-        
     }
-    
+    /*
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         if scrollView.tag == -1000 { //so hidden table view scrolling doesnt get effected by the scrollview delegate methods
@@ -378,12 +364,12 @@ extension AssessmentVC: UIScrollViewDelegate {
         
         if visibleCellIndex.row == questions.count-1 {
             print("last")
-            nextBtn.setTitle("FINISH", for: .normal)
+            nextBtn.setTitle("", for: .normal)
         } else {
             nextBtn.setTitle("NEXT", for: .normal)
         }
         
-    }
+    }*/
     
     func getVisibleCellIndexPath () {
         var visibleRect = CGRect()
@@ -418,6 +404,20 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
         }
     }
     
+    func isQuestionAnswered(question: Question) {
+        
+        for option in question.options! {
+            if option.isSelected {
+                
+            } else {
+                
+            }
+        }
+        
+        
+        
+    }
+    
     func setTapGestureRecognizer() -> UITapGestureRecognizer {
         
         var gestureRecognizer = UITapGestureRecognizer()
@@ -435,7 +435,7 @@ extension AssessmentVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //tableView.separatorStyle = .none
+        tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         let cell = tableView.dequeueReusableCell(withIdentifier: "HiddenTableCell", for: indexPath) as! HiddenTableCell
         
@@ -449,6 +449,17 @@ extension AssessmentVC: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        if indexPath.row == 0 {
+            prevBtn.setTitle("", for: .normal)
+        } else {
+            prevBtn.setTitle("PREV", for: .normal)
+        }
+        
+        if indexPath.row == questions.count-1 {
+            nextBtn.setTitle("", for: .normal)
+        } else {
+            nextBtn.setTitle("NEXT", for: .normal)
+        }
         collectionView.scrollToItem(at:IndexPath(item: indexPath.row , section: 0), at: .left, animated: false)
         centerYconstraint.constant = 1000
         
