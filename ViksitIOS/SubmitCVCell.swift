@@ -10,10 +10,8 @@ import UIKit
 
 class SubmitCVCell: UICollectionViewCell {
     
-    
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet var unansweredLabel: UILabel!
     @IBOutlet var submitAssessment: UIButton!
-    
     
 }

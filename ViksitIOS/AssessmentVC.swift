@@ -24,6 +24,8 @@ class AssessmentVC: UIViewController {
     var totalQuesAnswered: Int = 0
     @IBOutlet var quesAnsweredLabel: UILabel!
     @IBOutlet var timerLabel: UILabel!
+    @IBOutlet var submitTimerLabel: UILabel!
+    //@IBOutlet var timer1Label: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var quesTableList: UITableView!
     @IBOutlet var centerYconstraint: NSLayoutConstraint!
@@ -31,22 +33,36 @@ class AssessmentVC: UIViewController {
     @IBOutlet var viewAllBtn: UIButton!
     @IBOutlet var nextBtn: UIButton!
     @IBOutlet var prevBtn: UIButton!
+    @IBOutlet var submitView: UIView!
+    
+    @IBOutlet var submitViewYConstraint: NSLayoutConstraint!
+    
     
     @IBOutlet var hiddenCoverView: UIView!
     @IBAction func closePressed(_ sender: UIButton) {
-        createAlert()
+        //createAlert()
+        submitViewYConstraint.constant = 0
+        UIView.animate(withDuration: 0.2, animations: {
+            self.view.layoutIfNeeded()
+        })
+
     }
     
+    @IBAction func hidingSubmitView(_ sender: UIButton) {
+        submitViewYConstraint.constant = -1000
+        UIView.animate(withDuration: 0.1, animations: {
+            self.view.layoutIfNeeded()
+        })
+
+    }
     @IBAction func showPrev(_ sender: UIButton) {
+        getVisibleCellIndexPath()
         if visibleCellIndex.row != 0 {
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row - 1 , section: 0), at: .left, animated: false)
             self.visibleCellIndex.row = self.visibleCellIndex.row - 1
-            /*
-            UIView.animate(withDuration: 0.3, animations: {
-                self.visibleCellIndex.row = self.visibleCellIndex.row - 1
-                self.view.layoutIfNeeded()
-            })
- */
+            
+             
+            
             if visibleCellIndex.row == 0 {
                 print("first")
                 prevBtn.setTitle("", for: .normal)
@@ -73,6 +89,7 @@ class AssessmentVC: UIViewController {
     }
     
     @IBAction func showNext(_ sender: UIButton) {
+        getVisibleCellIndexPath()
         print(" lll  \(visibleCellIndex.row)")
         if visibleCellIndex.row != (questions.count) { // 4 has to be changed
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row + 1 , section: 0), at: .right, animated: false)
@@ -101,6 +118,7 @@ class AssessmentVC: UIViewController {
             } else {
                 nextBtn.setTitle("NEXT", for: .normal)
             }
+            
             
             if visibleCellIndex.row == questions.count {
                 hiddenCoverView.isHidden = false
@@ -131,6 +149,7 @@ class AssessmentVC: UIViewController {
     func timerRunning() {
         timeLeft -= 1
         timerLabel.text = "\(timeLeft/60):\(timeLeft%60)"
+        submitTimerLabel.text = "\(timeLeft/60):\(timeLeft%60)"
         if timeLeft == 0 {
             timer.invalidate()
             timerLabel.text = "Time is up"
@@ -282,11 +301,14 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     @objc func timer1Running() {
         timeLeft -= 1
-        var label = timer1.userInfo as! UILabel
-        label.text = "\(timeLeft/60):\(timeLeft%60)"
+        if timeLeft > 0 {
+            var label = timer1.userInfo as! UILabel
+            label.text = "\(timeLeft/60):\(timeLeft%60)"
+        }
+        
         if timeLeft == 0 {
             timer1.invalidate()
-            label.text = "Time is up"
+            //label.text = "Time is up"
             goto(storyBoardName: "assessment", storyBoardID: "TimeUpVC")
         }
     }
@@ -298,7 +320,7 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             
             timer1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timer1Running), userInfo: cell.timerLabel, repeats: true)
             //cell.unansweredLabel
-            cell.submitAssessment.addTarget(self, action: #selector(submitAssessment), for: UIControlEvents.touchUpInside)
+            
             return cell
         }
         
@@ -379,7 +401,7 @@ extension AssessmentVC: UIScrollViewDelegate {
         //
         
     }
-    /*
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         if scrollView.tag == -1000 { //so hidden table view scrolling doesnt get effected by the scrollview delegate methods
@@ -400,7 +422,7 @@ extension AssessmentVC: UIScrollViewDelegate {
             nextBtn.setTitle("NEXT", for: .normal)
         }
         
-    }*/
+    }
     
     func getVisibleCellIndexPath () {
         var visibleRect = CGRect()
@@ -479,6 +501,7 @@ extension AssessmentVC: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        
         if indexPath.row == 0 {
             prevBtn.setTitle("", for: .normal)
         } else {
