@@ -149,7 +149,7 @@ class LeaderboardVC: UIViewController {
         //image.layer.cornerRadius = image.frame.height / 2
         //image.layer.masksToBounds = true
         //image.clipsToBounds = true
-        image.layer.borderWidth=1.0;
+        image.layer.borderWidth=0;
         image.layer.borderColor = UIColor(red: 235/255, green: 56/255, blue: 79/255, alpha: 1.00).cgColor
     }
     

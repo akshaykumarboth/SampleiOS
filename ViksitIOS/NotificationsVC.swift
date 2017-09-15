@@ -20,6 +20,7 @@ class NotificationsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         topActionBar.backgroundColor = UIColor.Custom.themeColor
+        tableView.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.98, alpha:1.0)
         
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             let complexObject = ComplexObject(JSONString: complexCache)
@@ -66,7 +67,7 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
         } catch let error as NSError {
             print(" Error \(error)")
         }
-        
+        cell.contentView.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.98, alpha:1.0)
         cell.notificationDuration.text = notifications[indexPath.row].time
         cell.notificationMessage.attributedText = Helper.setHTMLString(testString: notifications[indexPath.row].message!, fontsize: "15")
         

@@ -65,7 +65,7 @@ class RolesVC: UIViewController {
                 }
             }
         }
-        makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
+        makeButtonRound(button: profileBtn, borderWidth: 2.5, color: UIColor.white)
         //userXpBtn.setTitle(String(xp) + " xp", for: .normal)
         coinsBtn.setTitle(" " + String(coins), for: .normal)
         experiencePoints.text = String(xp)
@@ -126,7 +126,7 @@ extension RolesVC: UITableViewDataSource, UITableViewDelegate {
         
         //inserting image from url async for roleImage
         ImageAsyncLoader.loadImageAsync(url: roles[indexPath.row].imageURL!, imgView: cell.roleImage)
-        cell.roleCategory.text = roles[indexPath.row].category
+        cell.roleCategory.text = roles[indexPath.row].category?.uppercased()
         cell.roleMessage.text = roles[indexPath.row].message
         cell.roleName.text = roles[indexPath.row].name
         cell.roleProgress.progress = Float(roles[indexPath.row].progress!/100)

@@ -59,7 +59,7 @@ class CalenderVC: UIViewController {
                 }
             }
         }
-        profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
+        profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2.5, color: UIColor.white)
         coinsBtn.setTitle(" " + String(coins), for: .normal)
         experiencePointsLabel.text = String(xp)
         

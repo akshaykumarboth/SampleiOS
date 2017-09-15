@@ -8,8 +8,10 @@ class TasksVC: UIViewController{
     var userID: Int = -1
 
     let cellWidthScaling: CGFloat = 0.85
-    let cellHeightScaling: CGFloat = 0.7
+    let cellHeightScaling: CGFloat = 0.76
     @IBOutlet var cards: UICollectionView!
+    
+    @IBOutlet var topActionBarHeight: NSLayoutConstraint!
     
     @IBOutlet var topActionBar: UIView!
     @IBOutlet var coinsBtn: UIButton!
@@ -48,7 +50,8 @@ class TasksVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         topActionBar.backgroundColor = UIColor.Custom.themeColor
-        
+        //topActionBarHeight.constant = CGFloat.Custom.topActionBarHeight
+                
         setCollectionCellSize()
         var profileImgUrl: String = ""
         var xp: Int = 0
@@ -74,7 +77,8 @@ class TasksVC: UIViewController{
                 }
             }
         }
-        profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
+        //profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
+        profileBtn.makeButtonRound(borderWidth: 2.5, borderColor: UIColor.white)
         
         //set userpoints in toolbar
         coinsBtn.setTitle(" " + String(coins), for: .normal)
@@ -82,6 +86,7 @@ class TasksVC: UIViewController{
         
     }
     
+    /*
     func makeButtonRound(button: UIButton, borderWidth: CGFloat, color: UIColor)-> UIButton{
         button.layer.cornerRadius = button.frame.width/2
         button.layer.masksToBounds = true
@@ -89,7 +94,7 @@ class TasksVC: UIViewController{
         button.layer.borderColor = color.cgColor
         
         return button
-    }
+    }*/
 
     func goto(storyBoardName: String, storyBoardID: String) {
         let storyBoard : UIStoryboard = UIStoryboard(name: storyBoardName, bundle:nil)
@@ -181,7 +186,8 @@ extension TasksVC: UICollectionViewDataSource {
         if tasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
             
-            cell.headerLabel.text = tasks[indexPath.row].header
+            cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
+            
             cell.titleLabel.text = tasks[indexPath.row].title
             cell.descriptionLabel.text = tasks[indexPath.row].description
             loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
@@ -197,7 +203,7 @@ extension TasksVC: UICollectionViewDataSource {
         } else if (tasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" || tasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
             
-            cell.headerLabel.text = tasks[indexPath.row].header
+            cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
             loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
             cell.descriptionLabel.text = tasks[indexPath.row].classRoomName
@@ -225,7 +231,7 @@ extension TasksVC: UICollectionViewDataSource {
         } else if (tasks[indexPath.row].itemType == "ASSESSMENT" || tasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
             
-            cell.headerLabel.text = tasks[indexPath.row].header//
+            cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
             cell.descriptionLabel.text = tasks[indexPath.row].description
             if tasks[indexPath.row].imageURL != nil {
@@ -259,7 +265,7 @@ extension TasksVC: UICollectionViewDataSource {
         }else if tasks[indexPath.row].itemType == "LESSON_VIDEO"{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
             
-            cell.headerLabel.text = tasks[indexPath.row].header
+            cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
             cell.descriptionLabel.text = tasks[indexPath.row].description
             loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
@@ -272,7 +278,7 @@ extension TasksVC: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
-            cell.headerLabel.text = tasks[indexPath.row].header
+            cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
             cell.watchBtn.tag = indexPath.row
             cell.watchBtn.backgroundColor = UIColor.Custom.themeColor

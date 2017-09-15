@@ -7,6 +7,7 @@ class NotificationTableCell: UITableViewCell, UIWebViewDelegate {
     @IBOutlet var notificationMessage: UILabel!
     @IBOutlet var notificationDuration: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
