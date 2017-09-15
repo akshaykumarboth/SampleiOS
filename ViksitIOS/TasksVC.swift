@@ -7,10 +7,11 @@ class TasksVC: UIViewController{
     var visibleCellIndex: IndexPath!
     var userID: Int = -1
 
-    @IBOutlet var cards: UICollectionView!
     let cellWidthScaling: CGFloat = 0.85
     let cellHeightScaling: CGFloat = 0.7
+    @IBOutlet var cards: UICollectionView!
     
+    @IBOutlet var topActionBar: UIView!
     @IBOutlet var coinsBtn: UIButton!
     @IBOutlet var experiencePoints: UILabel!
     @IBOutlet var profileBtn: UIButton!
@@ -46,6 +47,7 @@ class TasksVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topActionBar.backgroundColor = UIColor.Custom.themeColor
         
         setCollectionCellSize()
         var profileImgUrl: String = ""
@@ -185,6 +187,10 @@ extension TasksVC: UICollectionViewDataSource {
             loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
             cell.videoImg.isHidden = true
             cell.watchBtn.tag = indexPath.row
+            cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
+            cell.watchBtn.setImage(UIImage(named: "presentation"), for: .normal)
+            cell.watchBtn.tintColor = UIColor.white
+            cell.watchBtn.imageEdgeInsets = UIEdgeInsets(top: 9, left: 10, bottom: 9, right: 20)
             cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
             
             return cell
@@ -209,13 +215,17 @@ extension TasksVC: UICollectionViewDataSource {
             cell.timeText.text = "Time"
             cell.startBtn.setTitle("START CLASS", for: .normal)
             cell.startBtn.tag = indexPath.row
+            cell.startBtn.backgroundColor = UIColor.Custom.themeColor
+            cell.startBtn.setImage(UIImage(named: "play_icon"), for: .normal)
+            cell.startBtn.tintColor = UIColor.white
+            cell.startBtn.imageEdgeInsets = UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 20)
             cell.startBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
             
             return cell
-        } else if (tasks[indexPath.row].itemType == "ASSESSMENT" || tasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {//
+        } else if (tasks[indexPath.row].itemType == "ASSESSMENT" || tasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
             
-            cell.headerLabel.text = tasks[indexPath.row].header
+            cell.headerLabel.text = tasks[indexPath.row].header//
             cell.titleLabel.text = tasks[indexPath.row].title
             cell.descriptionLabel.text = tasks[indexPath.row].description
             if tasks[indexPath.row].imageURL != nil {
@@ -238,6 +248,10 @@ extension TasksVC: UICollectionViewDataSource {
             cell.timeText.text = "Duration"
             cell.startBtn.setTitle("START ASSESSMENT", for: .normal)
             cell.startBtn.tag = indexPath.row
+            cell.startBtn.backgroundColor = UIColor.Custom.themeColor
+            cell.startBtn.setImage(UIImage(named: "assessment_icon"), for: .normal)
+            cell.startBtn.tintColor = UIColor.white
+            cell.startBtn.imageEdgeInsets = UIEdgeInsets(top: 9, left: 10, bottom: 9, right: 20)
             cell.startBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
             
             return cell
@@ -252,6 +266,7 @@ extension TasksVC: UICollectionViewDataSource {
             
             cell.videoImg.isHidden = false
             cell.watchBtn.tag = indexPath.row
+            cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
             cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
             
             return cell
@@ -260,6 +275,7 @@ extension TasksVC: UICollectionViewDataSource {
             cell.headerLabel.text = tasks[indexPath.row].header
             cell.titleLabel.text = tasks[indexPath.row].title
             cell.watchBtn.tag = indexPath.row
+            cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
             cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
             
             return cell

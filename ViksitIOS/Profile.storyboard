@@ -181,16 +181,16 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1iX-0k-dJR">
-                                                                    <rect key="frame" x="18" y="11" width="299" height="30"/>
+                                                                    <rect key="frame" x="18" y="11" width="307" height="30"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LI1-Mb-bUD">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="299" height="12"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="307" height="12"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YKz-lJ-eFw">
-                                                                            <rect key="frame" x="0.0" y="14" width="299" height="16"/>
+                                                                            <rect key="frame" x="0.0" y="14" width="307" height="16"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                             <textInputTraits key="textInputTraits"/>
@@ -198,10 +198,10 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uky-tr-vgH">
-                                                                    <rect key="frame" x="327" y="8" width="30" height="34.5"/>
+                                                                    <rect key="frame" x="330" y="0.0" width="45" height="50.5"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="30" id="SrZ-Pv-Lrp"/>
+                                                                        <constraint firstAttribute="width" constant="45" id="SrZ-Pv-Lrp"/>
                                                                     </constraints>
                                                                     <state key="normal" image="edit"/>
                                                                     <connections>
@@ -210,11 +210,11 @@
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottomMargin" secondItem="uky-tr-vgH" secondAttribute="bottom" id="Kkt-YI-qXL"/>
+                                                                <constraint firstItem="uky-tr-vgH" firstAttribute="top" secondItem="3N2-iy-bhz" secondAttribute="top" id="Kh1-Xw-RBi"/>
+                                                                <constraint firstAttribute="bottom" secondItem="uky-tr-vgH" secondAttribute="bottom" id="OCe-X6-94c"/>
                                                                 <constraint firstItem="1iX-0k-dJR" firstAttribute="leading" secondItem="3N2-iy-bhz" secondAttribute="leadingMargin" constant="10" id="cRc-GA-HWW"/>
-                                                                <constraint firstItem="uky-tr-vgH" firstAttribute="top" secondItem="3N2-iy-bhz" secondAttribute="topMargin" id="hgQ-AD-5oU"/>
-                                                                <constraint firstItem="uky-tr-vgH" firstAttribute="leading" secondItem="1iX-0k-dJR" secondAttribute="trailing" constant="10" id="nvu-cU-cmT"/>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="uky-tr-vgH" secondAttribute="trailing" constant="10" id="ri4-hR-y3I"/>
+                                                                <constraint firstAttribute="trailing" secondItem="uky-tr-vgH" secondAttribute="trailing" id="lUC-zt-ROy"/>
+                                                                <constraint firstItem="uky-tr-vgH" firstAttribute="leading" secondItem="1iX-0k-dJR" secondAttribute="trailing" constant="5" id="nvu-cU-cmT"/>
                                                                 <constraint firstItem="1iX-0k-dJR" firstAttribute="centerY" secondItem="3N2-iy-bhz" secondAttribute="centerY" id="teX-d2-KGa"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
@@ -259,6 +259,7 @@
                     <tabBarItem key="tabBarItem" title="Account Settings" image="setting" selectedImage="setting" id="II0-G4-lGd"/>
                     <connections>
                         <outlet property="profileImage" destination="jk3-HZ-KWp" id="v8h-ns-rFh"/>
+                        <outlet property="topActionBar" destination="9eU-Ih-GGO" id="mvS-ai-ch1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4F-73-ecf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -604,6 +605,7 @@
                         <outlet property="profileImage" destination="6oQ-6q-6H7" id="vRL-8i-6mm"/>
                         <outlet property="skillCollections" destination="iyB-Yb-5Fb" id="S9W-gE-NjO"/>
                         <outlet property="subSkillTableView" destination="fjB-Bf-eBS" id="kr4-4U-xVZ"/>
+                        <outlet property="topActionBar" destination="wlA-xn-cTJ" id="SHa-YI-ci5"/>
                         <outlet property="userBatchRankLabel" destination="NMn-mW-Nff" id="9PW-VN-B0E"/>
                         <outlet property="userNameLabel" destination="Z0N-T4-fZc" id="nyg-1v-z2N"/>
                         <outlet property="userXPLabel" destination="flv-K0-cGW" id="3Jh-sj-YFI"/>
@@ -1022,6 +1024,7 @@
                         <outlet property="thirdTopperName" destination="sKq-Te-ets" id="Iaa-Dc-BaK"/>
                         <outlet property="thirdTopperRank" destination="sw0-bo-Nit" id="OGi-MU-Hdw"/>
                         <outlet property="thirdTopperXP" destination="tzp-Wv-3Cg" id="lWW-4n-7Nh"/>
+                        <outlet property="topActionBar" destination="8qj-0x-cQu" id="DG1-t8-i7X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNH-bo-Cc8" userLabel="First Responder" sceneMemberID="firstResponder"/>

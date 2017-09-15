@@ -16,6 +16,7 @@ class CalenderVC: UIViewController {
     @IBOutlet var coinsBtn: UIButton!
     @IBOutlet var experiencePointsLabel: UILabel!
     
+    @IBOutlet var topActionBar: UIView!
     @IBOutlet var tableView: UITableView!
     
     @IBAction func onCoinsPressed(_ sender: UIButton) {
@@ -33,6 +34,7 @@ class CalenderVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topActionBar.backgroundColor = UIColor.Custom.themeColor
         
         var profileImgUrl: String = ""
         var xp: Int = 0

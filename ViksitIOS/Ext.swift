@@ -47,3 +47,20 @@ extension UITextView {
         self.attributedText = attrStr
     }
 }
+
+extension UIColor {
+    
+    struct Custom {
+        static let themeColor = UIColor(red:0.92, green:0.22, blue:0.31, alpha:1.0)
+    }
+    
+}
+
+extension UIFont {
+        struct Custom {
+        //static let themeColor = UIColor(red:0.92, green:0.22, blue:0.31, alpha:1.0)
+            static let headerSize = UIFont.boldSystemFont(ofSize: 14)
+    }
+    
+}
+

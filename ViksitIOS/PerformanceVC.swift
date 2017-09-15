@@ -18,6 +18,7 @@ class PerformanceVC: UIViewController {
     var isExpanded: Bool = false
     
     
+    @IBOutlet var topActionBar: UIView!
     @IBOutlet var subSkillTableView: UITableView!
     @IBOutlet var skillCollections: UICollectionView!
     
@@ -59,6 +60,7 @@ class PerformanceVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topActionBar.backgroundColor = UIColor.Custom.themeColor
 
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             studentProfile = ComplexObject(JSONString: complexCache).studentProfile!

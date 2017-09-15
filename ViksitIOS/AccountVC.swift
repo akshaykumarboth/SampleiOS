@@ -20,6 +20,7 @@ class AccountVC: UIViewController {
     
     var objectsArray = [Objects]()
     @IBOutlet var profileImage: CircularImage!
+    @IBOutlet var topActionBar: UIView!
     
     @IBAction func uploadPhotoPressed(_ sender: CircularButton) {
         let actionSheet = UIAlertController(title: "Change Photo", message: nil, preferredStyle: .actionSheet)
@@ -55,6 +56,8 @@ class AccountVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        topActionBar.backgroundColor = UIColor.Custom.themeColor
 
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             studentProfile = ComplexObject(JSONString: complexCache).studentProfile!

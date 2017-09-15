@@ -22,5 +22,9 @@ class PresentationCell: UICollectionViewCell {
     
     @IBOutlet var videoImg: UIImageView!
     
+    override func awakeFromNib() {
+        
+    }
+    
         
 }

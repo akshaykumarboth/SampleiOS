@@ -17,6 +17,7 @@ class LeaderboardVC: UIViewController {
         
     }
     
+    @IBOutlet var topActionBar: UIView!
     @IBOutlet var secondTopperImage: UIImageView!
     @IBOutlet var secondTopperRank: CircularButton!
     @IBOutlet var secondTopperName: UILabel!
@@ -56,6 +57,7 @@ class LeaderboardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         topActionBar.backgroundColor = UIColor.Custom.themeColor
         
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             leaderboards = ComplexObject(JSONString: complexCache).leaderboards!
@@ -103,7 +105,6 @@ class LeaderboardVC: UIViewController {
         if let secondTopperPoints = topperList?[0].points {
             secondTopperXP.text = "\(secondTopperPoints)" + " XP"
         }
-        
         
         //third topper
         loadImageAsync(url: (topperList?[2].imageURL)!, imgView: thirdTopperImage)
@@ -177,7 +178,8 @@ extension LeaderboardVC: UIPickerViewDelegate, UIPickerViewDataSource {
         let topConstraint = pickView.topAnchor.constraint(equalTo: rolesBtn.bottomAnchor)
         let rightConstraint = pickView.rightAnchor.constraint(equalTo: view.rightAnchor)
         let widthConstraint = pickView.widthAnchor.constraint(equalToConstant: view.frame.width/2)
-        let heightConstraint = pickView.heightAnchor.constraint(equalToConstant: CGFloat(20 * pickerList.count))
+        print(pickerList.count)
+        let heightConstraint = pickView.heightAnchor.constraint(equalToConstant: CGFloat(25 * pickerList.count))
         
         NSLayoutConstraint.activate([topConstraint, rightConstraint, widthConstraint, heightConstraint])
         view.layoutIfNeeded()
@@ -228,7 +230,6 @@ extension LeaderboardVC: UIPickerViewDelegate, UIPickerViewDataSource {
         setToppers()
         print("data reloaded")
     }
-
     
 }
 

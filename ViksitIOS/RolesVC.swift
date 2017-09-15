@@ -15,7 +15,7 @@ class RolesVC: UIViewController {
     @IBOutlet var profileBtn: UIButton!
     @IBOutlet var coinsBtn: UIButton!
     @IBOutlet var experiencePoints: UILabel!
-    
+    @IBOutlet var topActionBar: UIView!
     
     @IBAction func onCoinsPressed(_ sender: Any) {
         goto(storyBoardName: "Profile", storyBoardID: "LeaderboardVC")
@@ -39,6 +39,7 @@ class RolesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topActionBar.backgroundColor = UIColor.Custom.themeColor
         
         var profileImgUrl: String = ""
         var xp: Int = 0

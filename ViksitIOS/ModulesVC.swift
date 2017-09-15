@@ -14,6 +14,8 @@ class ModulesVC: UIViewController {
     var modules: Array<Modules> = []
     
     
+    @IBOutlet var statusView: UIView!
+    @IBOutlet var topActionBar: UIView!
     @IBOutlet var progressLabel: UILabel!
     @IBOutlet var userPointsLabel: UILabel!
     @IBOutlet var totalPointsLabel: UILabel!
@@ -41,6 +43,8 @@ class ModulesVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        topActionBar.backgroundColor = UIColor.Custom.themeColor
+        statusView.backgroundColor = UIColor.Custom.themeColor
         modules = (course?.modules)!
         // Do any additional setup after loading the view.
         

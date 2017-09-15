@@ -14,6 +14,7 @@ class LessonVC: UIViewController {
     var lessons: Array<Lessons> = []
     var toolbarTitleText: String = ""
     
+    @IBOutlet var topActionBar: UIView!
     
     @IBAction func onBackPressed(_ sender: UIButton) {
         
@@ -29,6 +30,7 @@ class LessonVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        topActionBar.backgroundColor = UIColor.Custom.themeColor
 
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * 0.8)
@@ -48,13 +50,9 @@ class LessonVC: UIViewController {
 
     }
 
-    
-
 }
 
-
 extension LessonVC: UICollectionViewDataSource {
-    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -68,10 +66,12 @@ extension LessonVC: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LessonCVCell", for: indexPath) as! LessonCVCell
         cell.progress.progress = Float(lessons[indexPath.row].progress!)
+        //cell.progress.progressTintColor = UICOlor.Custom.themeColor
         cell.lessonTitle.text = lessons[indexPath.row].lesson?.title
         cell.lessonDescription.text = lessons[indexPath.row].lesson?.description
         cell.completionImg.isHidden = true
         cell.beginSkillBtn.tag = indexPath.row
+        cell.beginSkillBtn.backgroundColor = UIColor.Custom.themeColor
         cell.beginSkillBtn.addTarget(self, action: #selector(beginLessonTapped), for: UIControlEvents.touchUpInside)
         
         return cell
@@ -90,8 +90,8 @@ extension LessonVC: UICollectionViewDataSource {
         }
     }
     
-    
 }
+
 extension LessonVC: UICollectionViewDelegate, UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {

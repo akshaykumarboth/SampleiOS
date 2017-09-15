@@ -147,6 +147,8 @@
 		BAE124CB1F6965B300F8576D /* TodaysTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CA1F6965B300F8576D /* TodaysTaskCell.swift */; };
 		BAE124CD1F6966CB00F8576D /* TodaysTaskItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CC1F6966CB00F8576D /* TodaysTaskItemCell.swift */; };
 		BAE124CF1F696EDD00F8576D /* SubmitCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */; };
+		BAE124D11F6AA0E400F8576D /* TopActionBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE124D01F6AA0E400F8576D /* TopActionBarView.xib */; };
+		BAE124D31F6AA13F00F8576D /* TopActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */; };
 		FE7732A221A80E2DDF41C7B7 /* Pods_ViksitIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -319,6 +321,8 @@
 		BAE124CA1F6965B300F8576D /* TodaysTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysTaskCell.swift; sourceTree = "<group>"; };
 		BAE124CC1F6966CB00F8576D /* TodaysTaskItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysTaskItemCell.swift; sourceTree = "<group>"; };
 		BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCVCell.swift; sourceTree = "<group>"; };
+		BAE124D01F6AA0E400F8576D /* TopActionBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopActionBarView.xib; sourceTree = "<group>"; };
+		BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopActionBarView.swift; sourceTree = "<group>"; };
 		D204BF41765CCA9C29915A81 /* Pods-ViksitIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViksitIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViksitIOSUITests/Pods-ViksitIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViksitIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -627,6 +631,8 @@
 				BA63719A1F28E07900D77EA9 /* tasks */,
 				BA6371991F28E04300D77EA9 /* roles */,
 				BA63718C1F2882A500D77EA9 /* calender */,
+				BAE124D01F6AA0E400F8576D /* TopActionBarView.xib */,
+				BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */,
 			);
 			name = tabs;
 			sourceTree = "<group>";
@@ -869,6 +875,7 @@
 				BA43EE511F584A33000D2DB0 /* assessment.storyboard in Resources */,
 				BA43EDDE1F4B1420000D2DB0 /* Lesson.storyboard in Resources */,
 				BA2DD6821F6921C4008C5BF8 /* TreeItemView.xib in Resources */,
+				BAE124D11F6AA0E400F8576D /* TopActionBarView.xib in Resources */,
 				BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */,
 				B9F6B0691F25E69C00B695C0 /* Assets.xcassets in Resources */,
 				B9F6B0671F25E69C00B695C0 /* Main.storyboard in Resources */,
@@ -1078,6 +1085,7 @@
 				BA43EE361F51D0E1000D2DB0 /* DynamicTextWebView.swift in Sources */,
 				B9F6B0621F25E69C00B695C0 /* DataViewController.swift in Sources */,
 				BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */,
+				BAE124D31F6AA13F00F8576D /* TopActionBarView.swift in Sources */,
 				BA43EDE21F4B16B4000D2DB0 /* LessonsPageVC.swift in Sources */,
 				BA43EE181F4C3A1E000D2DB0 /* CMSMedia.swift in Sources */,
 				BA43EE2B1F516F62000D2DB0 /* swift+gif.swift in Sources */,

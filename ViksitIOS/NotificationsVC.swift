@@ -6,6 +6,7 @@ class NotificationsVC: UIViewController {
     var notifications: Array<Notifications> = []
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet var topActionBar: UIView!
     @IBAction func onBackPressed(_ sender: UIButton) {
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
@@ -18,6 +19,7 @@ class NotificationsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topActionBar.backgroundColor = UIColor.Custom.themeColor
         
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             let complexObject = ComplexObject(JSONString: complexCache)

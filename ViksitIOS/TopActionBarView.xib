@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopActionBarView" customModule="ViksitIOS" customModuleProvider="target">
+            <connections>
+                <outlet property="coinsBtn" destination="Tz7-bv-ICl" id="f4f-0L-dPW"/>
+                <outlet property="notificationBtn" destination="ZjK-Jy-WuF" id="tHu-Xj-wHd"/>
+                <outlet property="profileImgBtn" destination="cHJ-Ss-DPy" id="cfB-Jt-ZWc"/>
+                <outlet property="view" destination="SPB-yz-XNG" id="C2h-27-v7i"/>
+                <outlet property="xpLabel" destination="bFu-DA-5mc" id="hgg-Qa-cHt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPB-yz-XNG">
+            <rect key="frame" x="0.0" y="0.0" width="513" height="73"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjK-Jy-WuF">
+                    <rect key="frame" x="440" y="0.0" width="73" height="73"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ZjK-Jy-WuF" secondAttribute="height" multiplier="1:1" id="ruY-Oe-hTR"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="notification"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHJ-Ss-DPy">
+                    <rect key="frame" x="10" y="5" width="63" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="cHJ-Ss-DPy" secondAttribute="height" multiplier="1:1" id="OEC-Nx-XTT"/>
+                    </constraints>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tz7-bv-ICl">
+                    <rect key="frame" x="385" y="0.0" width="37" height="73"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title=" 0" image="coins"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFu-DA-5mc">
+                    <rect key="frame" x="82" y="26" width="11" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dM-ON-DSR">
+                    <rect key="frame" x="95" y="30" width="17.5" height="16"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                    <color key="textColor" red="0.96470588239999999" green="0.68627450980000004" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Tz7-bv-ICl" secondAttribute="bottom" id="9oq-7y-2a3"/>
+                <constraint firstItem="ZjK-Jy-WuF" firstAttribute="leading" secondItem="Tz7-bv-ICl" secondAttribute="trailing" constant="18" id="Bg5-0p-OVd"/>
+                <constraint firstItem="ZjK-Jy-WuF" firstAttribute="top" secondItem="SPB-yz-XNG" secondAttribute="top" id="DjQ-uO-Pa4"/>
+                <constraint firstItem="bFu-DA-5mc" firstAttribute="centerY" secondItem="SPB-yz-XNG" secondAttribute="centerY" id="Ipf-Wn-Vej"/>
+                <constraint firstItem="Tz7-bv-ICl" firstAttribute="top" secondItem="SPB-yz-XNG" secondAttribute="top" id="QF0-Ns-dPG"/>
+                <constraint firstAttribute="bottom" secondItem="ZjK-Jy-WuF" secondAttribute="bottom" id="SbN-a4-A7Y"/>
+                <constraint firstAttribute="bottom" secondItem="cHJ-Ss-DPy" secondAttribute="bottom" constant="5" id="X2A-Jp-2df"/>
+                <constraint firstItem="bFu-DA-5mc" firstAttribute="baseline" secondItem="3dM-ON-DSR" secondAttribute="baseline" id="dPd-PE-BPy"/>
+                <constraint firstItem="cHJ-Ss-DPy" firstAttribute="top" secondItem="SPB-yz-XNG" secondAttribute="top" constant="5" id="ekA-7g-6Ul"/>
+                <constraint firstItem="cHJ-Ss-DPy" firstAttribute="leading" secondItem="SPB-yz-XNG" secondAttribute="leading" constant="10" id="gmD-cz-lcb"/>
+                <constraint firstAttribute="trailing" secondItem="ZjK-Jy-WuF" secondAttribute="trailing" id="jB4-TN-dgV"/>
+                <constraint firstItem="bFu-DA-5mc" firstAttribute="leading" secondItem="cHJ-Ss-DPy" secondAttribute="trailing" constant="9" id="wJg-jt-87W"/>
+                <constraint firstItem="3dM-ON-DSR" firstAttribute="leading" secondItem="bFu-DA-5mc" secondAttribute="trailing" constant="2" id="z0l-w6-bhT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="114.5" y="-80.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="coins" width="24" height="24"/>
+        <image name="notification" width="24" height="24"/>
+    </resources>
+</document>

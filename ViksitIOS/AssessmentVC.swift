@@ -37,7 +37,6 @@ class AssessmentVC: UIViewController {
     
     @IBOutlet var submitViewYConstraint: NSLayoutConstraint!
     
-    
     @IBOutlet var hiddenCoverView: UIView!
     @IBAction func closePressed(_ sender: UIButton) {
         //createAlert()
@@ -313,12 +312,17 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         }
     }
     
+    @IBAction func startBtnTapped(_ sender: UIButton) -> Void {
+    
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.row == questions.count {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubmitCVCell", for: indexPath) as! SubmitCVCell
             
             timer1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timer1Running), userInfo: cell.timerLabel, repeats: true)
+            cell.submitAssessment.addTarget(self, action: #selector(submitAssessment), for: UIControlEvents.touchUpInside)
             //cell.unansweredLabel
             
             return cell
