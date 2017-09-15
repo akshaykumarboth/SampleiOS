@@ -34,7 +34,7 @@ class LessonVC: UIViewController {
 
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * 0.8)
-        let cellHeight = floor(screenSize.height * 0.45)
+        let cellHeight = floor(screenSize.height * 0.35)
         
         let insetX = (view.bounds.width - cellWidth)/2.0
         let insetY = (view.bounds.height - cellHeight)/2.0
@@ -66,7 +66,8 @@ extension LessonVC: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LessonCVCell", for: indexPath) as! LessonCVCell
         cell.progress.progress = Float(lessons[indexPath.row].progress!)
-        //cell.progress.progressTintColor = UICOlor.Custom.themeColor
+        cell.progress.progressTintColor = UIColor.Custom.themeColor
+        //progressTintColor = UIColor.yellowColor()
         cell.lessonTitle.text = lessons[indexPath.row].lesson?.title
         cell.lessonDescription.text = lessons[indexPath.row].lesson?.description
         cell.completionImg.isHidden = true

@@ -130,6 +130,7 @@ extension RolesVC: UITableViewDataSource, UITableViewDelegate {
         cell.roleMessage.text = roles[indexPath.row].message
         cell.roleName.text = roles[indexPath.row].name
         cell.roleProgress.progress = Float(roles[indexPath.row].progress!/100)
+        cell.roleProgress.trackTintColor = UIColor(red:0.96, green:0.96, blue:0.98, alpha:1.0)
         
         return cell
     }

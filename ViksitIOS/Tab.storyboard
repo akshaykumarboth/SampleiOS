@@ -617,11 +617,17 @@
                                             <outlet property="delegate" destination="xdp-zX-lcl" id="p2C-Mc-wgm"/>
                                         </connections>
                                     </collectionView>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="TjC-ne-NRo">
+                                        <rect key="frame" x="30" y="412" width="260" height="37"/>
+                                    </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="TjC-ne-NRo" secondAttribute="trailing" constant="30" id="5EW-4Z-fwX"/>
+                                    <constraint firstItem="TjC-ne-NRo" firstAttribute="leading" secondItem="oUW-xf-dqi" secondAttribute="leading" constant="30" id="9te-D5-V1p"/>
                                     <constraint firstItem="HbU-7j-znt" firstAttribute="leading" secondItem="oUW-xf-dqi" secondAttribute="leading" id="HR5-wM-fpr"/>
                                     <constraint firstItem="HbU-7j-znt" firstAttribute="top" secondItem="oUW-xf-dqi" secondAttribute="top" id="JyF-t9-Ive"/>
+                                    <constraint firstAttribute="bottom" secondItem="TjC-ne-NRo" secondAttribute="bottom" id="MHW-Tr-JGi"/>
                                     <constraint firstAttribute="bottom" secondItem="HbU-7j-znt" secondAttribute="bottom" id="YxJ-eb-PP3"/>
                                     <constraint firstAttribute="trailing" secondItem="HbU-7j-znt" secondAttribute="trailing" id="y5J-5V-85j"/>
                                 </constraints>
@@ -635,6 +641,7 @@
                             <constraint firstAttribute="trailing" secondItem="rJn-rU-Hk5" secondAttribute="trailing" id="kLA-xr-5O1"/>
                             <constraint firstItem="oUW-xf-dqi" firstAttribute="top" secondItem="rJn-rU-Hk5" secondAttribute="bottom" id="pHD-dM-EXk"/>
                             <constraint firstItem="oUW-xf-dqi" firstAttribute="leading" secondItem="tei-T2-wrP" secondAttribute="leading" id="qEf-hH-Mp7"/>
+                            <constraint firstItem="WLg-oQ-edl" firstAttribute="top" secondItem="oUW-xf-dqi" secondAttribute="bottom" id="tgA-oE-3tK"/>
                             <constraint firstItem="rJn-rU-Hk5" firstAttribute="top" secondItem="YfS-fI-jXD" secondAttribute="bottom" id="vV3-Qs-Q2H"/>
                         </constraints>
                     </view>
@@ -643,6 +650,7 @@
                         <outlet property="cards" destination="HbU-7j-znt" id="e35-Pt-GhQ"/>
                         <outlet property="coinsBtn" destination="vFO-th-Tbs" id="XZV-Ot-nnW"/>
                         <outlet property="experiencePoints" destination="3OG-b4-nn3" id="kuE-Fz-x7T"/>
+                        <outlet property="pageControl" destination="TjC-ne-NRo" id="9Oq-1c-SLU"/>
                         <outlet property="profileBtn" destination="XnR-4f-4d2" id="0Pa-X6-eAR"/>
                         <outlet property="topActionBar" destination="rJn-rU-Hk5" id="hFS-OC-IO5"/>
                         <outlet property="topActionBarHeight" destination="qyN-JU-cCD" id="Qa5-P4-Nbr"/>
@@ -1001,7 +1009,7 @@
                                         <state key="normal" image="calendar"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3q6-Oq-SQH"/>
                                     <constraint firstItem="eoM-uJ-5E2" firstAttribute="top" secondItem="AgK-aF-B4f" secondAttribute="top" constant="10" id="FCY-l4-3Kb"/>

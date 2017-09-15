@@ -8,11 +8,13 @@ class TasksVC: UIViewController{
     var tasks: Array<Tasks> = []
     var visibleCellIndex: IndexPath!
     var userID: Int = -1
+    var currentPage = 0
 
     let cellWidthScaling: CGFloat = 0.85
     let cellHeightScaling: CGFloat = 0.76
     @IBOutlet var cards: UICollectionView!
     
+    @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var topActionBarHeight: NSLayoutConstraint!
     
     @IBOutlet var topActionBar: UIView!
@@ -43,7 +45,7 @@ class TasksVC: UIViewController{
         
         let layout = cards.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        cards.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
+        cards.contentInset = UIEdgeInsets(top: (1 * insetY), left: insetX, bottom: ( insetY + 10), right: insetX)
         
         self.cards.delegate = self
         self.cards.dataSource = self
@@ -52,6 +54,8 @@ class TasksVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         topActionBar.backgroundColor = UIColor.Custom.themeColor
+        pageControl.currentPageIndicatorTintColor = UIColor.Custom.themeColor
+        pageControl.pageIndicatorTintColor = UIColor.black
         //topActionBarHeight.constant = CGFloat.Custom.topActionBarHeight
                 
         setCollectionCellSize()
@@ -176,6 +180,7 @@ extension TasksVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        self.pageControl.numberOfPages = tasks.count
         
         
         if tasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
@@ -310,6 +315,13 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
         
         
         
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
+        let pageWidth = scrollView.frame.width
+        self.currentPage = Int((scrollView.contentOffset.x + pageWidth / 2) / pageWidth)
+        self.pageControl.currentPage = self.currentPage
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
