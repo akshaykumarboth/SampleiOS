@@ -3,6 +3,8 @@ import UIKit
 
 class TasksVC: UIViewController{
     
+    var isfirstTimeTransform:Bool = true
+    
     var tasks: Array<Tasks> = []
     var visibleCellIndex: IndexPath!
     var userID: Int = -1
@@ -68,7 +70,8 @@ class TasksVC: UIViewController{
         //inserting image from url async
         let url = URL(string: profileImgUrl)
         DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            let data = try? Data(contentsOf: url!)
+            
             DispatchQueue.main.async {
                 if data != nil {
                     self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
@@ -77,24 +80,15 @@ class TasksVC: UIViewController{
                 }
             }
         }
-        //profileBtn = makeButtonRound(button: profileBtn, borderWidth: 2, color: UIColor.white)
         profileBtn.makeButtonRound(borderWidth: 2.5, borderColor: UIColor.white)
         
         //set userpoints in toolbar
         coinsBtn.setTitle(" " + String(coins), for: .normal)
         experiencePoints.text = String(xp)
+    
+        
         
     }
-    
-    /*
-    func makeButtonRound(button: UIButton, borderWidth: CGFloat, color: UIColor)-> UIButton{
-        button.layer.cornerRadius = button.frame.width/2
-        button.layer.masksToBounds = true
-        button.layer.borderWidth = borderWidth
-        button.layer.borderColor = color.cgColor
-        
-        return button
-    }*/
 
     func goto(storyBoardName: String, storyBoardID: String) {
         let storyBoard : UIStoryboard = UIStoryboard(name: storyBoardName, bundle:nil)
@@ -183,8 +177,11 @@ extension TasksVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        
         if tasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+            
+            
             
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             
@@ -202,6 +199,8 @@ extension TasksVC: UICollectionViewDataSource {
             return cell
         } else if (tasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" || tasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
+            
+            
             
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
@@ -230,6 +229,8 @@ extension TasksVC: UICollectionViewDataSource {
             return cell
         } else if (tasks[indexPath.row].itemType == "ASSESSMENT" || tasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
+            
+            
             
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
@@ -265,6 +266,8 @@ extension TasksVC: UICollectionViewDataSource {
         }else if tasks[indexPath.row].itemType == "LESSON_VIDEO"{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
             
+                        //
+            
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
             cell.descriptionLabel.text = tasks[indexPath.row].description
@@ -278,6 +281,7 @@ extension TasksVC: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+            
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
             cell.watchBtn.tag = indexPath.row
@@ -303,6 +307,8 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
         let roundedIndex = round(index)
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
+        
+        
         
     }
     

@@ -1021,17 +1021,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W9c-wl-YLY">
-                                                    <rect key="frame" x="8" y="31" width="50" height="37.5"/>
+                                                    <rect key="frame" x="8" y="34" width="50" height="32.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgH-6x-6OK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="23"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCg-jc-wgV">
-                                                            <rect key="frame" x="0.0" y="23" width="50" height="14.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="0.0" y="20.5" width="50" height="12"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1051,7 +1051,6 @@
                                                             <rect key="frame" x="0.0" y="44.5" width="12" height="12"/>
                                                             <color key="backgroundColor" red="0.14117647058823529" green="0.71372549019607845" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="12" id="DnP-Oi-cfN"/>
                                                                 <constraint firstAttribute="width" secondItem="RC7-fG-wlW" secondAttribute="height" multiplier="1:1" id="ZEZ-51-nBb"/>
                                                                 <constraint firstAttribute="height" constant="12" id="idd-ZA-IyF"/>
                                                             </constraints>
@@ -1062,9 +1061,10 @@
                                                         <constraint firstItem="RC7-fG-wlW" firstAttribute="centerY" secondItem="hdw-5z-Hkj" secondAttribute="centerY" id="2i0-Ry-FGo"/>
                                                         <constraint firstAttribute="trailing" secondItem="RC7-fG-wlW" secondAttribute="trailing" id="3ye-UR-NDd"/>
                                                         <constraint firstItem="RC7-fG-wlW" firstAttribute="centerX" secondItem="hdw-5z-Hkj" secondAttribute="centerX" id="OAZ-ue-Ew3"/>
+                                                        <constraint firstAttribute="width" constant="12" id="VbO-m7-TKg"/>
                                                         <constraint firstItem="UDo-qg-rTA" firstAttribute="centerX" secondItem="hdw-5z-Hkj" secondAttribute="centerX" id="bRo-HH-evO"/>
                                                         <constraint firstItem="UDo-qg-rTA" firstAttribute="top" secondItem="hdw-5z-Hkj" secondAttribute="top" id="sqe-jr-LyO"/>
-                                                        <constraint firstAttribute="bottom" secondItem="UDo-qg-rTA" secondAttribute="bottom" id="zU4-ub-xuG"/>
+                                                        <constraint firstAttribute="bottom" secondItem="UDo-qg-rTA" secondAttribute="bottom" id="vjn-Zf-cUg"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2W-sn-wRX">
@@ -1073,9 +1073,9 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hnF-fe-Bnu">
                                                             <rect key="frame" x="8" y="10" width="213" height="67.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Huu-ef-8wf">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Huu-ef-8wf">
                                                                     <rect key="frame" x="0.0" y="0.0" width="213" height="50.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>

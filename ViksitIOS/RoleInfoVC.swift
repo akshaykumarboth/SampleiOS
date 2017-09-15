@@ -52,7 +52,7 @@ class RoleInfoVC: UIViewController {
 extension RoleInfoVC: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.separatorStyle = .none
+        //tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubSkillTableCell", for: indexPath) as! SubSkillTableCell
@@ -87,7 +87,7 @@ extension RoleInfoVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let openViewHeight: Int = 58
+        let openViewHeight: Int = 55
         
         if (indexPath.row == selectedRowIndex.row && isExpanded == false){
             isExpanded = true
