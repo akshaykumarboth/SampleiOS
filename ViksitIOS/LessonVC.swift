@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import AnimatedCollectionViewLayout
 
 class LessonVC: UIViewController {
     
     var course: Courses?
     var lessons: Array<Lessons> = []
     var toolbarTitleText: String = ""
+    let cellWidthScaling: CGFloat = 0.8
+    let cellHeightScaling: CGFloat = 0.35
     
     @IBOutlet var topActionBar: UIView!
     
@@ -27,24 +30,33 @@ class LessonVC: UIViewController {
     
     @IBOutlet var lessonCollectionView: UICollectionView!
     @IBOutlet var toolbarTitle: UILabel!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        topActionBar.backgroundColor = UIColor.Custom.themeColor
-
+    
+    func setCollectionCellSize(){
         let screenSize = UIScreen.main.bounds.size
-        let cellWidth = floor(screenSize.width * 0.8)
-        let cellHeight = floor(screenSize.height * 0.35)
+        let cellWidth = floor(screenSize.width * cellWidthScaling)
+        let cellHeight = floor(screenSize.height * cellHeightScaling)
         
         let insetX = (view.bounds.width - cellWidth)/2.0
         let insetY = (view.bounds.height - cellHeight)/2.0
         
-        let layout = lessonCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let layout = AnimatedCollectionViewLayout()
+        layout.animator = LinearCardAttributesAnimator( minAlpha: 0, itemSpacing: 0, scaleRate: 1.0)
+        
+        layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        lessonCollectionView.collectionViewLayout = layout
         lessonCollectionView.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
         
         self.lessonCollectionView.delegate = self
         self.lessonCollectionView.dataSource = self
+        
+    }
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        topActionBar.backgroundColor = UIColor.Custom.themeColor
+        setCollectionCellSize()
         
         toolbarTitle.text = toolbarTitleText
 

@@ -4,12 +4,11 @@ import AnimatedCollectionViewLayout
 
 class TasksVC: UIViewController{
     
-    var isfirstTimeTransform:Bool = true
-    
     var tasks: Array<Tasks> = []
     var visibleCellIndex: IndexPath!
     var userID: Int = -1
     var currentPage = 0
+    let dotsCount = 5
 
     let cellWidthScaling: CGFloat = 0.85
     let cellHeightScaling: CGFloat = 0.76
@@ -48,26 +47,22 @@ class TasksVC: UIViewController{
         layout.animator = LinearCardAttributesAnimator( minAlpha: 0.5, itemSpacing: 0.1, scaleRate: 1.0)
         
         layout.scrollDirection = .horizontal
-        cards.collectionViewLayout = layout
-        
-        //let layout = cards.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        cards.collectionViewLayout = layout
         cards.contentInset = UIEdgeInsets(top: (1 * insetY), left: insetX, bottom: ( insetY + 10), right: insetX)
         
         self.cards.delegate = self
         self.cards.dataSource = self
-        //
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topActionBar.backgroundColor = UIColor.Custom.themeColor
-        pageControl.currentPageIndicatorTintColor = UIColor.Custom.themeColor
-        pageControl.pageIndicatorTintColor = UIColor.black
+        pageControl.currentPageIndicatorTintColor = UIColor(red:0.14, green:0.71, blue:0.98, alpha:1.0)
+        pageControl.pageIndicatorTintColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1.0)
+        pageControl.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         //topActionBarHeight.constant = CGFloat.Custom.topActionBarHeight
-        
-        
         
         setCollectionCellSize()
         
@@ -192,19 +187,11 @@ extension TasksVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        self.pageControl.numberOfPages = tasks.count
+        self.pageControl.numberOfPages = dotsCount
         
         
         if tasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
-            
-            /*
-            if (indexPath.row == 0 && isfirstTimeTransform) {
-                isfirstTimeTransform = false
-            }else{
-                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-            }
-            */
             
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             
@@ -222,15 +209,6 @@ extension TasksVC: UICollectionViewDataSource {
             return cell
         } else if (tasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" || tasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
-            
-            
-            /*
-            if (indexPath.row == 0 && isfirstTimeTransform) {
-                isfirstTimeTransform = false
-            }else{
-                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-            }
-            */
             
             
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
@@ -260,17 +238,7 @@ extension TasksVC: UICollectionViewDataSource {
             return cell
         } else if (tasks[indexPath.row].itemType == "ASSESSMENT" || tasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
-            
-            
-            /*
-            if (indexPath.row == 0 && isfirstTimeTransform) {
-                isfirstTimeTransform = false
-            }else{
-                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-            }
-            */
-            
-            
+           
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
             cell.descriptionLabel.text = tasks[indexPath.row].description
@@ -305,16 +273,6 @@ extension TasksVC: UICollectionViewDataSource {
         }else if tasks[indexPath.row].itemType == "LESSON_VIDEO"{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
             
-            
-            /*
-            if (indexPath.row == 0 && isfirstTimeTransform) {
-                isfirstTimeTransform = false
-            }else{
-                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-            }
-            */
-            
-            
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
             cell.descriptionLabel.text = tasks[indexPath.row].description
@@ -328,15 +286,6 @@ extension TasksVC: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
-            
-            
-            /*
-            if (indexPath.row == 0 && isfirstTimeTransform) {
-                isfirstTimeTransform = false
-            }else{
-                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-            }
-            */
             
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
@@ -364,10 +313,6 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
         let roundedIndex = round(index)
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
-     
-     //
-     
-     //
      
      
     }
@@ -439,7 +384,7 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
     {
         let pageWidth = scrollView.frame.width
         self.currentPage = Int((scrollView.contentOffset.x + pageWidth / 2) / pageWidth)
-        self.pageControl.currentPage = self.currentPage
+        self.pageControl.currentPage = self.currentPage % dotsCount
         
     }
     
