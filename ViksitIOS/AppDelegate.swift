@@ -18,16 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //for temporary testing
-        //DataCache.sharedInstance.cache["complexObject"] = Helper.readFromFile(fileName: "DummyData", extnsion: "txt")
+        DataCache.sharedInstance.cache["complexObject"] = Helper.readFromFile(fileName: "DummyData", extnsion: "txt")
         //DataCache.sharedInstance.cache["assessment"] = Helper.readFromFile(fileName: "assessment", extnsion: "txt")
         
-        
+        /*
         //for solid testing
         if DataCache.sharedInstance.cache["complexObject"] == nil {
             var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/user/450/complex", method: "GET", param: [:])
             DataCache.sharedInstance.cache["complexObject"] = response
         }
-
+*/
         //http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972 // for assessment response
         
         return true

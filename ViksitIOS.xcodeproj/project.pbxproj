@@ -35,7 +35,6 @@
 		BA43EDD91F472AAC000D2DB0 /* LessonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDD81F472AAC000D2DB0 /* LessonVC.swift */; };
 		BA43EDDB1F472B54000D2DB0 /* LessonCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDDA1F472B54000D2DB0 /* LessonCVCell.swift */; };
 		BA43EDDE1F4B1420000D2DB0 /* Lesson.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA43EDDD1F4B1420000D2DB0 /* Lesson.storyboard */; };
-		BA43EDE01F4B1497000D2DB0 /* XmlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDDF1F4B1497000D2DB0 /* XmlVC.swift */; };
 		BA43EDE21F4B16B4000D2DB0 /* LessonsPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */; };
 		BA43EDE41F4B17CB000D2DB0 /* NO_CONTENT.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDE31F4B17CB000D2DB0 /* NO_CONTENT.swift */; };
 		BA43EDE61F4B17E8000D2DB0 /* ONLY_2BOX.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDE51F4B17E8000D2DB0 /* ONLY_2BOX.swift */; };
@@ -149,6 +148,7 @@
 		BAE124CF1F696EDD00F8576D /* SubmitCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */; };
 		BAE124D11F6AA0E400F8576D /* TopActionBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE124D01F6AA0E400F8576D /* TopActionBarView.xib */; };
 		BAE124D31F6AA13F00F8576D /* TopActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */; };
+		BAE124D51F6FFD2D00F8576D /* DumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D41F6FFD2D00F8576D /* DumVC.swift */; };
 		FE7732A221A80E2DDF41C7B7 /* Pods_ViksitIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -209,7 +209,6 @@
 		BA43EDD81F472AAC000D2DB0 /* LessonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonVC.swift; sourceTree = "<group>"; };
 		BA43EDDA1F472B54000D2DB0 /* LessonCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonCVCell.swift; sourceTree = "<group>"; };
 		BA43EDDD1F4B1420000D2DB0 /* Lesson.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lesson.storyboard; sourceTree = "<group>"; };
-		BA43EDDF1F4B1497000D2DB0 /* XmlVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlVC.swift; sourceTree = "<group>"; };
 		BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsPageVC.swift; sourceTree = "<group>"; };
 		BA43EDE31F4B17CB000D2DB0 /* NO_CONTENT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NO_CONTENT.swift; sourceTree = "<group>"; };
 		BA43EDE51F4B17E8000D2DB0 /* ONLY_2BOX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_2BOX.swift; sourceTree = "<group>"; };
@@ -323,6 +322,7 @@
 		BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCVCell.swift; sourceTree = "<group>"; };
 		BAE124D01F6AA0E400F8576D /* TopActionBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopActionBarView.xib; sourceTree = "<group>"; };
 		BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopActionBarView.swift; sourceTree = "<group>"; };
+		BAE124D41F6FFD2D00F8576D /* DumVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DumVC.swift; sourceTree = "<group>"; };
 		D204BF41765CCA9C29915A81 /* Pods-ViksitIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViksitIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViksitIOSUITests/Pods-ViksitIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViksitIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -476,7 +476,6 @@
 			isa = PBXGroup;
 			children = (
 				BA43EDDD1F4B1420000D2DB0 /* Lesson.storyboard */,
-				BA43EDDF1F4B1497000D2DB0 /* XmlVC.swift */,
 				BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */,
 				BA43EDE91F4B2694000D2DB0 /* templates */,
 				BA43EE101F4C221A000D2DB0 /* slides */,
@@ -485,6 +484,7 @@
 				BA43EE1F1F4EB149000D2DB0 /* GreenVC.swift */,
 				BA43EE211F4EB189000D2DB0 /* RedVC.swift */,
 				BA43EE231F4EB67E000D2DB0 /* LessonTestVC.swift */,
+				BAE124D41F6FFD2D00F8576D /* DumVC.swift */,
 			);
 			name = lessons;
 			sourceTree = "<group>";
@@ -1080,7 +1080,6 @@
 				BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */,
 				BA65FFCD1F66DE4F00A18974 /* TimeUpVC.swift in Sources */,
 				BA43EDF31F4B273A000D2DB0 /* ONLY_PARAGRAPH_TITLE.swift in Sources */,
-				BA43EDE01F4B1497000D2DB0 /* XmlVC.swift in Sources */,
 				BA63717B1F27284700D77EA9 /* TextFieldWithPadding.swift in Sources */,
 				BA43EE0D1F4B285E000D2DB0 /* ONLY_TITLE_TREE.swift in Sources */,
 				BA43EE201F4EB149000D2DB0 /* GreenVC.swift in Sources */,
@@ -1139,6 +1138,7 @@
 				BA690EB41F26119E00EF980F /* SkillObjectives.swift in Sources */,
 				BAE124CB1F6965B300F8576D /* TodaysTaskCell.swift in Sources */,
 				BA2DD6841F6921E2008C5BF8 /* TreeItemView.swift in Sources */,
+				BAE124D51F6FFD2D00F8576D /* DumVC.swift in Sources */,
 				BA6371831F27A25C00D77EA9 /* BatchCodeVC.swift in Sources */,
 				BA690EA41F26118100EF980F /* DataCache.swift in Sources */,
 				BA43EE731F602909000D2DB0 /* AssessmentVC.swift in Sources */,

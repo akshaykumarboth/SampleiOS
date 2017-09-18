@@ -49,15 +49,26 @@ class TasksVC: UIViewController{
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         cards.collectionViewLayout = layout
-        cards.contentInset = UIEdgeInsets(top: (1 * insetY), left: insetX, bottom: ( insetY + 10), right: insetX)
+        cards.contentInset = UIEdgeInsets(top: (1 * insetY), left: insetX, bottom: ( insetY + 15), right: insetX)
         
         self.cards.delegate = self
         self.cards.dataSource = self
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if tasks.count < dotsCount {
+            self.pageControl.numberOfPages = tasks.count
+        } else {
+            self.pageControl.numberOfPages = dotsCount
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //self.pageControl.numberOfPages = dotsCount
         topActionBar.backgroundColor = UIColor.Custom.themeColor
         pageControl.currentPageIndicatorTintColor = UIColor(red:0.14, green:0.71, blue:0.98, alpha:1.0)
         pageControl.pageIndicatorTintColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1.0)
@@ -187,7 +198,7 @@ extension TasksVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        self.pageControl.numberOfPages = dotsCount
+        
         
         
         if tasks[indexPath.row].itemType == "LESSON_PRESENTATION" {

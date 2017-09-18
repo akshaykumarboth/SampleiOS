@@ -9,8 +9,8 @@
 import UIKit
 import SWXMLHash
 
-class LessonTestVC: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-    
+class DumVC: UIViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+
     @IBOutlet var container: UIView!
     
     var pageViewController: UIPageViewController!
@@ -49,36 +49,36 @@ class LessonTestVC: UIViewController, UIPageViewControllerDelegate, UIPageViewCo
         
         return vCList[nextIndex]
     }
-    
+
     /*
-     func setPages() {
-     if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
-     tasks = ComplexObject(JSONString: complexCache).tasks!
-     }
-     
-     let storyboard = UIStoryboard(name: "Lesson", bundle: nil)
-     for task in tasks {
-     if task.itemType == "LESSON_PRESENTATION" {
-     let vc1 = storyboard.instantiateViewController(withIdentifier: "RedVC")
-     viewControllerList.append(vc1)
-     } else if task.itemType == "LESSON_INTERACTIVE" {
-     let vc1 = storyboard.instantiateViewController(withIdentifier: "GreenVC")
-     viewControllerList.append(vc1)
-     }
-     }
-     
-     //self.dataSource = self
-     //self.delegate = self
-     if let firstVC = viewControllerList.first {
-     pageViewController.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
-     }
-     
-     }*/
+    func setPages() {
+        if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
+            tasks = ComplexObject(JSONString: complexCache).tasks!
+        }
+        
+        let storyboard = UIStoryboard(name: "Lesson", bundle: nil)
+        for task in tasks {
+            if task.itemType == "LESSON_PRESENTATION" {
+                let vc1 = storyboard.instantiateViewController(withIdentifier: "RedVC")
+                viewControllerList.append(vc1)
+            } else if task.itemType == "LESSON_INTERACTIVE" {
+                let vc1 = storyboard.instantiateViewController(withIdentifier: "GreenVC")
+                viewControllerList.append(vc1)
+            }
+        }
+        
+        //self.dataSource = self
+        //self.delegate = self
+        if let firstVC = viewControllerList.first {
+            pageViewController.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+        }
+        
+    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let vc =  storyboard?.instantiateViewController(withIdentifier: "LessonsPageVC") {
+
+        if let vc =  storyboard?.instantiateViewController(withIdentifier: "MyPageViewController") {
             self.addChildViewController(vc)
             self.container.addSubview(vc.view)
             
@@ -237,8 +237,8 @@ class LessonTestVC: UIViewController, UIPageViewControllerDelegate, UIPageViewCo
             pageViewController.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
     }
-    
-    
-    
-    
+
+
+   
+
 }

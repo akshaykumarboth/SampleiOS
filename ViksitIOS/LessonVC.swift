@@ -14,8 +14,8 @@ class LessonVC: UIViewController {
     var course: Courses?
     var lessons: Array<Lessons> = []
     var toolbarTitleText: String = ""
-    let cellWidthScaling: CGFloat = 0.8
-    let cellHeightScaling: CGFloat = 0.35
+    let cellWidthScaling: CGFloat = 0.9
+    let cellHeightScaling: CGFloat = 0.4
     
     @IBOutlet var topActionBar: UIView!
     
@@ -51,7 +51,6 @@ class LessonVC: UIViewController {
         self.lessonCollectionView.dataSource = self
         
     }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()

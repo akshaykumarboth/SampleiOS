@@ -12,18 +12,17 @@ import SWXMLHash
 class LessonsPageVC: UIPageViewController {
     var slideList: [CMSlide] = []
     var vCList : [UIViewController] = []
-    var tasks: [Tasks] = []
     var lessonID: Int!
     var lessonResponse: String = ""
-    
     var pageIsAnimating = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         self.xmlParsing { () -> () in
             self.setPages()
-        }
+        }*/
+       
         
         //
         // Do any additional setup after loading the view.
@@ -36,7 +35,9 @@ class LessonsPageVC: UIPageViewController {
             //lessonResponse = Helper.makeHttpCall (url : "http://cdn.talentify.in:9999/lessonXMLs/163/163/163.xml", method: "GET", param: [:])
             print(lessonID)
             if let lessonid = lessonID {
-                lessonResponse = Helper.makeHttpCall (url : "http://cdn.talentify.in:9999/lessonXMLs/\(lessonid)/\(lessonid)/\(lessonid).xml", method: "GET", param: [:])
+                //lessonResponse = Helper.makeHttpCall (url : "http://cdn.talentify.in:9999/lessonXMLs/\(lessonid)/\(lessonid)/\(lessonid).xml", method: "GET", param: [:])
+                
+                lessonResponse = Helper.makeHttpCall (url : "http://cdn.talentify.in:9999/lessonXMLs/163/163/163.xml", method: "GET", param: [:])
             }
             
             print(lessonResponse)
@@ -64,6 +65,8 @@ class LessonsPageVC: UIPageViewController {
         
         handleComplete() // call it when finished something what you want
     }
+    
+    
     func setPages(){
         // do something
         
@@ -163,8 +166,8 @@ class LessonsPageVC: UIPageViewController {
         }
  
         //print("ii: \(ii)")
-        self.dataSource = self
-        self.delegate = self
+        //self.dataSource = self
+        //self.delegate = self
         
         if let firstVC = vCList.first {
             self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
@@ -173,7 +176,7 @@ class LessonsPageVC: UIPageViewController {
     
    
 }
-
+/*
 extension LessonsPageVC: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -200,7 +203,6 @@ extension LessonsPageVC: UIPageViewControllerDataSource, UIPageViewControllerDel
 
         guard vCList.count != nextIndex else { return nil }
         
-        
         return vCList[nextIndex]
     }
     
@@ -214,4 +216,4 @@ extension LessonsPageVC: UIPageViewControllerDataSource, UIPageViewControllerDel
         }
     }
     
-}
+}*/
