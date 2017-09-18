@@ -27,7 +27,7 @@ class ONLY_TITLE_PARAGRAPH_cells_fragemented: UIViewController {
         
         webView.scrollView.isScrollEnabled = false
         webView.scrollView.bounces = false
-        webView.loadHTMLString(ThemeUtil.wrapInHtml(body: slide.paragraph.text, fontsize: "16"), baseURL: nil)
+        webView.loadHTMLString(ThemeUtil.wrapInHtml(body: slide.paragraph.text, fontsize: "14"), baseURL: nil)
         if (slide.image_BG != "null" || slide.image_BG != "none"){
             ImageAsyncLoader.loadImageAsync(url: slide.image_BG, imgView: gifImageView)
         } else {

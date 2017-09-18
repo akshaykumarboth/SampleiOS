@@ -25,7 +25,7 @@ class ONLY_PARAGRAPH_TITLE: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        para.attributedText = Helper.setHTMLString(testString: slide.paragraph.text, fontsize: "18")
+        para.attributedText = Helper.setHTMLString(testString: slide.paragraph.text, fontsize: "14")
         titleLabel.text = slide.title.text
         if (slide.image_BG != "null" || slide.image_BG != "none"){
             ImageAsyncLoader.loadImageAsync(url: slide.image_BG, imgView: gifImageView)

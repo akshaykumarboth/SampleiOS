@@ -20,9 +20,23 @@ class LessonsPageVC: UIViewController {
     var pageIsAnimating = false
     
     @IBAction func onBackPressed(_ sender: UIButton) {
-        print("djbehdbejbjfe")
-        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
+        //print("djbehdbejbjfe")
+        createAlert()
     }
+    
+    func createAlert(){
+        let actionSheet = UIAlertController(title: "Do you wish to exit the lesson ?", message: nil, preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+            action in
+            self.goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+        
+    }
+
     
     func goto(storyBoardName: String, storyBoardID: String) {
         let storyBoard : UIStoryboard = UIStoryboard(name: storyBoardName, bundle:nil)

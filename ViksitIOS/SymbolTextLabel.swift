@@ -48,7 +48,7 @@ class SymbolTextLabel: UIView {
         //symbolLabel.font =  UIFont().withSize(textSize)
         //textLabel.font =  UIFont().withSize(textSize)
         symbolLabel.font.withSize(textSize)
-        textLabel.font?.withSize(textSize)
+        textLabel.font.withSize(textSize)
         //textLabel.font = UIFont(name: (textLabel.font?.fontName)!, size: textSize)
     }
     

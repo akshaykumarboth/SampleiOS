@@ -29,7 +29,7 @@ class ONLY_PARAGRAPH: UIViewController {
         paraStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
         
         let para: UILabel = UILabel()
-        para.attributedText = Helper.setHTMLString(testString: slide.paragraph.text, fontsize: "8")
+        para.attributedText = Helper.setHTMLString(testString: slide.paragraph.text, fontsize: "14")
         
         paraStack.addArrangedSubview(para)
         if (slide.image_BG != "null" || slide.image_BG != "none"){

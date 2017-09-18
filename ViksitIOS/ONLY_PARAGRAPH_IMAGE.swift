@@ -25,7 +25,7 @@ class ONLY_PARAGRAPH_IMAGE: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         //paraWebView.setText(text: slide.paragraph.text, font: 18)
-        para.attributedText = Helper.setHTMLString(testString: slide.paragraph.text, fontsize: "18")
+        para.attributedText = Helper.setHTMLString(testString: slide.paragraph.text, fontsize: "14")
         
         if (slide.image_BG != "null" || slide.image_BG != "none"){
             ImageAsyncLoader.loadImageAsync(url: slide.image_BG, imgView: gifImageView)
