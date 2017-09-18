@@ -27,7 +27,7 @@ class ImageAsyncLoader{
                         }
                         
                     } else {
-                        imgView.image = UIImage(named: "info")
+                        imgView.image = UIImage(named: "down")
                     }
                 }
             }

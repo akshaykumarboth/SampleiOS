@@ -35,7 +35,6 @@
 		BA43EDD91F472AAC000D2DB0 /* LessonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDD81F472AAC000D2DB0 /* LessonVC.swift */; };
 		BA43EDDB1F472B54000D2DB0 /* LessonCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDDA1F472B54000D2DB0 /* LessonCVCell.swift */; };
 		BA43EDDE1F4B1420000D2DB0 /* Lesson.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA43EDDD1F4B1420000D2DB0 /* Lesson.storyboard */; };
-		BA43EDE21F4B16B4000D2DB0 /* LessonsPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */; };
 		BA43EDE41F4B17CB000D2DB0 /* NO_CONTENT.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDE31F4B17CB000D2DB0 /* NO_CONTENT.swift */; };
 		BA43EDE61F4B17E8000D2DB0 /* ONLY_2BOX.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDE51F4B17E8000D2DB0 /* ONLY_2BOX.swift */; };
 		BA43EDE81F4B17FE000D2DB0 /* ONLY_2TITLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EDE71F4B17FE000D2DB0 /* ONLY_2TITLE.swift */; };
@@ -65,7 +64,7 @@
 		BA43EE1E1F4EB0C2000D2DB0 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE1D1F4EB0C2000D2DB0 /* PagerViewController.swift */; };
 		BA43EE201F4EB149000D2DB0 /* GreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE1F1F4EB149000D2DB0 /* GreenVC.swift */; };
 		BA43EE221F4EB189000D2DB0 /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE211F4EB189000D2DB0 /* RedVC.swift */; };
-		BA43EE241F4EB67E000D2DB0 /* LessonTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE231F4EB67E000D2DB0 /* LessonTestVC.swift */; };
+		BA43EE241F4EB67E000D2DB0 /* LessonsPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE231F4EB67E000D2DB0 /* LessonsPageVC.swift */; };
 		BA43EE261F4EDAE1000D2DB0 /* ImageAsyncLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE251F4EDAE1000D2DB0 /* ImageAsyncLoader.swift */; };
 		BA43EE291F5165B3000D2DB0 /* ThemeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE281F5165B3000D2DB0 /* ThemeUtil.swift */; };
 		BA43EE2B1F516F62000D2DB0 /* swift+gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE2A1F516F62000D2DB0 /* swift+gif.swift */; };
@@ -148,7 +147,6 @@
 		BAE124CF1F696EDD00F8576D /* SubmitCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */; };
 		BAE124D11F6AA0E400F8576D /* TopActionBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE124D01F6AA0E400F8576D /* TopActionBarView.xib */; };
 		BAE124D31F6AA13F00F8576D /* TopActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */; };
-		BAE124D51F6FFD2D00F8576D /* DumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D41F6FFD2D00F8576D /* DumVC.swift */; };
 		FE7732A221A80E2DDF41C7B7 /* Pods_ViksitIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -209,7 +207,6 @@
 		BA43EDD81F472AAC000D2DB0 /* LessonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonVC.swift; sourceTree = "<group>"; };
 		BA43EDDA1F472B54000D2DB0 /* LessonCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonCVCell.swift; sourceTree = "<group>"; };
 		BA43EDDD1F4B1420000D2DB0 /* Lesson.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lesson.storyboard; sourceTree = "<group>"; };
-		BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsPageVC.swift; sourceTree = "<group>"; };
 		BA43EDE31F4B17CB000D2DB0 /* NO_CONTENT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NO_CONTENT.swift; sourceTree = "<group>"; };
 		BA43EDE51F4B17E8000D2DB0 /* ONLY_2BOX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_2BOX.swift; sourceTree = "<group>"; };
 		BA43EDE71F4B17FE000D2DB0 /* ONLY_2TITLE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ONLY_2TITLE.swift; sourceTree = "<group>"; };
@@ -239,7 +236,7 @@
 		BA43EE1D1F4EB0C2000D2DB0 /* PagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 		BA43EE1F1F4EB149000D2DB0 /* GreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenVC.swift; sourceTree = "<group>"; };
 		BA43EE211F4EB189000D2DB0 /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedVC.swift; sourceTree = "<group>"; };
-		BA43EE231F4EB67E000D2DB0 /* LessonTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonTestVC.swift; sourceTree = "<group>"; };
+		BA43EE231F4EB67E000D2DB0 /* LessonsPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsPageVC.swift; sourceTree = "<group>"; };
 		BA43EE251F4EDAE1000D2DB0 /* ImageAsyncLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAsyncLoader.swift; sourceTree = "<group>"; };
 		BA43EE281F5165B3000D2DB0 /* ThemeUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeUtil.swift; sourceTree = "<group>"; };
 		BA43EE2A1F516F62000D2DB0 /* swift+gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "swift+gif.swift"; sourceTree = "<group>"; };
@@ -322,7 +319,6 @@
 		BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCVCell.swift; sourceTree = "<group>"; };
 		BAE124D01F6AA0E400F8576D /* TopActionBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopActionBarView.xib; sourceTree = "<group>"; };
 		BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopActionBarView.swift; sourceTree = "<group>"; };
-		BAE124D41F6FFD2D00F8576D /* DumVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DumVC.swift; sourceTree = "<group>"; };
 		D204BF41765CCA9C29915A81 /* Pods-ViksitIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViksitIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViksitIOSUITests/Pods-ViksitIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViksitIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -476,15 +472,13 @@
 			isa = PBXGroup;
 			children = (
 				BA43EDDD1F4B1420000D2DB0 /* Lesson.storyboard */,
-				BA43EDE11F4B16B4000D2DB0 /* LessonsPageVC.swift */,
+				BA43EE231F4EB67E000D2DB0 /* LessonsPageVC.swift */,
 				BA43EDE91F4B2694000D2DB0 /* templates */,
 				BA43EE101F4C221A000D2DB0 /* slides */,
 				BA43EE2C1F51915E000D2DB0 /* helpers */,
 				BA43EE1D1F4EB0C2000D2DB0 /* PagerViewController.swift */,
 				BA43EE1F1F4EB149000D2DB0 /* GreenVC.swift */,
 				BA43EE211F4EB189000D2DB0 /* RedVC.swift */,
-				BA43EE231F4EB67E000D2DB0 /* LessonTestVC.swift */,
-				BAE124D41F6FFD2D00F8576D /* DumVC.swift */,
 			);
 			name = lessons;
 			sourceTree = "<group>";
@@ -1087,7 +1081,6 @@
 				B9F6B0621F25E69C00B695C0 /* DataViewController.swift in Sources */,
 				BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */,
 				BAE124D31F6AA13F00F8576D /* TopActionBarView.swift in Sources */,
-				BA43EDE21F4B16B4000D2DB0 /* LessonsPageVC.swift in Sources */,
 				BA43EE181F4C3A1E000D2DB0 /* CMSMedia.swift in Sources */,
 				BA43EE2B1F516F62000D2DB0 /* swift+gif.swift in Sources */,
 				BA43EDE61F4B17E8000D2DB0 /* ONLY_2BOX.swift in Sources */,
@@ -1138,11 +1131,10 @@
 				BA690EB41F26119E00EF980F /* SkillObjectives.swift in Sources */,
 				BAE124CB1F6965B300F8576D /* TodaysTaskCell.swift in Sources */,
 				BA2DD6841F6921E2008C5BF8 /* TreeItemView.swift in Sources */,
-				BAE124D51F6FFD2D00F8576D /* DumVC.swift in Sources */,
 				BA6371831F27A25C00D77EA9 /* BatchCodeVC.swift in Sources */,
 				BA690EA41F26118100EF980F /* DataCache.swift in Sources */,
 				BA43EE731F602909000D2DB0 /* AssessmentVC.swift in Sources */,
-				BA43EE241F4EB67E000D2DB0 /* LessonTestVC.swift in Sources */,
+				BA43EE241F4EB67E000D2DB0 /* LessonsPageVC.swift in Sources */,
 				BA6371811F279CC000D77EA9 /* VerifyPhoneVC.swift in Sources */,
 				BA43EE321F51C7C2000D2DB0 /* WebDynamicVC.swift in Sources */,
 				BA4914F21F629963000F5280 /* HIddenTableVC.swift in Sources */,
