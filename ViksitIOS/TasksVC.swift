@@ -177,6 +177,7 @@ extension TasksVC: UICollectionViewDataSource {
         /*
         var storyBoardName: String = ""
         var storyBoardID: String = ""*/
+        print(task.itemType)
         
         if task.itemType == "LESSON_PRESENTATION" {//LessonsPageVC
             let storyBoard : UIStoryboard = UIStoryboard(name: "Lesson", bundle:nil)
@@ -198,7 +199,6 @@ extension TasksVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         
         
         if tasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
@@ -300,7 +300,7 @@ extension TasksVC: UICollectionViewDataSource {
             loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
-            cell.descriptionLabel.text = ""
+            cell.descriptionLabel.text = tasks[indexPath.row].description
             cell.watchBtn.tag = indexPath.row
             cell.videoImg.isHidden = true
             //cell.watchBtn.setTitle("START WEBINAR", for: .normal)

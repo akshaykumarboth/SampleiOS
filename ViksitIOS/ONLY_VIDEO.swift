@@ -19,8 +19,8 @@ class ONLY_VIDEO: UIViewController {
     
     @IBAction func startVideoPressed(_ sender: UIButton) {
         
-        playVideoAV(urlString: "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4")
-        //playVideoAV(urlString: slide.video.url)
+        //playVideoAV(urlString: "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4")
+        playVideoAV(urlString: slide.video.url)
     }
     
     override func viewDidLoad() {
@@ -29,8 +29,8 @@ class ONLY_VIDEO: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        getVideoFromDocuments(videoURL: "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4")
-        //getVideoFromDocuments(videoURL: slide.video.url)
+        //getVideoFromDocuments(videoURL: "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4")
+        getVideoFromDocuments(videoURL: slide.video.url)
     }
 
     // play video

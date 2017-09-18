@@ -140,7 +140,6 @@ extension CalenderVC: UITableViewDataSource, UITableViewDelegate {
         print(events[indexPath.row].id!)
     }
     
-    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false

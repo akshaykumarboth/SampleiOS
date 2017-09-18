@@ -35,7 +35,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrW-oN-eki">
-                                <rect key="frame" x="0.0" y="20" width="78" height="50"/>
+                                <rect key="frame" x="2" y="20" width="78" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Y1k-Va-aw7"/>
@@ -50,7 +50,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rrW-oN-eki" firstAttribute="leading" secondItem="RVx-bh-cDl" secondAttribute="leading" id="4uQ-Sp-xKI"/>
+                            <constraint firstItem="rrW-oN-eki" firstAttribute="leading" secondItem="RVx-bh-cDl" secondAttribute="leading" constant="2" id="4uQ-Sp-xKI"/>
                             <constraint firstItem="rrW-oN-eki" firstAttribute="top" secondItem="FIA-98-dFX" secondAttribute="bottom" id="9he-1q-6aK"/>
                             <constraint firstItem="6ei-cx-y0l" firstAttribute="top" secondItem="kM4-dF-cSl" secondAttribute="bottom" id="HIc-bv-gO1"/>
                             <constraint firstItem="kM4-dF-cSl" firstAttribute="top" secondItem="rrW-oN-eki" secondAttribute="bottom" id="PSg-2l-mei"/>

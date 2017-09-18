@@ -9,6 +9,8 @@
 import UIKit
 
 class CalenderTableCell: UITableViewCell {
+    
+    @IBOutlet var blueBtn: CircularButton!
 
     @IBOutlet var eventMonthLabel: UILabel!
     @IBOutlet var eventDateLabel: UILabel!
@@ -19,14 +21,13 @@ class CalenderTableCell: UITableViewCell {
     @IBOutlet var eventBottomLine: UIView!
     @IBOutlet var eventCardView: UIView!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         eventCardView.layer.cornerRadius = 3.0
-        //eventNameView.scrollView.isScrollEnabled = false
-        //eventNameView.scrollView.bounces = false
+        blueBtn.layer.borderWidth = 3
+        blueBtn.layer.borderColor = UIColor(red:0.96, green:0.96, blue:0.98, alpha:1.0).cgColor
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import Photos
 
-
 class ImageAsyncLoader{
     
     static func loadImageAsync(url: String, imgView: UIImageView){
