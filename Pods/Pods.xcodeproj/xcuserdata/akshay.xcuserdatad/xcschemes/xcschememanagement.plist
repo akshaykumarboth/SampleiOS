@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AnimatedCollectionViewLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CircleProgressBar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,12 +37,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>55D2367F894EA1407F512204B9A613C7</key>
+		<key>01B5F9358EAD17782FA546BF99060034</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A28E93F2CB2EA1644DDAA4DADC7B05C0</key>
+		<key>40BCE5612D8293056436CB57A80A64D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>571AFBB41C8F0882E7F6CE7E988FD811</key>
 		<dict>
 			<key>primary</key>
 			<true/>

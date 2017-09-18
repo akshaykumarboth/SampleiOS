@@ -1,5 +1,6 @@
 
 import UIKit
+import AnimatedCollectionViewLayout
 
 class TasksVC: UIViewController{
     
@@ -43,12 +44,20 @@ class TasksVC: UIViewController{
         let insetX = (view.bounds.width - cellWidth)/2.0
         let insetY = (view.bounds.height - cellHeight)/2.0
         
-        let layout = cards.collectionViewLayout as! UICollectionViewFlowLayout
+        let layout = AnimatedCollectionViewLayout()
+        layout.animator = LinearCardAttributesAnimator( minAlpha: 0.5, itemSpacing: 0.1, scaleRate: 1.0)
+        
+        layout.scrollDirection = .horizontal
+        cards.collectionViewLayout = layout
+        
+        //let layout = cards.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         cards.contentInset = UIEdgeInsets(top: (1 * insetY), left: insetX, bottom: ( insetY + 10), right: insetX)
         
         self.cards.delegate = self
         self.cards.dataSource = self
+        //
+        
     }
     
     override func viewDidLoad() {
@@ -57,8 +66,11 @@ class TasksVC: UIViewController{
         pageControl.currentPageIndicatorTintColor = UIColor.Custom.themeColor
         pageControl.pageIndicatorTintColor = UIColor.black
         //topActionBarHeight.constant = CGFloat.Custom.topActionBarHeight
-                
+        
+        
+        
         setCollectionCellSize()
+        
         var profileImgUrl: String = ""
         var xp: Int = 0
         var coins: Int = 0
@@ -186,7 +198,13 @@ extension TasksVC: UICollectionViewDataSource {
         if tasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
             
-            
+            /*
+            if (indexPath.row == 0 && isfirstTimeTransform) {
+                isfirstTimeTransform = false
+            }else{
+                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }
+            */
             
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             
@@ -205,6 +223,14 @@ extension TasksVC: UICollectionViewDataSource {
         } else if (tasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" || tasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
             
+            
+            /*
+            if (indexPath.row == 0 && isfirstTimeTransform) {
+                isfirstTimeTransform = false
+            }else{
+                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }
+            */
             
             
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
@@ -235,6 +261,14 @@ extension TasksVC: UICollectionViewDataSource {
         } else if (tasks[indexPath.row].itemType == "ASSESSMENT" || tasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
             
+            
+            /*
+            if (indexPath.row == 0 && isfirstTimeTransform) {
+                isfirstTimeTransform = false
+            }else{
+                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }
+            */
             
             
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
@@ -271,7 +305,15 @@ extension TasksVC: UICollectionViewDataSource {
         }else if tasks[indexPath.row].itemType == "LESSON_VIDEO"{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
             
-                        //
+            
+            /*
+            if (indexPath.row == 0 && isfirstTimeTransform) {
+                isfirstTimeTransform = false
+            }else{
+                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }
+            */
+            
             
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
@@ -287,6 +329,15 @@ extension TasksVC: UICollectionViewDataSource {
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
             
+            
+            /*
+            if (indexPath.row == 0 && isfirstTimeTransform) {
+                isfirstTimeTransform = false
+            }else{
+                cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }
+            */
+            
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
             cell.watchBtn.tag = indexPath.row
@@ -301,27 +352,95 @@ extension TasksVC: UICollectionViewDataSource {
 }
 extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
     
+    
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        let layout = cards.collectionViewLayout as! UICollectionViewFlowLayout
+        let layout = cards.collectionViewLayout as! AnimatedCollectionViewLayout
         let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
         
         var offset = targetContentOffset.pointee
-        let index = (offset.x + scrollView.contentInset.left)/cellWidthIncludingSpacing
+        var index = (offset.x + scrollView.contentInset.left)/cellWidthIncludingSpacing
         
         let roundedIndex = round(index)
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
-        
-        
-        
+     
+     //
+     
+     //
+     
+     
     }
+    
+    /*
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        // Simulate "Page" Function
+        let layout = cards.collectionViewLayout as! UICollectionViewFlowLayout
+        let pageWidth: Float = Float(layout.itemSize.width + layout.minimumLineSpacing)
+        //let pageWidth: Float = Float(UIScreen.main.bounds.size.width * 1)
+        let currentOffset: Float = Float(scrollView.contentOffset.x)
+        let targetOffset: Float = Float(targetContentOffset.pointee.x)
+        var newTargetOffset: Float = 0
+        if targetOffset > currentOffset {
+            newTargetOffset = ceilf(currentOffset / pageWidth) * pageWidth
+        }
+        else {
+            newTargetOffset = floorf(currentOffset / pageWidth) * pageWidth
+        }
+        if newTargetOffset < 0 {
+            newTargetOffset = 0
+        }
+        else if (newTargetOffset > Float(scrollView.contentSize.width)){
+            newTargetOffset = Float(Float(scrollView.contentSize.width))
+        }
+        
+        targetContentOffset.pointee.x = CGFloat(currentOffset)
+        scrollView.setContentOffset(CGPoint(x: CGFloat(newTargetOffset), y: scrollView.contentOffset.y), animated: true)
+        
+        // Make Transition Effects for cells
+        let duration = 0.2
+        var index = newTargetOffset / pageWidth;
+        var cell:UICollectionViewCell = self.cards.cellForItem(at: IndexPath(row: Int(index), section: 0))!
+        if (index == 0) { // If first index
+            UIView.animate(withDuration: duration, delay: 0.0, options: [ .curveEaseOut], animations: {
+                cell.transform = CGAffineTransform.identity
+            }, completion: nil)
+            index += 1
+            if let cell = self.cards.cellForItem(at: IndexPath(row: Int(index), section: 0)) {
+                UIView.animate(withDuration: duration, delay: 0.0, options: [ .curveEaseOut], animations: {
+                    cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                }, completion: nil)
+            }
+            
+        }else{
+            UIView.animate(withDuration: duration, delay: 0.0, options: [ .curveEaseOut], animations: {
+                cell.transform = CGAffineTransform.identity;
+            }, completion: nil)
+            
+            index -= 1 // left
+            if let cell = self.cards.cellForItem(at: IndexPath(row: Int(index), section: 0)) {
+                UIView.animate(withDuration: duration, delay: 0.0, options: [ .curveEaseOut], animations: {
+                    cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8);
+                }, completion: nil)
+            }
+            
+            index += 1
+            index += 1 // right
+            if let cell = self.cards.cellForItem(at: IndexPath(row: Int(index), section: 0)) {
+                UIView.animate(withDuration: duration, delay: 0.0, options: [ .curveEaseOut], animations: {
+                    cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8);
+                }, completion: nil)
+            }
+        }
+        
+    }*/
     
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
         let pageWidth = scrollView.frame.width
         self.currentPage = Int((scrollView.contentOffset.x + pageWidth / 2) / pageWidth)
         self.pageControl.currentPage = self.currentPage
+        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
