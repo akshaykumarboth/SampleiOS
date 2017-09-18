@@ -297,13 +297,16 @@ extension TasksVC: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
-            
+            loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
             cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
             cell.titleLabel.text = tasks[indexPath.row].title
+            cell.descriptionLabel.text = ""
             cell.watchBtn.tag = indexPath.row
+            cell.videoImg.isHidden = true
+            //cell.watchBtn.setTitle("START WEBINAR", for: .normal)
             cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
             cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
-            
+            print(tasks[indexPath.row].itemType)
             return cell
         }
         
