@@ -147,6 +147,8 @@
 		BAE124CF1F696EDD00F8576D /* SubmitCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */; };
 		BAE124D11F6AA0E400F8576D /* TopActionBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE124D01F6AA0E400F8576D /* TopActionBarView.xib */; };
 		BAE124D31F6AA13F00F8576D /* TopActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */; };
+		BAE124D71F7134F000F8576D /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D61F7134F000F8576D /* Reach.swift */; };
+		BAE124D91F7136B100F8576D /* OneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D81F7136B100F8576D /* OneVC.swift */; };
 		FE7732A221A80E2DDF41C7B7 /* Pods_ViksitIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -319,6 +321,8 @@
 		BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCVCell.swift; sourceTree = "<group>"; };
 		BAE124D01F6AA0E400F8576D /* TopActionBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopActionBarView.xib; sourceTree = "<group>"; };
 		BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopActionBarView.swift; sourceTree = "<group>"; };
+		BAE124D61F7134F000F8576D /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		BAE124D81F7136B100F8576D /* OneVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneVC.swift; sourceTree = "<group>"; };
 		D204BF41765CCA9C29915A81 /* Pods-ViksitIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViksitIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViksitIOSUITests/Pods-ViksitIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViksitIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -553,6 +557,7 @@
 			children = (
 				BA65FFC11F66744900A18974 /* ponso */,
 				BA43EE501F584A33000D2DB0 /* assessment.storyboard */,
+				BAE124D81F7136B100F8576D /* OneVC.swift */,
 				BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */,
 				BA65FFCC1F66DE4E00A18974 /* TimeUpVC.swift */,
 				BA43EE721F602909000D2DB0 /* AssessmentVC.swift */,
@@ -596,6 +601,7 @@
 				BA43EE281F5165B3000D2DB0 /* ThemeUtil.swift */,
 				BA43EE2A1F516F62000D2DB0 /* swift+gif.swift */,
 				BA43EE7E1F6129E2000D2DB0 /* Ext.swift */,
+				BAE124D61F7134F000F8576D /* Reach.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -1095,6 +1101,7 @@
 				BA43ED581F386E3E000D2DB0 /* CircularImage.swift in Sources */,
 				BA43EDED1F4B26F4000D2DB0 /* ONLY_LIST_NUMBERED.swift in Sources */,
 				BAA147D41F334B7700D1FFFE /* LeftAlignedIconButton.swift in Sources */,
+				BAE124D91F7136B100F8576D /* OneVC.swift in Sources */,
 				BA6371921F2886A500D77EA9 /* CalenderVC.swift in Sources */,
 				BA43EE0F1F4C1BEC000D2DB0 /* CMSlide.swift in Sources */,
 				BAE124CF1F696EDD00F8576D /* SubmitCVCell.swift in Sources */,
@@ -1145,6 +1152,7 @@
 				BA690EAA1F26119000EF980F /* Leaderboards.swift in Sources */,
 				BA690EBB1F2611AF00EF980F /* StudentProfile.swift in Sources */,
 				BA6371791F271BFA00D77EA9 /* ForgotPasswordVC.swift in Sources */,
+				BAE124D71F7134F000F8576D /* Reach.swift in Sources */,
 				BA690E9D1F26115500EF980F /* AssessmentResponse.swift in Sources */,
 				BA43ED5A1F38843A000D2DB0 /* AccountCell.swift in Sources */,
 				BAA147EB1F34985000D1FFFE /* LeaderboardVC.swift in Sources */,

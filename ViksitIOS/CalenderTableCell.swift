@@ -27,6 +27,7 @@ class CalenderTableCell: UITableViewCell {
         eventCardView.layer.cornerRadius = 3.0
         blueBtn.layer.borderWidth = 3
         blueBtn.layer.borderColor = UIColor(red:0.96, green:0.96, blue:0.98, alpha:1.0).cgColor
+        blueBtn.layer.masksToBounds = true
         
     }
 

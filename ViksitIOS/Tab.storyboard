@@ -1062,14 +1062,6 @@
                                                                 <constraint firstAttribute="width" secondItem="RC7-fG-wlW" secondAttribute="height" multiplier="1:1" id="ZEZ-51-nBb"/>
                                                                 <constraint firstAttribute="height" constant="14" id="idd-ZA-IyF"/>
                                                             </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                                    <integer key="value" value="5"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                                                    <color key="value" red="0.96031358506944442" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

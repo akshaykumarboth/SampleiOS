@@ -14,7 +14,7 @@ class AssessmentVC: UIViewController {
     
     var assessment: Assessment!
     var questions: [Question] = []
-    var timeLeft = 0
+    var timeLeft = 5
     var timer: Timer! = Timer()
     var timer1: Timer! = Timer()
     var taskID: Int?
@@ -181,12 +181,17 @@ class AssessmentVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         quesAnsweredLabel.text = "\(totalQuesAnswered) OF \(questions.count) ANSWERED"
         //timer
-        timeLeft = assessment.durationInMinutes! * 60
-        //timeLeft = 5
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timerRunning), userInfo: nil, repeats: true)
-        
+        print(assessment.durationInMinutes)
+        if assessment.durationInMinutes != nil {
+            timeLeft = assessment.durationInMinutes! * 60
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timerRunning), userInfo: nil, repeats: true)
+            
+        }
         print("userid \(userID!) -- tasskid \(taskID!)")
         prevBtn.setTitle("", for: .normal)
+        
+        //timeLeft = 5
+        
     }
     func getAssessment(taskID: Int, userID: Int){
         //var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972", method: "GET", param: [:])
@@ -259,6 +264,7 @@ class AssessmentVC: UIViewController {
     }
     
     func submitAssessment() {
+        
         goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
     }
 
