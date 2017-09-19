@@ -19,7 +19,7 @@ class ThemeUtil {
             let symbolTextLabel = SymbolTextLabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
             symbolTextLabel.symbolLabel.text = "\u{2022}"
             symbolTextLabel.textLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            symbolTextLabel.setFontSize(textSize: 10)
+            symbolTextLabel.setFontSize(textSize: 14)
             //symbolTextLabel.textLabel.font.withSize(20)
             //symbolTextLabel.textLabel.numberOfLines = 3
             //symbolTextLabel.textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -28,6 +28,7 @@ class ThemeUtil {
         }
         
     }
+    
     static func setListItemTextLabel(text: String, listStack: UIStackView) {
         if text != nil && text != "" {
             let textLabel: UILabel = UILabel()
@@ -44,7 +45,7 @@ class ThemeUtil {
             textLabel.attributedText = fullAttributedString
             
             textLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            textLabel.font.withSize(10)
+            textLabel.font = textLabel.font.withSize(14)
             textLabel.numberOfLines = 0
             textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             
@@ -53,12 +54,11 @@ class ThemeUtil {
         
     }
 
-    
     static func setParagraphTextLabel(text: String, paraStack: UIStackView) {
         if text != nil && text != "" {
             let textLabel: UILabel = UILabel()
             textLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            textLabel.font.withSize(10)
+            textLabel.font.withSize(14)
             textLabel.numberOfLines = 0
             textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             
@@ -73,7 +73,7 @@ class ThemeUtil {
             
             let symbolTextLabel = SymbolTextLabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
             symbolTextLabel.setText(text: text.trimmingCharacters(in: .whitespacesAndNewlines), symbolCode: bulletSymbol)
-            symbolTextLabel.setFontSize(textSize: 10)
+            symbolTextLabel.setFontSize(textSize: 14)
             
             paraStack.addArrangedSubview(symbolTextLabel)
         }
@@ -96,7 +96,7 @@ class ThemeUtil {
             textLabel.attributedText = fullAttributedString
             
             //textLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            textLabel.font.withSize(10)
+            textLabel.font = textLabel.font.withSize(14)
             textLabel.numberOfLines = 0
             textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             
@@ -113,7 +113,7 @@ class ThemeUtil {
             
             symbolTextLabel.symbolLabel.text = number
             symbolTextLabel.textLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            symbolTextLabel.setFontSize(textSize: 10)
+            symbolTextLabel.setFontSize(textSize: 14)
             symbolTextLabel.translatesAutoresizingMaskIntoConstraints = false
             
             listStack.addArrangedSubview(symbolTextLabel)
@@ -137,7 +137,7 @@ class ThemeUtil {
             textLabel.attributedText = fullAttributedString
             
             textLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            textLabel.font.withSize(10)
+            textLabel.font = textLabel.font.withSize(14)
             textLabel.numberOfLines = 0
             textLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             

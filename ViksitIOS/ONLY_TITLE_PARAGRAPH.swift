@@ -30,6 +30,7 @@ class ONLY_TITLE_PARAGRAPH: UIViewController {
         
         //paragraphText.attributedText = Helper.setHTMLString(testString: slide.paragraph.text, fontsize: "14")
         paragraphText.setHTMLFromString(htmlText: slide.paragraph.text)
+        paragraphText.font = paragraphText.font?.withSize(10)
         
         if (slide.image_BG != "null" || slide.image_BG != "none"){
             ImageAsyncLoader.loadImageAsync(url: slide.image_BG, imgView: gifImageView)

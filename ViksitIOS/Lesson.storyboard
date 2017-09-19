@@ -32,15 +32,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kM4-dF-cSl">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="637"/>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrW-oN-eki">
-                                <rect key="frame" x="2" y="20" width="78" height="50"/>
+                                <rect key="frame" x="2" y="20" width="40" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Y1k-Va-aw7"/>
+                                    <constraint firstAttribute="width" secondItem="rrW-oN-eki" secondAttribute="height" multiplier="1:1" id="PcA-gQ-uyP"/>
+                                    <constraint firstAttribute="height" constant="40" id="Y1k-Va-aw7"/>
                                 </constraints>
-                                <state key="normal" title="  Back " image="back">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="back">
                                     <color key="titleColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
@@ -53,7 +55,7 @@
                             <constraint firstItem="rrW-oN-eki" firstAttribute="leading" secondItem="RVx-bh-cDl" secondAttribute="leading" constant="2" id="4uQ-Sp-xKI"/>
                             <constraint firstItem="rrW-oN-eki" firstAttribute="top" secondItem="FIA-98-dFX" secondAttribute="bottom" id="9he-1q-6aK"/>
                             <constraint firstItem="6ei-cx-y0l" firstAttribute="top" secondItem="kM4-dF-cSl" secondAttribute="bottom" id="HIc-bv-gO1"/>
-                            <constraint firstItem="kM4-dF-cSl" firstAttribute="top" secondItem="rrW-oN-eki" secondAttribute="bottom" id="PSg-2l-mei"/>
+                            <constraint firstItem="kM4-dF-cSl" firstAttribute="top" secondItem="FIA-98-dFX" secondAttribute="bottom" constant="10" id="NgQ-Gq-E2b"/>
                             <constraint firstItem="kM4-dF-cSl" firstAttribute="leading" secondItem="RVx-bh-cDl" secondAttribute="leading" id="RPV-1V-NR7"/>
                             <constraint firstAttribute="trailing" secondItem="kM4-dF-cSl" secondAttribute="trailing" id="qbv-5L-Quu"/>
                         </constraints>
@@ -64,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gD2-8n-Jpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-658" y="-277"/>
+            <point key="canvasLocation" x="-658.39999999999998" y="-277.51124437781112"/>
         </scene>
         <!--NO_CONTENT-->
         <scene sceneID="dcJ-x6-vOS">
@@ -443,30 +445,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s34-yA-bzN">
-                                <rect key="frame" x="20" y="70" width="335" height="567"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CX1-JT-P6C">
+                                <rect key="frame" x="20" y="70" width="335" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1xU-Mb-tf3" firstAttribute="top" secondItem="s34-yA-bzN" secondAttribute="bottom" constant="30" id="3ap-Z4-faz"/>
-                            <constraint firstAttribute="trailing" secondItem="s34-yA-bzN" secondAttribute="trailing" constant="20" id="5rW-UQ-n9w"/>
+                            <constraint firstItem="CX1-JT-P6C" firstAttribute="top" secondItem="LGu-sJ-YFy" secondAttribute="bottom" constant="20" id="BKW-5o-vq2"/>
+                            <constraint firstItem="CX1-JT-P6C" firstAttribute="leading" secondItem="Yva-t7-PdV" secondAttribute="leading" constant="20" id="DdP-he-IAU"/>
                             <constraint firstItem="LGu-sJ-YFy" firstAttribute="top" secondItem="fak-jj-ofv" secondAttribute="bottom" constant="30" id="aNa-q1-CfC"/>
                             <constraint firstItem="lxi-tw-bKC" firstAttribute="leading" secondItem="Yva-t7-PdV" secondAttribute="leading" id="cqn-1R-gNU"/>
-                            <constraint firstItem="s34-yA-bzN" firstAttribute="top" secondItem="LGu-sJ-YFy" secondAttribute="bottom" constant="20" id="dPR-zl-AWo"/>
                             <constraint firstAttribute="trailing" secondItem="LGu-sJ-YFy" secondAttribute="trailing" constant="20" id="eWe-X7-BK9"/>
-                            <constraint firstItem="s34-yA-bzN" firstAttribute="leading" secondItem="Yva-t7-PdV" secondAttribute="leading" constant="20" id="jVq-Gd-OTO"/>
+                            <constraint firstAttribute="trailing" secondItem="CX1-JT-P6C" secondAttribute="trailing" constant="20" id="jOZ-2g-2CY"/>
                             <constraint firstItem="LGu-sJ-YFy" firstAttribute="leading" secondItem="Yva-t7-PdV" secondAttribute="leading" constant="20" id="k54-1O-jiN"/>
                             <constraint firstItem="1xU-Mb-tf3" firstAttribute="top" secondItem="lxi-tw-bKC" secondAttribute="bottom" id="lTW-fN-msJ"/>
                             <constraint firstItem="lxi-tw-bKC" firstAttribute="top" secondItem="fak-jj-ofv" secondAttribute="bottom" id="wlG-TW-XPd"/>
                             <constraint firstAttribute="trailing" secondItem="lxi-tw-bKC" secondAttribute="trailing" id="xG4-Us-36Z"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lxi-tw-bKC"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="gifImageView" destination="lxi-tw-bKC" id="9rU-UR-QWP"/>
                         <outlet property="titleLabel" destination="LGu-sJ-YFy" id="5Gj-cd-cbu"/>
-                        <outlet property="webView" destination="s34-yA-bzN" id="8wx-9o-N5V"/>
+                        <outlet property="webView" destination="CX1-JT-P6C" id="PL4-db-d5T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjP-WH-7HX" userLabel="First Responder" sceneMemberID="firstResponder"/>

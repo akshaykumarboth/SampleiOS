@@ -45,11 +45,8 @@ class SymbolTextLabel: UIView {
     }
     
     func setFontSize(textSize: CGFloat){
-        //symbolLabel.font =  UIFont().withSize(textSize)
-        //textLabel.font =  UIFont().withSize(textSize)
-        symbolLabel.font.withSize(textSize)
-        textLabel.font.withSize(textSize)
-        //textLabel.font = UIFont(name: (textLabel.font?.fontName)!, size: textSize)
+        symbolLabel.font = symbolLabel.font?.withSize(textSize)
+        textLabel.font = textLabel.font?.withSize(textSize)
     }
     
     func setText(text: String, symbolCode: String){
