@@ -69,7 +69,10 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
         }
         cell.contentView.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.98, alpha:1.0)
         cell.notificationDuration.text = notifications[indexPath.row].time
-        cell.notificationMessage.attributedText = Helper.setHTMLString(testString: notifications[indexPath.row].message!, fontsize: "15")
+        //cell.notificationMessage.attributedText = Helper.setHTMLString(testString: notifications[indexPath.row].message!, fontsize: "14")
+        cell.notificationMessage.font = cell.notificationMessage.font.withSize(12)
+        cell.notificationMessage.setHTMLFromString(htmlText: notifications[indexPath.row].message!)
+        
         
         return cell
     }

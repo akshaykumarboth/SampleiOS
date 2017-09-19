@@ -19,8 +19,7 @@ extension UIScrollView {
 extension UILabel {
     func setHTMLFromString(htmlText: String) {
         let modifiedFont = NSString(format:"<span style=\"font-family: '-apple-system', 'HelveticaNeue'; font-size: \(self.font!.pointSize)\">%@</span>" as NSString, htmlText) as String
-        
-        
+    
         //process collection values
         let attrStr = try! NSAttributedString(
             data: modifiedFont.data(using: .unicode, allowLossyConversion: true)!,

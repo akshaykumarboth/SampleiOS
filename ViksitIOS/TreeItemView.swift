@@ -31,6 +31,7 @@ class TreeItemView: UIView {
         view = loadViewFromNib()
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        itemTextLabel.setFontSize(textSize: 14)
         
         addSubview(view)
     }
@@ -46,9 +47,10 @@ class TreeItemView: UIView {
     
     func addChildItem(text: String){
         let symbolTextLabel = SymbolTextLabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        symbolTextLabel.setFontSize(textSize: 12)
         symbolTextLabel.symbolLabel.text = "\u{2022}"
         symbolTextLabel.textLabel.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        symbolTextLabel.setFontSize(textSize: 20)
+        
 
         itemChildStack.addArrangedSubview(symbolTextLabel)
     }

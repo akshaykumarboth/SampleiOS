@@ -352,7 +352,7 @@
                                                 <color key="textColor" red="0.59607843137254901" green="0.59999999999999998" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDi-QX-qEd">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDi-QX-qEd">
                                                 <rect key="frame" x="10" y="31" width="355" height="43"/>
                                                 <string key="text">Lorem ipsum dolor sit amet, ectetur adip iscing eli, sed do eiusmod tempor incididunt et dolore. cons ectetur adipis   cingelit.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -367,7 +367,7 @@
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KJv-aN-ioY">
-                                                <rect key="frame" x="0.0" y="121" width="375" height="341"/>
+                                                <rect key="frame" x="0.0" y="116" width="375" height="346"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubSkillTableCell" rowHeight="55" id="2vs-7P-EoX" customClass="SubSkillTableCell" customModule="ViksitIOS" customModuleProvider="target">
@@ -464,7 +464,7 @@
                                         <constraints>
                                             <constraint firstItem="jzY-1I-4SJ" firstAttribute="top" secondItem="gDi-QX-qEd" secondAttribute="bottom" constant="10" id="1e1-0G-tGQ"/>
                                             <constraint firstAttribute="trailing" secondItem="jzY-1I-4SJ" secondAttribute="trailing" id="6pg-6c-khC"/>
-                                            <constraint firstItem="KJv-aN-ioY" firstAttribute="top" secondItem="ioe-hh-t2Y" secondAttribute="bottom" constant="15" id="7gE-8f-DOd"/>
+                                            <constraint firstItem="KJv-aN-ioY" firstAttribute="top" secondItem="ioe-hh-t2Y" secondAttribute="bottom" constant="10" id="7gE-8f-DOd"/>
                                             <constraint firstItem="ioe-hh-t2Y" firstAttribute="leading" secondItem="kuC-RU-3zz" secondAttribute="leading" constant="10" id="7qh-YF-rDh"/>
                                             <constraint firstItem="gDi-QX-qEd" firstAttribute="top" secondItem="OPy-LG-kGa" secondAttribute="bottom" constant="10" id="EEB-mR-Omf"/>
                                             <constraint firstItem="gDi-QX-qEd" firstAttribute="leading" secondItem="kuC-RU-3zz" secondAttribute="leading" constant="10" id="P8c-Zm-QaL"/>
@@ -814,7 +814,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3qS-tz-mKx">
-                                                    <rect key="frame" x="76" y="13" width="291" height="34"/>
+                                                    <rect key="frame" x="76" y="13" width="291" height="33"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwd-wE-bIX">
                                                             <rect key="frame" x="0.0" y="0.0" width="291" height="17"/>
@@ -823,8 +823,8 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1is-cW-XaC">
-                                                            <rect key="frame" x="0.0" y="22" width="291" height="12"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <rect key="frame" x="0.0" y="22" width="291" height="11"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -889,7 +889,7 @@
     </scenes>
     <resources>
         <image name="add" width="24" height="24"/>
-        <image name="back" width="24" height="24"/>
+        <image name="back" width="36" height="36"/>
         <image name="calendar" width="48" height="48"/>
         <image name="close" width="24" height="24"/>
         <image name="info" width="24" height="24"/>
