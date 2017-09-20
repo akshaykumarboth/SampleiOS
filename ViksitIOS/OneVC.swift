@@ -21,17 +21,12 @@ class OneVC: UIViewController {
             print("Connected via WiFi")
         }
     }
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Reach().monitorReachabilityChanges()
-
         // Do any additional setup after loading the view.
     }
-
-    
 
 }

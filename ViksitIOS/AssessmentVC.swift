@@ -8,10 +8,10 @@
 
 import UIKit
 
-
-
 class AssessmentVC: UIViewController {
     
+    
+    var quesList: [QuestionResponse] = []
     var assessment: Assessment!
     var questions: [Question] = []
     var timeLeft = 5
@@ -36,8 +36,8 @@ class AssessmentVC: UIViewController {
     @IBOutlet var submitView: UIView!
     
     @IBOutlet var submitViewYConstraint: NSLayoutConstraint!
-    
     @IBOutlet var hiddenCoverView: UIView!
+    
     @IBAction func closePressed(_ sender: UIButton) {
         //createAlert()
         submitViewYConstraint.constant = 0
@@ -56,11 +56,10 @@ class AssessmentVC: UIViewController {
     }
     @IBAction func showPrev(_ sender: UIButton) {
         getVisibleCellIndexPath()
+        
         if visibleCellIndex.row != 0 {
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row - 1 , section: 0), at: .left, animated: false)
             self.visibleCellIndex.row = self.visibleCellIndex.row - 1
-            
-             
             
             if visibleCellIndex.row == 0 {
                 print("first")
@@ -84,15 +83,18 @@ class AssessmentVC: UIViewController {
             }
             
         }
+        checkAnsweredQuestion()
         
     }
     
     @IBAction func showNext(_ sender: UIButton) {
         getVisibleCellIndexPath()
+        checkAnsweredQuestion()
         print(" lll  \(visibleCellIndex.row)")
         if visibleCellIndex.row != (questions.count) { // 4 has to be changed
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row + 1 , section: 0), at: .right, animated: false)
             visibleCellIndex.row = visibleCellIndex.row + 1
+            
             /*
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
@@ -126,6 +128,7 @@ class AssessmentVC: UIViewController {
                 hiddenCoverView.isHidden = true
             }
         }
+        checkAnsweredQuestion()
         
     }
     
@@ -146,13 +149,18 @@ class AssessmentVC: UIViewController {
     }
     
     func timerRunning() {
+        
         timeLeft -= 1
         timerLabel.text = "\(timeLeft/60):\(timeLeft%60)"
         submitTimerLabel.text = "\(timeLeft/60):\(timeLeft%60)"
+        
+        //let cell = collectionView.cellForItem(at: IndexPath(row: questions.count, section: 0  )) as! SubmitCVCell
+        //cell.timerLabel.text = "\(timeLeft/60):\(timeLeft%60)"
         if timeLeft == 0 {
             timer.invalidate()
             timerLabel.text = "Time is up"
-            goto(storyBoardName: "assessment", storyBoardID: "TimeUpVC")
+            submitTimerLabel.text = "Time is up"
+            //goto(storyBoardName: "assessment", storyBoardID: "TimeUpVC")
         }
     }
     
@@ -192,7 +200,10 @@ class AssessmentVC: UIViewController {
         
         //timeLeft = 5
         
+        
     }
+    
+    //not used yet
     func getAssessment(taskID: Int, userID: Int){
         //var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972", method: "GET", param: [:])
         
@@ -207,6 +218,7 @@ class AssessmentVC: UIViewController {
                 print("userid \(userid) -- tasskid \(taskid)")
                 let response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
                 self.assessment = Assessment(JSONString: response)
+                //assessmentResponse.id = self.assessment.id
             }
         }
         setData()
@@ -263,7 +275,28 @@ class AssessmentVC: UIViewController {
 
     }
     
+    func sendSubmitRequest() {
+        
+        //var response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/assessments/user/\(userID)/\(assessment.id)/\(taskID)", method: "POST", param: <#T##[String : String]#>)
+    }
+    
     func submitAssessment() {
+        print(Reach().connectionStatus())
+        
+        let status = Reach().connectionStatus()
+        switch status {
+        case .unknown, .offline:
+            //for the case when internet connection is not present
+            print("Not connected")
+        case .online(.wwan):
+            //for the case when internet connection is present via 4g/3g
+            print("Connected via WWAN")
+            //to send data to server
+            
+        case .online(.wiFi):
+            //for the case when internet connection is present via wifi
+            print("Connected via WiFi")
+        }
         
         goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
     }
@@ -298,12 +331,14 @@ class AssessmentVC: UIViewController {
     }
     
 }
+
 extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (questions.count + 1)
     }
     
+    /*
     @objc func timer1Running() {
         timeLeft -= 1
         if timeLeft > 0 {
@@ -316,7 +351,7 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             //label.text = "Time is up"
             goto(storyBoardName: "assessment", storyBoardID: "TimeUpVC")
         }
-    }
+    }*/
     
     @IBAction func startBtnTapped(_ sender: UIButton) -> Void {
     
@@ -324,10 +359,18 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        //paramsToSend[questions[visibleCellIndex.row].id] = []
+        
+        
+        
+        // case for last submit page
         if indexPath.row == questions.count {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubmitCVCell", for: indexPath) as! SubmitCVCell
+            checkAnsweredQuestion()
+            let unAnswered = questions.count - totalQuesAnswered
+            cell.unansweredLabel.text = "\(unAnswered)"
             
-            timer1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timer1Running), userInfo: cell.timerLabel, repeats: true)
+            //timer1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timer1Running), userInfo: cell.timerLabel, repeats: true)
             cell.submitAssessment.addTarget(self, action: #selector(submitAssessment), for: UIControlEvents.touchUpInside)
             //cell.unansweredLabel
             
@@ -348,6 +391,7 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 option.tag = i
                 if (questions[indexPath.row].options?[i].isSelected)! {
                     option.setBorderColor(color: UIColor(red: 35/255, green: 182/255, blue: 249/255, alpha: 1.00))
+                    
                 } else {
                     option.setBorderColor(color: UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1.00))
                 }
@@ -452,31 +496,43 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
     
     func handleTap(gestureRecognizer: UIGestureRecognizer) {
         print("\(gestureRecognizer.view?.tag)")
-        
+        getVisibleCellIndexPath()
         if let option: OptionView = gestureRecognizer.view as! OptionView {
             if !((questions[visibleCellIndex.row].options?[option.tag].isSelected)!) {
-                option.optionContainer.backgroundColor = UIColor(red: 35/255, green: 182/255, blue: 249/255, alpha: 1.00)
+                option.optionContainer.backgroundColor = UIColor(red: 35/255, green: 182/255, blue: 249/255, alpha: 1.00) //selectedcolor
                 self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = true
+                checkAnsweredQuestion()
                 print("question \(visibleCellIndex.row) -> option \(option.tag) is selected")
+                
+                
             } else {
-                option.optionContainer.backgroundColor = UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1.00)
+                option.optionContainer.backgroundColor = UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1.00)//unselected color
                 self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = false
+                checkAnsweredQuestion()
                 print("question \(visibleCellIndex.row) -> option \(option.tag) is unselected")
             }
             
         }
     }
     
-    func isQuestionAnswered(question: Question) {
-        
-        for option in question.options! {
-            if option.isSelected {
-                
-            } else {
-                
+    func checkAnsweredQuestion() {
+        quesList = []
+        var count = 0
+        for question in questions {
+            var q = QuestionResponse()
+            q.questionId = question.id
+            for option in question.options! {
+                if option.isSelected {
+                    q.options.append(option.id!)
+                }
             }
+            if q.options.count != 0 {
+                count += 1
+            }
+            quesList.append(q)
         }
-
+        self.totalQuesAnswered = count
+        self.quesAnsweredLabel.text = "\(totalQuesAnswered) OF \(questions.count) ANSWERED"
         
     }
     
@@ -524,6 +580,7 @@ extension AssessmentVC: UITableViewDataSource, UITableViewDelegate {
             nextBtn.setTitle("NEXT", for: .normal)
         }
         collectionView.scrollToItem(at:IndexPath(item: indexPath.row , section: 0), at: .left, animated: false)
+        checkAnsweredQuestion()
         centerYconstraint.constant = 1000
         
         UIView.animate(withDuration: 0.1, animations: {

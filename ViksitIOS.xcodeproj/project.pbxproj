@@ -149,6 +149,7 @@
 		BAE124D31F6AA13F00F8576D /* TopActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */; };
 		BAE124D71F7134F000F8576D /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D61F7134F000F8576D /* Reach.swift */; };
 		BAE124D91F7136B100F8576D /* OneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D81F7136B100F8576D /* OneVC.swift */; };
+		BAE124DD1F71667100F8576D /* QuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124DC1F71667100F8576D /* QuestionResponse.swift */; };
 		FE7732A221A80E2DDF41C7B7 /* Pods_ViksitIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -323,6 +324,7 @@
 		BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopActionBarView.swift; sourceTree = "<group>"; };
 		BAE124D61F7134F000F8576D /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		BAE124D81F7136B100F8576D /* OneVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneVC.swift; sourceTree = "<group>"; };
+		BAE124DC1F71667100F8576D /* QuestionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionResponse.swift; sourceTree = "<group>"; };
 		D204BF41765CCA9C29915A81 /* Pods-ViksitIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViksitIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViksitIOSUITests/Pods-ViksitIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViksitIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -683,6 +685,7 @@
 				BA65FFC41F6674E800A18974 /* Question.swift */,
 				BA65FFC61F66762200A18974 /* Assessment.swift */,
 				BA65FFCA1F669CD900A18974 /* assessment.txt */,
+				BAE124DC1F71667100F8576D /* QuestionResponse.swift */,
 			);
 			name = ponso;
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 				TargetAttributes = {
 					B9F6B0591F25E69C00B695C0 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LQEX6X2Z5Q;
 						ProvisioningStyle = Automatic;
 					};
 					B9F6B0711F25E69C00B695C0 = {
@@ -1167,6 +1171,7 @@
 				BA43EDE41F4B17CB000D2DB0 /* NO_CONTENT.swift in Sources */,
 				BA43EDF11F4B2725000D2DB0 /* ONLY_PARAGRAPH_IMAGE_LIST.swift in Sources */,
 				BA43ED711F3B64C8000D2DB0 /* SubSkillTableCell.swift in Sources */,
+				BAE124DD1F71667100F8576D /* QuestionResponse.swift in Sources */,
 				BA43EE0B1F4B284C000D2DB0 /* ONLY_TITLE_LIST.swift in Sources */,
 				BA690EA31F26118100EF980F /* Courses.swift in Sources */,
 				BA43EE261F4EDAE1000D2DB0 /* ImageAsyncLoader.swift in Sources */,
@@ -1332,7 +1337,7 @@
 			baseConfigurationReference = 454380F67270CDADFD79A68D /* Pods-ViksitIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LQEX6X2Z5Q;
 				INFOPLIST_FILE = ViksitIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1347,7 +1352,7 @@
 			baseConfigurationReference = 3FF452FEBB3F3289A9B43143 /* Pods-ViksitIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LQEX6X2Z5Q;
 				INFOPLIST_FILE = ViksitIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
