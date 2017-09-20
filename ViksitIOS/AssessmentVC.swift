@@ -10,7 +10,6 @@ import UIKit
 
 class AssessmentVC: UIViewController {
     
-    
     var quesList: [QuestionResponse] = []
     var assessment: Assessment!
     var questions: [Question] = []
@@ -19,9 +18,13 @@ class AssessmentVC: UIViewController {
     var timer1: Timer! = Timer()
     var taskID: Int?
     var userID: Int?
-    
     var visibleCellIndex: IndexPath!
     var totalQuesAnswered: Int = 0
+    
+    
+    
+    @IBOutlet var submitViewBtn: UIButton!
+    @IBOutlet var submitUnansweredLabel: UILabel!
     @IBOutlet var quesAnsweredLabel: UILabel!
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet var submitTimerLabel: UILabel!
@@ -187,6 +190,7 @@ class AssessmentVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        checkAnsweredQuestion()
         quesAnsweredLabel.text = "\(totalQuesAnswered) OF \(questions.count) ANSWERED"
         //timer
         print(assessment.durationInMinutes)
@@ -199,7 +203,6 @@ class AssessmentVC: UIViewController {
         prevBtn.setTitle("", for: .normal)
         
         //timeLeft = 5
-        
         
     }
     
@@ -228,7 +231,8 @@ class AssessmentVC: UIViewController {
             self.assessment = Assessment(JSONString: assessmentCache)
             //
         }*/
-        
+        self.submitViewBtn.addTarget(self, action: #selector(submitAssessment), for: UIControlEvents.touchUpInside)
+        self.submitUnansweredLabel.text = "\(questions.count)"
         visibleCellIndex = IndexPath(row: 0, section: 0)
         quesTableList.tag = -1000 // so, scrollview delegate methods adoesnt affect the table view scroll
         quesTableList.rowHeight = UITableViewAutomaticDimension
@@ -276,6 +280,8 @@ class AssessmentVC: UIViewController {
     }
     
     func sendSubmitRequest() {
+        var dict: [String: Any] = QuestionResponse.listToJSON(list: quesList)
+        print(dict["response"])
         
         //var response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/assessments/user/\(userID)/\(assessment.id)/\(taskID)", method: "POST", param: <#T##[String : String]#>)
     }
@@ -297,8 +303,9 @@ class AssessmentVC: UIViewController {
             //for the case when internet connection is present via wifi
             print("Connected via WiFi")
         }
-        
-        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
+        var dict: [String: Any] = QuestionResponse.listToJSON(list: quesList)
+        print(dict["response"])
+        //goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
     }
 
     func setViewAllImageToRight(viewAllBtn: UIButton) {
@@ -338,9 +345,9 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return (questions.count + 1)
     }
     
-    /*
+    
     @objc func timer1Running() {
-        timeLeft -= 1
+        //timeLeft -= 1
         if timeLeft > 0 {
             var label = timer1.userInfo as! UILabel
             label.text = "\(timeLeft/60):\(timeLeft%60)"
@@ -351,7 +358,7 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             //label.text = "Time is up"
             goto(storyBoardName: "assessment", storyBoardID: "TimeUpVC")
         }
-    }*/
+    }
     
     @IBAction func startBtnTapped(_ sender: UIButton) -> Void {
     
@@ -370,7 +377,7 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             let unAnswered = questions.count - totalQuesAnswered
             cell.unansweredLabel.text = "\(unAnswered)"
             
-            //timer1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timer1Running), userInfo: cell.timerLabel, repeats: true)
+            timer1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(AssessmentVC.timer1Running), userInfo: cell.timerLabel, repeats: true)
             cell.submitAssessment.addTarget(self, action: #selector(submitAssessment), for: UIControlEvents.touchUpInside)
             //cell.unansweredLabel
             
@@ -521,6 +528,7 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
         for question in questions {
             var q = QuestionResponse()
             q.questionId = question.id
+            q.duration = question.durationInSec
             for option in question.options! {
                 if option.isSelected {
                     q.options.append(option.id!)
@@ -533,6 +541,7 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
         }
         self.totalQuesAnswered = count
         self.quesAnsweredLabel.text = "\(totalQuesAnswered) OF \(questions.count) ANSWERED"
+        self.submitUnansweredLabel.text = "\(questions.count - totalQuesAnswered)"
         
     }
     

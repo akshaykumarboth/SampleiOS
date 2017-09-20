@@ -44,10 +44,10 @@ extension UITextView {
     }
 }
 
-extension UIColor {
+ extension UIColor {
     
-    struct Custom {
-        static let themeColor = UIColor(red:0.92, green:0.22, blue:0.31, alpha:1.0)
+     struct Custom {
+         static let themeColor = UIColor(red:0.92, green:0.22, blue:0.31, alpha:1.0)
     }
     
 }
@@ -61,7 +61,7 @@ extension UIFont {
 
 extension CGFloat {
     struct Custom {
-        static let topActionBarHeight: CGFloat = 50
+         static let topActionBarHeight: CGFloat = 50
     }
 }
 
