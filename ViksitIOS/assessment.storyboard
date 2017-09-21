@@ -1053,8 +1053,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accuracyLabel" destination="MhR-5f-oOI" id="uB8-Gr-9Ji"/>
+                        <outlet property="batchAvgLabel" destination="yHB-4v-rLa" id="93M-wd-mRO"/>
                         <outlet property="repeatAssessmentBtn" destination="r9q-Qk-tAg" id="fty-8s-zhY"/>
+                        <outlet property="reportTitleLabel" destination="F8I-bl-0Bm" id="AnQ-EI-UKd"/>
                         <outlet property="reviewQuestionsBtn" destination="2PW-KS-jIx" id="GQU-FQ-Js7"/>
+                        <outlet property="skillTableView" destination="Uk2-3C-qeP" id="6Lh-1j-LLH"/>
+                        <outlet property="studentsAttemptedLabel" destination="grN-f6-ppF" id="rRu-a1-Ovp"/>
+                        <outlet property="totalScoreLabel" destination="xbW-NZ-aMg" id="AJY-1u-1CR"/>
+                        <outlet property="userScoreLabel" destination="xih-5A-gOr" id="6zS-sX-I5C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u59-wV-dpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
