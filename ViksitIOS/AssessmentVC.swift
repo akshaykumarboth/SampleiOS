@@ -401,9 +401,11 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 option.tag = i
                 if (questions[indexPath.row].options?[i].isSelected)! {
                     option.setBorderColor(color: UIColor(red: 35/255, green: 182/255, blue: 249/255, alpha: 1.00))
+                    option.optionText.textColor = UIColor(red: 35/255, green: 182/255, blue: 249/255, alpha: 1.00)
                     
                 } else {
                     option.setBorderColor(color: UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1.00))
+                    option.optionText.textColor = UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1.00)
                 }
                 //option.optionText.font = UIFont().withSize(15)
                 option.addGestureRecognizer(setTapGestureRecognizer())
