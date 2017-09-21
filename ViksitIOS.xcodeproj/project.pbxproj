@@ -151,6 +151,7 @@
 		BAE124D91F7136B100F8576D /* OneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D81F7136B100F8576D /* OneVC.swift */; };
 		BAE124DD1F71667100F8576D /* QuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124DC1F71667100F8576D /* QuestionResponse.swift */; };
 		BAE124DF1F73AF5700F8576D /* AssessmentReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124DE1F73AF5600F8576D /* AssessmentReportVC.swift */; };
+		BAE124E51F73C97700F8576D /* AssessmentPassFailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124E41F73C97700F8576D /* AssessmentPassFailVC.swift */; };
 		FE7732A221A80E2DDF41C7B7 /* Pods_ViksitIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -327,6 +328,7 @@
 		BAE124D81F7136B100F8576D /* OneVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneVC.swift; sourceTree = "<group>"; };
 		BAE124DC1F71667100F8576D /* QuestionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionResponse.swift; sourceTree = "<group>"; };
 		BAE124DE1F73AF5600F8576D /* AssessmentReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentReportVC.swift; sourceTree = "<group>"; };
+		BAE124E41F73C97700F8576D /* AssessmentPassFailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentPassFailVC.swift; sourceTree = "<group>"; };
 		D204BF41765CCA9C29915A81 /* Pods-ViksitIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViksitIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViksitIOSUITests/Pods-ViksitIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViksitIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -561,6 +563,7 @@
 			children = (
 				BA65FFC11F66744900A18974 /* ponso */,
 				BA43EE501F584A33000D2DB0 /* assessment.storyboard */,
+				BAE124E41F73C97700F8576D /* AssessmentPassFailVC.swift */,
 				BAE124D81F7136B100F8576D /* OneVC.swift */,
 				BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */,
 				BA65FFCC1F66DE4E00A18974 /* TimeUpVC.swift */,
@@ -1100,6 +1103,7 @@
 				BA690EB91F2611AF00EF980F /* Skills.swift in Sources */,
 				BA43EDE81F4B17FE000D2DB0 /* ONLY_2TITLE.swift in Sources */,
 				BA43EE071F4B2829000D2DB0 /* ONLY_TITLE.swift in Sources */,
+				BAE124E51F73C97700F8576D /* AssessmentPassFailVC.swift in Sources */,
 				BA43EE161F4C282A000D2DB0 /* CMSTextItem.swift in Sources */,
 				BA6371721F2640AA00D77EA9 /* LoginVC.swift in Sources */,
 				BA6371741F2640C500D77EA9 /* SignUpVC.swift in Sources */,

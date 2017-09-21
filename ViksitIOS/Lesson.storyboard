@@ -1270,7 +1270,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="24" height="24"/>
+        <image name="back" width="36" height="36"/>
         <image name="play" width="36" height="36"/>
     </resources>
 </document>

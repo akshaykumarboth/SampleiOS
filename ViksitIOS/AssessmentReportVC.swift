@@ -60,11 +60,9 @@ extension AssessmentReportVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        //cell.subSkillDetail.text = "250/500 XP \u{2022} 5 subskills"
         for subview in cell.grandSkillStack.subviews {
             subview.removeFromSuperview()
         }
-        
         
         var grandSkillView: GrandChildSkillItem
         childSkills = (skills[indexPath.row].skills)!
