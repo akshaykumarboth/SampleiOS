@@ -13,6 +13,7 @@ class SignUpVC: UIViewController {
     @IBOutlet var emailField: TextFieldWithPadding!
     @IBOutlet var mobileField: TextFieldWithPadding!
     @IBOutlet var passwordField: TextFieldWithPadding!
+    @IBOutlet var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,27 +54,34 @@ class SignUpVC: UIViewController {
                 //errorLabel.isHidden = false
                 print(error_message)
             } else if isValidEmail(testStr: email) == false {
-                error_message = "Please enter a valid email Id";
+                error_message = "Please enter a valid email Id"
                 //errorLabel.text = error_message
                 //errorLabel.isHidden = false
                 print(error_message)
             }
             
             if password.characters.count == 0 {
-                error_message = "Password is required"
+                if error_message != "" {
+                    error_message += ", "
+                }
+                error_message += "password is required "
                 //errorLabel.text = error_message
                 //errorLabel.isHidden = false
                 print(error_message)
                 
             }  else if password.characters.count < 4 {
-                error_message = error_message + "Password is too short";
+                error_message = error_message + "password is too short "
                 //errorLabel.text = error_message
                 //errorLabel.isHidden = false
                 print(error_message)
             }
             
             if(phone.characters.count == 0 || phone.characters.count != 10){
-                error_message = "Phone Number is required (10 Digit)";
+                if error_message != "" {
+                    error_message += "and "
+                }
+                
+                error_message += "phone Number is required (10 Digit)"
                 //errorLabel.text = error_message
                 //errorLabel.isHidden = false
                 print(error_message)
@@ -84,8 +92,12 @@ class SignUpVC: UIViewController {
                 print(error_message)
             }*/
             
+            errorLabel.text = error_message
+            errorLabel.isHidden = false
+            
             return false
         } else {
+            errorLabel.isHidden = true
             return true
         }
     }

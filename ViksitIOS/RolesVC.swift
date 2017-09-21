@@ -53,18 +53,20 @@ class RolesVC: UIViewController {
         }
     
         //inserting image from url async in profile button
-        let url = URL(string: profileImgUrl)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                if data != nil {
-                    self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
-                } else {
-                    
-                    self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
+        if let url = URL(string: profileImgUrl) {
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    if data != nil {
+                        self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
+                    } else {
+                        
+                        self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
+                    }
                 }
             }
         }
+        
         makeButtonRound(button: profileBtn, borderWidth: 2.5, color: UIColor.white)
         //userXpBtn.setTitle(String(xp) + " xp", for: .normal)
         coinsBtn.setTitle(" " + String(coins), for: .normal)

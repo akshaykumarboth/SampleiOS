@@ -40,7 +40,8 @@ class QuestionResponse {
         return dictionary
     }
     
-    static func listToJSON(list: [QuestionResponse]) -> [String : Any]{
+    static func listToJSON(list: [QuestionResponse]) -> String{
+        var result: String = ""
         var dictionary: [String : Any] = [:]
         var listDictionary: [[String: Any]] = []
         for index in 0...list.count - 1 {
@@ -48,14 +49,27 @@ class QuestionResponse {
             listDictionary.append(item.toJSON())
         }
         dictionary["response"] = listDictionary
-        s(dictionaryOrArray: listDictionary)
+        //s(dictionaryOrArray: listDictionary)
         
         
         //
+        do{
+            let jsonData = try JSONSerialization.data(withJSONObject: listDictionary, options: JSONSerialization.WritingOptions.prettyPrinted)
+            
+            //Convert back to string. Usually only do this for debugging
+            guard let JSONString = String(data: jsonData, encoding: String.Encoding.utf8) else {
+                return "error"
+            }
+            result = JSONString
+            print(JSONString)
+        }catch {
+            //print(error.description)
+        }
         
 
+
         //
-        return dictionary
+        return result
     }
     
     static func s(dictionaryOrArray: [[String:Any]]) {

@@ -26,8 +26,8 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func onLoginPressed(_ sender: UIButton) {
-        var email: String = emailField.text!
-        var password: String = passwordField.text!
+        let email: String = emailField.text!
+        let password: String = passwordField.text!
         
         if validate(email: email, password: password) == true {
             let loginParams = [
@@ -35,22 +35,39 @@ class LoginVC: UIViewController {
                 "password" : password
             ]
             do{
-                var loginResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/auth/login", method: "POST", param: loginParams)
-                var studentprofile = StudentProfile(jsonString: loginResponse)
-                if type(of: studentprofile.id) != nil {
-                    //to goto dashboard
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-                    self.present(nextViewController, animated:true, completion:nil)
+                let loginResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/auth/login", method: "POST", param: loginParams)
+                
+                if loginResponse.contains("istarViksitProComplexKeyUsername does not exists") {
+                    errorLabel.text = "Username does not exists"
+                    errorLabel.isHidden = false
+                } else if loginResponse.contains("istarViksitProComplexKeyPassword is incorrect") {
+                    errorLabel.text = "Password is incorrect"
+                    errorLabel.isHidden = false
+                } else {
+                    let studentprofile = StudentProfile(jsonString: loginResponse)
+                    if type(of: studentprofile.id) != nil {
+                        //to goto dashboard
+                        
+                        //
+                        print(studentprofile.id)
+                        if let id = studentprofile.id {
+                            let response: String = Helper.makeHttpCall (url : "http://192.168.1.4:8080/t2c/user/\(id)/complex", method: "GET", param: [:])
+                            DataCache.sharedInstance.cache["complexObject"] = response
+                            //
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
+                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                            self.present(nextViewController, animated:true, completion:nil)
+                        }
+                        
+                    }
                 }
+                
                 //TabBarController
                 //print(loginResponse)
             }catch let error as NSError {
                 print(" Error \(error)")
             }
-             /*if type(of: <#T##Type#>) == true {
-             
-            }*/
+            
         }
         
     }
@@ -58,17 +75,6 @@ class LoginVC: UIViewController {
     func loginSuccess(){
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     
     func isValidEmail(testStr:String) -> Bool {
         //print("validate emilId: \(testStr)")
@@ -82,32 +88,42 @@ class LoginVC: UIViewController {
         if (password.characters.count == 0 || password.characters.count < 4 || email.characters.count < 4 || isValidEmail(testStr: email) == false) {
             var error_message: String = ""
             if email.characters.count == 0 {
-                error_message = "Email id is required"
+                error_message = "Email id is required "
                 //errorLabel.text = error_message
                 //errorLabel.isHidden = false
                 print(error_message)
             } else if isValidEmail(testStr: email) == false {
-                error_message = "Please enter a valid email Id ";
+                error_message = "please enter a valid email Id "
                 //errorLabel.text = error_message
                 //errorLabel.isHidden = false
                 print(error_message)
             }
             
             if password.characters.count == 0 {
-                error_message = "Password is required"
+                if error_message != "" {
+                    error_message += "and "
+                }
+                error_message += "password is required."
                 //errorLabel.text = error_message
                 //errorLabel.isHidden = false
                 print(error_message)
                 
             }  else if password.characters.count < 4 {
-                error_message = error_message + "Password is too short";
+                if error_message != "" {
+                    error_message += "and "
+                }
+                error_message = error_message + "password is too short."
                 //errorLabel.text = error_message
                 //errorLabel.isHidden = false
                 print(error_message)
             }
             
+            errorLabel.text = error_message
+            errorLabel.isHidden = false
+            
             return false
         } else {
+            errorLabel.isHidden = true
             return true
         }
     }

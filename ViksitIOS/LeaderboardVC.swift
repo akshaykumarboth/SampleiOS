@@ -62,19 +62,24 @@ class LeaderboardVC: UIViewController {
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             leaderboards = ComplexObject(JSONString: complexCache).leaderboards!
         }
-        
-        for item in leaderboards! {
-            pickerList.append(item.name!)
-            if item.name == "All Roles" {
-                if let ranks = item.allStudentRanks {
-                    studentRankList = Array(ranks[3..<(ranks.count)])
-                    topperList = Array(ranks[0..<3])
+        if let leaderboards = leaderboards{
+            for item in leaderboards {
+                pickerList.append(item.name!)
+                if item.name == "All Roles" {
+                    if let ranks = item.allStudentRanks {
+                        studentRankList = Array(ranks[3..<(ranks.count)])
+                        topperList = Array(ranks[0..<3])
+                    }
                 }
             }
+            if (pickerList != nil || pickerList.count != 0) {
+                rolesBtn.setTitle(pickerList[0], for: .normal)
+                setToppers()
+                pickView.translatesAutoresizingMaskIntoConstraints = false
+            }
+            
         }
-        rolesBtn.setTitle(pickerList[0], for: .normal)
-        setToppers()
-        pickView.translatesAutoresizingMaskIntoConstraints = false
+        
         //
         
 
@@ -205,7 +210,7 @@ extension LeaderboardVC: UIPickerViewDelegate, UIPickerViewDataSource {
         
         label.text = pickerList[row]
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = label.font.withSize(12)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         

@@ -67,8 +67,9 @@ class LessonsPageVC: UIViewController {
         do {
             print(lessonID)
             if let lessonid = lessonID {
-                lessonResponse = Helper.makeHttpCall (url : "http://cdn.talentify.in:9999/lessonXMLs/\(lessonid)/\(lessonid)/\(lessonid).xml", method: "GET", param: [:])
-                //lessonResponse = Helper.makeHttpCall (url : "http://cdn.talentify.in:9999/lessonXMLs/163/163/163.xml", method: "GET", param: [:])
+                //lessonResponse = Helper.makeHttpCall (url : "http://cdn.talentify.in:9999/lessonXMLs/\(lessonid)/\(lessonid)/\(lessonid).xml", method: "GET", param: [:])
+                lessonResponse = Helper.makeHttpCall (url : "http://192.168.1.4:9999/lessonXMLs/\(lessonid)/\(lessonid)/\(lessonid).xml", method: "GET", param: [:])
+                //lessonResponse = Helper.makeHttpCall (url : "http://cdn.talentify.in:9999/lessonXMLs/163/163/163.xml", method: "GET", param: [:])// http://192.168.1.4:8080/
             }
             
             print(lessonResponse)

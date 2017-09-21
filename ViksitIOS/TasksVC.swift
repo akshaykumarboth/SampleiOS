@@ -67,7 +67,6 @@ class TasksVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         //self.pageControl.numberOfPages = dotsCount
         topActionBar.backgroundColor = UIColor.Custom.themeColor
         pageControl.currentPageIndicatorTintColor = UIColor(red:0.14, green:0.71, blue:0.98, alpha:1.0)
@@ -90,18 +89,20 @@ class TasksVC: UIViewController{
         }
         
         //inserting image from url async
-        let url = URL(string: profileImgUrl)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!)
-            
-            DispatchQueue.main.async {
-                if data != nil {
-                    self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
-                } else {
-                    self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
+        if let url = URL(string: profileImgUrl) {
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url)
+                
+                DispatchQueue.main.async {
+                    if data != nil {
+                        self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
+                    } else {
+                        self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
+                    }
                 }
             }
         }
+        
         profileBtn.makeButtonRound(borderWidth: 2.5, borderColor: UIColor.white)
         
         //set userpoints in toolbar

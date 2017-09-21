@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 extension UIScrollView {
     func scrollToTop() {
         let desiredOffset = CGPoint(x: 0, y: -contentInset.top)
@@ -73,4 +74,9 @@ extension UIButton {
         self.layer.borderColor = borderColor.cgColor
         
     }
+}
+
+struct Custom {
+    static let localUrlString: String = "http://192.168.1.4:8080/"
+    static let prodUrlString: String = "http://elt.talentify.in/"
 }

@@ -219,9 +219,11 @@ class AssessmentVC: UIViewController {
         if let taskid = taskID {
             if let userid = userID {
                 print("userid \(userid) -- tasskid \(taskid)")
-                let response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
+                //let response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
+                let response: String = Helper.makeHttpCall (url : "http://192.168.1.4:8080/t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
                 self.assessment = Assessment(JSONString: response)
-                //assessmentResponse.id = self.assessment.id
+                print(assessment.id)
+                //assessmentResponse.id = self.assessment.id //
             }
         }
         setData()
@@ -280,10 +282,11 @@ class AssessmentVC: UIViewController {
     }
     
     func sendSubmitRequest() {
-        var dict: [String: Any] = QuestionResponse.listToJSON(list: quesList)
-        print(dict["response"])
+         //QuestionResponse.listToJSON(list: quesList)
+        print(QuestionResponse.listToJSON(list: quesList))
+        let params: [String: String] = ["response": QuestionResponse.listToJSON(list: quesList)]
         
-        //var response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/assessments/user/\(userID)/\(assessment.id)/\(taskID)", method: "POST", param: <#T##[String : String]#>)
+        var response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/assessments/user/\(userID)/\(assessment.id)/\(taskID)", method: "POST", param: params)
     }
     
     func submitAssessment() {
@@ -303,9 +306,9 @@ class AssessmentVC: UIViewController {
             //for the case when internet connection is present via wifi
             print("Connected via WiFi")
         }
-        var dict: [String: Any] = QuestionResponse.listToJSON(list: quesList)
-        print(dict["response"])
-        //goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
+        
+        //sendSubmitRequest()
+        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
     }
 
     func setViewAllImageToRight(viewAllBtn: UIButton) {
