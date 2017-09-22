@@ -76,6 +76,14 @@ extension UIButton {
     }
 }
 
+extension UIImageView {
+    func makeImageRound(){
+        self.layer.cornerRadius = self.frame.size.width / 2
+        self.clipsToBounds = true
+        
+    }
+}
+
 struct Custom {
     static let localUrlString: String = "http://192.168.1.4:8080/"
     static let prodUrlString: String = "http://elt.talentify.in/"

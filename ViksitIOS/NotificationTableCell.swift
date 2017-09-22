@@ -11,10 +11,12 @@ class NotificationTableCell: UITableViewCell, UIWebViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        /*
         //making the image circular
         self.notificationImage.layer.cornerRadius = self.notificationImage.frame.size.width / 2
         self.notificationImage.clipsToBounds = true
-        
+ */
+ 
         //self.notificationMessageView.scalesPageToFit = true
         //self.notificationMessageView.frame=self.notiWebContainer.bounds;
 

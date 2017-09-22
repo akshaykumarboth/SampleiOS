@@ -156,6 +156,8 @@ extension CalenderVC: UITableViewDataSource, UITableViewDelegate {
         
         cell.eventMonthLabel.text = month
         //cell.eventName.attributedText = setHTMLString(testString: events[indexPath.row].name!,fontsize: "14" )
+        
+        cell.eventName.font = cell.eventName.font.withSize(11)
         cell.eventName.setHTMLFromString(htmlText: events[indexPath.row].name!)
         cell.eventDateLabel.text = date
         cell.eventMonthLabel.text = month

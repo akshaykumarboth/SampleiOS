@@ -73,7 +73,9 @@ class LeaderboardVC: UIViewController {
                 }
             }
             if (pickerList != nil || pickerList.count != 0) {
-                rolesBtn.setTitle(pickerList[0], for: .normal)
+                guard let item = pickerList[0] else {return}
+                
+                rolesBtn.setTitle(item, for: .normal)
                 setToppers()
                 pickView.translatesAutoresizingMaskIntoConstraints = false
             }

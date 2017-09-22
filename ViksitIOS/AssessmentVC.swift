@@ -18,8 +18,8 @@ class AssessmentVC: UIViewController {
     var timeLeft = 5
     var timer: Timer! = Timer()
     var timer1: Timer! = Timer()
-    var taskID: Int?
-    var userID: Int?
+    var taskID: Int! = -1
+    var userID: Int! = -1
     var visibleCellIndex: IndexPath!
     var totalQuesAnswered: Int = 0
     
@@ -163,6 +163,7 @@ class AssessmentVC: UIViewController {
             timer.invalidate()
             timerLabel.text = "Time is up"
             submitTimerLabel.text = "Time is up"
+            //sendSubmitRequest()
             //goto(storyBoardName: "assessment", storyBoardID: "TimeUpVC")
         }
     }
@@ -514,6 +515,7 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
         if let option: OptionView = gestureRecognizer.view as! OptionView {
             if !((questions[visibleCellIndex.row].options?[option.tag].isSelected)!) {
                 option.optionContainer.backgroundColor = UIColor(red: 35/255, green: 182/255, blue: 249/255, alpha: 1.00) //selectedcolor
+                option.optionText.textColor = UIColor(red: 35/255, green: 182/255, blue: 249/255, alpha: 1.00) //selectedcolor
                 self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = true
                 checkAnsweredQuestion()
                 print("question \(visibleCellIndex.row) -> option \(option.tag) is selected")
@@ -521,6 +523,7 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
                 
             } else {
                 option.optionContainer.backgroundColor = UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1.00)//unselected color
+                option.optionText.textColor = UIColor(red: 155/255, green: 155/255, blue: 155/255, alpha: 1.00)//unselected color
                 self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = false
                 checkAnsweredQuestion()
                 print("question \(visibleCellIndex.row) -> option \(option.tag) is unselected")

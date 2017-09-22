@@ -5,6 +5,8 @@ import AnimatedCollectionViewLayout
 class TasksVC: UIViewController{
     
     var tasks: Array<Tasks> = []
+    var completedTasks: Array<Tasks> = []
+    var incompleteTasks: Array<Tasks> = []
     var visibleCellIndex: IndexPath!
     var userID: Int = -1
     var currentPage = 0
@@ -57,8 +59,8 @@ class TasksVC: UIViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if tasks.count < dotsCount {
-            self.pageControl.numberOfPages = tasks.count
+        if incompleteTasks.count < dotsCount {
+            self.pageControl.numberOfPages = incompleteTasks.count
         } else {
             self.pageControl.numberOfPages = dotsCount
         }
@@ -82,6 +84,8 @@ class TasksVC: UIViewController{
         
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             tasks = (ComplexObject(JSONString: complexCache).tasks)!
+            completedTasks = tasks.filter({$0.status == "COMPLETED"})
+            incompleteTasks = tasks.filter({$0.status == "INCOMPLETE"})
             userID = (ComplexObject(JSONString: complexCache).studentProfile?.id!)!
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
             xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
@@ -168,13 +172,13 @@ extension TasksVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tasks.count
+        return incompleteTasks.count
     }
     
     
     @IBAction func startBtnTapped(_ sender: UIButton) -> Void {
-        print(tasks[sender.tag].title)
-        let task = tasks[sender.tag]
+        print(incompleteTasks[sender.tag].title)
+        let task = incompleteTasks[sender.tag]
         /*
         var storyBoardName: String = ""
         var storyBoardID: String = ""*/
@@ -183,14 +187,14 @@ extension TasksVC: UICollectionViewDataSource {
         if task.itemType == "LESSON_PRESENTATION" {//LessonsPageVC
             let storyBoard : UIStoryboard = UIStoryboard(name: "Lesson", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LessonsPageVC") as! LessonsPageVC
-            nextViewController.lessonID = tasks[sender.tag].itemId
+            nextViewController.lessonID = incompleteTasks[sender.tag].itemId
             self.present(nextViewController, animated:true, completion:nil)
         } else if (task.itemType == "CLASSROOM_SESSION_STUDENT" || task.itemType == "CLASSROOM_SESSION") {
             
         } else if (task.itemType == "ASSESSMENT" || task.itemType == "LESSON_ASSESSMENT") {
             let storyBoard : UIStoryboard = UIStoryboard(name: "assessment", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AssessmentVC") as! AssessmentVC
-            nextViewController.taskID = tasks[sender.tag].id!
+            nextViewController.taskID = incompleteTasks[sender.tag].id!
             nextViewController.userID = userID
             self.present(nextViewController, animated:true, completion:nil)
             
@@ -202,14 +206,14 @@ extension TasksVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
-        if tasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
+        if incompleteTasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
             
-            cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
+            cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
             
-            cell.titleLabel.text = tasks[indexPath.row].title
-            cell.descriptionLabel.text = tasks[indexPath.row].description
-            loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+            cell.titleLabel.text = incompleteTasks[indexPath.row].title
+            cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
+            loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
             cell.videoImg.isHidden = true
             cell.watchBtn.tag = indexPath.row
             cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
@@ -219,25 +223,25 @@ extension TasksVC: UICollectionViewDataSource {
             cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
             
             return cell
-        } else if (tasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" || tasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
+        } else if (incompleteTasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" /*|| incompleteTasks[indexPath.row].itemType == "WEBINAR_STUDENT"*/ || incompleteTasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
             
             
-            cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
-            cell.titleLabel.text = tasks[indexPath.row].title
-            loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
-            cell.descriptionLabel.text = tasks[indexPath.row].classRoomName
+            cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+            cell.titleLabel.text = incompleteTasks[indexPath.row].title
+            loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+            cell.descriptionLabel.text = incompleteTasks[indexPath.row].classRoomName
             
-            if let hrs = tasks[indexPath.row].durationHours {
+            if let hrs = incompleteTasks[indexPath.row].durationHours {
                 cell.numOfQuesLabel.text = String(hrs) + " hrs"
             }
             
-            if let y = tasks[indexPath.row].classRoomId {
+            if let y = incompleteTasks[indexPath.row].classRoomId {
                 cell.pointsLabel.text = "#" + String(y)
             }
             cell.quesText.text = "Duration"
             cell.xpText.text = "classRoom Id"
-            cell.durationLabel.text = getSubstring(str: tasks[indexPath.row].time!, startOffest: 0, endOffset: -3)
+            cell.durationLabel.text = getSubstring(str: incompleteTasks[indexPath.row].time!, startOffest: 0, endOffset: -3)
             cell.timeText.text = "Time"
             cell.startBtn.setTitle("START CLASS", for: .normal)
             cell.startBtn.tag = indexPath.row
@@ -248,25 +252,25 @@ extension TasksVC: UICollectionViewDataSource {
             cell.startBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
             
             return cell
-        } else if (tasks[indexPath.row].itemType == "ASSESSMENT" || tasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {
+        } else if (incompleteTasks[indexPath.row].itemType == "ASSESSMENT" || incompleteTasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
            
-            cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
-            cell.titleLabel.text = tasks[indexPath.row].title
-            cell.descriptionLabel.text = tasks[indexPath.row].description
-            if tasks[indexPath.row].imageURL != nil {
-                loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+            cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+            cell.titleLabel.text = incompleteTasks[indexPath.row].title
+            cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
+            if incompleteTasks[indexPath.row].imageURL != nil {
+                loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
             }
             
-            if let ques = tasks[indexPath.row].numberOfQuestions {
+            if let ques = incompleteTasks[indexPath.row].numberOfQuestions {
                 cell.numOfQuesLabel.text = String(ques)
             }
             
-            if let y = tasks[indexPath.row].itemPoints {
+            if let y = incompleteTasks[indexPath.row].itemPoints {
                 cell.pointsLabel.text = String(y)
             }
             
-            if let dur = tasks[indexPath.row].duration {
+            if let dur = incompleteTasks[indexPath.row].duration {
                 cell.durationLabel.text = String(dur)
             }
             cell.xpText.text = "Experience"
@@ -282,13 +286,13 @@ extension TasksVC: UICollectionViewDataSource {
             
             return cell
             
-        }else if tasks[indexPath.row].itemType == "LESSON_VIDEO"{
+        }else if incompleteTasks[indexPath.row].itemType == "LESSON_VIDEO"{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
             
-            cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
-            cell.titleLabel.text = tasks[indexPath.row].title
-            cell.descriptionLabel.text = tasks[indexPath.row].description
-            loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+            cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+            cell.titleLabel.text = incompleteTasks[indexPath.row].title
+            cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
+            loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
             
             cell.videoImg.isHidden = false
             cell.watchBtn.tag = indexPath.row
@@ -298,16 +302,16 @@ extension TasksVC: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
-            loadImageAsync(url: tasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
-            cell.headerLabel.text = tasks[indexPath.row].header?.uppercased()
-            cell.titleLabel.text = tasks[indexPath.row].title
-            cell.descriptionLabel.text = tasks[indexPath.row].description
+            loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+            cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+            cell.titleLabel.text = incompleteTasks[indexPath.row].title
+            cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
             cell.watchBtn.tag = indexPath.row
             cell.videoImg.isHidden = true
             //cell.watchBtn.setTitle("START WEBINAR", for: .normal)
             cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
             cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
-            print(tasks[indexPath.row].itemType)
+            print(incompleteTasks[indexPath.row].itemType)
             return cell
         }
         
@@ -315,7 +319,6 @@ extension TasksVC: UICollectionViewDataSource {
 
 }
 extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
-    
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
@@ -419,5 +422,9 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
     }
     
 }
+/*
+extension TasksVC: UITableViewDataSource, UITableViewDelegate {
+    
+}*/
 
 
