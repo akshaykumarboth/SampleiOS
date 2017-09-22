@@ -21,13 +21,11 @@ class AssessmentReviewVC: UIViewController {
     var assessment: Assessment!
     var questions: [Question] = []
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         visibleCellIndex = IndexPath(row: 0, section: 0)
+        continueBtn.addTarget(self, action: #selector(continueTapped), for: .touchUpInside)
 
         // Do any additional setup after loading the view.
     }
@@ -37,32 +35,20 @@ class AssessmentReviewVC: UIViewController {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: storyBoardID)
         self.present(nextViewController, animated:true, completion:nil)
     }
-
     
-    
-    func s() {
-        continueBtn.addTarget(self, action: #selector(x), for: .touchUpInside)
-    }
-    
-    func x(){
+    func continueTapped(){
         getVisibleCellIndexPath()
         if visibleCellIndex.row != (quesList.count-1) {
             collectionView.scrollToItem(at:IndexPath(item: visibleCellIndex.row + 1 , section: 0), at: .right, animated: false)
             visibleCellIndex.row = visibleCellIndex.row + 1
+            
+            self.progressView.progress = Float((visibleCellIndex.row + 1)/questions.count)
+            self.questionIndexLabel.text = "\(visibleCellIndex.row + 1)/\(questions.count)"
+        
         } else {
             continueBtn.isHidden = true
         }
         
-    }
-
-
-}
-
-extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
     }
     
     func getVisibleCellIndexPath () {
@@ -75,7 +61,20 @@ extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelega
         
         print(visibleIndexPath.row)
         self.visibleCellIndex = visibleIndexPath
+        
     }
+
+
+
+}
+
+extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return questions.count
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
@@ -86,9 +85,12 @@ extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AssessmentReviewCell", for: indexPath) as! AssessmentReviewCell
         
         cell.optionStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
+        cell.answerStack.subviews.forEach { $0.removeFromSuperview() }
+        cell.questionView.setHTMLFromString(htmlText: questions[indexPath.row].text!)
         var answeredCorrectly: Bool? = nil
         var option: TickOptionView
-        if ( quesList[indexPath.row].options.count == 0 ){
+        
+        if quesList[indexPath.row].options.count == 0 {
             answeredCorrectly = false
         }
         if let options = questions[indexPath.row].options {
@@ -128,10 +130,10 @@ extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelega
             cell.answerStack.addArrangedSubview(label)
             if let count = questions[indexPath.row].answers?.count {
                 for i in 0..<count {
-                    let a = questions[indexPath.row].answers?[i]
-                    let x = questions[indexPath.row].options?.first { $0.id! ==  a}
+                    let optionID = questions[indexPath.row].answers?[i]
+                    let opt = questions[indexPath.row].options?.first { $0.id! ==  optionID}
                     let answerLabel = UILabel(frame: CGRect.zero)
-                    answerLabel.text = x?.text
+                    answerLabel.setHTMLFromString(htmlText: (opt?.text)!)
                     cell.answerStack.addArrangedSubview(answerLabel)
                 }
             }
@@ -142,8 +144,7 @@ extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelega
             
         }
         
-        //
-        
+
         
         return cell
     }

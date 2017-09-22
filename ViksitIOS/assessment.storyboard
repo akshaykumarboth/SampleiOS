@@ -1456,10 +1456,10 @@
                                     <constraint firstItem="nS6-aY-lmU" firstAttribute="leading" secondItem="Jer-qr-Gpv" secondAttribute="trailing" constant="5" id="x40-pT-12W"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QS8-BZ-gCs">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QS8-BZ-gCs">
                                 <rect key="frame" x="0.0" y="78" width="375" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VCD-bD-wwc">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VCD-bD-wwc">
                                     <size key="itemSize" width="367" height="532"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1467,7 +1467,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AssessmentReviewCell" id="e9i-9B-ejz" customClass="AssessmentReviewCell" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="0.0" width="367" height="532"/>
+                                        <rect key="frame" x="0.0" y="1" width="367" height="532"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="532"/>
@@ -1496,16 +1496,16 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="357" height="106"/>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You are correct!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zU-Hv-eUM">
-                                                                            <rect key="frame" x="10" y="15" width="337" height="20.5"/>
+                                                                            <rect key="frame" x="10" y="15" width="322" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Lu-mS-De5">
-                                                                            <rect key="frame" x="10" y="40.5" width="337" height="20.5"/>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="3Lu-mS-De5">
+                                                                            <rect key="frame" x="10" y="40.5" width="317" height="20.5"/>
                                                                         </stackView>
                                                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mma-At-Sfb">
-                                                                            <rect key="frame" x="10" y="66" width="337" height="30"/>
+                                                                            <rect key="frame" x="10" y="66" width="307" height="30"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                             <state key="normal" title="See explanation"/>
                                                                         </button>
@@ -1513,17 +1513,17 @@
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstItem="1BK-WX-4Vr" firstAttribute="top" secondItem="3US-Di-uBb" secondAttribute="top" id="0Vq-oo-uhY"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="5zU-Hv-eUM" secondAttribute="trailing" constant="10" id="2cm-vJ-YTl"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="5zU-Hv-eUM" secondAttribute="trailing" constant="25" id="2cm-vJ-YTl"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="mma-At-Sfb" secondAttribute="trailing" constant="40" id="A3K-7z-S3r"/>
                                                                         <constraint firstItem="3Lu-mS-De5" firstAttribute="top" secondItem="5zU-Hv-eUM" secondAttribute="bottom" constant="5" id="D1p-LR-4fA"/>
                                                                         <constraint firstItem="mma-At-Sfb" firstAttribute="leading" secondItem="3US-Di-uBb" secondAttribute="leading" constant="10" id="GdJ-XO-Rq2"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="mma-At-Sfb" secondAttribute="trailing" constant="10" id="Hrf-Ew-W0L"/>
                                                                         <constraint firstAttribute="trailing" secondItem="1BK-WX-4Vr" secondAttribute="trailing" id="Wc0-eP-6f4"/>
                                                                         <constraint firstItem="1BK-WX-4Vr" firstAttribute="leading" secondItem="3US-Di-uBb" secondAttribute="leading" id="aCN-V0-7XM"/>
                                                                         <constraint firstItem="5zU-Hv-eUM" firstAttribute="top" secondItem="3US-Di-uBb" secondAttribute="top" constant="15" id="bBw-qp-ex9"/>
                                                                         <constraint firstItem="3Lu-mS-De5" firstAttribute="leading" secondItem="3US-Di-uBb" secondAttribute="leading" constant="10" id="cLH-bO-Sd2"/>
                                                                         <constraint firstAttribute="bottom" secondItem="mma-At-Sfb" secondAttribute="bottom" constant="10" id="gk0-cu-JeU"/>
                                                                         <constraint firstAttribute="bottom" secondItem="1BK-WX-4Vr" secondAttribute="bottom" id="hjx-IA-KA1"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="3Lu-mS-De5" secondAttribute="trailing" constant="10" id="hq6-hG-9dr"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="3Lu-mS-De5" secondAttribute="trailing" constant="30" id="hq6-hG-9dr"/>
                                                                         <constraint firstItem="5zU-Hv-eUM" firstAttribute="leading" secondItem="3US-Di-uBb" secondAttribute="leading" constant="10" id="kXU-N2-2MB"/>
                                                                         <constraint firstItem="mma-At-Sfb" firstAttribute="top" secondItem="3Lu-mS-De5" secondAttribute="bottom" constant="5" id="xoz-6j-vF7"/>
                                                                     </constraints>
