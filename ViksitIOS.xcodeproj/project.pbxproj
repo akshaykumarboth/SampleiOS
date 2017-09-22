@@ -156,6 +156,7 @@
 		BAE124E91F74069A00F8576D /* TickOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124E81F74069A00F8576D /* TickOptionView.swift */; };
 		BAE124EB1F7407A500F8576D /* DummVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124EA1F7407A500F8576D /* DummVC.swift */; };
 		BAE124ED1F74105A00F8576D /* AssessmentReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124EC1F74105A00F8576D /* AssessmentReviewVC.swift */; };
+		BAE124EF1F74E4A900F8576D /* AssessmentReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124EE1F74E4A900F8576D /* AssessmentReviewCell.swift */; };
 		FE7732A221A80E2DDF41C7B7 /* Pods_ViksitIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -337,6 +338,7 @@
 		BAE124E81F74069A00F8576D /* TickOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickOptionView.swift; sourceTree = "<group>"; };
 		BAE124EA1F7407A500F8576D /* DummVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummVC.swift; sourceTree = "<group>"; };
 		BAE124EC1F74105A00F8576D /* AssessmentReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentReviewVC.swift; sourceTree = "<group>"; };
+		BAE124EE1F74E4A900F8576D /* AssessmentReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentReviewCell.swift; sourceTree = "<group>"; };
 		D204BF41765CCA9C29915A81 /* Pods-ViksitIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViksitIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViksitIOSUITests/Pods-ViksitIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViksitIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -569,19 +571,16 @@
 		BA43EE4F1F584995000D2DB0 /* assessments */ = {
 			isa = PBXGroup;
 			children = (
+				BAE124F11F74ECBA00F8576D /* assessmentReview */,
+				BAE124F01F74EC4E00F8576D /* assessment */,
 				BA65FFC11F66744900A18974 /* ponso */,
 				BA43EE501F584A33000D2DB0 /* assessment.storyboard */,
 				BAE124E41F73C97700F8576D /* AssessmentPassFailVC.swift */,
 				BAE124D81F7136B100F8576D /* OneVC.swift */,
-				BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */,
 				BA65FFCC1F66DE4E00A18974 /* TimeUpVC.swift */,
-				BA43EE721F602909000D2DB0 /* AssessmentVC.swift */,
-				BA43EE741F602A08000D2DB0 /* QuesOptionCell.swift */,
 				BA4914F11F629963000F5280 /* HIddenTableVC.swift */,
-				BA4914F31F62B17D000F5280 /* HiddenTableCell.swift */,
 				BA4914F01F6298BD000F5280 /* helper */,
 				BAE124DE1F73AF5600F8576D /* AssessmentReportVC.swift */,
-				BAE124EC1F74105A00F8576D /* AssessmentReviewVC.swift */,
 			);
 			name = assessments;
 			sourceTree = "<group>";
@@ -757,6 +756,26 @@
 				BA43ED6E1F3B4C88000D2DB0 /* HoriPickerVC.swift */,
 			);
 			name = profile;
+			sourceTree = "<group>";
+		};
+		BAE124F01F74EC4E00F8576D /* assessment */ = {
+			isa = PBXGroup;
+			children = (
+				BA43EE721F602909000D2DB0 /* AssessmentVC.swift */,
+				BA43EE741F602A08000D2DB0 /* QuesOptionCell.swift */,
+				BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */,
+				BA4914F31F62B17D000F5280 /* HiddenTableCell.swift */,
+			);
+			name = assessment;
+			sourceTree = "<group>";
+		};
+		BAE124F11F74ECBA00F8576D /* assessmentReview */ = {
+			isa = PBXGroup;
+			children = (
+				BAE124EC1F74105A00F8576D /* AssessmentReviewVC.swift */,
+				BAE124EE1F74E4A900F8576D /* AssessmentReviewCell.swift */,
+			);
+			name = assessmentReview;
 			sourceTree = "<group>";
 		};
 		E3B360D6D7A5EA71426D9702 /* Frameworks */ = {
@@ -1187,6 +1206,7 @@
 				BAE124DF1F73AF5700F8576D /* AssessmentReportVC.swift in Sources */,
 				BA6371881F28707900D77EA9 /* PasswordChangedVC.swift in Sources */,
 				BA65FFC71F66762200A18974 /* Assessment.swift in Sources */,
+				BAE124EF1F74E4A900F8576D /* AssessmentReviewCell.swift in Sources */,
 				BA43EE091F4B283D000D2DB0 /* ONLY_TITLE_IMAGE.swift in Sources */,
 				BA43EDD91F472AAC000D2DB0 /* LessonVC.swift in Sources */,
 				BA43EE7D1F612116000D2DB0 /* OptionView.swift in Sources */,

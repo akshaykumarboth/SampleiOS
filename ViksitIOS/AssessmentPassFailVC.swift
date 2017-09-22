@@ -34,11 +34,7 @@ class AssessmentPassFailVC: UIViewController {
             messageDescriptionLabel.text = report?.messageDescription
         }
         
-        
-        
-
         // Do any additional setup after loading the view.
     }
 
-   
 }

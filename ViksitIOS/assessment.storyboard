@@ -1466,7 +1466,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="e9i-9B-ejz">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AssessmentReviewCell" id="e9i-9B-ejz" customClass="AssessmentReviewCell" customModule="ViksitIOS" customModuleProvider="target">
                                         <rect key="frame" x="4" y="0.0" width="367" height="532"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1477,7 +1477,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="367" height="532"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6oY-eD-I8T">
-                                                            <rect key="frame" x="0.0" y="0.0" width="367" height="380.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="367" height="358.5"/>
                                                             <subviews>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Cla-ZC-MfG">
                                                                     <rect key="frame" x="8" y="8" width="351" height="200"/>
@@ -1490,19 +1490,42 @@
                                                                     <rect key="frame" x="8" y="216" width="351" height="20.5"/>
                                                                 </stackView>
                                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3US-Di-uBb">
-                                                                    <rect key="frame" x="0.0" y="244.5" width="357" height="128"/>
+                                                                    <rect key="frame" x="0.0" y="244.5" width="357" height="106"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1BK-WX-4Vr">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="357" height="128"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="357" height="106"/>
                                                                         </imageView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You are correct!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zU-Hv-eUM">
+                                                                            <rect key="frame" x="10" y="15" width="337" height="20.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Lu-mS-De5">
+                                                                            <rect key="frame" x="10" y="40.5" width="337" height="20.5"/>
+                                                                        </stackView>
+                                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mma-At-Sfb">
+                                                                            <rect key="frame" x="10" y="66" width="337" height="30"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                            <state key="normal" title="See explanation"/>
+                                                                        </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstItem="1BK-WX-4Vr" firstAttribute="top" secondItem="3US-Di-uBb" secondAttribute="top" id="0Vq-oo-uhY"/>
-                                                                        <constraint firstAttribute="height" constant="128" id="M8w-04-XF3"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="5zU-Hv-eUM" secondAttribute="trailing" constant="10" id="2cm-vJ-YTl"/>
+                                                                        <constraint firstItem="3Lu-mS-De5" firstAttribute="top" secondItem="5zU-Hv-eUM" secondAttribute="bottom" constant="5" id="D1p-LR-4fA"/>
+                                                                        <constraint firstItem="mma-At-Sfb" firstAttribute="leading" secondItem="3US-Di-uBb" secondAttribute="leading" constant="10" id="GdJ-XO-Rq2"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="mma-At-Sfb" secondAttribute="trailing" constant="10" id="Hrf-Ew-W0L"/>
                                                                         <constraint firstAttribute="trailing" secondItem="1BK-WX-4Vr" secondAttribute="trailing" id="Wc0-eP-6f4"/>
                                                                         <constraint firstItem="1BK-WX-4Vr" firstAttribute="leading" secondItem="3US-Di-uBb" secondAttribute="leading" id="aCN-V0-7XM"/>
+                                                                        <constraint firstItem="5zU-Hv-eUM" firstAttribute="top" secondItem="3US-Di-uBb" secondAttribute="top" constant="15" id="bBw-qp-ex9"/>
+                                                                        <constraint firstItem="3Lu-mS-De5" firstAttribute="leading" secondItem="3US-Di-uBb" secondAttribute="leading" constant="10" id="cLH-bO-Sd2"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="mma-At-Sfb" secondAttribute="bottom" constant="10" id="gk0-cu-JeU"/>
                                                                         <constraint firstAttribute="bottom" secondItem="1BK-WX-4Vr" secondAttribute="bottom" id="hjx-IA-KA1"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="3Lu-mS-De5" secondAttribute="trailing" constant="10" id="hq6-hG-9dr"/>
+                                                                        <constraint firstItem="5zU-Hv-eUM" firstAttribute="leading" secondItem="3US-Di-uBb" secondAttribute="leading" constant="10" id="kXU-N2-2MB"/>
+                                                                        <constraint firstItem="mma-At-Sfb" firstAttribute="top" secondItem="3Lu-mS-De5" secondAttribute="bottom" constant="5" id="xoz-6j-vF7"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -1537,8 +1560,20 @@
                                             <constraint firstAttribute="trailing" secondItem="oA6-7b-gsa" secondAttribute="trailing" id="rDD-Yc-E9f"/>
                                             <constraint firstItem="oA6-7b-gsa" firstAttribute="leading" secondItem="e9i-9B-ejz" secondAttribute="leading" id="uzU-oB-EAp"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="answerStack" destination="3Lu-mS-De5" id="soZ-ce-GW5"/>
+                                            <outlet property="correctAnswerImg" destination="1BK-WX-4Vr" id="wwg-IH-0Y8"/>
+                                            <outlet property="correctLabel" destination="5zU-Hv-eUM" id="Syl-EJ-n9x"/>
+                                            <outlet property="optionStack" destination="ubJ-oU-9mv" id="2g2-dA-Ffo"/>
+                                            <outlet property="questionView" destination="Cla-ZC-MfG" id="veo-Dr-iyE"/>
+                                            <outlet property="seeExplanationBtn" destination="mma-At-Sfb" id="tZW-WX-Da9"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Tfu-fT-LuP" id="axB-yn-PfI"/>
+                                    <outlet property="delegate" destination="Tfu-fT-LuP" id="Yy8-38-x0J"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1555,6 +1590,13 @@
                             <constraint firstItem="FUv-S6-tML" firstAttribute="leading" secondItem="w2J-rD-8G3" secondAttribute="leading" id="xRK-N4-gsB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="closeBtn" destination="Jer-qr-Gpv" id="A7U-hU-5N2"/>
+                        <outlet property="collectionView" destination="QS8-BZ-gCs" id="osj-x8-TRZ"/>
+                        <outlet property="continueBtn" destination="ckQ-3V-I7X" id="yhH-lU-QfP"/>
+                        <outlet property="progressView" destination="a13-Aw-zXt" id="XNf-0t-v4d"/>
+                        <outlet property="questionIndexLabel" destination="H9k-aO-hMV" id="nA0-Cf-nxL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S73-ZI-Qbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1583,16 +1625,26 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlQ-hr-2Lm">
+                                <rect key="frame" x="10" y="65.5" width="355" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Otm-be-935" secondAttribute="trailing" constant="20" id="7NG-oK-ynH"/>
+                            <constraint firstAttribute="trailing" secondItem="BlQ-hr-2Lm" secondAttribute="trailing" constant="10" id="GND-Fk-mUa"/>
+                            <constraint firstItem="BlQ-hr-2Lm" firstAttribute="top" secondItem="Otm-be-935" secondAttribute="bottom" constant="5" id="Tc8-Cc-I5q"/>
                             <constraint firstItem="Otm-be-935" firstAttribute="top" secondItem="asZ-wY-1MW" secondAttribute="bottom" constant="20" id="ZKF-6H-kVc"/>
+                            <constraint firstItem="BlQ-hr-2Lm" firstAttribute="leading" secondItem="VVU-QQ-RnG" secondAttribute="leading" constant="10" id="bj2-fd-16g"/>
                             <constraint firstItem="Otm-be-935" firstAttribute="leading" secondItem="VVU-QQ-RnG" secondAttribute="leading" constant="20" id="gUp-5T-g8c"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="stack" destination="Otm-be-935" id="NoQ-kp-rhi"/>
+                        <outlet property="tlabel" destination="BlQ-hr-2Lm" id="EBm-yu-XNT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oC-UQ-bnA" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,7 @@ class QuesOptionCell: UICollectionViewCell {
     @IBOutlet var quesView: UITextView!
     @IBOutlet var optionStack: UIStackView!
     @IBOutlet var quesNumber: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
                 // Initialization code
