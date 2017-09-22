@@ -86,8 +86,11 @@ extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AssessmentReviewCell", for: indexPath) as! AssessmentReviewCell
         
         cell.optionStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
-        var answeredCorrectly: Bool = true
+        var answeredCorrectly: Bool? = nil
         var option: TickOptionView
+        if ( quesList[indexPath.row].options.count == 0 ){
+            answeredCorrectly = false
+        }
         if let options = questions[indexPath.row].options {
             for item in options {
                 option = TickOptionView(frame: CGRect.zero)
@@ -99,7 +102,7 @@ extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelega
                         //correct answer
                         option.showImage(image: UIImage(named: "correct")!)
                         option.setbackgroundColor(color: UIColor.green)
-                        if answeredCorrectly {
+                        if answeredCorrectly! {
                             answeredCorrectly = true
                         }
                     } else {
@@ -118,14 +121,28 @@ extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelega
                 cell.optionStack.addArrangedSubview(option)
             }
         }
-        if !answeredCorrectly {
+        if ( !answeredCorrectly! ){
             cell.correctLabel.text = "That's wrong."
+            let label  = UILabel(frame: CGRect.zero)
+            label.text = "The answer is:"
+            cell.answerStack.addArrangedSubview(label)
+            if let count = questions[indexPath.row].answers?.count {
+                for i in 0..<count {
+                    let a = questions[indexPath.row].answers?[i]
+                    let x = questions[indexPath.row].options?.first { $0.id! ==  a}
+                    let answerLabel = UILabel(frame: CGRect.zero)
+                    answerLabel.text = x?.text
+                    cell.answerStack.addArrangedSubview(answerLabel)
+                }
+            }
             cell.correctLabel.textColor = UIColor.red
         } else {
             cell.correctLabel.text = "You are correct!"
             cell.correctLabel.textColor = UIColor.green
             
         }
+        
+        //
         
         
         return cell
