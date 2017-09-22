@@ -15,7 +15,7 @@ public class Question {
     public var type: String?
     public var difficultyLevel: Int?
     public var durationInSec: Int?
-    public var explanation: String!
+    public var explanation: String?
     public var comprehensivePassageText: String?
     public var points: Int?
     public var options: [Option]?

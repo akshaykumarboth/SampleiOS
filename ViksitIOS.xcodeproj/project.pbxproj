@@ -149,7 +149,6 @@
 		BAE124D31F6AA13F00F8576D /* TopActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */; };
 		BAE124D71F7134F000F8576D /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D61F7134F000F8576D /* Reach.swift */; };
 		BAE124D91F7136B100F8576D /* OneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124D81F7136B100F8576D /* OneVC.swift */; };
-		BAE124DD1F71667100F8576D /* QuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124DC1F71667100F8576D /* QuestionResponse.swift */; };
 		BAE124DF1F73AF5700F8576D /* AssessmentReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124DE1F73AF5600F8576D /* AssessmentReportVC.swift */; };
 		BAE124E51F73C97700F8576D /* AssessmentPassFailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124E41F73C97700F8576D /* AssessmentPassFailVC.swift */; };
 		BAE124E71F7405EA00F8576D /* TickOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE124E61F7405EA00F8576D /* TickOptionView.xib */; };
@@ -331,7 +330,6 @@
 		BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopActionBarView.swift; sourceTree = "<group>"; };
 		BAE124D61F7134F000F8576D /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		BAE124D81F7136B100F8576D /* OneVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneVC.swift; sourceTree = "<group>"; };
-		BAE124DC1F71667100F8576D /* QuestionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionResponse.swift; sourceTree = "<group>"; };
 		BAE124DE1F73AF5600F8576D /* AssessmentReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentReportVC.swift; sourceTree = "<group>"; };
 		BAE124E41F73C97700F8576D /* AssessmentPassFailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentPassFailVC.swift; sourceTree = "<group>"; };
 		BAE124E61F7405EA00F8576D /* TickOptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TickOptionView.xib; sourceTree = "<group>"; };
@@ -702,7 +700,6 @@
 				BA65FFC41F6674E800A18974 /* Question.swift */,
 				BA65FFC61F66762200A18974 /* Assessment.swift */,
 				BA65FFCA1F669CD900A18974 /* assessment.txt */,
-				BAE124DC1F71667100F8576D /* QuestionResponse.swift */,
 			);
 			name = ponso;
 			sourceTree = "<group>";
@@ -1214,7 +1211,6 @@
 				BA43EDE41F4B17CB000D2DB0 /* NO_CONTENT.swift in Sources */,
 				BA43EDF11F4B2725000D2DB0 /* ONLY_PARAGRAPH_IMAGE_LIST.swift in Sources */,
 				BA43ED711F3B64C8000D2DB0 /* SubSkillTableCell.swift in Sources */,
-				BAE124DD1F71667100F8576D /* QuestionResponse.swift in Sources */,
 				BA43EE0B1F4B284C000D2DB0 /* ONLY_TITLE_LIST.swift in Sources */,
 				BA690EA31F26118100EF980F /* Courses.swift in Sources */,
 				BA43EE261F4EDAE1000D2DB0 /* ImageAsyncLoader.swift in Sources */,

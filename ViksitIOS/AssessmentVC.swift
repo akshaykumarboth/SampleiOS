@@ -10,7 +10,9 @@ import UIKit
 
 class AssessmentVC: UIViewController {
     
-    var quesList: [QuestionResponse] = []
+    var backTag: String = ""
+    
+    var quesList: [Response] = []
     var assessment: Assessment!
     var questions: [Question] = []
     var timeLeft = 5
@@ -281,8 +283,8 @@ class AssessmentVC: UIViewController {
     
     func sendSubmitRequest() {
          //QuestionResponse.listToJSON(list: quesList)
-        print(QuestionResponse.listToJSON(list: quesList))
-        let params: [String: String] = ["response": QuestionResponse.listToJSON(list: quesList)]
+        print(Response.listToJSON(list: quesList))
+        let params: [String: String] = ["response": Response.listToJSON(list: quesList)]
         
         var response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/assessments/user/\(userID)/\(assessment.id)/\(taskID)", method: "POST", param: params)
     }
@@ -297,15 +299,17 @@ class AssessmentVC: UIViewController {
             print("Not connected")
         case .online(.wwan):
             //for the case when internet connection is present via 4g/3g
+            //sendSubmitRequest()
             print("Connected via WWAN")
             //to send data to server
             
         case .online(.wiFi):
             //for the case when internet connection is present via wifi
+            //sendSubmitRequest()
             print("Connected via WiFi")
         }
         
-        //sendSubmitRequest()
+        
         goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
     }
 
@@ -529,7 +533,7 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
         quesList = []
         var count = 0
         for question in questions {
-            var q = QuestionResponse()
+            var q = Response()
             q.questionId = question.id
             q.duration = question.durationInSec
             for option in question.options! {

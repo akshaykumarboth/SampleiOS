@@ -17,7 +17,7 @@ class AssessmentReviewVC: UIViewController {
     @IBOutlet var continueBtn: UIButton!
     
     var visibleCellIndex: IndexPath!
-    var quesList: [QuestionResponse] = []
+    var quesList: [Response] = []
     var assessment: Assessment!
     var questions: [Question] = []
     
@@ -87,6 +87,7 @@ extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelega
         cell.optionStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
         cell.answerStack.subviews.forEach { $0.removeFromSuperview() }
         cell.questionView.setHTMLFromString(htmlText: questions[indexPath.row].text!)
+        
         var answeredCorrectly: Bool? = nil
         var option: TickOptionView
         
@@ -98,7 +99,7 @@ extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelega
                 option = TickOptionView(frame: CGRect.zero)
                 option.optionText.setHTMLFromString(htmlText: item.text!)
                 
-                if quesList[indexPath.row].options.contains(item.id!) { // for options that are marked
+                if (quesList[indexPath.row].options.contains(item.id!)) { // for options that are marked
                     option.optionText.textColor = UIColor.white
                     if (questions[indexPath.row].answers?.contains(item.id!))! {
                         //correct answer
@@ -123,6 +124,7 @@ extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelega
                 cell.optionStack.addArrangedSubview(option)
             }
         }
+        
         if ( !answeredCorrectly! ){
             cell.correctLabel.text = "That's wrong."
             let label  = UILabel(frame: CGRect.zero)
@@ -143,8 +145,6 @@ extension AssessmentReviewVC: UICollectionViewDataSource, UICollectionViewDelega
             cell.correctLabel.textColor = UIColor.green
             
         }
-        
-
         
         return cell
     }

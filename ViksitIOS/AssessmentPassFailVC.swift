@@ -34,7 +34,17 @@ class AssessmentPassFailVC: UIViewController {
             messageDescriptionLabel.text = report?.messageDescription
         }
         
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func nullToNil(value : AnyObject?) -> AnyObject? {
+        if value is NSNull {
+            return nil
+        } else {
+            return value
+        }
     }
 
 }
