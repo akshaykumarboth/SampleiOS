@@ -1492,7 +1492,7 @@
                                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3US-Di-uBb">
                                                                     <rect key="frame" x="0.0" y="244.5" width="357" height="106"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1BK-WX-4Vr">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="wrong_answer" translatesAutoresizingMaskIntoConstraints="NO" id="1BK-WX-4Vr">
                                                                             <rect key="frame" x="0.0" y="0.0" width="357" height="106"/>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You are correct!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zU-Hv-eUM">
@@ -1659,5 +1659,6 @@
         <image name="close" width="24" height="24"/>
         <image name="timer" width="24" height="24"/>
         <image name="viewall" width="24" height="24"/>
+        <image name="wrong_answer" width="522" height="177"/>
     </resources>
 </document>

@@ -30,23 +30,29 @@ class TickOptionView: UIView {
         optionContainer = loadViewFromNib()
         optionContainer.frame = self.bounds
         optionContainer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        optionContainer.layer.borderWidth = 4
-        optionContainer.layer.borderColor = UIColor.red.cgColor
         
         addSubview(optionContainer)
     }
     
-    func setBorderColor(color: UIColor) {
+    func setBorder(color: UIColor, borderWidth: CGFloat) {
+        optionContainer.layer.borderWidth = borderWidth
+        optionContainer.layer.borderColor = color.cgColor
+    }
+    
+    func removeBorder() {
+        optionContainer.layer.borderWidth = 0
+    }
+    
+    func setbackgroundColor(color: UIColor) {
         optionContainer.backgroundColor = color
-        optionContainer.layer.borderWidth = 4
-        //optionContainer.layer.borderColor = UIColor.Custom.themeColor
     }
     
     func hideImage() {
         imageWidth.constant = 0
     }
     
-    func showImage() {
+    func showImage(image: UIImage) {
+        optionImg.image = image
         imageWidth.constant = 40
     }
     

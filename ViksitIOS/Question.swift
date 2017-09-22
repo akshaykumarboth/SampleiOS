@@ -77,7 +77,6 @@ public class Question {
         }
         
         if json["answers"] != nil {
-            
             self.answers = json["answers"] as! [Int]
         }
     }

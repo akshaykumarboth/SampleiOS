@@ -21,14 +21,11 @@ class AssessmentVC: UIViewController {
     var visibleCellIndex: IndexPath!
     var totalQuesAnswered: Int = 0
     
-    
-    
     @IBOutlet var submitViewBtn: UIButton!
     @IBOutlet var submitUnansweredLabel: UILabel!
     @IBOutlet var quesAnsweredLabel: UILabel!
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet var submitTimerLabel: UILabel!
-    //@IBOutlet var timer1Label: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var quesTableList: UITableView!
     @IBOutlet var centerYconstraint: NSLayoutConstraint!
@@ -57,6 +54,7 @@ class AssessmentVC: UIViewController {
         })
 
     }
+    
     @IBAction func showPrev(_ sender: UIButton) {
         getVisibleCellIndexPath()
         

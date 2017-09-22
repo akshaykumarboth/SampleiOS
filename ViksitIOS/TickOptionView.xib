@@ -23,21 +23,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4L-KW-ybr">
-                    <rect key="frame" x="0.0" y="0.0" width="332" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="372" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="Fox-Vz-TJI">
-                    <rect key="frame" x="332" y="0.0" width="40" height="50"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fox-Vz-TJI">
+                    <rect key="frame" x="372" y="0.0" width="0.0" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="PyO-vS-Gp5"/>
+                        <constraint firstAttribute="width" id="PyO-vS-Gp5"/>
                         <constraint firstAttribute="height" constant="50" id="q28-an-IMe"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.66560872395833337" green="0.92569986979166663" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Fox-Vz-TJI" secondAttribute="trailing" id="0bb-i9-HdH"/>
                 <constraint firstAttribute="bottom" secondItem="Y4L-KW-ybr" secondAttribute="bottom" id="9hZ-3b-GAV"/>
@@ -50,7 +50,4 @@
             <point key="canvasLocation" x="31" y="-249"/>
         </view>
     </objects>
-    <resources>
-        <image name="tick" width="48" height="48"/>
-    </resources>
 </document>
