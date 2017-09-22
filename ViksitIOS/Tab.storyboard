@@ -585,6 +585,10 @@
                                                                             </connections>
                                                                         </tableViewCell>
                                                                     </prototypes>
+                                                                    <connections>
+                                                                        <outlet property="dataSource" destination="xdp-zX-lcl" id="Dra-Ih-olg"/>
+                                                                        <outlet property="delegate" destination="xdp-zX-lcl" id="8sA-6V-mkc"/>
+                                                                    </connections>
                                                                 </tableView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

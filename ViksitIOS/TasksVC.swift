@@ -84,8 +84,8 @@ class TasksVC: UIViewController{
         
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             tasks = (ComplexObject(JSONString: complexCache).tasks)!
-            completedTasks = tasks.filter({$0.status == "COMPLETED"})
-            incompleteTasks = tasks.filter({$0.status == "INCOMPLETE"})
+            completedTasks = tasks.filter({$0.status == "COMPLETED"}) //filtering completed tasks
+            incompleteTasks = tasks.filter({$0.status == "INCOMPLETE"}) //filtering incomplete tasks
             userID = (ComplexObject(JSONString: complexCache).studentProfile?.id!)!
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
             xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
@@ -112,8 +112,6 @@ class TasksVC: UIViewController{
         //set userpoints in toolbar
         coinsBtn.setTitle(" " + String(coins), for: .normal)
         experiencePoints.text = String(xp)
-    
-        
         
     }
 
@@ -122,14 +120,6 @@ class TasksVC: UIViewController{
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: storyBoardID)
         self.present(nextViewController, animated:true, completion:nil)
     }
-    
-    /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
-        let screenSize = UIScreen.main.bounds.size
-        
-        return CGSize(width: (screenSize.width * 0.75), height: screenSize.height * 0.75); //use height whatever you wants.
-    }*/
-    
     
     override var prefersStatusBarHidden : Bool {
         return false
@@ -172,7 +162,10 @@ extension TasksVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return incompleteTasks.count
+        if completedTasks.count == 0 {
+            return incompleteTasks.count
+        }
+        return incompleteTasks.count + 1
     }
     
     
@@ -204,116 +197,232 @@ extension TasksVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        if incompleteTasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
-            
-            cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
-            
-            cell.titleLabel.text = incompleteTasks[indexPath.row].title
-            cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
-            loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
-            cell.videoImg.isHidden = true
-            cell.watchBtn.tag = indexPath.row
-            cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
-            cell.watchBtn.setImage(UIImage(named: "presentation"), for: .normal)
-            cell.watchBtn.tintColor = UIColor.white
-            cell.watchBtn.imageEdgeInsets = UIEdgeInsets(top: 9, left: 10, bottom: 9, right: 20)
-            cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
-            
-            return cell
-        } else if (incompleteTasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" /*|| incompleteTasks[indexPath.row].itemType == "WEBINAR_STUDENT"*/ || incompleteTasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
-            
-            
-            cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
-            cell.titleLabel.text = incompleteTasks[indexPath.row].title
-            loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
-            cell.descriptionLabel.text = incompleteTasks[indexPath.row].classRoomName
-            
-            if let hrs = incompleteTasks[indexPath.row].durationHours {
-                cell.numOfQuesLabel.text = String(hrs) + " hrs"
+        if completedTasks.count != 0 {
+            if indexPath.row == 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodaysTaskCell", for: indexPath) as! TodaysTaskCell
+                cell.tasksCompletedTitleLabel.text = "\(completedTasks.count) Tasks Completed"
+                
+                return cell
+            } else {
+                if incompleteTasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+                    
+                    cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+                    cell.titleLabel.text = incompleteTasks[indexPath.row].title
+                    cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
+                    loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                    cell.videoImg.isHidden = true
+                    cell.watchBtn.tag = indexPath.row
+                    cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
+                    cell.watchBtn.setImage(UIImage(named: "presentation"), for: .normal)
+                    cell.watchBtn.tintColor = UIColor.white
+                    cell.watchBtn.imageEdgeInsets = UIEdgeInsets(top: 9, left: 10, bottom: 9, right: 20)
+                    cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
+                    
+                    return cell
+                } else if (incompleteTasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" /*|| incompleteTasks[indexPath.row].itemType == "WEBINAR_STUDENT"*/ || incompleteTasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
+                    
+                    
+                    cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+                    cell.titleLabel.text = incompleteTasks[indexPath.row].title
+                    loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+                    cell.descriptionLabel.text = incompleteTasks[indexPath.row].classRoomName
+                    
+                    if let hrs = incompleteTasks[indexPath.row].durationHours {
+                        cell.numOfQuesLabel.text = String(hrs) + " hrs"
+                    }
+                    
+                    if let y = incompleteTasks[indexPath.row].classRoomId {
+                        cell.pointsLabel.text = "#" + String(y)
+                    }
+                    cell.quesText.text = "Duration"
+                    cell.xpText.text = "classRoom Id"
+                    cell.durationLabel.text = getSubstring(str: incompleteTasks[indexPath.row].time!, startOffest: 0, endOffset: -3)
+                    cell.timeText.text = "Time"
+                    cell.startBtn.setTitle("START CLASS", for: .normal)
+                    cell.startBtn.tag = indexPath.row
+                    cell.startBtn.backgroundColor = UIColor.Custom.themeColor
+                    cell.startBtn.setImage(UIImage(named: "play_icon"), for: .normal)
+                    cell.startBtn.tintColor = UIColor.white
+                    cell.startBtn.imageEdgeInsets = UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 20)
+                    cell.startBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
+                    
+                    return cell
+                } else if (incompleteTasks[indexPath.row].itemType == "ASSESSMENT" || incompleteTasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
+                    
+                    cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+                    cell.titleLabel.text = incompleteTasks[indexPath.row].title
+                    cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
+                    if incompleteTasks[indexPath.row].imageURL != nil {
+                        loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+                    }
+                    
+                    if let ques = incompleteTasks[indexPath.row].numberOfQuestions {
+                        cell.numOfQuesLabel.text = String(ques)
+                    }
+                    
+                    if let y = incompleteTasks[indexPath.row].itemPoints {
+                        cell.pointsLabel.text = String(y)
+                    }
+                    
+                    if let dur = incompleteTasks[indexPath.row].duration {
+                        cell.durationLabel.text = String(dur)
+                    }
+                    cell.xpText.text = "Experience"
+                    cell.quesText.text = "Questions"
+                    cell.timeText.text = "Duration"
+                    cell.startBtn.setTitle("START ASSESSMENT", for: .normal)
+                    cell.startBtn.tag = indexPath.row
+                    cell.startBtn.backgroundColor = UIColor.Custom.themeColor
+                    cell.startBtn.setImage(UIImage(named: "assessment_icon"), for: .normal)
+                    cell.startBtn.tintColor = UIColor.white
+                    cell.startBtn.imageEdgeInsets = UIEdgeInsets(top: 9, left: 10, bottom: 9, right: 20)
+                    cell.startBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
+                    
+                    return cell
+                    
+                }else if incompleteTasks[indexPath.row].itemType == "LESSON_VIDEO"{
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+                    
+                    cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+                    cell.titleLabel.text = incompleteTasks[indexPath.row].title
+                    cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
+                    loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                    
+                    cell.videoImg.isHidden = false
+                    cell.watchBtn.tag = indexPath.row
+                    cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
+                    cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
+                    
+                    return cell
+                } else {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+                    loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                    cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+                    cell.titleLabel.text = incompleteTasks[indexPath.row].title
+                    cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
+                    cell.watchBtn.tag = indexPath.row
+                    cell.videoImg.isHidden = true
+                    //cell.watchBtn.setTitle("START WEBINAR", for: .normal)
+                    cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
+                    cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
+                    print(incompleteTasks[indexPath.row].itemType)
+                    return cell
+                }
             }
-            
-            if let y = incompleteTasks[indexPath.row].classRoomId {
-                cell.pointsLabel.text = "#" + String(y)
-            }
-            cell.quesText.text = "Duration"
-            cell.xpText.text = "classRoom Id"
-            cell.durationLabel.text = getSubstring(str: incompleteTasks[indexPath.row].time!, startOffest: 0, endOffset: -3)
-            cell.timeText.text = "Time"
-            cell.startBtn.setTitle("START CLASS", for: .normal)
-            cell.startBtn.tag = indexPath.row
-            cell.startBtn.backgroundColor = UIColor.Custom.themeColor
-            cell.startBtn.setImage(UIImage(named: "play_icon"), for: .normal)
-            cell.startBtn.tintColor = UIColor.white
-            cell.startBtn.imageEdgeInsets = UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 20)
-            cell.startBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
-            
-            return cell
-        } else if (incompleteTasks[indexPath.row].itemType == "ASSESSMENT" || incompleteTasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
-           
-            cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
-            cell.titleLabel.text = incompleteTasks[indexPath.row].title
-            cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
-            if incompleteTasks[indexPath.row].imageURL != nil {
-                loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
-            }
-            
-            if let ques = incompleteTasks[indexPath.row].numberOfQuestions {
-                cell.numOfQuesLabel.text = String(ques)
-            }
-            
-            if let y = incompleteTasks[indexPath.row].itemPoints {
-                cell.pointsLabel.text = String(y)
-            }
-            
-            if let dur = incompleteTasks[indexPath.row].duration {
-                cell.durationLabel.text = String(dur)
-            }
-            cell.xpText.text = "Experience"
-            cell.quesText.text = "Questions"
-            cell.timeText.text = "Duration"
-            cell.startBtn.setTitle("START ASSESSMENT", for: .normal)
-            cell.startBtn.tag = indexPath.row
-            cell.startBtn.backgroundColor = UIColor.Custom.themeColor
-            cell.startBtn.setImage(UIImage(named: "assessment_icon"), for: .normal)
-            cell.startBtn.tintColor = UIColor.white
-            cell.startBtn.imageEdgeInsets = UIEdgeInsets(top: 9, left: 10, bottom: 9, right: 20)
-            cell.startBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
-            
-            return cell
-            
-        }else if incompleteTasks[indexPath.row].itemType == "LESSON_VIDEO"{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
-            
-            cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
-            cell.titleLabel.text = incompleteTasks[indexPath.row].title
-            cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
-            loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
-            
-            cell.videoImg.isHidden = false
-            cell.watchBtn.tag = indexPath.row
-            cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
-            cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
-            
-            return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
-            loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
-            cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
-            cell.titleLabel.text = incompleteTasks[indexPath.row].title
-            cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
-            cell.watchBtn.tag = indexPath.row
-            cell.videoImg.isHidden = true
-            //cell.watchBtn.setTitle("START WEBINAR", for: .normal)
-            cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
-            cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
-            print(incompleteTasks[indexPath.row].itemType)
-            return cell
+            if incompleteTasks[indexPath.row].itemType == "LESSON_PRESENTATION" {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+                
+                cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+                cell.titleLabel.text = incompleteTasks[indexPath.row].title
+                cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
+                loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                cell.videoImg.isHidden = true
+                cell.watchBtn.tag = indexPath.row
+                cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
+                cell.watchBtn.setImage(UIImage(named: "presentation"), for: .normal)
+                cell.watchBtn.tintColor = UIColor.white
+                cell.watchBtn.imageEdgeInsets = UIEdgeInsets(top: 9, left: 10, bottom: 9, right: 20)
+                cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
+                
+                return cell
+            } else if (incompleteTasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" /*|| incompleteTasks[indexPath.row].itemType == "WEBINAR_STUDENT"*/ || incompleteTasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
+                
+                
+                cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+                cell.titleLabel.text = incompleteTasks[indexPath.row].title
+                loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+                cell.descriptionLabel.text = incompleteTasks[indexPath.row].classRoomName
+                
+                if let hrs = incompleteTasks[indexPath.row].durationHours {
+                    cell.numOfQuesLabel.text = String(hrs) + " hrs"
+                }
+                
+                if let y = incompleteTasks[indexPath.row].classRoomId {
+                    cell.pointsLabel.text = "#" + String(y)
+                }
+                cell.quesText.text = "Duration"
+                cell.xpText.text = "classRoom Id"
+                cell.durationLabel.text = getSubstring(str: incompleteTasks[indexPath.row].time!, startOffest: 0, endOffset: -3)
+                cell.timeText.text = "Time"
+                cell.startBtn.setTitle("START CLASS", for: .normal)
+                cell.startBtn.tag = indexPath.row
+                cell.startBtn.backgroundColor = UIColor.Custom.themeColor
+                cell.startBtn.setImage(UIImage(named: "play_icon"), for: .normal)
+                cell.startBtn.tintColor = UIColor.white
+                cell.startBtn.imageEdgeInsets = UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 20)
+                cell.startBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
+                
+                return cell
+            } else if (incompleteTasks[indexPath.row].itemType == "ASSESSMENT" || incompleteTasks[indexPath.row].itemType == "LESSON_ASSESSMENT") {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
+                
+                cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+                cell.titleLabel.text = incompleteTasks[indexPath.row].title
+                cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
+                if incompleteTasks[indexPath.row].imageURL != nil {
+                    loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+                }
+                
+                if let ques = incompleteTasks[indexPath.row].numberOfQuestions {
+                    cell.numOfQuesLabel.text = String(ques)
+                }
+                
+                if let y = incompleteTasks[indexPath.row].itemPoints {
+                    cell.pointsLabel.text = String(y)
+                }
+                
+                if let dur = incompleteTasks[indexPath.row].duration {
+                    cell.durationLabel.text = String(dur)
+                }
+                cell.xpText.text = "Experience"
+                cell.quesText.text = "Questions"
+                cell.timeText.text = "Duration"
+                cell.startBtn.setTitle("START ASSESSMENT", for: .normal)
+                cell.startBtn.tag = indexPath.row
+                cell.startBtn.backgroundColor = UIColor.Custom.themeColor
+                cell.startBtn.setImage(UIImage(named: "assessment_icon"), for: .normal)
+                cell.startBtn.tintColor = UIColor.white
+                cell.startBtn.imageEdgeInsets = UIEdgeInsets(top: 9, left: 10, bottom: 9, right: 20)
+                cell.startBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
+                
+                return cell
+                
+            }else if incompleteTasks[indexPath.row].itemType == "LESSON_VIDEO"{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+                
+                cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+                cell.titleLabel.text = incompleteTasks[indexPath.row].title
+                cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
+                loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                
+                cell.videoImg.isHidden = false
+                cell.watchBtn.tag = indexPath.row
+                cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
+                cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
+                
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
+                loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
+                cell.titleLabel.text = incompleteTasks[indexPath.row].title
+                cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
+                cell.watchBtn.tag = indexPath.row
+                cell.videoImg.isHidden = true
+                //cell.watchBtn.setTitle("START WEBINAR", for: .normal)
+                cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
+                cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
+                print(incompleteTasks[indexPath.row].itemType)
+                return cell
+            }
         }
+        
+        
         
     }
 
@@ -322,6 +431,9 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
+        if scrollView.tag == -1000 { //so table view scrolling doesnt get effected by the scrollview delegate methods
+            return
+        }
         let layout = cards.collectionViewLayout as! AnimatedCollectionViewLayout
         let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
         
@@ -335,71 +447,12 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
      
     }
     
-    /*
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        // Simulate "Page" Function
-        let layout = cards.collectionViewLayout as! UICollectionViewFlowLayout
-        let pageWidth: Float = Float(layout.itemSize.width + layout.minimumLineSpacing)
-        //let pageWidth: Float = Float(UIScreen.main.bounds.size.width * 1)
-        let currentOffset: Float = Float(scrollView.contentOffset.x)
-        let targetOffset: Float = Float(targetContentOffset.pointee.x)
-        var newTargetOffset: Float = 0
-        if targetOffset > currentOffset {
-            newTargetOffset = ceilf(currentOffset / pageWidth) * pageWidth
-        }
-        else {
-            newTargetOffset = floorf(currentOffset / pageWidth) * pageWidth
-        }
-        if newTargetOffset < 0 {
-            newTargetOffset = 0
-        }
-        else if (newTargetOffset > Float(scrollView.contentSize.width)){
-            newTargetOffset = Float(Float(scrollView.contentSize.width))
-        }
-        
-        targetContentOffset.pointee.x = CGFloat(currentOffset)
-        scrollView.setContentOffset(CGPoint(x: CGFloat(newTargetOffset), y: scrollView.contentOffset.y), animated: true)
-        
-        // Make Transition Effects for cells
-        let duration = 0.2
-        var index = newTargetOffset / pageWidth;
-        var cell:UICollectionViewCell = self.cards.cellForItem(at: IndexPath(row: Int(index), section: 0))!
-        if (index == 0) { // If first index
-            UIView.animate(withDuration: duration, delay: 0.0, options: [ .curveEaseOut], animations: {
-                cell.transform = CGAffineTransform.identity
-            }, completion: nil)
-            index += 1
-            if let cell = self.cards.cellForItem(at: IndexPath(row: Int(index), section: 0)) {
-                UIView.animate(withDuration: duration, delay: 0.0, options: [ .curveEaseOut], animations: {
-                    cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-                }, completion: nil)
-            }
-            
-        }else{
-            UIView.animate(withDuration: duration, delay: 0.0, options: [ .curveEaseOut], animations: {
-                cell.transform = CGAffineTransform.identity;
-            }, completion: nil)
-            
-            index -= 1 // left
-            if let cell = self.cards.cellForItem(at: IndexPath(row: Int(index), section: 0)) {
-                UIView.animate(withDuration: duration, delay: 0.0, options: [ .curveEaseOut], animations: {
-                    cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8);
-                }, completion: nil)
-            }
-            
-            index += 1
-            index += 1 // right
-            if let cell = self.cards.cellForItem(at: IndexPath(row: Int(index), section: 0)) {
-                UIView.animate(withDuration: duration, delay: 0.0, options: [ .curveEaseOut], animations: {
-                    cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8);
-                }, completion: nil)
-            }
-        }
-        
-    }*/
     
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
+        if scrollView.tag == -1000 { //so table view scrolling doesnt get effected by the scrollview delegate methods
+            return
+        }
         let pageWidth = scrollView.frame.width
         self.currentPage = Int((scrollView.contentOffset.x + pageWidth / 2) / pageWidth)
         self.pageControl.currentPage = self.currentPage % dotsCount
@@ -407,6 +460,10 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        if scrollView.tag == -1000 { //so  table view scrolling doesnt get effected by the scrollview delegate methods
+            return
+        }
         
         var visibleRect = CGRect()
         visibleRect.origin = cards.contentOffset
@@ -422,9 +479,37 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
     }
     
 }
-/*
+
 extension TasksVC: UITableViewDataSource, UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return completedTasks.count
+    }
     
-}*/
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodaysTaskItemCell", for: indexPath) as! TodaysTaskItemCell
+        
+        //inserting image from url async for roleImage
+        if completedTasks[indexPath.row].itemType == "ASSESSMENT" {
+            cell.itemImage.image = UIImage(named: "")
+            cell.itemTitleLabel.text = completedTasks[indexPath.row].title
+            cell.itemTimeLabel.text = completedTasks[indexPath.row].time
+        } else if completedTasks[indexPath.row].itemType == "PRESENTATION" {
+            cell.itemImage.image = UIImage(named: "")
+            cell.itemTitleLabel.text = completedTasks[indexPath.row].title
+            cell.itemTimeLabel.text = completedTasks[indexPath.row].time
+        }
+        
+        
+        return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //print(roles[indexPath.row].id as Any)
+    }
+
+}
 
 

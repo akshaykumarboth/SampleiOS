@@ -11,8 +11,6 @@ import UIKit
 class TodaysTaskCell: UICollectionViewCell {
     
     @IBOutlet var tasksCompletedTitleLabel: UILabel!
-    
     @IBOutlet var tableView: UITableView!
-    
     
 }

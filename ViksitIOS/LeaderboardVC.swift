@@ -72,6 +72,7 @@ class LeaderboardVC: UIViewController {
                     }
                 }
             }
+            
             if (pickerList != nil || pickerList.count != 0) {
                 //guard let item = pickerList[0] else {return}
                 
@@ -186,7 +187,14 @@ extension LeaderboardVC: UIPickerViewDelegate, UIPickerViewDataSource {
         let rightConstraint = pickView.rightAnchor.constraint(equalTo: view.rightAnchor)
         let widthConstraint = pickView.widthAnchor.constraint(equalToConstant: view.frame.width/2)
         print(pickerList.count)
-        let heightConstraint = pickView.heightAnchor.constraint(equalToConstant: CGFloat(25 * pickerList.count))
+        var heightConstraint: NSLayoutConstraint
+        if pickerList.count == 1 {
+            heightConstraint = pickView.heightAnchor.constraint(equalToConstant: CGFloat(25 * pickerList.count))
+            pickView.isHidden = true
+        } else {
+            pickView.isHidden = false
+            heightConstraint = pickView.heightAnchor.constraint(equalToConstant: CGFloat(25 * pickerList.count))
+        }
         
         NSLayoutConstraint.activate([topConstraint, rightConstraint, widthConstraint, heightConstraint])
         view.layoutIfNeeded()
@@ -212,7 +220,7 @@ extension LeaderboardVC: UIPickerViewDelegate, UIPickerViewDataSource {
         
         label.text = pickerList[row]
         label.textAlignment = .center
-        label.font = label.font.withSize(12)
+        label.font = label.font.withSize(10)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         

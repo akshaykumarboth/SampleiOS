@@ -79,7 +79,10 @@ class PerformanceVC: UIViewController {
         if let name = studentProfile?.firstName {
             userNameLabel.text = name
         }
-        childSkills = (skills.first?.skills)!
+        if let childSkils = (skills.first?.skills) {
+            childSkills = childSkils
+        }
+        
         
         // Do any additional setup after loading the view.
     }
