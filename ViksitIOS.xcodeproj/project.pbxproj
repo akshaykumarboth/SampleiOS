@@ -141,7 +141,6 @@
 		BAA147E11F33666500D1FFFE /* ProfileTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147E01F33666500D1FFFE /* ProfileTBC.swift */; };
 		BAA147EB1F34985000D1FFFE /* LeaderboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147EA1F34985000D1FFFE /* LeaderboardVC.swift */; };
 		BAA147ED1F3498FB00D1FFFE /* LeaderboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147EC1F3498FB00D1FFFE /* LeaderboardCell.swift */; };
-		BAA42BA81F2B44040022C553 /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA42BA71F2B44040022C553 /* testVC.swift */; };
 		BAE124CB1F6965B300F8576D /* TodaysTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CA1F6965B300F8576D /* TodaysTaskCell.swift */; };
 		BAE124CD1F6966CB00F8576D /* TodaysTaskItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CC1F6966CB00F8576D /* TodaysTaskItemCell.swift */; };
 		BAE124CF1F696EDD00F8576D /* SubmitCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */; };
@@ -322,7 +321,6 @@
 		BAA147E01F33666500D1FFFE /* ProfileTBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTBC.swift; sourceTree = "<group>"; };
 		BAA147EA1F34985000D1FFFE /* LeaderboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardVC.swift; sourceTree = "<group>"; };
 		BAA147EC1F3498FB00D1FFFE /* LeaderboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardCell.swift; sourceTree = "<group>"; };
-		BAA42BA71F2B44040022C553 /* testVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
 		BAE124CA1F6965B300F8576D /* TodaysTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysTaskCell.swift; sourceTree = "<group>"; };
 		BAE124CC1F6966CB00F8576D /* TodaysTaskItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysTaskItemCell.swift; sourceTree = "<group>"; };
 		BAE124CE1F696EDD00F8576D /* SubmitCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitCVCell.swift; sourceTree = "<group>"; };
@@ -635,7 +633,6 @@
 				BA63717C1F27946B00D77EA9 /* OtpVC.swift */,
 				BA6371821F27A25C00D77EA9 /* BatchCodeVC.swift */,
 				BA6371871F28707900D77EA9 /* PasswordChangedVC.swift */,
-				BAA42BA71F2B44040022C553 /* testVC.swift */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -1146,7 +1143,6 @@
 				BA43EE0F1F4C1BEC000D2DB0 /* CMSlide.swift in Sources */,
 				BAE124CF1F696EDD00F8576D /* SubmitCVCell.swift in Sources */,
 				BA690E9B1F26115500EF980F /* AllStudentRanks.swift in Sources */,
-				BAA42BA81F2B44040022C553 /* testVC.swift in Sources */,
 				BA43EDF91F4B2772000D2DB0 /* ONLY_TITLE_PARAGRAPH.swift in Sources */,
 				BA43EE031F4B27CA000D2DB0 /* ONLY_LIST.swift in Sources */,
 				BAA147DF1F33628D00D1FFFE /* AccountVC.swift in Sources */,

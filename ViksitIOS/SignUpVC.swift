@@ -17,15 +17,18 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        errorLabel.isHidden = true
+        view.endEditing(true)
     }
-    
     @IBAction func onSignupPressed(_ sender: UIButton) {
         var email: String = emailField.text!
         var phone: String = mobileField.text!
@@ -38,10 +41,14 @@ class SignUpVC: UIViewController {
                 "password" : password
             ]
             
-            var signupResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/create", method: "POST", param: signupParams)
+            //var signupResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/create", method: "POST", param: signupParams)
+            let signupResponse = Helper.makeHttpCall(url: "http://192.168.1.4:8080/t2c/user/create", method: "POST", param: signupParams)
+
             print(signupResponse)
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
+            self.present(nextViewController, animated:true, completion:nil)
         }
-        
         
     }
     

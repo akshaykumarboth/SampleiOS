@@ -16,14 +16,20 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         //errorLabel.frame = CGRect(origin: CGPoint(), size: CGSize(width: errorLabel.frame.width, height: 0))
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose ofx any resources that can be recreated.
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        
+        errorLabel.isHidden = true
+        view.endEditing(true)
     }
+
     
     @IBAction func onLoginPressed(_ sender: UIButton) {
         let email: String = emailField.text!
@@ -104,8 +110,6 @@ class LoginVC: UIViewController {
                     error_message += "and "
                 }
                 error_message += "password is required."
-                //errorLabel.text = error_message
-                //errorLabel.isHidden = false
                 print(error_message)
                 
             }  else if password.characters.count < 4 {
@@ -128,5 +132,6 @@ class LoginVC: UIViewController {
         }
     }
     
-   
+    
 }
+
