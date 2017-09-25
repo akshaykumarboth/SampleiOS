@@ -13,10 +13,11 @@ class LoginVC: UIViewController {
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var errorLabel: UILabel!
+    @IBOutlet var loginBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loginBtn.backgroundColor = UIColor.Custom.themeColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         //errorLabel.frame = CGRect(origin: CGPoint(), size: CGSize(width: errorLabel.frame.width, height: 0))

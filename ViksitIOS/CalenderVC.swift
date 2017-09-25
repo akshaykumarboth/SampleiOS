@@ -41,6 +41,7 @@ class CalenderVC: UIViewController {
         var coins: Int = 0
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             events = ComplexObject(JSONString: complexCache).events!
+            events.sort { $0.startingDate! < $1.startingDate! }
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
             xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
             coins = (ComplexObject(JSONString: complexCache).studentProfile?.coins)!
@@ -138,16 +139,23 @@ extension CalenderVC: UITableViewDataSource, UITableViewDelegate {
         // get start date // "2017-07-31 13:43:00"
         let month = getMonth(monthIndex: getSubstring(str: events[indexPath.row].startDate!, startOffest: 5, endOffset: -12))
         let date = getSubstring(str: events[indexPath.row].startDate!, startOffest: 8, endOffset: -9)
-        let starthours = setTimeFormat(dateString: events[indexPath.row].startDate!)
-        cell.eventDurationLabel.text = starthours /*+ getSubstring(str: events[indexPath.row].startDate!, startOffest: 13, endOffset: -3)*/
-        
-        cell.eventMonthLabel.text = month
-        //cell.eventName.attributedText = setHTMLString(testString: events[indexPath.row].name!,fontsize: "14" )
-        
-        cell.eventName.font = cell.eventName.font.withSize(11)
-        cell.eventName.setHTMLFromString(htmlText: events[indexPath.row].name!)
         cell.eventDateLabel.text = date
         cell.eventMonthLabel.text = month
+        cell.eventDateLabel.isHidden = false
+        cell.eventMonthLabel.isHidden = false
+
+        if indexPath.row != 0 {
+            if (getMonth(monthIndex: getSubstring(str: events[indexPath.row].startDate!, startOffest: 5, endOffset: -12)) == getMonth(monthIndex: getSubstring(str: events[indexPath.row-1].startDate!, startOffest: 5, endOffset: -12)) && getSubstring(str: events[indexPath.row].startDate!, startOffest: 8, endOffset: -9) == getSubstring(str: events[indexPath.row-1].startDate!, startOffest: 8, endOffset: -9)) {
+                cell.eventDateLabel.isHidden = true
+                cell.eventMonthLabel.isHidden = true
+            }
+        }
+        
+        
+        let starthours = setTimeFormat(dateString: events[indexPath.row].startDate!)
+        cell.eventDurationLabel.text = starthours /*+ getSubstring(str: events[indexPath.row].startDate!, startOffest: 13, endOffset: -3)*/
+        cell.eventName.font = cell.eventName.font.withSize(11)
+        cell.eventName.setHTMLFromString(htmlText: events[indexPath.row].name!)
         
         return cell
     }

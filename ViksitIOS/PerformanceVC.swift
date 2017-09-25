@@ -49,7 +49,8 @@ class PerformanceVC: UIViewController {
     }
     
     @IBAction func onLogoutPressed(_ sender: UIButton) {
-        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
+        DataCache.sharedInstance.cache["complexObject"] = ""
+        goto(storyBoardName: "Welcome", storyBoardID: "LoginVC")
     }
     
     func goto(storyBoardName: String, storyBoardID: String) {

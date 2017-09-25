@@ -29,10 +29,30 @@ extension UILabel {
         
         self.attributedText = attrStr
     }
+    
+    func wrapInHtml(body: String) -> String {
+        
+        var html = "<html>"
+        html += "<head>"
+        html += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+        html += "<style> body { padding: 0 !important; margin: 0 !important } </style>"
+        /*html += "<script type=\"text/javascript\">"
+         html += "window.onload = function() {"
+         html +=  "window.location.href = \"ready://\" + document.body.offsetHeight; }"
+         html += "</script>"*/
+        html += "</head>"
+        html += "<body><span>"
+        html += body.trimmingCharacters(in: .whitespacesAndNewlines)
+        html += "</span></body>"
+        html += "</html>"
+        
+        return html
+    }
 }
 
 extension UITextView {
     func setHTMLFromString(htmlText: String) {
+        
         let modifiedFont = NSString(format:"<span style=\"font-family: '-apple-system', 'HelveticaNeue'; font-size: \(self.font!.pointSize)\">%@</span>" as NSString, htmlText) as String
         
         //process collection values
@@ -43,6 +63,26 @@ extension UITextView {
         
         self.attributedText = attrStr
     }
+    
+    func wrapInHtml(body: String) -> String {
+        
+        var html = "<html>"
+        html += "<head>"
+        html += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+        html += "<style> body { padding: 0 !important; margin: 0 !important } </style>"
+        /*html += "<script type=\"text/javascript\">"
+         html += "window.onload = function() {"
+         html +=  "window.location.href = \"ready://\" + document.body.offsetHeight; }"
+         html += "</script>"*/
+        html += "</head>"
+        html += "<body><span>"
+        html += body.trimmingCharacters(in: .whitespacesAndNewlines)
+        html += "</span></body>"
+        html += "</html>"
+        
+        return html
+    }
+
 }
 
  extension UIColor {

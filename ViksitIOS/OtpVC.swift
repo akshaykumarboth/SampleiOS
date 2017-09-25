@@ -22,7 +22,7 @@ class OtpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        verifyBtn.backgroundColor = UIColor.Custom.themeColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
 

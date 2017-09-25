@@ -8,7 +8,9 @@ public class Events {
 	public var name : String?
 	public var status : String?
 	public var startDate : String?
+    public var startingDate : Date?
 	public var endDate : String?
+    public var endingDate : Date?
 	public var itemType : String?
 	public var itemId : Int?
 
@@ -31,11 +33,17 @@ public class Events {
         
         if json["startDate"] != nil {
             self.startDate = json["startDate"] as? String
+            var dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            self.startingDate = dateFormatter.date(from: startDate!)
             //print("skill id is ",self.id! )
         }
         
         if json["endDate"] != nil {
             self.endDate = json["endDate"] as? String
+            var dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            self.endingDate = dateFormatter.date(from: endDate!)
             //print("skill id is ",self.id! )
         }
         

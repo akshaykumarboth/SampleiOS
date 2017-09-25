@@ -14,10 +14,11 @@ class SignUpVC: UIViewController {
     @IBOutlet var mobileField: TextFieldWithPadding!
     @IBOutlet var passwordField: TextFieldWithPadding!
     @IBOutlet var errorLabel: UILabel!
+    @IBOutlet var signUpBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        signUpBtn.backgroundColor = UIColor.Custom.themeColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
 

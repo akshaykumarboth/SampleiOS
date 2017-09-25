@@ -10,10 +10,12 @@ import UIKit
 
 class PasswordChangedVC: UIViewController {
 
+    @IBOutlet var gotoLoginBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gotoLoginBtn.backgroundColor = UIColor.Custom.themeColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
 

@@ -14,7 +14,7 @@
         <!--Get StartedVC-->
         <scene sceneID="7gY-Eo-mda">
             <objects>
-                <viewController id="1K6-Eb-q1W" customClass="GetStartedVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GetStartedVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1K6-Eb-q1W" customClass="GetStartedVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JaO-dR-I25"/>
                         <viewControllerLayoutGuide type="bottom" id="fhv-JY-UZB"/>
@@ -31,18 +31,18 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fr-CF-Pxc">
-                                <rect key="frame" x="31" y="448" width="258" height="45"/>
+                                <rect key="frame" x="31" y="458" width="258" height="35"/>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.2196078431372549" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="7BN-Is-y6e"/>
+                                    <constraint firstAttribute="height" constant="35" id="7BN-Is-y6e"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="GET STARTED">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
+                                        <integer key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -81,6 +81,10 @@
                             <constraint firstItem="olw-iB-aW1" firstAttribute="centerX" secondItem="HRd-Q8-NrT" secondAttribute="centerX" id="taO-PB-CD2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appIconView" destination="r8R-EJ-duw" id="YRQ-5b-mxA"/>
+                        <outlet property="getStartedBTn" destination="1fr-CF-Pxc" id="UCJ-EY-0Qm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFw-nG-UuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -287,6 +291,7 @@
                     <connections>
                         <outlet property="emailField" destination="YIn-sh-zKy" id="Kxw-my-naL"/>
                         <outlet property="errorLabel" destination="sj2-LJ-Rql" id="DO4-ns-vXC"/>
+                        <outlet property="loginBtn" destination="UiR-CK-VoL" id="FMc-ct-bDd"/>
                         <outlet property="passwordField" destination="y6w-gM-Zuw" id="VQW-4u-y0Y"/>
                     </connections>
                 </viewController>
@@ -307,45 +312,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify your phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZ0-zQ-Qh0">
-                                <rect key="frame" x="41" y="171.5" width="238" height="24"/>
+                                <rect key="frame" x="41" y="176.5" width="238" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An OTP has been sent to your phone number ending with xxxxx72858" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpu-1n-yoI">
-                                <rect key="frame" x="26" y="205.5" width="268" height="36"/>
+                                <rect key="frame" x="26" y="210.5" width="268" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="OTP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bqx-k1-6gD" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="36" y="261.5" width="248" height="45"/>
+                                <rect key="frame" x="36" y="266.5" width="248" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Xpg-Wb-UJC"/>
+                                    <constraint firstAttribute="height" constant="35" id="Xpg-Wb-UJC"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89W-Lv-4Th">
-                                <rect key="frame" x="36" y="321.5" width="248" height="45"/>
+                                <rect key="frame" x="36" y="316.5" width="248" height="35"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="UD1-lI-oYx"/>
+                                    <constraint firstAttribute="height" constant="35" id="UD1-lI-oYx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="VERIFY">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
+                                        <integer key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sby-tu-ntc">
-                                <rect key="frame" x="117.5" y="381.5" width="85" height="30"/>
+                                <rect key="frame" x="117.5" y="366.5" width="85" height="30"/>
                                 <state key="normal" title="Resend OTP">
                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -407,42 +412,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset your password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azd-rh-Qtb">
-                                <rect key="frame" x="63.5" y="162.5" width="193" height="24"/>
+                                <rect key="frame" x="63.5" y="177.5" width="193" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i56-5Y-xAG" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="26" y="206.5" width="268" height="45"/>
+                                <rect key="frame" x="26" y="221.5" width="268" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="pSr-TN-Isa"/>
+                                    <constraint firstAttribute="height" constant="35" id="pSr-TN-Isa"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UcA-Ez-jHk" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="26" y="261.5" width="268" height="45"/>
+                                <rect key="frame" x="26" y="266.5" width="268" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Epv-AZ-rvC"/>
+                                    <constraint firstAttribute="height" constant="35" id="Epv-AZ-rvC"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZZ-hS-5oc">
-                                <rect key="frame" x="26" y="321.5" width="268" height="45"/>
+                                <rect key="frame" x="26" y="316.5" width="268" height="35"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="HaK-J7-5rL"/>
+                                    <constraint firstAttribute="height" constant="35" id="HaK-J7-5rL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="SUBMIT">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
+                                        <integer key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -498,21 +503,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let’s get your account back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8E-NL-7fW">
-                                <rect key="frame" x="33" y="171.5" width="254" height="24"/>
+                                <rect key="frame" x="33" y="176.5" width="254" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All we need is your phone number so we can send you your OTP." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T93-MJ-q1a">
-                                <rect key="frame" x="26" y="205.5" width="268" height="36"/>
+                                <rect key="frame" x="26" y="210.5" width="268" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p90-cq-Y0U" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="36" y="261.5" width="248" height="45"/>
+                                <rect key="frame" x="36" y="266.5" width="248" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="cT4-UF-0Ze"/>
+                                    <constraint firstAttribute="height" constant="35" id="cT4-UF-0Ze"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -528,18 +533,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-Zg-Yvh">
-                                <rect key="frame" x="36" y="321.5" width="248" height="45"/>
+                                <rect key="frame" x="36" y="316.5" width="248" height="35"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="qZk-MJ-fHr"/>
+                                    <constraint firstAttribute="height" constant="35" id="qZk-MJ-fHr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="SUBMIT">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
+                                        <integer key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -778,6 +783,7 @@
                         <outlet property="errorLabel" destination="Ap8-dy-mDM" id="Jpa-I1-ZqW"/>
                         <outlet property="mobileField" destination="J2k-ON-WD9" id="ryh-8h-0FE"/>
                         <outlet property="passwordField" destination="UkC-b3-e9r" id="reh-Fq-Cne"/>
+                        <outlet property="signUpBtn" destination="34K-CV-a2e" id="o0u-Ft-fAX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xqy-br-7nB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -797,39 +803,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify your phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grf-fE-v7d">
-                                <rect key="frame" x="41.5" y="174" width="238" height="24"/>
+                                <rect key="frame" x="41.5" y="179" width="238" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xYc-Mt-zug" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="26" y="261.5" width="268" height="45"/>
+                                <rect key="frame" x="26" y="266.5" width="268" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="ccN-TC-h7q"/>
+                                    <constraint firstAttribute="height" constant="35" id="ccN-TC-h7q"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPd-l1-JBT">
-                                <rect key="frame" x="26" y="326.5" width="268" height="45"/>
+                                <rect key="frame" x="26" y="321.5" width="268" height="35"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="viY-gO-uN8"/>
+                                    <constraint firstAttribute="height" constant="35" id="viY-gO-uN8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="SUBMIT">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
+                                        <integer key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your mobile number to proceed" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSc-yb-UVJ">
-                                <rect key="frame" x="26" y="208" width="268" height="33.5"/>
+                                <rect key="frame" x="26" y="213" width="268" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -887,18 +893,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIj-yg-2b2">
-                                <rect key="frame" x="26" y="321" width="268" height="45"/>
+                                <rect key="frame" x="26" y="321" width="268" height="35"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="c63-MV-9uC"/>
+                                    <constraint firstAttribute="height" constant="35" id="c63-MV-9uC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="GO TO LOG IN">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
+                                        <integer key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -936,63 +942,63 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Pq-u9-Noh">
-                                <rect key="frame" x="30.5" y="254" width="259" height="61"/>
+                                <rect key="frame" x="45.5" y="259" width="229" height="51"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="EZ0-WM-J1n" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="7" y="8" width="35" height="45"/>
+                                        <rect key="frame" x="7" y="8" width="30" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="Ac7-kZ-60I"/>
-                                            <constraint firstAttribute="width" constant="35" id="W5Y-Eh-bHi"/>
+                                            <constraint firstAttribute="height" constant="35" id="Ac7-kZ-60I"/>
+                                            <constraint firstAttribute="width" constant="30" id="W5Y-Eh-bHi"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxk-wd-Da0" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="175" y="8" width="35" height="45"/>
+                                        <rect key="frame" x="155" y="8" width="30" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="cOK-G1-ETX"/>
-                                            <constraint firstAttribute="width" constant="35" id="eY4-NN-2K5"/>
+                                            <constraint firstAttribute="height" constant="35" id="cOK-G1-ETX"/>
+                                            <constraint firstAttribute="width" constant="30" id="eY4-NN-2K5"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fh8-wZ-b7F" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="49" y="8" width="35" height="45"/>
+                                        <rect key="frame" x="44" y="8" width="30" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="SDH-01-97w"/>
-                                            <constraint firstAttribute="height" constant="45" id="skJ-LD-Gfm"/>
+                                            <constraint firstAttribute="width" constant="30" id="SDH-01-97w"/>
+                                            <constraint firstAttribute="height" constant="35" id="skJ-LD-Gfm"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="taj-gK-Yt3" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="133" y="8" width="35" height="45"/>
+                                        <rect key="frame" x="118" y="8" width="30" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="ndc-gY-6dT"/>
-                                            <constraint firstAttribute="width" constant="35" id="znq-gl-mxz"/>
+                                            <constraint firstAttribute="height" constant="35" id="ndc-gY-6dT"/>
+                                            <constraint firstAttribute="width" constant="30" id="znq-gl-mxz"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AMu-jK-8QE" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="91" y="8" width="35" height="45"/>
+                                        <rect key="frame" x="81" y="8" width="30" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="h0l-9M-VvB"/>
-                                            <constraint firstAttribute="height" constant="45" id="nz9-3S-pdW"/>
+                                            <constraint firstAttribute="width" constant="30" id="h0l-9M-VvB"/>
+                                            <constraint firstAttribute="height" constant="35" id="nz9-3S-pdW"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SvO-yi-Dzb" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="217" y="8" width="35" height="45"/>
+                                        <rect key="frame" x="192" y="8" width="30" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="ZYg-Bj-6ML"/>
-                                            <constraint firstAttribute="width" constant="35" id="dIC-H2-xRl"/>
+                                            <constraint firstAttribute="height" constant="35" id="ZYg-Bj-6ML"/>
+                                            <constraint firstAttribute="width" constant="30" id="dIC-H2-xRl"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1019,30 +1025,30 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your batch code consists of a combination of letters and numbers. Eg: AA11" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQO-Yc-xaj">
-                                <rect key="frame" x="26" y="205.5" width="268" height="33.5"/>
+                                <rect key="frame" x="26" y="210.5" width="268" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your batch code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0x-sD-ZaC">
-                                <rect key="frame" x="59" y="171.5" width="202.5" height="24"/>
+                                <rect key="frame" x="59" y="176.5" width="202.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tl5-qS-yxp">
-                                <rect key="frame" x="36" y="325" width="248" height="45"/>
+                                <rect key="frame" x="36" y="320" width="248" height="35"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="B1i-a0-ba7"/>
+                                    <constraint firstAttribute="height" constant="35" id="B1i-a0-ba7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="GO TO LOG IN">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
+                                        <integer key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -1089,8 +1095,8 @@
         <image name="talentify_logo" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pt4-Ok-1fs"/>
-        <segue reference="AjV-gD-DSA"/>
+        <segue reference="XIZ-ze-BlM"/>
+        <segue reference="Hag-Kv-NTP"/>
         <segue reference="YVs-fe-mPO"/>
     </inferredMetricsTieBreakers>
 </document>

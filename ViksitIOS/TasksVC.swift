@@ -220,6 +220,7 @@ extension TasksVC: UICollectionViewDataSource {
                 
                 return cell
             } else {
+                // -1 done in each index becausea the first that is added is todays task card
                 print("\(incompleteTasks[indexPath.row-1].title) -- at -- \(indexPath.row)")
                 //indexPath = IndexPath(row: indexPath.row-1, section: 0)
                 if incompleteTasks[indexPath.row-1].itemType == "LESSON_PRESENTATION" {

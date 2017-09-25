@@ -40,12 +40,13 @@ class AccountVC: UIViewController {
     }
     
     @IBAction func onBackPressed(_ sender: UIButton) {
+        
         goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
     }
     
     
-    @IBAction func onLogoutPressed(_ sender: UIButton) {
-        goto(storyBoardName: "Tab", storyBoardID: "TabBarController")
+    @IBAction func onLogoutPressed(_ sender: UIButton) {DataCache.sharedInstance.cache["complexObject"] = ""
+        goto(storyBoardName: "Welcome", storyBoardID: "LoginVC")
     }
     
     func goto(storyBoardName: String, storyBoardID: String) {

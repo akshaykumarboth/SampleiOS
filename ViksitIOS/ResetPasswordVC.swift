@@ -17,7 +17,7 @@ class ResetPasswordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        submitBtn.backgroundColor = UIColor.Custom.themeColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
