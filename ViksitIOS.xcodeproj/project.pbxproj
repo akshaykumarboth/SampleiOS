@@ -155,6 +155,8 @@
 		BAE124EB1F7407A500F8576D /* DummVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124EA1F7407A500F8576D /* DummVC.swift */; };
 		BAE124ED1F74105A00F8576D /* AssessmentReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124EC1F74105A00F8576D /* AssessmentReviewVC.swift */; };
 		BAE124EF1F74E4A900F8576D /* AssessmentReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE124EE1F74E4A900F8576D /* AssessmentReviewCell.swift */; };
+		BAE125111F794CFF00F8576D /* CalenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE125101F794CFF00F8576D /* CalenderCell.swift */; };
+		BAE125131F794E0A00F8576D /* JTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE125121F794E0A00F8576D /* JTVC.swift */; };
 		FE7732A221A80E2DDF41C7B7 /* Pods_ViksitIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -335,6 +337,8 @@
 		BAE124EA1F7407A500F8576D /* DummVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummVC.swift; sourceTree = "<group>"; };
 		BAE124EC1F74105A00F8576D /* AssessmentReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentReviewVC.swift; sourceTree = "<group>"; };
 		BAE124EE1F74E4A900F8576D /* AssessmentReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentReviewCell.swift; sourceTree = "<group>"; };
+		BAE125101F794CFF00F8576D /* CalenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCell.swift; sourceTree = "<group>"; };
+		BAE125121F794E0A00F8576D /* JTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JTVC.swift; sourceTree = "<group>"; };
 		D204BF41765CCA9C29915A81 /* Pods-ViksitIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViksitIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViksitIOSUITests/Pods-ViksitIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViksitIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -641,12 +645,14 @@
 			isa = PBXGroup;
 			children = (
 				BA63718A1F28828400D77EA9 /* Tab.storyboard */,
+				BAE125101F794CFF00F8576D /* CalenderCell.swift */,
 				BA63719C1F293B6000D77EA9 /* TabBarController.swift */,
 				BA63719A1F28E07900D77EA9 /* tasks */,
 				BA6371991F28E04300D77EA9 /* roles */,
 				BA63718C1F2882A500D77EA9 /* calender */,
 				BAE124D01F6AA0E400F8576D /* TopActionBarView.xib */,
 				BAE124D21F6AA13F00F8576D /* TopActionBarView.swift */,
+				BAE125121F794E0A00F8576D /* JTVC.swift */,
 			);
 			name = tabs;
 			sourceTree = "<group>";
@@ -998,12 +1004,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ViksitIOS/Pods-ViksitIOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleProgressBar/CircleProgressBar.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatedCollectionViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1169,6 +1177,7 @@
 				BA43EE2E1F51919A000D2DB0 /* SymbolTextLabel.swift in Sources */,
 				BAA147D21F3225D500D1FFFE /* RoleInfoVC.swift in Sources */,
 				BAA147ED1F3498FB00D1FFFE /* LeaderboardCell.swift in Sources */,
+				BAE125111F794CFF00F8576D /* CalenderCell.swift in Sources */,
 				BA4914F41F62B17D000F5280 /* HiddenTableCell.swift in Sources */,
 				BA63717D1F27946B00D77EA9 /* OtpVC.swift in Sources */,
 				BA690EB41F26119E00EF980F /* SkillObjectives.swift in Sources */,
@@ -1211,6 +1220,7 @@
 				BA690EA31F26118100EF980F /* Courses.swift in Sources */,
 				BA43EE261F4EDAE1000D2DB0 /* ImageAsyncLoader.swift in Sources */,
 				BA6371981F28C1A500D77EA9 /* NotificationTableCell.swift in Sources */,
+				BAE125131F794E0A00F8576D /* JTVC.swift in Sources */,
 				BA43EE291F5165B3000D2DB0 /* ThemeUtil.swift in Sources */,
 				BAA147DD1F33627000D1FFFE /* PerformanceVC.swift in Sources */,
 				BA43EE421F5428DB000D2DB0 /* DVC.swift in Sources */,

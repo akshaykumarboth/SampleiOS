@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JTAppleCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ViksitIOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,17 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>40BCE5612D8293056436CB57A80A64D0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>571AFBB41C8F0882E7F6CE7E988FD811</key>
+		<key>5552B6CA857898518DE973CDC9F38A71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B545B48FA0CEE58E0B8D9309EE4CFF7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFED2E29E95E065400F8846E0231A970</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2A2B3B57C773BC651E615355D5939C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

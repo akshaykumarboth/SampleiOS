@@ -9,6 +9,7 @@ target 'ViksitIOS' do
 	pod 'CircleProgressBar', '~> 0.32’
     pod 'SWXMLHash', '~> 4.0.0'
     pod 'AnimatedCollectionViewLayout'
+    pod 'JTAppleCalendar', '~> 7.0'
     
 
   target 'ViksitIOSTests' do
