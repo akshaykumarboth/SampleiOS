@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  ViksitIOS
+//  StackOverFLow
 //
-//  Created by Istar Feroz on 24/07/17.
-//  Copyright © 2017 Istar Feroz. All rights reserved.
+//  Created by Akshay Kumar Both on 9/23/17.
+//  Copyright © 2017 Akshay Kumar Both. All rights reserved.
 //
 
 import UIKit
@@ -12,27 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    //var isUserLoggedIn: Bool?
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        //for temporary testing
-        //DataCache.sharedInstance.cache["complexObject"] = Helper.readFromFile(fileName: "DummyData", extnsion: "txt")
-        //DataCache.sharedInstance.cache["assessment"] = Helper.readFromFile(fileName: "assessment", extnsion: "txt")
-
-        
-        //for solid testing
-        
-        if DataCache.sharedInstance.cache["complexObject"] == nil {
-            
-            //var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/user/6062/complex", method: "GET", param: [:])
-            var response: String = Helper.makeHttpCall (url : "http://192.168.1.4:8080/t2c/user/6062/complex", method: "GET", param: [:])
-            DataCache.sharedInstance.cache["complexObject"] = response
-        }
-
-        //http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972 // for assessment response
-        
         return true
     }
 
@@ -52,14 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    
 
 
 }

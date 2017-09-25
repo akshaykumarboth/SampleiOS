@@ -17,7 +17,7 @@ class TabBarController: UITabBarController {
 
         //changing tint color of tab bar
         tabbar.tintColor = UIColor.Custom.themeColor
-        tabbar.backgroundColor = UIColor.white        //The rest of your code
+        tabbar.backgroundColor = UIColor.white   //The rest of your code
 
     }
 

@@ -86,19 +86,6 @@ class CalenderVC: UIViewController {
         self.present(nextViewController, animated:true, completion:nil)
     }
     
-    
-    /*
-    func setHTMLString(testString: String,fontsize: String ) -> NSAttributedString{
-        let str = ThemeUtil.wrapInHtml(body: testString, fontsize: fontsize)
-        var attrStr = try! NSAttributedString(
-            data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
-            options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
-            documentAttributes: nil)
-        //textview.attributedText = attrStr
-        return attrStr
-    }
-    */
-    
     func getMonth(monthIndex: String) -> String {
          //months: [Int: String] = [:]
         let months:[String:String] = [ "01":"JAN", "02":"FEB", "03":"MAR", "04":"APR", "05":"MAY", "06":"JUN", "07":"JUL", "08":"AUG", "09":"SEP", "10":"OCT", "11":"NOV", "12":"DEC" ]
