@@ -181,7 +181,7 @@ extension TasksVC: UICollectionViewDataSource {
         print("\(incompleteTasks[sender.tag].id) -- \(incompleteTasks[sender.tag].title) -- \(incompleteTasks[sender.tag].header)")
         
         let task = incompleteTasks[sender.tag]
-        return
+        
         /*
          var storyBoardName: String = ""
          var storyBoardID: String = ""*/

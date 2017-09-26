@@ -220,8 +220,8 @@ class AssessmentVC: UIViewController {
         if let taskid = taskID {
             if let userid = userID {
                 print("userid \(userid) -- tasskid \(taskid)")
-                //let response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
-                let response: String = Helper.makeHttpCall (url : "http://192.168.1.4:8080/t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
+                let response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
+                //let response: String = Helper.makeHttpCall (url : "http://192.168.1.4:8080/t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
                 self.assessment = Assessment(JSONString: response)
                 print(assessment.id)
                 //assessmentResponse.id = self.assessment.id //

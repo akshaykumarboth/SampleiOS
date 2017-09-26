@@ -11,22 +11,39 @@ import JTAppleCalendar
 
 class JTVC: UIViewController {
     
+    @IBOutlet var prevBtn: UIButton!
+    @IBOutlet var nextBtn: UIButton!
     @IBOutlet var calendarView: JTAppleCalendarView!
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var yearLabel: UILabel!
-    
     let formatter = DateFormatter()
+    var startDate: Date?
+    var endDate: Date?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //default set to todays date
         calendarView.scrollToDate(Date(), animateScroll: false)
         calendarView.selectDates([Date()])
         
         setUpCalendar()
+        
+        //calendarView.reloadData()
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func showNext(_ sender: UIButton) {
+        //calendarView.scrollToDate(formatter.date(from: "2017 01 01")!, animateScroll: false)
+        //calendarView.scroll
+        calendarView.scrollToSegment(.next)
+    }
+    
+    @IBAction func showPrev(_ sender: UIButton) {
+        calendarView.scrollToSegment(.previous)
+    }
+    
     func setUpCalendar() {
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
@@ -88,10 +105,12 @@ extension JTVC: JTAppleCalendarViewDataSource {
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        let startDate = formatter.date(from: "2017 01 01")!
-        let endDate = formatter.date(from: "2017 12 31")!
+        startDate = formatter.date(from: "2017 01 01")!
+        endDate = formatter.date(from: "2019 12 31")!
+
         
-        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+        
+        let parameters = ConfigurationParameters(startDate: startDate!, endDate: endDate!)
         return parameters
     }
     
@@ -110,13 +129,14 @@ extension JTVC: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+        print(date)
+        //startDate = date
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
     }
-    
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setupViewsOfCalendar(from: visibleDates)
