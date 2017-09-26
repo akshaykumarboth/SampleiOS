@@ -10,11 +10,10 @@ import UIKit
 import JTAppleCalendar
 
 class CalenderVC: UIViewController {
-    
+    var filteredEvents: Array<Events> = []
     var events: Array<Events> = []
     let formatter = DateFormatter()
-    var startDate: Date?
-    var endDate: Date?
+    var selectedDate: Date! = Date()
     
     @IBOutlet var calendarContainerYConstraint: NSLayoutConstraint!
     @IBOutlet var prevBtn: UIButton!
@@ -53,6 +52,10 @@ class CalenderVC: UIViewController {
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             events = ComplexObject(JSONString: complexCache).events!
             events.sort { $0.startingDate! < $1.startingDate! }
+            
+            filteredEvents  = events.filter({$0.startingDate! >= selectedDate})
+            print(filteredEvents.count)
+            
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
             xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
             coins = (ComplexObject(JSONString: complexCache).studentProfile?.coins)!
@@ -66,7 +69,6 @@ class CalenderVC: UIViewController {
                     if data != nil {
                         self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
                     } else {
-                        
                         self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
                     }
                 }
@@ -80,7 +82,6 @@ class CalenderVC: UIViewController {
         //adjust table cell according to its content
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
-        
         
         //for calendar
         calendarView.scrollToDate(Date(), animateScroll: false)
@@ -174,6 +175,54 @@ class CalenderVC: UIViewController {
         }
     }
     
+    
+    
+}
+
+extension CalenderVC: UITableViewDataSource, UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredEvents.count
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(filteredEvents[indexPath.row].id!)
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "calenderCell", for: indexPath) as! CalenderTableCell
+        
+        // get start date // "2017-07-31 13:43:00"
+        let month = getMonth(monthIndex: getSubstring(str: filteredEvents[indexPath.row].startDate!, startOffest: 5, endOffset: -12))
+        let date = getSubstring(str: filteredEvents[indexPath.row].startDate!, startOffest: 8, endOffset: -9)
+        cell.eventDateLabel.text = date
+        cell.eventMonthLabel.text = month
+        cell.eventDateLabel.isHidden = false
+        cell.eventMonthLabel.isHidden = false
+
+        if indexPath.row != 0 {
+            if (getMonth(monthIndex: getSubstring(str: filteredEvents[indexPath.row].startDate!, startOffest: 5, endOffset: -12)) == getMonth(monthIndex: getSubstring(str: filteredEvents[indexPath.row-1].startDate!, startOffest: 5, endOffset: -12)) && getSubstring(str: filteredEvents[indexPath.row].startDate!, startOffest: 8, endOffset: -9) == getSubstring(str: filteredEvents[indexPath.row-1].startDate!, startOffest: 8, endOffset: -9)) {
+                
+                cell.eventDateLabel.isHidden = true
+                cell.eventMonthLabel.isHidden = true
+            }
+        }
+        
+        let starthours = setTimeFormat(dateString: filteredEvents[indexPath.row].startDate!)
+        cell.eventDurationLabel.text = starthours /*+ getSubstring(str: events[indexPath.row].startDate!, startOffest: 13, endOffset: -3)*/
+        cell.eventName.font = cell.eventName.font.withSize(12)
+        cell.eventName.setHTMLFromString(htmlText: filteredEvents[indexPath.row].name!)
+        
+        return cell
+    }
+
+}
+
+extension CalenderVC: JTAppleCalendarViewDataSource {
+    
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
         guard let validCell = view as? CalenderCell else { return }
         
@@ -200,6 +249,10 @@ class CalenderVC: UIViewController {
         
         if cellState.isSelected {
             validCell.selectedView.isHidden = false
+            selectedDate = cellState.date
+            filteredEvents  = events.filter({$0.startingDate! >= selectedDate})
+            tableView.reloadData()
+            print(selectedDate)
         } else {
             validCell.selectedView.isHidden = true
         }
@@ -215,65 +268,15 @@ class CalenderVC: UIViewController {
         self.monthLabel.text = self.formatter.string(from: date)
     }
     
-
-    
-}
-
-extension CalenderVC: UITableViewDataSource, UITableViewDelegate {
-    
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
-    }
-    
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(events[indexPath.row].id!)
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.separatorStyle = .none
-        tableView.showsVerticalScrollIndicator = false
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "calenderCell", for: indexPath) as! CalenderTableCell
-        
-        // get start date // "2017-07-31 13:43:00"
-        let month = getMonth(monthIndex: getSubstring(str: events[indexPath.row].startDate!, startOffest: 5, endOffset: -12))
-        let date = getSubstring(str: events[indexPath.row].startDate!, startOffest: 8, endOffset: -9)
-        cell.eventDateLabel.text = date
-        cell.eventMonthLabel.text = month
-        cell.eventDateLabel.isHidden = false
-        cell.eventMonthLabel.isHidden = false
-
-        if indexPath.row != 0 {
-            if (getMonth(monthIndex: getSubstring(str: events[indexPath.row].startDate!, startOffest: 5, endOffset: -12)) == getMonth(monthIndex: getSubstring(str: events[indexPath.row-1].startDate!, startOffest: 5, endOffset: -12)) && getSubstring(str: events[indexPath.row].startDate!, startOffest: 8, endOffset: -9) == getSubstring(str: events[indexPath.row-1].startDate!, startOffest: 8, endOffset: -9)) {
-                cell.eventDateLabel.isHidden = true
-                cell.eventMonthLabel.isHidden = true
-            }
-        }
-        
-        
-        let starthours = setTimeFormat(dateString: events[indexPath.row].startDate!)
-        cell.eventDurationLabel.text = starthours /*+ getSubstring(str: events[indexPath.row].startDate!, startOffest: 13, endOffset: -3)*/
-        cell.eventName.font = cell.eventName.font.withSize(11)
-        cell.eventName.setHTMLFromString(htmlText: events[indexPath.row].name!)
-        
-        return cell
-    }
-
-}
-
-extension CalenderVC: JTAppleCalendarViewDataSource {
-    
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         formatter.dateFormat = "yyyy MM dd"
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        startDate = formatter.date(from: "2017 01 01")!
-        endDate = formatter.date(from: "2019 12 31")!
+        let startDate = formatter.date(from: "2017 01 01")!
+        let endDate = formatter.date(from: "2019 12 31")!
         
-        
-        
-        let parameters = ConfigurationParameters(startDate: startDate!, endDate: endDate!)
+        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
         return parameters
     }
     
@@ -294,13 +297,15 @@ extension CalenderVC: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellSelected(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
-        print(date)
+        //print(date)
         
         //get the date, filter list by date and reload data of event's table view 
         //startDate = date
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        handleCellSelected(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
