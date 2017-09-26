@@ -105,7 +105,6 @@ class ThemeUtil {
         
     }
 
-    
     static func setNumberListItemTextLabelCustom(number: String, text: String, listStack: UIStackView) {
         if text != nil && text != "" {
             //let textLabel: UILabel = UILabel()

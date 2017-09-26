@@ -26,9 +26,9 @@ class ONLY_LIST: UIViewController {
         if slide.list.items.count > 0 {
             for item in slide.list.items {
                 print(item.text)
-                
-                //ThemeUtil.setListItemTextLabel(text: item.text, listStack: listStack)
-                ThemeUtil.setListItemTextLabelCustom(text: item.text, listStack: listStack)
+                if item.text != "" {
+                    ThemeUtil.setListItemTextLabelCustom(text: item.text, listStack: listStack)
+                }
                 
             }
         }

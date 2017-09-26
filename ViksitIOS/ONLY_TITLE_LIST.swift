@@ -31,14 +31,14 @@ class ONLY_TITLE_LIST: UIViewController {
         if slide.list.items.count > 0 {
             for item in slide.list.items {
                 print(item.text)
+                if item.text != "" {
+                    //ThemeUtil.setListItemTextLabel(text: item.text, listStack: listStack)
+                    ThemeUtil.setListItemTextLabelCustom(text: item.text, listStack: listStack)
+                }
                 
-                //ThemeUtil.setListItemTextLabel(text: item.text, listStack: listStack)
-                ThemeUtil.setListItemTextLabelCustom(text: item.text, listStack: listStack)
             }
         }
         //ImageAsyncLoader.loadImageAsync(url: slide.image.url, imgView: gifImageView)
     }
-
-    
 
 }

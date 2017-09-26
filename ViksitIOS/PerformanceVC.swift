@@ -84,8 +84,6 @@ class PerformanceVC: UIViewController {
             childSkills = childSkils
         }
         
-        
-        // Do any additional setup after loading the view.
     }
     
     override var prefersStatusBarHidden : Bool {
@@ -167,11 +165,11 @@ extension PerformanceVC: UICollectionViewDelegate, UICollectionViewDataSource, U
 
 extension PerformanceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let openViewHeight: Int = 58
+        let openViewHeight: Int = 55
         
         if (indexPath.row == selectedRowIndex.row && isExpanded == false){
             isExpanded = true
-            return CGFloat(openViewHeight + 38 * (childSkills[indexPath.row].skills?.count)!)
+            return CGFloat(openViewHeight + 36 * (childSkills[indexPath.row].skills?.count)!)
             
         } else if (indexPath.row == selectedRowIndex.row && isExpanded == true){
             isExpanded = false
@@ -180,6 +178,7 @@ extension PerformanceVC: UITableViewDelegate, UITableViewDataSource {
             isExpanded = false
             return CGFloat(openViewHeight)
         }
+        
         
     }
     
@@ -192,7 +191,6 @@ extension PerformanceVC: UITableViewDelegate, UITableViewDataSource {
         print(childSkills[indexPath.row].name)
         selectedRowIndex = indexPath
         tableView.beginUpdates()
-        
         
         //let cell = tableView.dequeueReusableCell(withIdentifier: "SubSkillTableCell", for: indexPath) as! SubSkillTableCell
         let cell = tableView.cellForRow(at: indexPath) as! SubSkillTableCell
@@ -215,9 +213,8 @@ extension PerformanceVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.separatorStyle = .none
+        //tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubSkillTableCell", for: indexPath) as! SubSkillTableCell

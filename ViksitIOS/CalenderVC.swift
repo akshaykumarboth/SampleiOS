@@ -54,7 +54,7 @@ class CalenderVC: UIViewController {
             events.sort { $0.startingDate! < $1.startingDate! }
             
             filteredEvents  = events.filter({$0.startingDate! >= selectedDate})
-            print(filteredEvents.count)
+            //print(filteredEvents.count)
             
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
             xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
@@ -187,6 +187,12 @@ extension CalenderVC: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(filteredEvents[indexPath.row].id!)
+        
+        if filteredEvents[indexPath.row].itemType == "ASSESSMENT" {
+            
+        } else if (filteredEvents[indexPath.row].itemType == "PRESENTATION" || filteredEvents[indexPath.row].itemType == "PRESENTATION") {
+            
+        }
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -209,6 +215,16 @@ extension CalenderVC: UITableViewDataSource, UITableViewDelegate {
                 cell.eventDateLabel.isHidden = true
                 cell.eventMonthLabel.isHidden = true
             }
+        }
+        
+        //we are getting the exact time but india's timezone is diiferent , i.e. UTC + 5:30
+        var tempDate = Date()
+        let calendar = Calendar.current
+        tempDate = calendar.date(byAdding: .hour, value: 5, to: tempDate)!
+        tempDate = calendar.date(byAdding: .minute, value: 30, to: tempDate)!
+        
+        if (filteredEvents[indexPath.row].startingDate! >= tempDate  && filteredEvents[indexPath.row].endingDate! <= tempDate){
+            cell.eventCardView.backgroundColor = UIColor.Custom.skyBlueColor
         }
         
         let starthours = setTimeFormat(dateString: filteredEvents[indexPath.row].startDate!)
@@ -273,6 +289,7 @@ extension CalenderVC: JTAppleCalendarViewDataSource {
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
+        // setting start and end dates for the calendar
         let startDate = formatter.date(from: "2017 01 01")!
         let endDate = formatter.date(from: "2019 12 31")!
         

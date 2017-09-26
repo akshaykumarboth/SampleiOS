@@ -91,7 +91,7 @@ extension RoleInfoVC: UITableViewDelegate, UITableViewDataSource {
         
         if (indexPath.row == selectedRowIndex.row && isExpanded == false){
             isExpanded = true
-            return CGFloat(openViewHeight + 38 * (skills[indexPath.row].skills?.count)!)
+            return CGFloat(openViewHeight + 36 * (skills[indexPath.row].skills?.count)!)
             
         } else if (indexPath.row == selectedRowIndex.row && isExpanded == true){
             isExpanded = false

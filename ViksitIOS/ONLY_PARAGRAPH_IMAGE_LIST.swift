@@ -27,7 +27,7 @@ class ONLY_PARAGRAPH_IMAGE_LIST: UIViewController {
         if slide.list.items.count > 0 {
             for item in slide.list.items {
                 if item.text != "" {
-                    print(item.text)
+                    
                     ThemeUtil.setParaListTextLabelCustom(text: item.text, paraStack: paraStack)
                 }
             }

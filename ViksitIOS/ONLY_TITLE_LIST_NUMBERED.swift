@@ -29,8 +29,11 @@ class ONLY_TITLE_LIST_NUMBERED: UIViewController {
         var count = 1
         if slide.list.items.count > 0 {
             for item in slide.list.items {
-                ThemeUtil.setNumberListItemTextLabelCustom(number: String(count), text: item.text, listStack: listStack)
-                count += 1
+                if item.text != "" {
+                    ThemeUtil.setNumberListItemTextLabelCustom(number: String(count), text: item.text, listStack: listStack)
+                    count += 1
+                }
+                
             }
         }
         if (slide.image_BG != "null" || slide.image_BG != "none"){

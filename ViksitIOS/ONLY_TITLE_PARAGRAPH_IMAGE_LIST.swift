@@ -27,7 +27,10 @@ class ONLY_TITLE_PARAGRAPH_IMAGE_LIST: UIViewController {
         titleLabel.text = slide.title.text
         for item in slide.list.items {
             print(item.text)
-            ThemeUtil.setParaListTextLabelCustom(text: item.text, paraStack: paraStack)
+            if item.text != "" {
+                ThemeUtil.setParaListTextLabelCustom(text: item.text, paraStack: paraStack)
+            }
+            
         }
         
         if (slide.image_BG != "null" || slide.image_BG != "none"){

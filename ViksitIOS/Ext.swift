@@ -88,7 +88,8 @@ extension UITextView {
  extension UIColor {
     
      struct Custom {
-         static let themeColor = UIColor(red:0.92, green:0.22, blue:0.31, alpha:1.0)
+        static let themeColor = UIColor(red:0.92, green:0.22, blue:0.31, alpha:1.0)
+        static let skyBlueColor = UIColor(red:0.14, green:0.71, blue:0.98, alpha:1.0)
     }
     
 }
