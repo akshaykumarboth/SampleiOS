@@ -218,6 +218,7 @@ class Helper{
                 let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0];
                 //let filePath="\(documentsPath)/tempFile.mp4"
                 let filePath="\(documentsPath)/\(finalFileName!)"
+                //let filePath = documentsPath.appendingPathComponent(finalFileName)
                 DispatchQueue.main.async {
                     urlData.write(toFile: filePath, atomically: true)
                     PHPhotoLibrary.shared().performChanges({
