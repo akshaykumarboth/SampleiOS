@@ -1,30 +1,34 @@
 //
-//  DirectoryVC.swift
+//  MediaUtil.swift
 //  ViksitIOS
 //
 //  Created by Akshay Kumar Both on 9/27/17.
 //  Copyright © 2017 Istar Feroz. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Photos
 
-class DirectoryVC: UIViewController {
+class MediaUtil {
     
     
-    @IBAction func createDirectoryPressed(_ sender: UIButton) {
-        //viksit folder creation
-        //Helper.createFolderInDocuments(folderName: "Viksit")
+    static func createFolderInDocuments(folderName: String) {
+        let mainPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        print(mainPath)
         
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print(Helper.readFromFile(fileName: "assessment", extnsion: "txt"))
+        let documentDirectoryPath = mainPath + "/\(folderName)"
+        var objcBool:  ObjCBool = true
+        let isExist = FileManager.default.fileExists(atPath: documentDirectoryPath, isDirectory: &objcBool)
         
-        getFileFromDocuments(urlString: "http://txt2html.sourceforge.net/sample.txt")
-
-        // Do any additional setup after loading the view.
+        if !isExist {
+            do {
+                try FileManager.default.createDirectory(atPath: documentDirectoryPath, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print("error ")
+            }
+        }
+        
     }
     
     func getFileFromDocuments(urlString: String) -> URL{
@@ -42,7 +46,7 @@ class DirectoryVC: UIViewController {
         return fileUrlInDocuments
     }
     
-    //saving video asynchronously in document directory
+    //saving file asynchronously in document directory
     func saveFileAsync(urlString: String) {
         //let videoImageUrl = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4"
         
@@ -70,6 +74,6 @@ class DirectoryVC: UIViewController {
         }
     }
 
-    
 
+    
 }

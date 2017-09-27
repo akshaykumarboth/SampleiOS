@@ -158,7 +158,7 @@
 		BAE125111F794CFF00F8576D /* CalenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE125101F794CFF00F8576D /* CalenderCell.swift */; };
 		BAE125131F794E0A00F8576D /* JTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE125121F794E0A00F8576D /* JTVC.swift */; };
 		BAE125151F7B888600F8576D /* DirectoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE125141F7B888600F8576D /* DirectoryVC.swift */; };
-		BAE125171F7B8F4400F8576D /* Directory2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE125161F7B8F4400F8576D /* Directory2VC.swift */; };
+		BAE125191F7BAB8700F8576D /* MediaUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE125181F7BAB8700F8576D /* MediaUtil.swift */; };
 		FE7732A221A80E2DDF41C7B7 /* Pods_ViksitIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -342,7 +342,7 @@
 		BAE125101F794CFF00F8576D /* CalenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCell.swift; sourceTree = "<group>"; };
 		BAE125121F794E0A00F8576D /* JTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JTVC.swift; sourceTree = "<group>"; };
 		BAE125141F7B888600F8576D /* DirectoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryVC.swift; sourceTree = "<group>"; };
-		BAE125161F7B8F4400F8576D /* Directory2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory2VC.swift; sourceTree = "<group>"; };
+		BAE125181F7BAB8700F8576D /* MediaUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaUtil.swift; sourceTree = "<group>"; };
 		D204BF41765CCA9C29915A81 /* Pods-ViksitIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViksitIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViksitIOSUITests/Pods-ViksitIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FFB0E1107F49BA49B472B741 /* Pods_ViksitIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViksitIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -625,6 +625,7 @@
 				BA43EE2A1F516F62000D2DB0 /* swift+gif.swift */,
 				BA43EE7E1F6129E2000D2DB0 /* Ext.swift */,
 				BAE124D61F7134F000F8576D /* Reach.swift */,
+				BAE125181F7BAB8700F8576D /* MediaUtil.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -649,7 +650,6 @@
 			isa = PBXGroup;
 			children = (
 				BA63718A1F28828400D77EA9 /* Tab.storyboard */,
-				BAE125161F7B8F4400F8576D /* Directory2VC.swift */,
 				BAE125141F7B888600F8576D /* DirectoryVC.swift */,
 				BA63719C1F293B6000D77EA9 /* TabBarController.swift */,
 				BA63719A1F28E07900D77EA9 /* tasks */,
@@ -1168,7 +1168,6 @@
 				B9F6B05E1F25E69C00B695C0 /* AppDelegate.swift in Sources */,
 				BA6371771F264A9A00D77EA9 /* CircularButton.swift in Sources */,
 				BA43EE051F4B27DC000D2DB0 /* ONLY_PARAGRAPH_IMAGE.swift in Sources */,
-				BAE125171F7B8F4400F8576D /* Directory2VC.swift in Sources */,
 				BAE125151F7B888600F8576D /* DirectoryVC.swift in Sources */,
 				BA43ED861F3C8020000D2DB0 /* GrandChildSkillItem.swift in Sources */,
 				BA690EA21F26118100EF980F /* ComplexObject.swift in Sources */,
@@ -1176,6 +1175,7 @@
 				BAE124EB1F7407A500F8576D /* DummVC.swift in Sources */,
 				BAA147BC1F2F190800D1FFFE /* CalenderTableCell.swift in Sources */,
 				BA43EE121F4C2239000D2DB0 /* CMSText.swift in Sources */,
+				BAE125191F7BAB8700F8576D /* MediaUtil.swift in Sources */,
 				BA690EAB1F26119000EF980F /* Lesson.swift in Sources */,
 				BA6371941F288B7E00D77EA9 /* RoleTableCell.swift in Sources */,
 				BA43EDEF1F4B2709000D2DB0 /* ONLY_PARAGRAPH.swift in Sources */,

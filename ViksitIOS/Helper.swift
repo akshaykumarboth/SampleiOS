@@ -14,6 +14,7 @@ class Helper{
         return "\(name) is this" as String
     }
     
+    
     static func makeHttpCall (url : String, method: String, param: [String:String]) -> String {
         var success = "aa" 
         let semaphore = DispatchSemaphore(value: 0)
@@ -80,7 +81,7 @@ class Helper{
     }
 
     
-    
+    //reading any file from bundle of app
     static func readFromFile(fileName: String, extnsion: String) -> String{
         var result: String = ""
         //let file = "DummyData.txt" //this is the file. we will read from it
@@ -187,8 +188,8 @@ class Helper{
     }
     
     
-    
-    func getVideoFromDocuments(videoURL: String) -> URL{
+    //
+    static func getVideoFromDocuments(videoURL: String) -> URL{
         let finalFileName = videoURL.components(separatedBy: "/").last
         print(finalFileName!)
         let documentsURL = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
@@ -204,7 +205,7 @@ class Helper{
     }
     
     //saving video asynchronously in document directory
-    func saveVideoAsync(urlToYourVideo: String) {
+    static func saveVideoAsync(urlToYourVideo: String) {
         //let videoImageUrl = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4"
         
         let finalFileName = urlToYourVideo.components(separatedBy: "/").last
