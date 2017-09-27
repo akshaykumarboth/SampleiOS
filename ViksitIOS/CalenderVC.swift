@@ -290,8 +290,8 @@ extension CalenderVC: JTAppleCalendarViewDataSource {
         formatter.locale = Calendar.current.locale
         
         // setting start and end dates for the calendar
-        let startDate = formatter.date(from: "2017 01 01")!
-        let endDate = formatter.date(from: "2019 12 31")!
+        let startDate = formatter.date(from: "2016 01 01")!
+        let endDate = formatter.date(from: "2023 12 31")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
         return parameters

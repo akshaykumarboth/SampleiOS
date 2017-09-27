@@ -171,6 +171,18 @@ class MediaUtil {
             }
         }
     }
+    
+    func x() {
+        DispatchQueue.global(qos: .userInteractive).async {
+            //background thread
+            DispatchQueue.main.async {
+                // main ui thread
+            }
+        }
+
+        
+        
+    }
 
     
 }

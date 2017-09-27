@@ -21,17 +21,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //DataCache.sharedInstance.cache["complexObject"] = Helper.readFromFile(fileName: "DummyData", extnsion: "txt")
         //DataCache.sharedInstance.cache["assessment"] = Helper.readFromFile(fileName: "assessment", extnsion: "txt")
 
-        
-        //for solid testing
         /*
+        //for solid testing
         if DataCache.sharedInstance.cache["complexObject"] == nil {
-            
             var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/user/450/complex", method: "GET", param: [:])
-            //var response: String = Helper.makeHttpCall (url : "http://192.168.1.4:8080/t2c/user/6062/complex", method: "GET", param: [:])
             DataCache.sharedInstance.cache["complexObject"] = response
-        }*/
+            //var response: String = Helper.makeHttpCall (url : "http://192.168.1.4:8080/t2c/user/6062/complex", method: "GET", param: [:])
+        } */
 
         //http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972 // for assessment response
+        
+        //Actions
+        var firstAction: UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        firstAction.identifier = "FIRST_ACTION"
+        firstAction.title = "First Action"
+        firstAction.activationMode = UIUserNotificationActivationMode.background///
+        firstAction.isDestructive = true
+        firstAction.isAuthenticationRequired = false
+        
+        var secondAction: UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        secondAction.identifier = "SECOND_ACTION"
+        secondAction.title = "Second Action"
+        secondAction.activationMode = UIUserNotificationActivationMode.foreground///
+        secondAction.isDestructive = false
+        secondAction.isAuthenticationRequired = false
+
+        var thirdAction: UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        thirdAction.identifier = "THIRD_ACTION"
+        thirdAction.title = "Third Action"
+        thirdAction.activationMode = UIUserNotificationActivationMode.background
+        thirdAction.isDestructive = false
+        thirdAction.isAuthenticationRequired = false
+
+        // Category
+        var firstCategory: UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        firstCategory.identifier = "FIRST_CATEGORY"
+        
+        let defaultActions: NSArray = [firstAction, secondAction, thirdAction]
+        let minimalActions: NSArray = [firstAction, secondAction]
+        
+        firstCategory.setActions(defaultActions as! [UIUserNotificationAction], for: UIUserNotificationActionContext.default)
+        firstCategory.setActions(minimalActions as! [UIUserNotificationAction], for: UIUserNotificationActionContext.minimal)
+        
+        //NSSet of all our categories
+        let categories: NSSet = NSSet(objects: firstCategory)
+        
+        let mysettings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge], categories: categories as! Set<UIUserNotificationCategory>)
+        UIApplication.shared.registerUserNotificationSettings(mysettings)
         
         return true
     }
