@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //for temporary testing
-        DataCache.sharedInstance.cache["complexObject"] = Helper.readFromFile(fileName: "DummyData", extnsion: "txt")
+        //DataCache.sharedInstance.cache["complexObject"] = Helper.readFromFile(fileName: "DummyData", extnsion: "txt")
         //DataCache.sharedInstance.cache["assessment"] = Helper.readFromFile(fileName: "assessment", extnsion: "txt")
 
         

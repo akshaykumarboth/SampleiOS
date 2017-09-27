@@ -61,6 +61,25 @@ class Helper{
         return attrStr
     }
     
+    static func createFolderInDocuments(folderName: String) {
+        let mainPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        print(mainPath)
+        
+        let documentDirectoryPath = mainPath + "/\(folderName)"
+        var objcBool:  ObjCBool = true
+        let isExist = FileManager.default.fileExists(atPath: documentDirectoryPath, isDirectory: &objcBool)
+        
+        if !isExist {
+            do {
+                try FileManager.default.createDirectory(atPath: documentDirectoryPath, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print("error ")
+            }
+        }
+        
+    }
+
+    
     
     static func readFromFile(fileName: String, extnsion: String) -> String{
         var result: String = ""
@@ -142,7 +161,6 @@ class Helper{
                 do {
                     
                     try FileManager.default.moveItem(at: location, to: destinationURL)
-                    
                     PHPhotoLibrary.requestAuthorization({ (authorizationStatus: PHAuthorizationStatus) -> Void in
                         
                         // check if user authorized access photos for your app
@@ -167,6 +185,52 @@ class Helper{
         }
         
     }
+    
+    
+    
+    func getVideoFromDocuments(videoURL: String) -> URL{
+        let finalFileName = videoURL.components(separatedBy: "/").last
+        print(finalFileName!)
+        let documentsURL = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let fooURL = documentsURL.appendingPathComponent(finalFileName!)
+        let fileExists = FileManager().fileExists(atPath: fooURL.path)
+        
+        if !fileExists {
+            saveVideoAsync(urlToYourVideo: videoURL)
+        }
+        
+        //print(fileExists)
+        return fooURL
+    }
+    
+    //saving video asynchronously in document directory
+    func saveVideoAsync(urlToYourVideo: String) {
+        //let videoImageUrl = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4"
+        
+        let finalFileName = urlToYourVideo.components(separatedBy: "/").last
+        print(finalFileName!)
+        
+        DispatchQueue.global(qos: .background).async {
+            if let url = URL(string: urlToYourVideo),
+                let urlData = NSData(contentsOf: url)
+            {
+                let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0];
+                //let filePath="\(documentsPath)/tempFile.mp4"
+                let filePath="\(documentsPath)/\(finalFileName!)"
+                DispatchQueue.main.async {
+                    urlData.write(toFile: filePath, atomically: true)
+                    PHPhotoLibrary.shared().performChanges({
+                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: filePath))
+                    }) { completed, error in
+                        if completed {
+                            print("Video is saved!")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     
     
 
