@@ -61,9 +61,12 @@ class LoginVC: UIViewController {
                             let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/user/\(id)/complex", method: "GET", param: [:])
                             DataCache.sharedInstance.cache["complexObject"] = response
                             //
-                            DispatchQueue.global(qos: .userInteractive).async {
+                            let anotherQueue = DispatchQueue(label: "com.ViksitIOS.queue", qos: .userInteractive, attributes: .concurrent)
+                            anotherQueue.async {
                                 self.loginSuccess()
                             }
+                            Helper.saveProfileImageAsync(urlString: studentprofile.profileImage!)
+                            
                             let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
                             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
                             self.present(nextViewController, animated:true, completion:nil)

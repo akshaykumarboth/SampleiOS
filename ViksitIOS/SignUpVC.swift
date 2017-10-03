@@ -42,8 +42,8 @@ class SignUpVC: UIViewController {
                 "password" : password
             ]
             
-            //var signupResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/create", method: "POST", param: signupParams)
-            let signupResponse = Helper.makeHttpCall(url: "http://192.168.1.4:8080/t2c/user/create", method: "POST", param: signupParams)
+            let signupResponse = Helper.makeHttpCall(url: "\(Constant.prodUrlString)t2c/user/create", method: "POST", param: signupParams)
+            //let signupResponse = Helper.makeHttpCall(url: "\(Constant.localUrlString)t2c/user/create", method: "POST", param: signupParams)
 
             print(signupResponse)
             let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
@@ -125,14 +125,5 @@ class SignUpVC: UIViewController {
         return result
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

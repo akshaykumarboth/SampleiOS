@@ -220,8 +220,8 @@ class AssessmentVC: UIViewController {
         if let taskid = taskID {
             if let userid = userID {
                 print("userid \(userid) -- tasskid \(taskid)")
-                let response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
-                //let response: String = Helper.makeHttpCall (url : "http://192.168.1.4:8080/t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
+                let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
+                //let response: String = Helper.makeHttpCall (url : "\(Constant.localUrlString)t2c/get_lesson_details?taskId=\(taskid)&userId=\(userid)", method: "GET", param: [:])
                 self.assessment = Assessment(JSONString: response)
                 print(assessment.id)
                 //assessmentResponse.id = self.assessment.id //
@@ -247,7 +247,7 @@ class AssessmentVC: UIViewController {
     func loadAssessmentAsync() {
         DispatchQueue.global(qos: .background).async {
             //print("This is run on the background queue")
-            var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972", method: "GET", param: [:])
+            var response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/get_lesson_details?taskId=277274&userId=4972", method: "GET", param: [:])
             //var ass = Assessment(JSONString: response)
             DispatchQueue.main.async {
                 //print("This is run on the main queue, after the previous code in outer block")
@@ -287,7 +287,7 @@ class AssessmentVC: UIViewController {
         print(Response.listToJSON(list: quesList))
         let params: [String: String] = ["response": Response.listToJSON(list: quesList)]
         
-        var response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/assessments/user/\(userID)/\(assessment.id)/\(taskID)", method: "POST", param: params)
+        var response = Helper.makeHttpCall(url: "\(Constant.prodUrlString)t2c/assessments/user/\(userID)/\(assessment.id)/\(taskID)", method: "POST", param: params)
     }
     
     func submitAssessment() {
@@ -430,10 +430,7 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     // Called before the cell is displayed
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-     
-        
         //print("starting display of cell: \(indexPath.row)")
-        
         
     }
     
@@ -442,9 +439,7 @@ extension AssessmentVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         //print(collectionView.indexPathsForVisibleItems.first)
         //print("ending display of cell: \(indexPath.row)")
         
-        
     }
- 
 
 }
 
@@ -466,7 +461,6 @@ extension AssessmentVC: UIScrollViewDelegate {
         
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
-        
         //
         
     }

@@ -21,7 +21,7 @@ class DirectoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(Helper.readFromFile(fileName: "assessment", extnsion: "txt"))
-        
+        saveProfileImageAsync(urlString: "http://cdn.talentify.in:9999/users/4972/072e11cb-7838-4c56-8b0b-13b547c9e9fb.jpg", extraPath: "Viksit/Viksit_Profile_pic/", fileNameToKeep: "profile_pic.jpg")
         
         //getFileFromDocuments(urlString: "http://cdn.talentify.in:9999/users/450/77f19941-bd80-43f9-86f4-2548ec14b71f.jpg")
         //writeToFileInDocuments(text: "Hiiiii", fileName: "akshay.txt", extraPath: "Viksit/")
@@ -117,14 +117,14 @@ class DirectoryVC: UIViewController {
         return fileUrlInDocuments
     }
     
-    //saving video asynchronously in document directory
+    //saving file asynchronously in document directory
     func saveFileAsync(urlString: String, extraPath: String) {
         //let videoImageUrl = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4"
         
         let finalFileName = extraPath + urlString.components(separatedBy: "/").last!
         print(finalFileName)
         
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.global(qos: .userInitiated).async {
             if let url = URL(string: urlString),
                 let urlData = NSData(contentsOf: url)
             {
@@ -139,6 +139,31 @@ class DirectoryVC: UIViewController {
                     { completed, error in
                         if completed {
                             print("File is saved!")
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func saveProfileImageAsync(urlString: String, extraPath: String, fileNameToKeep: String) {
+        //let finalFileName = "Viksit/Viksit_Profile_pic/profile_pic.jpg"
+        let finalFileName = extraPath + fileNameToKeep
+        DispatchQueue.global(qos: .background).async {
+            if let url = URL(string: urlString),
+                let urlData = NSData(contentsOf: url) {
+                let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                //let filePath="\(documentsPath)/Viksit/\(finalFileName!)"
+                let filePath="\(documentsPath)/\(finalFileName)"
+                print(filePath)
+                DispatchQueue.main.async {
+                    urlData.write(toFile: filePath, atomically: true)
+                    PHPhotoLibrary.shared().performChanges({
+                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: filePath))
+                    })
+                    { completed, error in
+                        if completed {
+                            print("File named \(fileNameToKeep) is saved!")
                         }
                     }
                 }

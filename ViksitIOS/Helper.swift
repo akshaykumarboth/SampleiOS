@@ -233,7 +233,33 @@ class Helper{
         }
     }
 
-    
+    //saving profileImage
+    //static func saveProfileImageAsync(urlString: String /*, extraPath: String, fileNameToKeep: String*/ ) {
+    static func saveProfileImageAsync(urlString: String ) {
+        let finalFileName = "Viksit/Viksit_Profile_pic/profile_pic.jpg"
+        //let finalFileName = extraPath + fileNameToKeep
+        DispatchQueue.global(qos: .background).async {
+            if let url = URL(string: urlString),
+                let urlData = NSData(contentsOf: url) {
+                let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                //let filePath="\(documentsPath)/Viksit/\(finalFileName!)"
+                let filePath="\(documentsPath)/\(finalFileName)"
+                print(filePath)
+                DispatchQueue.main.async {
+                    urlData.write(toFile: filePath, atomically: true)
+                    PHPhotoLibrary.shared().performChanges({
+                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: filePath))
+                    })
+                    { completed, error in
+                        if completed {
+                            print("File is saved!")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     
 
     

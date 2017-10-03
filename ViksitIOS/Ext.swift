@@ -125,7 +125,7 @@ extension UIImageView {
     }
 }
 
-struct Custom {
+struct Constant {
     static let localUrlString: String = "http://192.168.1.4:8080/"
     static let prodUrlString: String = "http://elt.talentify.in/"
 }
