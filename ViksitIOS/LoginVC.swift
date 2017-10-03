@@ -60,22 +60,18 @@ class LoginVC: UIViewController {
                         if let id = studentprofile.id {
                             let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/user/\(id)/complex", method: "GET", param: [:])
                             DataCache.sharedInstance.cache["complexObject"] = response
-                            //
-                            let anotherQueue = DispatchQueue(label: "com.ViksitIOS.queue", qos: .userInteractive, attributes: .concurrent)
-                            anotherQueue.async {
+                            DispatchQueue.global(qos: .userInteractive).async {
                                 self.loginSuccess()
                             }
                             Helper.saveProfileImageAsync(urlString: studentprofile.profileImage!)
-                            
-                            let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
-                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
                             self.present(nextViewController, animated:true, completion:nil)
                         }
                         
                     }
                 }
                 
-                //TabBarController
                 //print(loginResponse)
             }catch let error as NSError {
                 print(" Error \(error)")

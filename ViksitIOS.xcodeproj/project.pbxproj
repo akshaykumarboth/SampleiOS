@@ -102,6 +102,7 @@
 		BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371951F28BB9B00D77EA9 /* NotificationsVC.swift */; };
 		BA6371981F28C1A500D77EA9 /* NotificationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371971F28C1A500D77EA9 /* NotificationTableCell.swift */; };
 		BA63719D1F293B6000D77EA9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63719C1F293B6000D77EA9 /* TabBarController.swift */; };
+		BA63F02C1F83DDA40011097B /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63F02B1F83DDA40011097B /* SplashVC.swift */; };
 		BA65FFC31F66746000A18974 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65FFC21F66746000A18974 /* Option.swift */; };
 		BA65FFC51F6674E800A18974 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65FFC41F6674E800A18974 /* Question.swift */; };
 		BA65FFC71F66762200A18974 /* Assessment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65FFC61F66762200A18974 /* Assessment.swift */; };
@@ -282,6 +283,7 @@
 		BA6371951F28BB9B00D77EA9 /* NotificationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		BA6371971F28C1A500D77EA9 /* NotificationTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableCell.swift; sourceTree = "<group>"; };
 		BA63719C1F293B6000D77EA9 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BA63F02B1F83DDA40011097B /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		BA65FFC21F66746000A18974 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		BA65FFC41F6674E800A18974 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		BA65FFC61F66762200A18974 /* Assessment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assessment.swift; sourceTree = "<group>"; };
@@ -630,6 +632,7 @@
 				BA63717C1F27946B00D77EA9 /* OtpVC.swift */,
 				BA6371821F27A25C00D77EA9 /* BatchCodeVC.swift */,
 				BA6371871F28707900D77EA9 /* PasswordChangedVC.swift */,
+				BA63F02B1F83DDA40011097B /* SplashVC.swift */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -1119,6 +1122,7 @@
 				BA43EE201F4EB149000D2DB0 /* GreenVC.swift in Sources */,
 				BA43EE361F51D0E1000D2DB0 /* DynamicTextWebView.swift in Sources */,
 				BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */,
+				BA63F02C1F83DDA40011097B /* SplashVC.swift in Sources */,
 				BAE124D31F6AA13F00F8576D /* TopActionBarView.swift in Sources */,
 				BA43EE181F4C3A1E000D2DB0 /* CMSMedia.swift in Sources */,
 				BA43EE2B1F516F62000D2DB0 /* swift+gif.swift in Sources */,

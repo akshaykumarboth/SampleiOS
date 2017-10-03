@@ -244,7 +244,6 @@ class Helper{
                 let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
                 //let filePath="\(documentsPath)/Viksit/\(finalFileName!)"
                 let filePath="\(documentsPath)/\(finalFileName)"
-                print(filePath)
                 DispatchQueue.main.async {
                     urlData.write(toFile: filePath, atomically: true)
                     PHPhotoLibrary.shared().performChanges({
