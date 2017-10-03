@@ -10,10 +10,6 @@
 		8C3AD8D9D4AF78267AC567E3 /* Pods_ViksitIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2112FEA37CB8EDA33D949F06 /* Pods_ViksitIOSTests.framework */; };
 		90D517699409F868E80BF1B7 /* Pods_ViksitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAB6B54197D06D70BAD02F7 /* Pods_ViksitIOS.framework */; };
 		B9F6B05E1F25E69C00B695C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B05D1F25E69C00B695C0 /* AppDelegate.swift */; };
-		B9F6B0601F25E69C00B695C0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B05F1F25E69C00B695C0 /* RootViewController.swift */; };
-		B9F6B0621F25E69C00B695C0 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0611F25E69C00B695C0 /* DataViewController.swift */; };
-		B9F6B0641F25E69C00B695C0 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0631F25E69C00B695C0 /* ModelController.swift */; };
-		B9F6B0671F25E69C00B695C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F6B0651F25E69C00B695C0 /* Main.storyboard */; };
 		B9F6B0691F25E69C00B695C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F6B0681F25E69C00B695C0 /* Assets.xcassets */; };
 		B9F6B06C1F25E69C00B695C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F6B06A1F25E69C00B695C0 /* LaunchScreen.storyboard */; };
 		B9F6B0771F25E69C00B695C0 /* ViksitIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6B0761F25E69C00B695C0 /* ViksitIOSTests.swift */; };
@@ -189,10 +185,6 @@
 		8FC7A40A7ADDD3ABBC0D9B96 /* Pods-ViksitIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViksitIOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViksitIOSUITests/Pods-ViksitIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9F6B05A1F25E69C00B695C0 /* ViksitIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViksitIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F6B05D1F25E69C00B695C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B9F6B05F1F25E69C00B695C0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		B9F6B0611F25E69C00B695C0 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		B9F6B0631F25E69C00B695C0 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		B9F6B0661F25E69C00B695C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9F6B0681F25E69C00B695C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9F6B06B1F25E69C00B695C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9F6B06D1F25E69C00B695C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -414,9 +406,6 @@
 			isa = PBXGroup;
 			children = (
 				B9F6B05D1F25E69C00B695C0 /* AppDelegate.swift */,
-				B9F6B05F1F25E69C00B695C0 /* RootViewController.swift */,
-				B9F6B0611F25E69C00B695C0 /* DataViewController.swift */,
-				B9F6B0631F25E69C00B695C0 /* ModelController.swift */,
 				BA63716C1F262A1700D77EA9 /* login */,
 				BA6371891F28826C00D77EA9 /* tabs */,
 				BAA147D51F33525700D1FFFE /* profile */,
@@ -425,7 +414,6 @@
 				BA43EE4F1F584995000D2DB0 /* assessments */,
 				BA690E9E1F26115C00EF980F /* complex */,
 				BA6371751F264A7C00D77EA9 /* Util */,
-				B9F6B0651F25E69C00B695C0 /* Main.storyboard */,
 				B9F6B06A1F25E69C00B695C0 /* LaunchScreen.storyboard */,
 				B9F6B0681F25E69C00B695C0 /* Assets.xcassets */,
 				B9F6B06D1F25E69C00B695C0 /* Info.plist */,
@@ -924,7 +912,6 @@
 				BAE124D11F6AA0E400F8576D /* TopActionBarView.xib in Resources */,
 				BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */,
 				B9F6B0691F25E69C00B695C0 /* Assets.xcassets in Resources */,
-				B9F6B0671F25E69C00B695C0 /* Main.storyboard in Resources */,
 				BA43EE4A1F56C64E000D2DB0 /* DummyData.txt in Resources */,
 				BA43EE7B1F61209F000D2DB0 /* OptionView.xib in Resources */,
 				BA63718B1F28828400D77EA9 /* Tab.storyboard in Resources */,
@@ -1112,7 +1099,6 @@
 			files = (
 				BA6371851F2868C400D77EA9 /* RoundedShadowedButton.swift in Sources */,
 				BA43ED5E1F39E8E9000D2DB0 /* AssessmentCell.swift in Sources */,
-				B9F6B0601F25E69C00B695C0 /* RootViewController.swift in Sources */,
 				BA43EDEB1F4B26D6000D2DB0 /* ONLY_2TITLE_IMAGE.swift in Sources */,
 				BA43EE1E1F4EB0C2000D2DB0 /* PagerViewController.swift in Sources */,
 				BA690EB11F26119E00EF980F /* Modules.swift in Sources */,
@@ -1125,7 +1111,6 @@
 				BA43EDFD1F4B2796000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE.swift in Sources */,
 				BA63717F1F27978600D77EA9 /* ResetPasswordVC.swift in Sources */,
 				BA43EDFF1F4B27AA000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE_LIST.swift in Sources */,
-				B9F6B0641F25E69C00B695C0 /* ModelController.swift in Sources */,
 				BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */,
 				BA65FFCD1F66DE4F00A18974 /* TimeUpVC.swift in Sources */,
 				BA43EDF31F4B273A000D2DB0 /* ONLY_PARAGRAPH_TITLE.swift in Sources */,
@@ -1133,7 +1118,6 @@
 				BA43EE0D1F4B285E000D2DB0 /* ONLY_TITLE_TREE.swift in Sources */,
 				BA43EE201F4EB149000D2DB0 /* GreenVC.swift in Sources */,
 				BA43EE361F51D0E1000D2DB0 /* DynamicTextWebView.swift in Sources */,
-				B9F6B0621F25E69C00B695C0 /* DataViewController.swift in Sources */,
 				BA6371961F28BB9B00D77EA9 /* NotificationsVC.swift in Sources */,
 				BAE124D31F6AA13F00F8576D /* TopActionBarView.swift in Sources */,
 				BA43EE181F4C3A1E000D2DB0 /* CMSMedia.swift in Sources */,
@@ -1274,14 +1258,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B9F6B0651F25E69C00B695C0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B9F6B0661F25E69C00B695C0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B9F6B06A1F25E69C00B695C0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

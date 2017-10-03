@@ -42,7 +42,7 @@ class LoginVC: UIViewController {
                 "password" : password
             ]
             do{
-                let loginResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/auth/login", method: "POST", param: loginParams)
+                let loginResponse = Helper.makeHttpCall(url: "\(Constant.prodUrlString)t2c/auth/login", method: "POST", param: loginParams)
                 
                 if loginResponse.contains("istarViksitProComplexKeyUsername does not exists") {
                     errorLabel.text = "Username does not exists"
@@ -58,9 +58,12 @@ class LoginVC: UIViewController {
                         //
                         print(studentprofile.id)
                         if let id = studentprofile.id {
-                            let response: String = Helper.makeHttpCall (url : "http://192.168.1.4:8080/t2c/user/\(id)/complex", method: "GET", param: [:])
+                            let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/user/\(id)/complex", method: "GET", param: [:])
                             DataCache.sharedInstance.cache["complexObject"] = response
                             //
+                            DispatchQueue.global(qos: .userInteractive).async {
+                                self.loginSuccess()
+                            }
                             let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
                             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
                             self.present(nextViewController, animated:true, completion:nil)
@@ -80,7 +83,15 @@ class LoginVC: UIViewController {
     }
     
     func loginSuccess(){
-        
+        MediaUtil.createFolderInDocuments(folderName: "Viksit", extraPath: "/")
+        MediaUtil.createFolderInDocuments(folderName: "Viksit_COURSE", extraPath: "/Viksit/")
+        MediaUtil.createFolderInDocuments(folderName: "Viksit_LESSON_PRESENTATION", extraPath: "/Viksit/")
+        MediaUtil.createFolderInDocuments(folderName: "Viksit_MODULE", extraPath: "/Viksit/")
+        MediaUtil.createFolderInDocuments(folderName: "Viksit_NOTIFICATION", extraPath: "/Viksit/")
+        MediaUtil.createFolderInDocuments(folderName: "Viksit_PROFILE_PIC", extraPath: "/Viksit/")
+        MediaUtil.createFolderInDocuments(folderName: "Viksit_ROLES", extraPath: "/Viksit/")
+        MediaUtil.createFolderInDocuments(folderName: "Viksit_STUDENTS", extraPath: "/Viksit/")
+        MediaUtil.createFolderInDocuments(folderName: "Viksit_TASKS", extraPath: "/Viksit/")
     }
     
     func isValidEmail(testStr:String) -> Bool {

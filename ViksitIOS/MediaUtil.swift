@@ -34,7 +34,7 @@ class MediaUtil {
     }*/
     
     //to create folder in Documents directory
-    func createFolderInDocuments(folderName: String, extraPath: String) {
+    static func createFolderInDocuments(folderName: String, extraPath: String) {
         let mainPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         print(mainPath)
         
@@ -48,6 +48,8 @@ class MediaUtil {
             } catch {
                 print("error ")
             }
+        } else {
+            print("\(folderName) already exists")
         }
         
     }
