@@ -61,7 +61,7 @@ class LoginVC: UIViewController {
                             let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/user/\(id)/complex", method: "GET", param: [:])
                             DataCache.sharedInstance.cache["complexObject"] = response
                             DispatchQueue.global(qos: .userInteractive).async {
-                                self.loginSuccess()
+                                self.createFolders()
                             }
                             Helper.saveProfileImageAsync(urlString: studentprofile.profileImage!)
                             let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
@@ -81,7 +81,7 @@ class LoginVC: UIViewController {
         
     }
     
-    func loginSuccess(){
+    func createFolders(){
         MediaUtil.createFolderInDocuments(folderName: "Viksit", extraPath: "/")
         MediaUtil.createFolderInDocuments(folderName: "Viksit_COURSE", extraPath: "/Viksit/")
         MediaUtil.createFolderInDocuments(folderName: "Viksit_LESSON_PRESENTATION", extraPath: "/Viksit/")

@@ -130,17 +130,23 @@ class DirectoryVC: UIViewController {
             {
                 let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
                 //let filePath="\(documentsPath)/Viksit/\(finalFileName!)"
-                let filePath="\(documentsPath)/\(finalFileName)"
-                DispatchQueue.main.async {
-                    urlData.write(toFile: filePath, atomically: true)
-                    PHPhotoLibrary.shared().performChanges({
-                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: filePath))
-                    })
-                    { completed, error in
-                        if completed {
-                            print("File is saved!")
+                let filePath = "\(documentsPath)/\(finalFileName)"
+                let fileExists = FileManager().fileExists(atPath: filePath)
+                
+                if !fileExists {
+                    DispatchQueue.main.async {
+                        urlData.write(toFile: filePath, atomically: true)
+                        PHPhotoLibrary.shared().performChanges({
+                            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: filePath))
+                        })
+                        { completed, error in
+                            if completed {
+                                print("File is saved!")
+                            }
                         }
                     }
+                } else {
+                    print("\(urlString.components(separatedBy: "/").last!) already exists")
                 }
             }
         }
