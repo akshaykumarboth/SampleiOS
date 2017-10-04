@@ -54,9 +54,6 @@ class LoginVC: UIViewController {
                 } else {
                     let studentprofile = StudentProfile(jsonString: loginResponse)
                     if type(of: studentprofile.id) != nil {
-                        //to goto dashboard
-                        
-                        //
                         print(studentprofile.id)
                         if let id = studentprofile.id {
                             let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/user/\(id)/complex", method: "GET", param: [:])
@@ -65,9 +62,11 @@ class LoginVC: UIViewController {
                                 self.createFolders()
                             //}
                             Helper.saveProfileImageAsync(urlString: studentprofile.profileImage!)
+                            
                             let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
                             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
                             self.present(nextViewController, animated:true, completion:nil)
+                            
                         }
                         
                     }

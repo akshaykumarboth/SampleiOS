@@ -10,9 +10,11 @@ import UIKit
 import Photos
 
 class SplashVC: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
         
         //let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", attributes: .concurrent)
         let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", qos: .userInteractive, attributes: .concurrent)
@@ -50,10 +52,8 @@ class SplashVC: UIViewController {
             }
         }
         
-        
     }
     
-
     func s() {
         //let queue:DispatchQueue  = DispatchQueue.global(attributes: DispatchQueue.GlobalAttributes.qosDefault)
         let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", attributes: .concurrent)
@@ -83,16 +83,17 @@ class SplashVC: UIViewController {
         //let videoImageUrl = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4"
         MediaUtil.createFolderInDocuments(folderName: optionalFolderName, extraPath: extraPath)
         let finalFileName = extraPath + optionalFolderName + urlString.components(separatedBy: "/").last!
-        print(finalFileName)
         
-        DispatchQueue.global(qos: .userInitiated).async {
+        //DispatchQueue.global(qos: .userInitiated).async {
             if let url = URL(string: urlString),
                 let urlData = NSData(contentsOf: url)
             {
                 let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                
                 //let filePath="\(documentsPath)/Viksit/\(finalFileName!)"
                 let filePath = "\(documentsPath)/\(finalFileName)"
                 let fileExists = FileManager().fileExists(atPath: filePath)
+                print(filePath)
                 
                 if !fileExists {
                     DispatchQueue.main.async {
@@ -115,19 +116,9 @@ class SplashVC: UIViewController {
                     
                 }
             }
-        }
+        //}
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

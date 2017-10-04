@@ -36,9 +36,10 @@ class MediaUtil {
     //to create folder in Documents directory
     static func createFolderInDocuments(folderName: String, extraPath: String) {
         let mainPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        print(mainPath)
+        
         
         let documentDirectoryPath = mainPath + extraPath + folderName
+        print(documentDirectoryPath)
         var objcBool:  ObjCBool = true
         let isExist = FileManager.default.fileExists(atPath: documentDirectoryPath, isDirectory: &objcBool)
         

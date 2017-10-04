@@ -236,7 +236,7 @@ class Helper{
     //saving profileImage
     //static func saveProfileImageAsync(urlString: String /*, extraPath: String, fileNameToKeep: String*/ ) {
     static func saveProfileImageAsync(urlString: String ) {
-        let finalFileName = "Viksit/Viksit_Profile_pic/profile_pic.jpg"
+        let finalFileName = "Viksit/Viksit_PROFILE_PIC/profile_pic.jpg"
         //let finalFileName = extraPath + fileNameToKeep
         DispatchQueue.global(qos: .background).async {
             if let url = URL(string: urlString),
