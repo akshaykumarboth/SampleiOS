@@ -37,7 +37,6 @@ class MediaUtil {
     static func createFolderInDocuments(folderName: String, extraPath: String) {
         let mainPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         
-        
         let documentDirectoryPath = mainPath + extraPath + folderName
         print(documentDirectoryPath)
         var objcBool:  ObjCBool = true

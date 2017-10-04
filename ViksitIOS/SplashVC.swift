@@ -44,6 +44,15 @@ class SplashVC: UIViewController {
                 }
             }
             
+            for notification in ComplexObject(JSONString: complexCache).notifications! {
+                if let imageURL = notification.imageURL {
+                    queue.async (group: group) {
+                        print("doing stuff")
+                        self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_NOTIFICATION/", optionalFolderName: "")
+                    }
+                }
+            }
+            
             group.notify(queue: DispatchQueue.main) {
                 print("done doing stuff")
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
