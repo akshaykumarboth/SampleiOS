@@ -14,7 +14,8 @@ class SplashVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", attributes: .concurrent)
+        //let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", attributes: .concurrent)
+        let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", qos: .userInteractive, attributes: .concurrent)
         let group:DispatchGroup = DispatchGroup()
         
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
@@ -23,7 +24,20 @@ class SplashVC: UIViewController {
                 if let imageURL = task.imageURL {
                     queue.async (group: group) {
                         print("doing stuff")
-                        self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_TASKS/", taskID: "\(task.id!)")
+                        self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_TASKS/", optionalFolderName: "\(task.id!)/")
+                    }
+                }
+            }
+            
+            for item in ComplexObject(JSONString: complexCache).leaderboards! {
+                if let students = item.allStudentRanks {
+                    for student in students {
+                        if let imageURL = student.imageURL {
+                            queue.async (group: group) {
+                                print("doing stuff")
+                                self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_STUDENTS/", optionalFolderName: "")
+                            }
+                        }
                     }
                 }
             }
@@ -62,24 +76,16 @@ class SplashVC: UIViewController {
             self.present(nextViewController, animated:true, completion:nil)
         }
         
-
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
-    }
-    
     //saving file asynchronously in document directory
-    func saveFileAsync(urlString: String, extraPath: String, taskID: String) {
+    func saveFileAsync(urlString: String, extraPath: String, optionalFolderName: String) {
         //let videoImageUrl = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4"
-        MediaUtil.createFolderInDocuments(folderName: taskID, extraPath: extraPath)
-        
-        let finalFileName = extraPath + taskID + "/" + urlString.components(separatedBy: "/").last!
+        MediaUtil.createFolderInDocuments(folderName: optionalFolderName, extraPath: extraPath)
+        let finalFileName = extraPath + optionalFolderName + urlString.components(separatedBy: "/").last!
         print(finalFileName)
         
-        //DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInitiated).async {
             if let url = URL(string: urlString),
                 let urlData = NSData(contentsOf: url)
             {
@@ -89,7 +95,7 @@ class SplashVC: UIViewController {
                 let fileExists = FileManager().fileExists(atPath: filePath)
                 
                 if !fileExists {
-                    //DispatchQueue.main.async {
+                    DispatchQueue.main.async {
                         urlData.write(toFile: filePath, atomically: true)
                         PHPhotoLibrary.shared().performChanges({
                             PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: filePath))
@@ -99,12 +105,17 @@ class SplashVC: UIViewController {
                                 print("File is saved!")
                             }
                         }
-                    //}
+                    }
                 } else {
-                    print("\(urlString.components(separatedBy: "/").last!) already exists in \(taskID)")
+                    if optionalFolderName != "" {
+                        print("\(urlString.components(separatedBy: "/").last!) already exists in \(optionalFolderName)")
+                    } else {
+                        print("\(urlString.components(separatedBy: "/").last!) already exists")
+                    }
+                    
                 }
             }
-        //}
+        }
     }
     
     

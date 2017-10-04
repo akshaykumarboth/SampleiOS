@@ -42,6 +42,7 @@ class LoginVC: UIViewController {
                 "password" : password
             ]
             do{
+                
                 let loginResponse = Helper.makeHttpCall(url: "\(Constant.prodUrlString)t2c/auth/login", method: "POST", param: loginParams)
                 
                 if loginResponse.contains("istarViksitProComplexKeyUsername does not exists") {
@@ -60,9 +61,9 @@ class LoginVC: UIViewController {
                         if let id = studentprofile.id {
                             let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/user/\(id)/complex", method: "GET", param: [:])
                             DataCache.sharedInstance.cache["complexObject"] = response
-                            DispatchQueue.global(qos: .userInteractive).async {
+                            //DispatchQueue.global(qos: .userInteractive).async {
                                 self.createFolders()
-                            }
+                            //}
                             Helper.saveProfileImageAsync(urlString: studentprofile.profileImage!)
                             let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
                             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
@@ -71,8 +72,6 @@ class LoginVC: UIViewController {
                         
                     }
                 }
-                
-                //print(loginResponse)
             }catch let error as NSError {
                 print(" Error \(error)")
             }
