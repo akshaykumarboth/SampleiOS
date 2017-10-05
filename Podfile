@@ -12,6 +12,7 @@ target 'ViksitIOS' do
     pod 'JTAppleCalendar', '~> 7.0'
     pod 'Firebase/Core'
     pod 'Firebase/Database'
+    pod 'GoogleSignIn'
     
 
   target 'ViksitIOSTests' do
