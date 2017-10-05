@@ -81,7 +81,7 @@ class LoginVC: UIViewController {
     
     func createFolders(){
         MediaUtil.createFolderInDocuments(folderName: "Viksit", extraPath: "/")
-        MediaUtil.createFolderInDocuments(folderName: "Viksit_COURSE", extraPath: "/Viksit/")
+        //MediaUtil.createFolderInDocuments(folderName: "Viksit_COURSE", extraPath: "/Viksit/")
         MediaUtil.createFolderInDocuments(folderName: "Viksit_LESSON_PRESENTATION", extraPath: "/Viksit/")
         MediaUtil.createFolderInDocuments(folderName: "Viksit_MODULE", extraPath: "/Viksit/")
         MediaUtil.createFolderInDocuments(folderName: "Viksit_NOTIFICATION", extraPath: "/Viksit/")

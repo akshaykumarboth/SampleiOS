@@ -10,6 +10,10 @@ import UIKit
 import Photos
 
 class SplashVC: UIViewController {
+    
+    let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", qos: .userInteractive, attributes: .concurrent)
+    let group:DispatchGroup = DispatchGroup()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -17,17 +21,16 @@ class SplashVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         //let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", attributes: .concurrent)
-        let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", qos: .userInteractive, attributes: .concurrent)
-        let group:DispatchGroup = DispatchGroup()
+        
         
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             
             for task in (ComplexObject(JSONString: complexCache).tasks)! {
                 if let imageURL = task.imageURL {
-                    queue.async (group: group) {
-                        print("doing stuff")
+                    //queue.async (group: group) {
+                    
                         self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_TASKS/", optionalFolderName: "\(task.id!)/")
-                    }
+                    //}
                 }
             }
             
@@ -35,10 +38,10 @@ class SplashVC: UIViewController {
                 if let students = item.allStudentRanks {
                     for student in students {
                         if let imageURL = student.imageURL {
-                            queue.async (group: group) {
-                                print("doing stuff")
+                            //queue.async (group: group) {
+                            
                                 self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_STUDENTS/", optionalFolderName: "")
-                            }
+                            //}
                         }
                     }
                 }
@@ -46,9 +49,27 @@ class SplashVC: UIViewController {
             
             for notification in ComplexObject(JSONString: complexCache).notifications! {
                 if let imageURL = notification.imageURL {
-                    queue.async (group: group) {
-                        print("doing stuff")
+                    //queue.async (group: group) {
+                    
                         self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_NOTIFICATION/", optionalFolderName: "")
+                    //}
+                }
+            }
+            
+            for course in ComplexObject(JSONString: complexCache).courses! {
+                if let imageURL = course.imageURL {
+                    //queue.async (group: group) {
+                    
+                        self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_ROLES/", optionalFolderName: "")
+                    //}
+                }
+                
+                for module in course.modules! {
+                    if let moduleImageURL = module.imageURL {
+                        //queue.async (group: group) {
+                        
+                            self.saveFileAsync(urlString: moduleImageURL, extraPath: "/Viksit/Viksit_MODULE/", optionalFolderName: "\(module.id!)/")
+                        //}
                     }
                 }
             }
@@ -62,11 +83,11 @@ class SplashVC: UIViewController {
         }
         
     }
-    
+    /*
     func s() {
         //let queue:DispatchQueue  = DispatchQueue.global(attributes: DispatchQueue.GlobalAttributes.qosDefault)
         let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", attributes: .concurrent)
-        let group:DispatchGroup    = DispatchGroup()
+        let group:DispatchGroup = DispatchGroup()
         
         print("start")
         
@@ -85,7 +106,7 @@ class SplashVC: UIViewController {
             self.present(nextViewController, animated:true, completion:nil)
         }
         
-    }
+    }*/
 
     //saving file asynchronously in document directory
     func saveFileAsync(urlString: String, extraPath: String, optionalFolderName: String) {
@@ -105,7 +126,10 @@ class SplashVC: UIViewController {
                 print(filePath)
                 
                 if !fileExists {
-                    DispatchQueue.main.async {
+                    
+                    queue.async (group: group) {
+                    //DispatchQueue.global(qos: .userInteractive).async {
+                        print("doing stuff")
                         urlData.write(toFile: filePath, atomically: true)
                         PHPhotoLibrary.shared().performChanges({
                             PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: filePath))
@@ -128,6 +152,5 @@ class SplashVC: UIViewController {
         //}
     }
     
-   
 
 }
