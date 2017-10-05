@@ -103,6 +103,7 @@
 		BA6371981F28C1A500D77EA9 /* NotificationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6371971F28C1A500D77EA9 /* NotificationTableCell.swift */; };
 		BA63719D1F293B6000D77EA9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63719C1F293B6000D77EA9 /* TabBarController.swift */; };
 		BA63F02C1F83DDA40011097B /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63F02B1F83DDA40011097B /* SplashVC.swift */; };
+		BA63F0891F8671B40011097B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA63F0871F866E9B0011097B /* GoogleService-Info.plist */; };
 		BA65FFC31F66746000A18974 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65FFC21F66746000A18974 /* Option.swift */; };
 		BA65FFC51F6674E800A18974 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65FFC41F6674E800A18974 /* Question.swift */; };
 		BA65FFC71F66762200A18974 /* Assessment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65FFC61F66762200A18974 /* Assessment.swift */; };
@@ -284,6 +285,7 @@
 		BA6371971F28C1A500D77EA9 /* NotificationTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableCell.swift; sourceTree = "<group>"; };
 		BA63719C1F293B6000D77EA9 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BA63F02B1F83DDA40011097B /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		BA63F0871F866E9B0011097B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA65FFC21F66746000A18974 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		BA65FFC41F6674E800A18974 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		BA65FFC61F66762200A18974 /* Assessment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assessment.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				B9F6B06A1F25E69C00B695C0 /* LaunchScreen.storyboard */,
 				B9F6B0681F25E69C00B695C0 /* Assets.xcassets */,
 				B9F6B06D1F25E69C00B695C0 /* Info.plist */,
+				BA63F0871F866E9B0011097B /* GoogleService-Info.plist */,
 				BA43EE491F56C64E000D2DB0 /* DummyData.txt */,
 			);
 			path = ViksitIOS;
@@ -913,6 +916,7 @@
 				BA43EDDE1F4B1420000D2DB0 /* Lesson.storyboard in Resources */,
 				BA2DD6821F6921C4008C5BF8 /* TreeItemView.xib in Resources */,
 				BAE124D11F6AA0E400F8576D /* TopActionBarView.xib in Resources */,
+				BA63F0891F8671B40011097B /* GoogleService-Info.plist in Resources */,
 				BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */,
 				B9F6B0691F25E69C00B695C0 /* Assets.xcassets in Resources */,
 				BA43EE4A1F56C64E000D2DB0 /* DummyData.txt in Resources */,
@@ -1000,15 +1004,21 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ViksitIOS/Pods-ViksitIOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleProgressBar/CircleProgressBar.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatedCollectionViewLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

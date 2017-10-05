@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,11 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         //http://elt.talentify.in/t2c/get_lesson_details?taskId=277274&userId=4972 // for assessment response
         
+        FirebaseApp.configure()
         //Actions
         var firstAction: UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         firstAction.identifier = "FIRST_ACTION"
         firstAction.title = "First Action"
-        firstAction.activationMode = UIUserNotificationActivationMode.background///
+        firstAction.activationMode = UIUserNotificationActivationMode.background //
         firstAction.isDestructive = true
         firstAction.isAuthenticationRequired = false
         

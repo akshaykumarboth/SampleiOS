@@ -10,6 +10,8 @@ target 'ViksitIOS' do
     pod 'SWXMLHash', '~> 4.0.0'
     pod 'AnimatedCollectionViewLayout'
     pod 'JTAppleCalendar', '~> 7.0'
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
     
 
   target 'ViksitIOSTests' do

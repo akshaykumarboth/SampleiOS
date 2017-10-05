@@ -126,6 +126,7 @@ extension PerformanceVC: UIImagePickerControllerDelegate, UINavigationController
 }
 
 extension PerformanceVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return skills.count
     }

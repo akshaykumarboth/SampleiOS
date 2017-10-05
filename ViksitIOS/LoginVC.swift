@@ -31,7 +31,6 @@ class LoginVC: UIViewController {
         view.endEditing(true)
     }
 
-    
     @IBAction func onLoginPressed(_ sender: UIButton) {
         let email: String = emailField.text!
         let password: String = passwordField.text!

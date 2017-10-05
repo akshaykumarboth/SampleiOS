@@ -25,10 +25,10 @@ class SplashVC: UIViewController {
         
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             
-            for task in (ComplexObject(JSONString: complexCache).tasks)! {
+            for task in (ComplexObject(JSONString: complexCache).tasks)!.filter({$0.status == "INCOMPLETE"}) {
                 if let imageURL = task.imageURL {
                     //queue.async (group: group) {
-                    
+                    //incompleteTasks = tasks.filter({$0.status == "INCOMPLETE"})
                         self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_TASKS/", optionalFolderName: "\(task.id!)/")
                     //}
                 }
