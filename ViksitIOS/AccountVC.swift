@@ -78,12 +78,23 @@ class AccountVC: UIViewController {
                     sectionObjects: ["Institution of Current Enrollment", "Graduate Degree", "Department"])
         ]
         // Do any additional setup after loading the view.
-        
-        ImageAsyncLoader.loadImageAsync(url: (studentProfile?.profileImage)!, imgView: profileImage)
+        setProfileImage(profileImgUrl: (studentProfile?.profileImage)!)
+        //ImageAsyncLoader.loadImageAsync(url: (studentProfile?.profileImage)!, imgView: profileImage)
         
     }
     
-    
+    func setProfileImage(profileImgUrl: String) {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let finalPath = path + "/Viksit/Viksit_PROFILE_PIC/profile_pic.jpg"
+        let fileExists = FileManager().fileExists(atPath: finalPath)
+        if fileExists {
+            profileImage.image = UIImage(contentsOfFile: finalPath)
+            print("found")
+        } else {
+            print("\(finalPath) not found")
+            ImageAsyncLoader.loadImageAsync(url: profileImgUrl, imgView: profileImage)
+        }
+    }
 
 }
 
@@ -107,11 +118,9 @@ extension AccountVC: UIImagePickerControllerDelegate, UINavigationControllerDele
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         dismiss(animated: true, completion: nil)
-        
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage  {
             profileImage.image = image
         }
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -125,7 +134,6 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
         let header = view as! UITableViewHeaderFooterView
-        
         if let textlabel = header.textLabel {
             textlabel.font = textlabel.font.withSize(12)
         }
@@ -136,9 +144,7 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
         tableView.showsVerticalScrollIndicator = false
         
         var cell = tableView.dequeueReusableCell(withIdentifier: "accountCell") as! AccountCell!
-        
         cell?.cellNameLabel.text = objectsArray[indexPath.section].sectionObjects[indexPath.row]
-        
         let key = objectsArray[indexPath.section].sectionObjects[indexPath.row] as String
         cell?.cellValueField.text = objectsArray[indexPath.section].hasmap[key]
         

@@ -18,7 +18,6 @@ class SplashVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         x()
     }
 
@@ -31,55 +30,17 @@ class SplashVC: UIViewController {
             
             for task in (ComplexObject(JSONString: complexCache).tasks)!.filter({$0.status == "INCOMPLETE"}) {
                 if let imageURL = task.imageURL {
-                    //queue.async (group: group) {
-                    //incompleteTasks = tasks.filter({$0.status == "INCOMPLETE"})
+                    queue.async (group: group) {
                         self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_TASKS/", optionalFolderName: "\(task.id!)/")
-                    //}
-                }
-            }
-            
-            for item in ComplexObject(JSONString: complexCache).leaderboards! {
-                if let students = item.allStudentRanks {
-                    for student in students {
-                        if let imageURL = student.imageURL {
-                            //queue.async (group: group) {
-                            
-                                self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_STUDENTS/", optionalFolderName: "")
-                            //}
-                        }
                     }
                 }
             }
-            
-            for notification in ComplexObject(JSONString: complexCache).notifications! {
-                if let imageURL = notification.imageURL {
-                    //queue.async (group: group) {
-                    
-                        self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_NOTIFICATION/", optionalFolderName: "")
-                    //}
-                }
-            }
-            
-            for course in ComplexObject(JSONString: complexCache).courses! {
-                if let imageURL = course.imageURL {
-                    //queue.async (group: group) {
-                    
-                        self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_ROLES/", optionalFolderName: "")
-                    //}
-                }
-                
-                for module in course.modules! {
-                    if let moduleImageURL = module.imageURL {
-                        //queue.async (group: group) {
-                        
-                            self.saveFileAsync(urlString: moduleImageURL, extraPath: "/Viksit/Viksit_MODULE/", optionalFolderName: "\(module.id!)/")
-                        //}
-                    }
-                }
-            }
+            /*
+            */
             
             group.notify(queue: DispatchQueue.main) {
                 print("done doing stuff")
+                self.sss()
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
                 self.present(nextViewController, animated:true, completion:nil)
@@ -88,12 +49,51 @@ class SplashVC: UIViewController {
         
     }
     
+    func sss() {
+        if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
+            for item in ComplexObject(JSONString: complexCache).leaderboards! {
+                if let students = item.allStudentRanks {
+                    for student in students {
+                        if let imageURL = student.imageURL {
+                            
+                            DispatchQueue.global(qos: .userInteractive).async {
+                                self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_STUDENTS/", optionalFolderName: "")
+                            }
+                        }
+                    }
+                }
+            }
+            
+            for notification in ComplexObject(JSONString: complexCache).notifications! {
+                if let imageURL = notification.imageURL {
+                    DispatchQueue.global(qos: .userInteractive).async {
+                        self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_NOTIFICATION/", optionalFolderName: "")
+                    }
+                }
+            }
+            
+            for course in ComplexObject(JSONString: complexCache).courses! {
+                if let imageURL = course.imageURL {
+                    DispatchQueue.global(qos: .userInteractive).async {
+                        self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_ROLES/", optionalFolderName: "")
+                    }
+                }
+                
+                for module in course.modules! {
+                    if let moduleImageURL = module.imageURL {
+                        DispatchQueue.global(qos: .userInteractive).async {
+                            self.saveFileAsync(urlString: moduleImageURL, extraPath: "/Viksit/Viksit_MODULE/", optionalFolderName: "\(module.id!)/")
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     func x() {
         var ref: DatabaseReference!
         ref = Database.database().reference()
         // Do any additional setup after loading the view.
-        
-        
         
         //ref.child("istar-notification-ios").child("Feroz").setValue(someDictionary)
         ref.child("istar-notification").child("8").observe(DataEventType.value, with: { (snapshot) in
@@ -159,7 +159,7 @@ class SplashVC: UIViewController {
                 
                 if !fileExists {
                     
-                    queue.async (group: group) {
+                    //queue.async (group: group) {
                     //DispatchQueue.global(qos: .userInteractive).async {
                         print("doing stuff")
                         urlData.write(toFile: filePath, atomically: true)
@@ -171,7 +171,7 @@ class SplashVC: UIViewController {
                                 print("File is saved!")
                             }
                         }
-                    }
+                    //}
                 } else {
                     if optionalFolderName != "" {
                         print("\(urlString.components(separatedBy: "/").last!) already exists in \(optionalFolderName)")

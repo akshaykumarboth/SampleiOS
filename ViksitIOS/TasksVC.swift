@@ -96,33 +96,9 @@ class TasksVC: UIViewController{
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!
             xp = (ComplexObject(JSONString: complexCache).studentProfile?.experiencePoints)!
             coins = (ComplexObject(JSONString: complexCache).studentProfile?.coins)!
+            
+            setProfileImage(profileImgUrl: profileImgUrl)
         }
-        /*
-        //inserting image from url async
-        if let url = URL(string: profileImgUrl) {
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url)
-                
-                DispatchQueue.main.async {
-                    if data != nil {
-                        self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
-                    } else {
-                        self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
-                    }
-                }
-            }
-        }*/
-        
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        let finalPath = path + "/Viksit/Viksit_PROFILE_PIC/profile_pic.jpg"
-        let fileExists = FileManager().fileExists(atPath: finalPath)
-        if fileExists {
-            profileBtn.setBackgroundImage(UIImage(contentsOfFile: finalPath), for: .normal)
-        } else {
-            print("\(finalPath) not found")
-        }
-        
-        profileBtn.makeButtonRound(borderWidth: 2.5, borderColor: UIColor.white)
         
         //set userpoints in toolbar
         coinsBtn.setTitle(" " + String(coins), for: .normal)
@@ -140,6 +116,35 @@ class TasksVC: UIViewController{
         return false
     }
 
+    func setProfileImage(profileImgUrl: String) {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let finalPath = path + "/Viksit/Viksit_PROFILE_PIC/profile_pic.jpg"
+        let fileExists = FileManager().fileExists(atPath: finalPath)
+        if fileExists {
+            profileBtn.setBackgroundImage(UIImage(contentsOfFile: finalPath), for: .normal)
+            print("found")
+        } else {
+            print("\(finalPath) not found")
+            
+            if let url = URL(string: profileImgUrl) {
+                DispatchQueue.global().async {
+                    let data = try? Data(contentsOf: url)
+                    
+                    DispatchQueue.main.async {
+                        if data != nil {
+                            self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
+                        } else {
+                            self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
+                        }
+                    }
+                }
+            }
+        }
+        
+        profileBtn.makeButtonRound(borderWidth: 2.5, borderColor: UIColor.white)
+    }
+    
+    
     func loadImageAsync(url: String, imgView: UIImageView){
         do {
             let url = URL(string: url)

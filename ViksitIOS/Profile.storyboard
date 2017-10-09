@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eU-Ih-GGO">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvE-oA-edi">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -68,19 +68,19 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2As-2E-1ne">
-                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="528"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQ9-vT-zdS">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9m-NP-ayt">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rhq-jZ-I31">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="144"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="124"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyf-VP-vq8">
-                                                                <rect key="frame" x="35" y="13.5" width="117.5" height="117.5"/>
+                                                                <rect key="frame" x="35" y="3.5" width="117.5" height="117.5"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb" translatesAutoresizingMaskIntoConstraints="NO" id="jk3-HZ-KWp" customClass="CircularImage" customModule="ViksitIOS" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="117.5" height="117.5"/>
@@ -118,10 +118,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-Bg-C13">
-                                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="144"/>
+                                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="124"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVx-p4-4s2" customClass="CircleProgressBar">
-                                                                <rect key="frame" x="35" y="13.5" width="117.5" height="117.5"/>
+                                                                <rect key="frame" x="35" y="3.5" width="117.5" height="117.5"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="kVx-p4-4s2" secondAttribute="height" multiplier="1:1" id="1UR-0O-Ugk"/>
@@ -167,7 +167,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjD-0c-IAF">
-                                        <rect key="frame" x="0.0" y="144" width="375" height="404"/>
+                                        <rect key="frame" x="0.0" y="124" width="375" height="404"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nKO-ip-inx">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="404"/>

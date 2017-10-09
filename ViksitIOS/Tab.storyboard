@@ -1591,11 +1591,11 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koJ-4b-uLg">
-                                                                    <rect key="frame" x="17.5" y="17.5" width="36" height="36"/>
+                                                                    <rect key="frame" x="19.5" y="19.5" width="32" height="32"/>
                                                                     <color key="backgroundColor" red="0.052849762141704559" green="0.70899516344070435" blue="0.98361200094223022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="koJ-4b-uLg" secondAttribute="height" multiplier="1:1" id="FJx-xu-ICX"/>
-                                                                        <constraint firstAttribute="height" constant="36" id="VQX-SW-IvI"/>
+                                                                        <constraint firstAttribute="height" constant="32" id="VQX-SW-IvI"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

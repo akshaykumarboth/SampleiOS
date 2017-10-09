@@ -147,7 +147,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCh-wN-Oan">
-                                <rect key="frame" x="102.5" y="243" width="116" height="29"/>
+                                <rect key="frame" x="102" y="243" width="116" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Forgot password?">
                                     <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,7 +170,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In via social media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmt-55-tce">
-                                <rect key="frame" x="95.5" y="327" width="130.5" height="14.5"/>
+                                <rect key="frame" x="95" y="327" width="130.5" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -186,7 +186,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvr-KZ-1iR" customClass="RoundedButton" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="133" y="356.5" width="55" height="55"/>
+                                <rect key="frame" x="132.5" y="356.5" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="X2g-Jl-z1L"/>
                                     <constraint firstAttribute="width" secondItem="uvr-KZ-1iR" secondAttribute="height" multiplier="1:1" id="YBn-br-a0v"/>
@@ -194,7 +194,7 @@
                                 <state key="normal" backgroundImage="gplus"/>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hm9-uL-OZq" customClass="RoundedButton" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="198" y="356.5" width="55" height="55"/>
+                                <rect key="frame" x="197.5" y="356.5" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Cqe-ib-3eS"/>
                                     <constraint firstAttribute="width" secondItem="Hm9-uL-OZq" secondAttribute="height" multiplier="1:1" id="Mp5-j9-aZM"/>
@@ -202,7 +202,7 @@
                                 <state key="normal" backgroundImage="fb"/>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyT-ev-MVi" customClass="RoundedButton" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="68" y="357.5" width="55" height="55"/>
+                                <rect key="frame" x="67.5" y="357.5" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="E9B-Mj-khg"/>
                                     <constraint firstAttribute="width" secondItem="JyT-ev-MVi" secondAttribute="height" multiplier="1:1" id="gtz-fN-HeL"/>
@@ -710,13 +710,13 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up via social media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqZ-ja-fMa">
-                                <rect key="frame" x="91" y="323" width="139" height="14.5"/>
+                                <rect key="frame" x="90.5" y="323" width="139" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8u-HJ-yyy" customClass="RoundedButton" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="133" y="352.5" width="55" height="55"/>
+                                <rect key="frame" x="132.5" y="352.5" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="d8u-HJ-yyy" secondAttribute="height" multiplier="1:1" id="Xlo-9H-wP0"/>
                                     <constraint firstAttribute="height" constant="55" id="eGh-M9-Bbq"/>
@@ -724,7 +724,7 @@
                                 <state key="normal" backgroundImage="gplus"/>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXj-Tl-GkR" customClass="RoundedButton" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="198" y="352.5" width="55" height="55"/>
+                                <rect key="frame" x="197.5" y="352.5" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="IDd-cK-Vlh"/>
                                     <constraint firstAttribute="width" secondItem="wXj-Tl-GkR" secondAttribute="height" multiplier="1:1" id="cLl-C7-Qt9"/>
@@ -732,7 +732,7 @@
                                 <state key="normal" backgroundImage="fb"/>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmu-bY-PqO" customClass="RoundedButton" customModule="ViksitIOS" customModuleProvider="target">
-                                <rect key="frame" x="68" y="352.5" width="55" height="55"/>
+                                <rect key="frame" x="67.5" y="352.5" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Pg1-u4-eyF"/>
                                     <constraint firstAttribute="width" secondItem="fmu-bY-PqO" secondAttribute="height" multiplier="1:1" id="pzH-5z-6LG"/>
@@ -855,7 +855,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify your phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grf-fE-v7d">
-                                <rect key="frame" x="45.5" y="179" width="230.5" height="24"/>
+                                <rect key="frame" x="45" y="179" width="230.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -994,7 +994,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Pq-u9-Noh">
-                                <rect key="frame" x="45.5" y="259" width="229" height="51"/>
+                                <rect key="frame" x="45.5" y="258.5" width="229" height="51"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="EZ0-WM-J1n" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
                                         <rect key="frame" x="7" y="8" width="30" height="35"/>
@@ -1077,19 +1077,19 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your batch code consists of a combination of letters and numbers. Eg: AA11" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQO-Yc-xaj">
-                                <rect key="frame" x="26" y="210.5" width="268" height="33.5"/>
+                                <rect key="frame" x="26" y="210" width="268" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your batch code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0x-sD-ZaC">
-                                <rect key="frame" x="62.5" y="176.5" width="196" height="24"/>
+                                <rect key="frame" x="62" y="176" width="196" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tl5-qS-yxp">
-                                <rect key="frame" x="36" y="320" width="248" height="35"/>
+                                <rect key="frame" x="36" y="319.5" width="248" height="35"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="B1i-a0-ba7"/>

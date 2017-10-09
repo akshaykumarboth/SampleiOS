@@ -68,7 +68,7 @@ class PerformanceVC: UIViewController {
             skills = ComplexObject(JSONString: complexCache).skills!
         }
         
-        ImageAsyncLoader.loadImageAsync(url: (studentProfile?.profileImage)!, imgView: profileImage)
+        setProfileImage(profileImgUrl: (studentProfile?.profileImage)!)
         if let xp = studentProfile?.experiencePoints {
             userXPLabel.text = "\(xp)"
         }
@@ -80,10 +80,24 @@ class PerformanceVC: UIViewController {
         if let name = studentProfile?.firstName {
             userNameLabel.text = name
         }
+        
         if let childSkils = (skills.first?.skills) {
             childSkills = childSkils
         }
         
+    }
+    
+    func setProfileImage(profileImgUrl: String) {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let finalPath = path + "/Viksit/Viksit_PROFILE_PIC/profile_pic.jpg"
+        let fileExists = FileManager().fileExists(atPath: finalPath)
+        if fileExists {
+            profileImage.image = UIImage(contentsOfFile: finalPath)
+            print("found")
+        } else {
+            print("\(finalPath) not found")
+            ImageAsyncLoader.loadImageAsync(url: profileImgUrl, imgView: profileImage)
+        }
     }
     
     override var prefersStatusBarHidden : Bool {
@@ -131,9 +145,7 @@ extension PerformanceVC: UICollectionViewDelegate, UICollectionViewDataSource, U
         return skills.count
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "superSkillCell", for: indexPath) as! SuperSkillCell
         
