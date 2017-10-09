@@ -243,7 +243,8 @@ extension TasksVC: UICollectionViewDataSource {
                     cell.headerLabel.text = incompleteTasks[indexPath.row-1].header?.uppercased()
                     cell.titleLabel.text = incompleteTasks[indexPath.row-1].title
                     cell.descriptionLabel.text = incompleteTasks[indexPath.row-1].description
-                    loadImageAsync(url: incompleteTasks[indexPath.row-1].imageURL!, imgView: cell.lessonImage)
+                    //loadImageAsync(url: incompleteTasks[indexPath.row-1].imageURL!, imgView: cell.lessonImage)
+                    setTaskImage(imgUrl: incompleteTasks[indexPath.row-1].imageURL!, taskID: incompleteTasks[indexPath.row-1].id!, imageView: cell.lessonImage)
                     cell.videoImg.isHidden = true
                     cell.watchBtn.tag = indexPath.row-1
                     cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
@@ -259,7 +260,9 @@ extension TasksVC: UICollectionViewDataSource {
                     print(indexPath.row-1)
                     cell.headerLabel.text = incompleteTasks[indexPath.row-1].header?.uppercased()
                     cell.titleLabel.text = incompleteTasks[indexPath.row-1].title
-                    loadImageAsync(url: incompleteTasks[indexPath.row-1].imageURL!, imgView: cell.assessmentImg)
+                    //loadImageAsync(url: incompleteTasks[indexPath.row-1].imageURL!, imgView: cell.assessmentImg)
+                    
+                    setTaskImage(imgUrl: incompleteTasks[indexPath.row-1].imageURL!, taskID: incompleteTasks[indexPath.row-1].id!, imageView: cell.assessmentImg)
                     cell.descriptionLabel.text = incompleteTasks[indexPath.row-1].classRoomName
                     
                     if let hrs = incompleteTasks[indexPath.row-1].durationHours {
@@ -292,7 +295,8 @@ extension TasksVC: UICollectionViewDataSource {
                     cell.titleLabel.text = incompleteTasks[indexPath.row-1].title
                     cell.descriptionLabel.text = incompleteTasks[indexPath.row-1].description
                     if incompleteTasks[indexPath.row-1].imageURL != nil {
-                        loadImageAsync(url: incompleteTasks[indexPath.row-1].imageURL!, imgView: cell.assessmentImg)
+                        //loadImageAsync(url: incompleteTasks[indexPath.row-1].imageURL!, imgView: cell.assessmentImg)
+                        setTaskImage(imgUrl: incompleteTasks[indexPath.row-1].imageURL!, taskID: incompleteTasks[indexPath.row-1].id!, imageView: cell.assessmentImg)
                     }
                     
                     if let ques = incompleteTasks[indexPath.row-1].numberOfQuestions {
@@ -326,7 +330,8 @@ extension TasksVC: UICollectionViewDataSource {
                     cell.headerLabel.text = incompleteTasks[indexPath.row-1].header?.uppercased()
                     cell.titleLabel.text = incompleteTasks[indexPath.row-1].title
                     cell.descriptionLabel.text = incompleteTasks[indexPath.row-1].description
-                    loadImageAsync(url: incompleteTasks[indexPath.row-1].imageURL!, imgView: cell.lessonImage)
+                    //loadImageAsync(url: incompleteTasks[indexPath.row-1].imageURL!, imgView: cell.lessonImage)
+                    setTaskImage(imgUrl: incompleteTasks[indexPath.row-1].imageURL!, taskID: incompleteTasks[indexPath.row-1].id!, imageView: cell.lessonImage)
                     
                     cell.videoImg.isHidden = false
                     cell.watchBtn.tag = indexPath.row-1
@@ -336,7 +341,8 @@ extension TasksVC: UICollectionViewDataSource {
                     return cell
                 } else {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
-                    loadImageAsync(url: incompleteTasks[indexPath.row-1].imageURL!, imgView: cell.lessonImage)
+                    //loadImageAsync(url: incompleteTasks[indexPath.row-1].imageURL!, imgView: cell.lessonImage)
+                    setTaskImage(imgUrl: incompleteTasks[indexPath.row-1].imageURL!, taskID: incompleteTasks[indexPath.row-1].id!, imageView: cell.lessonImage)
                     cell.headerLabel.text = incompleteTasks[indexPath.row-1].header?.uppercased()
                     cell.titleLabel.text = incompleteTasks[indexPath.row-1].title
                     cell.descriptionLabel.text = incompleteTasks[indexPath.row-1].description
@@ -357,7 +363,8 @@ extension TasksVC: UICollectionViewDataSource {
                 cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
                 cell.titleLabel.text = incompleteTasks[indexPath.row].title
                 cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
-                loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                //loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                setTaskImage(imgUrl: incompleteTasks[indexPath.row].imageURL!, taskID: incompleteTasks[indexPath.row].id!, imageView: cell.lessonImage)
                 cell.videoImg.isHidden = true
                 cell.watchBtn.tag = indexPath.row
                 cell.watchBtn.backgroundColor = UIColor.Custom.themeColor
@@ -372,7 +379,8 @@ extension TasksVC: UICollectionViewDataSource {
                 
                 cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
                 cell.titleLabel.text = incompleteTasks[indexPath.row].title
-                loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+                //loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+                setTaskImage(imgUrl: incompleteTasks[indexPath.row].imageURL!, taskID: incompleteTasks[indexPath.row].id!, imageView: cell.assessmentImg)
                 cell.descriptionLabel.text = incompleteTasks[indexPath.row].classRoomName
                 
                 if let hrs = incompleteTasks[indexPath.row].durationHours {
@@ -402,7 +410,8 @@ extension TasksVC: UICollectionViewDataSource {
                 cell.titleLabel.text = incompleteTasks[indexPath.row].title
                 cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
                 if incompleteTasks[indexPath.row].imageURL != nil {
-                    loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+                    //loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
+                    setTaskImage(imgUrl: incompleteTasks[indexPath.row].imageURL!, taskID: incompleteTasks[indexPath.row].id!, imageView: cell.assessmentImg)
                 }
                 
                 if let ques = incompleteTasks[indexPath.row].numberOfQuestions {
@@ -435,7 +444,8 @@ extension TasksVC: UICollectionViewDataSource {
                 cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
                 cell.titleLabel.text = incompleteTasks[indexPath.row].title
                 cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
-                loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                //loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                setTaskImage(imgUrl: incompleteTasks[indexPath.row].imageURL!, taskID: incompleteTasks[indexPath.row].id!, imageView: cell.lessonImage)
                 
                 cell.videoImg.isHidden = false
                 cell.watchBtn.tag = indexPath.row
@@ -445,7 +455,8 @@ extension TasksVC: UICollectionViewDataSource {
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "presentationCell", for: indexPath) as! PresentationCell
-                loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                //loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.lessonImage)
+                setTaskImage(imgUrl: incompleteTasks[indexPath.row].imageURL!, taskID: incompleteTasks[indexPath.row].id!, imageView: cell.lessonImage)
                 cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
                 cell.titleLabel.text = incompleteTasks[indexPath.row].title
                 cell.descriptionLabel.text = incompleteTasks[indexPath.row].description
@@ -462,6 +473,38 @@ extension TasksVC: UICollectionViewDataSource {
         
         
     }
+    
+    func setTaskImage(imgUrl: String, taskID: Int, imageView: UIImageView) {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let finalPath = path + "/Viksit/Viksit_TASKS/\(taskID)/\(imgUrl.components(separatedBy: "/").last!)"
+        print(finalPath)
+        let fileExists = FileManager().fileExists(atPath: finalPath)
+        if fileExists {
+            imageView.image = UIImage(contentsOfFile: finalPath)
+            //profileBtn.setBackgroundImage(UIImage(contentsOfFile: finalPath), for: .normal)
+            print("found")
+        } else {
+            print("\(finalPath) not found")
+            loadImageAsync(url: imgUrl, imgView: imageView)
+            /*
+            if let url = URL(string: profileImgUrl) {
+                DispatchQueue.global().async {
+                    let data = try? Data(contentsOf: url)
+                    
+                    DispatchQueue.main.async {
+                        if data != nil {
+                            self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
+                        } else {
+                            self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
+                        }
+                    }
+                }
+            }*/
+        }
+        
+        profileBtn.makeButtonRound(borderWidth: 2.5, borderColor: UIColor.white)
+    }
+    
 
 }
 extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
@@ -551,7 +594,6 @@ extension TasksVC: UITableViewDataSource, UITableViewDelegate {
                     } 
                     
                 }
-                //
                 
             }
 

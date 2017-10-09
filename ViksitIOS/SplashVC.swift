@@ -40,10 +40,11 @@ class SplashVC: UIViewController {
             
             group.notify(queue: DispatchQueue.main) {
                 print("done doing stuff")
-                self.sss()
+                
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
                 self.present(nextViewController, animated:true, completion:nil)
+                self.sss()
             }
         }
         
