@@ -141,7 +141,7 @@ class CalenderVC: UIViewController {
         
     }
     
-    func getSubstring (str: String, startOffest: Int, endOffset: Int)-> String {
+    func getSubstring (str: String, startOffest: Int, endOffset: Int) -> String {
         let start = str.index(str.startIndex, offsetBy: startOffest)
         let end = str.index(str.endIndex, offsetBy: endOffset)
         let range = start..<end
@@ -252,7 +252,6 @@ extension CalenderVC: JTAppleCalendarViewDataSource {
         guard let validCell = view as? CalenderCell else { return }
         
         let today = Date()
-        
         if today == cellState.date {
             validCell.dataLabel.textColor = UIColor.blue
         }

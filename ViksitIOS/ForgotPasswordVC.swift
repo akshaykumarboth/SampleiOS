@@ -34,6 +34,14 @@ class ForgotPasswordVC: UIViewController {
             DispatchQueue.global(qos: .userInteractive).async {
                 let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/forgot?mobile=\(self.phoneNumberField.text!)", method: "GET", param: [:])
                 if (response != "null" && response != nil && response != "" && response.contains("HTTP Status")) {
+                    let istarUser = IstarUser(jsonString: response)
+                    if let userID = istarUser.id {
+                        let otpResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(userID)/mobile?mobile=\(self.phoneNumberField.text!)", method: "PUT", param: [:])
+                        DispatchQueue.main.async {
+                            //goto otp vc
+                            
+                        }
+                    }
                     
                 } else {
                     DispatchQueue.main.async {
@@ -53,6 +61,12 @@ class ForgotPasswordVC: UIViewController {
                 errorLabel.isHidden = false
             }
         }
+    }
+    
+    func goto(storyBoardName: String, storyBoardID: String) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: storyBoardName, bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: storyBoardID)
+        self.present(nextViewController, animated:true, completion:nil)
     }
     
     func dismissKeyboard() {
