@@ -30,7 +30,7 @@ class Helper{
             var postString = ""
             if param.isEmpty == false {
                 for (key, value) in param {
-                 postString = postString + "\(key)" + "=" + "\(value)" + "&"
+                    postString = postString + "\(key)" + "=" + "\(value)" + "&"
                  
                 }
             }

@@ -41,14 +41,19 @@ class SignUpVC: UIViewController {
                 "mobile" : phone,
                 "password" : password
             ]
+            DispatchQueue.global(qos: .userInteractive).async {
+                let signupResponse = Helper.makeHttpCall(url: "\(Constant.prodUrlString)t2c/user/create", method: "POST", param: signupParams)
+                DispatchQueue.main.async {
+                    print(signupResponse)
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
+                    self.present(nextViewController, animated:true, completion:nil)
+                }
+            }
             
-            let signupResponse = Helper.makeHttpCall(url: "\(Constant.prodUrlString)t2c/user/create", method: "POST", param: signupParams)
             //let signupResponse = Helper.makeHttpCall(url: "\(Constant.localUrlString)t2c/user/create", method: "POST", param: signupParams)
 
-            print(signupResponse)
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
-            self.present(nextViewController, animated:true, completion:nil)
+            
         }
         
     }

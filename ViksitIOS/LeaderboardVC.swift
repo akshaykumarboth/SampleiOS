@@ -91,7 +91,7 @@ class LeaderboardVC: UIViewController {
     
     
     func setToppers() {
-        //first topper
+        //first topper //issue is here for sudden death of the app
         loadImageAsync(url: ((topperList?[1].imageURL))!, imgView: firstTopperImage)
         makeImageRound(image: firstTopperImage)
         

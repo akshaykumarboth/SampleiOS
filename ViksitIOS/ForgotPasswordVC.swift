@@ -31,12 +31,15 @@ class ForgotPasswordVC: UIViewController {
         if (phoneNumberField.text != nil && phoneNumberField.text != "" && phoneNumberField.text?.characters.count == 10) {
             //send http request
             errorLabel.isHidden = true
+            let number = self.phoneNumberField.text!
             DispatchQueue.global(qos: .userInteractive).async {
-                let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/forgot?mobile=\(self.phoneNumberField.text!)", method: "GET", param: [:])
-                if (response != "null" && response != nil && response != "" && response.contains("HTTP Status")) {
+                let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/forgot?mobile=\(number)", method: "GET", param: [:])
+                
+                //http://elt.talentify.in/t2c/user/password/forgot?mobile=9986919400
+                if (response != "null" && response != nil && response != "" && !response.contains("HTTP Status")) {
                     let istarUser = IstarUser(jsonString: response)
                     if let userID = istarUser.id {
-                        let otpResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(userID)/mobile?mobile=\(self.phoneNumberField.text!)", method: "PUT", param: [:])
+                        let otpResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(userID)/mobile?mobile=\(number)", method: "GET", param: [:])
                         DispatchQueue.main.async {
                             //goto otp vc
                             //send phone and userid to otp vc to resend otp again if necessary
@@ -60,10 +63,10 @@ class ForgotPasswordVC: UIViewController {
             }
         } else {
             if (phoneNumberField.text != nil && phoneNumberField.text != "") {
-                errorLabel.text = "Phone nos is too short"
+                errorLabel.text = "Phone number is too short"
                 errorLabel.isHidden = false
             } else {
-                errorLabel.text = "Phone nos is required"
+                errorLabel.text = "Phone number is required"
                 errorLabel.isHidden = false
             }
         }

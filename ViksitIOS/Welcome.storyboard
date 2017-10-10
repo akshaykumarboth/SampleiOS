@@ -93,7 +93,7 @@
         <!--LoginVC-->
         <scene sceneID="sFL-W9-hnD">
             <objects>
-                <viewController id="MBh-N1-ofG" customClass="LoginVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MBh-N1-ofG" customClass="LoginVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Dn-KY-SP8"/>
                         <viewControllerLayoutGuide type="bottom" id="2Vn-B1-e13"/>
@@ -330,7 +330,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89W-Lv-4Th">
                                 <rect key="frame" x="36" y="316.5" width="248" height="35"/>
@@ -452,7 +452,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UcA-Ez-jHk" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
                                 <rect key="frame" x="26" y="266.5" width="268" height="35"/>
@@ -461,7 +461,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZZ-hS-5oc">
                                 <rect key="frame" x="26" y="316.5" width="268" height="35"/>
@@ -620,7 +620,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugu-AW-ck7">
                                 <rect key="frame" x="53.5" y="518" width="213" height="30"/>
@@ -933,7 +933,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPd-l1-JBT">
                                 <rect key="frame" x="26" y="321.5" width="268" height="35"/>
@@ -1205,6 +1205,30 @@
             </objects>
             <point key="canvasLocation" x="2970" y="644.36619718309862"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="SrD-2j-Uby">
+            <objects>
+                <viewController id="jNJ-rT-MTz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cIU-lA-PZV"/>
+                        <viewControllerLayoutGuide type="bottom" id="kJQ-fz-9XJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="arT-DV-dT1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4X-6U-Dfo">
+                                <rect key="frame" x="40" y="28" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="glB-Bg-Fpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4115" y="621"/>
+        </scene>
     </scenes>
     <resources>
         <image name="fb" width="433" height="439"/>
@@ -1213,7 +1237,7 @@
         <image name="talentify_logo" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XIZ-ze-BlM"/>
+        <segue reference="pt4-Ok-1fs"/>
         <segue reference="YVs-fe-mPO"/>
         <segue reference="AjV-gD-DSA"/>
     </inferredMetricsTieBreakers>

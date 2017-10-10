@@ -41,31 +41,26 @@ class ResetPasswordVC: UIViewController {
     func submitPressed() {
         errorLabel.isHidden = true
         if (!(newPswrdField.text?.isEmpty)! && newPswrdField.text!.characters.count >= 4 && !(confirmPswrdField.text?.isEmpty)!) {
-            /*if (password.getText().toString().toLowerCase().trim().equalsIgnoreCase(confirm_password.getText().toString().toLowerCase().trim())) {
-             new ResetAsync(this, jsonresponse, password.getText().toString()).execute();
-             } else {
-             error_text.setText("Password and Confirm Password are not matching.");
-             error_text.setVisibility(View.VISIBLE);
-             }
-*/
+            
             if newPswrdField.text == confirmPswrdField.text {
                 
-                let params: [String : Any] = [
-                    "userId" : userID,
+                let params: [String : String] = [
+                    "userId" : "\(userID!)",
                     "password" : newPswrdField.text!
                     ]
                 
                 do{
-                    DispatchQueue.global(qos: .userInitiated).async {
+                    DispatchQueue.global(qos: .userInteractive).async {
                         
-                        let pswrdResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/reset", method: "PUT", param: params as! [String : String])
+                        let pswrdResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/reset", method: "PUT", param: params )
                         DispatchQueue.main.async {
-                            if (pswrdResponse != nil && pswrdResponse != "null" && !pswrdResponse.contains("istarViksitProComplexKey") && pswrdResponse.replacingOccurrences(of: "\\", with: "") == "done")  {
+                            print(pswrdResponse)
+                            if (pswrdResponse != nil && pswrdResponse != "null" && pswrdResponse == "DONE")  {
                                 //goto changed password vc
                                 self.goto(storyBoardName: "Welcome", storyBoardID: "PasswordChangedVC")
                                 
                             } else if pswrdResponse != "null" && pswrdResponse.contains("istarViksitProComplexKey") {
-                                errorLabel.text = pswrdResponse.replacingOccurrences(of: "\\", with: "").replacingOccurrences(of: "istarViksitProComplexKey", with: "")
+                                self.errorLabel.text = pswrdResponse.replacingOccurrences(of: "\\", with: "").replacingOccurrences(of: "istarViksitProComplexKey", with: "")
                                 self.errorLabel.isHidden = false
                             } else {
                                 self.errorLabel.text = "Please check your internet connection"
@@ -102,7 +97,7 @@ class ResetPasswordVC: UIViewController {
     }
     
     func signInDifferentPressed() {
-        
+        goto(storyBoardName: "Welcome", storyBoardID: "LoginVC")
     }
     
     func goto(storyBoardName: String, storyBoardID: String) {

@@ -73,7 +73,6 @@ class LoginVC: UIViewController {
                                     }
                                     
                                     
-                                    
                                 }
                                 
                             }

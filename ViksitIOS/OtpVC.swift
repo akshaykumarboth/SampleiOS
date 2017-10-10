@@ -26,6 +26,7 @@ class OtpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("otp -> \(otp)")
         verifyBtn.backgroundColor = UIColor.Custom.themeColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
@@ -45,6 +46,7 @@ class OtpVC: UIViewController {
     }
     
     func submitPressed() {
+        print("otp -> \(otp)")
         if OTPField.text != "" {
             if otp == OTPField.text {
                 //goto reset password vc
@@ -64,15 +66,16 @@ class OtpVC: UIViewController {
         }
     }
     func resendOtpPressed() {
-        timeLeft = 180
+        timeLeft = 60
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.timerRunning), userInfo: nil, repeats: true)
         resendOTPBtn.isEnabled = false
         resendOTPBtn.setTitle("OTP has been resent", for: .disabled)
         
         DispatchQueue.global(qos: .userInitiated).async {
-            let otpResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(self.userID)/mobile?mobile=\(self.mobileNo)", method: "PUT", param: [:])
+            let otpResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(self.userID)/mobile?mobile=\(self.mobileNo)", method: "GET", param: [:])
             DispatchQueue.main.async {
                 self.otp = otpResponse
+                print("otp -> \(self.otp)")
             }
         }
     }
