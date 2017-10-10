@@ -350,7 +350,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sby-tu-ntc">
-                                <rect key="frame" x="117.5" y="366.5" width="85" height="30"/>
+                                <rect key="frame" x="117.5" y="361.5" width="85" height="30"/>
                                 <state key="normal" title="Resend OTP">
                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -365,16 +365,33 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CZ-Q4-PwQ">
-                                <rect key="frame" x="139" y="406.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="143" y="401.5" width="35.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FDr-um-6sx">
+                                <rect key="frame" x="36" y="301.5" width="248" height="0.0"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAa-bc-joE">
+                                        <rect key="frame" x="-36" y="-301.5" width="26.5" height="28"/>
+                                        <color key="backgroundColor" red="1" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="UTe-kg-qut"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.89019607840000003" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="FDr-um-6sx" secondAttribute="trailing" constant="20" id="4Y0-vm-O5S"/>
                             <constraint firstItem="Bqx-k1-6gD" firstAttribute="top" secondItem="Kpu-1n-yoI" secondAttribute="bottom" constant="20" id="7Tn-97-tH7"/>
                             <constraint firstItem="Bqx-k1-6gD" firstAttribute="centerY" secondItem="mBA-Jt-z50" secondAttribute="centerY" id="9HQ-bl-Pgt"/>
+                            <constraint firstItem="89W-Lv-4Th" firstAttribute="top" secondItem="FDr-um-6sx" secondAttribute="bottom" constant="15" id="CnH-Yj-2QE"/>
                             <constraint firstItem="6CZ-Q4-PwQ" firstAttribute="centerX" secondItem="mBA-Jt-z50" secondAttribute="centerX" id="DnN-u4-Rlb"/>
                             <constraint firstItem="sby-tu-ntc" firstAttribute="centerX" secondItem="mBA-Jt-z50" secondAttribute="centerX" id="E3V-Ch-J4o"/>
                             <constraint firstItem="NZ0-zQ-Qh0" firstAttribute="centerX" secondItem="mBA-Jt-z50" secondAttribute="centerX" id="G4g-eV-nEs"/>
@@ -384,19 +401,21 @@
                             <constraint firstItem="Kpu-1n-yoI" firstAttribute="top" secondItem="NZ0-zQ-Qh0" secondAttribute="bottom" constant="10" id="bEC-E6-kju"/>
                             <constraint firstItem="89W-Lv-4Th" firstAttribute="centerX" secondItem="mBA-Jt-z50" secondAttribute="centerX" id="cP5-1t-RHL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Bqx-k1-6gD" secondAttribute="trailing" constant="20" id="d7c-xE-mu7"/>
-                            <constraint firstItem="sby-tu-ntc" firstAttribute="top" secondItem="89W-Lv-4Th" secondAttribute="bottom" constant="15" id="fNs-Bt-LB2"/>
+                            <constraint firstItem="sby-tu-ntc" firstAttribute="top" secondItem="89W-Lv-4Th" secondAttribute="bottom" constant="10" id="fNs-Bt-LB2"/>
                             <constraint firstItem="89W-Lv-4Th" firstAttribute="leading" secondItem="mBA-Jt-z50" secondAttribute="leadingMargin" constant="20" id="ivz-22-u84"/>
                             <constraint firstItem="iET-Gm-cje" firstAttribute="centerX" secondItem="mBA-Jt-z50" secondAttribute="centerX" id="nj6-ta-wnh"/>
-                            <constraint firstItem="89W-Lv-4Th" firstAttribute="top" secondItem="Bqx-k1-6gD" secondAttribute="bottom" constant="15" id="pAJ-rD-yX9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kpu-1n-yoI" secondAttribute="trailing" constant="10" id="pN4-a3-KKe"/>
                             <constraint firstItem="paw-ja-Oe3" firstAttribute="top" secondItem="iET-Gm-cje" secondAttribute="bottom" constant="30" id="qLp-SJ-LXJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="89W-Lv-4Th" secondAttribute="trailing" constant="20" id="qbM-y6-etg"/>
                             <constraint firstItem="Kpu-1n-yoI" firstAttribute="leading" secondItem="mBA-Jt-z50" secondAttribute="leadingMargin" constant="10" id="rKQ-GL-Kja"/>
+                            <constraint firstItem="FDr-um-6sx" firstAttribute="leading" secondItem="mBA-Jt-z50" secondAttribute="leadingMargin" constant="20" id="wSZ-t2-2P5"/>
+                            <constraint firstItem="FDr-um-6sx" firstAttribute="top" secondItem="Bqx-k1-6gD" secondAttribute="bottom" id="x40-vZ-2WU"/>
                             <constraint firstItem="6CZ-Q4-PwQ" firstAttribute="top" secondItem="sby-tu-ntc" secondAttribute="bottom" constant="10" id="zsK-h3-m3R"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="OTPField" destination="Bqx-k1-6gD" id="Ej6-FO-iB2"/>
+                        <outlet property="errorLabel" destination="GAa-bc-joE" id="hPk-pZ-Vtz"/>
                         <outlet property="notYourNumBtn" destination="iET-Gm-cje" id="bQN-aw-pqU"/>
                         <outlet property="otpSentLabel" destination="Kpu-1n-yoI" id="Hts-Iq-T9k"/>
                         <outlet property="resendOTPBtn" destination="sby-tu-ntc" id="9kb-jY-6I4"/>
@@ -406,12 +425,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89G-ZV-LAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2177" y="-118"/>
+            <point key="canvasLocation" x="2176.875" y="-118.30985915492958"/>
         </scene>
         <!--Reset PasswordVC-->
         <scene sceneID="RZ2-ez-ci8">
             <objects>
-                <viewController id="cnA-M6-Skg" customClass="ResetPasswordVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResetPasswordVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cnA-M6-Skg" customClass="ResetPasswordVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2a7-lB-VdL"/>
                         <viewControllerLayoutGuide type="bottom" id="mzZ-e1-fI5"/>
@@ -467,6 +486,21 @@
                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gkv-iE-7r6">
+                                <rect key="frame" x="26" y="301.5" width="268" height="0.0"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6e-aA-ugd">
+                                        <rect key="frame" x="-26" y="-301.5" width="26.5" height="28"/>
+                                        <color key="backgroundColor" red="1" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="GqZ-2Q-KQ1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.89019607840000003" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -475,8 +509,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="i56-5Y-xAG" secondAttribute="trailing" constant="10" id="1IN-pK-YTj"/>
                             <constraint firstItem="0M4-V9-XhT" firstAttribute="centerX" secondItem="Cqz-20-Z8j" secondAttribute="centerX" id="3GQ-DJ-Hts"/>
                             <constraint firstItem="i56-5Y-xAG" firstAttribute="leading" secondItem="Cqz-20-Z8j" secondAttribute="leadingMargin" constant="10" id="3mp-Mm-G19"/>
-                            <constraint firstItem="JZZ-hS-5oc" firstAttribute="top" secondItem="UcA-Ez-jHk" secondAttribute="bottom" constant="15" id="Bw7-Fh-gnh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gkv-iE-7r6" secondAttribute="trailing" constant="10" id="9K6-9S-9xu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JZZ-hS-5oc" secondAttribute="trailing" constant="10" id="G7C-uC-T14"/>
+                            <constraint firstItem="gkv-iE-7r6" firstAttribute="leading" secondItem="Cqz-20-Z8j" secondAttribute="leadingMargin" constant="10" id="IsE-dn-0QI"/>
+                            <constraint firstItem="JZZ-hS-5oc" firstAttribute="top" secondItem="gkv-iE-7r6" secondAttribute="bottom" constant="15" id="Kbb-x1-yPX"/>
+                            <constraint firstItem="gkv-iE-7r6" firstAttribute="top" secondItem="UcA-Ez-jHk" secondAttribute="bottom" id="XWC-wR-S3M"/>
                             <constraint firstItem="JZZ-hS-5oc" firstAttribute="centerX" secondItem="Cqz-20-Z8j" secondAttribute="centerX" id="ZX6-K1-Zol"/>
                             <constraint firstItem="i56-5Y-xAG" firstAttribute="centerX" secondItem="Cqz-20-Z8j" secondAttribute="centerX" id="aWF-7G-Iw1"/>
                             <constraint firstItem="JZZ-hS-5oc" firstAttribute="leading" secondItem="Cqz-20-Z8j" secondAttribute="leadingMargin" constant="10" id="bj5-LS-ElN"/>
@@ -490,6 +527,7 @@
                     </view>
                     <connections>
                         <outlet property="confirmPswrdField" destination="UcA-Ez-jHk" id="YYs-wQ-hle"/>
+                        <outlet property="errorLabel" destination="a6e-aA-ugd" id="II8-zS-bNS"/>
                         <outlet property="newPswrdField" destination="i56-5Y-xAG" id="xHP-oM-z4Y"/>
                         <outlet property="signInDifferentBtn" destination="0M4-V9-XhT" id="cpx-kg-IWi"/>
                         <outlet property="submitBtn" destination="JZZ-hS-5oc" id="OPI-gv-AjY"/>
@@ -497,7 +535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9B-pr-MMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2970" y="-118"/>
+            <point key="canvasLocation" x="2970" y="-118.30985915492958"/>
         </scene>
         <!--SplashVC-->
         <scene sceneID="41q-OL-7KM">

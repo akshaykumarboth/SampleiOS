@@ -39,7 +39,13 @@ class ForgotPasswordVC: UIViewController {
                         let otpResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(userID)/mobile?mobile=\(self.phoneNumberField.text!)", method: "PUT", param: [:])
                         DispatchQueue.main.async {
                             //goto otp vc
-                            
+                            //send phone and userid to otp vc to resend otp again if necessary
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
+                            nextViewController.mobileNo = self.phoneNumberField.text!
+                            nextViewController.userID = userID
+                            nextViewController.otp = otpResponse
+                            self.present(nextViewController, animated:true, completion:nil)
                         }
                     }
                     
