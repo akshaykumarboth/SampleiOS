@@ -893,7 +893,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbC-bB-RQ3">
                                                                             <rect key="frame" x="0.0" y="0.0" width="187.5" height="59.5"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notification" translatesAutoresizingMaskIntoConstraints="NO" id="mac-tk-NEu" customClass="CircularImage" customModule="ViksitIOS" customModuleProvider="target">
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mac-tk-NEu" customClass="CircularImage" customModule="ViksitIOS" customModuleProvider="target">
                                                                                     <rect key="frame" x="10" y="10" width="43.5" height="43.5"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="mac-tk-NEu" secondAttribute="height" multiplier="1:1" id="HrF-o6-K92"/>
@@ -1216,7 +1216,6 @@
         <image name="down" width="24" height="24"/>
         <image name="edit" width="24" height="24"/>
         <image name="fb" width="433" height="439"/>
-        <image name="notification" width="24" height="24"/>
         <image name="performance" width="24" height="24"/>
         <image name="setting" width="24" height="24"/>
     </resources>

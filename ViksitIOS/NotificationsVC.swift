@@ -49,7 +49,9 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         let cell = tableView.dequeueReusableCell(withIdentifier: "notificationCell", for: indexPath) as! NotificationTableCell
+        setNotificationImage(imgUrl: notifications[indexPath.row].imageURL!, imageView: cell.notificationImage)
         
+        /*
         //loading image from url async
         do {
             let url = URL(string: notifications[indexPath.row].imageURL!)
@@ -66,7 +68,8 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
             }
         } catch let error as NSError {
             print(" Error \(error)")
-        }
+        }*/
+        
         if notifications[indexPath.row].itemType != "ASSESSMENT" {
             cell.notificationImage.makeImageRound()
         }
@@ -77,9 +80,21 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
         cell.notificationMessage.font = cell.notificationMessage.font.withSize(11)
         cell.notificationMessage.setHTMLFromString(htmlText: notifications[indexPath.row].message!)
         
-        
         return cell
     }
-
+    
+    func setNotificationImage(imgUrl: String, imageView: UIImageView) {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let finalPath = path + "/Viksit/Viksit_NOTIFICATION/\(imgUrl.components(separatedBy: "/").last!)"
+        print(finalPath)
+        let fileExists = FileManager().fileExists(atPath: finalPath)
+        if fileExists {
+            imageView.image = UIImage(contentsOfFile: finalPath)
+            print("found")
+        } else {
+            print("\(finalPath) not found")
+            ImageAsyncLoader.loadImageAsync(url: imgUrl, imgView: imageView)
+        }
+    }
 
 }

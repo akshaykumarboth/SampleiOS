@@ -127,6 +127,7 @@
 		BA690EBA1F2611AF00EF980F /* SkillsReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB61F2611AF00EF980F /* SkillsReport.swift */; };
 		BA690EBB1F2611AF00EF980F /* StudentProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB71F2611AF00EF980F /* StudentProfile.swift */; };
 		BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA690EB81F2611AF00EF980F /* Tasks.swift */; };
+		BA8EDAD61F8BD71F00B52D15 /* IstarUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EDAD51F8BD71F00B52D15 /* IstarUser.swift */; };
 		BAA147BC1F2F190800D1FFFE /* CalenderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147BB1F2F190800D1FFFE /* CalenderTableCell.swift */; };
 		BAA147CC1F31D16000D1FFFE /* Modules.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA147CB1F31D16000D1FFFE /* Modules.storyboard */; };
 		BAA147CE1F31D18200D1FFFE /* ModulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */; };
@@ -309,6 +310,7 @@
 		BA690EB61F2611AF00EF980F /* SkillsReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsReport.swift; sourceTree = "<group>"; };
 		BA690EB71F2611AF00EF980F /* StudentProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentProfile.swift; sourceTree = "<group>"; };
 		BA690EB81F2611AF00EF980F /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		BA8EDAD51F8BD71F00B52D15 /* IstarUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IstarUser.swift; sourceTree = "<group>"; };
 		BAA147BB1F2F190800D1FFFE /* CalenderTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderTableCell.swift; sourceTree = "<group>"; };
 		BAA147CB1F31D16000D1FFFE /* Modules.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Modules.storyboard; sourceTree = "<group>"; };
 		BAA147CD1F31D18200D1FFFE /* ModulesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModulesVC.swift; sourceTree = "<group>"; };
@@ -711,6 +713,7 @@
 			isa = PBXGroup;
 			children = (
 				BA690E981F26115400EF980F /* AllStudentRanks.swift */,
+				BA8EDAD51F8BD71F00B52D15 /* IstarUser.swift */,
 				BA690E991F26115400EF980F /* AssessmentReports.swift */,
 				BA690E9F1F26118100EF980F /* ComplexObject.swift */,
 				BA690EAD1F26119E00EF980F /* Modules.swift */,
@@ -1129,6 +1132,7 @@
 				BA690EB31F26119E00EF980F /* Response.swift in Sources */,
 				BAA147E11F33666500D1FFFE /* ProfileTBC.swift in Sources */,
 				BA43EDFD1F4B2796000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE.swift in Sources */,
+				BA8EDAD61F8BD71F00B52D15 /* IstarUser.swift in Sources */,
 				BA63717F1F27978600D77EA9 /* ResetPasswordVC.swift in Sources */,
 				BA43EDFF1F4B27AA000D2DB0 /* ONLY_TITLE_PARAGRAPH_IMAGE_LIST.swift in Sources */,
 				BA690EBC1F2611AF00EF980F /* Tasks.swift in Sources */,

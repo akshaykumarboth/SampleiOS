@@ -140,7 +140,9 @@ extension RolesVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "roleCell", for: indexPath) as! RoleTableCell
         
         //inserting image from url async for roleImage
-        ImageAsyncLoader.loadImageAsync(url: roles[indexPath.row].imageURL!, imgView: cell.roleImage)
+        //ImageAsyncLoader.loadImageAsync(url: roles[indexPath.row].imageURL!, imgView: cell.roleImage)
+        
+        setRoleImage(imgUrl: roles[indexPath.row].imageURL!, imageView: cell.roleImage)
         cell.roleCategory.text = roles[indexPath.row].category?.uppercased()
         cell.roleMessage.text = roles[indexPath.row].message
         cell.roleName.text = roles[indexPath.row].name
@@ -157,6 +159,21 @@ extension RolesVC: UITableViewDataSource, UITableViewDelegate {
         nextViewController.course = roles[indexPath.row]
         self.present(nextViewController, animated:true, completion:nil)
         //print(roles[indexPath.row].id as Any)
+    }
+    
+    func setRoleImage(imgUrl: String, imageView: UIImageView) {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let finalPath = path + "/Viksit/Viksit_ROLES/\(imgUrl.components(separatedBy: "/").last!)"
+        print(finalPath)
+        let fileExists = FileManager().fileExists(atPath: finalPath)
+        if fileExists {
+            imageView.image = UIImage(contentsOfFile: finalPath)
+            print("found")
+        } else {
+            print("\(finalPath) not found")
+            ImageAsyncLoader.loadImageAsync(url: imgUrl, imgView: imageView)
+        }
+        
     }
 
 }

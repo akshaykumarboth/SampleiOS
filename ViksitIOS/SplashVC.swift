@@ -12,11 +12,13 @@ import Firebase
 
 class SplashVC: UIViewController {
     
-    let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", qos: .userInteractive, attributes: .concurrent)
+    let taskQueue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.taskQueue", qos: .userInteractive, attributes: .concurrent)
+    let otherQueue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.otherQueue", qos: .userInteractive, attributes: .concurrent)
     let group:DispatchGroup = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         x()
     }
@@ -25,18 +27,16 @@ class SplashVC: UIViewController {
         
         //let queue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.queue", attributes: .concurrent)
         
-        
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             
             for task in (ComplexObject(JSONString: complexCache).tasks)!.filter({$0.status == "INCOMPLETE"}) {
                 if let imageURL = task.imageURL {
-                    queue.async (group: group) {
+                    taskQueue.async (group: group) {
                         self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_TASKS/", optionalFolderName: "\(task.id!)/")
                     }
                 }
             }
-            /*
-            */
+            
             
             group.notify(queue: DispatchQueue.main) {
                 print("done doing stuff")
@@ -44,8 +44,8 @@ class SplashVC: UIViewController {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
                 self.present(nextViewController, animated:true, completion:nil)
-                self.sss()
             }
+            self.sss()
         }
         
     }
@@ -56,8 +56,7 @@ class SplashVC: UIViewController {
                 if let students = item.allStudentRanks {
                     for student in students {
                         if let imageURL = student.imageURL {
-                            
-                            DispatchQueue.global(qos: .userInteractive).async {
+                            otherQueue.async {
                                 self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_STUDENTS/", optionalFolderName: "")
                             }
                         }
@@ -67,7 +66,7 @@ class SplashVC: UIViewController {
             
             for notification in ComplexObject(JSONString: complexCache).notifications! {
                 if let imageURL = notification.imageURL {
-                    DispatchQueue.global(qos: .userInteractive).async {
+                    otherQueue.async {
                         self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_NOTIFICATION/", optionalFolderName: "")
                     }
                 }
@@ -75,14 +74,14 @@ class SplashVC: UIViewController {
             
             for course in ComplexObject(JSONString: complexCache).courses! {
                 if let imageURL = course.imageURL {
-                    DispatchQueue.global(qos: .userInteractive).async {
+                    otherQueue.async {
                         self.saveFileAsync(urlString: imageURL, extraPath: "/Viksit/Viksit_ROLES/", optionalFolderName: "")
                     }
                 }
                 
                 for module in course.modules! {
                     if let moduleImageURL = module.imageURL {
-                        DispatchQueue.global(qos: .userInteractive).async {
+                        otherQueue.async {
                             self.saveFileAsync(urlString: moduleImageURL, extraPath: "/Viksit/Viksit_MODULE/", optionalFolderName: "\(module.id!)/")
                         }
                     }

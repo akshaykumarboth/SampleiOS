@@ -13,15 +13,48 @@ class ForgotPasswordVC: UIViewController {
     @IBOutlet var phoneNumberField: TextFieldWithPadding!
     @IBOutlet var submitBtn: UIButton!
     @IBOutlet var signInDifferentBtn: UIButton!
+    @IBOutlet var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         submitBtn.backgroundColor = UIColor.Custom.themeColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        
+        submitBtn.addTarget(self, action: #selector(onSubmitPressed), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
 
+    func onSubmitPressed() {
+        print("submit pressed")
+        
+        if (phoneNumberField.text != nil && phoneNumberField.text != "" && phoneNumberField.text?.characters.count == 10) {
+            //send http request
+            errorLabel.isHidden = true
+            DispatchQueue.global(qos: .userInteractive).async {
+                let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/forgot?mobile=\(self.phoneNumberField.text!)", method: "GET", param: [:])
+                if (response != "null" && response != nil && response != "" && response.contains("HTTP Status")) {
+                    
+                } else {
+                    DispatchQueue.main.async {
+                        self.errorLabel.text = "Oops. No account registered to this number."
+                        self.errorLabel.isHidden = false
+                    }
+                    
+                }
+                
+            }
+        } else {
+            if (phoneNumberField.text != nil && phoneNumberField.text != "") {
+                errorLabel.text = "Phone nos is too short"
+                errorLabel.isHidden = false
+            } else {
+                errorLabel.text = "Phone nos is required"
+                errorLabel.isHidden = false
+            }
+        }
+    }
+    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)

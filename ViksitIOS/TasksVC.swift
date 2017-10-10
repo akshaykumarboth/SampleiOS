@@ -254,7 +254,7 @@ extension TasksVC: UICollectionViewDataSource {
                     cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
                     
                     return cell
-                } else if (incompleteTasks[indexPath.row-1].itemType == "CLASSROOM_SESSION_STUDENT" /*|| incompleteTasks[indexPath.row].itemType == "WEBINAR_STUDENT"*/ || incompleteTasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
+                } else if (incompleteTasks[indexPath.row-1].itemType == "CLASSROOM_SESSION_STUDENT" /*|| incompleteTasks[indexPath.row].itemType == "WEBINAR_STUDENT"*/ || incompleteTasks[indexPath.row-1].itemType == "CLASSROOM_SESSION") {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
                     
                     print(indexPath.row-1)
@@ -470,8 +470,6 @@ extension TasksVC: UICollectionViewDataSource {
             }
         }
         
-        
-        
     }
     
     func setTaskImage(imgUrl: String, taskID: Int, imageView: UIImageView) {
@@ -486,23 +484,9 @@ extension TasksVC: UICollectionViewDataSource {
         } else {
             print("\(finalPath) not found")
             loadImageAsync(url: imgUrl, imgView: imageView)
-            /*
-            if let url = URL(string: profileImgUrl) {
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: url)
-                    
-                    DispatchQueue.main.async {
-                        if data != nil {
-                            self.profileBtn.setBackgroundImage(UIImage(data: data!), for: .normal)
-                        } else {
-                            self.profileBtn.setBackgroundImage(UIImage(named: "coins"), for: .normal)
-                        }
-                    }
-                }
-            }*/
         }
         
-        profileBtn.makeButtonRound(borderWidth: 2.5, borderColor: UIColor.white)
+        //profileBtn.makeButtonRound(borderWidth: 2.5, borderColor: UIColor.white)
     }
     
 
@@ -524,9 +508,7 @@ extension TasksVC: UICollectionViewDelegate, UIScrollViewDelegate {
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
      
-     
     }
-    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
