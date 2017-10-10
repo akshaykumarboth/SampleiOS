@@ -989,7 +989,7 @@
         <!--Password ChangedVC-->
         <scene sceneID="38O-ai-zVd">
             <objects>
-                <viewController id="rdi-90-Mpl" customClass="PasswordChangedVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PasswordChangedVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rdi-90-Mpl" customClass="PasswordChangedVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Foi-9d-loA"/>
                         <viewControllerLayoutGuide type="bottom" id="dlX-pl-sgc"/>

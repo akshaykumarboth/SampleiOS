@@ -92,10 +92,6 @@ class OtpVC: UIViewController {
         errorLabel.isHidden = true
     }
     
-    func goto(storyBoardName: String, storyBoardID: String) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: storyBoardName, bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: storyBoardID)
-        self.present(nextViewController, animated:true, completion:nil)
-    }
+    
     
 }

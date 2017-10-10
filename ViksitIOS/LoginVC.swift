@@ -18,7 +18,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        x()
+        //x()
         loginBtn.backgroundColor = UIColor.Custom.themeColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
@@ -43,35 +43,44 @@ class LoginVC: UIViewController {
                 "password" : password
             ]
             do{
-                
-                let loginResponse = Helper.makeHttpCall(url: "\(Constant.prodUrlString)t2c/auth/login", method: "POST", param: loginParams)
-                
-                if loginResponse.contains("istarViksitProComplexKeyUsername does not exists") {
-                    errorLabel.text = "Username does not exists"
-                    errorLabel.isHidden = false
-                } else if loginResponse.contains("istarViksitProComplexKeyPassword is incorrect") {
-                    errorLabel.text = "Password is incorrect"
-                    errorLabel.isHidden = false
-                } else {
-                    let studentprofile = StudentProfile(jsonString: loginResponse)
-                    if type(of: studentprofile.id) != nil {
-                        print(studentprofile.id)
-                        if let id = studentprofile.id {
-                            let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/user/\(id)/complex", method: "GET", param: [:])
-                            DataCache.sharedInstance.cache["complexObject"] = response
-                            //DispatchQueue.global(qos: .userInteractive).async {
-                                self.createFolders()
-                            //}
-                            Helper.saveProfileImageAsync(urlString: studentprofile.profileImage!)
-                            
-                            let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
-                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
-                            self.present(nextViewController, animated:true, completion:nil)
-                            
+                DispatchQueue.global(qos: .userInteractive).async {
+                    let loginResponse = Helper.makeHttpCall(url: "\(Constant.prodUrlString)t2c/auth/login", method: "POST", param: loginParams)
+                    DispatchQueue.main.async {
+                        if loginResponse.contains("istarViksitProComplexKeyUsername does not exists") {
+                            self.errorLabel.text = "Username does not exists"
+                            self.errorLabel.isHidden = false
+                        } else if loginResponse.contains("istarViksitProComplexKeyPassword is incorrect") {
+                            self.errorLabel.text = "Password is incorrect"
+                            self.errorLabel.isHidden = false
+                        } else {
+                            let studentprofile = StudentProfile(jsonString: loginResponse)
+                            if type(of: studentprofile.id) != nil {
+                                print(studentprofile.id)
+                                if let id = studentprofile.id {
+                                    DispatchQueue.global(qos: .userInteractive).async {
+                                        let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/user/\(id)/complex", method: "GET", param: [:])
+                                        DispatchQueue.main.async {
+                                            DataCache.sharedInstance.cache["complexObject"] = response
+                                            //DispatchQueue.global(qos: .userInteractive).async {
+                                            self.createFolders()
+                                            //}
+                                            Helper.saveProfileImageAsync(urlString: studentprofile.profileImage!)
+                                            
+                                            let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
+                                            self.present(nextViewController, animated:true, completion:nil)
+                                        }
+                                    }
+                                    
+                                    
+                                    
+                                }
+                                
+                            }
                         }
-                        
                     }
                 }
+                
             }catch let error as NSError {
                 print(" Error \(error)")
             }

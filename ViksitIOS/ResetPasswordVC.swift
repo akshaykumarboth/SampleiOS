@@ -39,7 +39,8 @@ class ResetPasswordVC: UIViewController {
     }
     
     func submitPressed() {
-        if (!newPswrdField.text?.isEmpty && newPswrdField.text!.characters.count >= 4 && !confirmPswrdField.text?.isEmpty) {
+        errorLabel.isHidden = true
+        if (!(newPswrdField.text?.isEmpty)! && newPswrdField.text!.characters.count >= 4 && !(confirmPswrdField.text?.isEmpty)!) {
             /*if (password.getText().toString().toLowerCase().trim().equalsIgnoreCase(confirm_password.getText().toString().toLowerCase().trim())) {
              new ResetAsync(this, jsonresponse, password.getText().toString()).execute();
              } else {
@@ -47,15 +48,47 @@ class ResetPasswordVC: UIViewController {
              error_text.setVisibility(View.VISIBLE);
              }
 */
-            
+            if newPswrdField.text == confirmPswrdField.text {
+                
+                let params: [String : Any] = [
+                    "userId" : userID,
+                    "password" : newPswrdField.text!
+                    ]
+                
+                do{
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        
+                        let pswrdResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/reset", method: "PUT", param: params as! [String : String])
+                        DispatchQueue.main.async {
+                            if (pswrdResponse != nil && pswrdResponse != "null" && !pswrdResponse.contains("istarViksitProComplexKey") && pswrdResponse.replacingOccurrences(of: "\\", with: "") == "done")  {
+                                //goto changed password vc
+                                self.goto(storyBoardName: "Welcome", storyBoardID: "PasswordChangedVC")
+                                
+                            } else if pswrdResponse != "null" && pswrdResponse.contains("istarViksitProComplexKey") {
+                                errorLabel.text = pswrdResponse.replacingOccurrences(of: "\\", with: "").replacingOccurrences(of: "istarViksitProComplexKey", with: "")
+                                self.errorLabel.isHidden = false
+                            } else {
+                                self.errorLabel.text = "Please check your internet connection"
+                                self.errorLabel.isHidden = false
+                            }
+                        }
+                    }
+                } catch let error as NSError {
+                    print(" Error \(error)")
+                }
+                
+            } else {
+                errorLabel.text = "Password and Confirm Password are not matching."
+                errorLabel.isHidden = false
+            }
         } else {
             
-            if newPswrdField.text?.isEmpty {
+            if (newPswrdField.text?.isEmpty)! {
                 errorLabel.text = "Password field required."
                 errorLabel.isHidden = false
             }
             
-            if confirmPswrdField.text?.isEmpty {
+            if (confirmPswrdField.text?.isEmpty)! {
                 errorLabel.text = "Confirm Password field required."
                 errorLabel.isHidden = false
             }
@@ -70,6 +103,12 @@ class ResetPasswordVC: UIViewController {
     
     func signInDifferentPressed() {
         
+    }
+    
+    func goto(storyBoardName: String, storyBoardID: String) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: storyBoardName, bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: storyBoardID)
+        self.present(nextViewController, animated:true, completion:nil)
     }
 
 }
