@@ -25,7 +25,8 @@ class Helper{
         if (request.httpMethod  == "POST" || request.httpMethod == "PUT") {
             //let postString = "{ \"name\":\"John\", \"age\":30, \"car\":null }"
             if request.httpMethod == "PUT" {
-                request.addValue("application/json", forHTTPHeaderField: "Content-Type") //Optional
+                //request.addValue("application/json", forHTTPHeaderField: "Content-Type") //Optional
+                request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             }
             var postString = ""
             if param.isEmpty == false {

@@ -548,8 +548,10 @@ extension TasksVC: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.separatorStyle = .none
+        
         tableView.showsVerticalScrollIndicator = false
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodaysTaskItemCell", for: indexPath) as! TodaysTaskItemCell
+        cell.selectionStyle = .none
         cell.itemTitleLabel.text = completedTasks[indexPath.row].title
         cell.itemTimeLabel.text = completedTasks[indexPath.row].date
         //inserting image from url async for roleImage

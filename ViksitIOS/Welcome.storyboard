@@ -126,6 +126,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jL0-yL-E0x">
+                                <rect key="frame" x="264" y="168" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="Xmt-HL-hRm"/>
+                                    <constraint firstAttribute="height" constant="25" id="YFE-Cu-8IE"/>
+                                </constraints>
+                                <color key="tintColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="eye"/>
+                                <connections>
+                                    <action selector="togglePassword:" destination="MBh-N1-ofG" eventType="touchUpInside" id="blW-8Q-1oB"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiR-CK-VoL">
                                 <rect key="frame" x="26" y="203" width="268" height="35"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -282,9 +294,11 @@
                             <constraint firstItem="kMq-Zd-xip" firstAttribute="leading" secondItem="oFV-wz-uoT" secondAttribute="trailing" constant="10" id="loq-g6-5RN"/>
                             <constraint firstItem="uvr-KZ-1iR" firstAttribute="leading" secondItem="JyT-ev-MVi" secondAttribute="trailing" constant="10" id="m5R-AJ-fIg"/>
                             <constraint firstItem="Veh-xx-s4C" firstAttribute="leading" secondItem="2pe-jL-GKO" secondAttribute="leadingMargin" constant="10" id="wXh-NZ-dSp"/>
+                            <constraint firstItem="jL0-yL-E0x" firstAttribute="centerY" secondItem="y6w-gM-Zuw" secondAttribute="centerY" id="wYm-jX-evj"/>
                             <constraint firstItem="Veh-xx-s4C" firstAttribute="top" secondItem="tCh-wN-Oan" secondAttribute="bottom" constant="10" id="wbn-eh-rzW"/>
                             <constraint firstItem="y6w-gM-Zuw" firstAttribute="leading" secondItem="2pe-jL-GKO" secondAttribute="leadingMargin" constant="10" id="weG-iF-B8P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UiR-CK-VoL" secondAttribute="trailing" constant="10" id="xBq-1E-YMh"/>
+                            <constraint firstItem="jL0-yL-E0x" firstAttribute="trailing" secondItem="y6w-gM-Zuw" secondAttribute="trailing" constant="-5" id="xaU-tB-GOX"/>
                             <constraint firstItem="UiR-CK-VoL" firstAttribute="top" secondItem="iKi-qC-heC" secondAttribute="bottom" constant="5" id="yZT-dA-PlF"/>
                         </constraints>
                     </view>
@@ -293,6 +307,7 @@
                         <outlet property="errorLabel" destination="sj2-LJ-Rql" id="DO4-ns-vXC"/>
                         <outlet property="loginBtn" destination="UiR-CK-VoL" id="FMc-ct-bDd"/>
                         <outlet property="passwordField" destination="y6w-gM-Zuw" id="VQW-4u-y0Y"/>
+                        <outlet property="showPasswordBtn" destination="jL0-yL-E0x" id="Qtq-eM-bh6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSb-cI-oIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -852,6 +867,18 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ees-Kc-m1e">
+                                <rect key="frame" x="264" y="198" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="0fe-h5-U2F"/>
+                                    <constraint firstAttribute="width" constant="25" id="5vz-k2-GDv"/>
+                                </constraints>
+                                <color key="tintColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="eye"/>
+                                <connections>
+                                    <action selector="togglePassword:" destination="auM-n9-ze1" eventType="touchUpInside" id="KPU-z4-AuL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -859,6 +886,7 @@
                             <constraint firstItem="Wls-Q8-Sck" firstAttribute="leading" secondItem="DXK-cG-04b" secondAttribute="leadingMargin" constant="10" id="15r-jn-vDn"/>
                             <constraint firstItem="34K-CV-a2e" firstAttribute="leading" secondItem="DXK-cG-04b" secondAttribute="leadingMargin" constant="10" id="1XW-pC-7Lw"/>
                             <constraint firstItem="Hf4-hP-G6i" firstAttribute="leading" secondItem="DXK-cG-04b" secondAttribute="leadingMargin" constant="10" id="2vv-bh-PgX"/>
+                            <constraint firstItem="Ees-Kc-m1e" firstAttribute="centerY" secondItem="UkC-b3-e9r" secondAttribute="centerY" id="5nn-2K-yl4"/>
                             <constraint firstItem="zE8-Cy-vpU" firstAttribute="leading" secondItem="DXK-cG-04b" secondAttribute="leadingMargin" constant="10" id="6Pi-Iw-3Wl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zE8-Cy-vpU" secondAttribute="trailing" constant="10" id="9KM-nW-Y1j"/>
                             <constraint firstItem="d8u-HJ-yyy" firstAttribute="leading" secondItem="fmu-bY-PqO" secondAttribute="trailing" constant="10" id="A2Y-15-iFV"/>
@@ -883,6 +911,7 @@
                             <constraint firstItem="KcS-3c-Lru" firstAttribute="centerY" secondItem="j7o-Wd-svW" secondAttribute="centerY" id="it0-b6-z7c"/>
                             <constraint firstItem="j7o-Wd-svW" firstAttribute="top" secondItem="34K-CV-a2e" secondAttribute="bottom" constant="10" id="l5E-vk-c3a"/>
                             <constraint firstItem="t18-5I-sQM" firstAttribute="top" secondItem="UkC-b3-e9r" secondAttribute="bottom" id="lek-vi-Bcj"/>
+                            <constraint firstItem="Ees-Kc-m1e" firstAttribute="trailing" secondItem="UkC-b3-e9r" secondAttribute="trailing" constant="-5" id="mnu-X4-oBM"/>
                             <constraint firstItem="34K-CV-a2e" firstAttribute="top" secondItem="t18-5I-sQM" secondAttribute="bottom" constant="5" id="nF7-mt-000"/>
                             <constraint firstItem="j7o-Wd-svW" firstAttribute="leading" secondItem="KcS-3c-Lru" secondAttribute="trailing" constant="10" id="ndF-Xi-58p"/>
                             <constraint firstItem="wXj-Tl-GkR" firstAttribute="top" secondItem="AqZ-ja-fMa" secondAttribute="bottom" constant="15" id="nr7-mI-cHr"/>
@@ -901,6 +930,7 @@
                         <outlet property="errorLabel" destination="Ap8-dy-mDM" id="Jpa-I1-ZqW"/>
                         <outlet property="mobileField" destination="J2k-ON-WD9" id="ryh-8h-0FE"/>
                         <outlet property="passwordField" destination="UkC-b3-e9r" id="reh-Fq-Cne"/>
+                        <outlet property="showPasswordBtn" destination="Ees-Kc-m1e" id="X84-S9-QDA"/>
                         <outlet property="signUpBtn" destination="34K-CV-a2e" id="o0u-Ft-fAX"/>
                     </connections>
                 </viewController>
@@ -1231,6 +1261,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eye" width="24" height="24"/>
         <image name="fb" width="433" height="439"/>
         <image name="gplus" width="889" height="889"/>
         <image name="linkedin" width="512" height="512"/>
@@ -1238,7 +1269,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pt4-Ok-1fs"/>
-        <segue reference="YVs-fe-mPO"/>
-        <segue reference="AjV-gD-DSA"/>
+        <segue reference="Ufu-kt-Pxe"/>
+        <segue reference="iWG-qN-6ku"/>
     </inferredMetricsTieBreakers>
 </document>

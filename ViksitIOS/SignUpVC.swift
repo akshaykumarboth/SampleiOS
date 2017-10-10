@@ -15,9 +15,28 @@ class SignUpVC: UIViewController {
     @IBOutlet var passwordField: TextFieldWithPadding!
     @IBOutlet var errorLabel: UILabel!
     @IBOutlet var signUpBtn: UIButton!
+    @IBOutlet var showPasswordBtn: UIButton!
+    var iconClick : Bool!
+    
+    
+    @IBAction func togglePassword(_ sender: UIButton) {
+        if(iconClick == true) {
+            //show pswrd
+            passwordField.isSecureTextEntry = false
+            showPasswordBtn.tintColor = UIColor.Custom.themeColor
+            iconClick = false
+        } else {
+            //hide pswrd
+            passwordField.isSecureTextEntry = true
+            showPasswordBtn.tintColor = UIColor(red:0.61, green:0.61, blue:0.61, alpha:1.0)
+            iconClick = true
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        iconClick = true
         signUpBtn.backgroundColor = UIColor.Custom.themeColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
