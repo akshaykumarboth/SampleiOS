@@ -1,20 +1,12 @@
-//
-//  OtpVC.swift
-//  ViksitIOS
-//
-//  Created by Akshay Kumar Both on 7/25/17.
-//  Copyright © 2017 Istar Feroz. All rights reserved.
-//
 
 import UIKit
 
-class OtpVC: UIViewController {
-
+class VerifyOTPVC: UIViewController {
+    
     @IBOutlet var otpSentLabel: UILabel!
     @IBOutlet var OTPField: TextFieldWithPadding!
     @IBOutlet var verifyBtn: UIButton!
     @IBOutlet var resendOTPBtn: UIButton!
-    @IBOutlet var notYourNumBtn: UIButton!
     @IBOutlet var timeRemaining: UILabel!
     @IBOutlet var errorLabel: UILabel!
     
@@ -23,17 +15,19 @@ class OtpVC: UIViewController {
     var otp: String?
     var timer: Timer! = Timer()
     var timeLeft = 180
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         print("otp -> \(otp)")
         verifyBtn.backgroundColor = UIColor.Custom.themeColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        
         setup()
-
+        // Do any additional setup after loading the view.
     }
-    
+
     func timerRunning() {
         
         timeLeft -= 1
@@ -46,15 +40,25 @@ class OtpVC: UIViewController {
     }
     
     func submitPressed() {
+        errorLabel.isHidden = true
         print("otp -> \(otp)")
         if OTPField.text != "" {
             if otp == OTPField.text {
                 //goto reset password vc
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ResetPasswordVC") as! ResetPasswordVC
-                nextViewController.userID = userID
-                
-                self.present(nextViewController, animated:true, completion:nil)
+                DispatchQueue.global(qos: .userInteractive).async {
+                    let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(self.userID)/verify/true", method: "PUT", param: [:])
+                    DispatchQueue.main.async {
+                        if response != nil && response != "null" && !response.isEmpty && !response.contains("HTTP Status") {
+                            //goto batch code
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BatchCodeVC") as! BatchCodeVC
+                            self.present(nextViewController, animated:true, completion:nil)
+                        } else {
+                            self.errorLabel.text = "Oops. Network Connectivty issue."
+                            self.errorLabel.isHidden = false
+                        }
+                    }
+                }
             } else {
                 //wrong password
                 errorLabel.text = "Oops! The OTP is incorrect."
@@ -89,13 +93,12 @@ class OtpVC: UIViewController {
         verifyBtn.addTarget(self, action: #selector(submitPressed), for: .touchUpInside)
         
     }
-
+    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
         errorLabel.isHidden = true
     }
     
-    
-    
+
 }

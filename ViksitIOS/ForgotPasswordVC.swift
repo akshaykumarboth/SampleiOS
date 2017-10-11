@@ -80,6 +80,7 @@ class ForgotPasswordVC: UIViewController {
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        errorLabel.isHidden = true
         view.endEditing(true)
     }
 

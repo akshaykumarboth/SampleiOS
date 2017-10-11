@@ -15,10 +15,27 @@ class LoginVC: UIViewController {
     @IBOutlet var emailField: UITextField!
     @IBOutlet var errorLabel: UILabel!
     @IBOutlet var loginBtn: UIButton!
+    @IBOutlet var showPasswordBtn: UIButton!
+    var iconClick : Bool!
+    
+    @IBAction func togglePassword(_ sender: UIButton) {
+        if(iconClick == true) {
+            //show pswrd
+            passwordField.isSecureTextEntry = false
+            showPasswordBtn.tintColor = UIColor.Custom.themeColor
+            iconClick = false
+        } else {
+            //hide pswrd
+            passwordField.isSecureTextEntry = true
+            showPasswordBtn.tintColor = UIColor(red:0.61, green:0.61, blue:0.61, alpha:1.0)
+            iconClick = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //x()
+        iconClick = true
         loginBtn.backgroundColor = UIColor.Custom.themeColor
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
@@ -57,21 +74,29 @@ class LoginVC: UIViewController {
                             if type(of: studentprofile.id) != nil {
                                 print(studentprofile.id)
                                 if let id = studentprofile.id {
-                                    DispatchQueue.global(qos: .userInteractive).async {
-                                        let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/user/\(id)/complex", method: "GET", param: [:])
-                                        DispatchQueue.main.async {
-                                            DataCache.sharedInstance.cache["complexObject"] = response
-                                            //DispatchQueue.global(qos: .userInteractive).async {
-                                            self.createFolders()
-                                            //}
-                                            Helper.saveProfileImageAsync(urlString: studentprofile.profileImage!)
-                                            
-                                            let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
-                                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
-                                            self.present(nextViewController, animated:true, completion:nil)
+                                    if studentprofile.isVerified! {
+                                        DispatchQueue.global(qos: .userInteractive).async {
+                                            let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/user/\(id)/complex", method: "GET", param: [:])
+                                            DispatchQueue.main.async {
+                                                DataCache.sharedInstance.cache["complexObject"] = response
+                                                //DispatchQueue.global(qos: .userInteractive).async {
+                                                self.createFolders()
+                                                //}
+                                                Helper.saveProfileImageAsync(urlString: studentprofile.profileImage!)
+                                                
+                                                let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                                                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
+                                                self.present(nextViewController, animated:true, completion:nil)
+                                            }
                                         }
+                                    } else {
+                                        
+                                        let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "VerifyPhoneVC") as! VerifyPhoneVC
+                                        nextViewController.mobileNumber = studentprofile.mobile!
+                                        nextViewController.userID = id
+                                        self.present(nextViewController, animated:true, completion:nil)
                                     }
-                                    
                                     
                                 }
                                 

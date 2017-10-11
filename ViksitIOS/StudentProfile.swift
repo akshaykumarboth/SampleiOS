@@ -5,7 +5,7 @@ public class StudentProfile {
     
     var id : Int?
 	public var authenticationToken : String?
-	public var isVerified : String?
+	public var isVerified : Bool?
 	public var email : String?
 	public var firstName : String?
 	public var lastName : String?
@@ -51,7 +51,7 @@ public class StudentProfile {
         }
         
         if json["isVerified"] != nil {
-            self.isVerified = json["isVerified"] as? String
+            self.isVerified = json["isVerified"] as? Bool
             //print("skill id is ",self.id! )
         }
         
