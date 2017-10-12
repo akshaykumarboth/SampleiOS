@@ -18,7 +18,7 @@ class ONLY_PARAGRAPH_TITLE: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(slide.templateName)
         //paraWebView.setText(text: slide.paragraph.text, font: 18)
         
         // Do any additional setup after loading the view.

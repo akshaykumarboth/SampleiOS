@@ -17,7 +17,8 @@ class ONLY_PARAGRAPH_TITLE_LIST: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print(slide.templateName)
         // Do any additional setup after loading the view.
     }
     
@@ -26,7 +27,7 @@ class ONLY_PARAGRAPH_TITLE_LIST: UIViewController {
         if slide.list.items.count > 0 {
             for item in slide.list.items {
                 if item.text != "" {
-                    print(item.text)
+                    //print(item.text)
                     ThemeUtil.setParaListTextLabelCustom(text: item.text, paraStack: paraStack)
                 }
             }

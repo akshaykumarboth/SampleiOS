@@ -25,7 +25,7 @@ class ONLY_VIDEO: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(slide.templateName)
     }
     
     override func viewDidAppear(_ animated: Bool) {

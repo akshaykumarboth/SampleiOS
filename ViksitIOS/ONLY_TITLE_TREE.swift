@@ -19,6 +19,7 @@ class ONLY_TITLE_TREE: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(slide.templateName)
         // Do any additional setup after loading the view.
     }
     

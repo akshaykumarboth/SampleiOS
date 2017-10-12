@@ -18,7 +18,7 @@ class ONLY_TITLE_IMAGE: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("slide id is ",slide.id)
+        print(slide.templateName)
        
     }
     

@@ -18,7 +18,7 @@ class ONLY_TITLE_LIST_NUMBERED: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("slide id is",slide.id)
+        print(slide.templateName)
         
         // Do any additional setup after loading the view.
     }

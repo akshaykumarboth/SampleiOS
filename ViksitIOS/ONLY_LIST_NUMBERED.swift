@@ -18,7 +18,7 @@ class ONLY_LIST_NUMBERED: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(slide.templateName)
         // Do any additional setup after loading the view.
         
         
@@ -29,7 +29,7 @@ class ONLY_LIST_NUMBERED: UIViewController {
         if slide.list.items.count > 0 {
             var count = 1
             for item in slide.list.items {
-                print(item.text)
+                //print(item.text)
                 if item.text != "" {
                     ThemeUtil.setNumberListItemTextLabelCustom(number: "\(count)", text: item.text, listStack: listStack)
                     count += 1

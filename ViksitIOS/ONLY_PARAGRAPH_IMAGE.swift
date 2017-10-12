@@ -18,7 +18,8 @@ class ONLY_PARAGRAPH_IMAGE: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print(slide.templateName)
         
         // Do any additional setup after loading the view.
     }

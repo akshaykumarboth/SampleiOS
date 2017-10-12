@@ -50,6 +50,7 @@ class SignUpVC: UIViewController {
         view.endEditing(true)
     }
     @IBAction func onSignupPressed(_ sender: UIButton) {
+        errorLabel.isHidden = true
         var email: String = emailField.text!
         var phone: String = mobileField.text!
         var password: String = passwordField.text!
@@ -63,10 +64,40 @@ class SignUpVC: UIViewController {
             DispatchQueue.global(qos: .userInteractive).async {
                 let signupResponse = Helper.makeHttpCall(url: "\(Constant.prodUrlString)t2c/user/create", method: "POST", param: signupParams)
                 DispatchQueue.main.async {
-                    print(signupResponse)
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
-                    self.present(nextViewController, animated:true, completion:nil)
+                    if !signupResponse.isEmpty && signupResponse != nil && signupResponse != "null" && signupResponse != "[]" && !signupResponse.contains("istarViksitProComplexKey"){
+                        print(signupResponse)
+                        let studentprofile = StudentProfile(jsonString: signupResponse)
+                        if type(of: studentprofile.id) != nil {
+                            if let userID = studentprofile.id {
+                                if let number = studentprofile.mobile {
+                                    DispatchQueue.global(qos: .userInteractive).async {
+                                        let otpResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(userID)/mobile?mobile=\(number)", method: "GET", param: [:])
+                                        DispatchQueue.main.async{
+                                            if !otpResponse.isEmpty && otpResponse != nil && otpResponse != "null" && !otpResponse.contains("istarViksitProComplexKey"){
+                                                let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                                                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
+                                                nextViewController.otp = otpResponse
+                                                nextViewController.mobileNo = number
+                                                nextViewController.userID = userID
+                                                nextViewController.backTag = "SignUpVC"
+                                                self.present(nextViewController, animated:true, completion:nil)
+                                            }
+                                            
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                        
+                    } else if (signupResponse != "null" && signupResponse.contains("istarViksitProComplexKey")) {
+                        self.errorLabel.text = signupResponse.replacingOccurrences(of: "istarViksitProComplexKey", with: "").replacingOccurrences(of: "\\", with: "")
+                        self.errorLabel.isHidden = false
+                    } else {
+                        self.errorLabel.text = "Please check your internet connection."
+                        self.errorLabel.isHidden = false
+                    }
+                    
                 }
             }
             

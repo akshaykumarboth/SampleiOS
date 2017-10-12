@@ -45,9 +45,10 @@ class ForgotPasswordVC: UIViewController {
                             //send phone and userid to otp vc to resend otp again if necessary
                             let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
                             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
-                            nextViewController.mobileNo = self.phoneNumberField.text!
+                            nextViewController.mobileNo = Int(self.phoneNumberField.text!)
                             nextViewController.userID = userID
                             nextViewController.otp = otpResponse
+                            nextViewController.backTag = "ForgotPasswordVC"
                             self.present(nextViewController, animated:true, completion:nil)
                         }
                     }

@@ -8,6 +8,7 @@ target 'ViksitIOS' do
   # Pods for ViksitIOS
 	pod 'CircleProgressBar', '~> 0.32’
     pod 'SWXMLHash', '~> 4.0.0'
+    pod 'Alamofire', '~> 4.5'
     pod 'AnimatedCollectionViewLayout'
     pod 'JTAppleCalendar', '~> 7.0'
     pod 'Firebase/Core'

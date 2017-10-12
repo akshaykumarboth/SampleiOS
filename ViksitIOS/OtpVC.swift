@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
 
 class OtpVC: UIViewController {
+    var backTag = ""
 
     @IBOutlet var otpSentLabel: UILabel!
     @IBOutlet var OTPField: TextFieldWithPadding!
@@ -18,11 +20,11 @@ class OtpVC: UIViewController {
     @IBOutlet var timeRemaining: UILabel!
     @IBOutlet var errorLabel: UILabel!
     
-    var mobileNo: String?
+    var mobileNo: Int?
     var userID: Int?
     var otp: String?
     var timer: Timer! = Timer()
-    var timeLeft = 180
+    var timeLeft = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,21 +42,50 @@ class OtpVC: UIViewController {
         timeRemaining.text = "\(timeLeft/60):\(timeLeft%60)"
         if timeLeft == 0 {
             resendOTPBtn.isEnabled = true
+            resendOTPBtn.setTitle("Resend OTP", for: .normal)
             timer.invalidate()
             
         }
     }
     
     func submitPressed() {
+        self.errorLabel.isHidden = true
         print("otp -> \(otp)")
         if OTPField.text != "" {
             if otp == OTPField.text {
-                //goto reset password vc
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ResetPasswordVC") as! ResetPasswordVC
-                nextViewController.userID = userID
+                if backTag == "SignUpVC" {
+                    if let id = self.userID {
+                        DispatchQueue.global(qos: .userInteractive).async {
+                            
+                           // print(Alamofire.request("", method: .put, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>))
+                            
+                            let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(id)/verify/true", method: "PUT", param: [:])
+                            //Alamofire.request
+                            
+                            DispatchQueue.main.async {
+                                print("response -> \(response)")
+                                if (response != nil && response != "null" && !response.isEmpty && !response.contains("HTTP Status")) {
+                                    let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BatchCodeVC") as! BatchCodeVC
+                                    self.present(nextViewController, animated:true, completion:nil)
+                                } else {
+                                    self.errorLabel.text = "Oops. Network Connectivty issue."
+                                    self.errorLabel.isHidden = false
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                }
+                if backTag == "ForgotPasswordVC" {
+                    //goto reset password vc
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ResetPasswordVC") as! ResetPasswordVC
+                    nextViewController.userID = userID
+                    self.present(nextViewController, animated:true, completion:nil)
+                }
                 
-                self.present(nextViewController, animated:true, completion:nil)
             } else {
                 //wrong password
                 errorLabel.text = "Oops! The OTP is incorrect."
@@ -72,17 +103,24 @@ class OtpVC: UIViewController {
         resendOTPBtn.isEnabled = false
         resendOTPBtn.setTitle("OTP has been resent", for: .disabled)
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            let otpResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(self.userID)/mobile?mobile=\(self.mobileNo)", method: "GET", param: [:])
-            DispatchQueue.main.async {
-                self.otp = otpResponse
-                print("otp -> \(self.otp)")
+        let resendQueue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.resendOTPQueue", qos: .userInteractive, attributes: .concurrent)
+        if let number = mobileNo {
+            if let id = self.userID {
+                resendQueue.async {
+                    let otpResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(id)/mobile?mobile=\(number)", method: "GET", param: [:])
+                    DispatchQueue.main.async {
+                        self.otp = otpResponse
+                        print("resent otp -> \(self.otp)")
+                    }
+                }
             }
+            
         }
+        
     }
     
     func setup() {
-        otpSentLabel.text = "An OTP has been sent to your phone number ending with xxxxx\(mobileNo?.substring(from: (mobileNo?.index((mobileNo?.startIndex)!, offsetBy: 6))!))"
+        //otpSentLabel.text = "An OTP has been sent to your phone number ending with xxxxx\(mobileNo?.substring(from: (mobileNo?.index((mobileNo?.startIndex)!, offsetBy: 6))!))"
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.timerRunning), userInfo: nil, repeats: true)
         resendOTPBtn.isEnabled = false
         resendOTPBtn.addTarget(self, action: #selector(self.resendOtpPressed), for: .touchUpInside)

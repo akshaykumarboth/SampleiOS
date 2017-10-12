@@ -17,7 +17,7 @@ class ONLY_LIST: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(slide.templateName)
         // Do any additional setup after loading the view.
     }
     
@@ -25,7 +25,7 @@ class ONLY_LIST: UIViewController {
         listStack.subviews.forEach { $0.removeFromSuperview() } // removing all subviews
         if slide.list.items.count > 0 {
             for item in slide.list.items {
-                print(item.text)
+                //print(item.text)
                 if item.text != "" {
                     ThemeUtil.setListItemTextLabelCustom(text: item.text, listStack: listStack)
                 }

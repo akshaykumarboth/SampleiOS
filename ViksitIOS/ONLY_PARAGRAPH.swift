@@ -20,7 +20,7 @@ class ONLY_PARAGRAPH: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("slide id is \(slide.id)")
+        print(slide.templateName)
         
         // Do any additional setup after loading the view.
     }

@@ -89,7 +89,7 @@ class LoginVC: UIViewController {
                                                 self.present(nextViewController, animated:true, completion:nil)
                                             }
                                         }
-                                    } else {
+                                    } else if !studentprofile.isVerified!{
                                         
                                         let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
                                         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "VerifyPhoneVC") as! VerifyPhoneVC

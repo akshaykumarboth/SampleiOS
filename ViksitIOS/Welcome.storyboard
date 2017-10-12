@@ -1077,9 +1077,14 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPd-l1-JBT">
-                                <rect key="frame" x="26" y="346.5" width="268" height="35"/>
+                                <rect key="frame" x="26" y="321.5" width="268" height="35"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="viY-gO-uN8"/>
@@ -1105,10 +1110,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v6M-g6-MZV">
-                                <rect key="frame" x="26" y="301.5" width="268" height="25"/>
+                                <rect key="frame" x="26" y="301.5" width="268" height="0.0"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bd-Dc-fpi">
-                                        <rect key="frame" x="0.0" y="0.0" width="268" height="25"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bd-Dc-fpi">
+                                        <rect key="frame" x="-26" y="-301.5" width="26.5" height="25"/>
                                         <color key="backgroundColor" red="1" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="50C-Xm-7iQ"/>
@@ -1226,70 +1231,106 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Pq-u9-Noh">
-                                <rect key="frame" x="45.5" y="258.5" width="229" height="51"/>
+                                <rect key="frame" x="39.5" y="258.5" width="241" height="51"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="EZ0-WM-J1n" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="7" y="8" width="30" height="35"/>
+                                        <rect key="frame" x="7" y="8" width="32" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Ac7-kZ-60I"/>
-                                            <constraint firstAttribute="width" constant="30" id="W5Y-Eh-bHi"/>
+                                            <constraint firstAttribute="width" constant="32" id="W5Y-Eh-bHi"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxk-wd-Da0" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="155" y="8" width="30" height="35"/>
+                                        <rect key="frame" x="163" y="8" width="32" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="cOK-G1-ETX"/>
-                                            <constraint firstAttribute="width" constant="30" id="eY4-NN-2K5"/>
+                                            <constraint firstAttribute="width" constant="32" id="eY4-NN-2K5"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fh8-wZ-b7F" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="44" y="8" width="30" height="35"/>
+                                        <rect key="frame" x="46" y="8" width="32" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="SDH-01-97w"/>
+                                            <constraint firstAttribute="width" constant="32" id="SDH-01-97w"/>
                                             <constraint firstAttribute="height" constant="35" id="skJ-LD-Gfm"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="taj-gK-Yt3" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="118" y="8" width="30" height="35"/>
+                                        <rect key="frame" x="124" y="8" width="32" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="ndc-gY-6dT"/>
-                                            <constraint firstAttribute="width" constant="30" id="znq-gl-mxz"/>
+                                            <constraint firstAttribute="width" constant="32" id="znq-gl-mxz"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AMu-jK-8QE" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="81" y="8" width="30" height="35"/>
+                                        <rect key="frame" x="85" y="8" width="32" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="h0l-9M-VvB"/>
+                                            <constraint firstAttribute="width" constant="32" id="h0l-9M-VvB"/>
                                             <constraint firstAttribute="height" constant="35" id="nz9-3S-pdW"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SvO-yi-Dzb" customClass="TextFieldWithPadding" customModule="ViksitIOS" customModuleProvider="target">
-                                        <rect key="frame" x="192" y="8" width="30" height="35"/>
+                                        <rect key="frame" x="202" y="8" width="32" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="ZYg-Bj-6ML"/>
-                                            <constraint firstAttribute="width" constant="30" id="dIC-H2-xRl"/>
+                                            <constraint firstAttribute="width" constant="32" id="dIC-H2-xRl"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="taj-gK-Yt3" firstAttribute="centerY" secondItem="1Pq-u9-Noh" secondAttribute="centerY" id="3ft-5p-LaL"/>
                                     <constraint firstItem="AMu-jK-8QE" firstAttribute="centerY" secondItem="1Pq-u9-Noh" secondAttribute="centerY" id="7jl-8w-PsM"/>
@@ -1308,26 +1349,26 @@
                                     <constraint firstItem="fh8-wZ-b7F" firstAttribute="centerY" secondItem="1Pq-u9-Noh" secondAttribute="centerY" id="w4D-2f-cFy"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your batch code consists of a combination of letters and numbers. Eg: AA11" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQO-Yc-xaj">
-                                <rect key="frame" x="26" y="210" width="268" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your batch code consists of a combination of letters and numbers. Eg: AA11" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQO-Yc-xaj">
+                                <rect key="frame" x="26" y="212" width="268" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your batch code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0x-sD-ZaC">
-                                <rect key="frame" x="62" y="176" width="196" height="24"/>
+                                <rect key="frame" x="62" y="178" width="196" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" red="0.2470588235" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tl5-qS-yxp">
-                                <rect key="frame" x="36" y="319.5" width="248" height="35"/>
+                                <rect key="frame" x="41" y="319.5" width="238" height="35"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="B1i-a0-ba7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="GO TO LOG IN">
+                                <state key="normal" title="SUBMIT">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1338,19 +1379,36 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3H-dZ-xSA">
-                                <rect key="frame" x="53.5" y="518" width="213" height="30"/>
-                                <state key="normal" title="Sign In with a different account">
+                                <rect key="frame" x="125.5" y="518" width="69" height="30"/>
+                                <state key="normal" title="  Skip &gt;&gt;  ">
                                     <color key="titleColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xST-Fy-CF2">
+                                <rect key="frame" x="40" y="309.5" width="241" height="0.0"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reL-Zj-Nji">
+                                        <rect key="frame" x="-40" y="-309.5" width="26.5" height="25"/>
+                                        <color key="backgroundColor" red="1" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="u9a-Oy-unv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.89019607840000003" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EQO-Yc-xaj" firstAttribute="centerX" secondItem="PBk-fh-Pl7" secondAttribute="centerX" id="5WD-zM-TiG"/>
+                            <constraint firstItem="xST-Fy-CF2" firstAttribute="top" secondItem="1Pq-u9-Noh" secondAttribute="bottom" id="7PT-EX-I1P"/>
                             <constraint firstItem="EQO-Yc-xaj" firstAttribute="top" secondItem="s0x-sD-ZaC" secondAttribute="bottom" constant="10" id="Esr-Vh-zCV"/>
-                            <constraint firstItem="tl5-qS-yxp" firstAttribute="top" secondItem="1Pq-u9-Noh" secondAttribute="bottom" constant="10" id="HY6-wz-mFt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EQO-Yc-xaj" secondAttribute="trailing" constant="10" id="MYc-Yr-pZr"/>
-                            <constraint firstItem="tl5-qS-yxp" firstAttribute="leading" secondItem="PBk-fh-Pl7" secondAttribute="leadingMargin" constant="20" id="NPb-C3-Rna"/>
+                            <constraint firstItem="tl5-qS-yxp" firstAttribute="leading" secondItem="PBk-fh-Pl7" secondAttribute="leadingMargin" constant="25" id="NPb-C3-Rna"/>
+                            <constraint firstItem="xST-Fy-CF2" firstAttribute="centerX" secondItem="PBk-fh-Pl7" secondAttribute="centerX" id="Rv3-WR-9PC"/>
+                            <constraint firstItem="tl5-qS-yxp" firstAttribute="top" secondItem="xST-Fy-CF2" secondAttribute="bottom" constant="10" id="VRl-PI-Pct"/>
                             <constraint firstItem="tl5-qS-yxp" firstAttribute="centerX" secondItem="PBk-fh-Pl7" secondAttribute="centerX" id="WRi-Xe-yZ7"/>
                             <constraint firstItem="1Pq-u9-Noh" firstAttribute="centerY" secondItem="PBk-fh-Pl7" secondAttribute="centerY" id="ZPe-sV-fad"/>
                             <constraint firstItem="1Pq-u9-Noh" firstAttribute="top" secondItem="EQO-Yc-xaj" secondAttribute="bottom" constant="15" id="auw-et-h1c"/>
@@ -1358,42 +1416,26 @@
                             <constraint firstItem="UbW-XA-QmJ" firstAttribute="top" secondItem="e3H-dZ-xSA" secondAttribute="bottom" constant="20" id="e1h-zQ-lM2"/>
                             <constraint firstItem="s0x-sD-ZaC" firstAttribute="centerX" secondItem="PBk-fh-Pl7" secondAttribute="centerX" id="eGQ-rw-9oj"/>
                             <constraint firstItem="1Pq-u9-Noh" firstAttribute="centerX" secondItem="PBk-fh-Pl7" secondAttribute="centerX" id="lpC-bd-YRm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tl5-qS-yxp" secondAttribute="trailing" constant="20" id="wk0-ca-Aee"/>
+                            <constraint firstItem="1Pq-u9-Noh" firstAttribute="width" secondItem="xST-Fy-CF2" secondAttribute="width" id="qMJ-6c-aCz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tl5-qS-yxp" secondAttribute="trailing" constant="25" id="wk0-ca-Aee"/>
                             <constraint firstItem="e3H-dZ-xSA" firstAttribute="centerX" secondItem="PBk-fh-Pl7" secondAttribute="centerX" id="yyA-46-u77"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gotoLoginBtn" destination="tl5-qS-yxp" id="vQG-3Q-93h"/>
-                        <outlet property="signInDifferentBtn" destination="e3H-dZ-xSA" id="TTd-w4-HQl"/>
+                        <outlet property="errorLabel" destination="reL-Zj-Nji" id="Hf2-kd-dEK"/>
+                        <outlet property="input1" destination="EZ0-WM-J1n" id="Q5J-c4-ELy"/>
+                        <outlet property="input2" destination="fh8-wZ-b7F" id="Yie-A2-r50"/>
+                        <outlet property="input3" destination="AMu-jK-8QE" id="Gtb-NT-rOx"/>
+                        <outlet property="input4" destination="taj-gK-Yt3" id="kiX-Z5-dXl"/>
+                        <outlet property="input5" destination="Oxk-wd-Da0" id="7LZ-4Y-gFF"/>
+                        <outlet property="input6" destination="SvO-yi-Dzb" id="c8a-tC-hXa"/>
+                        <outlet property="skipBtn" destination="e3H-dZ-xSA" id="5Uj-n5-q61"/>
+                        <outlet property="submitBtn" destination="tl5-qS-yxp" id="r8o-et-Yqh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="utM-Q2-yI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2970" y="644.36619718309862"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="SrD-2j-Uby">
-            <objects>
-                <viewController id="jNJ-rT-MTz" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cIU-lA-PZV"/>
-                        <viewControllerLayoutGuide type="bottom" id="kJQ-fz-9XJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="arT-DV-dT1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4X-6U-Dfo">
-                                <rect key="frame" x="40" y="28" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="glB-Bg-Fpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4115" y="621"/>
         </scene>
     </scenes>
     <resources>
@@ -1404,8 +1446,8 @@
         <image name="talentify_logo" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pt4-Ok-1fs"/>
+        <segue reference="XIZ-ze-BlM"/>
         <segue reference="YVs-fe-mPO"/>
-        <segue reference="AjV-gD-DSA"/>
+        <segue reference="Hag-Kv-NTP"/>
     </inferredMetricsTieBreakers>
 </document>

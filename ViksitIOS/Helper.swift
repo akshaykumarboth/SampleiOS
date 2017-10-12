@@ -1,4 +1,4 @@
-
+	
 import Foundation
 import UIKit
 import Photos
@@ -16,17 +16,22 @@ class Helper{
     
     
     static func makeHttpCall (url : String, method: String, param: [String:String]) -> String {
+        print(url)
         var success = "aa" 
         let semaphore = DispatchSemaphore(value: 0)
-
-        var request = URLRequest(url: URL(string: url)!)
+        guard let urll = URL(string: url) else {
+            return "Error"
+        }
+            
+        var request = URLRequest(url: urll)
+        //var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = method
         //
         if (request.httpMethod  == "POST" || request.httpMethod == "PUT") {
             //let postString = "{ \"name\":\"John\", \"age\":30, \"car\":null }"
             if request.httpMethod == "PUT" {
-                //request.addValue("application/json", forHTTPHeaderField: "Content-Type") //Optional
-                request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type") //Optional
+                //request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             }
             var postString = ""
             if param.isEmpty == false {

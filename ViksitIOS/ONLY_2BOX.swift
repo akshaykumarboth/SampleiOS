@@ -21,7 +21,7 @@ class ONLY_2BOX: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("id ",slide.id)
+        print(slide.templateName)
         
     }
     

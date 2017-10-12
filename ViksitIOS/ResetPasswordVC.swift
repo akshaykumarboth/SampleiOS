@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class ResetPasswordVC: UIViewController {
     
     @IBOutlet var newPswrdField: TextFieldWithPadding!
@@ -38,6 +38,8 @@ class ResetPasswordVC: UIViewController {
         signInDifferentBtn.addTarget(self, action: #selector(signInDifferentPressed), for: .touchUpInside)
     }
     
+    
+    
     func submitPressed() {
         errorLabel.isHidden = true
         if (!(newPswrdField.text?.isEmpty)! && newPswrdField.text!.characters.count >= 4 && !(confirmPswrdField.text?.isEmpty)!) {
@@ -53,6 +55,8 @@ class ResetPasswordVC: UIViewController {
                     DispatchQueue.global(qos: .userInteractive).async {
                         
                         let pswrdResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/reset", method: "PUT", param: params )
+                        //print(Alamofire.request("http://elt.talentify.in/t2c/user/password/reset", method: .PUT, parameters: params, encoding: "myBody", headers: [:]) )
+                        
                         DispatchQueue.main.async {
                             print(pswrdResponse)
                             if (pswrdResponse != nil && pswrdResponse != "null" && pswrdResponse == "DONE")  {

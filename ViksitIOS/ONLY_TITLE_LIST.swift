@@ -20,7 +20,7 @@ class ONLY_TITLE_LIST: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("id ",slide.id)
+        print(slide.templateName)
         
     }
     
@@ -30,7 +30,7 @@ class ONLY_TITLE_LIST: UIViewController {
         
         if slide.list.items.count > 0 {
             for item in slide.list.items {
-                print(item.text)
+                //print(item.text)
                 if item.text != "" {
                     //ThemeUtil.setListItemTextLabel(text: item.text, listStack: listStack)
                     ThemeUtil.setListItemTextLabelCustom(text: item.text, listStack: listStack)
