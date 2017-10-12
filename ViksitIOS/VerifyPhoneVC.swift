@@ -19,27 +19,34 @@ class VerifyPhoneVC: UIViewController {
     @IBAction func onSubmitPressed(_ sender: UIButton) {
         errorLabel.isHidden = true
         if mobileField.text != nil && mobileField.text != "" && mobileField.text?.characters.count == 10 {
-            let phoneNo = mobileField.text
-            DispatchQueue.global(qos: .userInteractive).async {
-                let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(self.userID)/mobile?mobile=\(phoneNo)", method: "PUT", param: [:])
-                DispatchQueue.main.async {
-                    if response != nil && response != "null" && !response.isEmpty && !response.contains("HTTP Status") && !response.contains("istarViksitProComplexKey") {
-                        //goto otp vc
-                        let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
-                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "VerifyOTPVC") as! VerifyOTPVC
-                        nextViewController.mobileNo = self.mobileField.text!
-                        nextViewController.userID = self.userID
-                        nextViewController.otp = response
-                        self.present(nextViewController, animated:true, completion:nil)
-                    } else if (response != "null" && response.contains("istarViksitProComplexKey")) {
-                        self.errorLabel.text = response.replacingOccurrences(of: "istarViksitProComplexKey", with: "").replacingOccurrences(of: "\\", with: "")
-                        self.errorLabel.isHidden = false
-                    } else {
-                        self.errorLabel.text = "Oops. Network Connectvity issue. Please try again."
-                        self.errorLabel.isHidden = false
+            
+            if let id = self.userID {
+                if let phoneNo = mobileField.text {
+                    DispatchQueue.global(qos: .userInteractive).async {
+                        let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(id)/mobile?mobile=\(phoneNo)", method: "PUT", param: [:])
+                        DispatchQueue.main.async {
+                            print(response)
+                            if response != nil && response != "null" && !response.isEmpty && !response.contains("HTTP Status") && !response.contains("istarViksitProComplexKey") {
+                                //goto otp vc
+                                
+                                let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "VerifyOTPVC") as! VerifyOTPVC
+                                nextViewController.mobileNo = self.mobileField.text!
+                                nextViewController.userID = id
+                                nextViewController.otp = response
+                                self.present(nextViewController, animated:true, completion:nil)
+                            } else if (response != "null" && response.contains("istarViksitProComplexKey")) {
+                                self.errorLabel.text = response.replacingOccurrences(of: "istarViksitProComplexKey", with: "").replacingOccurrences(of: "\\", with: "")
+                                self.errorLabel.isHidden = false
+                            } else {
+                                self.errorLabel.text = "Oops. Network Connectvity issue. Please try again."
+                                self.errorLabel.isHidden = false
+                            }
+                        }
                     }
                 }
             }
+            
         } else {
             errorLabel.isHidden = false
             errorLabel.text = "Phone no. is required (10 digits)"

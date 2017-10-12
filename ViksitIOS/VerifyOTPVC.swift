@@ -45,20 +45,23 @@ class VerifyOTPVC: UIViewController {
         if OTPField.text != "" {
             if otp == OTPField.text {
                 //goto reset password vc
-                DispatchQueue.global(qos: .userInteractive).async {
-                    let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(self.userID)/verify/true", method: "PUT", param: [:])
-                    DispatchQueue.main.async {
-                        if response != nil && response != "null" && !response.isEmpty && !response.contains("HTTP Status") {
-                            //goto batch code
-                            let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
-                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BatchCodeVC") as! BatchCodeVC
-                            self.present(nextViewController, animated:true, completion:nil)
-                        } else {
-                            self.errorLabel.text = "Oops. Network Connectivty issue."
-                            self.errorLabel.isHidden = false
+                if let id = self.userID {
+                    DispatchQueue.global(qos: .userInteractive).async {
+                        let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(id)/verify/true", method: "PUT", param: [:])
+                        DispatchQueue.main.async {
+                            if response != nil && response != "null" && !response.isEmpty && !response.contains("HTTP Status") {
+                                //goto batch code
+                                let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BatchCodeVC") as! BatchCodeVC
+                                self.present(nextViewController, animated:true, completion:nil)
+                            } else {
+                                self.errorLabel.text = "Oops. Network Connectivty issue."
+                                self.errorLabel.isHidden = false
+                            }
                         }
                     }
                 }
+                
             } else {
                 //wrong password
                 errorLabel.text = "Oops! The OTP is incorrect."

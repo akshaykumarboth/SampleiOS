@@ -79,9 +79,7 @@ class LoginVC: UIViewController {
                                             let response: String = Helper.makeHttpCall (url : "\(Constant.prodUrlString)t2c/user/\(id)/complex", method: "GET", param: [:])
                                             DispatchQueue.main.async {
                                                 DataCache.sharedInstance.cache["complexObject"] = response
-                                                //DispatchQueue.global(qos: .userInteractive).async {
                                                 self.createFolders()
-                                                //}
                                                 Helper.saveProfileImageAsync(urlString: studentprofile.profileImage!)
                                                 
                                                 let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)

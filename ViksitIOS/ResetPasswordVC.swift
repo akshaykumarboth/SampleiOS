@@ -37,8 +37,31 @@ class ResetPasswordVC: UIViewController {
         submitBtn.addTarget(self, action: #selector(submitPressed), for: .touchUpInside)
         signInDifferentBtn.addTarget(self, action: #selector(signInDifferentPressed), for: .touchUpInside)
     }
-    
-    
+    /*
+    func put() {
+        
+        let url = NSURL(string: "https://yourUrl.com") //Remember to put ATS exception if the URL is not https
+        let request = NSMutableURLRequest(URL: url!)
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type") //Optional
+        request.HTTPMethod = "PUT"
+        let session = NSURLSession(configuration:NSURLSessionConfiguration.defaultSessionConfiguration(), delegate: nil, delegateQueue: nil)
+        let data = "username=self@gmail.com&password=password".dataUsingEncoding(NSUTF8StringEncoding)
+        request.HTTPBody = data
+        
+        let dataTask = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            
+            if error != nil {
+                
+                //handle error
+            }
+            else {
+                
+                let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("Parsed JSON: '\(jsonStr)'")
+            }
+        }
+        dataTask.resume()
+    }*/
     
     func submitPressed() {
         errorLabel.isHidden = true
@@ -52,12 +75,18 @@ class ResetPasswordVC: UIViewController {
                     ]
                 
                 do{
-                    DispatchQueue.global(qos: .userInteractive).async {
+                    ///DispatchQueue.global(qos: .userInteractive).async {
+                        var pswrdResponse = ""
+                        //let pswrdResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/reset", method: "PUT", param: params )
                         
-                        let pswrdResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/reset", method: "PUT", param: params )
-                        //print(Alamofire.request("http://elt.talentify.in/t2c/user/password/reset", method: .PUT, parameters: params, encoding: "myBody", headers: [:]) )
+                        Alamofire.request("http://elt.talentify.in/t2c/user/password/reset", method: .put, parameters: params, encoding: URLEncoding.httpBody, headers: nil).responseJSON { response in
+                            print(response.request as Any)  // original URL request
+                            print(response.response as Any) // URL response
+                            print(response.result.value as Any)   // result of response serialization
+                            pswrdResponse = response.result.value! as! String
                         
-                        DispatchQueue.main.async {
+                        
+                        //DispatchQueue.main.async {
                             print(pswrdResponse)
                             if (pswrdResponse != nil && pswrdResponse != "null" && pswrdResponse == "DONE")  {
                                 //goto changed password vc
@@ -70,8 +99,9 @@ class ResetPasswordVC: UIViewController {
                                 self.errorLabel.text = "Please check your internet connection"
                                 self.errorLabel.isHidden = false
                             }
-                        }
                     }
+                        //}
+                    //}
                 } catch let error as NSError {
                     print(" Error \(error)")
                 }

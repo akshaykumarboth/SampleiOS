@@ -1149,8 +1149,6 @@
                     <connections>
                         <outlet property="errorLabel" destination="1bd-Dc-fpi" id="XAU-Qc-3DL"/>
                         <outlet property="mobileField" destination="xYc-Mt-zug" id="bMA-HM-jRJ"/>
-                        <outlet property="phoneNumberField" destination="xYc-Mt-zug" id="Kwg-Tm-GXA"/>
-                        <outlet property="submitBtn" destination="iPd-l1-JBT" id="8qe-z9-Ana"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="reu-dC-fYO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1213,6 +1211,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="XxE-vJ-hAz" secondAttribute="trailing" constant="10" id="k8R-Fh-asw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gotoLoginBtn" destination="TIj-yg-2b2" id="d33-0i-lWn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2C-o8-71p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
