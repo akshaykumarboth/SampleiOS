@@ -80,6 +80,7 @@
 		BA43EE7F1F6129E2000D2DB0 /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA43EE7E1F6129E2000D2DB0 /* Ext.swift */; };
 		BA4914F21F629963000F5280 /* HIddenTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4914F11F629963000F5280 /* HIddenTableVC.swift */; };
 		BA4914F41F62B17D000F5280 /* HiddenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4914F31F62B17D000F5280 /* HiddenTableCell.swift */; };
+		BA51A2081F90BBBD00F67AD2 /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51A2071F90BBBC00F67AD2 /* ClassCell.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -264,6 +265,7 @@
 		BA43EE7E1F6129E2000D2DB0 /* Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
 		BA4914F11F629963000F5280 /* HIddenTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIddenTableVC.swift; sourceTree = "<group>"; };
 		BA4914F31F62B17D000F5280 /* HiddenTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenTableCell.swift; sourceTree = "<group>"; };
+		BA51A2071F90BBBC00F67AD2 /* ClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -684,6 +686,7 @@
 			isa = PBXGroup;
 			children = (
 				BA63718F1F28868D00D77EA9 /* TasksVC.swift */,
+				BA51A2071F90BBBC00F67AD2 /* ClassCell.swift */,
 				BA43ED5B1F39A2F9000D2DB0 /* PresentationCell.swift */,
 				BA43ED5D1F39E8E9000D2DB0 /* AssessmentCell.swift */,
 				BAE124CA1F6965B300F8576D /* TodaysTaskCell.swift */,
@@ -1229,6 +1232,7 @@
 				BA63716B1F26236000D77EA9 /* Helper.swift in Sources */,
 				BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */,
 				BAE124DF1F73AF5700F8576D /* AssessmentReportVC.swift in Sources */,
+				BA51A2081F90BBBD00F67AD2 /* ClassCell.swift in Sources */,
 				BA6371881F28707900D77EA9 /* PasswordChangedVC.swift in Sources */,
 				BA65FFC71F66762200A18974 /* Assessment.swift in Sources */,
 				BAE124EF1F74E4A900F8576D /* AssessmentReviewCell.swift in Sources */,

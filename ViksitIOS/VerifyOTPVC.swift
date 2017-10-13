@@ -53,6 +53,7 @@ class VerifyOTPVC: UIViewController {
                                 //goto batch code
                                 let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
                                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BatchCodeVC") as! BatchCodeVC
+                                nextViewController.userID = id
                                 self.present(nextViewController, animated:true, completion:nil)
                             } else {
                                 self.errorLabel.text = "Oops. Network Connectivty issue."

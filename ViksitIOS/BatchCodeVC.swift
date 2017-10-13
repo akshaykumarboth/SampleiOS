@@ -21,6 +21,8 @@ class BatchCodeVC: UIViewController {
     @IBOutlet var submitBtn: UIButton!
     @IBOutlet var skipBtn: UIButton!
     
+    var userID: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +30,6 @@ class BatchCodeVC: UIViewController {
         view.addGestureRecognizer(tap)
         
         setup()
-        // Do any additional setup after loading the view.
     }
     
     func dismissKeyboard() {
@@ -53,14 +54,54 @@ class BatchCodeVC: UIViewController {
         input6.addTarget(self, action: #selector(textChanged), for: .editingChanged)
         
         submitBtn.addTarget(self, action: #selector(onSubmitPressed), for: .touchUpInside)
-        skipBtn.addTarget(self, action: #selector(onSKipPressed), for: .touchUpInside)
+        skipBtn.addTarget(self, action: #selector(onSkipPressed), for: .touchUpInside)
     }
     
     func onSubmitPressed() {
-    
+        errorLabel.isHidden = true
+        if input1.text != "" && input2.text != "" && input3.text != "" && input4.text != "" && input5.text != "" && input6.text != ""{
+            var batchCodeString = "\(input1.text!)\(input2.text!)\(input3.text!)\(input4.text!)\(input5.text!)\(input6.text!)"
+            print("Batch code is \(batchCodeString)")
+            let batchCodeParams = [
+                "batchCode" : batchCodeString
+            ]
+            do {
+                DispatchQueue.global(qos: .userInteractive).async {
+                    //background thread
+                    let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(self.userID)/batch", method: "POST", param: batchCodeParams)
+                    DispatchQueue.main.async {
+                        // main ui thread
+                        if (response != nil && response != "null" && !response.isEmpty && response.contains("HTTP Status") && response .contains("istarViksitProComplexKey")) {
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
+                            //nextViewController.userID = self.userID
+                            self.present(nextViewController, animated:true, completion:nil)
+                        } else if (response != "null" && response.contains("istarViksitProComplexKey")) {
+                            self.errorLabel.text = response.replacingOccurrences(of: "istarViksitProComplexKey", with: "").replacingOccurrences(of: "\\", with: "")
+                            self.errorLabel.isHidden = false
+                        } else {
+                            self.errorLabel.text = "Please contact your school administrators."
+                            self.errorLabel.isHidden = false
+                        }
+                    }
+                }
+            }catch let error as NSError {
+                print(" Error \(error)")
+            }
+            
+
+        } else {
+            errorLabel.text = "Please enter a valid batch code."
+            errorLabel.isHidden = false
+        }
+            
     }
     
-    func onSKipPressed() {
+    func onSkipPressed() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SplashVC") as! SplashVC
+        nextViewController.userID = self.userID
+        self.present(nextViewController, animated:true, completion:nil)
         
     }
     

@@ -12,13 +12,14 @@ import Firebase
 
 class SplashVC: UIViewController {
     
+    var userID: Int?
+    
     let taskQueue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.taskQueue", qos: .userInteractive, attributes: .concurrent)
     let otherQueue: DispatchQueue = DispatchQueue(label: "com.viksitIOS.otherQueue", qos: .userInteractive, attributes: .concurrent)
     let group:DispatchGroup = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         x()
     }
@@ -37,15 +38,15 @@ class SplashVC: UIViewController {
                 }
             }
             
-            
             group.notify(queue: DispatchQueue.main) {
                 print("done doing stuff")
                 
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Tab", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
                 self.present(nextViewController, animated:true, completion:nil)
+                self.sss()
             }
-            self.sss()
+            
         }
         
     }

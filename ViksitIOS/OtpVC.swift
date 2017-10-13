@@ -67,6 +67,7 @@ class OtpVC: UIViewController {
                                 if (response != nil && response != "null" && !response.isEmpty && !response.contains("HTTP Status")) {
                                     let storyBoard : UIStoryboard = UIStoryboard(name: "Welcome", bundle:nil)
                                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BatchCodeVC") as! BatchCodeVC
+                                    nextViewController.userID = self.userID
                                     self.present(nextViewController, animated:true, completion:nil)
                                 } else {
                                     self.errorLabel.text = "Oops. Network Connectivty issue."

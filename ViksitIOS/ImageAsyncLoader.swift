@@ -13,11 +13,7 @@ import Photos
 class ImageAsyncLoader{
     
     static func loadImageAsync(url: String, imgView: UIImageView){
-        //do {
-        
-        /*}catch let error as NSError {
-            print(" Error \(error)")
-        }*/
+       
         if let urlObject = URL(string: url) {
             DispatchQueue.global().async {
                 do {
