@@ -81,6 +81,7 @@
 		BA4914F21F629963000F5280 /* HIddenTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4914F11F629963000F5280 /* HIddenTableVC.swift */; };
 		BA4914F41F62B17D000F5280 /* HiddenTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4914F31F62B17D000F5280 /* HiddenTableCell.swift */; };
 		BA51A2081F90BBBD00F67AD2 /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51A2071F90BBBC00F67AD2 /* ClassCell.swift */; };
+		BA51A20A1F976F6700F67AD2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51A2091F976F6700F67AD2 /* Item.swift */; };
 		BA63716B1F26236000D77EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716A1F26236000D77EA9 /* Helper.swift */; };
 		BA63716E1F262A4000D77EA9 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA63716D1F262A4000D77EA9 /* Welcome.storyboard */; };
 		BA6371701F262B3400D77EA9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */; };
@@ -266,6 +267,7 @@
 		BA4914F11F629963000F5280 /* HIddenTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIddenTableVC.swift; sourceTree = "<group>"; };
 		BA4914F31F62B17D000F5280 /* HiddenTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenTableCell.swift; sourceTree = "<group>"; };
 		BA51A2071F90BBBC00F67AD2 /* ClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
+		BA51A2091F976F6700F67AD2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BA63716A1F26236000D77EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BA63716D1F262A4000D77EA9 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BA63716F1F262B3400D77EA9 /* GetStartedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
@@ -719,6 +721,7 @@
 			isa = PBXGroup;
 			children = (
 				BA690E981F26115400EF980F /* AllStudentRanks.swift */,
+				BA51A2091F976F6700F67AD2 /* Item.swift */,
 				BA8EDAD51F8BD71F00B52D15 /* IstarUser.swift */,
 				BA690E991F26115400EF980F /* AssessmentReports.swift */,
 				BA690E9F1F26118100EF980F /* ComplexObject.swift */,
@@ -1202,6 +1205,7 @@
 				BA43EDF71F4B2761000D2DB0 /* ONLY_TITLE_LIST_NUMBERED.swift in Sources */,
 				BA43EE2E1F51919A000D2DB0 /* SymbolTextLabel.swift in Sources */,
 				BAA147D21F3225D500D1FFFE /* RoleInfoVC.swift in Sources */,
+				BA51A20A1F976F6700F67AD2 /* Item.swift in Sources */,
 				BAA147ED1F3498FB00D1FFFE /* LeaderboardCell.swift in Sources */,
 				BAE125111F794CFF00F8576D /* CalenderCell.swift in Sources */,
 				BA4914F41F62B17D000F5280 /* HiddenTableCell.swift in Sources */,

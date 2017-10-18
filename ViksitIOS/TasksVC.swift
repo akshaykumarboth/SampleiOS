@@ -90,7 +90,7 @@ class TasksVC: UIViewController{
         
         if let complexCache = DataCache.sharedInstance.cache["complexObject"] {
             tasks = (ComplexObject(JSONString: complexCache).tasks)!
-            completedTasks = tasks.filter({$0.status == "COMPLETED"}) //filtering completed tasks
+            completedTasks = tasks.filter({$0.status == "COMPLETED"}).filter({$0.dateFormat == Date()}) //filtering completed tasks
             incompleteTasks = tasks.filter({$0.status == "INCOMPLETE"}) //filtering incomplete tasks
             userID = (ComplexObject(JSONString: complexCache).studentProfile?.id!)!
             profileImgUrl = (ComplexObject(JSONString: complexCache).studentProfile?.profileImage)!

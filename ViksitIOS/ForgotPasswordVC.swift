@@ -63,7 +63,7 @@ class ForgotPasswordVC: UIViewController {
             }
         } else {
            
-            errorLabel.text = "Please Enter a valid Phone number (10 digits)"
+            errorLabel.text = "  Please Enter a valid Phone number (10 digits)"
             errorLabel.isHidden = false
             
         }

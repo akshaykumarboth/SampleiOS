@@ -10,7 +10,7 @@ public class Notifications {
 	public var time : String?
     public var timeFormat: Date?
 	public var itemType : String?
-	//public var item : Item?
+    public var item : Item?
 
     init (json: [String: Any]) {
         
@@ -44,11 +44,10 @@ public class Notifications {
 
         if json["itemType"] != nil {
             self.itemType = json["itemType"] as? String
-            //print("skill id is ",self.id! )
         }
 		
 		if (json["item"] != nil) {
-            //item = Item(dictionary: json["item"] as! NSDictionary)
+            self.item = Item(json: json["item"] as! [String:Any])
         }
 	}    
 
