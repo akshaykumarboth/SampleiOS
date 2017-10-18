@@ -14,7 +14,7 @@
         <!--AssessmentVC-->
         <scene sceneID="v8r-AR-qhX">
             <objects>
-                <viewController storyboardIdentifier="AssessmentVC" id="AjG-d8-o0b" customClass="AssessmentVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AssessmentVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AjG-d8-o0b" customClass="AssessmentVC" customModule="ViksitIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Vh-JO-sDW"/>
                         <viewControllerLayoutGuide type="bottom" id="Tcr-DB-PlL"/>

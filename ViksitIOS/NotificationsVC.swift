@@ -45,10 +45,15 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
         print("\(notifications[indexPath.row].id!)   -   \(notifications[indexPath.row].itemType)")
         
         if notifications[indexPath.row].itemType == "ASSESSMENT" || notifications[indexPath.row].itemType == "LESSON_ASSESSMENT" {
-            
+            //
+            let storyBoard : UIStoryboard = UIStoryboard(name: "assessment", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AssessmentVC")
+            self.present(nextViewController, animated:true, completion:nil)
         } else if notifications[indexPath.row].itemType == "LESSON_PRESENTATION" || notifications[indexPath.row].itemType == "PRESENTATION" {
-            
-        }else if notifications[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "assessment", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AssessmentVC")
+            self.present(nextViewController, animated:true, completion:nil)
+        } else if notifications[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" {
             
         }
     }
