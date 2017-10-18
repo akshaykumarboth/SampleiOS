@@ -8,6 +8,7 @@ public class Notifications {
 	public var status : String?
 	public var imageURL : String?
 	public var time : String?
+    public var timeFormat: Date?
 	public var itemType : String?
 	//public var item : Item?
 
@@ -35,8 +36,11 @@ public class Notifications {
 
         if json["time"] != nil {
             self.time = json["time"] as? String
-            //print("skill id is ",self.id! )
+            var dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            self.timeFormat = dateFormatter.date(from: time!)
         }
+        
 
         if json["itemType"] != nil {
             self.itemType = json["itemType"] as? String

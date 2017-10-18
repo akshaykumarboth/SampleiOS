@@ -511,6 +511,7 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
                 option.optionContainer.backgroundColor = UIColor(red: 35/255, green: 182/255, blue: 249/255, alpha: 1.00) //selectedcolor
                 option.optionText.textColor = UIColor(red: 35/255, green: 182/255, blue: 249/255, alpha: 1.00) //selectedcolor
                 self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = true
+                questions[visibleCellIndex.row].isAnswered = true
                 checkAnsweredQuestion()
                 print("question \(visibleCellIndex.row) -> option \(option.tag) is selected")
                 
@@ -521,6 +522,10 @@ extension AssessmentVC: UIGestureRecognizerDelegate {
                 self.questions[visibleCellIndex.row].options?[(option.tag)].isSelected = false
                 checkAnsweredQuestion()
                 print("question \(visibleCellIndex.row) -> option \(option.tag) is unselected")
+                /*
+                for option in questions[visibleCellIndex.row].options {
+                    if
+                }*/
             }
             
         }
@@ -575,6 +580,12 @@ extension AssessmentVC: UITableViewDataSource, UITableViewDelegate {
         cell.questionText.symbolLabel.setHTMLFromString(htmlText: String(indexPath.row + 1))
         cell.questionText.setFontSize(textSize: 18)
         cell.questionText.setSpacing(spacing: 5)
+        if questions[indexPath.row].isAnswered {
+            cell.checkedImage.tintColor = UIColor(red:0.14, green:0.71, blue:0.98, alpha:1.0)
+        } else {
+            cell.checkedImage.tintColor = UIColor(red:0.89, green:0.89, blue:0.91, alpha:1.0)
+        }
+        
         return cell
     }
     

@@ -43,6 +43,14 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(notifications[indexPath.row].id!)
+        
+        if notifications[indexPath.row].itemType == "ASSESSMENT" || notifications[indexPath.row].itemType == "LESSON_ASSESSMENT" {
+            
+        } else if notifications[indexPath.row].itemType == "LESSON_PRESENTATION" {
+            
+        }else if notifications[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" {
+            
+        }
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
@@ -70,7 +78,7 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
             print(" Error \(error)")
         }*/
         
-        if notifications[indexPath.row].itemType != "ASSESSMENT" {
+        if notifications[indexPath.row].itemType != "ASSESSMENT" || notifications[indexPath.row].itemType != "LESSON_ASSESSMENT"{
             cell.notificationImage.makeImageRound()
         }
         

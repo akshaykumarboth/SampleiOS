@@ -27,15 +27,14 @@ class ForgotPasswordVC: UIViewController {
 
     func onSubmitPressed() {
         print("submit pressed")
-        
+         errorLabel.isHidden = true
         if (phoneNumberField.text != nil && phoneNumberField.text != "" && phoneNumberField.text?.characters.count == 10) {
             //send http request
-            errorLabel.isHidden = true
+           
             let number = self.phoneNumberField.text!
             DispatchQueue.global(qos: .userInteractive).async {
                 let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/forgot?mobile=\(number)", method: "GET", param: [:])
                 
-                //http://elt.talentify.in/t2c/user/password/forgot?mobile=9986919400
                 if (response != "null" && response != nil && response != "" && !response.contains("HTTP Status")) {
                     let istarUser = IstarUser(jsonString: response)
                     if let userID = istarUser.id {
@@ -63,13 +62,10 @@ class ForgotPasswordVC: UIViewController {
                 
             }
         } else {
-            if (phoneNumberField.text != nil && phoneNumberField.text != "") {
-                errorLabel.text = "Phone number is too short"
-                errorLabel.isHidden = false
-            } else {
-                errorLabel.text = "Phone number is required"
-                errorLabel.isHidden = false
-            }
+           
+            errorLabel.text = "Please Enter a valid Phone number (10 digits)"
+            errorLabel.isHidden = false
+            
         }
     }
     

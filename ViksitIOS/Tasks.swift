@@ -12,6 +12,7 @@ public class Tasks {
 	public var imageURL : String?
 	public var status : String?
 	public var date : String?
+    public var dateFormat: Date?
 	public var messageForCompletedTasks : String?
 	public var messageForIncompleteTasks : String?
 	public var lattitude : Double?
@@ -27,7 +28,6 @@ public class Tasks {
     public var numberOfQuestions : Int?
     public var itemPoints: Int?
     public var retryable: Bool?
-    
     
     init (json: [String: Any]) {
         
@@ -73,8 +73,12 @@ public class Tasks {
         
         if json["date"] != nil {
             self.date = json["date"] as? String
+            var dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            self.dateFormat = dateFormatter.date(from: date!)
             //print("skill id is ",self.id! )
         }
+        
         
         if json["messageForCompletedTasks"] != nil {
             self.messageForCompletedTasks = json["messageForCompletedTasks"] as? String

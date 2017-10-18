@@ -136,7 +136,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/NO_CONTENT.swift"
-            timestampString = "529575273.787491"
+            timestampString = "529584761.740749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -438,7 +438,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/Helper.swift"
-            timestampString = "529575273.788199"
+            timestampString = "529584761.741413"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
@@ -470,7 +470,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ONLY_VIDEO.swift"
-            timestampString = "529575273.78836"
+            timestampString = "529584761.741764"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -486,7 +486,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ONLY_VIDEO.swift"
-            timestampString = "529575273.788433"
+            timestampString = "529584761.741881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
@@ -502,7 +502,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ONLY_VIDEO.swift"
-            timestampString = "529575273.788499"
+            timestampString = "529584761.741974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -518,7 +518,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.55714"
+            timestampString = "530005906.310596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "425"
@@ -550,7 +550,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.557864"
+            timestampString = "530005906.310756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "501"
@@ -566,7 +566,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.558382"
+            timestampString = "530005906.31085"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "502"
@@ -582,7 +582,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.558527"
+            timestampString = "530005906.31093"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "439"
@@ -598,7 +598,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.558697"
+            timestampString = "530005906.311006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "444"
@@ -614,7 +614,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.558816"
+            timestampString = "530005906.311077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -630,7 +630,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.558955"
+            timestampString = "530005906.311146"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -662,7 +662,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.559141"
+            timestampString = "530005906.311269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "239"
@@ -678,7 +678,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/Helper.swift"
-            timestampString = "529575273.789032"
+            timestampString = "529584761.742318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
@@ -694,7 +694,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/Helper.swift"
-            timestampString = "529575273.78913"
+            timestampString = "529584761.742641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -710,7 +710,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.559869"
+            timestampString = "530005906.311422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "208"
@@ -726,7 +726,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.560004"
+            timestampString = "530005906.311506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "223"
@@ -822,7 +822,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/NO_CONTENT.swift"
-            timestampString = "529575273.78945"
+            timestampString = "529584761.743219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -854,7 +854,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.560229"
+            timestampString = "530005906.311744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "121"
@@ -902,7 +902,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ONLY_TITLE_PARAGRAPH.swift"
-            timestampString = "529575273.789708"
+            timestampString = "529584761.743585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -918,7 +918,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ONLY_TITLE_PARAGRAPH_cells_fragemented.swift"
-            timestampString = "529575273.789787"
+            timestampString = "529584761.7438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -934,7 +934,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ImageAsyncLoader.swift"
-            timestampString = "529575273.789858"
+            timestampString = "529597487.251829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -978,11 +978,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ImageAsyncLoader.swift"
-            timestampString = "529575273.789928"
+            timestampString = "529597487.25223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -991,33 +991,33 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "static ViksitIOS.ImageAsyncLoader.loadImageAsync(url: Swift.String, imgView: __ObjC.UIImageView) -&gt; ()"
                   moduleName = "ViksitIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/akshay/Documents/ViksitIOS/ViksitIOS/ImageAsyncLoader.swift"
-                  timestampString = "529571678.967348"
+                  timestampString = "529596990.377314"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
                   offsetFromSymbolStart = "340">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 () -&gt; () in static ViksitIOS.ImageAsyncLoader.loadImageAsync(url: Swift.String, imgView: __ObjC.UIImageView) -&gt; ()"
                   moduleName = "ViksitIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/akshay/Documents/ViksitIOS/ViksitIOS/ImageAsyncLoader.swift"
-                  timestampString = "529571678.968953"
+                  timestampString = "529596990.378889"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
                   offsetFromSymbolStart = "488">
                </Location>
             </Locations>
@@ -1030,7 +1030,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.560527"
+            timestampString = "530005906.312008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
@@ -1046,7 +1046,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.56067"
+            timestampString = "530005906.312121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "268"
@@ -1094,7 +1094,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.56085"
+            timestampString = "530005906.312224"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "287"
@@ -1206,7 +1206,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.561071"
+            timestampString = "530005906.312544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "314"
@@ -1222,7 +1222,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.56122"
+            timestampString = "530005906.312714"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "315"
@@ -1238,7 +1238,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.561357"
+            timestampString = "530005906.312918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "311"
@@ -1254,7 +1254,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.561516"
+            timestampString = "530005906.313099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "313"
@@ -1270,7 +1270,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.561676"
+            timestampString = "530005906.313262"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
@@ -1286,7 +1286,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/AssessmentVC.swift"
-            timestampString = "528898203.561793"
+            timestampString = "530005906.313428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
@@ -1302,11 +1302,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/NotificationsVC.swift"
-            timestampString = "529243615.699993"
+            timestampString = "530005906.313642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1318,11 +1318,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.614799"
+            timestampString = "530005906.313817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1334,11 +1334,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.614923"
+            timestampString = "530005906.316182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "315"
-            endingLineNumber = "315"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1350,11 +1350,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.615002"
+            timestampString = "530005906.320346"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1366,11 +1366,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.615075"
+            timestampString = "530005906.323629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1382,11 +1382,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.615148"
+            timestampString = "530005906.3262"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "startBtnTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1398,11 +1398,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.615227"
+            timestampString = "530005906.328018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1414,11 +1414,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.615298"
+            timestampString = "530005906.330655"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1430,11 +1430,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.615389"
+            timestampString = "530005906.332698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1446,23 +1446,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.61548"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "startBtnTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.615571"
+            timestampString = "530005906.335423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "214"
@@ -1478,11 +1462,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.615662"
+            timestampString = "530005906.33742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "startBtnTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.340894"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "startBtnTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1494,11 +1494,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.615735"
+            timestampString = "530005906.3433"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "590"
-            endingLineNumber = "590">
+            startingLineNumber = "592"
+            endingLineNumber = "592">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1508,11 +1508,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.615808"
+            timestampString = "530005906.345077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1520,15 +1520,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.615877"
+            timestampString = "530005906.347768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1540,7 +1540,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/BatchCodeVC.swift"
-            timestampString = "529575273.791235"
+            timestampString = "529584761.746737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -1810,7 +1810,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/Helper.swift"
-            timestampString = "529575273.794038"
+            timestampString = "529584761.748027"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -1858,7 +1858,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/SplashVC.swift"
-            timestampString = "529575273.794203"
+            timestampString = "529584761.748538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -1874,7 +1874,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/SplashVC.swift"
-            timestampString = "529575273.794878"
+            timestampString = "529584761.748804"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
@@ -1890,7 +1890,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/SplashVC.swift"
-            timestampString = "529575273.795394"
+            timestampString = "529584761.748974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -1906,7 +1906,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/SplashVC.swift"
-            timestampString = "529575273.795844"
+            timestampString = "529584761.749097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -1954,7 +1954,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/Helper.swift"
-            timestampString = "529575273.796363"
+            timestampString = "529584761.749361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "261"
@@ -2002,7 +2002,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/Helper.swift"
-            timestampString = "529575273.79646"
+            timestampString = "529584761.749792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "260"
@@ -2018,11 +2018,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.6183"
+            timestampString = "530005906.351136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "478"
-            endingLineNumber = "478"
+            startingLineNumber = "476"
+            endingLineNumber = "476"
             landmarkName = "setTaskImage(imgUrl:taskID:imageView:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2034,7 +2034,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ForgotPasswordVC.swift"
-            timestampString = "529575273.796592"
+            timestampString = "530005906.353026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -2046,11 +2046,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/LoginVC.swift"
-            timestampString = "529575273.796667"
+            timestampString = "529584761.750381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -2066,7 +2066,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ForgotPasswordVC.swift"
-            timestampString = "529575273.796755"
+            timestampString = "530005906.353178"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -2082,7 +2082,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ForgotPasswordVC.swift"
-            timestampString = "529575273.796825"
+            timestampString = "530005906.353257"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -2098,7 +2098,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/OtpVC.swift"
-            timestampString = "529575273.796895"
+            timestampString = "529584761.750956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -2114,7 +2114,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/TasksVC.swift"
-            timestampString = "529504834.619561"
+            timestampString = "530005906.35337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -2130,7 +2130,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ResetPasswordVC.swift"
-            timestampString = "529575273.797059"
+            timestampString = "529584761.751716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -2146,7 +2146,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ResetPasswordVC.swift"
-            timestampString = "529575273.797137"
+            timestampString = "529584761.751923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -2162,7 +2162,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ResetPasswordVC.swift"
-            timestampString = "529575273.797207"
+            timestampString = "529584761.7522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
@@ -2178,7 +2178,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ResetPasswordVC.swift"
-            timestampString = "529575273.797277"
+            timestampString = "529584761.752352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -2194,7 +2194,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ResetPasswordVC.swift"
-            timestampString = "529575273.797347"
+            timestampString = "529584761.752569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -2210,7 +2210,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/SignUpVC.swift"
-            timestampString = "529575273.797423"
+            timestampString = "529584761.752961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -2226,7 +2226,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/LoginVC.swift"
-            timestampString = "529575273.797503"
+            timestampString = "529584761.753453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -2242,7 +2242,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/SignUpVC.swift"
-            timestampString = "529575273.797575"
+            timestampString = "529584761.75397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -2258,7 +2258,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/OtpVC.swift"
-            timestampString = "529575273.797671"
+            timestampString = "529584761.754491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -2274,7 +2274,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/OtpVC.swift"
-            timestampString = "529575273.797759"
+            timestampString = "529584761.755226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -2290,7 +2290,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/OtpVC.swift"
-            timestampString = "529575273.797843"
+            timestampString = "529584761.755731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
@@ -2306,7 +2306,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/OtpVC.swift"
-            timestampString = "529575273.797929"
+            timestampString = "529584761.756209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -2322,7 +2322,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/OtpVC.swift"
-            timestampString = "529575273.79848"
+            timestampString = "529584761.759752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -2338,7 +2338,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/OtpVC.swift"
-            timestampString = "529575273.798559"
+            timestampString = "529584761.760248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -2354,7 +2354,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ResetPasswordVC.swift"
-            timestampString = "529575273.798632"
+            timestampString = "529584761.760682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -2370,12 +2370,12 @@
                   moduleName = "ViksitIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/akshay/Documents/ViksitIOS/ViksitIOS/ResetPasswordVC.swift"
-                  timestampString = "529571679.073563"
+                  timestampString = "530000111.38155"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "82"
                   endingLineNumber = "82"
-                  offsetFromSymbolStart = "3748">
+                  offsetFromSymbolStart = "4576">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2385,12 +2385,12 @@
                   moduleName = "ViksitIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/akshay/Documents/ViksitIOS/ViksitIOS/ResetPasswordVC.swift"
-                  timestampString = "529571679.075279"
+                  timestampString = "530000111.383206"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
                   endingLineNumber = "79"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "31">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2402,7 +2402,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/ResetPasswordVC.swift"
-            timestampString = "529575273.798713"
+            timestampString = "529584761.761053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -2418,7 +2418,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/RolesVC.swift"
-            timestampString = "529575273.798785"
+            timestampString = "529584761.761455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
@@ -2434,12 +2434,220 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViksitIOS/RolesVC.swift"
-            timestampString = "529575273.798849"
+            timestampString = "529584761.761652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "174"
             endingLineNumber = "174"
             landmarkName = "setRoleImage(imgUrl:imageView:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.357306"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.359632"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.361436"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.363627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.365708"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.368166"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.370108"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.373507"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.375644"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.377405"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.379623"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.381406"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViksitIOS/TasksVC.swift"
+            timestampString = "530005906.383136"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

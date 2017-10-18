@@ -188,7 +188,6 @@ extension TasksVC: UICollectionViewDataSource {
         return incompleteTasks.count + 1
     }
     
-    
     @IBAction func startBtnTapped(_ sender: UIButton) -> Void {
         
         print(sender.tag)
@@ -254,30 +253,28 @@ extension TasksVC: UICollectionViewDataSource {
                     cell.watchBtn.addTarget(self, action: #selector(startBtnTapped), for: UIControlEvents.touchUpInside)
                     
                     return cell
-                } else if (incompleteTasks[indexPath.row-1].itemType == "CLASSROOM_SESSION_STUDENT" /*|| incompleteTasks[indexPath.row].itemType == "WEBINAR_STUDENT"*/ || incompleteTasks[indexPath.row-1].itemType == "CLASSROOM_SESSION") {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
+                } else if (incompleteTasks[indexPath.row-1].itemType == "CLASSROOM_SESSION_STUDENT"  || incompleteTasks[indexPath.row-1].itemType == "CLASSROOM_SESSION") {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClassCell", for: indexPath) as! ClassCell
                     
                     print(indexPath.row-1)
                     cell.headerLabel.text = incompleteTasks[indexPath.row-1].header?.uppercased()
                     cell.titleLabel.text = incompleteTasks[indexPath.row-1].title
                     //loadImageAsync(url: incompleteTasks[indexPath.row-1].imageURL!, imgView: cell.assessmentImg)
                     
-                    setTaskImage(imgUrl: incompleteTasks[indexPath.row-1].imageURL!, taskID: incompleteTasks[indexPath.row-1].id!, imageView: cell.assessmentImg)
-                    cell.descriptionLabel.text = incompleteTasks[indexPath.row-1].classRoomName
+                    setTaskImage(imgUrl: incompleteTasks[indexPath.row-1].imageURL!, taskID: incompleteTasks[indexPath.row-1].id!, imageView: cell.classImg)
                     
                     if let hrs = incompleteTasks[indexPath.row-1].durationHours {
-                        cell.numOfQuesLabel.text = String(hrs) + " hrs"
+                        cell.timeLabel.text = String(hrs) + " hrs"
                     }
                     
-                    if let y = incompleteTasks[indexPath.row-1].classRoomId {
-                        cell.pointsLabel.text = "#" + String(y)
+                    if let classRoomId = incompleteTasks[indexPath.row-1].classRoomId {
+                        cell.locationLabel.text = "Room #" + String(classRoomId)
                     }
-                    cell.quesText.text = "Duration"
-                    cell.xpText.text = "classRoom Id"
+                    if let group = incompleteTasks[indexPath.row-1].groupName {
+                        cell.batchLabel.text = group
+                    }
+                    
                     print(incompleteTasks[indexPath.row-1].id)
-                    //print(incompleteTasks[indexPath.row-1].time!)
-                    cell.durationLabel.text = getSubstring(str: incompleteTasks[indexPath.row-1].time!, startOffest: 0, endOffset: -3)
-                    cell.timeText.text = "Time"
                     cell.startBtn.setTitle("START CLASS", for: .normal)
                     cell.startBtn.tag = indexPath.row-1
                     cell.startBtn.backgroundColor = UIColor.Custom.themeColor
@@ -310,6 +307,7 @@ extension TasksVC: UICollectionViewDataSource {
                     if let dur = incompleteTasks[indexPath.row-1].duration {
                         cell.durationLabel.text = String(dur)
                     }
+                    
                     cell.xpText.text = "Experience"
                     cell.quesText.text = "Questions"
                     cell.timeText.text = "Duration"
@@ -375,25 +373,25 @@ extension TasksVC: UICollectionViewDataSource {
                 
                 return cell
             } else if (incompleteTasks[indexPath.row].itemType == "CLASSROOM_SESSION_STUDENT" /*|| incompleteTasks[indexPath.row].itemType == "WEBINAR_STUDENT"*/ || incompleteTasks[indexPath.row].itemType == "CLASSROOM_SESSION") {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assessmentCell", for: indexPath) as! AssessmentCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClassCell", for: indexPath) as! ClassCell
                 
                 cell.headerLabel.text = incompleteTasks[indexPath.row].header?.uppercased()
                 cell.titleLabel.text = incompleteTasks[indexPath.row].title
                 //loadImageAsync(url: incompleteTasks[indexPath.row].imageURL!, imgView: cell.assessmentImg)
-                setTaskImage(imgUrl: incompleteTasks[indexPath.row].imageURL!, taskID: incompleteTasks[indexPath.row].id!, imageView: cell.assessmentImg)
-                cell.descriptionLabel.text = incompleteTasks[indexPath.row].classRoomName
+                setTaskImage(imgUrl: incompleteTasks[indexPath.row].imageURL!, taskID: incompleteTasks[indexPath.row].id!, imageView: cell.classImg)
                 
                 if let hrs = incompleteTasks[indexPath.row].durationHours {
-                    cell.numOfQuesLabel.text = String(hrs) + " hrs"
+                    cell.timeLabel.text = String(hrs) + " hrs"
                 }
                 
-                if let y = incompleteTasks[indexPath.row].classRoomId {
-                    cell.pointsLabel.text = "#" + String(y)
+                if let classRoomId = incompleteTasks[indexPath.row].classRoomId {
+                    cell.locationLabel.text = "#" + String(classRoomId)
                 }
-                cell.quesText.text = "Duration"
-                cell.xpText.text = "classRoom Id"
-                cell.durationLabel.text = getSubstring(str: incompleteTasks[indexPath.row].time!, startOffest: 0, endOffset: -3)
-                cell.timeText.text = "Time"
+                
+                if let group = incompleteTasks[indexPath.row].groupName {
+                    cell.batchLabel.text = group
+                }
+                
                 cell.startBtn.setTitle("START CLASS", for: .normal)
                 cell.startBtn.tag = indexPath.row
                 cell.startBtn.backgroundColor = UIColor.Custom.themeColor
@@ -552,8 +550,12 @@ extension TasksVC: UITableViewDataSource, UITableViewDelegate {
         tableView.showsVerticalScrollIndicator = false
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodaysTaskItemCell", for: indexPath) as! TodaysTaskItemCell
         cell.selectionStyle = .none
+        let calendar = Calendar.current
+        let comp = calendar.dateComponents([.hour, .minute], from: completedTasks[indexPath.row].dateFormat!)
+        let hour = comp.hour
+        let minute = comp.minute
         cell.itemTitleLabel.text = completedTasks[indexPath.row].title
-        cell.itemTimeLabel.text = completedTasks[indexPath.row].date
+        cell.itemTimeLabel.text = "at \(hour!):\(minute!)"
         //inserting image from url async for roleImage
         if completedTasks[indexPath.row].itemType == "ASSESSMENT" {
             cell.itemImage.image = UIImage(named: "assessment_icon")
