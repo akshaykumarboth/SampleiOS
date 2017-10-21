@@ -1,6 +1,0 @@
-framework module Pods_ViksitIOS {
-  umbrella header "Pods-ViksitIOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

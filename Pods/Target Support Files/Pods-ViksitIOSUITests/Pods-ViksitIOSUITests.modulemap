@@ -1,6 +1,0 @@
-framework module Pods_ViksitIOSUITests {
-  umbrella header "Pods-ViksitIOSUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

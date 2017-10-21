@@ -39,17 +39,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ViksitIOS.xcscheme</key>
+		<key>Pods-SampleiOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ViksitIOSTests.xcscheme</key>
+		<key>Pods-SampleiOSTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-ViksitIOSUITests.xcscheme</key>
+		<key>Pods-SampleiOSUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
