@@ -1,10 +1,5 @@
 //
 //  Slide.swift
-//  ViksitIOS
-//
-//  Created by Akshay Kumar Both on 8/22/17.
-//  Copyright © 2017 Istar Feroz. All rights reserved.
-//
 
 import Foundation
 import SWXMLHash
