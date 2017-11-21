@@ -1,10 +1,6 @@
 //
 //  DirectoryVC.swift
-//  ViksitIOS
-//
-//  Created by Akshay Kumar Both on 9/27/17.
-//  Copyright © 2017 Istar Feroz. All rights reserved.
-//
+
 
 import UIKit
 import Photos
@@ -21,9 +17,6 @@ class DirectoryVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(Helper.readFromFile(fileName: "assessment", extnsion: "txt"))
-        //saveProfileImageAsync(urlString: "http://cdn.talentify.in:9999/users/4972/072e11cb-7838-4c56-8b0b-13b547c9e9fb.jpg", extraPath: "Viksit/Viksit_Profile_pic/", fileNameToKeep: "profile_pic.jpg")
-        
-        //getFileFromDocuments(urlString: "http://cdn.talentify.in:9999/users/450/77f19941-bd80-43f9-86f4-2548ec14b71f.jpg")
         //writeToFileInDocuments(text: "Hiiiii", fileName: "akshay.txt", extraPath: "Viksit/")
         //readFileFromDocuments(fileName: "akshay.txt", extraPath: "Viksit/")
         // Do any additional setup after loading the view.
