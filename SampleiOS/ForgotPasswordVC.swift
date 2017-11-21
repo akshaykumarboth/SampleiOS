@@ -33,12 +33,12 @@ class ForgotPasswordVC: UIViewController {
            
             let number = self.phoneNumberField.text!
             DispatchQueue.global(qos: .userInteractive).async {
-                let response = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/password/forgot?mobile=\(number)", method: "GET", param: [:])
+                let response = Helper.makeHttpCall(url: "http://dummy.dummify.in/t2c/user/password/forgot?mobile=\(number)", method: "GET", param: [:])
                 
                 if (response != "null" && response != nil && response != "" && !response.contains("HTTP Status")) {
                     let istarUser = IstarUser(jsonString: response)
                     if let userID = istarUser.id {
-                        let otpResponse = Helper.makeHttpCall(url: "http://elt.talentify.in/t2c/user/\(userID)/mobile?mobile=\(number)", method: "GET", param: [:])
+                        let otpResponse = Helper.makeHttpCall(url: "http://dummy.dummify.in/t2c/user/\(userID)/mobile?mobile=\(number)", method: "GET", param: [:])
                         DispatchQueue.main.async {
                             //goto otp vc
                             //send phone and userid to otp vc to resend otp again if necessary
