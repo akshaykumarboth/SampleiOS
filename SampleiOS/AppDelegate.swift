@@ -1,11 +1,5 @@
 //
 //  AppDelegate.swift
-//  ViksitIOS
-//
-//  Created by Istar Feroz on 24/07/17.
-//  Copyright © 2017 Istar Feroz. All rights reserved.
-//
-
 import UIKit
 import Firebase
 
@@ -25,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*
         //for solid testing
         if DataCache.sharedInstance.cache["complexObject"] == nil {
-            var response: String = Helper.makeHttpCall (url : "http://elt.talentify.in/t2c/user/450/complex", method: "GET", param: [:])
+            var response: String = Helper.makeHttpCall (url : "http://dummy.dummify.in/t2c/user/450/complex", method: "GET", param: [:])
             DataCache.sharedInstance.cache["complexObject"] = response
             //var response: String = Helper.makeHttpCall (url : "http://192.168.1.4:8080/t2c/user/6062/complex", method: "GET", param: [:])
         } */
