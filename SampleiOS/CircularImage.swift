@@ -1,11 +1,5 @@
 //
 //  CircularImage.swift
-//  ViksitIOS
-//
-//  Created by Akshay Kumar Both on 8/7/17.
-//  Copyright © 2017 Istar Feroz. All rights reserved.
-//
-
 import UIKit
 
 class CircularImage: UIImageView {
