@@ -1,10 +1,5 @@
 //
 //  CalenderVC.swift
-//  ViksitIOS
-//
-//  Created by Akshay Kumar Both on 7/26/17.
-//  Copyright © 2017 Istar Feroz. All rights reserved.
-//
 
 import UIKit
 import JTAppleCalendar
